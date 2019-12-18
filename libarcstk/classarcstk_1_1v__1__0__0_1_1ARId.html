@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>arcstk::v_1_0_0::ARId class | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://codeberg.org/tristero/libarcstk/">libarcstk</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">A library to calculate and verify AccurateRip checksums and ids</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Pages</a></li>
+            <li><a href="modules.html">Modules</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>ARId <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+        </h1>
+        <p>AccurateRip-Identifier of a compact disc.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> determines the URL of the compact disc dataset as well as the standard filename of the AccurateRip response.</p>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a49cfc0bbd49a6210f44fc52ff40a7ec8" class="m-doc">ARId</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
+              const uint32_t id_1,
+              const uint32_t id_2,
+              const uint32_t cddb_id)</span>
+            </dt>
+            <dd>Construct <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a84dbfd33b69269fc3c9584b86ff8516a" class="m-doc">ARId</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs)</span>
+            </dt>
+            <dd>Copy constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a4bb18ee707bae6fc7490c8ba3e948ebe" class="m-doc">ARId</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Default move constructor.</dd>
+            <dt id="a93aa4032186574151566f423f7b66b82">
+              <span class="m-doc-wrap-bumper"><a href="#a93aa4032186574151566f423f7b66b82" class="m-doc-self">~ARId</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Default destructor.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2086dffcd68d3fb2834c66f3472d50f5" class="m-doc">url</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
+            </dt>
+            <dd>Return the AccurateRip request URL.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4cb38d978176183f74e6769612d1d551" class="m-doc">filename</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
+            </dt>
+            <dd>Return the AccurateRip filename of the response file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3cad231d9b943327cac31cbdd3a2be81" class="m-doc">track_count</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a></span>
+            </dt>
+            <dd>Return the track count.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8382c1ef83ee16a66b77987a789ba4a1" class="m-doc">disc_id_1</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+            </dt>
+            <dd>Return the disc_id 1.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2f8648e8255b8ab4d4d254e74555c0f6" class="m-doc">disc_id_2</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+            </dt>
+            <dd>Return the disc_id 2.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a98087cb260136558e36375b1f897ec73" class="m-doc">cddb_id</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+            </dt>
+            <dd>Return the CDDB id.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a04b98089fe52175010fe05c836cdce27" class="m-doc">prefix</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
+            </dt>
+            <dd>Return the standard URL prefix for AccurateRip request urls.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd>Return TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is empty (holding no information).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab36130d5b8f5fb4d76fd98c4034e9b84" class="m-doc">to_string</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
+            </dt>
+            <dd>Return a default string representation of this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a803fe5da544125c695491c16c3a37a16" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const -&gt; bool</span>
+            </dt>
+            <dd>Returns TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> holds identical values as <code>rhs</code>, otherwise FALSE.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa196d62200de1a2ab169f7945b21776c" class="m-doc">operator !=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const -&gt; bool</span>
+            </dt>
+            <dd>Returns TRUE if this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> does not holds identical values as <code>rhs</code>, otherwise FALSE.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abd74efecdfda483803bea07ceb0102d3" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp;</span>
+            </dt>
+            <dd>Copy assignment operator.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a28c48b7afe1f69f4c5bcf49f1786e837" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Move assignment operator.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a49cfc0bbd49a6210f44fc52ff40a7ec8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a49cfc0bbd49a6210f44fc52ff40a7ec8" class="m-doc-self">ARId</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
+              const uint32_t id_1,
+              const uint32_t id_2,
+              const uint32_t cddb_id)</span></span>
+            </h3>
+            <p>Construct <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">track_count&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Number of tracks in this medium</td>
+                </tr>
+                <tr>
+                  <td>id_1&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Id 1 of this medium</td>
+                </tr>
+                <tr>
+                  <td>id_2&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Id 2 of this medium</td>
+                </tr>
+                <tr>
+                  <td>cddb_id&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>CDDB id of this medium</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a84dbfd33b69269fc3c9584b86ff8516a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a84dbfd33b69269fc3c9584b86ff8516a" class="m-doc-self">ARId</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs)</span></span>
+            </h3>
+            <p>Copy constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> to copy</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4bb18ee707bae6fc7490c8ba3e948ebe"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4bb18ee707bae6fc7490c8ba3e948ebe" class="m-doc-self">ARId</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Default move constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> to move</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2086dffcd68d3fb2834c66f3472d50f5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2086dffcd68d3fb2834c66f3472d50f5" class="m-doc-self">url</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the AccurateRip request URL.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The AccurateRip request URL</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4cb38d978176183f74e6769612d1d551"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cb38d978176183f74e6769612d1d551" class="m-doc-self">filename</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the AccurateRip filename of the response file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>AccurateRip filename of the response file</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3cad231d9b943327cac31cbdd3a2be81"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3cad231d9b943327cac31cbdd3a2be81" class="m-doc-self">track_count</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the track count.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Track count of this medium</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8382c1ef83ee16a66b77987a789ba4a1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8382c1ef83ee16a66b77987a789ba4a1" class="m-doc-self">disc_id_1</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the disc_id 1.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Disc id 1 of this medium</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2f8648e8255b8ab4d4d254e74555c0f6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2f8648e8255b8ab4d4d254e74555c0f6" class="m-doc-self">disc_id_2</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the disc_id 2.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Disc id 2 of this medium</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a98087cb260136558e36375b1f897ec73"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a98087cb260136558e36375b1f897ec73" class="m-doc-self">cddb_id</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the CDDB id.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>CDDB id of this medium</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a04b98089fe52175010fe05c836cdce27"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a04b98089fe52175010fe05c836cdce27" class="m-doc-self">prefix</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the standard URL prefix for AccurateRip request urls.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>URL prefix for AccurateRip request URLs.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a7bb0d12836a127020397f0d9535ae056"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7bb0d12836a127020397f0d9535ae056" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is empty (holding no information).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is empty</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab36130d5b8f5fb4d76fd98c4034e9b84"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab36130d5b8f5fb4d76fd98c4034e9b84" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return a default string representation of this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Default string representation of this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a803fe5da544125c695491c16c3a37a16"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a803fe5da544125c695491c16c3a37a16" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const</span></span>
+            </h3>
+            <p>Returns TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> holds identical values as <code>rhs</code>, otherwise FALSE.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The right hand side of the comparison</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE iff the right hand side is equal to the left hand side, otherwise false</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa196d62200de1a2ab169f7945b21776c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa196d62200de1a2ab169f7945b21776c" class="m-doc-self">operator !=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const</span></span>
+            </h3>
+            <p>Returns TRUE if this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> does not holds identical values as <code>rhs</code>, otherwise FALSE.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The right hand side of the comparison</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE iff the right hand side is not equal to the left hand side, otherwise false</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="abd74efecdfda483803bea07ceb0102d3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd74efecdfda483803bea07ceb0102d3" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs)</span></span>
+            </h3>
+            <p>Copy assignment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The right hand side of the assignment</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The resulting left hand side after the assigment</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a28c48b7afe1f69f4c5bcf49f1786e837"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a28c48b7afe1f69f4c5bcf49f1786e837" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Move assignment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The right hand side of the assignment</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The resulting left hand side after the assigment</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

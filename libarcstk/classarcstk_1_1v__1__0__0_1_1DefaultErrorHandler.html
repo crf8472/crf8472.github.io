@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>libarcstk - A library to calculate and verify AccurateRip checksums and ids | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
+  <title>arcstk::v_1_0_0::DefaultErrorHandler class | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -47,14 +47,91 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          libarcstk - A library to calculate and verify AccurateRip checksums and ids
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>DefaultErrorHandler <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parse_8hpp.html">&lt;parse.hpp&gt;</a></div>
         </h1>
-<section id="Home"><h2><a href="#Home">Home</a></h2><p>See the project home <a href="https://codeberg.org/tristero/libarcstk">on codeberg.org</a>.</p></section><section id="features"><h2><a href="#features">Features</a></h2><p>Libarcstk supports the following tasks for working with AccurateRip checksums:</p><ul><li>Calculate the AccurateRip checksums of a succession of audio samples, may it be a single track or an album</li><li>Verify AccurateRip checksums against their reference sums from AccurateRip</li><li>Calculate the AccurateRip ID of a CD from its TOC information (along with the request URL and the canonical response filename)</li><li>Parse the response of an request to the AccurateRip database to plaintext</li></ul></section><section id="nonfeatures"><h2><a href="#nonfeatures">Non-features</a></h2><ul><li>Libarcstk does not rip CDs</li><li>Libarcstk does not read, decode or buffer audio data</li><li>Libarcstk will not send any requests to AccurateRip. Libarcstk has no network facilities and is not supposed to get any. The actual HTTP request for fetching the reference values is better performed by the HTTP client of your choice.</li></ul></section><section id="howtobuild"><h2><a href="#howtobuild">How to Build</a></h2><p>Build and install to just use the API:</p><pre>$ cd libarcstk       # your libarcstk root directory where README.md resides
-$ mkdir build &amp;&amp; cd build
-$ cmake -DCMAKE_BUILD_TYPE=Release ..
-$ cmake --build .
-$ sudo make install  # installs to /usr/local
-</pre></section><section id="Version"><h2><a href="#Version">Version</a></h2><p>This API documentation was generated from commit <a href="https://codeberg.org/tristero/libarcstk/44efc2b45fd44a21bc5d6cc67bd5739598c99ee2">0.1.0-beta.1-20-g44efc2b</a>.</p></section>
+        <p>Logs error information to stdout.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>
+            </dt>
+            <dd>Interface for <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> error handlers.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6ef8a4aac9936d510743e8e2a1c37ccc" class="m-doc">do_error</a>(</span><span class="m-doc-wrap">const uint32_t byte_pos,
+              const uint32_t block,
+              const uint32_t block_byte_pos) <span class="m-label m-flat m-warning">final</span></span>
+            </dt>
+            <dd>Error notification.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a08a68ee00dddf1916647a8e5375129e7" class="m-doc">do_clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>&gt; <span class="m-label m-flat m-warning">final</span></span>
+            </dt>
+            <dd>Clone this object.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a6ef8a4aac9936d510743e8e2a1c37ccc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />DefaultErrorHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ef8a4aac9936d510743e8e2a1c37ccc" class="m-doc-self">do_error</a>(</span><span class="m-doc-wrap">const uint32_t byte_pos,
+              const uint32_t block,
+              const uint32_t block_byte_pos) <span class="m-label m-warning">final</span></span></span>
+            </h3>
+            <p>Error notification.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">byte_pos&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Last 1-based byte pos read before error</td>
+                </tr>
+                <tr>
+                  <td>block&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>1-based block number</td>
+                </tr>
+                <tr>
+                  <td>block_byte_pos&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Last 1-based block byte pos read before error</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a08a68ee00dddf1916647a8e5375129e7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />DefaultErrorHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08a68ee00dddf1916647a8e5375129e7" class="m-doc-self">do_clone</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">final</span></span></span>
+            </h3>
+            <p>Clone this object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Deep copy of this object</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>A clone is a deep copy, i.e. the result of the cloning will be a different object with the exact same state.</p>
+          </div></section>
+        </section>
       </div>
     </div>
   </div>

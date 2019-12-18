@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>arcstk::v_1_0_0::AudioSize class | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://codeberg.org/tristero/libarcstk/">libarcstk</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">A library to calculate and verify AccurateRip checksums and ids</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="pages.html">Pages</a></li>
+            <li><a href="modules.html">Modules</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>AudioSize <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+        </h1>
+        <p>Uniform access to the size of the input audio information.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Some decoders provide the number of frames, other the number of samples and maybe in some situations just the number of bytes of the sample stream is known. To avoid implementing the appropriate conversion for each decoder, <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> provides an interface for uniform representation to this information. Any of the informations provided will determine all of the others.</p>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a03dcc94c727198352f9047952de2a80c">
+              <span class="m-doc-wrap-bumper"><a href="#a03dcc94c727198352f9047952de2a80c" class="m-doc-self">AudioSize</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a59b5398acb925a0a66c8d58543a89fdc" class="m-doc">AudioSize</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; rhs)</span>
+            </dt>
+            <dd>Copy constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aeefdb807c3e0fecca19c183fdc906660" class="m-doc">AudioSize</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Move constructor.</dd>
+            <dt id="aae71a4d5dcb6ca9c3677257ade9bbeac">
+              <span class="m-doc-wrap-bumper"><a href="#aae71a4d5dcb6ca9c3677257ade9bbeac" class="m-doc-self">~AudioSize</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Default destructor.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad85f416825895560708d7a3905190314" class="m-doc">set_leadout_frame</a>(</span><span class="m-doc-wrap">const uint32_t leadout)</span>
+            </dt>
+            <dd>Set the 1-based index of the LBA leadout frame.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae20887c2bfcd0920db8c7f9c83b6049b" class="m-doc">leadout_frame</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+            </dt>
+            <dd>Return the LBA leadout frame.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a23fe04d05fa49c587fe4d55ba38b92e7" class="m-doc">set_sample_count</a>(</span><span class="m-doc-wrap">const uint32_t smpl_count)</span>
+            </dt>
+            <dd>Set the total number of 32 bit PCM samples.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac12469a2f27ca13421ad1e41c70dc56d" class="m-doc">sample_count</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+            </dt>
+            <dd>Return the total number of 32 bit PCM samples.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a1a6055cbdf5ad58db581cdf7341fde71" class="m-doc">set_pcm_byte_count</a>(</span><span class="m-doc-wrap">const uint64_t byte_count)</span>
+            </dt>
+            <dd>Set the total number of bytes holding decoded 32 bit PCM samples.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a98cf47f0ba7c18dcff1cfec45970ca8a" class="m-doc">pcm_byte_count</a>(</span><span class="m-doc-wrap">) const -&gt; uint64_t</span>
+            </dt>
+            <dd>Return the number of bytes holding 32 bit PCM samples.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a25e88832b4e5ef64d024262935a685e3" class="m-doc">null</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd>Return TRUE if the <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> is 0.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9150994b1e84fb5666a0fe64fb6371d9" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp;</span>
+            </dt>
+            <dd>Copy assignment.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a025572c6da7aa522a1b258cf863afa72" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Move assignment.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a59b5398acb925a0a66c8d58543a89fdc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a59b5398acb925a0a66c8d58543a89fdc" class="m-doc-self">AudioSize</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; rhs)</span></span>
+            </h3>
+            <p>Copy constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> to copy</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aeefdb807c3e0fecca19c183fdc906660"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeefdb807c3e0fecca19c183fdc906660" class="m-doc-self">AudioSize</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Move constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> to move</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad85f416825895560708d7a3905190314"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad85f416825895560708d7a3905190314" class="m-doc-self">set_leadout_frame</a>(</span><span class="m-doc-wrap">const uint32_t leadout)</span></span>
+            </h3>
+            <p>Set the 1-based index of the LBA leadout frame.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>LBA leadout frame</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This also determines the number of PCM samples and the number of PCM bytes.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae20887c2bfcd0920db8c7f9c83b6049b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae20887c2bfcd0920db8c7f9c83b6049b" class="m-doc-self">leadout_frame</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the LBA leadout frame.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>LBA leadout frame</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a23fe04d05fa49c587fe4d55ba38b92e7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a23fe04d05fa49c587fe4d55ba38b92e7" class="m-doc-self">set_sample_count</a>(</span><span class="m-doc-wrap">const uint32_t smpl_count)</span></span>
+            </h3>
+            <p>Set the total number of 32 bit PCM samples.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">smpl_count&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Total number of 32 bit PCM samples</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This also determines the leadout frame and the number of PCM bytes.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac12469a2f27ca13421ad1e41c70dc56d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac12469a2f27ca13421ad1e41c70dc56d" class="m-doc-self">sample_count</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the total number of 32 bit PCM samples.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The total number of 32 bit PCM samples</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1a6055cbdf5ad58db581cdf7341fde71"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1a6055cbdf5ad58db581cdf7341fde71" class="m-doc-self">set_pcm_byte_count</a>(</span><span class="m-doc-wrap">const uint64_t byte_count)</span></span>
+            </h3>
+            <p>Set the total number of bytes holding decoded 32 bit PCM samples.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">byte_count&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Total number of bytes holding 32 bit PCM samples</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This also determines the leadout frame and the number of 32 bit PCM samples.</p>
+          </div></section>
+          <section class="m-doc-details" id="a98cf47f0ba7c18dcff1cfec45970ca8a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint64_t arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a98cf47f0ba7c18dcff1cfec45970ca8a" class="m-doc-self">pcm_byte_count</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the number of bytes holding 32 bit PCM samples.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The total number of bytes holding 32 bit PCM samples</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a25e88832b4e5ef64d024262935a685e3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a25e88832b4e5ef64d024262935a685e3" class="m-doc-self">null</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return TRUE if the <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> is 0.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>TRUE if the <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> is 0</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9150994b1e84fb5666a0fe64fb6371d9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9150994b1e84fb5666a0fe64fb6371d9" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> rhs)</span></span>
+            </h3>
+            <p>Copy assignment.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Right hand side of the assignment</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The right hand side of the assignment</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a025572c6da7aa522a1b258cf863afa72"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a025572c6da7aa522a1b258cf863afa72" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Move assignment.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Right hand side of the assignment</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The right hand side of the assignment</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

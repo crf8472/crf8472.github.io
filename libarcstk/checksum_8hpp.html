@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>libarcstk - A library to calculate and verify AccurateRip checksums and ids | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
+  <title>checksum.hpp file | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -47,14 +47,63 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          libarcstk - A library to calculate and verify AccurateRip checksums and ids
+          checksum.hpp <span class="m-thin">file</span>
         </h1>
-<section id="Home"><h2><a href="#Home">Home</a></h2><p>See the project home <a href="https://codeberg.org/tristero/libarcstk">on codeberg.org</a>.</p></section><section id="features"><h2><a href="#features">Features</a></h2><p>Libarcstk supports the following tasks for working with AccurateRip checksums:</p><ul><li>Calculate the AccurateRip checksums of a succession of audio samples, may it be a single track or an album</li><li>Verify AccurateRip checksums against their reference sums from AccurateRip</li><li>Calculate the AccurateRip ID of a CD from its TOC information (along with the request URL and the canonical response filename)</li><li>Parse the response of an request to the AccurateRip database to plaintext</li></ul></section><section id="nonfeatures"><h2><a href="#nonfeatures">Non-features</a></h2><ul><li>Libarcstk does not rip CDs</li><li>Libarcstk does not read, decode or buffer audio data</li><li>Libarcstk will not send any requests to AccurateRip. Libarcstk has no network facilities and is not supposed to get any. The actual HTTP request for fetching the reference values is better performed by the HTTP client of your choice.</li></ul></section><section id="howtobuild"><h2><a href="#howtobuild">How to Build</a></h2><p>Build and install to just use the API:</p><pre>$ cd libarcstk       # your libarcstk root directory where README.md resides
-$ mkdir build &amp;&amp; cd build
-$ cmake -DCMAKE_BUILD_TYPE=Release ..
-$ cmake --build .
-$ sudo make install  # installs to /usr/local
-</pre></section><section id="Version"><h2><a href="#Version">Version</a></h2><p>This API documentation was generated from commit <a href="https://codeberg.org/tristero/libarcstk/44efc2b45fd44a21bc5d6cc67bd5739598c99ee2">0.1.0-beta.1-20-g44efc2b</a>.</p></section>
+        <p>Public API for management of checksums.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Represent metadata of a given compact disc image, the computed checksums of an audio file and the Checksums calculating class along with its configuration and state.</p><p>Basic data representation classes include TOC, Checksum and ChecksumSet.</p><p>TOC represents the toc information of a compact disc along with a function <a href="group__id.html#gab77eaf15f7efe7582f0e4c437ac283db" class="m-doc">make_<wbr />toc()</a> that guarantees to provide only valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a> or to throw an exception.</p><p>Checksum represents a single checksum and a ChecksumSet the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> for a single track.</p><p>Checksums is an aggregation of the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of an audio input.</p>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespacearcstk.html" class="m-doc">arcstk</a></dt>
+            <dd>libarcstk main namespace</dd>
+            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0.html" class="m-doc">arcstk::v_1_0_0</a></dt>
+            <dd>API version 1.0.0.</dd>
+            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html" class="m-doc">arcstk::v_1_0_0::checksum</a></dt>
+            <dd>Everything regarding operation with <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
+            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1details.html" class="m-doc">arcstk::v_1_0_0::details</a></dt>
+            <dd>Implementation details of namespace arcstk.</dd>
+          </dl>
+        </section>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">arcstk::v_1_0_0::Checksum</a>
+            </dt>
+            <dd>A 32-bit wide checksum for a single file or track.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename K&gt;</div>
+              class <a href="classarcstk_1_1v__1__0__0_1_1details_1_1ChecksumMap.html" class="m-doc">arcstk::v_1_0_0::details::ChecksumMap</a>
+            </dt>
+            <dd>Generic implementation of a <a href="classarcstk_1_1v__1__0__0_1_1details_1_1ChecksumMap.html" class="m-doc">ChecksumMap</a>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename K, bool is_const = false&gt;</div>
+              class <a href="classarcstk_1_1v__1__0__0_1_1details_1_1ChecksumMapIterator.html" class="m-doc">arcstk::v_1_0_0::details::ChecksumMapIterator</a>
+            </dt>
+            <dd>Iterator for <a href="classarcstk_1_1v__1__0__0_1_1details_1_1ChecksumMap.html" class="m-doc">ChecksumMaps</a>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename K&gt;</div>
+              class <a href="classarcstk_1_1v__1__0__0_1_1details_1_1ChecksumMap.html" class="m-doc">arcstk::v_1_0_0::details::ChecksumMap</a>
+            </dt>
+            <dd>Generic implementation of a <a href="classarcstk_1_1v__1__0__0_1_1details_1_1ChecksumMap.html" class="m-doc">ChecksumMap</a>.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">arcstk::v_1_0_0::ChecksumSet</a>
+            </dt>
+            <dd>A set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances of different types for a single track.</dd>
+          </dl>
+        </section>
       </div>
     </div>
   </div>

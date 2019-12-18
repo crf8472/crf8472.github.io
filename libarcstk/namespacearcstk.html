@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>libarcstk - A library to calculate and verify AccurateRip checksums and ids | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
+  <title>arcstk namespace | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -47,14 +47,81 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          libarcstk - A library to calculate and verify AccurateRip checksums and ids
+          arcstk <span class="m-thin">namespace</span>
         </h1>
-<section id="Home"><h2><a href="#Home">Home</a></h2><p>See the project home <a href="https://codeberg.org/tristero/libarcstk">on codeberg.org</a>.</p></section><section id="features"><h2><a href="#features">Features</a></h2><p>Libarcstk supports the following tasks for working with AccurateRip checksums:</p><ul><li>Calculate the AccurateRip checksums of a succession of audio samples, may it be a single track or an album</li><li>Verify AccurateRip checksums against their reference sums from AccurateRip</li><li>Calculate the AccurateRip ID of a CD from its TOC information (along with the request URL and the canonical response filename)</li><li>Parse the response of an request to the AccurateRip database to plaintext</li></ul></section><section id="nonfeatures"><h2><a href="#nonfeatures">Non-features</a></h2><ul><li>Libarcstk does not rip CDs</li><li>Libarcstk does not read, decode or buffer audio data</li><li>Libarcstk will not send any requests to AccurateRip. Libarcstk has no network facilities and is not supposed to get any. The actual HTTP request for fetching the reference values is better performed by the HTTP client of your choice.</li></ul></section><section id="howtobuild"><h2><a href="#howtobuild">How to Build</a></h2><p>Build and install to just use the API:</p><pre>$ cd libarcstk       # your libarcstk root directory where README.md resides
-$ mkdir build &amp;&amp; cd build
-$ cmake -DCMAKE_BUILD_TYPE=Release ..
-$ cmake --build .
-$ sudo make install  # installs to /usr/local
-</pre></section><section id="Version"><h2><a href="#Version">Version</a></h2><p>This API documentation was generated from commit <a href="https://codeberg.org/tristero/libarcstk/44efc2b45fd44a21bc5d6cc67bd5739598c99ee2">0.1.0-beta.1-20-g44efc2b</a>.</p></section>
+        <p>libarcstk main namespace</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#var-members">Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0.html" class="m-doc">v_1_0_0</a></dt>
+            <dd>API version 1.0.0.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__logging.html#ga93e8be24e81100c109d23e1faf63fde1" class="m-doc">api_version_is_at_least</a>(</span><span class="m-doc-wrap">const int major,
+              const int minor,
+              const int patch) -&gt; bool</span>
+            </dt>
+            <dd>Compares specified version to actual version.</dd>
+          </dl>
+        </section>
+        <section id="var-members">
+          <h2><a href="#var-members">Variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              int <a href="group__logging.html#ga694ac2771d6b27691457ce01ac7e55b5" class="m-doc">LIBARCSTK_VERSION_MAJOR</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Major version number.</dd>
+            <dt>
+              int <a href="group__logging.html#ga51369fbf7451c7e865f6bdf5ced2ec86" class="m-doc">LIBARCSTK_VERSION_MINOR</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Minor version number.</dd>
+            <dt>
+              int <a href="group__logging.html#ga6a2c34eb8fa9367f42b4a2ccf6deb71f" class="m-doc">LIBARCSTK_VERSION_PATCH</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Patch level.</dd>
+            <dt>
+              auto <a href="group__logging.html#ga3b5a0f8d2b79272f0f4995cb078c135c" class="m-doc">LIBARCSTK_VERSION_SUFFIX</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Version suffix (e.g. &#x27;alpha.1&#x27;, &#x27;beta.6&#x27;, &#x27;rc.3&#x27; etc.).</dd>
+            <dt>
+              const std::string <a href="group__logging.html#gaa7bfd7559cabb5796c8fdf3ddcffcea1" class="m-doc">LIBARCSTK_VERSION_SUFFIX_STRING</a>
+            </dt>
+            <dd>Version suffix as <code>std::string</code>.</dd>
+            <dt>
+              auto <a href="group__logging.html#ga797022c45fb94b282a1787bc52932a9f" class="m-doc">LIBARCSTK_VERSION_INFO</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Complete version number.</dd>
+            <dt>
+              const std::string <a href="group__logging.html#ga7a3bdc2d540e08aeca5817330e0cf6b8" class="m-doc">LIBARCSTK_VERSION_INFO_STRING</a>
+            </dt>
+            <dd>Complete version number as <code>std::string</code>.</dd>
+            <dt>
+              auto <a href="group__logging.html#ga553332dee714917bbe63303e1fe354d0" class="m-doc">LIBARCSTK_NAME</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Library name.</dd>
+            <dt>
+              const std::string <a href="group__logging.html#ga9d15de4654ec29220a99aa3a31b14579" class="m-doc">LIBARCSTK_NAME_STRING</a>
+            </dt>
+            <dd>Library name as a <code>std::string</code>.</dd>
+          </dl>
+        </section>
       </div>
     </div>
   </div>

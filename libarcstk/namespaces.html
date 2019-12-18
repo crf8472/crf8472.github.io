@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>libarcstk - A library to calculate and verify AccurateRip checksums and ids | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
+  <title>libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -30,7 +30,7 @@
             <li><a href="modules.html">Modules</a></li>
           </ol>
           <ol class="m-col-t-6 m-col-m-none" start="3">
-            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="namespaces.html" id="m-navbar-current">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
             <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
@@ -46,15 +46,38 @@
   <div class="m-container m-container-inflatable">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <h1>
-          libarcstk - A library to calculate and verify AccurateRip checksums and ids
-        </h1>
-<section id="Home"><h2><a href="#Home">Home</a></h2><p>See the project home <a href="https://codeberg.org/tristero/libarcstk">on codeberg.org</a>.</p></section><section id="features"><h2><a href="#features">Features</a></h2><p>Libarcstk supports the following tasks for working with AccurateRip checksums:</p><ul><li>Calculate the AccurateRip checksums of a succession of audio samples, may it be a single track or an album</li><li>Verify AccurateRip checksums against their reference sums from AccurateRip</li><li>Calculate the AccurateRip ID of a CD from its TOC information (along with the request URL and the canonical response filename)</li><li>Parse the response of an request to the AccurateRip database to plaintext</li></ul></section><section id="nonfeatures"><h2><a href="#nonfeatures">Non-features</a></h2><ul><li>Libarcstk does not rip CDs</li><li>Libarcstk does not read, decode or buffer audio data</li><li>Libarcstk will not send any requests to AccurateRip. Libarcstk has no network facilities and is not supposed to get any. The actual HTTP request for fetching the reference values is better performed by the HTTP client of your choice.</li></ul></section><section id="howtobuild"><h2><a href="#howtobuild">How to Build</a></h2><p>Build and install to just use the API:</p><pre>$ cd libarcstk       # your libarcstk root directory where README.md resides
-$ mkdir build &amp;&amp; cd build
-$ cmake -DCMAKE_BUILD_TYPE=Release ..
-$ cmake --build .
-$ sudo make install  # installs to /usr/local
-</pre></section><section id="Version"><h2><a href="#Version">Version</a></h2><p>This API documentation was generated from commit <a href="https://codeberg.org/tristero/libarcstk/44efc2b45fd44a21bc5d6cc67bd5739598c99ee2">0.1.0-beta.1-20-g44efc2b</a>.</p></section>
+        <h1>Namespaces</h2>
+        <ul class="m-doc">
+          <li class="m-doc-collapsible">
+            <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespacearcstk.html" class="m-doc">arcstk</a> <span class="m-doc">libarcstk main namespace</span>
+            <ul class="m-doc">
+              <li class="m-doc-collapsible">
+                <a href="#" onclick="return toggle(this)">namespace</a> <a href="namespacearcstk_1_1v__1__0__0.html" class="m-doc">v_1_0_0</a> <span class="m-doc">API version 1.0.0.</span>
+                <ul class="m-doc">
+                  <li>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html" class="m-doc">checksum</a> <span class="m-doc">Everything regarding operation with <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</span></li>
+                  <li>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1details.html" class="m-doc">details</a> <span class="m-doc">Implementation details of namespace arcstk.</span></li>
+                  <li>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html" class="m-doc">toc</a> <span class="m-doc">Functions assissting the management of <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a>.</span></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <script>
+        function toggle(e) {
+            e.parentElement.className = e.parentElement.className == 'm-doc-collapsible' ?
+                'm-doc-expansible' : 'm-doc-collapsible';
+            return false;
+        }
+        /* Collapse all nodes marked as such. Doing it via JS instead of
+           directly in markup so disabling it doesn't harm usability. The list
+           is somehow regenerated on every iteration and shrinks as I change
+           the classes. It's not documented anywhere and I'm not sure if this
+           is the same across browsers, so I am going backwards in that list to
+           be sure. */
+        var collapsed = document.getElementsByClassName("collapsed");
+        for(var i = collapsed.length - 1; i >= 0; --i)
+            collapsed[i].className = 'm-doc-expansible';
+        </script>
       </div>
     </div>
   </div>
