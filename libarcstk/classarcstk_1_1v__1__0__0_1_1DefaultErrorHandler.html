@@ -47,90 +47,18 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>DefaultErrorHandler <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::DefaultErrorHandler <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parse_8hpp.html">&lt;parse.hpp&gt;</a></div>
         </h1>
-        <p>Logs error information to stdout.</p>
-        <div class="m-block m-default">
-          <h3>Contents</h3>
-          <ul>
-            <li>
-              Reference
-              <ul>
-                <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <p>Logs error information and throws a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> on errors.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">v_1_0_0::ErrorHandler</a>
             </dt>
             <dd>Interface for <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> error handlers.</dd>
           </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a6ef8a4aac9936d510743e8e2a1c37ccc" class="m-doc">do_error</a>(</span><span class="m-doc-wrap">const uint32_t byte_pos,
-              const uint32_t block,
-              const uint32_t block_byte_pos) <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Error notification.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a08a68ee00dddf1916647a8e5375129e7" class="m-doc">do_clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>&gt; <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Clone this object.</dd>
-          </dl>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a6ef8a4aac9936d510743e8e2a1c37ccc"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />DefaultErrorHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ef8a4aac9936d510743e8e2a1c37ccc" class="m-doc-self">do_error</a>(</span><span class="m-doc-wrap">const uint32_t byte_pos,
-              const uint32_t block,
-              const uint32_t block_byte_pos) <span class="m-label m-warning">final</span></span></span>
-            </h3>
-            <p>Error notification.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">byte_pos&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Last 1-based byte pos read before error</td>
-                </tr>
-                <tr>
-                  <td>block&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>1-based block number</td>
-                </tr>
-                <tr>
-                  <td>block_byte_pos&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Last 1-based block byte pos read before error</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a08a68ee00dddf1916647a8e5375129e7"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />DefaultErrorHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08a68ee00dddf1916647a8e5375129e7" class="m-doc-self">do_clone</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">final</span></span></span>
-            </h3>
-            <p>Clone this object.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Deep copy of this object</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>A clone is a deep copy, i.e. the result of the cloning will be a different object with the exact same state.</p>
-          </div></section>
         </section>
       </div>
     </div>
@@ -176,7 +104,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

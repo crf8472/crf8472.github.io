@@ -47,10 +47,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>DefaultContentHandler <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::DefaultContentHandler <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parse_8hpp.html">&lt;parse.hpp&gt;</a></div>
         </h1>
-        <p>Constructs an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance from parsed content.</p>
+        <p>Populates an existing <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance by parsed content.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -60,17 +60,16 @@
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pri-methods">Private functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> and use <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html#a87e13192a83dd282831f4afea7e4017f" class="m-doc">set_<wbr />object()</a> to inform the handler about that object. The handler instance will then use this object for construction. After parse() is finished, the object contains the parsed content.</p>
+<p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance and use <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html#a87e13192a83dd282831f4afea7e4017f" class="m-doc">set_<wbr />object()</a> to inform the handler about that object. The handler instance will then populate this object with the parsed content.</p><aside class="m-note m-warning"><h4>Attention</h4><p>The client is responsible for the lifetime management: the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> object must exist at least until <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#afc3f5bb1235647946c04421666340796" class="m-doc">parse()</a> is finished.</p></aside>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">v_1_0_0::ContentHandler</a>
             </dt>
             <dd>Interface for <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> content handlers.</dd>
           </dl>
@@ -81,7 +80,7 @@
             <dt id="ab8db4d29d9306a70ad58e7d199c739c8">
               <span class="m-doc-wrap-bumper"><a href="#ab8db4d29d9306a70ad58e7d199c739c8" class="m-doc-self">DefaultContentHandler</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
-            <dd>Default constructor.</dd>
+            <dd>Constructor.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a407ae88734dae681c9c2b7e632a5e195" class="m-doc">DefaultContentHandler</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a>&amp; rhs)</span>
             </dt>
@@ -102,7 +101,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a87e13192a83dd282831f4afea7e4017f" class="m-doc">set_object</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; object)</span>
             </dt>
-            <dd>Set the object constructed by the parsed content.</dd>
+            <dd>Set the object to be constructed by the parsed content.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a8194328560ac971f8ff078377336df35" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a>&amp;</span>
             </dt>
@@ -111,53 +110,6 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a890a7d596171b4aded396d22422e1919" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Move assignment operator.</dd>
-          </dl>
-        </section>
-        <section id="pri-methods">
-          <h2><a href="#pri-methods">Private functions</a></h2>
-          <dl class="m-doc">
-            <dt id="a659439762fae4490984201595299504a">
-              <span class="m-doc-wrap-bumper">void <a href="#a659439762fae4490984201595299504a" class="m-doc-self">do_start_input</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a41ebcc16d1af40a2626370f53e4e5802" class="m-doc">start_<wbr />input()</a>.</dd>
-            <dt id="ae5d60317c97a2abfb575563e31695c54">
-              <span class="m-doc-wrap-bumper">void <a href="#ae5d60317c97a2abfb575563e31695c54" class="m-doc-self">do_start_block</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a4a913c0fb499668f11a6092fb8267a82" class="m-doc">do_id</a>(</span><span class="m-doc-wrap">const uint8_t track_count,
-              const uint32_t id1,
-              const uint32_t id2,
-              const uint32_t cddb_id) <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#ad513399abb1035e2a8ac3e11a6bfb64b" class="m-doc">id()</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#adf99bedf58db8ecd726e2dd9a3ae8e9e" class="m-doc">do_triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
-              const uint8_t confidence,
-              const uint32_t frame450_arcs) <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a51d6e32818a47698cbfaac784ed529cc" class="m-doc">triplet()</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#af60676df0e5d82cc1595fdce448a150f" class="m-doc">do_triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
-              const uint8_t confidence,
-              const uint32_t frame450_arcs,
-              const bool arcs_valid,
-              const bool confidence_valid,
-              const bool frame450_arcs_valid) <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#aa179d1336828eb70dd85227383296845" class="m-doc">triplet()</a>.</dd>
-            <dt id="a7367dd436d12bfa708c0e2477c5837d4">
-              <span class="m-doc-wrap-bumper">void <a href="#a7367dd436d12bfa708c0e2477c5837d4" class="m-doc-self">do_end_block</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a5f252e18df270855208e8bf8d8aebe50" class="m-doc">end_<wbr />block()</a>.</dd>
-            <dt id="aa913875b9aa4d045c5d6d992e33fae07">
-              <span class="m-doc-wrap-bumper">void <a href="#aa913875b9aa4d045c5d6d992e33fae07" class="m-doc-self">do_end_input</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a6933a72412063fda5e452df1f124b23c" class="m-doc">end_<wbr />input()</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8d48623192dfc492d47c15ae2e71126b" class="m-doc">do_clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a>&gt; <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a6b8d54fb21612c6c7deb2690f5a7f81a" class="m-doc">clone()</a>.</dd>
           </dl>
         </section>
         <section>
@@ -200,7 +152,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />DefaultContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a87e13192a83dd282831f4afea7e4017f" class="m-doc-self">set_object</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; object)</span></span>
             </h3>
-            <p>Set the object constructed by the parsed content.</p>
+            <p>Set the object to be constructed by the parsed content.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -259,123 +211,6 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a4a913c0fb499668f11a6092fb8267a82"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />DefaultContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a913c0fb499668f11a6092fb8267a82" class="m-doc-self">do_id</a>(</span><span class="m-doc-wrap">const uint8_t track_count,
-              const uint32_t id1,
-              const uint32_t id2,
-              const uint32_t cddb_id) <span class="m-label m-warning">final</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#ad513399abb1035e2a8ac3e11a6bfb64b" class="m-doc">id()</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">track_count&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Track count in this id</td>
-                </tr>
-                <tr>
-                  <td>id1&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Disc id 1 in this id</td>
-                </tr>
-                <tr>
-                  <td>id2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Disc id 2 in this id</td>
-                </tr>
-                <tr>
-                  <td>cddb_id&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>CDDB id in this id</td>
-                </tr>
-              </tbody>
-            </table>
-<p>Each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> starts with the id of the disc it describes, so this method is always called directly after <code><a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a></code>.</p>
-          </div></section>
-          <section class="m-doc-details" id="adf99bedf58db8ecd726e2dd9a3ae8e9e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />DefaultContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf99bedf58db8ecd726e2dd9a3ae8e9e" class="m-doc-self">do_triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
-              const uint8_t confidence,
-              const uint32_t frame450_arcs) <span class="m-label m-warning">final</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a51d6e32818a47698cbfaac784ed529cc" class="m-doc">triplet()</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">arcs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>ARCS in this triplet</td>
-                </tr>
-                <tr>
-                  <td>confidence&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Confidence in this triplet</td>
-                </tr>
-                <tr>
-                  <td>frame450_arcs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>ARCS of frame 450 in this triplet</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="af60676df0e5d82cc1595fdce448a150f"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />DefaultContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af60676df0e5d82cc1595fdce448a150f" class="m-doc-self">do_triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
-              const uint8_t confidence,
-              const uint32_t frame450_arcs,
-              const bool arcs_valid,
-              const bool confidence_valid,
-              const bool frame450_arcs_valid) <span class="m-label m-warning">final</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#aa179d1336828eb70dd85227383296845" class="m-doc">triplet()</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">arcs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The ARCS value of this triplet</td>
-                </tr>
-                <tr>
-                  <td>confidence&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The confidence value of this triplet</td>
-                </tr>
-                <tr>
-                  <td>frame450_arcs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The ARCS for frame 450 of this triplet</td>
-                </tr>
-                <tr>
-                  <td>arcs_valid&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Validity of ARCS of this triplet</td>
-                </tr>
-                <tr>
-                  <td>confidence_valid&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Validity of confidence of this triplet</td>
-                </tr>
-                <tr>
-                  <td>frame450_arcs_valid&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Validity of frame 450 ARCS of this triplet</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a8d48623192dfc492d47c15ae2e71126b"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />DefaultContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8d48623192dfc492d47c15ae2e71126b" class="m-doc-self">do_clone</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">final</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a6b8d54fb21612c6c7deb2690f5a7f81a" class="m-doc">clone()</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Deep copy of this object</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>A clone is a deep copy, i.e. the result of the cloning will be a different object with the exact same state.</p>
-          </div></section>
         </section>
       </div>
     </div>
@@ -421,7 +256,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

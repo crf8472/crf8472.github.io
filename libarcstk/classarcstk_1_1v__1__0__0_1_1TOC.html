@@ -47,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>TOC <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::TOC <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
         </h1>
         <p>Table of contents of a compact disc.</p>
@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> contains the number of tracks, their offsets and optionally their lengths, their filenames and the index of the leadout frame. Offsets and lengths are represented in LBA frames.</p><p><a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a> can exclusively be built by to two build functions. Both functions guarantee to provide either a valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> or to throw an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a>. This entails that any concrete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> provides strong guarantees regarding the consitency of its content.</p><p>In some cases it may be sensible to construct an incomplete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, i.e. a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> without a leadout frame. Some toc formats (as for example CUESheet) may not provide the leadout but the parsed metadata is required. In this case, the leadout can be obtained from the actual audio data. However, also an incomplete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> may never be inconsistent.</p>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> contains the number of tracks, their offsets and optionally their lengths, their filenames and the index of the leadout frame. Offsets and lengths are represented in LBA frames.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is an object constructed from parsed data. It is therefore not modifiable.</p><p><a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a> can exclusively be built by to two build functions called <a href="group__id.html#gaf01404ebf69f2cf3758138d66d3f8661" class="m-doc">make_<wbr />toc()</a>. Both functions guarantee to provide either a valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> or to throw an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a>. This entails that any concrete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> provides strong guarantees regarding the consistency of its content.</p><p>Although an existing <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore always valid it might <em>not</em> be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</p><p>In some cases it may be sensible to construct an incomplete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, i.e. a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> without a leadout frame. Some toc formats (as for example CUESheet) may not provide the leadout but the parsed metadata is required. In this case, the leadout can be obtained from the actual audio data. However, also an incomplete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> may never be inconsistent.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -239,7 +239,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>If the length for this track is not known, 0 is returned.</p>
+<p>If the length for this track is not known, 0 is returned.</p><aside class="m-note m-warning"><h4>Attention</h4><p>These lengths are the lengths as they were passed to the build function. They are not normalized or sanitized. They might be inconsistent with the offsets.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a2d664ac8fc245ad54eaf7be1ff09451e"><div>
             <h3>
@@ -278,7 +278,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>Should be either 0 if unknown, or, if known, equal to the sum of <code>offset(track_count())</code> and <code>length(track_count())</code>.</p><aside class="m-note m-dim"><h4><a href="todo.html#_todo000002" class="m-doc">Todo</a></h4><p>Not sure about the leadout for CDs with a data track.</p></aside>
+<p>Should be either 0 if unknown, or, if known, equal to the sum of <code>offset(track_count())</code> and <code>length(track_count())</code>.</p><aside class="m-note m-dim"><h4><a href="todo.html#_todo000004" class="m-doc">Todo</a></h4><p>Not sure about the leadout for CDs with a data track.</p></aside>
           </div></section>
           <section class="m-doc-details" id="ac25e4ffb68299641d657105d8949da81"><div>
             <h3>
@@ -409,7 +409,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

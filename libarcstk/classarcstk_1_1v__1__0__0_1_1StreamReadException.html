@@ -47,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>StreamReadException <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::StreamReadException <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parse_8hpp.html">&lt;parse.hpp&gt;</a></div>
         </h1>
         <p>Reports a read error during parsing a binary stream.</p>
@@ -63,6 +63,7 @@
             </li>
           </ul>
         </div>
+<aside class="m-note m-warning"><h4>Attention</h4><p>The byte positions are all interpreted as 1-based.</p></aside>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -72,14 +73,14 @@
               const uint32_t block_byte_pos,
               const std::string&amp; what_arg)</span>
             </dt>
-            <dd></dd>
+            <dd>Constructor.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a5f5d2b67991f9c3d7a1efaab52f08489" class="m-doc">StreamReadException</a>(</span><span class="m-doc-wrap">const uint32_t byte_pos,
               const uint32_t block,
               const uint32_t block_byte_pos,
               const char* what_arg)</span>
             </dt>
-            <dd></dd>
+            <dd>Constructor.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -88,15 +89,15 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a337527dad92600e998414d0a947f19ff" class="m-doc">byte_position</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
             </dt>
-            <dd></dd>
+            <dd>Last 1-based global byte position before the exception occurred.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a4a2fabcdb188bb22bea296263be35c1d" class="m-doc">block</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
             </dt>
-            <dd></dd>
+            <dd>The 1-based block number of the block in which the exception occurred.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab915c468dda5c87a1afe3918158e39d8" class="m-doc">block_byte_position</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
             </dt>
-            <dd></dd>
+            <dd>Last 1-based byte position relative to the start of the current block before the exception occurred.</dd>
           </dl>
         </section>
         <section>
@@ -108,6 +109,7 @@
               const uint32_t block_byte_pos,
               const std::string&amp; what_arg)</span></span>
             </h3>
+            <p>Constructor.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -115,7 +117,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">byte_pos&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Last 1-based byte pos read before error</td>
+                  <td>Last 1-based global byte pos read before exception</td>
                 </tr>
                 <tr>
                   <td>block&nbsp;<span class="m-label m-flat m-info">in</span></td>
@@ -123,7 +125,7 @@
                 </tr>
                 <tr>
                   <td>block_byte_pos&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Last 1-based block byte pos read before error</td>
+                  <td>Last 1-based block byte pos read before exception</td>
                 </tr>
                 <tr>
                   <td>what_arg&nbsp;<span class="m-label m-flat m-info">in</span></td>
@@ -131,7 +133,6 @@
                 </tr>
               </tbody>
             </table>
-<p>Constructor.</p>
           </div></section>
           <section class="m-doc-details" id="a5f5d2b67991f9c3d7a1efaab52f08489"><div>
             <h3>
@@ -140,6 +141,7 @@
               const uint32_t block_byte_pos,
               const char* what_arg)</span></span>
             </h3>
+            <p>Constructor.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -147,7 +149,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">byte_pos&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Last 1-based byte pos read before error</td>
+                  <td>Last 1-based global byte pos read before exception</td>
                 </tr>
                 <tr>
                   <td>block&nbsp;<span class="m-label m-flat m-info">in</span></td>
@@ -155,7 +157,7 @@
                 </tr>
                 <tr>
                   <td>block_byte_pos&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Last 1-based block byte pos read before error</td>
+                  <td>Last 1-based block byte pos read before exception</td>
                 </tr>
                 <tr>
                   <td>what_arg&nbsp;<span class="m-label m-flat m-info">in</span></td>
@@ -163,26 +165,26 @@
                 </tr>
               </tbody>
             </table>
-<p>Constructor.</p>
           </div></section>
           <section class="m-doc-details" id="a337527dad92600e998414d0a947f19ff"><div>
             <h3>
               <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />StreamReadException::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a337527dad92600e998414d0a947f19ff" class="m-doc-self">byte_position</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
+            <p>Last 1-based global byte position before the exception occurred.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>Last 1-based byte position before the exception occurred</td>
+                  <td>Last 1-based global byte position before the exception occurred</td>
                 </tr>
               </tfoot>
             </table>
-<p>Return last 1-based byte position before the exception occurred.</p>
           </div></section>
           <section class="m-doc-details" id="a4a2fabcdb188bb22bea296263be35c1d"><div>
             <h3>
               <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />StreamReadException::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a2fabcdb188bb22bea296263be35c1d" class="m-doc-self">block</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
+            <p>The 1-based block number of the block in which the exception occurred.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -191,12 +193,12 @@
                 </tr>
               </tfoot>
             </table>
-<p>Return the 1-based block number of the block.</p>
           </div></section>
           <section class="m-doc-details" id="ab915c468dda5c87a1afe3918158e39d8"><div>
             <h3>
               <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />StreamReadException::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab915c468dda5c87a1afe3918158e39d8" class="m-doc-self">block_byte_position</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
+            <p>Last 1-based byte position relative to the start of the current block before the exception occurred.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -205,7 +207,6 @@
                 </tr>
               </tfoot>
             </table>
-<p>Return last 1-based byte position relative to the start of the current block before the exception occurred.</p>
           </div></section>
         </section>
       </div>
@@ -252,7 +253,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

@@ -47,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>ContentHandler <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::ContentHandler <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parse_8hpp.html">&lt;parse.hpp&gt;</a></div>
         </h1>
         <p>Interface for <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> content handlers.</p>
@@ -65,14 +65,14 @@
             </li>
           </ul>
         </div>
-<p>Add a content handler to an <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> to actually add behaviour for parsing an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
+<p>Add actual behaviour to an <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>. A concrete subclass of <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> implements the handling of each syntactic entity the <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> emits.</p><p>Behaviour can be added at the start and end of the response content, at the start and end of each block, at the id at the start of each block and on each triplet.</p>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a> <span class="m-label m-flat m-warning">final</span>
+              class <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">v_1_0_0::DefaultContentHandler</a> <span class="m-label m-flat m-warning">final</span>
             </dt>
-            <dd>Constructs an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance from parsed content.</dd>
+            <dd>Populates an existing <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance by parsed content.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -101,7 +101,7 @@
               const uint32_t id2,
               const uint32_t cddb_id)</span>
             </dt>
-            <dd>React on an id.</dd>
+            <dd>React on an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a51d6e32818a47698cbfaac784ed529cc" class="m-doc">triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
               const uint8_t confidence,
@@ -137,11 +137,11 @@
             <dt id="a331ed4b17f9069d150e4e2adced2fcec">
               <span class="m-doc-wrap-bumper">void <a href="#a331ed4b17f9069d150e4e2adced2fcec" class="m-doc-self">do_start_input</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a41ebcc16d1af40a2626370f53e4e5802" class="m-doc">start_<wbr />input()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a41ebcc16d1af40a2626370f53e4e5802" class="m-doc">start_<wbr />input()</a></dd>
             <dt id="a30c31e78c41d5ca021a0aee5b7e73b5e">
               <span class="m-doc-wrap-bumper">void <a href="#a30c31e78c41d5ca021a0aee5b7e73b5e" class="m-doc-self">do_start_block</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a></dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a7a9727c43d1c3061f1e8c5775d735c76" class="m-doc">do_id</a>(</span><span class="m-doc-wrap">const uint8_t track_count,
               const uint32_t id1,
@@ -187,7 +187,7 @@
               const uint32_t id2,
               const uint32_t cddb_id)</span></span>
             </h3>
-            <p>React on an id.</p>
+            <p>React on an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -211,7 +211,7 @@
                 </tr>
               </tbody>
             </table>
-<p>Each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> starts with the id of the disc it describes, so this method is always called directly after <code><a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a></code>.</p>
+<p>Each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> starts with the id of the disc it describes, so this method is always called directly after <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a>.</p>
           </div></section>
           <section class="m-doc-details" id="a51d6e32818a47698cbfaac784ed529cc"><div>
             <h3>
@@ -328,7 +328,7 @@
                 </tr>
               </tbody>
             </table>
-<p>Each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> starts with the id of the disc it describes, so this method is always called directly after <code><a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a></code>.</p>
+<p>Each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> starts with the id of the disc it describes, so this method is always called directly after <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a>.</p>
           </div></section>
           <section class="m-doc-details" id="a2ceaa433bc3c54495a0bc3411672de7a"><div>
             <h3>
@@ -459,7 +459,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

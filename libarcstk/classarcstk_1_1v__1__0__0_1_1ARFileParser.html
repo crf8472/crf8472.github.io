@@ -47,10 +47,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>ARFileParser <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::ARFileParser <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parse_8hpp.html">&lt;parse.hpp&gt;</a></div>
         </h1>
-        <p>Parser for AccurateRip response as a file.</p>
+        <p>Parser for dBAR-*.bin files.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -60,7 +60,6 @@
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pri-methods">Private functions</a></li>
               </ul>
             </li>
           </ul>
@@ -70,9 +69,9 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">v_1_0_0::ARStreamParser</a>
             </dt>
-            <dd>Abstract base class for parsing an AccurateRip response.</dd>
+            <dd>Abstract base class for parsing the content of an AccurateRip HTTP-response.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -99,20 +98,6 @@
               <span class="m-doc-wrap-bumper">auto <a href="#acd12d9cf87aa0da11a404a9005d03307" class="m-doc">file</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
             </dt>
             <dd>Name of the file to parse.</dd>
-          </dl>
-        </section>
-        <section id="pri-methods">
-          <h2><a href="#pri-methods">Private functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#adca6a9fa4132a2555da62fb5afee1d21" class="m-doc">do_parse</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#afc3f5bb1235647946c04421666340796" class="m-doc">parse()</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#aa5cbb0ce0f5ba54f988551d13cdeae6f" class="m-doc">on_catched_exception</a>(</span><span class="m-doc-wrap">std::istream&amp; stream,
-              const std::exception&amp; e) const <span class="m-label m-flat m-warning">final</span></span>
-            </dt>
-            <dd>Hook: Called by <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_<wbr />stream()</a> on a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> before the exception is rethrown.</dd>
           </dl>
         </section>
         <section>
@@ -165,43 +150,6 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="adca6a9fa4132a2555da62fb5afee1d21"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARFileParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adca6a9fa4132a2555da62fb5afee1d21" class="m-doc-self">do_parse</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">final</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#afc3f5bb1235647946c04421666340796" class="m-doc">parse()</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Number of bytes parsed from configured input stream</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="aa5cbb0ce0f5ba54f988551d13cdeae6f"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ARFileParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa5cbb0ce0f5ba54f988551d13cdeae6f" class="m-doc-self">on_catched_exception</a>(</span><span class="m-doc-wrap">std::istream&amp; stream,
-              const std::exception&amp; e) const <span class="m-label m-warning">final</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Hook: Called by <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_<wbr />stream()</a> on a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> before the exception is rethrown.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">stream&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The opened stream in the state after the exception</td>
-                </tr>
-                <tr>
-                  <td>e&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The std::exception thrown</td>
-                </tr>
-              </tbody>
-            </table>
-<p>This hook can be used to close the stream in case this is required or to perform other steps before rethrowing.</p>
-          </div></section>
         </section>
       </div>
     </div>
@@ -247,7 +195,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

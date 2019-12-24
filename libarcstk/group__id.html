@@ -48,6 +48,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           AccurateRip IDs <span class="m-thin">module</span></h1>
+        <p>Calculate and manage <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">AccurateRip identifier</a>.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -61,11 +62,12 @@
             </li>
           </ul>
         </div>
+<p><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is an AccurateRip identifier. It determines the request URL for an album and as well its canonical savefile name. <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARIds</a> are constructed by other IDs and metadata like offsets and track count. As a convenience, functions <a href="group__id.html#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_<wbr />arid()</a> construct the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of an album by its <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is the verified table of content information from a compact disc. <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a> are exclusively constructed by functions <a href="group__id.html#gaf01404ebf69f2cf3758138d66d3f8661" class="m-doc">make_<wbr />toc()</a> that try to validate the information used to construct the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>. The verification recognizes inconsistent input data that cannot form a valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>. If the verification fails, an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p>
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html" class="m-doc">arcstk::v_1_0_0::toc</a></dt>
-            <dd>Functions assissting the management of <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a>.</dd>
+            <dd>Functions assisting the management of <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a>.</dd>
           </dl>
         </section>
         <section id="nested-classes">
@@ -91,22 +93,23 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
-            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ga20f91434c1d6cf176f461551c56b0cc8" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TOC&amp; toc,
               const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
-            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a separately specified leadout.</dd>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a specified leadout.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#gaed4e675a06b670b5aba8a86bc639ab0e" class="m-doc">make_empty_arid</a>(</span><span class="m-doc-wrap">) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
             <dd>Creates an empty <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#gab77eaf15f7efe7582f0e4c437ac283db" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              <span class="m-doc-wrap-bumper">auto <a href="#gaf01404ebf69f2cf3758138d66d3f8661" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               const std::vector&lt;int32_t&gt;&amp; offsets,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;TOC&gt;</span>
+              const uint32_t leadout,
+              const std::vector&lt;std::string&gt;&amp; files) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ga446270fecf003a18d08d6bab9619f71c" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               const std::vector&lt;int32_t&gt;&amp; offsets,
@@ -123,7 +126,7 @@
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc-self">make_arid</a>(</span><span class="m-doc-wrap">const TOC&amp; toc)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
-            <p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
+            <p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -146,11 +149,11 @@
               <tbody>
                 <tr>
                   <td>None</td>
-                  <td>If <code>toc</code> has <code>toc.leadout() == 0</code></td>
+                  <td>If <code>toc</code> is not <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</td>
                 </tr>
               </tbody>
             </table>
-<p>The input is validated.</p><p>Object <code>toc</code> must be complete, otherwise an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__id.html#ga20f91434c1d6cf176f461551c56b0cc8" class="m-doc">make_<wbr />arid(const TOC &amp;toc, const uint32_<wbr />t leadout)</a></p></aside>
+<p>The input is validated.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__id.html#ga20f91434c1d6cf176f461551c56b0cc8" class="m-doc">make_<wbr />arid(const TOC &amp;toc, const uint32_<wbr />t leadout)</a></p><p><a href="group__id.html#gaed4e675a06b670b5aba8a86bc639ab0e" class="m-doc">make_<wbr />empty_<wbr />arid()</a></p></aside>
           </div></section>
           <section class="m-doc-details" id="ga20f91434c1d6cf176f461551c56b0cc8"><div>
             <h3>
@@ -158,7 +161,7 @@
               const uint32_t leadout)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
-            <p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a separately specified leadout.</p>
+            <p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a specified leadout.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -189,7 +192,7 @@
                 </tr>
               </tbody>
             </table>
-<p>The input is validated.</p><p>Parameter <code>toc</code> is allowed to be incomplete. Parameter <code>leadout</code> is intended to provide the value possibly missing in <code>toc</code>.</p><p>If <code>leadout</code> is 0, <code>toc.leadout()</code> is used and <code>leadout</code> is ignored. If <code>leadout</code> is not 0, <code>toc.leadout()</code> is ignored. If both values are 0 an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p><p>If <code>leadout</code> is 0 and <code>toc</code> cannot be validated, an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown. If <code>leadout</code> is not 0 and <code>leadout</code> and <code>toc</code> cannot be validated as consistent with each other, an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__id.html#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_<wbr />arid(const TOC &amp;toc)</a></p></aside>
+<p>The input is validated.</p><p>Parameter <code>toc</code> is allowed to be non-<a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>. Parameter <code>leadout</code> is intended to provide the value possibly missing in <code>toc</code>.</p><p>If <code>leadout</code> is 0, <code>toc.leadout()</code> is used and <code>leadout</code> is ignored. If <code>leadout</code> is not 0, <code>toc.leadout()</code> is ignored. If both values are 0 an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p><p>If <code>leadout</code> is 0 and <code>toc</code> cannot be validated, an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown. If <code>leadout</code> is not 0 and <code>leadout</code> and <code>toc</code> cannot be validated as consistent with each other, an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__id.html#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_<wbr />arid(const TOC &amp;toc)</a></p><p><a href="group__id.html#gaed4e675a06b670b5aba8a86bc639ab0e" class="m-doc">make_<wbr />empty_<wbr />arid()</a></p></aside>
           </div></section>
           <section class="m-doc-details" id="gaed4e675a06b670b5aba8a86bc639ab0e"><div>
             <h3>
@@ -201,19 +204,21 @@
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>An empty <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a></td>
+                  <td>An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a></td>
                 </tr>
               </tfoot>
             </table>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="group__id.html#ga20f91434c1d6cf176f461551c56b0cc8" class="m-doc">make_<wbr />arid(const TOC &amp;toc, const uint32_<wbr />t leadout)</a></p><p><a href="group__id.html#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_<wbr />arid(const TOC &amp;toc)</a></p></aside>
           </div></section>
-          <section class="m-doc-details" id="gab77eaf15f7efe7582f0e4c437ac283db"><div>
+          <section class="m-doc-details" id="gaf01404ebf69f2cf3758138d66d3f8661"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gab77eaf15f7efe7582f0e4c437ac283db" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaf01404ebf69f2cf3758138d66d3f8661" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               const std::vector&lt;int32_t&gt;&amp; offsets,
-              const uint32_t leadout)</span></span>
+              const uint32_t leadout,
+              const std::vector&lt;std::string&gt;&amp; files)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
-            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</p>
+            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -231,11 +236,15 @@
                   <td>leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
                   <td>Leadout frame</td>
                 </tr>
+                <tr>
+                  <td>files&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>File name of each track</td>
+                </tr>
               </tbody>
               <thead>
                 <tr>
                   <th>Returns</th>
-                  <td>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object representing the specified information</td>
+                  <td>A complete() <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object representing the specified information</td>
                 </tr>
               </thead>
               <thead>
@@ -244,11 +253,11 @@
               <tbody>
                 <tr>
                   <td>None</td>
-                  <td>If the input data forms no valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a></td>
+                  <td>If the input data forms no valid and complete() <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a></td>
                 </tr>
               </tbody>
             </table>
-<p>The input data is validated and the returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is guaranteed to be complete.</p>
+<p>The input data is validated and the returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is guaranteed to be complete().</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__id.html#ga446270fecf003a18d08d6bab9619f71c" class="m-doc">make_<wbr />toc() with lengths instead of leadout</a></p></aside><aside class="m-note m-dim"><h4><a href="todo.html#_todo000002" class="m-doc">Todo</a></h4><p>The <a href="group__id.html#gaf01404ebf69f2cf3758138d66d3f8661" class="m-doc">make_<wbr />toc()</a> function requiring a leadout does not accept a leadout of 0. This behaviour is different from <a href="group__id.html#gaf01404ebf69f2cf3758138d66d3f8661" class="m-doc">make_<wbr />toc()</a> with lengths, where the last length is allowed to be 0. It is sensible to not enforce completeness if no leadout is known. But it is inconsistent insofar as the client may never create an incomplete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> by using leadout 0, only by using a length of 0 for the last track. It&#x27;s reasonable but inconsistent.</p></aside>
           </div></section>
           <section class="m-doc-details" id="ga446270fecf003a18d08d6bab9619f71c"><div>
             <h3>
@@ -297,7 +306,7 @@
                 </tr>
               </tbody>
             </table>
-<p>The input data is validated, but the length of the last track is allowed to be 0. The returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore <strong>not</strong> guaranteed to be complete.</p>
+<aside class="m-note m-info"><h4>Note</h4><p>The input data is validated but the length of the last track is allowed to be 0. The returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore <em>not</em> guaranteed to be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>. If the length of the last track is a valid value, the resulting <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> will be complete() though.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="group__id.html#gaf01404ebf69f2cf3758138d66d3f8661" class="m-doc">make_toc(const TrackNo, const std::<wbr />vector&lt;int32_t&gt;&amp;, const uint32_t, const std::<wbr />vector&lt;std::<wbr />string&gt;&amp;)</a> <a href="group__id.html#gaf01404ebf69f2cf3758138d66d3f8661" class="m-doc">make_<wbr />toc</a> with leadout instead of lengths</p></aside>
           </div></section>
         </section>
       </div>
@@ -344,7 +353,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

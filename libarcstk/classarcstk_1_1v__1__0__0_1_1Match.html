@@ -47,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>Match <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::Match <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="match_8hpp.html">&lt;match.hpp&gt;</a></div>
         </h1>
         <p>Interface: Result of matching <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
@@ -315,7 +315,7 @@
                 </tr>
               </tbody>
             </table>
-<aside class="m-block m-note"><h3>Note:</h3><p>What a concrete match means is dependent from the logic the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> used. The call <code>myMatch.value(0,17,true)</code> refers to the ARCSv2 of track 18 in the first block. If this call returns <code>true</code>, track 18 in the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> was matched by the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>. Whether this indicates that track 18 of the current <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> caused the match is implementation defined. If the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> was calculated by an <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>, track 18 of the input <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> will only be matched against track 18 in each block. A <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> will just indicate that <em>one</em> of the input checksums matched track 18.</p></aside>
+<aside class="m-note m-info"><h4>Note</h4><p>What a concrete match means is dependent from the logic the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> used. The call <code>myMatch.value(0,17,true)</code> refers to the ARCSv2 of track 18 in the first block. If this call returns <code>true</code>, track 18 in the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> was matched by the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>. Whether this indicates that track 18 of the current <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> caused the match is implementation defined. If the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> was calculated by an <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>, track 18 of the input <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> will only be matched against track 18 in each block. A <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> on the other hand will just indicate that <em>one</em> of the input checksums matched track 18.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a739677a785c363f3b1f4d95b4c2de70a"><div>
             <h3>
@@ -353,7 +353,7 @@
                 </tr>
               </tbody>
             </table>
-<p>The difference is the number of ARCSs in <code>b</code> that do not match their corresponsing positions in the request. The difference is only of relevance iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of <code>b</code> matchs the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the request.</p><aside class="m-block m-note"><h3>Note:</h3><p>The concrete difference value may depend on the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implementation. For example, consider an album with 15 tracks. An <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with no track matching and a different <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> will be a difference of 16 assigned if the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> is produced by an <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>. A <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> ignores the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> and hence it does not contribute to the difference. But therefore, the exact same <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> will have a difference of only 15.</p></aside>
+<p>The difference is the number of ARCSs in <code>b</code> that do not match their corresponsing positions in the request. The difference is only of relevance iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of <code>b</code> matchs the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the request.</p><aside class="m-note m-info"><h4>Note</h4><p>The concrete difference value may depend on the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implementation. For example, consider an album with 15 tracks. An <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with no track matching and a different <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> will be a difference of 16 assigned if the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> is produced by an <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>. A <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> ignores the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> and hence it does not contribute to the difference. But therefore, the exact same <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> will have a difference of only 15.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a2c849997734366b0ec0f3d569c8e3fdf"><div>
             <h3>
@@ -398,7 +398,7 @@
                 </tr>
               </tfoot>
             </table>
-<aside class="m-block m-note"><h3>Note:</h3><p>The size of a <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> with a number <svg class="m-math" style="width: 0.518em; height: 0.865em; vertical-align: -0.000em;" viewBox="0 -8.302191 4.977105 8.302191">
+<aside class="m-note m-info"><h4>Note</h4><p>The size of a <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> with a number <svg class="m-math" style="width: 0.518em; height: 0.865em; vertical-align: -0.000em;" viewBox="0 -8.302191 4.977105 8.302191">
 <title>
 $b$
 </title>
@@ -748,7 +748,7 @@ $+1$
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

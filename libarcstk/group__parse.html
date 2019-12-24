@@ -48,6 +48,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           AccurateRip Response Parser <span class="m-thin">module</span></h1>
+        <p>Parse an AccurateRip HTTP-response to an object representation.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -59,13 +60,14 @@
             </li>
           </ul>
         </div>
+<p>An <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> push-parses the binary content of a HTTP-response from AccurateRip and emits a series of events. There are two default implementations of <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> provided, <a href="classarcstk_1_1v__1__0__0_1_1ARFileParser.html" class="m-doc">ARFileParser</a> and <a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">ARStdinParser</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ARFileParser.html" class="m-doc">ARFileParser</a> parses files obtained by just saving the payload of the AccurateRip response to a (binary) file. <a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">ARStdinParser</a> parses stdin for this payload instead of a file. It can be used for parsing piped input.</p><p>For handling the emitted events, an <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> can be registered two types of handlers to, a <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> and an <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>. Both have default implementations as there are <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a> and <a href="classarcstk_1_1v__1__0__0_1_1DefaultErrorHandler.html" class="m-doc">DefaultErrorHandler</a>. <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a> just populates an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> object that represents the parsed information. <a href="classarcstk_1_1v__1__0__0_1_1DefaultErrorHandler.html" class="m-doc">DefaultErrorHandler</a> just logs the error position along with an error message and throws a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a>.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> is also thrown by an <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> when the input byte stream ends prematurely or is corrupted in a way the parser can recognize. It contains exact information about the stream-relative as well as the block-relative error position and a human-readable error message.</p><p>If no exceptional situation occurrs, the <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a> populates an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> with the parsed information. An <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> represents the entire content data from an AccurateRip HTTP-response. It is composed of a sequence of <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlocks</a> of which each is composed of a leading <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> followed by a sequence of ARTriplets, one for each track.</p><p>While an <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> represents thus a single checksum profile for a compact disc pressing an <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> represents the AccurateRip information for a single track in this pressing. Each <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> contains an ARCSv1 or ARCSv2 checksum value, a confidence value and a check value to identify the pressing.</p><aside class="m-note m-info"><h4>Note</h4><p>There is no way to inform the client whether the ARCS is v1 or v2. The AccurateRip response does not distinguish blocks of ARCSv1 from blocks of ARCSv2 and provides no information about the concrete checksum algorithm. A block of ARCSv1 is considered just an information about another pressing of an album.</p></aside>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">arcstk::v_1_0_0::ARTriplet</a>
             </dt>
-            <dd>A track-related triplet of values from a block in an AccurateRip response.</dd>
+            <dd>A triplet of values describing a particular track in an AccurateRip response.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">arcstk::v_1_0_0::ARBlock</a>
             </dt>
@@ -73,7 +75,7 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">arcstk::v_1_0_0::ARResponse</a>
             </dt>
-            <dd>Response content from AccurateRip.</dd>
+            <dd>Response content from AccurateRip when responding to an request for an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">arcstk::v_1_0_0::ContentHandler</a>
             </dt>
@@ -81,7 +83,7 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">arcstk::v_1_0_0::DefaultContentHandler</a>
             </dt>
-            <dd>Constructs an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance from parsed content.</dd>
+            <dd>Populates an existing <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance by parsed content.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">arcstk::v_1_0_0::ErrorHandler</a>
             </dt>
@@ -89,7 +91,7 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1DefaultErrorHandler.html" class="m-doc">arcstk::v_1_0_0::DefaultErrorHandler</a>
             </dt>
-            <dd>Logs error information to stdout.</dd>
+            <dd>Logs error information and throws a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> on errors.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">arcstk::v_1_0_0::StreamReadException</a>
             </dt>
@@ -97,11 +99,11 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">arcstk::v_1_0_0::ARStreamParser</a>
             </dt>
-            <dd>Abstract base class for parsing an AccurateRip response.</dd>
+            <dd>Abstract base class for parsing the content of an AccurateRip HTTP-response.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARFileParser.html" class="m-doc">arcstk::v_1_0_0::ARFileParser</a>
             </dt>
-            <dd>Parser for AccurateRip response as a file.</dd>
+            <dd>Parser for dBAR-*.bin files.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">arcstk::v_1_0_0::ARStdinParser</a>
             </dt>
@@ -152,7 +154,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

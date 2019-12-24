@@ -47,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>ARId <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::ARId <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
         </h1>
         <p>AccurateRip-Identifier of a compact disc.</p>
@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> determines the URL of the compact disc dataset as well as the standard filename of the AccurateRip response.</p>
+<p>The AccurateRip identifier determines the URL of the compact disc dataset as well as the standard filename of the AccurateRip response.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARIds</a> can be constructed either from three precomputed ids or from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> using function <a href="group__id.html#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_<wbr />arid()</a>.</p><p>In some cases, an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is syntactically required, but semantically superflous. An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> can be <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> to indicate that it carries no identifier. An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> that qualifies as <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> can be constructed by <a href="group__id.html#gaed4e675a06b670b5aba8a86bc639ab0e" class="m-doc">make_<wbr />empty_<wbr />arid()</a>.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -132,7 +132,7 @@
             </dt>
             <dd>Returns TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> holds identical values as <code>rhs</code>, otherwise FALSE.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa196d62200de1a2ab169f7945b21776c" class="m-doc">operator !=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#afaf827b64338e39148c2f4e27b128e79" class="m-doc">operator!=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const -&gt; bool</span>
             </dt>
             <dd>Returns TRUE if this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> does not holds identical values as <code>rhs</code>, otherwise FALSE.</dd>
             <dt>
@@ -362,9 +362,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="aa196d62200de1a2ab169f7945b21776c"><div>
+          <section class="m-doc-details" id="afaf827b64338e39148c2f4e27b128e79"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa196d62200de1a2ab169f7945b21776c" class="m-doc-self">operator !=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afaf827b64338e39148c2f4e27b128e79" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const</span></span>
             </h3>
             <p>Returns TRUE if this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> does not holds identical values as <code>rhs</code>, otherwise FALSE.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -476,7 +476,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

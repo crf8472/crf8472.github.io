@@ -47,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>ErrorHandler <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::ErrorHandler <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parse_8hpp.html">&lt;parse.hpp&gt;</a></div>
         </h1>
         <p>Interface for <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> error handlers.</p>
@@ -65,14 +65,14 @@
             </li>
           </ul>
         </div>
-<p>Defines the handler methods to react on parse errors of an <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>.</p>
+<p>Add actual behaviour to an <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>. A concrete subclass of <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> implements the handling of parse errors the <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> signals.</p><aside class="m-note m-info"><h4>Note</h4><p>The AccurateRip reference data is binary data without any meta information for consistency. Hence there is no perspective to sanitize the stream or proceed the parsing process after an exception occurred. An <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> is a mere interceptor for a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> before it is rethrown anyway. This provides the convenience to get informative log messages by intercepting the exceptions like <a href="classarcstk_1_1v__1__0__0_1_1DefaultErrorHandler.html" class="m-doc">DefaultErrorHandler</a> does.</p></aside>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1DefaultErrorHandler.html" class="m-doc">DefaultErrorHandler</a> <span class="m-label m-flat m-warning">final</span>
+              class <a href="classarcstk_1_1v__1__0__0_1_1DefaultErrorHandler.html" class="m-doc">v_1_0_0::DefaultErrorHandler</a> <span class="m-label m-flat m-warning">final</span>
             </dt>
-            <dd>Logs error information to stdout.</dd>
+            <dd>Logs error information and throws a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> on errors.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -92,7 +92,7 @@
               const uint32_t block,
               const uint32_t block_byte_pos)</span>
             </dt>
-            <dd>Error notification.</dd>
+            <dd>Error notification with global and block-relative position.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a911ad7c9faece8cc6e3b755304e3b356" class="m-doc">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>&gt;</span>
             </dt>
@@ -107,7 +107,7 @@
               const uint32_t block,
               const uint32_t block_byte_pos) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Error notification.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html#abe5f3bdb2a5bb59b047d96220e00bfa1" class="m-doc">error()</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a395dd6d584aff9260fc033dfcea2677b" class="m-doc">do_clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -122,7 +122,7 @@
               const uint32_t block,
               const uint32_t block_byte_pos)</span></span>
             </h3>
-            <p>Error notification.</p>
+            <p>Error notification with global and block-relative position.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -130,7 +130,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">byte_pos&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Last 1-based byte pos read before error</td>
+                  <td>Last 1-based global byte pos read before error</td>
                 </tr>
                 <tr>
                   <td>block&nbsp;<span class="m-label m-flat m-info">in</span></td>
@@ -142,6 +142,7 @@
                 </tr>
               </tbody>
             </table>
+<aside class="m-note m-warning"><h4>Attention</h4><p>The byte positions are all interpreted as 1-based.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a911ad7c9faece8cc6e3b755304e3b356"><div>
             <h3>
@@ -164,7 +165,7 @@
               const uint32_t block,
               const uint32_t block_byte_pos) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Error notification.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html#abe5f3bdb2a5bb59b047d96220e00bfa1" class="m-doc">error()</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -172,7 +173,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">byte_pos&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Last 1-based byte pos read before error</td>
+                  <td>Last 1-based global byte pos read before error</td>
                 </tr>
                 <tr>
                   <td>block&nbsp;<span class="m-label m-flat m-info">in</span></td>
@@ -245,7 +246,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.15 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
