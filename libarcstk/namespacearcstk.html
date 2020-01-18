@@ -103,7 +103,7 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">v_1_0_0::ARResponse</a>
             </dt>
-            <dd>Response content from AccurateRip when responding to an request for an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
+            <dd>Response content from AccurateRip when responding to an request.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">v_1_0_0::ARStdinParser</a>
             </dt>
@@ -111,7 +111,7 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">v_1_0_0::ARStreamParser</a>
             </dt>
-            <dd>Abstract base class for parsing the content of an AccurateRip HTTP-response.</dd>
+            <dd>Abstract base for parsing the content of an AccurateRip HTTP-response.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">v_1_0_0::ARTriplet</a>
             </dt>
@@ -151,11 +151,11 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">v_1_0_0::DefaultContentHandler</a>
             </dt>
-            <dd>Populates an existing <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance by parsed content.</dd>
+            <dd>Populates an existing <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1DefaultErrorHandler.html" class="m-doc">v_1_0_0::DefaultErrorHandler</a>
             </dt>
-            <dd>Logs error information and throws a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> on errors.</dd>
+            <dd>Logs every error and throws <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> afterwards.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">v_1_0_0::ErrorHandler</a>
             </dt>
@@ -163,11 +163,11 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1InvalidAudioException.html" class="m-doc">v_1_0_0::InvalidAudioException</a>
             </dt>
-            <dd>Reports insufficient or invalid audio data.</dd>
+            <dd>Reports invalid audio data.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">v_1_0_0::InvalidMetadataException</a>
             </dt>
-            <dd>Reports insufficient or invalid metadata for building a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dd>Reports invalid metadata for building a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Log.html" class="m-doc">v_1_0_0::Log</a>
             </dt>
@@ -252,6 +252,36 @@
               using <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_count</a> = uint32_t
             </dt>
             <dd>Type to represent amounts of LBA frames.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="group__id.html#ga28c70d26575082eb26977b82e8212261" class="m-doc">HasSize</a> = std::enable_if_t&lt;details::has_size&lt;std::remove_reference_t&lt;T&gt;&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T has <code>size const()</code></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="group__id.html#ga9868d79c45b2e60d0ece457ec31f59db" class="m-doc">HasBegin</a> = std::enable_if_t&lt;details::has_begin&lt;std::remove_reference_t&lt;T&gt;&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T has <code>begin const()</code></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="group__id.html#ga04755442622618a05a676375f38bc2bb" class="m-doc">IsLBAType</a> = std::enable_if_t&lt;details::is_lba_type&lt;T&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T is an lba type.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="group__id.html#gab1f9b235e9cb260c98da10cc451e1fed" class="m-doc">IsLBAContainer</a> = std::enable_if_t&lt;details::is_lba_container&lt;T&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T is an lba container.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="group__id.html#gae7a0bc41f63e2f238c88258f38ce9c45" class="m-doc">IsFilenameType</a> = std::enable_if_t&lt;details::is_filename_type&lt;T&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T is a filename type.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="group__id.html#ga2950d38e87c7f71748c7e750a7878074" class="m-doc">IsFilenameContainer</a> = std::enable_if_t&lt;details::is_filename_container&lt;T&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T is a const-iterable container of filenames.</dd>
           </dl>
         </section>
         <section id="func-members">
@@ -282,14 +312,14 @@
             </dt>
             <dd>Creates an empty <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsFilenameContainer&lt;Container2&gt;&gt;</div>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename = IsLBAContainer&lt;Container1&gt;, typename = IsFilenameContainer&lt;Container2&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga3c06bf85d3c72577ff71c2d573034612" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const Container1&amp;&amp; offsets,
               const uint32_t leadout,
               Container2&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsFilenameContainer&lt;Container2&gt;&gt;</div>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename = IsLBAContainer&lt;Container1&gt;, typename = IsFilenameContainer&lt;Container2&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga2b14fb81b1dc220201902702304885ef" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
               Container1&amp;&amp; offsets,
               const uint32_t leadout,
@@ -297,14 +327,14 @@
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename Container3, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsLBAContainer&lt;Container2&gt;, typename = details::IsFilenameContainer&lt;Container3&gt;&gt;</div>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename Container3, typename = IsLBAContainer&lt;Container1&gt;, typename = IsLBAContainer&lt;Container2&gt;, typename = IsFilenameContainer&lt;Container3&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga0c012dd3468ada7ebf5f25f9b3079a99" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">Container1&amp;&amp; offsets,
               Container2&amp;&amp; lengths,
               Container3&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename Container3, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsLBAContainer&lt;Container2&gt;, typename = details::IsFilenameContainer&lt;Container3&gt;&gt;</div>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename Container3, typename = IsLBAContainer&lt;Container1&gt;, typename = IsLBAContainer&lt;Container2&gt;, typename = IsFilenameContainer&lt;Container3&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gab5ec2f9289d71c9dea26d386424b4da8" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
               Container1&amp;&amp; offsets,
               Container2&amp;&amp; lengths,
@@ -312,7 +342,7 @@
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Container, typename = details::IsLBAContainer&lt;Container&gt;&gt;</div>
+              <div class="m-doc-template">template&lt;typename Container, typename = IsLBAContainer&lt;Container&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga131d74f1cc3b39a0c7cf48603a9d9ded" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
               Container&amp;&amp; offsets,
               const uint32_t leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>

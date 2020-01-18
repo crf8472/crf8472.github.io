@@ -57,6 +57,7 @@
               <ul>
                 <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
                 <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
@@ -84,11 +85,46 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">arcstk::v_1_0_0::InvalidMetadataException</a>
             </dt>
-            <dd>Reports insufficient or invalid metadata for building a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dd>Reports invalid metadata for building a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1NonstandardMetadataException.html" class="m-doc">arcstk::v_1_0_0::NonstandardMetadataException</a>
             </dt>
             <dd>Reports metadata violating the redbook standard.</dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#ga28c70d26575082eb26977b82e8212261" class="m-doc">HasSize</a> = std::enable_if_t&lt;details::has_size&lt;std::remove_reference_t&lt;T&gt;&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T has <code>size const()</code></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#ga9868d79c45b2e60d0ece457ec31f59db" class="m-doc">HasBegin</a> = std::enable_if_t&lt;details::has_begin&lt;std::remove_reference_t&lt;T&gt;&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T has <code>begin const()</code></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#ga04755442622618a05a676375f38bc2bb" class="m-doc">IsLBAType</a> = std::enable_if_t&lt;details::is_lba_type&lt;T&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T is an lba type.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#gab1f9b235e9cb260c98da10cc451e1fed" class="m-doc">IsLBAContainer</a> = std::enable_if_t&lt;details::is_lba_container&lt;T&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T is an lba container.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#gae7a0bc41f63e2f238c88258f38ce9c45" class="m-doc">IsFilenameType</a> = std::enable_if_t&lt;details::is_filename_type&lt;T&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T is a filename type.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#ga2950d38e87c7f71748c7e750a7878074" class="m-doc">IsFilenameContainer</a> = std::enable_if_t&lt;details::is_filename_container&lt;T&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T is a const-iterable container of filenames.</dd>
           </dl>
         </section>
         <section id="func-members">
@@ -108,14 +144,14 @@
             </dt>
             <dd>Creates an empty <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsFilenameContainer&lt;Container2&gt;&gt;</div>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename = IsLBAContainer&lt;Container1&gt;, typename = IsFilenameContainer&lt;Container2&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#ga3c06bf85d3c72577ff71c2d573034612" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const Container1&amp;&amp; offsets,
               const uint32_t leadout,
               Container2&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsFilenameContainer&lt;Container2&gt;&gt;</div>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename = IsLBAContainer&lt;Container1&gt;, typename = IsFilenameContainer&lt;Container2&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#ga2b14fb81b1dc220201902702304885ef" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               Container1&amp;&amp; offsets,
               const uint32_t leadout,
@@ -123,14 +159,14 @@
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename Container3, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsLBAContainer&lt;Container2&gt;, typename = details::IsFilenameContainer&lt;Container3&gt;&gt;</div>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename Container3, typename = IsLBAContainer&lt;Container1&gt;, typename = IsLBAContainer&lt;Container2&gt;, typename = IsFilenameContainer&lt;Container3&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#ga0c012dd3468ada7ebf5f25f9b3079a99" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">Container1&amp;&amp; offsets,
               Container2&amp;&amp; lengths,
               Container3&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename Container3, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsLBAContainer&lt;Container2&gt;, typename = details::IsFilenameContainer&lt;Container3&gt;&gt;</div>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename Container3, typename = IsLBAContainer&lt;Container1&gt;, typename = IsLBAContainer&lt;Container2&gt;, typename = IsFilenameContainer&lt;Container3&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#gab5ec2f9289d71c9dea26d386424b4da8" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               Container1&amp;&amp; offsets,
               Container2&amp;&amp; lengths,
@@ -138,13 +174,76 @@
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename Container, typename = details::IsLBAContainer&lt;Container&gt;&gt;</div>
+              <div class="m-doc-template">template&lt;typename Container, typename = IsLBAContainer&lt;Container&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#ga131d74f1cc3b39a0c7cf48603a9d9ded" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               Container&amp;&amp; offsets,
               const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
             <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
           </dl>
+        </section>
+        <section>
+          <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="ga28c70d26575082eb26977b82e8212261"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#ga28c70d26575082eb26977b82e8212261" class="m-doc-self">HasSize</a> = std::enable_if_t&lt;details::has_size&lt;std::remove_reference_t&lt;T&gt;&gt;::value&gt;
+            </h3>
+            <p>Defined iff T has <code>size const()</code></p>
+          </div></section>
+          <section class="m-doc-details" id="ga9868d79c45b2e60d0ece457ec31f59db"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#ga9868d79c45b2e60d0ece457ec31f59db" class="m-doc-self">HasBegin</a> = std::enable_if_t&lt;details::has_begin&lt;std::remove_reference_t&lt;T&gt;&gt;::value&gt;
+            </h3>
+            <p>Defined iff T has <code>begin const()</code></p>
+          </div></section>
+          <section class="m-doc-details" id="ga04755442622618a05a676375f38bc2bb"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#ga04755442622618a05a676375f38bc2bb" class="m-doc-self">IsLBAType</a> = std::enable_if_t&lt;details::is_lba_type&lt;T&gt;::value&gt;
+            </h3>
+            <p>Defined iff T is an lba type.</p>
+          </div></section>
+          <section class="m-doc-details" id="gab1f9b235e9cb260c98da10cc451e1fed"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#gab1f9b235e9cb260c98da10cc451e1fed" class="m-doc-self">IsLBAContainer</a> = std::enable_if_t&lt;details::is_lba_container&lt;T&gt;::value&gt;
+            </h3>
+            <p>Defined iff T is an lba container.</p>
+          </div></section>
+          <section class="m-doc-details" id="gae7a0bc41f63e2f238c88258f38ce9c45"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#gae7a0bc41f63e2f238c88258f38ce9c45" class="m-doc-self">IsFilenameType</a> = std::enable_if_t&lt;details::is_filename_type&lt;T&gt;::value&gt;
+            </h3>
+            <p>Defined iff T is a filename type.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga2950d38e87c7f71748c7e750a7878074"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#ga2950d38e87c7f71748c7e750a7878074" class="m-doc-self">IsFilenameContainer</a> = std::enable_if_t&lt;details::is_filename_container&lt;T&gt;::value&gt;
+            </h3>
+            <p>Defined iff T is a const-iterable container of filenames.</p>
+          </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
@@ -241,7 +340,7 @@
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
               <div class="m-doc-template">
-                template&lt;typename Container1, typename Container2, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsFilenameContainer&lt;Container2&gt;&gt;
+                template&lt;typename Container1, typename Container2, typename = IsLBAContainer&lt;Container1&gt;, typename = IsFilenameContainer&lt;Container2&gt;&gt;
               </div>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga3c06bf85d3c72577ff71c2d573034612" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">const Container1&amp;&amp; offsets,
               const uint32_t leadout,
@@ -301,7 +400,7 @@
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
               <div class="m-doc-template">
-                template&lt;typename Container1, typename Container2, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsFilenameContainer&lt;Container2&gt;&gt;
+                template&lt;typename Container1, typename Container2, typename = IsLBAContainer&lt;Container1&gt;, typename = IsFilenameContainer&lt;Container2&gt;&gt;
               </div>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga2b14fb81b1dc220201902702304885ef" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               Container1&amp;&amp; offsets,
@@ -366,7 +465,7 @@
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
               <div class="m-doc-template">
-                template&lt;typename Container1, typename Container2, typename Container3, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsLBAContainer&lt;Container2&gt;, typename = details::IsFilenameContainer&lt;Container3&gt;&gt;
+                template&lt;typename Container1, typename Container2, typename Container3, typename = IsLBAContainer&lt;Container1&gt;, typename = IsLBAContainer&lt;Container2&gt;, typename = IsFilenameContainer&lt;Container3&gt;&gt;
               </div>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga0c012dd3468ada7ebf5f25f9b3079a99" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">Container1&amp;&amp; offsets,
               Container2&amp;&amp; lengths,
@@ -430,7 +529,7 @@
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
               <div class="m-doc-template">
-                template&lt;typename Container1, typename Container2, typename Container3, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsLBAContainer&lt;Container2&gt;, typename = details::IsFilenameContainer&lt;Container3&gt;&gt;
+                template&lt;typename Container1, typename Container2, typename Container3, typename = IsLBAContainer&lt;Container1&gt;, typename = IsLBAContainer&lt;Container2&gt;, typename = IsFilenameContainer&lt;Container3&gt;&gt;
               </div>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gab5ec2f9289d71c9dea26d386424b4da8" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               Container1&amp;&amp; offsets,
@@ -499,7 +598,7 @@
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
               <div class="m-doc-template">
-                template&lt;typename Container, typename = details::IsLBAContainer&lt;Container&gt;&gt;
+                template&lt;typename Container, typename = IsLBAContainer&lt;Container&gt;&gt;
               </div>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga131d74f1cc3b39a0c7cf48603a9d9ded" class="m-doc-self">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               Container&amp;&amp; offsets,
