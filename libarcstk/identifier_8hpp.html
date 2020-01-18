@@ -58,6 +58,9 @@
               <ul>
                 <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#var-members">Variables</a></li>
               </ul>
             </li>
           </ul>
@@ -92,6 +95,103 @@
               class <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">arcstk::v_1_0_0::InvalidMetadataException</a>
             </dt>
             <dd>Reports insufficient or invalid metadata for building a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1NonstandardMetadataException.html" class="m-doc">arcstk::v_1_0_0::NonstandardMetadataException</a>
+            </dt>
+            <dd>Reports metadata violating the redbook standard.</dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              using <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> = int
+            </dt>
+            <dd>Data type for track numbers.</dd>
+            <dt>
+              using <a href="group__calc.html#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">sample_type</a> = uint32_t
+            </dt>
+            <dd>Type to represent a PCM 32 bit sample (2 channels x 16 bit).</dd>
+            <dt>
+              using <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_count</a> = uint32_t
+            </dt>
+            <dd>Type to represent amounts of LBA frames.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga20f91434c1d6cf176f461551c56b0cc8" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TOC&amp; toc,
+              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a specified leadout.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gaed4e675a06b670b5aba8a86bc639ab0e" class="m-doc">make_empty_arid</a>(</span><span class="m-doc-wrap">) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Creates an empty <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a3a4b97641cd0e1b384e351a6fb3cec98" class="m-doc">get_offsets</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::vector&lt;uint32_t&gt;</span>
+            </dt>
+            <dd>Extract the offsets from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> to an iterable container.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#aa0f4e62a0b164fb6e3d8c3d72be93523" class="m-doc">get_parsed_lengths</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::vector&lt;uint32_t&gt;</span>
+            </dt>
+            <dd>Extract parsed lengths from <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> in order.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a97ba1d86d71aa13b6992ec5ac0ebb72d" class="m-doc">get_filenames</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::vector&lt;std::string&gt;</span>
+            </dt>
+            <dd>Extract filenames from <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> in order.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsFilenameContainer&lt;Container2&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga3c06bf85d3c72577ff71c2d573034612" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const Container1&amp;&amp; offsets,
+              const uint32_t leadout,
+              Container2&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
+            </dt>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsFilenameContainer&lt;Container2&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga2b14fb81b1dc220201902702304885ef" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              Container1&amp;&amp; offsets,
+              const uint32_t leadout,
+              Container2&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
+            </dt>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename Container3, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsLBAContainer&lt;Container2&gt;, typename = details::IsFilenameContainer&lt;Container3&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga0c012dd3468ada7ebf5f25f9b3079a99" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">Container1&amp;&amp; offsets,
+              Container2&amp;&amp; lengths,
+              Container3&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
+            </dt>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container1, typename Container2, typename Container3, typename = details::IsLBAContainer&lt;Container1&gt;, typename = details::IsLBAContainer&lt;Container2&gt;, typename = details::IsFilenameContainer&lt;Container3&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gab5ec2f9289d71c9dea26d386424b4da8" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              Container1&amp;&amp; offsets,
+              Container2&amp;&amp; lengths,
+              Container3&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
+            </dt>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container, typename = details::IsLBAContainer&lt;Container&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga131d74f1cc3b39a0c7cf48603a9d9ded" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              Container&amp;&amp; offsets,
+              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+          </dl>
+        </section>
+        <section id="var-members">
+          <h2><a href="#var-members">Variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              const CDDA_t <a href="group__calc.html#ga63dc68f83fc9026d3d2884d70dba896a" class="m-doc">CDDA</a>
+            </dt>
+            <dd>Global instance of the CDDA constants.</dd>
           </dl>
         </section>
       </div>
@@ -138,7 +238,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

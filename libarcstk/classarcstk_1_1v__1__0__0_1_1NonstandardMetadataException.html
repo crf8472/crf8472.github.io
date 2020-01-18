@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AccurateRip Checksum Matching module | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
+  <title>arcstk::v_1_0_0::NonstandardMetadataException class | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -47,40 +47,71 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          AccurateRip Checksum Matching <span class="m-thin">module</span></h1>
-        <p><a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> local <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">AccurateRip response</a>.</p>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::NonstandardMetadataException <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+        </h1>
+        <p>Reports metadata violating the redbook standard.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> provides an interface to match the ARCSs of some audio input against a response from AccurateRip.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> returns a <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> that represents a matrix of numeric comparisons: the result of matching the <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> to each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p><p>While <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implements the comparison strategy, the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> implements the result of the comparison.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Match.html#ae3f4edc3e4d2b9f21bc8c2af77d3ba74" class="m-doc">Match::<wbr />track(block, track, isV2)</a> provides access to any single comparison by its block index, track index and ARCS algorithm version.</p><p>Provided are two <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implementations.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> matches each checksum in a list of track-based <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against the value of the corresponding track in each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> of the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. This implements the verification process of a complete disc image. <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> requires an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> and respects it in the match against the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> matches a set of file-based <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> by trying to match each of the <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against <em>each</em> of the sums in each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>. It is used for matching a set of track files in arbitrary order. An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is optional.</p>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+<p>Violating the redbook standard is usually not a problem for calculating checksums. A common case are unusual lengths, as for example up to 99 minutes.</p><aside class="m-note m-dim"><h4><a href="todo.html#_todo000002" class="m-doc">Todo</a></h4><p>Metadata files are usually parsed text files, hence position information about the error may be useful.</p></aside>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">arcstk::v_1_0_0::Match</a>
+              <span class="m-doc-wrap-bumper"><a href="#a83803bd2a2803cfb9f3aac67c07a3839" class="m-doc">NonstandardMetadataException</a>(</span><span class="m-doc-wrap">const std::string&amp; what_arg) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
-            <dd>Interface: Result of matching <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</dd>
+            <dd>Constructor.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">arcstk::v_1_0_0::Matcher</a>
+              <span class="m-doc-wrap-bumper"><a href="#aa8ba23af4eb1fb1baf0017bb3d8ebce8" class="m-doc">NonstandardMetadataException</a>(</span><span class="m-doc-wrap">const char* what_arg) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
-            <dd>Interface: Try to <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against a specified <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</dd>
-            <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">arcstk::v_1_0_0::AlbumMatcher</a>
-            </dt>
-            <dd><a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> an album track list against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</dd>
-            <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">arcstk::v_1_0_0::TracksetMatcher</a>
-            </dt>
-            <dd><a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> an arbitrary set of tracks against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</dd>
+            <dd>Constructor.</dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a83803bd2a2803cfb9f3aac67c07a3839"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />NonstandardMetadataException::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a83803bd2a2803cfb9f3aac67c07a3839" class="m-doc-self">NonstandardMetadataException</a>(</span><span class="m-doc-wrap">const std::string&amp; what_arg) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <p>Constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">what_arg&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>What argument</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa8ba23af4eb1fb1baf0017bb3d8ebce8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />NonstandardMetadataException::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa8ba23af4eb1fb1baf0017bb3d8ebce8" class="m-doc-self">NonstandardMetadataException</a>(</span><span class="m-doc-wrap">const char* what_arg) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <p>Constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">what_arg&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>What argument</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

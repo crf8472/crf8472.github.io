@@ -58,11 +58,14 @@
               <ul>
                 <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#var-members">Variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>Represent metadata of a given compact disc image, the computed checksums of an audio file and the Checksums calculating class along with its configuration and state.</p><p>Basic data representation classes include TOC, Checksum and ChecksumSet.</p><p>TOC represents the toc information of a compact disc along with a function <a href="group__id.html#gaf01404ebf69f2cf3758138d66d3f8661" class="m-doc">make_<wbr />toc()</a> that guarantees to provide only valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a> or to throw an exception.</p><p>Checksum represents a single checksum and a ChecksumSet the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> for a single track.</p><p>Checksums is an aggregation of the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of an audio input.</p>
+<p>Represent metadata of a given compact disc image, the computed checksums of an audio file and the Checksums calculating class along with its configuration and state.</p><p>Basic data representation classes include TOC, Checksum and ChecksumSet.</p><p>TOC represents the toc information of a compact disc along with a function <a href="group__id.html#ga3c06bf85d3c72577ff71c2d573034612" class="m-doc">make_<wbr />toc()</a> that guarantees to provide only valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a> or to throw an exception.</p><p>Checksum represents a single checksum and a ChecksumSet the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> for a single track.</p><p>Checksums is an aggregation of the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of an audio input.</p>
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
@@ -85,6 +88,38 @@
               class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">arcstk::v_1_0_0::ChecksumSet</a>
             </dt>
             <dd>A set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances of different types for a single track.</dd>
+          </dl>
+        </section>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a144c029f3933d8fad46f8a60a621d190" class="m-doc">type</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#a144c029f3933d8fad46f8a60a621d190aa6346d325fe42527fe5070a2ab535603" class="m-doc">ARCS1</a> = 1,
+              <a href="#a144c029f3933d8fad46f8a60a621d190a48203509fe19e3dd087c1ad1e996b451" class="m-doc">ARCS2</a> = 2 }</span>
+            </dt>
+            <dd>Type IDs of the pre-defined checksum types.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#aef9c8dec9a31b781ec4b8338e59f0043" class="m-doc">type_name</a>(</span><span class="m-doc-wrap">type t) -&gt; std::string</span>
+            </dt>
+            <dd>Return the name of a <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a144c029f3933d8fad46f8a60a621d190" class="m-doc">checksum::<wbr />type</a>.</dd>
+          </dl>
+        </section>
+        <section id="var-members">
+          <h2><a href="#var-members">Variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              static const std::array&lt;std::string, 4&gt; <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#ac0c1c44b76a4ac8ed8e57d0576c13c3d" class="m-doc">names</a>
+            </dt>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> type names.</dd>
+            <dt>
+              static const type <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a291c6b8c3b3da678d697875d00290498" class="m-doc">types</a>
+            </dt>
+            <dd>Iterable sequence of all predefined checksum types.</dd>
           </dl>
         </section>
       </div>
@@ -131,7 +166,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.16 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
