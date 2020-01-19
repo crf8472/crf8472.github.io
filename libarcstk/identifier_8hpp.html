@@ -120,22 +120,22 @@
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               using <a href="group__id.html#ga04755442622618a05a676375f38bc2bb" class="m-doc">IsLBAType</a> = std::enable_if_t&lt;details::is_lba_type&lt;T&gt;::value&gt;
             </dt>
-            <dd>Defined iff T is an lba type.</dd>
+            <dd>Defined iff T is a numerical integer type of at least 32 bit size.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               using <a href="group__id.html#gab1f9b235e9cb260c98da10cc451e1fed" class="m-doc">IsLBAContainer</a> = std::enable_if_t&lt;details::is_lba_container&lt;T&gt;::value&gt;
             </dt>
-            <dd>Defined iff T is an lba container.</dd>
+            <dd>Defined iff T is a container whose value_type IsLBAType.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               using <a href="group__id.html#gae7a0bc41f63e2f238c88258f38ce9c45" class="m-doc">IsFilenameType</a> = std::enable_if_t&lt;details::is_filename_type&lt;T&gt;::value&gt;
             </dt>
-            <dd>Defined iff T is a filename type.</dd>
+            <dd>Defined iff T is a filename type, i.e. std::string or std::wstring.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               using <a href="group__id.html#ga2950d38e87c7f71748c7e750a7878074" class="m-doc">IsFilenameContainer</a> = std::enable_if_t&lt;details::is_filename_container&lt;T&gt;::value&gt;
             </dt>
-            <dd>Defined iff T is a const-iterable container of filenames.</dd>
+            <dd>Defined iff T is a container whose value_type IsFilenameType.</dd>
           </dl>
         </section>
         <section id="func-members">
@@ -204,9 +204,21 @@
             </dt>
             <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
             <dt>
+              <div class="m-doc-template">template&lt;typename LBAContainer, typename = IsLBAContainer&lt;LBAContainer&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga45e03cd94828865991ea8bd778b57adb" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
+              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gaeb30a214687d3213037ba947718a1af7" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               std::initializer_list&lt;T&gt; offsets,
+              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gaa9135137f8426ea7e9704d56e3abb89a" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;T&gt; offsets,
               const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
             <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
