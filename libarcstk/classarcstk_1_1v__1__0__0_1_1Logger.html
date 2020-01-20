@@ -89,21 +89,13 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a9d288ad61e863fb5f1fe05af462c2ec2" class="m-doc">set_timestamps</a>(</span><span class="m-doc-wrap">const bool&amp; onoff)</span>
-            </dt>
-            <dd>Activates or deactivates the output of timestamps.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3542f66f35bc1caac5d7c9eba84a1af5" class="m-doc">has_timestamps</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
-            </dt>
-            <dd>Returns TRUE iff this instance is configured to log timestamps.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">void <a href="#ada4b3fc8d5b2611fae4484735b548992" class="m-doc">add_appender</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&gt; appender)</span>
             </dt>
             <dd>Add an <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> to this <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#aa959fc3162ba1ef459a559506d93d178" class="m-doc">remove_appender</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>* appender)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3542f66f35bc1caac5d7c9eba84a1af5" class="m-doc">has_timestamps</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
             </dt>
-            <dd>Remove the given <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> from this <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>.</dd>
+            <dd>Returns TRUE iff this instance is configured to log timestamps.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a24f774d1654134b315c00d8d55fa28d7" class="m-doc">log</a>(</span><span class="m-doc-wrap">const std::string&amp; msg) const</span>
             </dt>
@@ -116,6 +108,14 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ad9938a42228e56dc14f3742429ad2f72" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Move assignment.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#aa959fc3162ba1ef459a559506d93d178" class="m-doc">remove_appender</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>* appender)</span>
+            </dt>
+            <dd>Remove the given <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> from this <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a9d288ad61e863fb5f1fe05af462c2ec2" class="m-doc">set_timestamps</a>(</span><span class="m-doc-wrap">const bool&amp; onoff)</span>
+            </dt>
+            <dd>Activates or deactivates the output of timestamps.</dd>
           </dl>
         </section>
         <section>
@@ -137,37 +137,6 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a9d288ad61e863fb5f1fe05af462c2ec2"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Logger::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d288ad61e863fb5f1fe05af462c2ec2" class="m-doc-self">set_timestamps</a>(</span><span class="m-doc-wrap">const bool&amp; onoff)</span></span>
-            </h3>
-            <p>Activates or deactivates the output of timestamps.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">onoff&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>TRUE activates the logging of timestamps for this logger</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a3542f66f35bc1caac5d7c9eba84a1af5"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Logger::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3542f66f35bc1caac5d7c9eba84a1af5" class="m-doc-self">has_timestamps</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Returns TRUE iff this instance is configured to log timestamps.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>TRUE iff this instance will log timestamps.</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="ada4b3fc8d5b2611fae4484735b548992"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Logger::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ada4b3fc8d5b2611fae4484735b548992" class="m-doc-self">add_appender</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&gt; appender)</span></span>
@@ -185,21 +154,18 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="aa959fc3162ba1ef459a559506d93d178"><div>
+          <section class="m-doc-details" id="a3542f66f35bc1caac5d7c9eba84a1af5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Logger::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa959fc3162ba1ef459a559506d93d178" class="m-doc-self">remove_appender</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>* appender)</span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Logger::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3542f66f35bc1caac5d7c9eba84a1af5" class="m-doc-self">has_timestamps</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Remove the given <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> from this <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>.</p>
+            <p>Returns TRUE iff this instance is configured to log timestamps.</p>
             <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
+              <tfoot>
                 <tr>
-                  <td style="width: 1%">appender&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>An <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> to remove</td>
+                  <th style="width: 1%">Returns</th>
+                  <td>TRUE iff this instance will log timestamps.</td>
                 </tr>
-              </tbody>
+              </tfoot>
             </table>
           </div></section>
           <section class="m-doc-details" id="a24f774d1654134b315c00d8d55fa28d7"><div>
@@ -240,6 +206,40 @@
                   <td>The instance after assignment</td>
                 </tr>
               </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa959fc3162ba1ef459a559506d93d178"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Logger::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa959fc3162ba1ef459a559506d93d178" class="m-doc-self">remove_appender</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>* appender)</span></span>
+            </h3>
+            <p>Remove the given <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> from this <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">appender&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>An <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> to remove</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9d288ad61e863fb5f1fe05af462c2ec2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Logger::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9d288ad61e863fb5f1fe05af462c2ec2" class="m-doc-self">set_timestamps</a>(</span><span class="m-doc-wrap">const bool&amp; onoff)</span></span>
+            </h3>
+            <p>Activates or deactivates the output of timestamps.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">onoff&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>TRUE activates the logging of timestamps for this logger</td>
+                </tr>
+              </tbody>
             </table>
           </div></section>
         </section>

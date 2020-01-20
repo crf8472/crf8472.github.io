@@ -69,27 +69,27 @@
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a138fe3ade48ad0d0913f3ab4931cd946" class="m-doc">to_string</a>(</span><span class="m-doc-wrap"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> level) -&gt; std::string</span>
-            </dt>
-            <dd>Turns a LOGLEVEL instance into a string representation.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">static auto <a href="#ac3cffb0dd18afa0ab020da02ce3e3b8b" class="m-doc">from_string</a>(</span><span class="m-doc-wrap">const std::string&amp; level) -&gt; <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a></span>
             </dt>
             <dd>Turns a string representation of the log level to a LOGLEVEL instance.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a138fe3ade48ad0d0913f3ab4931cd946" class="m-doc">to_string</a>(</span><span class="m-doc-wrap"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> level) -&gt; std::string</span>
+            </dt>
+            <dd>Turns a LOGLEVEL instance into a string representation.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
+            <dt id="ac162b4489f7e4bb51bfe3cf20ada1d72">
+              <span class="m-doc-wrap-bumper"><a href="#ac162b4489f7e4bb51bfe3cf20ada1d72" class="m-doc-self">Log</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Log.html" class="m-doc">Log</a>&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
+            </dt>
+            <dd>Class is non-copyable.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#ac89edd41f8b2a103c4b443dd19b061bd" class="m-doc">Log</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>&amp; logger,
               <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> msg_level)</span>
             </dt>
             <dd>Constructor.</dd>
-            <dt id="ac162b4489f7e4bb51bfe3cf20ada1d72">
-              <span class="m-doc-wrap-bumper"><a href="#ac162b4489f7e4bb51bfe3cf20ada1d72" class="m-doc-self">Log</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Log.html" class="m-doc">Log</a>&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd>Class is non-copyable.</dd>
             <dt id="a7adfb1ca79331a91d54b853777d9f955">
               <span class="m-doc-wrap-bumper"><a href="#a7adfb1ca79331a91d54b853777d9f955" class="m-doc-self">Log</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Log.html" class="m-doc">Log</a>&amp;&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
             </dt>
@@ -119,29 +119,6 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a138fe3ade48ad0d0913f3ab4931cd946"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">static std::string arcstk::<wbr />v_1_0_0::<wbr />Log::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a138fe3ade48ad0d0913f3ab4931cd946" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> level)</span></span>
-            </h3>
-            <p>Turns a LOGLEVEL instance into a string representation.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">level&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The log level to turn to a string</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>A string representation of the log level</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="ac3cffb0dd18afa0ab020da02ce3e3b8b"><div>
             <h3>
               <span class="m-doc-wrap-bumper">static <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> arcstk::<wbr />v_1_0_0::<wbr />Log::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac3cffb0dd18afa0ab020da02ce3e3b8b" class="m-doc-self">from_string</a>(</span><span class="m-doc-wrap">const std::string&amp; level)</span></span>
@@ -161,6 +138,29 @@
                 <tr>
                   <th>Returns</th>
                   <td>The log level represented by the string or the default log level</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a138fe3ade48ad0d0913f3ab4931cd946"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static std::string arcstk::<wbr />v_1_0_0::<wbr />Log::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a138fe3ade48ad0d0913f3ab4931cd946" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> level)</span></span>
+            </h3>
+            <p>Turns a LOGLEVEL instance into a string representation.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">level&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The log level to turn to a string</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>A string representation of the log level</td>
                 </tr>
               </tfoot>
             </table>

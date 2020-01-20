@@ -68,6 +68,14 @@
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#adcc881b33798da779a5ef035030d6957" class="m-doc">ARTriplet</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Move constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#aa4890590d9d6f1c3b1c4cc76f7619457" class="m-doc">ARTriplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs)</span>
+            </dt>
+            <dd>Copy constructor.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#ad5cdcd957b0b3ee75f89195fbc5280a0" class="m-doc">ARTriplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
               const uint32_t confidence,
               const uint32_t frame450_arcs)</span>
@@ -82,14 +90,6 @@
               const bool frame450_arcs_valid)</span>
             </dt>
             <dd>Constructor.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#aa4890590d9d6f1c3b1c4cc76f7619457" class="m-doc">ARTriplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs)</span>
-            </dt>
-            <dd>Copy constructor.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#adcc881b33798da779a5ef035030d6957" class="m-doc">ARTriplet</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Move constructor.</dd>
             <dt id="a6089ae620a42648fd7da69b6b4b66fbe">
               <span class="m-doc-wrap-bumper"><a href="#a6089ae620a42648fd7da69b6b4b66fbe" class="m-doc-self">~ARTriplet</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -104,37 +104,71 @@
             </dt>
             <dd>The track ARCS in this triplet.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad399a12f99d859901fcd526439e072c3" class="m-doc">confidence</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
-            </dt>
-            <dd>The confidence value in this triplet.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af46497177e212020c2ed2d15ac635951" class="m-doc">frame450_arcs</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
-            </dt>
-            <dd>The ARCS of frame 450 of the particular track in this triplet.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a49d8a7fe6d456e96a5e4a8a8b635bd29" class="m-doc">arcs_valid</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
             </dt>
             <dd>Validity flag for the track ARCS in this triplet.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad399a12f99d859901fcd526439e072c3" class="m-doc">confidence</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+            </dt>
+            <dd>The confidence value in this triplet.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aef08302a179b01e0ff2e18a41cc1d504" class="m-doc">confidence_valid</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
             </dt>
             <dd>Validity flag for the confidence value in this triplet.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af46497177e212020c2ed2d15ac635951" class="m-doc">frame450_arcs</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+            </dt>
+            <dd>The ARCS of frame 450 of the particular track in this triplet.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab7cb31b707810b7a47573b2e1c1145cd" class="m-doc">frame450_arcs_valid</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
             </dt>
             <dd>Validity flag for the ARCS of frame 450 of the particular track in this triplet.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a72cd71e2c78d8a1b98bfdd0985204e9a" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;</span>
-            </dt>
-            <dd>Copy assignment operator.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a21b2b946f149ec3675b14642a39b2d25" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Move assignment operator.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a72cd71e2c78d8a1b98bfdd0985204e9a" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;</span>
+            </dt>
+            <dd>Copy assignment operator.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="adcc881b33798da779a5ef035030d6957"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adcc881b33798da779a5ef035030d6957" class="m-doc-self">ARTriplet</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Move constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Instance to move</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa4890590d9d6f1c3b1c4cc76f7619457"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa4890590d9d6f1c3b1c4cc76f7619457" class="m-doc-self">ARTriplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs)</span></span>
+            </h3>
+            <p>Copy constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Instance to copy</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="ad5cdcd957b0b3ee75f89195fbc5280a0"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad5cdcd957b0b3ee75f89195fbc5280a0" class="m-doc-self">ARTriplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
@@ -205,40 +239,6 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="aa4890590d9d6f1c3b1c4cc76f7619457"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa4890590d9d6f1c3b1c4cc76f7619457" class="m-doc-self">ARTriplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs)</span></span>
-            </h3>
-            <p>Copy constructor.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Instance to copy</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="adcc881b33798da779a5ef035030d6957"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adcc881b33798da779a5ef035030d6957" class="m-doc-self">ARTriplet</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Move constructor.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Instance to move</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="ab228c1b886206989168bb14df146c49c"><div>
             <h3>
               <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab228c1b886206989168bb14df146c49c" class="m-doc-self">arcs</a>(</span><span class="m-doc-wrap">) const</span></span>
@@ -249,34 +249,6 @@
                 <tr>
                   <th style="width: 1%">Returns</th>
                   <td>ARCS value in this triplet</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ad399a12f99d859901fcd526439e072c3"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad399a12f99d859901fcd526439e072c3" class="m-doc-self">confidence</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>The confidence value in this triplet.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Confidence in this triplet</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="af46497177e212020c2ed2d15ac635951"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af46497177e212020c2ed2d15ac635951" class="m-doc-self">frame450_arcs</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>The ARCS of frame 450 of the particular track in this triplet.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Frame450 ARCS in this triplet</td>
                 </tr>
               </tfoot>
             </table>
@@ -295,6 +267,20 @@
               </tfoot>
             </table>
           </div></section>
+          <section class="m-doc-details" id="ad399a12f99d859901fcd526439e072c3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad399a12f99d859901fcd526439e072c3" class="m-doc-self">confidence</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>The confidence value in this triplet.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Confidence in this triplet</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="aef08302a179b01e0ff2e18a41cc1d504"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aef08302a179b01e0ff2e18a41cc1d504" class="m-doc-self">confidence_valid</a>(</span><span class="m-doc-wrap">) const</span></span>
@@ -305,6 +291,20 @@
                 <tr>
                   <th style="width: 1%">Returns</th>
                   <td>Validity flag for the confidence in this triplet</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af46497177e212020c2ed2d15ac635951"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af46497177e212020c2ed2d15ac635951" class="m-doc-self">frame450_arcs</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>The ARCS of frame 450 of the particular track in this triplet.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Frame450 ARCS in this triplet</td>
                 </tr>
               </tfoot>
             </table>
@@ -323,11 +323,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a72cd71e2c78d8a1b98bfdd0985204e9a"><div>
+          <section class="m-doc-details" id="a21b2b946f149ec3675b14642a39b2d25"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a72cd71e2c78d8a1b98bfdd0985204e9a" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a21b2b946f149ec3675b14642a39b2d25" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Copy assignment operator.</p>
+            <p>Move assignment operator.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -346,11 +346,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a21b2b946f149ec3675b14642a39b2d25"><div>
+          <section class="m-doc-details" id="a72cd71e2c78d8a1b98bfdd0985204e9a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a21b2b946f149ec3675b14642a39b2d25" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a72cd71e2c78d8a1b98bfdd0985204e9a" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs)</span></span>
             </h3>
-            <p>Move assignment operator.</p>
+            <p>Copy assignment operator.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>

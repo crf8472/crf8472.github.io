@@ -79,10 +79,6 @@
             </dt>
             <dd>AccurateRip-Identifier of a compact disc.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">arcstk::v_1_0_0::TOC</a>
-            </dt>
-            <dd>Table of contents of a compact disc.</dd>
-            <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">arcstk::v_1_0_0::InvalidMetadataException</a>
             </dt>
             <dd>Reports invalid metadata for building a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
@@ -90,6 +86,10 @@
               class <a href="classarcstk_1_1v__1__0__0_1_1NonstandardMetadataException.html" class="m-doc">arcstk::v_1_0_0::NonstandardMetadataException</a>
             </dt>
             <dd>Reports metadata violating the redbook standard.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">arcstk::v_1_0_0::TOC</a>
+            </dt>
+            <dd>Table of contents of a compact disc.</dd>
           </dl>
         </section>
         <section id="typedef-members">
@@ -97,14 +97,9 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              using <a href="#ga04755442622618a05a676375f38bc2bb" class="m-doc">IsLBAType</a> = std::enable_if_t&lt;details::is_lba_type&lt;T&gt;::value&gt;
+              using <a href="#ga2950d38e87c7f71748c7e750a7878074" class="m-doc">IsFilenameContainer</a> = std::enable_if_t&lt;details::is_filename_container&lt;T&gt;::value&gt;
             </dt>
-            <dd>Defined iff T is a numerical integer type of at least 32 bit size.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              using <a href="#gab1f9b235e9cb260c98da10cc451e1fed" class="m-doc">IsLBAContainer</a> = std::enable_if_t&lt;details::is_lba_container&lt;T&gt;::value&gt;
-            </dt>
-            <dd>Defined iff T is a container whose value_type IsLBAType.</dd>
+            <dd>Defined iff T is a container whose value_type IsFilenameType.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               using <a href="#gae7a0bc41f63e2f238c88258f38ce9c45" class="m-doc">IsFilenameType</a> = std::enable_if_t&lt;details::is_filename_type&lt;T&gt;::value&gt;
@@ -112,14 +107,28 @@
             <dd>Defined iff T is a filename type, i.e. std::string or std::wstring.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              using <a href="#ga2950d38e87c7f71748c7e750a7878074" class="m-doc">IsFilenameContainer</a> = std::enable_if_t&lt;details::is_filename_container&lt;T&gt;::value&gt;
+              using <a href="#gab1f9b235e9cb260c98da10cc451e1fed" class="m-doc">IsLBAContainer</a> = std::enable_if_t&lt;details::is_lba_container&lt;T&gt;::value&gt;
             </dt>
-            <dd>Defined iff T is a container whose value_type IsFilenameType.</dd>
+            <dd>Defined iff T is a container whose value_type IsLBAType.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#ga04755442622618a05a676375f38bc2bb" class="m-doc">IsLBAType</a> = std::enable_if_t&lt;details::is_lba_type&lt;T&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T is a numerical integer type of at least 32 bit size.</dd>
           </dl>
         </section>
         <section id="func-members">
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga78987b395c237e96346b320ddba885c3" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga48f75030dd90429365da45755e23dcc6" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc,
+              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a specified leadout.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
@@ -130,28 +139,40 @@
             </dt>
             <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a specified leadout.</dd>
             <dt>
+              <div class="m-doc-template">template&lt;typename LBAContainer, typename = IsLBAContainer&lt;LBAContainer&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga701b8cc62a7549e901e39dea4396242b" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              LBAContainer&amp;&amp; offsets,
+              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#gaeb30a214687d3213037ba947718a1af7" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              std::initializer_list&lt;T&gt; offsets,
+              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename LBAContainer, typename = IsLBAContainer&lt;LBAContainer&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga45e03cd94828865991ea8bd778b57adb" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
+              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#gaa9135137f8426ea7e9704d56e3abb89a" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;T&gt; offsets,
+              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#gaed4e675a06b670b5aba8a86bc639ab0e" class="m-doc">make_empty_arid</a>(</span><span class="m-doc-wrap">) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
             <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga4030a9d090efb04c00696c4273c395b7" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
-              const uint32_t leadout,
-              FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#ga47da8440eb3a4cd477bc8ccf17130ce4" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               LBAContainer&amp;&amp; offsets,
               const uint32_t leadout,
-              FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename LBAContainer1, typename LBAContainer2, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer1&gt;, typename = IsLBAContainer&lt;LBAContainer2&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga3ec65826925c6cc6345214f5a210b08e" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer1&amp;&amp; offsets,
-              LBAContainer2&amp;&amp; lengths,
               FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
@@ -164,55 +185,33 @@
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename LBAContainer, typename = IsLBAContainer&lt;LBAContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga701b8cc62a7549e901e39dea4396242b" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
-              LBAContainer&amp;&amp; offsets,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+              <div class="m-doc-template">template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga4030a9d090efb04c00696c4273c395b7" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
+              const uint32_t leadout,
+              FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
-            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename LBAContainer, typename = IsLBAContainer&lt;LBAContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga45e03cd94828865991ea8bd778b57adb" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+              <div class="m-doc-template">template&lt;typename LBAContainer1, typename LBAContainer2, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer1&gt;, typename = IsLBAContainer&lt;LBAContainer2&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga3ec65826925c6cc6345214f5a210b08e" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer1&amp;&amp; offsets,
+              LBAContainer2&amp;&amp; lengths,
+              FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
-            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#gaeb30a214687d3213037ba947718a1af7" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
-              std::initializer_list&lt;T&gt; offsets,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
-            </dt>
-            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#gaa9135137f8426ea7e9704d56e3abb89a" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;T&gt; offsets,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
-            </dt>
-            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
           </dl>
         </section>
         <section>
           <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="ga04755442622618a05a676375f38bc2bb"><div>
+          <section class="m-doc-details" id="ga2950d38e87c7f71748c7e750a7878074"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              using <a href="#ga04755442622618a05a676375f38bc2bb" class="m-doc-self">IsLBAType</a> = std::enable_if_t&lt;details::is_lba_type&lt;T&gt;::value&gt;
+              using <a href="#ga2950d38e87c7f71748c7e750a7878074" class="m-doc-self">IsFilenameContainer</a> = std::enable_if_t&lt;details::is_filename_container&lt;T&gt;::value&gt;
             </h3>
-            <p>Defined iff T is a numerical integer type of at least 32 bit size.</p>
-          </div></section>
-          <section class="m-doc-details" id="gab1f9b235e9cb260c98da10cc451e1fed"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              using <a href="#gab1f9b235e9cb260c98da10cc451e1fed" class="m-doc-self">IsLBAContainer</a> = std::enable_if_t&lt;details::is_lba_container&lt;T&gt;::value&gt;
-            </h3>
-            <p>Defined iff T is a container whose value_type IsLBAType.</p>
-<p>To qualify as an LBAContainer, the class must have const versions of begin() and end(), a const_iterator, a size() and a value_type that IsLBAType.</p>
+            <p>Defined iff T is a container whose value_type IsFilenameType.</p>
+<p>To qualify as a FilenameContainer, the class must have const versions of begin() and end(), a const_iterator, a size() and a value_type that IsFilenameType.</p>
           </div></section>
           <section class="m-doc-details" id="gae7a0bc41f63e2f238c88258f38ce9c45"><div>
             <h3>
@@ -226,20 +225,103 @@
 <aside class="m-note m-info"><h4>Note</h4><p>You may define your own string type to qualify as FilenameType by adding a specialization of the internal is_filename_type template for your type.</p><pre class="m-code"><span class="k">template</span> <span class="o">&lt;&gt;</span>
 <span class="k">struct</span> <span class="n">arcstk</span><span class="o">::</span><span class="n">details</span><span class="o">::</span><span class="n">is_filename_type</span><span class="o">&lt;</span><span class="n">MyType</span><span class="o">&gt;</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">true_type</span> <span class="p">{</span> <span class="p">};</span></pre></aside>
           </div></section>
-          <section class="m-doc-details" id="ga2950d38e87c7f71748c7e750a7878074"><div>
+          <section class="m-doc-details" id="gab1f9b235e9cb260c98da10cc451e1fed"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              using <a href="#ga2950d38e87c7f71748c7e750a7878074" class="m-doc-self">IsFilenameContainer</a> = std::enable_if_t&lt;details::is_filename_container&lt;T&gt;::value&gt;
+              using <a href="#gab1f9b235e9cb260c98da10cc451e1fed" class="m-doc-self">IsLBAContainer</a> = std::enable_if_t&lt;details::is_lba_container&lt;T&gt;::value&gt;
             </h3>
-            <p>Defined iff T is a container whose value_type IsFilenameType.</p>
-<p>To qualify as a FilenameContainer, the class must have const versions of begin() and end(), a const_iterator, a size() and a value_type that IsFilenameType.</p>
+            <p>Defined iff T is a container whose value_type IsLBAType.</p>
+<p>To qualify as an LBAContainer, the class must have const versions of begin() and end(), a const_iterator, a size() and a value_type that IsLBAType.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga04755442622618a05a676375f38bc2bb"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#ga04755442622618a05a676375f38bc2bb" class="m-doc-self">IsLBAType</a> = std::enable_if_t&lt;details::is_lba_type&lt;T&gt;::value&gt;
+            </h3>
+            <p>Defined iff T is a numerical integer type of at least 32 bit size.</p>
           </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ga78987b395c237e96346b320ddba885c3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga78987b395c237e96346b320ddba885c3" class="m-doc-self">make_arid</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+            </h3>
+            <p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">toc&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> to use</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a></td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>None</td>
+                  <td>If <code>toc</code> is not <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The input is validated.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga48f75030dd90429365da45755e23dcc6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga48f75030dd90429365da45755e23dcc6" class="m-doc-self">make_arid</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc,
+              const uint32_t leadout)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+            </h3>
+            <p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a specified leadout.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">toc&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> to use</td>
+                </tr>
+                <tr>
+                  <td>leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Leadout LBA frame</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a></td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>None</td>
+                  <td>If <code>toc</code> and <code>leadout</code> are invalid</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The input is validated.</p><p>Parameter <code>toc</code> is allowed to be non-<a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>. Parameter <code>leadout</code> is intended to provide the value possibly missing in <code>toc</code>.</p><p>If <code>leadout</code> is 0, <code>toc.leadout()</code> is used and <code>leadout</code> is ignored. If <code>leadout</code> is not 0, <code>toc.leadout()</code> is ignored. If both values are 0 an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p><p>If <code>leadout</code> is 0 and <code>toc</code> cannot be validated, an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown. If <code>leadout</code> is not 0 and <code>leadout</code> and <code>toc</code> cannot be validated as consistent with each other, an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p>
+          </div></section>
           <section class="m-doc-details" id="ga3237be05a032a0f61b824cfd069b5ee9"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc-self">make_arid</a>(</span><span class="m-doc-wrap">const TOC&amp; toc)</span></span>
@@ -313,279 +395,6 @@
             </table>
 <p>The input is validated.</p><p>Parameter <code>toc</code> is allowed to be non-<a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>. Parameter <code>leadout</code> is intended to provide the value possibly missing in <code>toc</code>.</p><p>If <code>leadout</code> is 0, <code>toc.leadout()</code> is used and <code>leadout</code> is ignored. If <code>leadout</code> is not 0, <code>toc.leadout()</code> is ignored. If both values are 0 an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p><p>If <code>leadout</code> is 0 and <code>toc</code> cannot be validated, an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown. If <code>leadout</code> is not 0 and <code>leadout</code> and <code>toc</code> cannot be validated as consistent with each other, an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p>
           </div></section>
-          <section class="m-doc-details" id="gaed4e675a06b670b5aba8a86bc639ab0e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaed4e675a06b670b5aba8a86bc639ab0e" class="m-doc-self">make_empty_arid</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
-            </h3>
-            <p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ga4030a9d090efb04c00696c4273c395b7"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga4030a9d090efb04c00696c4273c395b7" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
-              const uint32_t leadout,
-              FilenameContainer&amp;&amp; files = {})</span></span>
-            </h3>
-            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Template parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">LBAContainer</td>
-                  <td>Container type of the offsets container</td>
-                </tr>
-                <tr>
-                  <td>FilenameContainer</td>
-                  <td>Container type of the optional filename container</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>offsets&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Offsets (in LBA frames) for each track</td>
-                </tr>
-                <tr>
-                  <td>leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Leadout frame</td>
-                </tr>
-                <tr>
-                  <td>files&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>File name of each track</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object representing the specified information</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>None</td>
-                  <td>If the input forms no valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a></td>
-                </tr>
-              </tbody>
-            </table>
-<p>The input data is validated but the leadout is allowed to be 0. The returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore not guaranteed to be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</p><p>Value <code>offsets.size()</code> is assumed to be the number of total tracks.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga47da8440eb3a4cd477bc8ccf17130ce4"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga47da8440eb3a4cd477bc8ccf17130ce4" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
-              LBAContainer&amp;&amp; offsets,
-              const uint32_t leadout,
-              FilenameContainer&amp;&amp; files = {})</span></span>
-            </h3>
-            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Template parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">LBAContainer</td>
-                  <td>Container type of the offsets container</td>
-                </tr>
-                <tr>
-                  <td>FilenameContainer</td>
-                  <td>Container type of the optional filename container</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>track_count&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Number of tracks in this medium</td>
-                </tr>
-                <tr>
-                  <td>offsets&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Offsets (in LBA frames) for each track</td>
-                </tr>
-                <tr>
-                  <td>leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Leadout frame</td>
-                </tr>
-                <tr>
-                  <td>files&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>File name of each track</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object representing the specified information</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>None</td>
-                  <td>If the input forms no valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a></td>
-                </tr>
-              </tbody>
-            </table>
-<p>The input data is validated but the leadout is allowed to be 0. The returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore not guaranteed to be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</p><p>The value of <code>track_count</code> must be equal to <code>offsets()</code>.size and is just used for additional validation.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga3ec65826925c6cc6345214f5a210b08e"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename LBAContainer1, typename LBAContainer2, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer1&gt;, typename = IsLBAContainer&lt;LBAContainer2&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga3ec65826925c6cc6345214f5a210b08e" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer1&amp;&amp; offsets,
-              LBAContainer2&amp;&amp; lengths,
-              FilenameContainer&amp;&amp; files = {})</span></span>
-            </h3>
-            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Template parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">LBAContainer1</td>
-                  <td>Container type of the offsets container</td>
-                </tr>
-                <tr>
-                  <td>LBAContainer2</td>
-                  <td>Container type of the lengths container</td>
-                </tr>
-                <tr>
-                  <td>FilenameContainer</td>
-                  <td>Container type of the optional filename container</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>offsets&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Offsets (in LBA frames) of each track</td>
-                </tr>
-                <tr>
-                  <td>lengths&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Lengths (in LBA frames) of each track</td>
-                </tr>
-                <tr>
-                  <td>files&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>File name of each track</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object representing the specified information</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>None</td>
-                  <td>If the input forms no valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a></td>
-                </tr>
-              </tbody>
-            </table>
-<p>The input data is validated but the length of the last track is allowed to be 0. The returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore not guaranteed to be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</p><p>Value <code>offsets.size()</code> is assumed to be the number of total tracks.</p><p>Value <code>offsets.size()</code> and <code>lengths.size()</code> must be equal.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga57f8ebb0cb26c96be9188b93528e98ad"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename LBAContainer1, typename LBAContainer2, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer1&gt;, typename = IsLBAContainer&lt;LBAContainer2&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga57f8ebb0cb26c96be9188b93528e98ad" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
-              LBAContainer1&amp;&amp; offsets,
-              LBAContainer2&amp;&amp; lengths,
-              FilenameContainer&amp;&amp; files = {})</span></span>
-            </h3>
-            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Template parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">LBAContainer1</td>
-                  <td>Container type of the offsets container</td>
-                </tr>
-                <tr>
-                  <td>LBAContainer2</td>
-                  <td>Container type of the lengths container</td>
-                </tr>
-                <tr>
-                  <td>FilenameContainer</td>
-                  <td>Container type of the optional filename container</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>track_count&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Number of tracks in this medium</td>
-                </tr>
-                <tr>
-                  <td>offsets&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Offsets (in LBA frames) of each track</td>
-                </tr>
-                <tr>
-                  <td>lengths&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Lengths (in LBA frames) of each track</td>
-                </tr>
-                <tr>
-                  <td>files&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>File name of each track</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object representing the specified information</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>None</td>
-                  <td>If the input forms no valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a></td>
-                </tr>
-              </tbody>
-            </table>
-<p>The input data is validated but the length of the last track is allowed to be 0. The returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore not guaranteed to be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</p><p>The value of <code>track_count</code> must be equal to <code>offsets()</code>.size and is just used for additional validation.</p><p>Value <code>offsets.size()</code> and <code>lengths.size()</code> must be equal.</p>
-          </div></section>
           <section class="m-doc-details" id="ga701b8cc62a7549e901e39dea4396242b"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
@@ -605,6 +414,61 @@
                 <tr>
                   <td style="width: 1%">LBAContainer</td>
                   <td>Container type of the offsets container</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>track_count&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Track count</td>
+                </tr>
+                <tr>
+                  <td>offsets&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Offsets</td>
+                </tr>
+                <tr>
+                  <td>leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Leadout frame</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object representing the specified information</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>None</td>
+                  <td>If the input forms no valid <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="gaeb30a214687d3213037ba947718a1af7"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaeb30a214687d3213037ba947718a1af7" class="m-doc-self">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              std::initializer_list&lt;T&gt; offsets,
+              const uint32_t leadout)</span></span>
+            </h3>
+            <p>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type of the offsets</td>
                 </tr>
               </tbody>
               <thead>
@@ -691,61 +555,6 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="gaeb30a214687d3213037ba947718a1af7"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaeb30a214687d3213037ba947718a1af7" class="m-doc-self">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
-              std::initializer_list&lt;T&gt; offsets,
-              const uint32_t leadout)</span></span>
-            </h3>
-            <p>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Template parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">T</td>
-                  <td>Type of the offsets</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>track_count&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Track count</td>
-                </tr>
-                <tr>
-                  <td>offsets&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Offsets</td>
-                </tr>
-                <tr>
-                  <td>leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Leadout frame</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object representing the specified information</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>None</td>
-                  <td>If the input forms no valid <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="gaa9135137f8426ea7e9704d56e3abb89a"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
@@ -795,6 +604,279 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="gaed4e675a06b670b5aba8a86bc639ab0e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaed4e675a06b670b5aba8a86bc639ab0e" class="m-doc-self">make_empty_arid</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+            </h3>
+            <p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ga47da8440eb3a4cd477bc8ccf17130ce4"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga47da8440eb3a4cd477bc8ccf17130ce4" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              LBAContainer&amp;&amp; offsets,
+              const uint32_t leadout,
+              FilenameContainer&amp;&amp; files = {})</span></span>
+            </h3>
+            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">LBAContainer</td>
+                  <td>Container type of the offsets container</td>
+                </tr>
+                <tr>
+                  <td>FilenameContainer</td>
+                  <td>Container type of the optional filename container</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>track_count&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Number of tracks in this medium</td>
+                </tr>
+                <tr>
+                  <td>offsets&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Offsets (in LBA frames) for each track</td>
+                </tr>
+                <tr>
+                  <td>leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Leadout frame</td>
+                </tr>
+                <tr>
+                  <td>files&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>File name of each track</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object representing the specified information</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>None</td>
+                  <td>If the input forms no valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The input data is validated but the leadout is allowed to be 0. The returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore not guaranteed to be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</p><p>The value of <code>track_count</code> must be equal to <code>offsets()</code>.size and is just used for additional validation.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga57f8ebb0cb26c96be9188b93528e98ad"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename LBAContainer1, typename LBAContainer2, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer1&gt;, typename = IsLBAContainer&lt;LBAContainer2&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga57f8ebb0cb26c96be9188b93528e98ad" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              LBAContainer1&amp;&amp; offsets,
+              LBAContainer2&amp;&amp; lengths,
+              FilenameContainer&amp;&amp; files = {})</span></span>
+            </h3>
+            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">LBAContainer1</td>
+                  <td>Container type of the offsets container</td>
+                </tr>
+                <tr>
+                  <td>LBAContainer2</td>
+                  <td>Container type of the lengths container</td>
+                </tr>
+                <tr>
+                  <td>FilenameContainer</td>
+                  <td>Container type of the optional filename container</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>track_count&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Number of tracks in this medium</td>
+                </tr>
+                <tr>
+                  <td>offsets&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Offsets (in LBA frames) of each track</td>
+                </tr>
+                <tr>
+                  <td>lengths&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Lengths (in LBA frames) of each track</td>
+                </tr>
+                <tr>
+                  <td>files&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>File name of each track</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object representing the specified information</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>None</td>
+                  <td>If the input forms no valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The input data is validated but the length of the last track is allowed to be 0. The returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore not guaranteed to be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</p><p>The value of <code>track_count</code> must be equal to <code>offsets()</code>.size and is just used for additional validation.</p><p>Value <code>offsets.size()</code> and <code>lengths.size()</code> must be equal.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga4030a9d090efb04c00696c4273c395b7"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga4030a9d090efb04c00696c4273c395b7" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
+              const uint32_t leadout,
+              FilenameContainer&amp;&amp; files = {})</span></span>
+            </h3>
+            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">LBAContainer</td>
+                  <td>Container type of the offsets container</td>
+                </tr>
+                <tr>
+                  <td>FilenameContainer</td>
+                  <td>Container type of the optional filename container</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>offsets&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Offsets (in LBA frames) for each track</td>
+                </tr>
+                <tr>
+                  <td>leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Leadout frame</td>
+                </tr>
+                <tr>
+                  <td>files&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>File name of each track</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object representing the specified information</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>None</td>
+                  <td>If the input forms no valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The input data is validated but the leadout is allowed to be 0. The returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore not guaranteed to be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</p><p>Value <code>offsets.size()</code> is assumed to be the number of total tracks.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga3ec65826925c6cc6345214f5a210b08e"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename LBAContainer1, typename LBAContainer2, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer1&gt;, typename = IsLBAContainer&lt;LBAContainer2&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga3ec65826925c6cc6345214f5a210b08e" class="m-doc-self">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer1&amp;&amp; offsets,
+              LBAContainer2&amp;&amp; lengths,
+              FilenameContainer&amp;&amp; files = {})</span></span>
+            </h3>
+            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">LBAContainer1</td>
+                  <td>Container type of the offsets container</td>
+                </tr>
+                <tr>
+                  <td>LBAContainer2</td>
+                  <td>Container type of the lengths container</td>
+                </tr>
+                <tr>
+                  <td>FilenameContainer</td>
+                  <td>Container type of the optional filename container</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>offsets&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Offsets (in LBA frames) of each track</td>
+                </tr>
+                <tr>
+                  <td>lengths&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Lengths (in LBA frames) of each track</td>
+                </tr>
+                <tr>
+                  <td>files&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>File name of each track</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object representing the specified information</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>None</td>
+                  <td>If the input forms no valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a></td>
+                </tr>
+              </tbody>
+            </table>
+<p>The input data is validated but the length of the last track is allowed to be 0. The returned <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore not guaranteed to be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a>.</p><p>Value <code>offsets.size()</code> is assumed to be the number of total tracks.</p><p>Value <code>offsets.size()</code> and <code>lengths.size()</code> must be equal.</p>
           </div></section>
         </section>
       </div>

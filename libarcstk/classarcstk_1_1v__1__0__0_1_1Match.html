@@ -78,19 +78,26 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aab55abd24785defec39a37742c33ba46" class="m-doc">verify_id</a>(</span><span class="m-doc-wrap">int block) -&gt; int</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a774f6f9cdb0c13bec724f656bd875835" class="m-doc">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&gt;</span>
             </dt>
-            <dd>Mark the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block as &#x27;matched&#x27;.</dd>
+            <dd>Clones this instance.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a739677a785c363f3b1f4d95b4c2de70a" class="m-doc">difference</a>(</span><span class="m-doc-wrap">int b,
+              bool v2) const -&gt; int64_t</span>
+            </dt>
+            <dd>Returns the difference for block <code>b</code> .</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2290452c114c2b32aa25e35f58e7d795" class="m-doc">id</a>(</span><span class="m-doc-wrap">int b) const -&gt; bool</span>
             </dt>
             <dd>TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the original request, otherwise FALSE.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ace50908db93ddc0d735642200873f991" class="m-doc">verify_track</a>(</span><span class="m-doc-wrap">int b,
-              int t,
-              bool v2) -&gt; int</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aed1815b30fb7de3dfd620d8ee4eba21a" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t</span>
             </dt>
-            <dd>Mark the checksum of a specified track in a specified block as &#x27;matched&#x27;.</dd>
+            <dd>Returns the number of comparison flags stored.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2c849997734366b0ec0f3d569c8e3fdf" class="m-doc">total_blocks</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+            </dt>
+            <dd>Returns the number of analyzed blocks.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae3f4edc3e4d2b9f21bc8c2af77d3ba74" class="m-doc">track</a>(</span><span class="m-doc-wrap">int b,
               int t,
@@ -98,45 +105,45 @@
             </dt>
             <dd>Return the verification status of an ARCS of the specified track in the specified block.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a739677a785c363f3b1f4d95b4c2de70a" class="m-doc">difference</a>(</span><span class="m-doc-wrap">int b,
-              bool v2) const -&gt; int64_t</span>
-            </dt>
-            <dd>Returns the difference for block <code>b</code> .</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2c849997734366b0ec0f3d569c8e3fdf" class="m-doc">total_blocks</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
-            </dt>
-            <dd>Returns the number of analyzed blocks.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a3c5a6a6672c7c5d53a3b39205b782ed3" class="m-doc">tracks_per_block</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
             </dt>
             <dd>Returns the number of compared tracks per block.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aed1815b30fb7de3dfd620d8ee4eba21a" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aab55abd24785defec39a37742c33ba46" class="m-doc">verify_id</a>(</span><span class="m-doc-wrap">int block) -&gt; int</span>
             </dt>
-            <dd>Returns the number of comparison flags stored.</dd>
+            <dd>Mark the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block as &#x27;matched&#x27;.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a774f6f9cdb0c13bec724f656bd875835" class="m-doc">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ace50908db93ddc0d735642200873f991" class="m-doc">verify_track</a>(</span><span class="m-doc-wrap">int b,
+              int t,
+              bool v2) -&gt; int</span>
             </dt>
-            <dd>Clones this instance.</dd>
+            <dd>Mark the checksum of a specified track in a specified block as &#x27;matched&#x27;.</dd>
           </dl>
         </section>
         <section id="pri-methods">
           <h2><a href="#pri-methods">Private functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2c6962c3bc279e57ab3d46b46f47a8c2" class="m-doc">do_verify_id</a>(</span><span class="m-doc-wrap">const int b) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae010316746d5002645bba2ac6bc5da08" class="m-doc">do_clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#aab55abd24785defec39a37742c33ba46" class="m-doc">verify_<wbr />id(int)</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a774f6f9cdb0c13bec724f656bd875835" class="m-doc">clone()</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a70d9317a3fc0082b2f63ea582b152b15" class="m-doc">do_difference</a>(</span><span class="m-doc-wrap">const int b,
+              const bool v2) const -&gt; int64_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a739677a785c363f3b1f4d95b4c2de70a" class="m-doc">difference(int, bool)</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a0a8c94c9daddaa05876eb0b8e5f38eff" class="m-doc">do_id</a>(</span><span class="m-doc-wrap">const int b) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a2290452c114c2b32aa25e35f58e7d795" class="m-doc">id(int)</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a52552a0228fcbd15799a675a23b49d86" class="m-doc">do_verify_track</a>(</span><span class="m-doc-wrap">const int b,
-              const int t,
-              const bool v2) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aea2d505079965c1262e5c728df96728d" class="m-doc">do_size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#ace50908db93ddc0d735642200873f991" class="m-doc">verify_<wbr />track(b, t, v2)</a>.</dd>
+            <dd>Implement <a href="classarcstk_1_1v__1__0__0_1_1Match.html#aed1815b30fb7de3dfd620d8ee4eba21a" class="m-doc">size()</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae460a8f7a0cf5ee2844cea00223a7e57" class="m-doc">do_total_blocks</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a2c849997734366b0ec0f3d569c8e3fdf" class="m-doc">total_<wbr />blocks()</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a20e56334378d8598fd54c574d613284a" class="m-doc">do_track</a>(</span><span class="m-doc-wrap">const int b,
               const int t,
@@ -144,178 +151,36 @@
             </dt>
             <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#ae3f4edc3e4d2b9f21bc8c2af77d3ba74" class="m-doc">track(int, int, bool)</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a70d9317a3fc0082b2f63ea582b152b15" class="m-doc">do_difference</a>(</span><span class="m-doc-wrap">const int b,
-              const bool v2) const -&gt; int64_t <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a739677a785c363f3b1f4d95b4c2de70a" class="m-doc">difference(int, bool)</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae460a8f7a0cf5ee2844cea00223a7e57" class="m-doc">do_total_blocks</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a2c849997734366b0ec0f3d569c8e3fdf" class="m-doc">total_<wbr />blocks()</a>.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#afc5667d40c0d5ca0051e522695e32024" class="m-doc">do_tracks_per_block</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a3c5a6a6672c7c5d53a3b39205b782ed3" class="m-doc">tracks_<wbr />per_<wbr />block()</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aea2d505079965c1262e5c728df96728d" class="m-doc">do_size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2c6962c3bc279e57ab3d46b46f47a8c2" class="m-doc">do_verify_id</a>(</span><span class="m-doc-wrap">const int b) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implement <a href="classarcstk_1_1v__1__0__0_1_1Match.html#aed1815b30fb7de3dfd620d8ee4eba21a" class="m-doc">size()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#aab55abd24785defec39a37742c33ba46" class="m-doc">verify_<wbr />id(int)</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae010316746d5002645bba2ac6bc5da08" class="m-doc">do_clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a52552a0228fcbd15799a675a23b49d86" class="m-doc">do_verify_track</a>(</span><span class="m-doc-wrap">const int b,
+              const int t,
+              const bool v2) -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a774f6f9cdb0c13bec724f656bd875835" class="m-doc">clone()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#ace50908db93ddc0d735642200873f991" class="m-doc">verify_<wbr />track(b, t, v2)</a>.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="aab55abd24785defec39a37742c33ba46"><div>
+          <section class="m-doc-details" id="a774f6f9cdb0c13bec724f656bd875835"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab55abd24785defec39a37742c33ba46" class="m-doc-self">verify_id</a>(</span><span class="m-doc-wrap">int block)</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a774f6f9cdb0c13bec724f656bd875835" class="m-doc-self">clone</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Mark the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block as &#x27;matched&#x27;.</p>
+            <p>Clones this instance.</p>
             <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
+              <tfoot>
                 <tr>
-                  <td style="width: 1%">block&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>0-based index of the block to verify</td>
+                  <th style="width: 1%">Returns</th>
+                  <td>Deep copy of this instance.</td>
                 </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>Index position to store the verification flag</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>std::runtime_error</td>
-                  <td>Iff <code>b</code> is out of range</td>
-                </tr>
-              </tbody>
+              </tfoot>
             </table>
-          </div></section>
-          <section class="m-doc-details" id="a2290452c114c2b32aa25e35f58e7d795"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2290452c114c2b32aa25e35f58e7d795" class="m-doc-self">id</a>(</span><span class="m-doc-wrap">int b) const</span></span>
-            </h3>
-            <p>TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the original request, otherwise FALSE.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>0-based index of the block to verify in <code>response</code></td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of block <code>b</code> matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the request</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>std::runtime_error</td>
-                  <td>Iff <code>b</code> is out of range</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ace50908db93ddc0d735642200873f991"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ace50908db93ddc0d735642200873f991" class="m-doc-self">verify_track</a>(</span><span class="m-doc-wrap">int b,
-              int t,
-              bool v2)</span></span>
-            </h3>
-            <p>Mark the checksum of a specified track in a specified block as &#x27;matched&#x27;.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>0-based index of the block to verify in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a></td>
-                </tr>
-                <tr>
-                  <td>t&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>0-based index of the track to verify in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a></td>
-                </tr>
-                <tr>
-                  <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Verifies the ARCSv2 iff TRUE, otherwise ARCSv1</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>Index position to store the verification flag</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>std::runtime_error</td>
-                  <td>Iff <code>b</code> or <code>t</code> are out of range</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ae3f4edc3e4d2b9f21bc8c2af77d3ba74"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae3f4edc3e4d2b9f21bc8c2af77d3ba74" class="m-doc-self">track</a>(</span><span class="m-doc-wrap">int b,
-              int t,
-              bool v2) const</span></span>
-            </h3>
-            <p>Return the verification status of an ARCS of the specified track in the specified block.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>0-based index of the block to verify in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a></td>
-                </tr>
-                <tr>
-                  <td>t&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>0-based index of the track to verify in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a></td>
-                </tr>
-                <tr>
-                  <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Returns the ARCSv2 flag iff TRUE, otherwise ARCSv1</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>Flag for ARCS of track <code>t</code> in block <code>b</code></td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>std::runtime_error</td>
-                  <td>Iff <code>b</code> or <code>t</code> are out of range</td>
-                </tr>
-              </tbody>
-            </table>
-<aside class="m-note m-info"><h4>Note</h4><p>What a concrete match means is dependent from the logic the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> used. The call <code>myMatch.value(0,17,true)</code> refers to the ARCSv2 of track 18 in the first block. If this call returns <code>true</code>, track 18 in the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> was matched by the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>. Whether this indicates that track 18 of the current <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> caused the match is implementation defined. If the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> was calculated by an <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>, track 18 of the input <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> will only be matched against track 18 in each block. A <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> on the other hand will just indicate that <em>one</em> of the input checksums matched track 18.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a739677a785c363f3b1f4d95b4c2de70a"><div>
             <h3>
@@ -355,35 +220,37 @@
             </table>
 <p>The difference is the number of ARCSs in <code>b</code> that do not match their corresponsing positions in the request. The difference is only of relevance iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of <code>b</code> matchs the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the request.</p><aside class="m-note m-info"><h4>Note</h4><p>The concrete difference value may depend on the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implementation. For example, consider an album with 15 tracks. An <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with no track matching and a different <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> will be a difference of 16 assigned if the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> is produced by an <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>. A <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> ignores the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> and hence it does not contribute to the difference. But therefore, the exact same <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> will have a difference of only 15.</p></aside>
           </div></section>
-          <section class="m-doc-details" id="a2c849997734366b0ec0f3d569c8e3fdf"><div>
+          <section class="m-doc-details" id="a2290452c114c2b32aa25e35f58e7d795"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2c849997734366b0ec0f3d569c8e3fdf" class="m-doc-self">total_blocks</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2290452c114c2b32aa25e35f58e7d795" class="m-doc-self">id</a>(</span><span class="m-doc-wrap">int b) const</span></span>
             </h3>
-            <p>Returns the number of analyzed blocks.</p>
+            <p>TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the original request, otherwise FALSE.</p>
             <table class="m-table m-fullwidth m-flat">
-              <tfoot>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
                 <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Total number of analyzed blocks.</td>
+                  <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>0-based index of the block to verify in <code>response</code></td>
                 </tr>
-              </tfoot>
-            </table>
-<p>This is identical with the total number of blocks in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
-          </div></section>
-          <section class="m-doc-details" id="a3c5a6a6672c7c5d53a3b39205b782ed3"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c5a6a6672c7c5d53a3b39205b782ed3" class="m-doc-self">tracks_per_block</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Returns the number of compared tracks per block.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
+              </tbody>
+              <thead>
                 <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Total number of tracks per block.</td>
+                  <th>Returns</th>
+                  <td>TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of block <code>b</code> matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the request</td>
                 </tr>
-              </tfoot>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>std::runtime_error</td>
+                  <td>Iff <code>b</code> is out of range</td>
+                </tr>
+              </tbody>
             </table>
-<p>This is identical with the total number of tracks in each block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
           </div></section>
           <section class="m-doc-details" id="aed1815b30fb7de3dfd620d8ee4eba21a"><div>
             <h3>
@@ -457,11 +324,158 @@ $+1$
 </g>
 </svg> is required since the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of each block contributes an additional verification flag to the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>.</p></aside>
           </div></section>
-          <section class="m-doc-details" id="a774f6f9cdb0c13bec724f656bd875835"><div>
+          <section class="m-doc-details" id="a2c849997734366b0ec0f3d569c8e3fdf"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a774f6f9cdb0c13bec724f656bd875835" class="m-doc-self">clone</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2c849997734366b0ec0f3d569c8e3fdf" class="m-doc-self">total_blocks</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Clones this instance.</p>
+            <p>Returns the number of analyzed blocks.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Total number of analyzed blocks.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This is identical with the total number of blocks in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae3f4edc3e4d2b9f21bc8c2af77d3ba74"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae3f4edc3e4d2b9f21bc8c2af77d3ba74" class="m-doc-self">track</a>(</span><span class="m-doc-wrap">int b,
+              int t,
+              bool v2) const</span></span>
+            </h3>
+            <p>Return the verification status of an ARCS of the specified track in the specified block.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>0-based index of the block to verify in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a></td>
+                </tr>
+                <tr>
+                  <td>t&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>0-based index of the track to verify in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a></td>
+                </tr>
+                <tr>
+                  <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Returns the ARCSv2 flag iff TRUE, otherwise ARCSv1</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>Flag for ARCS of track <code>t</code> in block <code>b</code></td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>std::runtime_error</td>
+                  <td>Iff <code>b</code> or <code>t</code> are out of range</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-info"><h4>Note</h4><p>What a concrete match means is dependent from the logic the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> used. The call <code>myMatch.value(0,17,true)</code> refers to the ARCSv2 of track 18 in the first block. If this call returns <code>true</code>, track 18 in the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> was matched by the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>. Whether this indicates that track 18 of the current <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> caused the match is implementation defined. If the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> was calculated by an <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>, track 18 of the input <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> will only be matched against track 18 in each block. A <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> on the other hand will just indicate that <em>one</em> of the input checksums matched track 18.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a3c5a6a6672c7c5d53a3b39205b782ed3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c5a6a6672c7c5d53a3b39205b782ed3" class="m-doc-self">tracks_per_block</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the number of compared tracks per block.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Total number of tracks per block.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This is identical with the total number of tracks in each block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="aab55abd24785defec39a37742c33ba46"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab55abd24785defec39a37742c33ba46" class="m-doc-self">verify_id</a>(</span><span class="m-doc-wrap">int block)</span></span>
+            </h3>
+            <p>Mark the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block as &#x27;matched&#x27;.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">block&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>0-based index of the block to verify</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>Index position to store the verification flag</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>std::runtime_error</td>
+                  <td>Iff <code>b</code> is out of range</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ace50908db93ddc0d735642200873f991"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ace50908db93ddc0d735642200873f991" class="m-doc-self">verify_track</a>(</span><span class="m-doc-wrap">int b,
+              int t,
+              bool v2)</span></span>
+            </h3>
+            <p>Mark the checksum of a specified track in a specified block as &#x27;matched&#x27;.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>0-based index of the block to verify in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a></td>
+                </tr>
+                <tr>
+                  <td>t&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>0-based index of the track to verify in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a></td>
+                </tr>
+                <tr>
+                  <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Verifies the ARCSv2 iff TRUE, otherwise ARCSv1</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>Index position to store the verification flag</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>std::runtime_error</td>
+                  <td>Iff <code>b</code> or <code>t</code> are out of range</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ae010316746d5002645bba2ac6bc5da08"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae010316746d5002645bba2ac6bc5da08" class="m-doc-self">do_clone</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a774f6f9cdb0c13bec724f656bd875835" class="m-doc">clone()</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -471,11 +485,12 @@ $+1$
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a2c6962c3bc279e57ab3d46b46f47a8c2"><div>
+          <section class="m-doc-details" id="a70d9317a3fc0082b2f63ea582b152b15"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2c6962c3bc279e57ab3d46b46f47a8c2" class="m-doc-self">do_verify_id</a>(</span><span class="m-doc-wrap">const int b) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">int64_t arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70d9317a3fc0082b2f63ea582b152b15" class="m-doc-self">do_difference</a>(</span><span class="m-doc-wrap">const int b,
+              const bool v2) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#aab55abd24785defec39a37742c33ba46" class="m-doc">verify_<wbr />id(int)</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a739677a785c363f3b1f4d95b4c2de70a" class="m-doc">difference(int, bool)</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -485,13 +500,26 @@ $+1$
                   <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
                   <td>0-based index of the block to verify in <code>response</code></td>
                 </tr>
+                <tr>
+                  <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Returns the ARCSv2 iff TRUE, otherwise ARCSv1</td>
+                </tr>
               </tbody>
-              <tfoot>
+              <thead>
                 <tr>
                   <th>Returns</th>
-                  <td>Index position to store the verification flag</td>
+                  <td>Difference of block <code>b</code></td>
                 </tr>
-              </tfoot>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Iff</td>
+                  <td><code>b</code> is out of range</td>
+                </tr>
+              </tbody>
             </table>
           </div></section>
           <section class="m-doc-details" id="a0a8c94c9daddaa05876eb0b8e5f38eff"><div>
@@ -526,46 +554,32 @@ $+1$
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a52552a0228fcbd15799a675a23b49d86"><div>
+          <section class="m-doc-details" id="aea2d505079965c1262e5c728df96728d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52552a0228fcbd15799a675a23b49d86" class="m-doc-self">do_verify_track</a>(</span><span class="m-doc-wrap">const int b,
-              const int t,
-              const bool v2) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">size_t arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aea2d505079965c1262e5c728df96728d" class="m-doc-self">do_size</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#ace50908db93ddc0d735642200873f991" class="m-doc">verify_<wbr />track(b, t, v2)</a>.</p>
+            <p>Implement <a href="classarcstk_1_1v__1__0__0_1_1Match.html#aed1815b30fb7de3dfd620d8ee4eba21a" class="m-doc">size()</a>.</p>
             <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
+              <tfoot>
                 <tr>
-                  <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>0-based index of the block to verify in <code>response</code></td>
+                  <th style="width: 1%">Returns</th>
+                  <td>Number of flags stored</td>
                 </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ae460a8f7a0cf5ee2844cea00223a7e57"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae460a8f7a0cf5ee2844cea00223a7e57" class="m-doc-self">do_total_blocks</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a2c849997734366b0ec0f3d569c8e3fdf" class="m-doc">total_<wbr />blocks()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
                 <tr>
-                  <td>t&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>0-based index of the track to verify in <code>response</code></td>
+                  <th style="width: 1%">Returns</th>
+                  <td>Total number of compared blocks.</td>
                 </tr>
-                <tr>
-                  <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Verifies the ARCSv2 iff TRUE, otherwise ARCSv1</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>Index position to store the verification flag</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Iff</td>
-                  <td><code>b</code> or <code>t</code> are out of range</td>
-                </tr>
-              </tbody>
+              </tfoot>
             </table>
           </div></section>
           <section class="m-doc-details" id="a20e56334378d8598fd54c574d613284a"><div>
@@ -610,57 +624,6 @@ $+1$
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a70d9317a3fc0082b2f63ea582b152b15"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">int64_t arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70d9317a3fc0082b2f63ea582b152b15" class="m-doc-self">do_difference</a>(</span><span class="m-doc-wrap">const int b,
-              const bool v2) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a739677a785c363f3b1f4d95b4c2de70a" class="m-doc">difference(int, bool)</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>0-based index of the block to verify in <code>response</code></td>
-                </tr>
-                <tr>
-                  <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Returns the ARCSv2 iff TRUE, otherwise ARCSv1</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>Difference of block <code>b</code></td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Iff</td>
-                  <td><code>b</code> is out of range</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ae460a8f7a0cf5ee2844cea00223a7e57"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae460a8f7a0cf5ee2844cea00223a7e57" class="m-doc-self">do_total_blocks</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a2c849997734366b0ec0f3d569c8e3fdf" class="m-doc">total_<wbr />blocks()</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Total number of compared blocks.</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="afc5667d40c0d5ca0051e522695e32024"><div>
             <h3>
               <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afc5667d40c0d5ca0051e522695e32024" class="m-doc-self">do_tracks_per_block</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
@@ -675,32 +638,69 @@ $+1$
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="aea2d505079965c1262e5c728df96728d"><div>
+          <section class="m-doc-details" id="a2c6962c3bc279e57ab3d46b46f47a8c2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">size_t arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aea2d505079965c1262e5c728df96728d" class="m-doc-self">do_size</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2c6962c3bc279e57ab3d46b46f47a8c2" class="m-doc-self">do_verify_id</a>(</span><span class="m-doc-wrap">const int b) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Implement <a href="classarcstk_1_1v__1__0__0_1_1Match.html#aed1815b30fb7de3dfd620d8ee4eba21a" class="m-doc">size()</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#aab55abd24785defec39a37742c33ba46" class="m-doc">verify_<wbr />id(int)</a>.</p>
             <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>0-based index of the block to verify in <code>response</code></td>
+                </tr>
+              </tbody>
               <tfoot>
                 <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Number of flags stored</td>
+                  <th>Returns</th>
+                  <td>Index position to store the verification flag</td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ae010316746d5002645bba2ac6bc5da08"><div>
+          <section class="m-doc-details" id="a52552a0228fcbd15799a675a23b49d86"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae010316746d5002645bba2ac6bc5da08" class="m-doc-self">do_clone</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52552a0228fcbd15799a675a23b49d86" class="m-doc-self">do_verify_track</a>(</span><span class="m-doc-wrap">const int b,
+              const int t,
+              const bool v2) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a774f6f9cdb0c13bec724f656bd875835" class="m-doc">clone()</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Match.html#ace50908db93ddc0d735642200873f991" class="m-doc">verify_<wbr />track(b, t, v2)</a>.</p>
             <table class="m-table m-fullwidth m-flat">
-              <tfoot>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
                 <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Deep copy of this instance.</td>
+                  <td style="width: 1%">b&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>0-based index of the block to verify in <code>response</code></td>
                 </tr>
-              </tfoot>
+                <tr>
+                  <td>t&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>0-based index of the track to verify in <code>response</code></td>
+                </tr>
+                <tr>
+                  <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Verifies the ARCSv2 iff TRUE, otherwise ARCSv1</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>Index position to store the verification flag</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Iff</td>
+                  <td><code>b</code> or <code>t</code> are out of range</td>
+                </tr>
+              </tbody>
             </table>
           </div></section>
         </section>

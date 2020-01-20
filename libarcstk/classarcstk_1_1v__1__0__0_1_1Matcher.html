@@ -92,90 +92,62 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a05f27e835735f5f5b1732cadba21d701" class="m-doc">matches</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a24ab91412467e614c8ee708de1279315" class="m-doc">best_difference</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
             </dt>
-            <dd>Returns TRUE iff at least one block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> is has a <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a739677a785c363f3b1f4d95b4c2de70a" class="m-doc">difference()</a> of <code>0</code> to either the ARCSs v1 or the ARCSs v2 in the request.</dd>
+            <dd>Returns the difference value of the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with index <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_match</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
             </dt>
             <dd>Returns the 0-based index of the best matching block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a24ab91412467e614c8ee708de1279315" class="m-doc">best_difference</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad7b16a64b921ec13907915c1be90280a" class="m-doc">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>&gt;</span>
             </dt>
-            <dd>Returns the difference value of the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with index <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad431a6f2f129010b2ef1f1da445779bb" class="m-doc">matches_v2</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
-            </dt>
-            <dd>Returns TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with index <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a> matches the ARCSsv2 of the request, otherwise FALSE.</dd>
+            <dd>Clones this instance.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ad498958ba6b2eec59af57a21ca169309" class="m-doc">match</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>*</span>
             </dt>
             <dd>Returns the actual <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad7b16a64b921ec13907915c1be90280a" class="m-doc">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a05f27e835735f5f5b1732cadba21d701" class="m-doc">matches</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
             </dt>
-            <dd>Clones this instance.</dd>
+            <dd>Returns TRUE iff at least one block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> is has a <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a739677a785c363f3b1f4d95b4c2de70a" class="m-doc">difference()</a> of <code>0</code> to either the ARCSs v1 or the ARCSs v2 in the request.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad431a6f2f129010b2ef1f1da445779bb" class="m-doc">matches_v2</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd>Returns TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with index <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a> matches the ARCSsv2 of the request, otherwise FALSE.</dd>
           </dl>
         </section>
         <section id="pri-methods">
           <h2><a href="#pri-methods">Private functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a71a9a928e5faefb7f2f095a92097c2dd" class="m-doc">do_matches</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aee88d2f55eff53fa73a469f19fef77ea" class="m-doc">do_best_difference</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a05f27e835735f5f5b1732cadba21d701" class="m-doc">matches()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a24ab91412467e614c8ee708de1279315" class="m-doc">best_<wbr />difference()</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae7e4f931bc9bdf99976916fd4c65d4e1" class="m-doc">do_best_match</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aee88d2f55eff53fa73a469f19fef77ea" class="m-doc">do_best_difference</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad8b5143f26cba5d59a3cf30f2bb09e62" class="m-doc">do_clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a24ab91412467e614c8ee708de1279315" class="m-doc">best_<wbr />difference()</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a688482f82ef4c6a7f1ac6994779cd6e0" class="m-doc">do_matches_v2</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ad431a6f2f129010b2ef1f1da445779bb" class="m-doc">matches_<wbr />v2()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ad7b16a64b921ec13907915c1be90280a" class="m-doc">clone()</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aea8570b3d000e9fb4512108d5bcdd49b" class="m-doc">do_match</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ad498958ba6b2eec59af57a21ca169309" class="m-doc">match()</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad8b5143f26cba5d59a3cf30f2bb09e62" class="m-doc">do_clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a71a9a928e5faefb7f2f095a92097c2dd" class="m-doc">do_matches</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ad7b16a64b921ec13907915c1be90280a" class="m-doc">clone()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a05f27e835735f5f5b1732cadba21d701" class="m-doc">matches()</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a688482f82ef4c6a7f1ac6994779cd6e0" class="m-doc">do_matches_v2</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ad431a6f2f129010b2ef1f1da445779bb" class="m-doc">matches_<wbr />v2()</a>.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a05f27e835735f5f5b1732cadba21d701"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a05f27e835735f5f5b1732cadba21d701" class="m-doc-self">matches</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Returns TRUE iff at least one block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> is has a <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a739677a785c363f3b1f4d95b4c2de70a" class="m-doc">difference()</a> of <code>0</code> to either the ARCSs v1 or the ARCSs v2 in the request.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>TRUE if <code>response</code> contains a block matching <code>result</code></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a5c6f2ac523208520932e10ceb1729e08"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5c6f2ac523208520932e10ceb1729e08" class="m-doc-self">best_match</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Returns the 0-based index of the best matching block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>0-based index of the best matching block in <code>response</code></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="a24ab91412467e614c8ee708de1279315"><div>
             <h3>
               <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a24ab91412467e614c8ee708de1279315" class="m-doc-self">best_difference</a>(</span><span class="m-doc-wrap">) const</span></span>
@@ -191,30 +163,16 @@
             </table>
 <p>The difference is the sum of the number of non-matching ARCSs and the number of non-matching <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARIds</a> in a single block. A block whose <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> does not match the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the result has therefore at least a difference of <code>1</code> to the result.</p>
           </div></section>
-          <section class="m-doc-details" id="ad431a6f2f129010b2ef1f1da445779bb"><div>
+          <section class="m-doc-details" id="a5c6f2ac523208520932e10ceb1729e08"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad431a6f2f129010b2ef1f1da445779bb" class="m-doc-self">matches_v2</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5c6f2ac523208520932e10ceb1729e08" class="m-doc-self">best_match</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Returns TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with index <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a> matches the ARCSsv2 of the request, otherwise FALSE.</p>
+            <p>Returns the 0-based index of the best matching block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE if <code><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a></code> was to the ARCSsv2 in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ad498958ba6b2eec59af57a21ca169309"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>* arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad498958ba6b2eec59af57a21ca169309" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Returns the actual <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>The actual <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a></td>
+                  <td>0-based index of the best matching block in <code>response</code></td>
                 </tr>
               </tfoot>
             </table>
@@ -233,11 +191,25 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a71a9a928e5faefb7f2f095a92097c2dd"><div>
+          <section class="m-doc-details" id="ad498958ba6b2eec59af57a21ca169309"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a71a9a928e5faefb7f2f095a92097c2dd" class="m-doc-self">do_matches</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>* arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad498958ba6b2eec59af57a21ca169309" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a05f27e835735f5f5b1732cadba21d701" class="m-doc">matches()</a>.</p>
+            <p>Returns the actual <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The actual <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a05f27e835735f5f5b1732cadba21d701"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a05f27e835735f5f5b1732cadba21d701" class="m-doc-self">matches</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns TRUE iff at least one block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> is has a <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a739677a785c363f3b1f4d95b4c2de70a" class="m-doc">difference()</a> of <code>0</code> to either the ARCSs v1 or the ARCSs v2 in the request.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -247,16 +219,16 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ae7e4f931bc9bdf99976916fd4c65d4e1"><div>
+          <section class="m-doc-details" id="ad431a6f2f129010b2ef1f1da445779bb"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae7e4f931bc9bdf99976916fd4c65d4e1" class="m-doc-self">do_best_match</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad431a6f2f129010b2ef1f1da445779bb" class="m-doc-self">matches_v2</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a>.</p>
+            <p>Returns TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with index <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a> matches the ARCSsv2 of the request, otherwise FALSE.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>0-based index of the best matching block in <code>response</code></td>
+                  <td>TRUE if <code><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a></code> was to the ARCSsv2 in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a></td>
                 </tr>
               </tfoot>
             </table>
@@ -275,16 +247,30 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a688482f82ef4c6a7f1ac6994779cd6e0"><div>
+          <section class="m-doc-details" id="ae7e4f931bc9bdf99976916fd4c65d4e1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a688482f82ef4c6a7f1ac6994779cd6e0" class="m-doc-self">do_matches_v2</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae7e4f931bc9bdf99976916fd4c65d4e1" class="m-doc-self">do_best_match</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ad431a6f2f129010b2ef1f1da445779bb" class="m-doc">matches_<wbr />v2()</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE if <code><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a></code> was a match to the ARCSsv2</td>
+                  <td>0-based index of the best matching block in <code>response</code></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad8b5143f26cba5d59a3cf30f2bb09e62"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad8b5143f26cba5d59a3cf30f2bb09e62" class="m-doc-self">do_clone</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ad7b16a64b921ec13907915c1be90280a" class="m-doc">clone()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Deep copy of this instance.</td>
                 </tr>
               </tfoot>
             </table>
@@ -303,16 +289,30 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ad8b5143f26cba5d59a3cf30f2bb09e62"><div>
+          <section class="m-doc-details" id="a71a9a928e5faefb7f2f095a92097c2dd"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad8b5143f26cba5d59a3cf30f2bb09e62" class="m-doc-self">do_clone</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a71a9a928e5faefb7f2f095a92097c2dd" class="m-doc-self">do_matches</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ad7b16a64b921ec13907915c1be90280a" class="m-doc">clone()</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a05f27e835735f5f5b1732cadba21d701" class="m-doc">matches()</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>Deep copy of this instance.</td>
+                  <td>TRUE if <code>response</code> contains a block matching <code>result</code></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a688482f82ef4c6a7f1ac6994779cd6e0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Matcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a688482f82ef4c6a7f1ac6994779cd6e0" class="m-doc-self">do_matches_v2</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ad431a6f2f129010b2ef1f1da445779bb" class="m-doc">matches_<wbr />v2()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>TRUE if <code><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a5c6f2ac523208520932e10ceb1729e08" class="m-doc">best_<wbr />match()</a></code> was a match to the ARCSsv2</td>
                 </tr>
               </tfoot>
             </table>

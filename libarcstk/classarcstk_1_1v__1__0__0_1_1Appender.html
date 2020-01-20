@@ -68,6 +68,14 @@
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a601ae6f35b357935d07c1e91ea16b449" class="m-doc">Appender</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Move constructor.</dd>
+            <dt id="a9aae0a2350696513637fb35070fb48bb">
+              <span class="m-doc-wrap-bumper"><a href="#a9aae0a2350696513637fb35070fb48bb" class="m-doc-self">Appender</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
+            </dt>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> is non-copyable.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper"><a href="#a1a0d71b6cb1396f65b685e5334746e67" class="m-doc">Appender</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
             <dd>Constructs an <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> for appending to the given file.</dd>
@@ -76,14 +84,6 @@
               FILE* stream)</span>
             </dt>
             <dd>Constructs an <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> for appending to the given <code>FILE</code>.</dd>
-            <dt id="a9aae0a2350696513637fb35070fb48bb">
-              <span class="m-doc-wrap-bumper"><a href="#a9aae0a2350696513637fb35070fb48bb" class="m-doc-self">Appender</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> is non-copyable.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a601ae6f35b357935d07c1e91ea16b449" class="m-doc">Appender</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Move constructor.</dd>
             <dt id="a0d07de34bdb6ff1f9a90ed0dbfbaaff3">
               <span class="m-doc-wrap-bumper"><a href="#a0d07de34bdb6ff1f9a90ed0dbfbaaff3" class="m-doc-self">~Appender</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -101,18 +101,35 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a2da58b8c9f99c477a372611261e88970" class="m-doc">name</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
             </dt>
             <dd>Name of the <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>.</dd>
-            <dt id="a1dcf7df48f9c02ff3b9bcde5da6a0cb3">
-              <span class="m-doc-wrap-bumper">auto <a href="#a1dcf7df48f9c02ff3b9bcde5da6a0cb3" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp;) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp; <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> is non-copyable.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#abbf028f25e371a0abdc1191dfe25cc7f" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Move assignment.</dd>
+            <dt id="a1dcf7df48f9c02ff3b9bcde5da6a0cb3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1dcf7df48f9c02ff3b9bcde5da6a0cb3" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp;) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp; <span class="m-label m-flat m-danger">deleted</span></span>
+            </dt>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a> is non-copyable.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a601ae6f35b357935d07c1e91ea16b449"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Appender::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a601ae6f35b357935d07c1e91ea16b449" class="m-doc-self">Appender</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Move constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The instance to move</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="a1a0d71b6cb1396f65b685e5334746e67"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Appender::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1a0d71b6cb1396f65b685e5334746e67" class="m-doc-self">Appender</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-info">explicit</span> </span></span>
@@ -153,23 +170,6 @@
               </tbody>
             </table>
 <p>The <code>stream</code> may also be <code>stdout</code>, <code>stderr</code> etc.</p>
-          </div></section>
-          <section class="m-doc-details" id="a601ae6f35b357935d07c1e91ea16b449"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Appender::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a601ae6f35b357935d07c1e91ea16b449" class="m-doc-self">Appender</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Move constructor.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The instance to move</td>
-                </tr>
-              </tbody>
-            </table>
           </div></section>
           <section class="m-doc-details" id="aba1774374d27e0d4cf22aa4ad53f7d69"><div>
             <h3>

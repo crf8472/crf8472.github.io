@@ -71,13 +71,13 @@
             </dt>
             <dd>Constructor for a track with unknown length (will be 0)</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a100045d2c7e12b107af7c9651384e810" class="m-doc">ChecksumSet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs)</span>
-            </dt>
-            <dd>Copy constructor.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper"><a href="#adcbfe8c92d952bc7ec4a2954cafefd36" class="m-doc">ChecksumSet</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Move constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a100045d2c7e12b107af7c9651384e810" class="m-doc">ChecksumSet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs)</span>
+            </dt>
+            <dd>Copy constructor.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a353540722bc4f4796262064ebe4f4b79" class="m-doc">ChecksumSet</a>(</span><span class="m-doc-wrap">const uint32_t length) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
@@ -92,42 +92,25 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0b5e98e11f1f8e80ca7ab8a2f47dbbb0" class="m-doc">length</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
-            </dt>
-            <dd>Length (in LBA frames) of this track.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#abc8bb1b8dfa858044da7ba8bf307301f" class="m-doc">get</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a144c029f3933d8fad46f8a60a621d190" class="m-doc">checksum::<wbr />type</a> type) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a></span>
             </dt>
             <dd>Return the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> for the specified <code>type</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a61d8ed46a344514ca32c31509c21ea1a" class="m-doc">types</a>(</span><span class="m-doc-wrap">) const -&gt; std::set&lt;<a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a144c029f3933d8fad46f8a60a621d190" class="m-doc">checksum::<wbr />type</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0b5e98e11f1f8e80ca7ab8a2f47dbbb0" class="m-doc">length</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
             </dt>
-            <dd>Return the checksum types present in this <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>.</dd>
+            <dd>Length (in LBA frames) of this track.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#af102fc39cb2bc6dd52558b2d039af485" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp;</span>
             </dt>
             <dd>Copy assignment.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a61d8ed46a344514ca32c31509c21ea1a" class="m-doc">types</a>(</span><span class="m-doc-wrap">) const -&gt; std::set&lt;<a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a144c029f3933d8fad46f8a60a621d190" class="m-doc">checksum::<wbr />type</a>&gt;</span>
+            </dt>
+            <dd>Return the checksum types present in this <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a100045d2c7e12b107af7c9651384e810"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a100045d2c7e12b107af7c9651384e810" class="m-doc-self">ChecksumSet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs)</span></span>
-            </h3>
-            <p>Copy constructor.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The instance to copy</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="adcbfe8c92d952bc7ec4a2954cafefd36"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adcbfe8c92d952bc7ec4a2954cafefd36" class="m-doc-self">ChecksumSet</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
@@ -141,6 +124,23 @@
                 <tr>
                   <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
                   <td>The instance to move</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a100045d2c7e12b107af7c9651384e810"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a100045d2c7e12b107af7c9651384e810" class="m-doc-self">ChecksumSet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs)</span></span>
+            </h3>
+            <p>Copy constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The instance to copy</td>
                 </tr>
               </tbody>
             </table>
@@ -160,20 +160,6 @@
                   <td>Length in LBA frames of the track</td>
                 </tr>
               </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a0b5e98e11f1f8e80ca7ab8a2f47dbbb0"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b5e98e11f1f8e80ca7ab8a2f47dbbb0" class="m-doc-self">length</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Length (in LBA frames) of this track.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Length of this track in LBA frames</td>
-                </tr>
-              </tfoot>
             </table>
           </div></section>
           <section class="m-doc-details" id="abc8bb1b8dfa858044da7ba8bf307301f"><div>
@@ -199,20 +185,19 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a61d8ed46a344514ca32c31509c21ea1a"><div>
+          <section class="m-doc-details" id="a0b5e98e11f1f8e80ca7ab8a2f47dbbb0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::set&lt;<a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a144c029f3933d8fad46f8a60a621d190" class="m-doc">checksum::<wbr />type</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61d8ed46a344514ca32c31509c21ea1a" class="m-doc-self">types</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b5e98e11f1f8e80ca7ab8a2f47dbbb0" class="m-doc-self">length</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Return the checksum types present in this <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>.</p>
+            <p>Length (in LBA frames) of this track.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>The checksum types in this <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a></td>
+                  <td>Length of this track in LBA frames</td>
                 </tr>
               </tfoot>
             </table>
-<p>Just an alias to ChecksumMap::keys().</p>
           </div></section>
           <section class="m-doc-details" id="af102fc39cb2bc6dd52558b2d039af485"><div>
             <h3>
@@ -236,6 +221,21 @@
                 </tr>
               </tfoot>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a61d8ed46a344514ca32c31509c21ea1a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::set&lt;<a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a144c029f3933d8fad46f8a60a621d190" class="m-doc">checksum::<wbr />type</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61d8ed46a344514ca32c31509c21ea1a" class="m-doc-self">types</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the checksum types present in this <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The checksum types in this <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a></td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Just an alias to ChecksumMap::keys().</p>
           </div></section>
         </section>
       </div>

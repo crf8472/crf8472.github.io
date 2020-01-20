@@ -79,37 +79,37 @@
             </dt>
             <dd>Uniform access to the size of the input audio information.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">arcstk::v_1_0_0::PCMForwardIterator</a>
-            </dt>
-            <dd>Type erasing interface for iterators over PCM 32 Bit samples.</dd>
-            <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">arcstk::v_1_0_0::CalcContext</a>
             </dt>
             <dd>Interface for information about the current audio input.</dd>
-            <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">arcstk::v_1_0_0::Checksums</a>
-            </dt>
-            <dd>Result of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">arcstk::v_1_0_0::Calculation</a>
             </dt>
             <dd><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> calculation for a requested <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a144c029f3933d8fad46f8a60a621d190" class="m-doc">checksum::<wbr />type</a>.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1InvalidAudioException.html" class="m-doc">arcstk::v_1_0_0::InvalidAudioException</a>
+              struct <a href="structarcstk_1_1v__1__0__0_1_1CDDA__t.html" class="m-doc">arcstk::v_1_0_0::CDDA_t</a>
             </dt>
-            <dd>Reports invalid audio data.</dd>
+            <dd>Constants related to the CDDA format.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">arcstk::v_1_0_0::Checksum</a>
             </dt>
             <dd>A 32-bit wide checksum for a single file or track.</dd>
             <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">arcstk::v_1_0_0::Checksums</a>
+            </dt>
+            <dd>Result of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</dd>
+            <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">arcstk::v_1_0_0::ChecksumSet</a>
             </dt>
             <dd>A set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances of different types for a single track.</dd>
             <dt>
-              struct <a href="structarcstk_1_1v__1__0__0_1_1CDDA__t.html" class="m-doc">arcstk::v_1_0_0::CDDA_t</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1InvalidAudioException.html" class="m-doc">arcstk::v_1_0_0::InvalidAudioException</a>
             </dt>
-            <dd>Constants related to the CDDA format.</dd>
+            <dd>Reports invalid audio data.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">arcstk::v_1_0_0::PCMForwardIterator</a>
+            </dt>
+            <dd>Type erasing interface for iterators over PCM 32 Bit samples.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T, bool is_planar, bool is_const&gt;</div>
               class <a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">arcstk::v_1_0_0::SampleIterator</a>
@@ -126,17 +126,17 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a href="#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> = int
+              using <a href="#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_count</a> = uint32_t
             </dt>
-            <dd>Data type for track numbers.</dd>
+            <dd>Type to represent amounts of LBA frames.</dd>
             <dt>
               using <a href="#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">sample_type</a> = uint32_t
             </dt>
             <dd>Type to represent a PCM 32 bit sample (2 channels x 16 bit).</dd>
             <dt>
-              using <a href="#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_count</a> = uint32_t
+              using <a href="#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> = int
             </dt>
-            <dd>Type to represent amounts of LBA frames.</dd>
+            <dd>Data type for track numbers.</dd>
           </dl>
         </section>
         <section id="func-members">
@@ -166,13 +166,12 @@
         </section>
         <section>
           <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="gab54febc3dbc97c4e031001471d798069"><div>
+          <section class="m-doc-details" id="gadcfadc841853ed7dd280545744c08d73"><div>
             <h3>
-              using <a href="#gab54febc3dbc97c4e031001471d798069" class="m-doc-self">TrackNo</a> = int
+              using <a href="#gadcfadc841853ed7dd280545744c08d73" class="m-doc-self">lba_count</a> = uint32_t
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
-            <p>Data type for track numbers.</p>
-<p>Note that track numbers are 1-based. Hence, a TrackNo can also be used to represent a track count. A track count has a legal maximum of 99. Note that <code>0</code> is not a valid TrackNo.</p>
+            <p>Type to represent amounts of LBA frames.</p>
           </div></section>
           <section class="m-doc-details" id="gab0f4797e3f96922bbdba293582d0b06a"><div>
             <h3>
@@ -181,12 +180,13 @@
             </h3>
             <p>Type to represent a PCM 32 bit sample (2 channels x 16 bit).</p>
           </div></section>
-          <section class="m-doc-details" id="gadcfadc841853ed7dd280545744c08d73"><div>
+          <section class="m-doc-details" id="gab54febc3dbc97c4e031001471d798069"><div>
             <h3>
-              using <a href="#gadcfadc841853ed7dd280545744c08d73" class="m-doc-self">lba_count</a> = uint32_t
+              using <a href="#gab54febc3dbc97c4e031001471d798069" class="m-doc-self">TrackNo</a> = int
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
-            <p>Type to represent amounts of LBA frames.</p>
+            <p>Data type for track numbers.</p>
+<p>Note that track numbers are 1-based. Hence, a TrackNo can also be used to represent a track count. A track count has a legal maximum of 99. Note that <code>0</code> is not a valid TrackNo.</p>
           </div></section>
         </section>
         <section>

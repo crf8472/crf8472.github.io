@@ -68,26 +68,26 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="a4a3e9c38a504ea95d872d332a11226ac">
-              using <a href="#a4a3e9c38a504ea95d872d332a11226ac" class="m-doc-self">iterator_category</a> = std::forward_iterator_tag
-            </dt>
-            <dd>Iterator category is ForwardIterator.</dd>
-            <dt id="abc86bc05cf57fe2956ac925ea1a7b3e5">
-              using <a href="#abc86bc05cf57fe2956ac925ea1a7b3e5" class="m-doc-self">value_type</a> = uint32_t
-            </dt>
-            <dd>The type this iterator enumerates.</dd>
-            <dt id="aacbba07431efd04d23a15b5901500d0f">
-              using <a href="#aacbba07431efd04d23a15b5901500d0f" class="m-doc-self">reference</a> = uint32_t
-            </dt>
-            <dd>Same as value_type, <em>not</em> a reference type.</dd>
-            <dt id="ad96d935b75132ec413864ee5a5b9652b">
-              using <a href="#ad96d935b75132ec413864ee5a5b9652b" class="m-doc-self">pointer</a> = const uint32_t*
-            </dt>
-            <dd>Const pointer to the value_type.</dd>
             <dt id="ab4f6ba126284a007036bebe5da8f9555">
               using <a href="#ab4f6ba126284a007036bebe5da8f9555" class="m-doc-self">difference_type</a> = std::ptrdiff_t
             </dt>
             <dd>Pointer difference type.</dd>
+            <dt id="a4a3e9c38a504ea95d872d332a11226ac">
+              using <a href="#a4a3e9c38a504ea95d872d332a11226ac" class="m-doc-self">iterator_category</a> = std::forward_iterator_tag
+            </dt>
+            <dd>Iterator category is ForwardIterator.</dd>
+            <dt id="ad96d935b75132ec413864ee5a5b9652b">
+              using <a href="#ad96d935b75132ec413864ee5a5b9652b" class="m-doc-self">pointer</a> = const uint32_t*
+            </dt>
+            <dd>Const pointer to the value_type.</dd>
+            <dt id="aacbba07431efd04d23a15b5901500d0f">
+              using <a href="#aacbba07431efd04d23a15b5901500d0f" class="m-doc-self">reference</a> = uint32_t
+            </dt>
+            <dd>Same as value_type, <em>not</em> a reference type.</dd>
+            <dt id="abc86bc05cf57fe2956ac925ea1a7b3e5">
+              using <a href="#abc86bc05cf57fe2956ac925ea1a7b3e5" class="m-doc-self">value_type</a> = uint32_t
+            </dt>
+            <dd>The type this iterator enumerates.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -112,9 +112,17 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaec13d32e90c90ff3c8d8a9ff6277694" class="m-doc">operator!=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">PCMForwardIterator</a>&amp; rhs) const -&gt; bool</span>
+            </dt>
+            <dd>Returns TRUE if <code>rhs</code> is not equal to the instance.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a972fa612ec0d7eab3da94b1e5cc96726" class="m-doc">operator*</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html#aacbba07431efd04d23a15b5901500d0f" class="m-doc">reference</a></span>
             </dt>
             <dd>Dereferences the iterator.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a46508508fe06fed4031447d597c453f5" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">const uint32_t amount) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">PCMForwardIterator</a></span>
+            </dt>
+            <dd>Advance the iterator by a non-negative amount.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab636372129afea2e209b82e0d1b11d42" class="m-doc">operator++</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">PCMForwardIterator</a>&amp;</span>
             </dt>
@@ -127,14 +135,6 @@
               <span class="m-doc-wrap-bumper">auto <a href="#acb1c5b941abe7e5690a16cfd9589eceb" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">PCMForwardIterator</a>&amp; rhs) const -&gt; bool</span>
             </dt>
             <dd>Returns TRUE if <code>rhs</code> is equal to the instance.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aaec13d32e90c90ff3c8d8a9ff6277694" class="m-doc">operator!=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">PCMForwardIterator</a>&amp; rhs) const -&gt; bool</span>
-            </dt>
-            <dd>Returns TRUE if <code>rhs</code> is not equal to the instance.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a46508508fe06fed4031447d597c453f5" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">const uint32_t amount) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">PCMForwardIterator</a></span>
-            </dt>
-            <dd>Advance the iterator by a non-negative amount.</dd>
           </dl>
         </section>
         <section>
@@ -202,6 +202,29 @@
               </tbody>
             </table>
           </div></section>
+          <section class="m-doc-details" id="aaec13d32e90c90ff3c8d8a9ff6277694"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />PCMForwardIterator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaec13d32e90c90ff3c8d8a9ff6277694" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">PCMForwardIterator</a>&amp; rhs) const</span></span>
+            </h3>
+            <p>Returns TRUE if <code>rhs</code> is not equal to the instance.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The instance to test for inequality</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE if <code>rhs</code> is not equal to the instance, otherwise FALSE</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="a972fa612ec0d7eab3da94b1e5cc96726"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html#aacbba07431efd04d23a15b5901500d0f" class="m-doc">reference</a> arcstk::<wbr />v_1_0_0::<wbr />PCMForwardIterator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a972fa612ec0d7eab3da94b1e5cc96726" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) const</span></span>
@@ -212,6 +235,29 @@
                 <tr>
                   <th style="width: 1%">Returns</th>
                   <td>A uint32_t sample, returned by value</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a46508508fe06fed4031447d597c453f5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">PCMForwardIterator</a> arcstk::<wbr />v_1_0_0::<wbr />PCMForwardIterator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a46508508fe06fed4031447d597c453f5" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">const uint32_t amount) const</span></span>
+            </h3>
+            <p>Advance the iterator by a non-negative amount.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">amount&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>A non-negative amount to advance the iterator</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Iterator pointing to the position advanced by <code>amount</code></td>
                 </tr>
               </tfoot>
             </table>
@@ -263,52 +309,6 @@
                 <tr>
                   <th>Returns</th>
                   <td>TRUE if <code>rhs</code> is equal to the instance, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="aaec13d32e90c90ff3c8d8a9ff6277694"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />PCMForwardIterator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaec13d32e90c90ff3c8d8a9ff6277694" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">PCMForwardIterator</a>&amp; rhs) const</span></span>
-            </h3>
-            <p>Returns TRUE if <code>rhs</code> is not equal to the instance.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The instance to test for inequality</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if <code>rhs</code> is not equal to the instance, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a46508508fe06fed4031447d597c453f5"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">PCMForwardIterator</a> arcstk::<wbr />v_1_0_0::<wbr />PCMForwardIterator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a46508508fe06fed4031447d597c453f5" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">const uint32_t amount) const</span></span>
-            </h3>
-            <p>Advance the iterator by a non-negative amount.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">amount&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>A non-negative amount to advance the iterator</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>Iterator pointing to the position advanced by <code>amount</code></td>
                 </tr>
               </tfoot>
             </table>

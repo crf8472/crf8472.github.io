@@ -71,13 +71,13 @@
             </dt>
             <dd>A named logging output channel.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">arcstk::v_1_0_0::Logger</a>
-            </dt>
-            <dd>Logs a message to its registered <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appenders</a>.</dd>
-            <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Log.html" class="m-doc">arcstk::v_1_0_0::Log</a>
             </dt>
             <dd>A single logging operation of a <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a> using a specified LOGLEVEL.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">arcstk::v_1_0_0::Logger</a>
+            </dt>
+            <dd>Logs a message to its registered <a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appenders</a>.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Logging.html" class="m-doc">arcstk::v_1_0_0::Logging</a>
             </dt>
@@ -105,20 +105,36 @@
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga577c9ce07c6b223b3e38fa9d8bfa06e4" class="m-doc">now_time</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span>
-            </dt>
-            <dd>Returns the current time in the format <code>&#x27;YYYY-MM-DD hh:mm:ss.lll&#x27;</code>.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ga93e8be24e81100c109d23e1faf63fde1" class="m-doc">api_version_is_at_least</a>(</span><span class="m-doc-wrap">const int major,
               const int minor,
               const int patch) -&gt; bool</span>
             </dt>
             <dd>Compares specified version to actual version.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga577c9ce07c6b223b3e38fa9d8bfa06e4" class="m-doc">now_time</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span>
+            </dt>
+            <dd>Returns the current time in the format <code>&#x27;YYYY-MM-DD hh:mm:ss.lll&#x27;</code>.</dd>
           </dl>
         </section>
         <section id="var-members">
           <h2><a href="#var-members">Variables</a></h2>
           <dl class="m-doc">
+            <dt>
+              auto <a href="#ga553332dee714917bbe63303e1fe354d0" class="m-doc">LIBARCSTK_NAME</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Library name.</dd>
+            <dt>
+              const std::string <a href="#ga9d15de4654ec29220a99aa3a31b14579" class="m-doc">LIBARCSTK_NAME_STRING</a>
+            </dt>
+            <dd>Library name as a <code>std::string</code>.</dd>
+            <dt>
+              auto <a href="#ga797022c45fb94b282a1787bc52932a9f" class="m-doc">LIBARCSTK_VERSION_INFO</a> <span class="m-label m-flat m-primary">constexpr</span>
+            </dt>
+            <dd>Complete version number.</dd>
+            <dt>
+              const std::string <a href="#ga7a3bdc2d540e08aeca5817330e0cf6b8" class="m-doc">LIBARCSTK_VERSION_INFO_STRING</a>
+            </dt>
+            <dd>Complete version number as <code>std::string</code>.</dd>
             <dt>
               int <a href="#ga694ac2771d6b27691457ce01ac7e55b5" class="m-doc">LIBARCSTK_VERSION_MAJOR</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
@@ -139,51 +155,35 @@
               const std::string <a href="#gaa7bfd7559cabb5796c8fdf3ddcffcea1" class="m-doc">LIBARCSTK_VERSION_SUFFIX_STRING</a>
             </dt>
             <dd>Version suffix as <code>std::string</code>.</dd>
-            <dt>
-              auto <a href="#ga797022c45fb94b282a1787bc52932a9f" class="m-doc">LIBARCSTK_VERSION_INFO</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd>Complete version number.</dd>
-            <dt>
-              const std::string <a href="#ga7a3bdc2d540e08aeca5817330e0cf6b8" class="m-doc">LIBARCSTK_VERSION_INFO_STRING</a>
-            </dt>
-            <dd>Complete version number as <code>std::string</code>.</dd>
-            <dt>
-              auto <a href="#ga553332dee714917bbe63303e1fe354d0" class="m-doc">LIBARCSTK_NAME</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd>Library name.</dd>
-            <dt>
-              const std::string <a href="#ga9d15de4654ec29220a99aa3a31b14579" class="m-doc">LIBARCSTK_NAME_STRING</a>
-            </dt>
-            <dd>Library name as a <code>std::string</code>.</dd>
           </dl>
         </section>
         <section id="define-members">
           <h2><a href="#define-members">Defines</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#gae81e9db29d65bf71c0d4fc6c3ee81728" class="m-doc">CLIP_LOGGING_LEVEL</a></span>
+              <span class="m-doc-wrap-bumper">#define <a href="#gaca240c837d028c1c4876e280117907d3" class="m-doc">ARCS_LOG</a>(</span><span class="m-doc-wrap">loglevel)</span>
             </dt>
-            <dd>Clipping for the log level.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#gaca4007fd941a109c3fa67835e48028a6" class="m-doc">ARCS_LOG_ERROR</a></span>
-            </dt>
-            <dd>Send error message to log.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga976447cdb36f9b70a57c8ed9058c67ec" class="m-doc">ARCS_LOG_WARNING</a></span>
-            </dt>
-            <dd>Send warning message to log.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga552207394cbc359a434a6f73c083ee1d" class="m-doc">ARCS_LOG_INFO</a></span>
-            </dt>
-            <dd>Send info message to log.</dd>
+            <dd>Send log message with specified log level to log.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">#define <a href="#ga254b44327db8233ed80f7d2c248d1107" class="m-doc">ARCS_LOG_DEBUG</a></span>
             </dt>
             <dd>Send debug message to log.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#gaca240c837d028c1c4876e280117907d3" class="m-doc">ARCS_LOG</a>(</span><span class="m-doc-wrap">loglevel)</span>
+              <span class="m-doc-wrap-bumper">#define <a href="#gaca4007fd941a109c3fa67835e48028a6" class="m-doc">ARCS_LOG_ERROR</a></span>
             </dt>
-            <dd>Send log message with specified log level to log.</dd>
+            <dd>Send error message to log.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">#define <a href="#ga552207394cbc359a434a6f73c083ee1d" class="m-doc">ARCS_LOG_INFO</a></span>
+            </dt>
+            <dd>Send info message to log.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">#define <a href="#ga976447cdb36f9b70a57c8ed9058c67ec" class="m-doc">ARCS_LOG_WARNING</a></span>
+            </dt>
+            <dd>Send warning message to log.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">#define <a href="#gae81e9db29d65bf71c0d4fc6c3ee81728" class="m-doc">CLIP_LOGGING_LEVEL</a></span>
+            </dt>
+            <dd>Clipping for the log level.</dd>
           </dl>
         </section>
         <section>
@@ -198,22 +198,6 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ga577c9ce07c6b223b3e38fa9d8bfa06e4"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::string </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga577c9ce07c6b223b3e38fa9d8bfa06e4" class="m-doc-self">now_time</a>(</span><span class="m-doc-wrap">)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
-            </h3>
-            <p>Returns the current time in the format <code>&#x27;YYYY-MM-DD hh:mm:ss.lll&#x27;</code>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>The current time as a string</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>Returns the current time as a string containing year, month, day, hours, minutes, seconds and milliseconds in the format &#x27;YYYY-MM-DD hh:mm:ss.lll&#x27;.</p>
-          </div></section>
           <section class="m-doc-details" id="ga93e8be24e81100c109d23e1faf63fde1"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga93e8be24e81100c109d23e1faf63fde1" class="m-doc-self">api_version_is_at_least</a>(</span><span class="m-doc-wrap">const int major,
@@ -248,9 +232,53 @@
               </tfoot>
             </table>
           </div></section>
+          <section class="m-doc-details" id="ga577c9ce07c6b223b3e38fa9d8bfa06e4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga577c9ce07c6b223b3e38fa9d8bfa06e4" class="m-doc-self">now_time</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
+            </h3>
+            <p>Returns the current time in the format <code>&#x27;YYYY-MM-DD hh:mm:ss.lll&#x27;</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The current time as a string</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns the current time as a string containing year, month, day, hours, minutes, seconds and milliseconds in the format &#x27;YYYY-MM-DD hh:mm:ss.lll&#x27;.</p>
+          </div></section>
         </section>
         <section>
           <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="ga553332dee714917bbe63303e1fe354d0"><div>
+            <h3>
+              auto <a href="#ga553332dee714917bbe63303e1fe354d0" class="m-doc-self">LIBARCSTK_NAME</a> <span class="m-label m-primary">constexpr</span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
+            </h3>
+            <p>Library name.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga9d15de4654ec29220a99aa3a31b14579"><div>
+            <h3>
+              const std::string <a href="#ga9d15de4654ec29220a99aa3a31b14579" class="m-doc-self">LIBARCSTK_NAME_STRING</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
+            </h3>
+            <p>Library name as a <code>std::string</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga797022c45fb94b282a1787bc52932a9f"><div>
+            <h3>
+              auto <a href="#ga797022c45fb94b282a1787bc52932a9f" class="m-doc-self">LIBARCSTK_VERSION_INFO</a> <span class="m-label m-primary">constexpr</span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
+            </h3>
+            <p>Complete version number.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga7a3bdc2d540e08aeca5817330e0cf6b8"><div>
+            <h3>
+              const std::string <a href="#ga7a3bdc2d540e08aeca5817330e0cf6b8" class="m-doc-self">LIBARCSTK_VERSION_INFO_STRING</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
+            </h3>
+            <p>Complete version number as <code>std::string</code>.</p>
+          </div></section>
           <section class="m-doc-details" id="ga694ac2771d6b27691457ce01ac7e55b5"><div>
             <h3>
               int <a href="#ga694ac2771d6b27691457ce01ac7e55b5" class="m-doc-self">LIBARCSTK_VERSION_MAJOR</a> <span class="m-label m-primary">constexpr</span>
@@ -286,73 +314,9 @@
             </h3>
             <p>Version suffix as <code>std::string</code>.</p>
           </div></section>
-          <section class="m-doc-details" id="ga797022c45fb94b282a1787bc52932a9f"><div>
-            <h3>
-              auto <a href="#ga797022c45fb94b282a1787bc52932a9f" class="m-doc-self">LIBARCSTK_VERSION_INFO</a> <span class="m-label m-primary">constexpr</span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Complete version number.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga7a3bdc2d540e08aeca5817330e0cf6b8"><div>
-            <h3>
-              const std::string <a href="#ga7a3bdc2d540e08aeca5817330e0cf6b8" class="m-doc-self">LIBARCSTK_VERSION_INFO_STRING</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Complete version number as <code>std::string</code>.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga553332dee714917bbe63303e1fe354d0"><div>
-            <h3>
-              auto <a href="#ga553332dee714917bbe63303e1fe354d0" class="m-doc-self">LIBARCSTK_NAME</a> <span class="m-label m-primary">constexpr</span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Library name.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga9d15de4654ec29220a99aa3a31b14579"><div>
-            <h3>
-              const std::string <a href="#ga9d15de4654ec29220a99aa3a31b14579" class="m-doc-self">LIBARCSTK_NAME_STRING</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Library name as a <code>std::string</code>.</p>
-          </div></section>
         </section>
         <section>
           <h2>Define documentation</h2>
-          <section class="m-doc-details" id="gae81e9db29d65bf71c0d4fc6c3ee81728"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#gae81e9db29d65bf71c0d4fc6c3ee81728" class="m-doc-self">CLIP_LOGGING_LEVEL</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
-            </h3>
-            <p>Clipping for the log level.</p>
-<p>Every message that has not at least the CLIP_LOGGING_LEVEL is immediatly discarded.</p><p>Since this is a compile-time constant, the optimizer will recognize any comparison loglevel == LOG_NONE and remove the statement in question entirely. (See the definition of the ARCS_LOG_* macros to inspect how the clipping level is checked.)</p>
-          </div></section>
-          <section class="m-doc-details" id="gaca4007fd941a109c3fa67835e48028a6"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#gaca4007fd941a109c3fa67835e48028a6" class="m-doc-self">ARCS_LOG_ERROR</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
-            </h3>
-            <p>Send error message to log.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga976447cdb36f9b70a57c8ed9058c67ec"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga976447cdb36f9b70a57c8ed9058c67ec" class="m-doc-self">ARCS_LOG_WARNING</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
-            </h3>
-            <p>Send warning message to log.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga552207394cbc359a434a6f73c083ee1d"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga552207394cbc359a434a6f73c083ee1d" class="m-doc-self">ARCS_LOG_INFO</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
-            </h3>
-            <p>Send info message to log.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga254b44327db8233ed80f7d2c248d1107"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga254b44327db8233ed80f7d2c248d1107" class="m-doc-self">ARCS_LOG_DEBUG</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
-            </h3>
-            <p>Send debug message to log.</p>
-          </div></section>
           <section class="m-doc-details" id="gaca240c837d028c1c4876e280117907d3"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#gaca240c837d028c1c4876e280117907d3" class="m-doc-self">ARCS_LOG</a>(</span><span class="m-doc-wrap">loglevel)</span>
@@ -371,6 +335,42 @@
               </tbody>
             </table>
 <p>The loglevel must be specified without the prefix <code>LOGLEVEL::</code>.</p><p>This is useful for custom log levels beyond DEBUG</p>
+          </div></section>
+          <section class="m-doc-details" id="ga254b44327db8233ed80f7d2c248d1107"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">#define <a href="#ga254b44327db8233ed80f7d2c248d1107" class="m-doc-self">ARCS_LOG_DEBUG</a></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
+            </h3>
+            <p>Send debug message to log.</p>
+          </div></section>
+          <section class="m-doc-details" id="gaca4007fd941a109c3fa67835e48028a6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">#define <a href="#gaca4007fd941a109c3fa67835e48028a6" class="m-doc-self">ARCS_LOG_ERROR</a></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
+            </h3>
+            <p>Send error message to log.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga552207394cbc359a434a6f73c083ee1d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">#define <a href="#ga552207394cbc359a434a6f73c083ee1d" class="m-doc-self">ARCS_LOG_INFO</a></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
+            </h3>
+            <p>Send info message to log.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga976447cdb36f9b70a57c8ed9058c67ec"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">#define <a href="#ga976447cdb36f9b70a57c8ed9058c67ec" class="m-doc-self">ARCS_LOG_WARNING</a></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
+            </h3>
+            <p>Send warning message to log.</p>
+          </div></section>
+          <section class="m-doc-details" id="gae81e9db29d65bf71c0d4fc6c3ee81728"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">#define <a href="#gae81e9db29d65bf71c0d4fc6c3ee81728" class="m-doc-self">CLIP_LOGGING_LEVEL</a></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
+            </h3>
+            <p>Clipping for the log level.</p>
+<p>Every message that has not at least the CLIP_LOGGING_LEVEL is immediatly discarded.</p><p>Since this is a compile-time constant, the optimizer will recognize any comparison loglevel == LOG_NONE and remove the statement in question entirely. (See the definition of the ARCS_LOG_* macros to inspect how the clipping level is checked.)</p>
           </div></section>
         </section>
       </div>

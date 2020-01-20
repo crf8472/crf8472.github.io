@@ -85,17 +85,9 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a41d99210b11bd765d852eb38ab294c16" class="m-doc">track_count</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
             </dt>
-            <dd>Return the number of tracks.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a7b38d76e35947c7e51ae2a85f84ca6e2" class="m-doc">offset</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const -&gt; uint32_t</span>
-            </dt>
-            <dd>Return the offset of the 1-based specified track in frames, i.e. <code>offsets(i)</code> is the offset for track <code>i</code> iff <code>i</code> is a valid track number in this <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, otherwise 0.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa5b622c766911d857cd17ddd11090547" class="m-doc">parsed_length</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const -&gt; uint32_t</span>
-            </dt>
-            <dd>Return the length of the 1-based specified track in frames as parsed from the toc metadata input.</dd>
+            <dd>Return TRUE iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2d664ac8fc245ad54eaf7be1ff09451e" class="m-doc">filename</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const -&gt; std::string</span>
             </dt>
@@ -105,9 +97,9 @@
             </dt>
             <dd>Return the leadout frame LBA address.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7b38d76e35947c7e51ae2a85f84ca6e2" class="m-doc">offset</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const -&gt; uint32_t</span>
             </dt>
-            <dd>Return TRUE iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</dd>
+            <dd>Return the offset of the 1-based specified track in frames, i.e. <code>offsets(i)</code> is the offset for track <code>i</code> iff <code>i</code> is a valid track number in this <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, otherwise 0.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a1d468e07d1bcbef05defb17d33c4173a" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&amp;</span>
             </dt>
@@ -120,6 +112,14 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a7ed15163af309b53e06a38d7165a8ffa" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&amp; rhs) const -&gt; bool</span>
             </dt>
             <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa5b622c766911d857cd17ddd11090547" class="m-doc">parsed_length</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const -&gt; uint32_t</span>
+            </dt>
+            <dd>Return the length of the 1-based specified track in frames as parsed from the toc metadata input.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a41d99210b11bd765d852eb38ab294c16" class="m-doc">track_count</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a></span>
+            </dt>
+            <dd>Return the number of tracks.</dd>
           </dl>
         </section>
         <section>
@@ -158,66 +158,20 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a41d99210b11bd765d852eb38ab294c16"><div>
+          <section class="m-doc-details" id="ac25e4ffb68299641d657105d8949da81"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a41d99210b11bd765d852eb38ab294c16" class="m-doc-self">track_count</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac25e4ffb68299641d657105d8949da81" class="m-doc-self">complete</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Return the number of tracks.</p>
+            <p>Return TRUE iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>Number of tracks</td>
+                  <td>TRUE iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</td>
                 </tr>
               </tfoot>
             </table>
-          </div></section>
-          <section class="m-doc-details" id="a7b38d76e35947c7e51ae2a85f84ca6e2"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7b38d76e35947c7e51ae2a85f84ca6e2" class="m-doc-self">offset</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const</span></span>
-            </h3>
-            <p>Return the offset of the 1-based specified track in frames, i.e. <code>offsets(i)</code> is the offset for track <code>i</code> iff <code>i</code> is a valid track number in this <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, otherwise 0.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">idx&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>1-based track number</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>Offset of specified track</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="aa5b622c766911d857cd17ddd11090547"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa5b622c766911d857cd17ddd11090547" class="m-doc-self">parsed_length</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const</span></span>
-            </h3>
-            <p>Return the length of the 1-based specified track in frames as parsed from the toc metadata input.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">idx&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>1-based track number</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>Length of specified track</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>If the length for this track is not known, 0 is returned.</p><aside class="m-note m-warning"><h4>Attention</h4><p>These lengths are the lengths as they were passed to the build function. They are not normalized or sanitized. They might be inconsistent with the offsets.</p></aside>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> <code>t</code> is complete, if <code>t.leadout() != 0</code>, otherwise it is not complete.</p>
           </div></section>
           <section class="m-doc-details" id="a2d664ac8fc245ad54eaf7be1ff09451e"><div>
             <h3>
@@ -258,20 +212,28 @@
             </table>
 <p>Should be either 0 if unknown, or, if known, equal to the sum of <code>offset(track_count())</code> and <code>length(track_count())</code>.</p><aside class="m-note m-dim"><h4><a href="todo.html#_todo000004" class="m-doc">Todo</a></h4><p>Not sure about the leadout for CDs with a data track.</p></aside>
           </div></section>
-          <section class="m-doc-details" id="ac25e4ffb68299641d657105d8949da81"><div>
+          <section class="m-doc-details" id="a7b38d76e35947c7e51ae2a85f84ca6e2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac25e4ffb68299641d657105d8949da81" class="m-doc-self">complete</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7b38d76e35947c7e51ae2a85f84ca6e2" class="m-doc-self">offset</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const</span></span>
             </h3>
-            <p>Return TRUE iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</p>
+            <p>Return the offset of the 1-based specified track in frames, i.e. <code>offsets(i)</code> is the offset for track <code>i</code> iff <code>i</code> is a valid track number in this <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, otherwise 0.</p>
             <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">idx&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>1-based track number</td>
+                </tr>
+              </tbody>
               <tfoot>
                 <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>TRUE iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</td>
+                  <th>Returns</th>
+                  <td>Offset of specified track</td>
                 </tr>
               </tfoot>
             </table>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> <code>t</code> is complete, if <code>t.leadout() != 0</code>, otherwise it is not complete.</p>
           </div></section>
           <section class="m-doc-details" id="a1d468e07d1bcbef05defb17d33c4173a"><div>
             <h3>
@@ -341,6 +303,44 @@
               </tfoot>
             </table>
 <p>Equality operator</p>
+          </div></section>
+          <section class="m-doc-details" id="aa5b622c766911d857cd17ddd11090547"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa5b622c766911d857cd17ddd11090547" class="m-doc-self">parsed_length</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const</span></span>
+            </h3>
+            <p>Return the length of the 1-based specified track in frames as parsed from the toc metadata input.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">idx&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>1-based track number</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Length of specified track</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If the length for this track is not known, 0 is returned.</p><aside class="m-note m-warning"><h4>Attention</h4><p>These lengths are the lengths as they were passed to the build function. They are not normalized or sanitized. They might be inconsistent with the offsets.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a41d99210b11bd765d852eb38ab294c16"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a41d99210b11bd765d852eb38ab294c16" class="m-doc-self">track_count</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the number of tracks.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Number of tracks</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
         </section>
       </div>
