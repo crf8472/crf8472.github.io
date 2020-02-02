@@ -328,14 +328,19 @@
             </dt>
             <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga8b0bc023a1174cc63bac3b6c577804d1" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
-              const bool&amp; skip_front,
-              const bool&amp; skip_back) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga5fd86a4b3a66644536faa748afdd31d7" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const bool&amp; skip_front,
+              const bool&amp; skip_back,
+              const std::string&amp; audiofilename = std::string()) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and two skip flags.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga42e118c333614f4c3cea02ad6a724175" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
-              const <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&amp; toc) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga06b02c8841b710f5431958ee45f93cf3" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&gt;&amp; toc,
+              const std::string&amp; audiofilename = std::string()) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&gt;</span>
+            </dt>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga34fec7c4732f804605e80547e902c825" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&amp; toc,
+              const std::string&amp; audiofilename = std::string()) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
