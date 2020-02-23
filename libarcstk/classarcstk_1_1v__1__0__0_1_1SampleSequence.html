@@ -58,17 +58,27 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> is an adapter for passing sample sequences of virtually any signed integral format to <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aece1e9239c75961b685ca1c93c8c3f72" class="m-doc">Calculation::<wbr />update()</a>. <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> instances provide converting access to the samples.</p><p>The channel ordering can be either left/right or right/left.</p>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> is an adapter for passing sample sequences of virtually any signed integral format to <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">Calculation::<wbr />update()</a>. <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> instances provide converting access to the samples.</p><p>The channel ordering can be either left/right or right/left.</p>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="aabca12668a884c07d0ec2c54281f6386">
+              using <a href="#aabca12668a884c07d0ec2c54281f6386" class="m-doc-self">value_type</a> = <a href="group__calc.html#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">sample_<wbr />t</a>
+            </dt>
+            <dd>Unsigned integer of at least 32 bit size.</dd>
+          </dl>
+        </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa22243084baaa4bdf935c2531fac0ba0" class="m-doc">at</a>(</span><span class="m-doc-wrap">const uint32_t index) const -&gt; uint32_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6a2b18553f707d157ef8ecd8324d9045" class="m-doc">at</a>(</span><span class="m-doc-wrap">const size_type index) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html#aabca12668a884c07d0ec2c54281f6386" class="m-doc">value_<wbr />type</a></span>
             </dt>
             <dd>Provides access to the samples in a uniform format (32 bit PCM)</dd>
             <dt>
@@ -88,31 +98,31 @@
             </dt>
             <dd>Iterator pointing behind the end.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a90c9be433b7c3230cca25d8eaa7cabb7" class="m-doc">operator[]</a>(</span><span class="m-doc-wrap">const uint32_t index) const -&gt; uint32_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0b6940d3036c673d2f69c7da4a60c5e2" class="m-doc">operator[]</a>(</span><span class="m-doc-wrap">const size_type index) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html#aabca12668a884c07d0ec2c54281f6386" class="m-doc">value_<wbr />type</a></span>
             </dt>
             <dd>Provides access to the samples in a uniform format (32 bit PCM).</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a82aecbcd5961be6b767090f9dadca92d" class="m-doc">reset</a>(</span><span class="m-doc-wrap">const T* buffer0,
+              <span class="m-doc-wrap-bumper">void <a href="#ade6d6243d49a797bd9d9876a5502665a" class="m-doc">reset</a>(</span><span class="m-doc-wrap">const T* buffer0,
               const T* buffer1,
-              const uint32_t&amp; size)</span>
+              const size_type size)</span>
             </dt>
             <dd>Rewrap the specified buffers into this sample sequence.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a6e8bd9fd310db90ead04e4d5cd7efc65" class="m-doc">wrap</a>(</span><span class="m-doc-wrap">const uint8_t* buffer0,
+              <span class="m-doc-wrap-bumper">void <a href="#a3baccb359bd70afc58b0a64aece05c06" class="m-doc">wrap</a>(</span><span class="m-doc-wrap">const uint8_t* buffer0,
               const uint8_t* buffer1,
-              const uint32_t&amp; size)</span>
+              const size_type size)</span>
             </dt>
             <dd>Rewrap the specified buffers into this sample sequence.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="aa22243084baaa4bdf935c2531fac0ba0"><div>
+          <section class="m-doc-details" id="a6a2b18553f707d157ef8ecd8324d9045"><div>
             <h3>
               <div class="m-doc-template">
                 template&lt;typenameT, boolis_planar&gt;
               </div>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa22243084baaa4bdf935c2531fac0ba0" class="m-doc-self">at</a>(</span><span class="m-doc-wrap">const uint32_t index) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html#aabca12668a884c07d0ec2c54281f6386" class="m-doc">value_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6a2b18553f707d157ef8ecd8324d9045" class="m-doc-self">at</a>(</span><span class="m-doc-wrap">const size_type index) const</span></span>
             </h3>
             <p>Provides access to the samples in a uniform format (32 bit PCM)</p>
             <table class="m-table m-fullwidth m-flat">
@@ -211,12 +221,12 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a90c9be433b7c3230cca25d8eaa7cabb7"><div>
+          <section class="m-doc-details" id="a0b6940d3036c673d2f69c7da4a60c5e2"><div>
             <h3>
               <div class="m-doc-template">
                 template&lt;typenameT, boolis_planar&gt;
               </div>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a90c9be433b7c3230cca25d8eaa7cabb7" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">const uint32_t index) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html#aabca12668a884c07d0ec2c54281f6386" class="m-doc">value_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b6940d3036c673d2f69c7da4a60c5e2" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">const size_type index) const</span></span>
             </h3>
             <p>Provides access to the samples in a uniform format (32 bit PCM).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -238,14 +248,14 @@
             </table>
 <aside class="m-note m-default"><h4>Bits 31-24: Left Channel MSB</h4></aside><aside class="m-note m-default"><h4>Bits 23-16: Left Channel LSB</h4></aside><aside class="m-note m-default"><h4>Bits 15-09: Right Channel MSB</h4></aside><aside class="m-note m-default"><h4>Bits 08-00: Right Channel LSB</h4></aside>
           </div></section>
-          <section class="m-doc-details" id="a82aecbcd5961be6b767090f9dadca92d"><div>
+          <section class="m-doc-details" id="ade6d6243d49a797bd9d9876a5502665a"><div>
             <h3>
               <div class="m-doc-template">
                 template&lt;typenameT, boolis_planar&gt;
               </div>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a82aecbcd5961be6b767090f9dadca92d" class="m-doc-self">reset</a>(</span><span class="m-doc-wrap">const T* buffer0,
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade6d6243d49a797bd9d9876a5502665a" class="m-doc-self">reset</a>(</span><span class="m-doc-wrap">const T* buffer0,
               const T* buffer1,
-              const uint32_t&amp; size)</span></span>
+              const size_type size)</span></span>
             </h3>
             <p>Rewrap the specified buffers into this sample sequence.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -268,14 +278,14 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a6e8bd9fd310db90ead04e4d5cd7efc65"><div>
+          <section class="m-doc-details" id="a3baccb359bd70afc58b0a64aece05c06"><div>
             <h3>
               <div class="m-doc-template">
                 template&lt;typenameT, boolis_planar&gt;
               </div>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6e8bd9fd310db90ead04e4d5cd7efc65" class="m-doc-self">wrap</a>(</span><span class="m-doc-wrap">const uint8_t* buffer0,
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3baccb359bd70afc58b0a64aece05c06" class="m-doc-self">wrap</a>(</span><span class="m-doc-wrap">const uint8_t* buffer0,
               const uint8_t* buffer1,
-              const uint32_t&amp; size)</span></span>
+              const size_type size)</span></span>
             </h3>
             <p>Rewrap the specified buffers into this sample sequence.</p>
             <table class="m-table m-fullwidth m-flat">

@@ -125,7 +125,7 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">v_1_0_0::Calculation</a>
             </dt>
-            <dd><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> calculation for a requested <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a144c029f3933d8fad46f8a60a621d190" class="m-doc">checksum::<wbr />type</a>.</dd>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> calculation for a requested <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>.</dd>
             <dt>
               struct <a href="structarcstk_1_1v__1__0__0_1_1CDDA__t.html" class="m-doc">v_1_0_0::CDDA_t</a>
             </dt>
@@ -133,11 +133,11 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">v_1_0_0::Checksum</a>
             </dt>
-            <dd>A 32-bit wide checksum for a single file or track.</dd>
+            <dd>A 32-bit wide unsigned checksum for a single file or track.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">v_1_0_0::Checksums</a>
             </dt>
-            <dd>Result of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</dd>
+            <dd>The result of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>, a list of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">v_1_0_0::ChecksumSet</a>
             </dt>
@@ -191,7 +191,7 @@
             </dt>
             <dd>Reports metadata violating the redbook standard.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">v_1_0_0::PCMForwardIterator</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">v_1_0_0::SampleInputIterator</a>
             </dt>
             <dd>Type erasing interface for iterators over PCM 32 Bit samples.</dd>
             <dt>
@@ -263,6 +263,14 @@
             </dt>
             <dd>Type to represent amounts of LBA frames.</dd>
             <dt>
+              using <a href="group__calc.html#ga569e85248a0403534d4c9951e2798f08" class="m-doc">sample_count</a> = uint32_t
+            </dt>
+            <dd>Type to represent amounts of PCM 32 bit samples.</dd>
+            <dt>
+              using <a href="group__calc.html#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">sample_t</a> = uint32_t
+            </dt>
+            <dd>Type for representing a 32 bit PCM stereo sample.</dd>
+            <dt>
               using <a href="group__calc.html#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">sample_type</a> = uint32_t
             </dt>
             <dd>Type to represent a PCM 32 bit sample (2 channels x 16 bit).</dd>
@@ -278,45 +286,45 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga78987b395c237e96346b320ddba885c3" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&gt;&amp; toc) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
             </dt>
-            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#a9ec5b3878660c8e69b22df9f21a46206" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga48f75030dd90429365da45755e23dcc6" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&gt;&amp; toc,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga4199e014d10257a267c2fc006ce6f8fb" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&gt;&amp; toc,
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
             </dt>
             <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a specified leadout.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&amp; toc) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
             </dt>
-            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#ac25e4ffb68299641d657105d8949da81" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#a9ec5b3878660c8e69b22df9f21a46206" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga20f91434c1d6cf176f461551c56b0cc8" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&amp; toc,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga374d2f6bee7252d7f0402f0db0e07143" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&amp; toc,
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
             </dt>
             <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a specified leadout.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer, typename = IsLBAContainer&lt;LBAContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga701b8cc62a7549e901e39dea4396242b" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gac84e07ec3408c557db4dd8f965667768" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
               LBAContainer&amp;&amp; offsets,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
             </dt>
             <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gaeb30a214687d3213037ba947718a1af7" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga3a0de09152fdde2aad5981f59580c9a7" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
               std::initializer_list&lt;T&gt; offsets,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
             </dt>
             <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer, typename = IsLBAContainer&lt;LBAContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga45e03cd94828865991ea8bd778b57adb" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga9e4e1ca7be04ea502cdab19cfab7c576" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
             </dt>
             <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gaa9135137f8426ea7e9704d56e3abb89a" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;T&gt; offsets,
-              const uint32_t leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gaf4c230da926df79913dc05f95679bb03" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;T&gt; offsets,
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
             </dt>
             <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
             <dt>
@@ -336,14 +344,14 @@
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gaed4e675a06b670b5aba8a86bc639ab0e" class="m-doc">make_empty_arid</a>(</span><span class="m-doc-wrap">) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gadec6974067bd3d88af503bf5f027e95e" class="m-doc">make_empty_arid</a>(</span><span class="m-doc-wrap">) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt; <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#ac806ba9e404b0ccf005b798679c311b9" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga47da8440eb3a4cd477bc8ccf17130ce4" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga41b3f763163d1b144036984a79df48f4" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track_count,
               LBAContainer&amp;&amp; offsets,
-              const uint32_t leadout,
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> leadout,
               FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
@@ -357,8 +365,8 @@
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga4030a9d090efb04c00696c4273c395b7" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
-              const uint32_t leadout,
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga8c2d819cd1734497e4f1a9408278268b" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> leadout,
               FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
@@ -373,6 +381,46 @@
               <span class="m-doc-wrap-bumper">auto <a href="group__logging.html#ga577c9ce07c6b223b3e38fa9d8bfa06e4" class="m-doc">now_time</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span>
             </dt>
             <dd>Returns the current time in the format <code>&#x27;YYYY-MM-DD hh:mm:ss.lll&#x27;</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga3030a3551b48b9be1acaab5314086fa6" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">const uint32_t amount,
+              <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Advance the iterator by a non-negative amount.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#gabc1df56e6e7e1d02a784bb4baf450a19" class="m-doc">operator+</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> lhs,
+              const uint32_t amount) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Advance the iterator by a non-negative amount.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga822c8817c82a1b6dbc0ac4d66e1f8bae" class="m-doc">operator&lt;</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; lhs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Less-than.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga7b5c2cbce6fb968bfdd18bb4bce85b4e" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; lhs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga6cb803503b2227c1aad9a4db82826fe3" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; lhs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#gaeb9da641568f7a12ed167461c5b76c0a" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; lhs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga032105655e4a3bc6753affeb0d88308f" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>&amp; lhs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga8c2afc13c3f137b16cf75598cd1d1a24" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&amp; lhs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality.</dd>
           </dl>
         </section>
         <section id="var-members">

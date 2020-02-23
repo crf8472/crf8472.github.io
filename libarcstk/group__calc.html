@@ -48,7 +48,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           Checksum Calculation <span class="m-thin">module</span></h1>
-        <p>Public API for management of checksums.</p>
+        <p>Public API for <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">checksum calculation</a>.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -64,6 +64,7 @@
             </li>
           </ul>
         </div>
+<p>An API to calculate different types of checksums for CDDA conforming audio tracks.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> represents a (stateful) concrete checksum calculation that must be configured with a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> specific to the input audio file and a <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> that specifies the calculation algorithm. The input of the audio file must be represented as a succession of iterable uint32_t represented sample sequences and the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is sequentially updated with these sequences in order. After the last update, the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> returns the calculation result on request. The calculated <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> are represented as an iterable aggregate of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> refers to a particular track and a particular <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> is a set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of different <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />types</a> of the same track.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> represent a calculation result for all requested checksum types and all tracks of the audio input. It is an aggregation of the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of an audio input. Depending on the input, it can represent either an entire album or a single track.</p><p>Considering the input of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>, a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> represents the per-file metadata information that is used during calculation. <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> computes <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> from a sequence of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">updates</a> by sample sequences according to its current <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> wraps the concrete iterator of the input sample sequence so any class with a compatible iterator can be used.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> represents the size of the audio data in a file in frames, samples and bytes.</p><p><a href="classarcstk_1_1v__1__0__0_1_1InvalidAudioException.html" class="m-doc">InvalidAudioException</a> is thrown during the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">update()</a> if the audio input is insufficient or invalid.</p>
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
@@ -85,7 +86,7 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">arcstk::v_1_0_0::Calculation</a>
             </dt>
-            <dd><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> calculation for a requested <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a144c029f3933d8fad46f8a60a621d190" class="m-doc">checksum::<wbr />type</a>.</dd>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> calculation for a requested <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>.</dd>
             <dt>
               struct <a href="structarcstk_1_1v__1__0__0_1_1CDDA__t.html" class="m-doc">arcstk::v_1_0_0::CDDA_t</a>
             </dt>
@@ -93,11 +94,11 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">arcstk::v_1_0_0::Checksum</a>
             </dt>
-            <dd>A 32-bit wide checksum for a single file or track.</dd>
+            <dd>A 32-bit wide unsigned checksum for a single file or track.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">arcstk::v_1_0_0::Checksums</a>
             </dt>
-            <dd>Result of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</dd>
+            <dd>The result of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>, a list of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">arcstk::v_1_0_0::ChecksumSet</a>
             </dt>
@@ -107,7 +108,7 @@
             </dt>
             <dd>Reports invalid audio data.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1PCMForwardIterator.html" class="m-doc">arcstk::v_1_0_0::PCMForwardIterator</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">arcstk::v_1_0_0::SampleInputIterator</a>
             </dt>
             <dd>Type erasing interface for iterators over PCM 32 Bit samples.</dd>
             <dt>
@@ -129,6 +130,14 @@
               using <a href="#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_count</a> = uint32_t
             </dt>
             <dd>Type to represent amounts of LBA frames.</dd>
+            <dt>
+              using <a href="#ga569e85248a0403534d4c9951e2798f08" class="m-doc">sample_count</a> = uint32_t
+            </dt>
+            <dd>Type to represent amounts of PCM 32 bit samples.</dd>
+            <dt>
+              using <a href="#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">sample_t</a> = uint32_t
+            </dt>
+            <dd>Type for representing a 32 bit PCM stereo sample.</dd>
             <dt>
               using <a href="#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">sample_type</a> = uint32_t
             </dt>
@@ -158,6 +167,36 @@
               const std::string&amp; audiofilename = std::string()) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga3030a3551b48b9be1acaab5314086fa6" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">const uint32_t amount,
+              SampleInputIterator rhs) -&gt; SampleInputIterator <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Advance the iterator by a non-negative amount.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gabc1df56e6e7e1d02a784bb4baf450a19" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">SampleInputIterator lhs,
+              const uint32_t amount) -&gt; SampleInputIterator <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Advance the iterator by a non-negative amount.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga822c8817c82a1b6dbc0ac4d66e1f8bae" class="m-doc">operator&lt;</a>(</span><span class="m-doc-wrap">const AudioSize&amp; lhs,
+              const AudioSize&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Less-than.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga6cb803503b2227c1aad9a4db82826fe3" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const AudioSize&amp; lhs,
+              const AudioSize&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gaeb9da641568f7a12ed167461c5b76c0a" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const Checksum&amp; lhs,
+              const Checksum&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga032105655e4a3bc6753affeb0d88308f" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const SampleInputIterator&amp; lhs,
+              const SampleInputIterator&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality.</dd>
           </dl>
         </section>
         <section id="var-members">
@@ -177,6 +216,23 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
             <p>Type to represent amounts of LBA frames.</p>
+<p>A signed integer of at least 32 bit length.</p><p>The type is required to express the maximum frame count in a medium. The value is MAX_BLOCK_ADDRESS == 449.999 frames.</p><p>The type is intended to perform arithmetic operations on it.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga569e85248a0403534d4c9951e2798f08"><div>
+            <h3>
+              using <a href="#ga569e85248a0403534d4c9951e2798f08" class="m-doc-self">sample_count</a> = uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+            </h3>
+            <p>Type to represent amounts of PCM 32 bit samples.</p>
+<p>A signed integer of at least 32 bit length.</p><p>The type is required to express the maximum sample count in a medium, which is MAX_BLOCK_ADDRESS * SAMPLES_PER_FRAME == 264.599.412 samples.</p><p>The type is intended to perform arithmetic operations on it.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga6a0d5ad7d5b687199bcd7b454ae19ae6"><div>
+            <h3>
+              using <a href="#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc-self">sample_t</a> = uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
+            </h3>
+            <p>Type for representing a 32 bit PCM stereo sample.</p>
+<p>This should be defined identically-as or at least assignable-to arcstk::sample_type.</p>
           </div></section>
           <section class="m-doc-details" id="gab0f4797e3f96922bbdba293582d0b06a"><div>
             <h3>
@@ -184,6 +240,7 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
             <p>Type to represent a PCM 32 bit sample (2 channels x 16 bit).</p>
+<p>An unsigned integer of 32 bit length.</p><p>The type is not intended to do arithmetic operations on it.</p><p>Bitwise operators are required to work as on unsigned types.</p><p>The type should have at least the size of arcstk::sample_t.</p><aside class="m-note m-default"><h4>See also</h4><p>arcstk::sample_t</p></aside>
           </div></section>
           <section class="m-doc-details" id="gab54febc3dbc97c4e031001471d798069"><div>
             <h3>
@@ -191,7 +248,7 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
             <p>Data type for track numbers.</p>
-<p>Note that track numbers are 1-based. Hence, a TrackNo can also be used to represent a track count. A track count has a legal maximum of 99. Note that <code>0</code> is not a valid TrackNo.</p>
+<p>Valid track numbers are in the range of 1-99. Note that 0 is not a valid TrackNo. Hence, a TrackNo is not suitable to represent a track count.</p>
           </div></section>
         </section>
         <section>
@@ -290,6 +347,180 @@
               </tfoot>
             </table>
 <p>The file will not be read, the filename is just declared. It is allowed to be omitted and defaults to an empty std::string in this case.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga3030a3551b48b9be1acaab5314086fa6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">SampleInputIterator </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga3030a3551b48b9be1acaab5314086fa6" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">const uint32_t amount,
+              SampleInputIterator rhs) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Advance the iterator by a non-negative amount.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">amount&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>A non-negative amount to advance the iterator</td>
+                </tr>
+                <tr>
+                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The iterator to add to</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Iterator pointing to the position advanced by <code>amount</code></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="gabc1df56e6e7e1d02a784bb4baf450a19"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">SampleInputIterator </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gabc1df56e6e7e1d02a784bb4baf450a19" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">SampleInputIterator lhs,
+              const uint32_t amount) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Advance the iterator by a non-negative amount.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The iterator to add to</td>
+                </tr>
+                <tr>
+                  <td>amount&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>A non-negative amount to advance the iterator</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Iterator pointing to the position advanced by <code>amount</code></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ga822c8817c82a1b6dbc0ac4d66e1f8bae"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga822c8817c82a1b6dbc0ac4d66e1f8bae" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap">const AudioSize&amp; lhs,
+              const AudioSize&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Less-than.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The left hand side of the comparison</td>
+                </tr>
+                <tr>
+                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The right hand side of the comparison</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE if <code>lhs</code> &lt; <code>rhs</code>, otherwise FALSE</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ga6cb803503b2227c1aad9a4db82826fe3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga6cb803503b2227c1aad9a4db82826fe3" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const AudioSize&amp; lhs,
+              const AudioSize&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Equality.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The left hand side of the comparison</td>
+                </tr>
+                <tr>
+                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The right hand side of the comparison</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE if the content of <code>lhs</code> and <code>rhs</code> is equal, otherwise FALSE</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="gaeb9da641568f7a12ed167461c5b76c0a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaeb9da641568f7a12ed167461c5b76c0a" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const Checksum&amp; lhs,
+              const Checksum&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Equality.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The left hand side instance to check for equality</td>
+                </tr>
+                <tr>
+                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The right hand side instance to check for equality</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE if <code>lhs</code> is equal to <code>rhs</code>, otherwise FALSE</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ga032105655e4a3bc6753affeb0d88308f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga032105655e4a3bc6753affeb0d88308f" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const SampleInputIterator&amp; lhs,
+              const SampleInputIterator&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Equality.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The left hand side of the comparison</td>
+                </tr>
+                <tr>
+                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The right hand side of the comparison</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE if the content of <code>lhs</code> and <code>rhs</code> is equal, otherwise FALSE</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
         </section>
         <section>

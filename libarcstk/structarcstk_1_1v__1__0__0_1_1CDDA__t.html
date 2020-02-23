@@ -81,12 +81,12 @@
               const int <a href="#a86bd49e169c5b7f72933fc0e3c509de1" class="m-doc-self">FRAMES_PER_SEC</a>
             </dt>
             <dd>Number of frames per second is 75.</dd>
-            <dt id="a99befaf5ecf0e2a9db686301b7359d2c">
-              const uint32_t <a href="#a99befaf5ecf0e2a9db686301b7359d2c" class="m-doc-self">MAX_BLOCK_ADDRESS</a>
+            <dt id="aff64f04f01da2da2e76dac893ca633f4">
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> <a href="#aff64f04f01da2da2e76dac893ca633f4" class="m-doc-self">MAX_BLOCK_ADDRESS</a>
             </dt>
             <dd>Redbook maximal valid block address is 99:59.74 (MSF) which is equivalent to 449.999 frames.</dd>
             <dt>
-              const uint32_t <a href="#a759b4dacb870774a886f09d70a13cdb9" class="m-doc">MAX_OFFSET</a>
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> <a href="#a58100ea4e944f0e3040c4e86051e805a" class="m-doc">MAX_OFFSET</a>
             </dt>
             <dd>Maximal valid offset value in cdda frames.</dd>
             <dt id="a2e6c862a9a3a56b4dbb9e87c1c032106">
@@ -94,11 +94,11 @@
             </dt>
             <dd>Maximal valid track count.</dd>
             <dt>
-              const uint32_t <a href="#ad907dd5b4b95f8519dab1f4508688e2f" class="m-doc">MIN_TRACK_LEN_FRAMES</a>
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> <a href="#ad0995479b5e11056b5dcfb977b219911" class="m-doc">MIN_TRACK_LEN_FRAMES</a>
             </dt>
             <dd>Minimal number of frames a track contains.</dd>
             <dt>
-              const uint32_t <a href="#a9f7941003bd9571c146ab32f9ed611d7" class="m-doc">MIN_TRACK_OFFSET_DIST</a>
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> <a href="#ac4635ea111b6c84ab4148edeceb7bb64" class="m-doc">MIN_TRACK_OFFSET_DIST</a>
             </dt>
             <dd>Two subsequenct offsets must have a distance of at least this number of frames.</dd>
             <dt id="a1fadab0ca2cd6c08c5cab98bb54650ab">
@@ -131,23 +131,23 @@
             <p>Number of 4 bytes per sample.</p>
 <p>This follows from CDDA where 1 sample == 16 bit/sample * 2 channels / 8 bits/byte</p>
           </div></section>
-          <section class="m-doc-details" id="a759b4dacb870774a886f09d70a13cdb9"><div>
+          <section class="m-doc-details" id="a58100ea4e944f0e3040c4e86051e805a"><div>
             <h3>
-              const uint32_t arcstk::<wbr />v_1_0_0::<wbr />CDDA_t::<wbr /><a href="#a759b4dacb870774a886f09d70a13cdb9" class="m-doc-self">MAX_OFFSET</a>
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CDDA_t::<wbr /><a href="#a58100ea4e944f0e3040c4e86051e805a" class="m-doc-self">MAX_OFFSET</a>
             </h3>
             <p>Maximal valid offset value in cdda frames.</p>
 <p>Redbook defines 79:59.74 (MSF) (+leadin+leadout) as maximal play duration which is equivalent to 360.000 frames, thus the maximal offset is frame index 359.999.</p>
           </div></section>
-          <section class="m-doc-details" id="ad907dd5b4b95f8519dab1f4508688e2f"><div>
+          <section class="m-doc-details" id="ad0995479b5e11056b5dcfb977b219911"><div>
             <h3>
-              const uint32_t arcstk::<wbr />v_1_0_0::<wbr />CDDA_t::<wbr /><a href="#ad907dd5b4b95f8519dab1f4508688e2f" class="m-doc-self">MIN_TRACK_LEN_FRAMES</a>
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CDDA_t::<wbr /><a href="#ad0995479b5e11056b5dcfb977b219911" class="m-doc-self">MIN_TRACK_LEN_FRAMES</a>
             </h3>
             <p>Minimal number of frames a track contains.</p>
 <p>The CDDA conforming minmal track length is 4 seconds including 2 seconds pause but the pause does not contribute to the track lengths, thus 2 sec * 75 frames/sec == 150 frames.</p>
           </div></section>
-          <section class="m-doc-details" id="a9f7941003bd9571c146ab32f9ed611d7"><div>
+          <section class="m-doc-details" id="ac4635ea111b6c84ab4148edeceb7bb64"><div>
             <h3>
-              const uint32_t arcstk::<wbr />v_1_0_0::<wbr />CDDA_t::<wbr /><a href="#a9f7941003bd9571c146ab32f9ed611d7" class="m-doc-self">MIN_TRACK_OFFSET_DIST</a>
+              const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CDDA_t::<wbr /><a href="#ac4635ea111b6c84ab4148edeceb7bb64" class="m-doc-self">MIN_TRACK_OFFSET_DIST</a>
             </h3>
             <p>Two subsequenct offsets must have a distance of at least this number of frames.</p>
 <p>The CDDA conforming minimal track length is 4 seconcs including 2 seconds pause, thus 4 sec * 75 frames/sec == 300 frames.</p>

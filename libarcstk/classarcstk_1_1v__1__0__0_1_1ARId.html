@@ -59,11 +59,12 @@
               <ul>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#friends">Friends</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>The AccurateRip identifier determines the URL of the compact disc dataset as well as the standard filename of the AccurateRip response.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARIds</a> can be constructed either from three precomputed ids or from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> using function <a href="group__id.html#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_<wbr />arid()</a>.</p><p>In some cases, an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is syntactically required, but semantically superflous. An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> can be <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> to indicate that it carries no identifier. An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> that qualifies as <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty()</a> can be constructed by <a href="group__id.html#gaed4e675a06b670b5aba8a86bc639ab0e" class="m-doc">make_<wbr />empty_<wbr />arid()</a>.</p>
+<p>The AccurateRip identifier determines the URL of the compact disc dataset as well as the standard filename of the AccurateRip response.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARIds</a> can be constructed either from three precomputed ids or from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> using function <a href="group__id.html#ga3237be05a032a0f61b824cfd069b5ee9" class="m-doc">make_<wbr />arid()</a>.</p><p>In some cases, an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is syntactically required, but semantically superflous. An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> can be <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#ac806ba9e404b0ccf005b798679c311b9" class="m-doc">empty()</a> to indicate that it carries no identifier. An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> that qualifies as <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#ac806ba9e404b0ccf005b798679c311b9" class="m-doc">empty()</a> can be constructed by <a href="group__id.html#gadec6974067bd3d88af503bf5f027e95e" class="m-doc">make_<wbr />empty_<wbr />arid()</a>.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -92,29 +93,25 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a98087cb260136558e36375b1f897ec73" class="m-doc">cddb_id</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a897eb546b6031e5c3bc133e19f332c5b" class="m-doc">cddb_id</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the CDDB id.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8382c1ef83ee16a66b77987a789ba4a1" class="m-doc">disc_id_1</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8ad44489b2284ec182c744057254e142" class="m-doc">disc_id_1</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the disc_id 1.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2f8648e8255b8ab4d4d254e74555c0f6" class="m-doc">disc_id_2</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1435bde2c939c14f65cc5d4d8568a2bc" class="m-doc">disc_id_2</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the disc_id 2.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a7bb0d12836a127020397f0d9535ae056" class="m-doc">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac806ba9e404b0ccf005b798679c311b9" class="m-doc">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is empty (holding no information).</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4cb38d978176183f74e6769612d1d551" class="m-doc">filename</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a51ee701105ee8f0ca27c4e31863df648" class="m-doc">filename</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the AccurateRip filename of the response file.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#afaf827b64338e39148c2f4e27b128e79" class="m-doc">operator!=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const -&gt; bool</span>
-            </dt>
-            <dd>Returns TRUE if this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> does not holds identical values as <code>rhs</code>, otherwise FALSE.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a28c48b7afe1f69f4c5bcf49f1786e837" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -124,25 +121,31 @@
             </dt>
             <dd>Copy assignment operator.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a803fe5da544125c695491c16c3a37a16" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const -&gt; bool</span>
-            </dt>
-            <dd>Returns TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> holds identical values as <code>rhs</code>, otherwise FALSE.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a04b98089fe52175010fe05c836cdce27" class="m-doc">prefix</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7d2a29325c99d47f56c8bb5943f02402" class="m-doc">prefix</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the standard URL prefix for AccurateRip request urls.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab36130d5b8f5fb4d76fd98c4034e9b84" class="m-doc">to_string</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7d75f5d45fc4a6317a58efa45bcf758b" class="m-doc">to_string</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return a default string representation of this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3cad231d9b943327cac31cbdd3a2be81" class="m-doc">track_count</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5958cd44bdb783aebb845ee3d40dbeca" class="m-doc">track_count</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the track count.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2086dffcd68d3fb2834c66f3472d50f5" class="m-doc">url</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a77d81532393ce8d25dc7792ffe5a50a8" class="m-doc">url</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the AccurateRip request URL.</dd>
+          </dl>
+        </section>
+        <section id="friends">
+          <h2><a href="#friends">Friends</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a71f03970e26d233867647a81f9b00348" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; lhs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality.</dd>
           </dl>
         </section>
         <section>
@@ -213,9 +216,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a98087cb260136558e36375b1f897ec73"><div>
+          <section class="m-doc-details" id="a897eb546b6031e5c3bc133e19f332c5b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a98087cb260136558e36375b1f897ec73" class="m-doc-self">cddb_id</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a897eb546b6031e5c3bc133e19f332c5b" class="m-doc-self">cddb_id</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the CDDB id.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -227,9 +230,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a8382c1ef83ee16a66b77987a789ba4a1"><div>
+          <section class="m-doc-details" id="a8ad44489b2284ec182c744057254e142"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8382c1ef83ee16a66b77987a789ba4a1" class="m-doc-self">disc_id_1</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ad44489b2284ec182c744057254e142" class="m-doc-self">disc_id_1</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the disc_id 1.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -241,9 +244,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a2f8648e8255b8ab4d4d254e74555c0f6"><div>
+          <section class="m-doc-details" id="a1435bde2c939c14f65cc5d4d8568a2bc"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2f8648e8255b8ab4d4d254e74555c0f6" class="m-doc-self">disc_id_2</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1435bde2c939c14f65cc5d4d8568a2bc" class="m-doc-self">disc_id_2</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the disc_id 2.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -255,9 +258,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a7bb0d12836a127020397f0d9535ae056"><div>
+          <section class="m-doc-details" id="ac806ba9e404b0ccf005b798679c311b9"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7bb0d12836a127020397f0d9535ae056" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac806ba9e404b0ccf005b798679c311b9" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is empty (holding no information).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -269,9 +272,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a4cb38d978176183f74e6769612d1d551"><div>
+          <section class="m-doc-details" id="a51ee701105ee8f0ca27c4e31863df648"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cb38d978176183f74e6769612d1d551" class="m-doc-self">filename</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a51ee701105ee8f0ca27c4e31863df648" class="m-doc-self">filename</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the AccurateRip filename of the response file.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -279,29 +282,6 @@
                 <tr>
                   <th style="width: 1%">Returns</th>
                   <td>AccurateRip filename of the response file</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="afaf827b64338e39148c2f4e27b128e79"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afaf827b64338e39148c2f4e27b128e79" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const</span></span>
-            </h3>
-            <p>Returns TRUE if this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> does not holds identical values as <code>rhs</code>, otherwise FALSE.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the comparison</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE iff the right hand side is not equal to the left hand side, otherwise false</td>
                 </tr>
               </tfoot>
             </table>
@@ -347,37 +327,14 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>The resulting left hand side after the assigment</td>
+                  <td>Assigns a deep copy of <code>rhs</code>.</td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a803fe5da544125c695491c16c3a37a16"><div>
+          <section class="m-doc-details" id="a7d2a29325c99d47f56c8bb5943f02402"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a803fe5da544125c695491c16c3a37a16" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) const</span></span>
-            </h3>
-            <p>Returns TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> holds identical values as <code>rhs</code>, otherwise FALSE.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the comparison</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE iff the right hand side is equal to the left hand side, otherwise false</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a04b98089fe52175010fe05c836cdce27"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a04b98089fe52175010fe05c836cdce27" class="m-doc-self">prefix</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d2a29325c99d47f56c8bb5943f02402" class="m-doc-self">prefix</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the standard URL prefix for AccurateRip request urls.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -389,9 +346,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ab36130d5b8f5fb4d76fd98c4034e9b84"><div>
+          <section class="m-doc-details" id="a7d75f5d45fc4a6317a58efa45bcf758b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab36130d5b8f5fb4d76fd98c4034e9b84" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d75f5d45fc4a6317a58efa45bcf758b" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return a default string representation of this <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -403,9 +360,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a3cad231d9b943327cac31cbdd3a2be81"><div>
+          <section class="m-doc-details" id="a5958cd44bdb783aebb845ee3d40dbeca"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3cad231d9b943327cac31cbdd3a2be81" class="m-doc-self">track_count</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5958cd44bdb783aebb845ee3d40dbeca" class="m-doc-self">track_count</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the track count.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -417,9 +374,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a2086dffcd68d3fb2834c66f3472d50f5"><div>
+          <section class="m-doc-details" id="a77d81532393ce8d25dc7792ffe5a50a8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2086dffcd68d3fb2834c66f3472d50f5" class="m-doc-self">url</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a77d81532393ce8d25dc7792ffe5a50a8" class="m-doc-self">url</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the AccurateRip request URL.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -427,6 +384,34 @@
                 <tr>
                   <th style="width: 1%">Returns</th>
                   <td>The AccurateRip request URL</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a71f03970e26d233867647a81f9b00348"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a71f03970e26d233867647a81f9b00348" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; lhs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Equality.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The left hand side of the comparison</td>
+                </tr>
+                <tr>
+                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The right hand side of the comparison</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE if the content of <code>lhs</code> and <code>rhs</code> is equal, otherwise FALSE</td>
                 </tr>
               </tfoot>
             </table>

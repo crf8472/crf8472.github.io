@@ -48,9 +48,9 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::Checksum <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
         </h1>
-        <p>A 32-bit wide checksum for a single file or track.</p>
+        <p>A 32-bit wide unsigned checksum for a single file or track.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -80,19 +80,11 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3f21e773aec6d7a1559f88b091861c7c" class="m-doc">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise FALSE.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad626cf0d0bc755a8e6e7100d1c2d239c" class="m-doc">operator!=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; rhs) const -&gt; bool</span>
-            </dt>
-            <dd>Inequality.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9cbe891a559a7f70e0e9da4933cdc9f8" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; rhs) const -&gt; bool</span>
-            </dt>
-            <dd>Equality.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a200d48b58ec34c57a6360bd06a8702d5" class="m-doc">value</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc">value</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Numeric value of the checksum.</dd>
           </dl>
@@ -123,9 +115,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a3f21e773aec6d7a1559f88b091861c7c"><div>
+          <section class="m-doc-details" id="afbc1c1a827fa00a8ad778dc7541c4244"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f21e773aec6d7a1559f88b091861c7c" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise FALSE.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -136,57 +128,11 @@
                 </tr>
               </tfoot>
             </table>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty if it contains no valid value. Note that this does not entail <code><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a200d48b58ec34c57a6360bd06a8702d5" class="m-doc">value()</a> == 0</code> in all cases. Nonetheless, for most checksum types, the converse holds, they are <code><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a3f21e773aec6d7a1559f88b091861c7c" class="m-doc">empty()</a></code> if they are <code>0</code> .</p>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty if it contains no valid value. Note that this does not entail <code><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc">value()</a> == 0</code> in all cases. Nonetheless, for most checksum types, the converse holds, they are <code><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a></code> if they are <code>0</code> .</p>
           </div></section>
-          <section class="m-doc-details" id="ad626cf0d0bc755a8e6e7100d1c2d239c"><div>
+          <section class="m-doc-details" id="a15fccb4244c8c3297cdcb77252649ab0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad626cf0d0bc755a8e6e7100d1c2d239c" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; rhs) const</span></span>
-            </h3>
-            <p>Inequality.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The instance to check for inequality</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if <code>rhs</code> is not equal to this instance, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a9cbe891a559a7f70e0e9da4933cdc9f8"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9cbe891a559a7f70e0e9da4933cdc9f8" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; rhs) const</span></span>
-            </h3>
-            <p>Equality.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The instance to check for equality</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if <code>rhs</code> is equal to this instance, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a200d48b58ec34c57a6360bd06a8702d5"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a200d48b58ec34c57a6360bd06a8702d5" class="m-doc-self">value</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc-self">value</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Numeric value of the checksum.</p>
             <table class="m-table m-fullwidth m-flat">
