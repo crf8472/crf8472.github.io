@@ -110,7 +110,7 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">arcstk::v_1_0_0::SampleInputIterator</a>
             </dt>
-            <dd>Type erasing interface for iterators over PCM 32 Bit samples.</dd>
+            <dd>Type erasing interface for iterators over PCM 32 bit samples.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T, bool is_planar, bool is_const&gt;</div>
               class <a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">arcstk::v_1_0_0::SampleIterator</a>
@@ -127,11 +127,11 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a href="#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_count</a> = uint32_t
+              using <a href="#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_count</a> = int32_t
             </dt>
             <dd>Type to represent amounts of LBA frames.</dd>
             <dt>
-              using <a href="#ga569e85248a0403534d4c9951e2798f08" class="m-doc">sample_count</a> = uint32_t
+              using <a href="#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_count</a> = int32_t
             </dt>
             <dd>Type to represent amounts of PCM 32 bit samples.</dd>
             <dt>
@@ -152,29 +152,42 @@
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga5fd86a4b3a66644536faa748afdd31d7" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const bool&amp; skip_front,
+              <span class="m-doc-wrap-bumper">auto <a href="#gada2e8fe68f3fe0c98c4ef125381c32a7" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const bool&amp; skip_front,
+              const bool&amp; skip_back) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
+            </dt>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from two skip flags.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga2ee01f24271547319ff80a9d6bea22bb" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const bool&amp; skip_front,
               const bool&amp; skip_back,
-              const std::string&amp; audiofilename = std::string()) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
+              const std::string&amp; audiofilename) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and two skip flags.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga06b02c8841b710f5431958ee45f93cf3" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc,
-              const std::string&amp; audiofilename = std::string()) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga5cb79cd3f7a75ef57c51d21d1612fad4" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
+            </dt>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gab1ffe232beb90948c44633bfed086f36" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc,
+              const std::string&amp; audiofilename) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga34fec7c4732f804605e80547e902c825" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const TOC&amp; toc,
-              const std::string&amp; audiofilename = std::string()) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#gaee48e6ac8767bf39c368a503086b44a2" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
+            </dt>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga2a9058438c72db7a17ac0f2cba1b5c8a" class="m-doc">make_context</a>(</span><span class="m-doc-wrap">const TOC&amp; toc,
+              const std::string&amp; audiofilename) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga3030a3551b48b9be1acaab5314086fa6" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">const uint32_t amount,
+              <span class="m-doc-wrap-bumper">auto <a href="#gaf40946c9336127d29fc18db2eefe297f" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">const sample_count amount,
               SampleInputIterator rhs) -&gt; SampleInputIterator <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Advance the iterator by a non-negative amount.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#gabc1df56e6e7e1d02a784bb4baf450a19" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">SampleInputIterator lhs,
-              const uint32_t amount) -&gt; SampleInputIterator <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga0631cbcef9d98d54169b091bc386feb0" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">SampleInputIterator lhs,
+              const sample_count amount) -&gt; SampleInputIterator <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Advance the iterator by a non-negative amount.</dd>
             <dt>
@@ -193,10 +206,20 @@
             </dt>
             <dd>Equality.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga77b1494b4298419fb3821c8bde6a5dca" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const Checksums&amp; lhs,
+              const Checksums&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ga032105655e4a3bc6753affeb0d88308f" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const SampleInputIterator&amp; lhs,
               const SampleInputIterator&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Equality.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ga3e2d4937e73d7e66c4090b7d4f838041" class="m-doc">swap</a>(</span><span class="m-doc-wrap">Checksums&amp; lhs,
+              Checksums&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Swap for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
           </dl>
         </section>
         <section id="var-members">
@@ -210,17 +233,17 @@
         </section>
         <section>
           <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="gadcfadc841853ed7dd280545744c08d73"><div>
+          <section class="m-doc-details" id="gae57ca6855b716d9b1902b6b4d99a1da3"><div>
             <h3>
-              using <a href="#gadcfadc841853ed7dd280545744c08d73" class="m-doc-self">lba_count</a> = uint32_t
+              using <a href="#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc-self">lba_count</a> = int32_t
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
             <p>Type to represent amounts of LBA frames.</p>
 <p>A signed integer of at least 32 bit length.</p><p>The type is required to express the maximum frame count in a medium. The value is MAX_BLOCK_ADDRESS == 449.999 frames.</p><p>The type is intended to perform arithmetic operations on it.</p>
           </div></section>
-          <section class="m-doc-details" id="ga569e85248a0403534d4c9951e2798f08"><div>
+          <section class="m-doc-details" id="gaadf846d5857e283934f3bd58d8db306b"><div>
             <h3>
-              using <a href="#ga569e85248a0403534d4c9951e2798f08" class="m-doc-self">sample_count</a> = uint32_t
+              using <a href="#gaadf846d5857e283934f3bd58d8db306b" class="m-doc-self">sample_count</a> = int32_t
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
             <p>Type to represent amounts of PCM 32 bit samples.</p>
@@ -232,7 +255,7 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
             </h3>
             <p>Type for representing a 32 bit PCM stereo sample.</p>
-<p>This should be defined identically-as or at least assignable-to arcstk::sample_type.</p>
+<p>This should be defined identically-as or at least assignable-to arcstk::sample_type.</p><aside class="m-note m-default"><h4>See also</h4><p>arcstk::sample_type</p></aside>
           </div></section>
           <section class="m-doc-details" id="gab0f4797e3f96922bbdba293582d0b06a"><div>
             <h3>
@@ -248,16 +271,45 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
             <p>Data type for track numbers.</p>
-<p>Valid track numbers are in the range of 1-99. Note that 0 is not a valid TrackNo. Hence, a TrackNo is not suitable to represent a track count.</p>
+<p>Valid track numbers are in the range of 1-99. Note that 0 is not a valid TrackNo. Hence, a TrackNo is not suitable to represent a track count.</p><p>A validation check is not provided, though.</p><p>The intention of this typedef is to provide a marker for 1-based track numbers in the interface.</p>
           </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ga5fd86a4b3a66644536faa748afdd31d7"><div>
+          <section class="m-doc-details" id="gada2e8fe68f3fe0c98c4ef125381c32a7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga5fd86a4b3a66644536faa748afdd31d7" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const bool&amp; skip_front,
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gada2e8fe68f3fe0c98c4ef125381c32a7" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const bool&amp; skip_front,
+              const bool&amp; skip_back)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from two skip flags.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">skip_front&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Tell wether to skip the front samples</td>
+                </tr>
+                <tr>
+                  <td>skip_back&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Tell wether to skip the back samples</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> for the input</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ga2ee01f24271547319ff80a9d6bea22bb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga2ee01f24271547319ff80a9d6bea22bb" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const bool&amp; skip_front,
               const bool&amp; skip_back,
-              const std::string&amp; audiofilename = std::string())</span></span>
+              const std::string&amp; audiofilename)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
             <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and two skip flags.</p>
@@ -286,12 +338,36 @@
                 </tr>
               </tfoot>
             </table>
-<p>The file will not be read, the filename is just declared. It is allowed to be omitted and defaults to an empty std::string in this case.</p>
+<p>The file will not be opened by the object, it is just declared as part of the metadata.</p>
           </div></section>
-          <section class="m-doc-details" id="ga06b02c8841b710f5431958ee45f93cf3"><div>
+          <section class="m-doc-details" id="ga5cb79cd3f7a75ef57c51d21d1612fad4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga06b02c8841b710f5431958ee45f93cf3" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc,
-              const std::string&amp; audiofilename = std::string())</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga5cb79cd3f7a75ef57c51d21d1612fad4" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">toc&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> to use</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> for the input</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="gab1ffe232beb90948c44633bfed086f36"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gab1ffe232beb90948c44633bfed086f36" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc,
+              const std::string&amp; audiofilename)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
             <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
@@ -316,12 +392,36 @@
                 </tr>
               </tfoot>
             </table>
-<p>The file will not be read, the filename is just declared. It is allowed to be omitted and defaults to an empty std::string in this case.</p>
+<p>The file will not be opened by the object, it is just declared as part of the metadata.</p>
           </div></section>
-          <section class="m-doc-details" id="ga34fec7c4732f804605e80547e902c825"><div>
+          <section class="m-doc-details" id="gaee48e6ac8767bf39c368a503086b44a2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga34fec7c4732f804605e80547e902c825" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const TOC&amp; toc,
-              const std::string&amp; audiofilename = std::string())</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaee48e6ac8767bf39c368a503086b44a2" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const TOC&amp; toc)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">toc&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> to use</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> for the input</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ga2a9058438c72db7a17ac0f2cba1b5c8a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga2a9058438c72db7a17ac0f2cba1b5c8a" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const TOC&amp; toc,
+              const std::string&amp; audiofilename)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
             <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
@@ -346,11 +446,11 @@
                 </tr>
               </tfoot>
             </table>
-<p>The file will not be read, the filename is just declared. It is allowed to be omitted and defaults to an empty std::string in this case.</p>
+<p>The file will not be opened by the object, it is just declared as part of the metadata.</p>
           </div></section>
-          <section class="m-doc-details" id="ga3030a3551b48b9be1acaab5314086fa6"><div>
+          <section class="m-doc-details" id="gaf40946c9336127d29fc18db2eefe297f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">SampleInputIterator </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga3030a3551b48b9be1acaab5314086fa6" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">const uint32_t amount,
+              <span class="m-doc-wrap-bumper">SampleInputIterator </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaf40946c9336127d29fc18db2eefe297f" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">const sample_count amount,
               SampleInputIterator rhs) <span class="m-label m-success">noexcept</span></span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
@@ -377,10 +477,10 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="gabc1df56e6e7e1d02a784bb4baf450a19"><div>
+          <section class="m-doc-details" id="ga0631cbcef9d98d54169b091bc386feb0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">SampleInputIterator </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gabc1df56e6e7e1d02a784bb4baf450a19" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">SampleInputIterator lhs,
-              const uint32_t amount) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">SampleInputIterator </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga0631cbcef9d98d54169b091bc386feb0" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">SampleInputIterator lhs,
+              const sample_count amount) <span class="m-label m-success">noexcept</span></span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
             <p>Advance the iterator by a non-negative amount.</p>
@@ -493,6 +593,35 @@
               </tfoot>
             </table>
           </div></section>
+          <section class="m-doc-details" id="ga77b1494b4298419fb3821c8bde6a5dca"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga77b1494b4298419fb3821c8bde6a5dca" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const Checksums&amp; lhs,
+              const Checksums&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Equality for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Left hand side to compare</td>
+                </tr>
+                <tr>
+                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Right hand side to compare</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE if <code>lhs</code> equals <code>rhs</code></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="ga032105655e4a3bc6753affeb0d88308f"><div>
             <h3>
               <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga032105655e4a3bc6753affeb0d88308f" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const SampleInputIterator&amp; lhs,
@@ -520,6 +649,29 @@
                   <td>TRUE if the content of <code>lhs</code> and <code>rhs</code> is equal, otherwise FALSE</td>
                 </tr>
               </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ga3e2d4937e73d7e66c4090b7d4f838041"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga3e2d4937e73d7e66c4090b7d4f838041" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap">Checksums&amp; lhs,
+              Checksums&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Swap for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Left hand side to swap</td>
+                </tr>
+                <tr>
+                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Right hand side to swap</td>
+                </tr>
+              </tbody>
             </table>
           </div></section>
         </section>

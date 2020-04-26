@@ -88,10 +88,6 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a911ad7c9faece8cc6e3b755304e3b356" class="m-doc">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>&gt;</span>
-            </dt>
-            <dd>Clone this object.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">void <a href="#abe5f3bdb2a5bb59b047d96220e00bfa1" class="m-doc">error</a>(</span><span class="m-doc-wrap">const uint32_t byte_pos,
               const uint32_t block,
               const uint32_t block_byte_pos)</span>
@@ -103,10 +99,6 @@
           <h2><a href="#pri-methods">Private functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a395dd6d584aff9260fc033dfcea2677b" class="m-doc">do_clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Clone this object.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a1a934d576df7caff3b0d3ac4983af6e2" class="m-doc">do_error</a>(</span><span class="m-doc-wrap">const uint32_t byte_pos,
               const uint32_t block,
               const uint32_t block_byte_pos) <span class="m-label m-flat m-warning">pure virtual</span></span>
@@ -116,21 +108,6 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a911ad7c9faece8cc6e3b755304e3b356"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />ErrorHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a911ad7c9faece8cc6e3b755304e3b356" class="m-doc-self">clone</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Clone this object.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Deep copy of this object</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>A clone is a deep copy, i.e. the result of the cloning will be a different object with the exact same state.</p>
-          </div></section>
           <section class="m-doc-details" id="abe5f3bdb2a5bb59b047d96220e00bfa1"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ErrorHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe5f3bdb2a5bb59b047d96220e00bfa1" class="m-doc-self">error</a>(</span><span class="m-doc-wrap">const uint32_t byte_pos,
@@ -158,21 +135,6 @@
               </tbody>
             </table>
 <aside class="m-note m-warning"><h4>Attention</h4><p>The byte positions are all interpreted as 1-based.</p></aside>
-          </div></section>
-          <section class="m-doc-details" id="a395dd6d584aff9260fc033dfcea2677b"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />ErrorHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a395dd6d584aff9260fc033dfcea2677b" class="m-doc-self">do_clone</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Clone this object.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Deep copy of this object</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>A clone is a deep copy, i.e. the result of the cloning will be a different object with the exact same state.</p>
           </div></section>
           <section class="m-doc-details" id="a1a934d576df7caff3b0d3ac4983af6e2"><div>
             <h3>

@@ -97,6 +97,10 @@
               <span class="m-doc-wrap-bumper"><a href="#a1756cfb806c58d5cd1608a38392f66d8" class="m-doc">Checksums</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a> size) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
             <dd>Constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae2eca7f69b0b1d43a834c841648ffafe" class="m-doc">Checksums</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;<a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&gt; tracks)</span>
+            </dt>
+            <dd>Constructor.</dd>
             <dt id="a9d3c3355b7e5d69adf574f3459edf8e6">
               <span class="m-doc-wrap-bumper"><a href="#a9d3c3355b7e5d69adf574f3459edf8e6" class="m-doc-self">~Checksums</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -107,27 +111,27 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a254c77c44017be6a8687533fda18a18c" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#a229124812fa03957ef47a7c78d855661" class="m-doc">iterator</a></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a806c475e5af0f843f79dc4406ef0fa25" class="m-doc">append</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; checksums)</span>
+            </dt>
+            <dd>Append a track&#x27;s checksums.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a00330ba3def260876244b924494eab3d" class="m-doc">at</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a> index) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp;</span>
+            </dt>
+            <dd>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified 0-based index <code>index</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a75449f7625ac3059d7cd33c090565f3e" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Returns a pointer to the first element.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a581ce5fcb1f20eaa731e47d8a28c8491" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac1c35ceadf88c10b58319bf21e57792c" class="m-doc">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Returns a pointer to the first element.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a36e4c72f95fd0974261ff321a723634f" class="m-doc">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a></span>
-            </dt>
-            <dd>Returns a pointer to the first element.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aef3eb15dab93ce2015b8b0863dff37d2" class="m-doc">cend</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a895dce92abc26ac090813cd65821f270" class="m-doc">cend</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Returns a pointer after the last element.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2a6682bb2f176a56b58b28f42a7c8389" class="m-doc">end</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#a229124812fa03957ef47a7c78d855661" class="m-doc">iterator</a></span>
-            </dt>
-            <dd>Returns a pointer after the last element.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9f0a1e7a902bc6032f5c27718a614ccb" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8a8c1c6e0eca09e973d92d26c78aa44c" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Returns a pointer after the last element.</dd>
             <dt>
@@ -139,15 +143,11 @@
             </dt>
             <dd>Copy assignment.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9a64ea610f3f76c70653a628dc8be0dd" class="m-doc">operator[]</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a> index) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp;</span>
-            </dt>
-            <dd>Access element by its 0-based <code>index</code> .</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a7e0ec7da8d71c2741487cd4d87db043d" class="m-doc">operator[]</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a> index) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp;</span>
             </dt>
-            <dd>Access element by its 0-based <code>index</code> .</dd>
+            <dd>The <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> with the specified <code>index</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8fc3db68335178d7a71deb622e5accac" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#addb33c6ac55d249d583e7256381f75f5" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the number of elements.</dd>
           </dl>
@@ -156,8 +156,13 @@
           <h2><a href="#friends">Friends</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a0094cc1d49a942688e820caaab81cf57" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; lhs,
-              <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; rhs)</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a255b00c374bcd25f0a66459103f926b5" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; lhs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Equality for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a73083db38214fb212db4e84735e7f4d5" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; lhs,
+              <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Swap for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
           </dl>
@@ -215,9 +220,77 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a254c77c44017be6a8687533fda18a18c"><div>
+          <section class="m-doc-details" id="ae2eca7f69b0b1d43a834c841648ffafe"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#a229124812fa03957ef47a7c78d855661" class="m-doc">iterator</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a254c77c44017be6a8687533fda18a18c" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae2eca7f69b0b1d43a834c841648ffafe" class="m-doc-self">Checksums</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;<a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&gt; tracks)</span></span>
+            </h3>
+            <p>Constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">tracks&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Sequence of track checksums</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This constructor is intended for testing purposes only.</p>
+          </div></section>
+          <section class="m-doc-details" id="a806c475e5af0f843f79dc4406ef0fa25"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a806c475e5af0f843f79dc4406ef0fa25" class="m-doc-self">append</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; checksums)</span></span>
+            </h3>
+            <p>Append a track&#x27;s checksums.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">checksums&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The checksums of a track</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a00330ba3def260876244b924494eab3d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a00330ba3def260876244b924494eab3d" class="m-doc-self">at</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a> index) const</span></span>
+            </h3>
+            <p>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified 0-based index <code>index</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">index&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Index of the <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> to read</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> at index <code>index</code>.</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>std::out_of_range</td>
+                  <td>Iff <code>index</code> &gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#addb33c6ac55d249d583e7256381f75f5" class="m-doc">Checksums::<wbr />size()</a> - 1.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Bounds checking is performed. If <code>index</code> is illegal, an exception is thrown.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#a7e0ec7da8d71c2741487cd4d87db043d" class="m-doc">operator[]</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a75449f7625ac3059d7cd33c090565f3e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a75449f7625ac3059d7cd33c090565f3e" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns a pointer to the first element.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -229,9 +302,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a581ce5fcb1f20eaa731e47d8a28c8491"><div>
+          <section class="m-doc-details" id="ac1c35ceadf88c10b58319bf21e57792c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a581ce5fcb1f20eaa731e47d8a28c8491" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac1c35ceadf88c10b58319bf21e57792c" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns a pointer to the first element.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -243,23 +316,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a36e4c72f95fd0974261ff321a723634f"><div>
+          <section class="m-doc-details" id="a895dce92abc26ac090813cd65821f270"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a36e4c72f95fd0974261ff321a723634f" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Returns a pointer to the first element.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Pointer to the first element</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="aef3eb15dab93ce2015b8b0863dff37d2"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aef3eb15dab93ce2015b8b0863dff37d2" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a895dce92abc26ac090813cd65821f270" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns a pointer after the last element.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -271,23 +330,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a2a6682bb2f176a56b58b28f42a7c8389"><div>
+          <section class="m-doc-details" id="a8a8c1c6e0eca09e973d92d26c78aa44c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#a229124812fa03957ef47a7c78d855661" class="m-doc">iterator</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2a6682bb2f176a56b58b28f42a7c8389" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">)</span></span>
-            </h3>
-            <p>Returns a pointer after the last element.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Pointer after the last element</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a9f0a1e7a902bc6032f5c27718a614ccb"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9f0a1e7a902bc6032f5c27718a614ccb" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aebbc0953d29d82fcb71ccc7436f93b92" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8a8c1c6e0eca09e973d92d26c78aa44c" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns a pointer after the last element.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -345,35 +390,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a9a64ea610f3f76c70653a628dc8be0dd"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a64ea610f3f76c70653a628dc8be0dd" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a> index)</span></span>
-            </h3>
-            <p>Access element by its 0-based <code>index</code> .</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">index&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The 0-based index of the element</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The element with index <code>index</code></td>
-                </tr>
-              </tfoot>
-            </table>
-<p>Legal range is from <code>0</code> to <code>size - 1</code>.</p>
-          </div></section>
           <section class="m-doc-details" id="a7e0ec7da8d71c2741487cd4d87db043d"><div>
             <h3>
               <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7e0ec7da8d71c2741487cd4d87db043d" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a> index) const</span></span>
             </h3>
-            <p>Access element by its 0-based <code>index</code> .</p>
+            <p>The <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> with the specified <code>index</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -381,21 +402,21 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">index&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The 0-based index of the element</td>
+                  <td>The 0-based index of the <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> to return</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>The element with index <code>index</code></td>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> at the specified index</td>
                 </tr>
               </tfoot>
             </table>
-<p>Legal range is from <code>0</code> to <code>size - 1</code>.</p>
+<p>No bounds checking is performed. For index based access with bounds checking, see <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#a00330ba3def260876244b924494eab3d" class="m-doc">at()</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a8fc3db68335178d7a71deb622e5accac"><div>
+          <section class="m-doc-details" id="addb33c6ac55d249d583e7256381f75f5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8fc3db68335178d7a71deb622e5accac" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html#aa2fe47f28395e8752a5996b0e59a8234" class="m-doc">size_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />Checksums::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#addb33c6ac55d249d583e7256381f75f5" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the number of elements.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -407,10 +428,38 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a0094cc1d49a942688e820caaab81cf57"><div>
+          <section class="m-doc-details" id="a255b00c374bcd25f0a66459103f926b5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0094cc1d49a942688e820caaab81cf57" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; lhs,
-              <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; rhs)</span></span>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a255b00c374bcd25f0a66459103f926b5" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; lhs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Equality for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Left hand side to compare</td>
+                </tr>
+                <tr>
+                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Right hand side to compare</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE if <code>lhs</code> equals <code>rhs</code></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a73083db38214fb212db4e84735e7f4d5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a73083db38214fb212db4e84735e7f4d5" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; lhs,
+              <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Swap for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</p>
             <table class="m-table m-fullwidth m-flat">

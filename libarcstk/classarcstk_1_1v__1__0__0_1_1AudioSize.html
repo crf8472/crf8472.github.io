@@ -93,8 +93,8 @@
             </dt>
             <dd>Copy constructor.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#af8acd65e0143cd63fe5eadd86d59d036" class="m-doc">AudioSize</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html#a10bccc3e26c36a94ea7e25118da59f12" class="m-doc">UNIT</a> unit,
-              const uint32_t value) <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper"><a href="#a893ead14d9171dda39c3bd5036d1be92" class="m-doc">AudioSize</a>(</span><span class="m-doc-wrap">const long int value,
+              const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html#a10bccc3e26c36a94ea7e25118da59f12" class="m-doc">UNIT</a> unit) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Constructor.</dd>
             <dt id="aae71a4d5dcb6ca9c3677257ade9bbeac">
@@ -107,7 +107,7 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a88e0afce8d2e05e39ad1c7dc6e730096" class="m-doc">leadout_frame</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a88e0afce8d2e05e39ad1c7dc6e730096" class="m-doc">leadout_frame</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the LBA leadout frame.</dd>
             <dt>
@@ -123,25 +123,25 @@
             </dt>
             <dd>Copy assignment.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae7abc1d5374c1466600473eae9937a13" class="m-doc">pcm_byte_count</a>(</span><span class="m-doc-wrap">) const -&gt; uint64_t <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3a47f8ed74a2036aa0cbb0a51d5ca9eb" class="m-doc">pcm_byte_count</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the number of bytes holding 32 bit PCM samples.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab90d969dbd4db99d5a7e73b21916cc13" class="m-doc">sample_count</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Return the total number of 32 bit PCM samples.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a6b1bd50cc8e0f1b7f8579dd6eaac99d3" class="m-doc">set_leadout_frame</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> leadout) <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a6b1bd50cc8e0f1b7f8579dd6eaac99d3" class="m-doc">set_leadout_frame</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> leadout) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Set the 1-based index of the LBA leadout frame.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a0f83f2cb82e4d2be8b53b8823b773a3f" class="m-doc">set_pcm_byte_count</a>(</span><span class="m-doc-wrap">const uint64_t byte_count) <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a7ab3c5e7666233a52312817f27ffbaf4" class="m-doc">set_pcm_byte_count</a>(</span><span class="m-doc-wrap">const uint32_t byte_count) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Set the total number of bytes holding decoded 32 bit PCM samples.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ad76b83dee6bce51c8b924438af3118cd" class="m-doc">set_sample_count</a>(</span><span class="m-doc-wrap">const uint32_t smpl_count) <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a38bc8ef5c7f5f990d9292f1c9b595db4" class="m-doc">set_total_samples</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> smpl_count) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Set the total number of 32 bit PCM samples.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ade076bf52dd79fa0ee205b37cd42d7e1" class="m-doc">total_samples</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Return the total number of 32 bit PCM samples.</dd>
           </dl>
         </section>
         <section id="friends">
@@ -190,10 +190,10 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="af8acd65e0143cd63fe5eadd86d59d036"><div>
+          <section class="m-doc-details" id="a893ead14d9171dda39c3bd5036d1be92"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af8acd65e0143cd63fe5eadd86d59d036" class="m-doc-self">AudioSize</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html#a10bccc3e26c36a94ea7e25118da59f12" class="m-doc">UNIT</a> unit,
-              const uint32_t value) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a893ead14d9171dda39c3bd5036d1be92" class="m-doc-self">AudioSize</a>(</span><span class="m-doc-wrap">const long int value,
+              const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html#a10bccc3e26c36a94ea7e25118da59f12" class="m-doc">UNIT</a> unit) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Constructor.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -202,19 +202,19 @@
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">unit&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Unit for <code>value</code></td>
+                  <td style="width: 1%">value&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Size value</td>
                 </tr>
                 <tr>
-                  <td>value&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Size value</td>
+                  <td>unit&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Unit for <code>value</code></td>
                 </tr>
               </tbody>
             </table>
           </div></section>
           <section class="m-doc-details" id="a88e0afce8d2e05e39ad1c7dc6e730096"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a88e0afce8d2e05e39ad1c7dc6e730096" class="m-doc-self">leadout_frame</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a88e0afce8d2e05e39ad1c7dc6e730096" class="m-doc-self">leadout_frame</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the LBA leadout frame.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -286,9 +286,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ae7abc1d5374c1466600473eae9937a13"><div>
+          <section class="m-doc-details" id="a3a47f8ed74a2036aa0cbb0a51d5ca9eb"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">uint64_t arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae7abc1d5374c1466600473eae9937a13" class="m-doc-self">pcm_byte_count</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3a47f8ed74a2036aa0cbb0a51d5ca9eb" class="m-doc-self">pcm_byte_count</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the number of bytes holding 32 bit PCM samples.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -300,23 +300,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ab90d969dbd4db99d5a7e73b21916cc13"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab90d969dbd4db99d5a7e73b21916cc13" class="m-doc-self">sample_count</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Return the total number of 32 bit PCM samples.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>The total number of 32 bit PCM samples</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="a6b1bd50cc8e0f1b7f8579dd6eaac99d3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6b1bd50cc8e0f1b7f8579dd6eaac99d3" class="m-doc-self">set_leadout_frame</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gadcfadc841853ed7dd280545744c08d73" class="m-doc">lba_<wbr />count</a> leadout) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6b1bd50cc8e0f1b7f8579dd6eaac99d3" class="m-doc-self">set_leadout_frame</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> leadout) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Set the 1-based index of the LBA leadout frame.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -332,9 +318,9 @@
             </table>
 <p>This also determines the number of PCM samples and the number of PCM bytes.</p>
           </div></section>
-          <section class="m-doc-details" id="a0f83f2cb82e4d2be8b53b8823b773a3f"><div>
+          <section class="m-doc-details" id="a7ab3c5e7666233a52312817f27ffbaf4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f83f2cb82e4d2be8b53b8823b773a3f" class="m-doc-self">set_pcm_byte_count</a>(</span><span class="m-doc-wrap">const uint64_t byte_count) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7ab3c5e7666233a52312817f27ffbaf4" class="m-doc-self">set_pcm_byte_count</a>(</span><span class="m-doc-wrap">const uint32_t byte_count) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Set the total number of bytes holding decoded 32 bit PCM samples.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -350,9 +336,9 @@
             </table>
 <p>This also determines the leadout frame and the number of 32 bit PCM samples.</p>
           </div></section>
-          <section class="m-doc-details" id="ad76b83dee6bce51c8b924438af3118cd"><div>
+          <section class="m-doc-details" id="a38bc8ef5c7f5f990d9292f1c9b595db4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad76b83dee6bce51c8b924438af3118cd" class="m-doc-self">set_sample_count</a>(</span><span class="m-doc-wrap">const uint32_t smpl_count) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a38bc8ef5c7f5f990d9292f1c9b595db4" class="m-doc-self">set_total_samples</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> smpl_count) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Set the total number of 32 bit PCM samples.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -367,6 +353,20 @@
               </tbody>
             </table>
 <p>This also determines the leadout frame and the number of PCM bytes.</p>
+          </div></section>
+          <section class="m-doc-details" id="ade076bf52dd79fa0ee205b37cd42d7e1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade076bf52dd79fa0ee205b37cd42d7e1" class="m-doc-self">total_samples</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Return the total number of 32 bit PCM samples.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The total number of 32 bit PCM samples</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a3e22c37eba0f69d115a0e1f645ea366c"><div>
             <h3>

@@ -84,6 +84,10 @@
             </dt>
             <dd>Return TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise FALSE.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3317ee25b1b794a762c7975c1af6081b" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const uint32_t rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp;</span>
+            </dt>
+            <dd>Copy assignment.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc">value</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Numeric value of the checksum.</dd>
@@ -129,6 +133,29 @@
               </tfoot>
             </table>
 <p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty if it contains no valid value. Note that this does not entail <code><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc">value()</a> == 0</code> in all cases. Nonetheless, for most checksum types, the converse holds, they are <code><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a></code> if they are <code>0</code> .</p>
+          </div></section>
+          <section class="m-doc-details" id="a3317ee25b1b794a762c7975c1af6081b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3317ee25b1b794a762c7975c1af6081b" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const uint32_t rhs)</span></span>
+            </h3>
+            <p>Copy assignment.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Right hand side of the assignment</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Result of the assignment</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a15fccb4244c8c3297cdcb77252649ab0"><div>
             <h3>

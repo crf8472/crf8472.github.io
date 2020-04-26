@@ -125,6 +125,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_stream</a>(</span><span class="m-doc-wrap">std::istream&amp; in_stream) -&gt; uint32_t</span>
             </dt>
             <dd>Parses the (opened) byte stream of an AccurateRip response.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a03ab89e3e05af2cea49a25ff777ece8b" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>&amp; rhs)</span>
+            </dt>
+            <dd>Base class swap.</dd>
           </dl>
         </section>
         <section id="pri-methods">
@@ -134,6 +138,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#abf9730a43b4c192f56a6df81455b2b4c" class="m-doc">do_parse</a>(</span><span class="m-doc-wrap">) -&gt; uint32_t <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#afc3f5bb1235647946c04421666340796" class="m-doc">parse()</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a7dae3c43159f1f867d4871b09aeba968" class="m-doc">do_swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>&amp; rhs) <span class="m-label m-flat m-warning">virtual</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a03ab89e3e05af2cea49a25ff777ece8b" class="m-doc">swap()</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#adb319be2b4833e75a2fe02fd245396a2" class="m-doc">on_catched_exception</a>(</span><span class="m-doc-wrap">std::istream&amp; stream,
               const std::exception&amp; e) const <span class="m-label m-flat m-warning">pure virtual</span></span>
@@ -243,6 +251,23 @@
             </table>
 <aside class="m-note m-warning"><h4>Attention</h4><p>It is in the responsibility of the client that the stream is opened before passing. Exceptions must be activated and failbit as well as badbit must be set.</p></aside>
           </div></section>
+          <section class="m-doc-details" id="a03ab89e3e05af2cea49a25ff777ece8b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ARStreamParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a03ab89e3e05af2cea49a25ff777ece8b" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>&amp; rhs) <span class="m-label m-warning">protected</span></span></span>
+            </h3>
+            <p>Base class swap.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Right hand side to swap</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="abf9730a43b4c192f56a6df81455b2b4c"><div>
             <h3>
               <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARStreamParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abf9730a43b4c192f56a6df81455b2b4c" class="m-doc-self">do_parse</a>(</span><span class="m-doc-wrap">) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
@@ -255,6 +280,23 @@
                   <td>Number of bytes parsed from configured input stream</td>
                 </tr>
               </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a7dae3c43159f1f867d4871b09aeba968"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ARStreamParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7dae3c43159f1f867d4871b09aeba968" class="m-doc-self">do_swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>&amp; rhs) <span class="m-label m-warning">virtual</span> <span class="m-label m-danger">private</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a03ab89e3e05af2cea49a25ff777ece8b" class="m-doc">swap()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Right hand side to swap</td>
+                </tr>
+              </tbody>
             </table>
           </div></section>
           <section class="m-doc-details" id="adb319be2b4833e75a2fe02fd245396a2"><div>
