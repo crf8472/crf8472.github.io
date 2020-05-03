@@ -26,10 +26,9 @@
       <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
-            <li><a href="pages.html">Pages</a></li>
             <li><a href="modules.html">Modules</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="3">
+          <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -59,8 +58,6 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#friends">Friends</a></li>
               </ul>
             </li>
           </ul>
@@ -87,25 +84,6 @@
             <dd>Move Constructor.</dd>
           </dl>
         </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af43837dd4e157e7248e342e4c43159d6" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">ARStdinParser</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">ARStdinParser</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Move assignment.</dd>
-          </dl>
-        </section>
-        <section id="friends">
-          <h2><a href="#friends">Friends</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a96da6d2022d42a819927a35bd14fca3e" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">ARStdinParser</a>&amp; lhs,
-              <a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">ARStdinParser</a>&amp; rhs)</span>
-            </dt>
-            <dd>Swap for ARStdinParsers.</dd>
-          </dl>
-        </section>
         <section>
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="af30126392617a1f63f41d3cc526baaeb"><div>
@@ -121,45 +99,6 @@
                 <tr>
                   <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
                   <td>Instance to move</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="af43837dd4e157e7248e342e4c43159d6"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">ARStdinParser</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARStdinParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af43837dd4e157e7248e342e4c43159d6" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">ARStdinParser</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Move assignment.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side to move</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a96da6d2022d42a819927a35bd14fca3e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a96da6d2022d42a819927a35bd14fca3e" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">ARStdinParser</a>&amp; lhs,
-              <a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">ARStdinParser</a>&amp; rhs)</span></span>
-            </h3>
-            <p>Swap for ARStdinParsers.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Left hand side to swap</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side to swap</td>
                 </tr>
               </tbody>
             </table>
@@ -209,7 +148,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

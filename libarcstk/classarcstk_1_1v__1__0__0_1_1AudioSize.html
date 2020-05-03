@@ -26,10 +26,9 @@
       <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
-            <li><a href="pages.html">Pages</a></li>
             <li><a href="modules.html">Modules</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="3">
+          <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -60,7 +59,6 @@
                 <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#friends">Friends</a></li>
               </ul>
             </li>
           </ul>
@@ -115,14 +113,6 @@
             </dt>
             <dd>Return TRUE if the <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> is 0.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a025572c6da7aa522a1b258cf863afa72" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Move assignment.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9150994b1e84fb5666a0fe64fb6371d9" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp;</span>
-            </dt>
-            <dd>Copy assignment.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a3a47f8ed74a2036aa0cbb0a51d5ca9eb" class="m-doc">pcm_byte_count</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the number of bytes holding 32 bit PCM samples.</dd>
@@ -142,16 +132,6 @@
               <span class="m-doc-wrap-bumper">auto <a href="#ade076bf52dd79fa0ee205b37cd42d7e1" class="m-doc">total_samples</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the total number of 32 bit PCM samples.</dd>
-          </dl>
-        </section>
-        <section id="friends">
-          <h2><a href="#friends">Friends</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3e22c37eba0f69d115a0e1f645ea366c" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; lhs,
-              const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Equality.</dd>
           </dl>
         </section>
         <section>
@@ -240,52 +220,6 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a025572c6da7aa522a1b258cf863afa72"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a025572c6da7aa522a1b258cf863afa72" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Move assignment.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side of the assignment</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The right hand side of the assignment</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a9150994b1e84fb5666a0fe64fb6371d9"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9150994b1e84fb5666a0fe64fb6371d9" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> rhs)</span></span>
-            </h3>
-            <p>Copy assignment.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side of the assignment</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The right hand side of the assignment</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="a3a47f8ed74a2036aa0cbb0a51d5ca9eb"><div>
             <h3>
               <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />AudioSize::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3a47f8ed74a2036aa0cbb0a51d5ca9eb" class="m-doc-self">pcm_byte_count</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
@@ -368,34 +302,6 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a3e22c37eba0f69d115a0e1f645ea366c"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3e22c37eba0f69d115a0e1f645ea366c" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; lhs,
-              const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Equality.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The left hand side of the comparison</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the comparison</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if the content of <code>lhs</code> and <code>rhs</code> is equal, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
         </section>
       </div>
     </div>
@@ -441,7 +347,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

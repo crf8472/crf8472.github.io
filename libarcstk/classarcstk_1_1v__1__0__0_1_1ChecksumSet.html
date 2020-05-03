@@ -26,10 +26,9 @@
       <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
-            <li><a href="pages.html">Pages</a></li>
             <li><a href="modules.html">Modules</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="3">
+          <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -63,6 +62,7 @@
             </li>
           </ul>
         </div>
+<p>The <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> represents the calculation result for a single track.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -92,17 +92,66 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a58a28b137842f9b93304ea395371732b" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) -&gt; iterator</span>
+            </dt>
+            <dd>Iterator pointing to the beginning.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2b40bad92a2e89a40199e831231b7c30" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; const_iterator</span>
+            </dt>
+            <dd>Const iterator pointing to the beginning.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2e7d6bf8852696ac8c52f4bcf69eb157" class="m-doc">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; const_iterator</span>
+            </dt>
+            <dd>Const iterator pointing to the beginning.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a628d16b09074aa12e72e9935e64f04ea" class="m-doc">cend</a>(</span><span class="m-doc-wrap">) const -&gt; const_iterator</span>
+            </dt>
+            <dd>Const iterator pointing behind the end.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a2a27e8859ce46d08e50c0a28a93715ab" class="m-doc">clear</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Erases all elements contained in the instance.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a099f6823f052a8b9838d9ad8fd5dba53" class="m-doc">contains</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&amp; type) const -&gt; bool</span>
+            </dt>
+            <dd>Returns TRUE iff the instance contains the type <code>type</code> .</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af3123ddb98f83e8a3caedf649c02e2e2" class="m-doc">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
+            </dt>
+            <dd>Returns TRUE iff the instance contains no elements, otherwise FALSE.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3640db379e02aea6d2f7534647769713" class="m-doc">end</a>(</span><span class="m-doc-wrap">) -&gt; iterator</span>
+            </dt>
+            <dd>Iterator pointing behind the end.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af993224cedfd2aa5a124a87f8808adaa" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; const_iterator</span>
+            </dt>
+            <dd>Const iterator pointing behind the end.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a476fb8756330760231cfe2732af0859c" class="m-doc">erase</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&amp; type)</span>
+            </dt>
+            <dd>Erases the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> with the given type.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#abc8bb1b8dfa858044da7ba8bf307301f" class="m-doc">get</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> type) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a></span>
             </dt>
             <dd>Return the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> for the specified <code>type</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab9363d5500c77cc2ef789c378b06be6f" class="m-doc">insert</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> type,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; checksum) -&gt; std::pair&lt;iterator, bool&gt;</span>
+            </dt>
+            <dd>Inserts a new type-Checksum-pair to the instance.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a83a92e22c82bc0aff13a6b22080abe6d" class="m-doc">length</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Length (in LBA frames) of this track.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af102fc39cb2bc6dd52558b2d039af485" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">void <a href="#a33b22e23e6cbb518bc65c88af8e9a296" class="m-doc">merge</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs)</span>
             </dt>
-            <dd>Copy assignment.</dd>
+            <dd>Merge the elements of another instance into this instance.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a72063ac63b16ddafb849b4328ade3315" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_type</span>
+            </dt>
+            <dd>Returns the number of elements contained in the instance.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a61d8ed46a344514ca32c31509c21ea1a" class="m-doc">types</a>(</span><span class="m-doc-wrap">) const -&gt; std::set&lt;<a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&gt;</span>
             </dt>
@@ -162,6 +211,152 @@
               </tbody>
             </table>
           </div></section>
+          <section class="m-doc-details" id="a58a28b137842f9b93304ea395371732b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">iterator arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a58a28b137842f9b93304ea395371732b" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Iterator pointing to the beginning.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Iterator pointing to the beginning.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2b40bad92a2e89a40199e831231b7c30"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const_iterator arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2b40bad92a2e89a40199e831231b7c30" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Const iterator pointing to the beginning.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Const iterator pointing to the beginning.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2e7d6bf8852696ac8c52f4bcf69eb157"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const_iterator arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2e7d6bf8852696ac8c52f4bcf69eb157" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Const iterator pointing to the beginning.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Const iterator pointing to the beginning.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a628d16b09074aa12e72e9935e64f04ea"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const_iterator arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a628d16b09074aa12e72e9935e64f04ea" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Const iterator pointing behind the end.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Const iterator pointing behind the end.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2a27e8859ce46d08e50c0a28a93715ab"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2a27e8859ce46d08e50c0a28a93715ab" class="m-doc-self">clear</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Erases all elements contained in the instance.</p>
+<p>After <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html#a2a27e8859ce46d08e50c0a28a93715ab" class="m-doc">clear()</a> has been called the size of the container will be <code>0</code> .</p>
+          </div></section>
+          <section class="m-doc-details" id="a099f6823f052a8b9838d9ad8fd5dba53"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a099f6823f052a8b9838d9ad8fd5dba53" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&amp; type) const</span></span>
+            </h3>
+            <p>Returns TRUE iff the instance contains the type <code>type</code> .</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">type&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The type to lookup the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> for</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE iff <code>type</code> is present in the instance, otherwise FALSE</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af3123ddb98f83e8a3caedf649c02e2e2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af3123ddb98f83e8a3caedf649c02e2e2" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns TRUE iff the instance contains no elements, otherwise FALSE.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>TRUE iff instance contains no elements, otherwise FALSE</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a3640db379e02aea6d2f7534647769713"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">iterator arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3640db379e02aea6d2f7534647769713" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Iterator pointing behind the end.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Iterator pointing behind the end.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af993224cedfd2aa5a124a87f8808adaa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const_iterator arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af993224cedfd2aa5a124a87f8808adaa" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Const iterator pointing behind the end.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Const iterator pointing behind the end.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a476fb8756330760231cfe2732af0859c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a476fb8756330760231cfe2732af0859c" class="m-doc-self">erase</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&amp; type)</span></span>
+            </h3>
+            <p>Erases the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> with the given type.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">type&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The type to erase</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Iff the given type is not contained in the instance, the call has no effect.</p>
+          </div></section>
           <section class="m-doc-details" id="abc8bb1b8dfa858044da7ba8bf307301f"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abc8bb1b8dfa858044da7ba8bf307301f" class="m-doc-self">get</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> type) const</span></span>
@@ -184,6 +379,36 @@
                 </tr>
               </tfoot>
             </table>
+<p>If there is no <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> represented for the <code>type</code>, the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> returned will be <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab9363d5500c77cc2ef789c378b06be6f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::pair&lt;iterator, bool&gt; arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab9363d5500c77cc2ef789c378b06be6f" class="m-doc-self">insert</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> type,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; checksum)</span></span>
+            </h3>
+            <p>Inserts a new type-Checksum-pair to the instance.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">type&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The key to use</td>
+                </tr>
+                <tr>
+                  <td>checksum&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The checksum for the given key</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Pair with an iterator to the inserted value and a status flag</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If the key is already present in the instance, the existing checksum will be left unmodified.</p><p>The pair returned contains an iterator to the inserted <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> and a bool that is TRUE iff the insertion was successful. If the insertion was not successful, the value FALSE is returned for the bool and the iterator will point to the element that prevented the insertion.</p>
           </div></section>
           <section class="m-doc-details" id="a83a92e22c82bc0aff13a6b22080abe6d"><div>
             <h3>
@@ -199,11 +424,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="af102fc39cb2bc6dd52558b2d039af485"><div>
+          <section class="m-doc-details" id="a33b22e23e6cbb518bc65c88af8e9a296"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af102fc39cb2bc6dd52558b2d039af485" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a33b22e23e6cbb518bc65c88af8e9a296" class="m-doc-self">merge</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs)</span></span>
             </h3>
-            <p>Copy assignment.</p>
+            <p>Merge the elements of another instance into this instance.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -211,13 +436,31 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side of the assignment</td>
+                  <td>The list to be merged into the instance</td>
                 </tr>
               </tbody>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>domain_error</td>
+                  <td>If <code>rhs.length()</code> != <code><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html#a83a92e22c82bc0aff13a6b22080abe6d" class="m-doc">length()</a></code> and both are != 0</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If a key in the other instance is already present in this instance, the corresponding element will be left unmodified.</p><p>Trying to merge a set with non-zero length into an instance with non-zero length of different value will cause a std::domain_error. If either <code>rhs</code> or <code>this</code> has zero length, the merge will succeed.</p>
+          </div></section>
+          <section class="m-doc-details" id="a72063ac63b16ddafb849b4328ade3315"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">size_type arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a72063ac63b16ddafb849b4328ade3315" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the number of elements contained in the instance.</p>
+            <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
-                  <th>Returns</th>
-                  <td>The right hand side of the assignment</td>
+                  <th style="width: 1%">Returns</th>
+                  <td>Number of elements contained in the instance.</td>
                 </tr>
               </tfoot>
             </table>
@@ -235,7 +478,6 @@
                 </tr>
               </tfoot>
             </table>
-<p>Just an alias to ChecksumMap::keys().</p>
           </div></section>
         </section>
       </div>
@@ -282,7 +524,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

@@ -26,10 +26,9 @@
       <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
-            <li><a href="pages.html">Pages</a></li>
             <li><a href="modules.html">Modules</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="3">
+          <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -66,7 +65,7 @@
             </li>
           </ul>
         </div>
-<p><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> parses a std::istream as an AccurateRip response.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> is required to actually process the parsed content.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> can optionally be set to perform some processing of the error information before a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> is thrown. If no <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> is set, a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> or std::runtime_error is thrown on a parse error.</p><p>Concrete subclasses are responsible for implementing function <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#abf9730a43b4c192f56a6df81455b2b4c" class="m-doc">do_<wbr />parse()</a>. Protected service function <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_<wbr />stream()</a> is provided as a building block for subclasses to implement the parsing. Hook method <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#adb319be2b4833e75a2fe02fd245396a2" class="m-doc">on_<wbr />catched_<wbr />exception()</a> is called before the exception is rethrown, so the subclass has the chance to perform some cleanup as closing the stream if this required.</p><aside class="m-note m-dim"><h4><a href="todo.html#_todo000007" class="m-doc">Todo</a></h4><p>It should be possible to parse without exceptions. If intercepting is preferred, the <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> should rethrow the exception instead of the parser.</p></aside><aside class="m-note m-dim"><h4><a href="todo.html#_todo000008" class="m-doc">Todo</a></h4><p>Specify/ensure all possible exceptions <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_<wbr />stream()</a> can throw</p></aside>
+<p><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> parses a std::istream as an AccurateRip response.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> is required to actually process the parsed content.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> can optionally be set to perform some processing of the error information before a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> is thrown. If no <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> is set, a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> or std::runtime_error is thrown on a parse error.</p><p>Concrete subclasses are responsible for implementing function <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#abf9730a43b4c192f56a6df81455b2b4c" class="m-doc">do_<wbr />parse()</a>. Protected service function <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_<wbr />stream()</a> is provided as a building block for subclasses to implement the parsing. Hook method <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#adb319be2b4833e75a2fe02fd245396a2" class="m-doc">on_<wbr />catched_<wbr />exception()</a> is called before the exception is rethrown, so the subclass has the chance to perform some cleanup as closing the stream if this required.</p>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
@@ -242,12 +241,21 @@
                   <td>The stream to be parsed</td>
                 </tr>
               </tbody>
-              <tfoot>
+              <thead>
                 <tr>
                   <th>Returns</th>
                   <td>Number of bytes parsed from <code>in_stream</code></td>
                 </tr>
-              </tfoot>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>None</td>
+                  <td>If any positional error occurred on parsing</td>
+                </tr>
+              </tbody>
             </table>
 <aside class="m-note m-warning"><h4>Attention</h4><p>It is in the responsibility of the client that the stream is opened before passing. Exceptions must be activated and failbit as well as badbit must be set.</p></aside>
           </div></section>
@@ -367,7 +375,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

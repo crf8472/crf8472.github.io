@@ -26,10 +26,9 @@
       <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
-            <li><a href="pages.html">Pages</a></li>
             <li><a href="modules.html">Modules</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="3">
+          <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -60,12 +59,11 @@
                 <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#friends">Friends</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>An AccurateRip response is in fact parsed as a sequence of ARBlocks.</p><p>Syntactically each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> is an ordered pair of a header and a sequence of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a>.</p><p>Semantically, an <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> contains exactly one <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> for each track of the original disc. This makes the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in fact an ARCS set of the tracks on the disc along with their confidences and pressing offsets for a disc. The header contains the AccurateRip Id of the disc.</p><p>An AccurateRip response may contain different <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlocks</a> for a single disc id and the ARBlocks may differ in the ARCSs they contain for the tracks.</p><aside class="m-note m-dim"><h4><a href="todo.html#_todo000005" class="m-doc">Todo</a></h4><p>Implementation of rbegin(), rend(), crbegin(), crend()</p></aside>
+<p>An AccurateRip response is in fact parsed as a sequence of ARBlocks.</p><p>Syntactically each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> is an ordered pair of a header and a sequence of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a>.</p><p>Semantically, an <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> contains exactly one <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> for each track of the original disc. This makes the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in fact an ARCS set of the tracks on the disc along with their confidences and pressing offsets for a disc. The header contains the AccurateRip Id of the disc.</p><p>An AccurateRip response may contain different <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlocks</a> for a single disc id and the ARBlocks may differ in the ARCSs they contain for the tracks.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -141,14 +139,6 @@
             </dt>
             <dd>The <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">AccurateRip Id</a> of this <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa3d0333f2894da9a1c9ea92385975308" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Move assignment operator.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a63e622c221e9ddaf92efb9bb3b7f0f01" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp;</span>
-            </dt>
-            <dd>Copy assignment operator.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2de2c7b17641393c5cf297fc8cead7dd" class="m-doc">operator[]</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#a0bf1905dd5eb23000a904793ca3fd3d9" class="m-doc">size_<wbr />type</a> index) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;</span>
             </dt>
             <dd>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified <code>index</code>.</dd>
@@ -156,21 +146,6 @@
               <span class="m-doc-wrap-bumper">auto <a href="#adc129296dad63d736bffead250c69448" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#a0bf1905dd5eb23000a904793ca3fd3d9" class="m-doc">size_<wbr />type</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Number of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a> in this <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
-          </dl>
-        </section>
-        <section id="friends">
-          <h2><a href="#friends">Friends</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aedeb94bdfaf41b98d7b8ce6cbdac34d7" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; lhs,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Equality for <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a5aa4cd95d6ac2878ae2913735bd73878" class="m-doc">swap</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; lhs,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; rhs)</span>
-            </dt>
-            <dd>Swap two ARBlocks.</dd>
           </dl>
         </section>
         <section>
@@ -369,52 +344,6 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="aa3d0333f2894da9a1c9ea92385975308"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3d0333f2894da9a1c9ea92385975308" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Move assignment operator.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the assignment</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The resulting left hand side after the assigment</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a63e622c221e9ddaf92efb9bb3b7f0f01"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a63e622c221e9ddaf92efb9bb3b7f0f01" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; rhs)</span></span>
-            </h3>
-            <p>Copy assignment operator.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the assignment</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The resulting left hand side after the assigment</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="a2de2c7b17641393c5cf297fc8cead7dd"><div>
             <h3>
               <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2de2c7b17641393c5cf297fc8cead7dd" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#a0bf1905dd5eb23000a904793ca3fd3d9" class="m-doc">size_<wbr />type</a> index) const</span></span>
@@ -451,50 +380,6 @@
                   <td>The number of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a> in this block.</td>
                 </tr>
               </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="aedeb94bdfaf41b98d7b8ce6cbdac34d7"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aedeb94bdfaf41b98d7b8ce6cbdac34d7" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; lhs,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Equality for <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Left hand side of the comparison</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side of the comparison</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a5aa4cd95d6ac2878ae2913735bd73878"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5aa4cd95d6ac2878ae2913735bd73878" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; lhs,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; rhs)</span></span>
-            </h3>
-            <p>Swap two ARBlocks.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Left hand side to swap</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side to swap</td>
-                </tr>
-              </tbody>
             </table>
           </div></section>
         </section>
@@ -542,7 +427,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

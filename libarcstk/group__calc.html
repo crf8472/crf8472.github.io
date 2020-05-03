@@ -26,10 +26,9 @@
       <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
-            <li><a href="pages.html">Pages</a></li>
             <li><a href="modules.html">Modules</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="3">
+          <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -112,12 +111,7 @@
             </dt>
             <dd>Type erasing interface for iterators over PCM 32 bit samples.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T, bool is_planar, bool is_const&gt;</div>
-              class <a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">arcstk::v_1_0_0::SampleIterator</a>
-            </dt>
-            <dd>A random access iterator for samples.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T, bool is_planar = true&gt;</div>
+              <div class="m-doc-template">template&lt;typename T, bool is_planar&gt;</div>
               class <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">arcstk::v_1_0_0::SampleSequence</a>
             </dt>
             <dd>A sequence of samples represented by signed integral types.</dd>
@@ -127,9 +121,19 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#ga35db1ec1a32b802681337cbbd281b0cf" class="m-doc">InterleavedSamples</a> = SampleSequence&lt;T, false&gt;
+            </dt>
+            <dd>Interleaved sample sequence with samples of type T.</dd>
+            <dt>
               using <a href="#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_count</a> = int32_t
             </dt>
             <dd>Type to represent amounts of LBA frames.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#gaa96cac59603e345b08b8a85238120e39" class="m-doc">PlanarSamples</a> = SampleSequence&lt;T, true&gt;
+            </dt>
+            <dd>Planar sample sequence with samples of type T.</dd>
             <dt>
               using <a href="#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_count</a> = int32_t
             </dt>
@@ -137,11 +141,11 @@
             <dt>
               using <a href="#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">sample_t</a> = uint32_t
             </dt>
-            <dd>Type for representing a 32 bit PCM stereo sample.</dd>
+            <dd>Type to represent a 32 bit PCM stereo sample.</dd>
             <dt>
               using <a href="#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">sample_type</a> = uint32_t
             </dt>
-            <dd>Type to represent a PCM 32 bit sample (2 channels x 16 bit).</dd>
+            <dd>Type to represent a 32 bit PCM stereo sample.</dd>
             <dt>
               using <a href="#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> = int
             </dt>
@@ -180,46 +184,6 @@
               const std::string&amp; audiofilename) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#gaf40946c9336127d29fc18db2eefe297f" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">const sample_count amount,
-              SampleInputIterator rhs) -&gt; SampleInputIterator <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Advance the iterator by a non-negative amount.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga0631cbcef9d98d54169b091bc386feb0" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">SampleInputIterator lhs,
-              const sample_count amount) -&gt; SampleInputIterator <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Advance the iterator by a non-negative amount.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga822c8817c82a1b6dbc0ac4d66e1f8bae" class="m-doc">operator&lt;</a>(</span><span class="m-doc-wrap">const AudioSize&amp; lhs,
-              const AudioSize&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Less-than.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga6cb803503b2227c1aad9a4db82826fe3" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const AudioSize&amp; lhs,
-              const AudioSize&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Equality.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#gaeb9da641568f7a12ed167461c5b76c0a" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const Checksum&amp; lhs,
-              const Checksum&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Equality.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga77b1494b4298419fb3821c8bde6a5dca" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const Checksums&amp; lhs,
-              const Checksums&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Equality for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga032105655e4a3bc6753affeb0d88308f" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const SampleInputIterator&amp; lhs,
-              const SampleInputIterator&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Equality.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ga3e2d4937e73d7e66c4090b7d4f838041" class="m-doc">swap</a>(</span><span class="m-doc-wrap">Checksums&amp; lhs,
-              Checksums&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Swap for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
           </dl>
         </section>
         <section id="var-members">
@@ -229,10 +193,25 @@
               const CDDA_t <a href="#ga63dc68f83fc9026d3d2884d70dba896a" class="m-doc">CDDA</a>
             </dt>
             <dd>Global instance of the CDDA constants.</dd>
+            <dt>
+              const Checksum <a href="#ga2ab8d0c00d6c4763b067d9af1c534811" class="m-doc">EmptyChecksum</a>
+            </dt>
+            <dd>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
           </dl>
         </section>
         <section>
           <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="ga35db1ec1a32b802681337cbbd281b0cf"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#ga35db1ec1a32b802681337cbbd281b0cf" class="m-doc-self">InterleavedSamples</a> = SampleSequence&lt;T, false&gt;
+            </h3>
+            <p>Interleaved sample sequence with samples of type T.</p>
+<p>An interleaved sequence has one input buffer, in which the samples for each channel occurr in order.</p><p>T can only be some signed or unsigned integral type of either 16 or 32 bit width.</p>
+          </div></section>
           <section class="m-doc-details" id="gae57ca6855b716d9b1902b6b4d99a1da3"><div>
             <h3>
               using <a href="#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc-self">lba_count</a> = int32_t
@@ -240,6 +219,17 @@
             </h3>
             <p>Type to represent amounts of LBA frames.</p>
 <p>A signed integer of at least 32 bit length.</p><p>The type is required to express the maximum frame count in a medium. The value is MAX_BLOCK_ADDRESS == 449.999 frames.</p><p>The type is intended to perform arithmetic operations on it.</p>
+          </div></section>
+          <section class="m-doc-details" id="gaa96cac59603e345b08b8a85238120e39"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#gaa96cac59603e345b08b8a85238120e39" class="m-doc-self">PlanarSamples</a> = SampleSequence&lt;T, true&gt;
+            </h3>
+            <p>Planar sample sequence with samples of type T.</p>
+<p>A planar sequence has two separated input buffers, one for each channel.</p><p>T can only be some signed or unsigned integral type of either 16 or 32 bit width.</p>
           </div></section>
           <section class="m-doc-details" id="gaadf846d5857e283934f3bd58d8db306b"><div>
             <h3>
@@ -254,16 +244,16 @@
               using <a href="#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc-self">sample_t</a> = uint32_t
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
             </h3>
-            <p>Type for representing a 32 bit PCM stereo sample.</p>
-<p>This should be defined identically-as or at least assignable-to arcstk::sample_type.</p><aside class="m-note m-default"><h4>See also</h4><p>arcstk::sample_type</p></aside>
+            <p>Type to represent a 32 bit PCM stereo sample.</p>
+<p>This should be defined identically-as or at least assignable-to <a href="group__calc.html#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">arcstk::<wbr />sample_type</a>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__calc.html#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">arcstk::<wbr />sample_type</a></p></aside>
           </div></section>
           <section class="m-doc-details" id="gab0f4797e3f96922bbdba293582d0b06a"><div>
             <h3>
               using <a href="#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc-self">sample_type</a> = uint32_t
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
-            <p>Type to represent a PCM 32 bit sample (2 channels x 16 bit).</p>
-<p>An unsigned integer of 32 bit length.</p><p>The type is not intended to do arithmetic operations on it.</p><p>Bitwise operators are required to work as on unsigned types.</p><p>The type should have at least the size of arcstk::sample_t.</p><aside class="m-note m-default"><h4>See also</h4><p>arcstk::sample_t</p></aside>
+            <p>Type to represent a 32 bit PCM stereo sample.</p>
+<p>An unsigned integer of 32 bit length.</p><p>The type is not intended to do arithmetic operations on it.</p><p>Bitwise operators are required to work as on unsigned types.</p><p>The type should have at least the size of <a href="group__calc.html#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">arcstk::<wbr />sample_t</a>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__calc.html#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">arcstk::<wbr />sample_t</a></p></aside>
           </div></section>
           <section class="m-doc-details" id="gab54febc3dbc97c4e031001471d798069"><div>
             <h3>
@@ -448,232 +438,6 @@
             </table>
 <p>The file will not be opened by the object, it is just declared as part of the metadata.</p>
           </div></section>
-          <section class="m-doc-details" id="gaf40946c9336127d29fc18db2eefe297f"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">SampleInputIterator </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaf40946c9336127d29fc18db2eefe297f" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">const sample_count amount,
-              SampleInputIterator rhs) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
-            </h3>
-            <p>Advance the iterator by a non-negative amount.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">amount&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>A non-negative amount to advance the iterator</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The iterator to add to</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>Iterator pointing to the position advanced by <code>amount</code></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ga0631cbcef9d98d54169b091bc386feb0"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">SampleInputIterator </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga0631cbcef9d98d54169b091bc386feb0" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">SampleInputIterator lhs,
-              const sample_count amount) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
-            </h3>
-            <p>Advance the iterator by a non-negative amount.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The iterator to add to</td>
-                </tr>
-                <tr>
-                  <td>amount&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>A non-negative amount to advance the iterator</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>Iterator pointing to the position advanced by <code>amount</code></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ga822c8817c82a1b6dbc0ac4d66e1f8bae"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga822c8817c82a1b6dbc0ac4d66e1f8bae" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap">const AudioSize&amp; lhs,
-              const AudioSize&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
-            </h3>
-            <p>Less-than.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The left hand side of the comparison</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the comparison</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if <code>lhs</code> &lt; <code>rhs</code>, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ga6cb803503b2227c1aad9a4db82826fe3"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga6cb803503b2227c1aad9a4db82826fe3" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const AudioSize&amp; lhs,
-              const AudioSize&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
-            </h3>
-            <p>Equality.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The left hand side of the comparison</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the comparison</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if the content of <code>lhs</code> and <code>rhs</code> is equal, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="gaeb9da641568f7a12ed167461c5b76c0a"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaeb9da641568f7a12ed167461c5b76c0a" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const Checksum&amp; lhs,
-              const Checksum&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
-            </h3>
-            <p>Equality.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The left hand side instance to check for equality</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side instance to check for equality</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if <code>lhs</code> is equal to <code>rhs</code>, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ga77b1494b4298419fb3821c8bde6a5dca"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga77b1494b4298419fb3821c8bde6a5dca" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const Checksums&amp; lhs,
-              const Checksums&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
-            </h3>
-            <p>Equality for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Left hand side to compare</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side to compare</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if <code>lhs</code> equals <code>rhs</code></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ga032105655e4a3bc6753affeb0d88308f"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga032105655e4a3bc6753affeb0d88308f" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const SampleInputIterator&amp; lhs,
-              const SampleInputIterator&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
-            </h3>
-            <p>Equality.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The left hand side of the comparison</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the comparison</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if the content of <code>lhs</code> and <code>rhs</code> is equal, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ga3e2d4937e73d7e66c4090b7d4f838041"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga3e2d4937e73d7e66c4090b7d4f838041" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap">Checksums&amp; lhs,
-              Checksums&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
-            </h3>
-            <p>Swap for <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Left hand side to swap</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side to swap</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
         </section>
         <section>
           <h2>Variable documentation</h2>
@@ -683,6 +447,14 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
             <p>Global instance of the CDDA constants.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga2ab8d0c00d6c4763b067d9af1c534811"><div>
+            <h3>
+              const Checksum <a href="#ga2ab8d0c00d6c4763b067d9af1c534811" class="m-doc-self">EmptyChecksum</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
+<p>This is for convenience since in most cases, the creation of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be avoided when a reference instance is at hand.</p><p>This instance defines emptyness for checksums since <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">Checksum::<wbr />empty()</a> just compares the instance with this instance.</p>
           </div></section>
         </section>
       </div>
@@ -729,7 +501,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

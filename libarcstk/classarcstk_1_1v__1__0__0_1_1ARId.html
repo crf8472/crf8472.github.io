@@ -26,10 +26,9 @@
       <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
-            <li><a href="pages.html">Pages</a></li>
             <li><a href="modules.html">Modules</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="3">
+          <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -59,7 +58,6 @@
               <ul>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#friends">Friends</a></li>
               </ul>
             </li>
           </ul>
@@ -113,14 +111,6 @@
             </dt>
             <dd>Return the AccurateRip filename of the response file.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a28c48b7afe1f69f4c5bcf49f1786e837" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Move assignment operator.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abd74efecdfda483803bea07ceb0102d3" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp;</span>
-            </dt>
-            <dd>Copy assignment operator.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a7d2a29325c99d47f56c8bb5943f02402" class="m-doc">prefix</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the standard URL prefix for AccurateRip request urls.</dd>
@@ -136,16 +126,6 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a77d81532393ce8d25dc7792ffe5a50a8" class="m-doc">url</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the AccurateRip request URL.</dd>
-          </dl>
-        </section>
-        <section id="friends">
-          <h2><a href="#friends">Friends</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a71f03970e26d233867647a81f9b00348" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; lhs,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Equality.</dd>
           </dl>
         </section>
         <section>
@@ -286,52 +266,6 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a28c48b7afe1f69f4c5bcf49f1786e837"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a28c48b7afe1f69f4c5bcf49f1786e837" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Move assignment operator.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the assignment</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The resulting left hand side after the assigment</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="abd74efecdfda483803bea07ceb0102d3"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd74efecdfda483803bea07ceb0102d3" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs)</span></span>
-            </h3>
-            <p>Copy assignment operator.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the assignment</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>Assigns a deep copy of <code>rhs</code>.</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="a7d2a29325c99d47f56c8bb5943f02402"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />ARId::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7d2a29325c99d47f56c8bb5943f02402" class="m-doc-self">prefix</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
@@ -388,34 +322,6 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a71f03970e26d233867647a81f9b00348"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a71f03970e26d233867647a81f9b00348" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; lhs,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Equality.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The left hand side of the comparison</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the comparison</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if the content of <code>lhs</code> and <code>rhs</code> is equal, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
         </section>
       </div>
     </div>
@@ -461,7 +367,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

@@ -26,10 +26,9 @@
       <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
-            <li><a href="pages.html">Pages</a></li>
             <li><a href="modules.html">Modules</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="3">
+          <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -48,267 +47,11 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
-          <div class="m-doc-template">template&lt;typename T, bool is_planar = true&gt;</div>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::SampleSequence <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <div class="m-doc-template">template&lt;typename T, bool is_planar&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::SampleSequence <span class="m-thin">class</span>
         </h1>
         <p>A sequence of samples represented by signed integral types.</p>
-        <div class="m-block m-default">
-          <h3>Contents</h3>
-          <ul>
-            <li>
-              Reference
-              <ul>
-                <li><a href="#pub-types">Public types</a></li>
-                <li><a href="#pub-methods">Public functions</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> is an adapter for passing sample sequences of virtually any signed integral format to <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">Calculation::<wbr />update()</a>. <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> instances provide converting access to the samples.</p><p>The channel ordering can be either left/right or right/left.</p>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
-          <dl class="m-doc">
-            <dt id="aabca12668a884c07d0ec2c54281f6386">
-              using <a href="#aabca12668a884c07d0ec2c54281f6386" class="m-doc-self">value_type</a> = <a href="group__calc.html#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">sample_<wbr />t</a>
-            </dt>
-            <dd>Unsigned integer of at least 32 bit size.</dd>
-          </dl>
-        </section>
-        <section id="pub-methods">
-          <h2><a href="#pub-methods">Public functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6a2b18553f707d157ef8ecd8324d9045" class="m-doc">at</a>(</span><span class="m-doc-wrap">const size_type index) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html#aabca12668a884c07d0ec2c54281f6386" class="m-doc">value_<wbr />type</a></span>
-            </dt>
-            <dd>Provides access to the samples in a uniform format (32 bit PCM)</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3494ca55e9b3e19a8e9a8938c41418fc" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">SampleIterator</a>&lt;T, is_planar, false&gt;</span>
-            </dt>
-            <dd>Iterator pointing to the beginning.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad86eb06aca26b715f0b952117ea10ec0" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">SampleIterator</a>&lt;T, is_planar, true&gt;</span>
-            </dt>
-            <dd>Iterator pointing to the beginning.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1f640abb96bb8ecf74f282f8de172cee" class="m-doc">end</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">SampleIterator</a>&lt;T, is_planar, false&gt;</span>
-            </dt>
-            <dd>Iterator pointing behind the end.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5955433e4124a9ec2d73a001375bc6ae" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">SampleIterator</a>&lt;T, is_planar, true&gt;</span>
-            </dt>
-            <dd>Iterator pointing behind the end.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0b6940d3036c673d2f69c7da4a60c5e2" class="m-doc">operator[]</a>(</span><span class="m-doc-wrap">const size_type index) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html#aabca12668a884c07d0ec2c54281f6386" class="m-doc">value_<wbr />type</a></span>
-            </dt>
-            <dd>Provides access to the samples in a uniform format (32 bit PCM).</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ade6d6243d49a797bd9d9876a5502665a" class="m-doc">reset</a>(</span><span class="m-doc-wrap">const T* buffer0,
-              const T* buffer1,
-              const size_type size)</span>
-            </dt>
-            <dd>Rewrap the specified buffers into this sample sequence.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a3baccb359bd70afc58b0a64aece05c06" class="m-doc">wrap</a>(</span><span class="m-doc-wrap">const uint8_t* buffer0,
-              const uint8_t* buffer1,
-              const size_type size)</span>
-            </dt>
-            <dd>Rewrap the specified buffers into this sample sequence.</dd>
-          </dl>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a6a2b18553f707d157ef8ecd8324d9045"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T, bool is_planar&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html#aabca12668a884c07d0ec2c54281f6386" class="m-doc">value_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6a2b18553f707d157ef8ecd8324d9045" class="m-doc-self">at</a>(</span><span class="m-doc-wrap">const size_type index) const</span></span>
-            </h3>
-            <p>Provides access to the samples in a uniform format (32 bit PCM)</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">index&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Index of a virtual 32 bit PCM sample</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>The sample value of the virtual 32 bit PCM sample</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>std::out_of_range</td>
-                  <td>if <code>index</code> is out of range</td>
-                </tr>
-              </tbody>
-            </table>
-<aside class="m-note m-default"><h4>Bits 31-24: Left Channel MSB</h4></aside><aside class="m-note m-default"><h4>Bits 23-16: Left Channel LSB</h4></aside><aside class="m-note m-default"><h4>Bits 15-09: Right Channel MSB</h4></aside><aside class="m-note m-default"><h4>Bits 08-00: Right Channel LSB</h4></aside><p>Does bounds checking before accessing the sample.</p>
-          </div></section>
-          <section class="m-doc-details" id="a3494ca55e9b3e19a8e9a8938c41418fc"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T, bool is_planar&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">SampleIterator</a>&lt;T, is_planar, false&gt; arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3494ca55e9b3e19a8e9a8938c41418fc" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">)</span></span>
-            </h3>
-            <p>Iterator pointing to the beginning.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Iterator pointing to the beginning of the <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ad86eb06aca26b715f0b952117ea10ec0"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T, bool is_planar&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">SampleIterator</a>&lt;T, is_planar, true&gt; arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad86eb06aca26b715f0b952117ea10ec0" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Iterator pointing to the beginning.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Iterator pointing to the beginning of the <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a1f640abb96bb8ecf74f282f8de172cee"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T, bool is_planar&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">SampleIterator</a>&lt;T, is_planar, false&gt; arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1f640abb96bb8ecf74f282f8de172cee" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">)</span></span>
-            </h3>
-            <p>Iterator pointing behind the end.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Iterator pointing behind the end of the <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a5955433e4124a9ec2d73a001375bc6ae"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T, bool is_planar&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1SampleIterator.html" class="m-doc">SampleIterator</a>&lt;T, is_planar, true&gt; arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5955433e4124a9ec2d73a001375bc6ae" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Iterator pointing behind the end.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Iterator pointing behind the end of the <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a0b6940d3036c673d2f69c7da4a60c5e2"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T, bool is_planar&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html#aabca12668a884c07d0ec2c54281f6386" class="m-doc">value_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0b6940d3036c673d2f69c7da4a60c5e2" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">const size_type index) const</span></span>
-            </h3>
-            <p>Provides access to the samples in a uniform format (32 bit PCM).</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">index&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Index of a virtual 32 bit PCM sample</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The sample value of the virtual 32 bit PCM sample</td>
-                </tr>
-              </tfoot>
-            </table>
-<aside class="m-note m-default"><h4>Bits 31-24: Left Channel MSB</h4></aside><aside class="m-note m-default"><h4>Bits 23-16: Left Channel LSB</h4></aside><aside class="m-note m-default"><h4>Bits 15-09: Right Channel MSB</h4></aside><aside class="m-note m-default"><h4>Bits 08-00: Right Channel LSB</h4></aside>
-          </div></section>
-          <section class="m-doc-details" id="ade6d6243d49a797bd9d9876a5502665a"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T, bool is_planar&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade6d6243d49a797bd9d9876a5502665a" class="m-doc-self">reset</a>(</span><span class="m-doc-wrap">const T* buffer0,
-              const T* buffer1,
-              const size_type size)</span></span>
-            </h3>
-            <p>Rewrap the specified buffers into this sample sequence.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">buffer0&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Buffer for channel 0</td>
-                </tr>
-                <tr>
-                  <td>buffer1&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Buffer for channel 1</td>
-                </tr>
-                <tr>
-                  <td>size&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Number of T&#x27;s per buffer</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a3baccb359bd70afc58b0a64aece05c06"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T, bool is_planar&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />SampleSequence&lt;T, is_planar&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3baccb359bd70afc58b0a64aece05c06" class="m-doc-self">wrap</a>(</span><span class="m-doc-wrap">const uint8_t* buffer0,
-              const uint8_t* buffer1,
-              const size_type size)</span></span>
-            </h3>
-            <p>Rewrap the specified buffers into this sample sequence.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">buffer0&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Buffer for channel 0</td>
-                </tr>
-                <tr>
-                  <td>buffer1&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Buffer for channel 1</td>
-                </tr>
-                <tr>
-                  <td>size&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Number of 16bit samples of genuine format in each buffer</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-        </section>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> is a compatibility wrapper for passing sample sequences of virtually any signed integral format to <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">Calculation::<wbr />update()</a>. <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> instances provide converting access to the samples. The wrapped data is not altered.</p><p>The sequence is compatible to sample sequences that represent their samples by integral types of either 16 or 32 bit that may or may not be signed. When wrapping the original data in a <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a>, it must be correctly declared as either interleaved or planar.</p><p>The channel ordering can be either left/right or right/left.</p><p>The interface of <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> is very simple: an existing amount of samples is adapted by the use of wrap() or wrap_bytes(). Random access is provided by operator[] (without bounds check) or at() (providing bounds check). A <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> provides also access via iterators.</p><p>For convenience, this template is not intended to be used directly. Instead, use one of the templates PlanarSamples or InterleavedSamples.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1SampleSequence_3_01T_00_01true_01_4.html" class="m-doc">arcstk::<wbr />SampleSequence&lt;T, true&gt;</a></p><p><a href="classarcstk_1_1v__1__0__0_1_1SampleSequence_3_01T_00_01false_01_4.html" class="m-doc">arcstk::<wbr />SampleSequence&lt;T, false&gt;</a></p></aside>
       </div>
     </div>
   </div>
@@ -353,7 +96,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

@@ -26,10 +26,9 @@
       <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
-            <li><a href="pages.html">Pages</a></li>
             <li><a href="modules.html">Modules</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="3">
+          <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -59,7 +58,6 @@
               <ul>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#friends">Friends</a></li>
               </ul>
             </li>
           </ul>
@@ -132,29 +130,6 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a02371e2e4dc39f907aea6051b5ba7595" class="m-doc">frame450_arcs_valid</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Validity flag for the ARCS of frame 450 of the particular track in this triplet.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a21b2b946f149ec3675b14642a39b2d25" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Move assignment operator.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a72cd71e2c78d8a1b98bfdd0985204e9a" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;</span>
-            </dt>
-            <dd>Copy assignment operator.</dd>
-          </dl>
-        </section>
-        <section id="friends">
-          <h2><a href="#friends">Friends</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa7cd160d0231c323195e7961ab055b62" class="m-doc">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; lhs,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Equality.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#af32fb85fe6f16ea38c13626740031a70" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; lhs,
-              <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Swap.</dd>
           </dl>
         </section>
         <section>
@@ -368,102 +343,6 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a21b2b946f149ec3675b14642a39b2d25"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a21b2b946f149ec3675b14642a39b2d25" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Move assignment operator.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the assignment</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The resulting left hand side after the assigment</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a72cd71e2c78d8a1b98bfdd0985204e9a"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a72cd71e2c78d8a1b98bfdd0985204e9a" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs)</span></span>
-            </h3>
-            <p>Copy assignment operator.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The right hand side of the assignment</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The resulting left hand side after the assigment</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="aa7cd160d0231c323195e7961ab055b62"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7cd160d0231c323195e7961ab055b62" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; lhs,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Equality.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Left hand side of the comparison</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side of the comparison</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if <code>rhs</code> is equal to the instance, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="af32fb85fe6f16ea38c13626740031a70"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af32fb85fe6f16ea38c13626740031a70" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; lhs,
-              <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Swap.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Left hand side to swap</td>
-                </tr>
-                <tr>
-                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Right hand side to swap</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
         </section>
       </div>
     </div>
@@ -509,7 +388,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
