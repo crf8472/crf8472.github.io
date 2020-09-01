@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
+  <title>arcstk::v_1_0_0::details::is_checksum_container struct | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -31,7 +31,7 @@
           <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
-            <li><a href="files.html" id="m-navbar-current">Files</a></li>
+            <li><a href="files.html">Files</a></li>
             <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
               <use href="#m-doc-search-icon-path" />
             </svg></a></li>
@@ -45,33 +45,23 @@
   <div class="m-container m-container-inflatable">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <h1>Files</h2>
-        <ul class="m-doc">
-          <li>file <a href="version_8hpp.html" class="m-doc">version.hpp</a> <span class="m-doc">Provide version and name information for libarcstk.</span></li>
-          <li>file <a href="calculate_8hpp.html" class="m-doc">calculate.hpp</a> <span class="m-doc">Public API for checksum calculation.</span></li>
-          <li>file <a href="identifier_8hpp.html" class="m-doc">identifier.hpp</a> <span class="m-doc">Public API for <a href="group__id.html" class="m-doc">calculating AccurateRip ids</a>.</span></li>
-          <li>file <a href="logging_8hpp.html" class="m-doc">logging.hpp</a> <span class="m-doc">Public Logging API for clients.</span></li>
-          <li>file <a href="match_8hpp.html" class="m-doc">match.hpp</a> <span class="m-doc">Public API for <a href="group__match.html" class="m-doc">AccurateRip checksum matching</a>.</span></li>
-          <li>file <a href="parse_8hpp.html" class="m-doc">parse.hpp</a> <span class="m-doc">Public API for <a href="group__parse.html" class="m-doc">AccurateRip response parsing and syntactic entities</a>.</span></li>
-          <li>file <a href="policies_8hpp.html" class="m-doc">policies.hpp</a> <span class="m-doc">Policies for enhancing classes with comparison operators.</span></li>
-          <li>file <a href="samples_8hpp.html" class="m-doc">samples.hpp</a> <span class="m-doc">Public API for representing unconverted sequences of samples.</span></li>
-        </ul>
-        <script>
-        function toggle(e) {
-            e.parentElement.className = e.parentElement.className == 'm-doc-collapsible' ?
-                'm-doc-expansible' : 'm-doc-collapsible';
-            return false;
-        }
-        /* Collapse all nodes marked as such. Doing it via JS instead of
-           directly in markup so disabling it doesn't harm usability. The list
-           is somehow regenerated on every iteration and shrinks as I change
-           the classes. It's not documented anywhere and I'm not sure if this
-           is the same across browsers, so I am going backwards in that list to
-           be sure. */
-        var collapsed = document.getElementsByClassName("collapsed");
-        for(var i = collapsed.length - 1; i >= 0; --i)
-            collapsed[i].className = 'm-doc-expansible';
-        </script>
+        <h1>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="match_8hpp.html">&lt;match.hpp&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0_1_1details.html">v_1_0_0::details</a>::<wbr/></span>is_checksum_container <span class="m-thin">struct</span>
+        </h1>
+        <p>Defined iff is_container&lt;T&gt; and T <a href="structarcstk_1_1v__1__0__0_1_1details_1_1has__checksum__type.html" class="m-doc">has_<wbr />checksum_<wbr />type</a>.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>The type to inspect</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

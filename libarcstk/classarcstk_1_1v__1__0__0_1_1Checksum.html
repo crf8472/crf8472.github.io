@@ -58,10 +58,12 @@
               <ul>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#friends">Friends</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be represented by its numeric <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc">value()</a>. This is an unsigned integer of at least 32 bit length.</p><p>As a technical convenience, a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may be <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> which means: it carries no value. Using operator ==, two empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances qualify as equal.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -86,6 +88,16 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc">value</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Numeric value of the checksum.</dd>
+          </dl>
+        </section>
+        <section id="friends">
+          <h2><a href="#friends">Friends</a></h2>
+          <dl class="m-doc">
+            <dt id="aa22a2237215dd48ecba411d13e44b4d8">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa22a2237215dd48ecba411d13e44b4d8" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">std::ostream&amp; out,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; c) -&gt; std::ostream&amp;</span>
+            </dt>
+            <dd>Overload operator &lt;&lt; for outputting <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
           </dl>
         </section>
         <section>
@@ -188,7 +200,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

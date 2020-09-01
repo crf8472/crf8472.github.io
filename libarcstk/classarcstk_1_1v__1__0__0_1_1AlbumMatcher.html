@@ -56,81 +56,25 @@
             <li>
               Reference
               <ul>
-                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
               </ul>
             </li>
           </ul>
         </div>
 <p>Tries to match each position <code>i</code> in the actual <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> with position <code>i</code> in each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> of the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. This is how an entire album can be matched.</p>
-        <section id="base-classes">
-          <h2><a href="#base-classes">Base classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">v_1_0_0::Matcher</a>
-            </dt>
-            <dd>Interface: Try to <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against a specified <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</dd>
-          </dl>
-        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a4c5efa379d654e01804cd66c3b499865" class="m-doc">AlbumMatcher</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Move constructor.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#ae4c59f3b0fbfdfb68cd79c0d5f1025b6" class="m-doc">AlbumMatcher</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>&amp; rhs)</span>
-            </dt>
-            <dd>Copy constructor.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a4cfa486ea468c7ad90da577f3b9feabc" class="m-doc">AlbumMatcher</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; checksums,
               const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; id,
               const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; response)</span>
             </dt>
             <dd>Constructor.</dd>
-            <dt id="a0f828560cb51af348c6a436233a522fc">
-              <span class="m-doc-wrap-bumper"><a href="#a0f828560cb51af348c6a436233a522fc" class="m-doc-self">~AlbumMatcher</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">final</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Default destructor.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a4c5efa379d654e01804cd66c3b499865"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />AlbumMatcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4c5efa379d654e01804cd66c3b499865" class="m-doc-self">AlbumMatcher</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Move constructor.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Instance to move</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ae4c59f3b0fbfdfb68cd79c0d5f1025b6"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />AlbumMatcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae4c59f3b0fbfdfb68cd79c0d5f1025b6" class="m-doc-self">AlbumMatcher</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>&amp; rhs)</span></span>
-            </h3>
-            <p>Copy constructor.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Instance to copy</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="a4cfa486ea468c7ad90da577f3b9feabc"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />AlbumMatcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cfa486ea468c7ad90da577f3b9feabc" class="m-doc-self">AlbumMatcher</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; checksums,
@@ -203,7 +147,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

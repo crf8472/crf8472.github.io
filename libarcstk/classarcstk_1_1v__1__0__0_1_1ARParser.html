@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
+  <title>arcstk::v_1_0_0::ARParser class | libarcstk A library to calculate and verify AccurateRip checksums and ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -31,7 +31,7 @@
           <ol class="m-col-t-6 m-col-m-none" start="2">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
-            <li><a href="files.html" id="m-navbar-current">Files</a></li>
+            <li><a href="files.html">Files</a></li>
             <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
               <use href="#m-doc-search-icon-path" />
             </svg></a></li>
@@ -45,33 +45,62 @@
   <div class="m-container m-container-inflatable">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <h1>Files</h2>
-        <ul class="m-doc">
-          <li>file <a href="version_8hpp.html" class="m-doc">version.hpp</a> <span class="m-doc">Provide version and name information for libarcstk.</span></li>
-          <li>file <a href="calculate_8hpp.html" class="m-doc">calculate.hpp</a> <span class="m-doc">Public API for checksum calculation.</span></li>
-          <li>file <a href="identifier_8hpp.html" class="m-doc">identifier.hpp</a> <span class="m-doc">Public API for <a href="group__id.html" class="m-doc">calculating AccurateRip ids</a>.</span></li>
-          <li>file <a href="logging_8hpp.html" class="m-doc">logging.hpp</a> <span class="m-doc">Public Logging API for clients.</span></li>
-          <li>file <a href="match_8hpp.html" class="m-doc">match.hpp</a> <span class="m-doc">Public API for <a href="group__match.html" class="m-doc">AccurateRip checksum matching</a>.</span></li>
-          <li>file <a href="parse_8hpp.html" class="m-doc">parse.hpp</a> <span class="m-doc">Public API for <a href="group__parse.html" class="m-doc">AccurateRip response parsing and syntactic entities</a>.</span></li>
-          <li>file <a href="policies_8hpp.html" class="m-doc">policies.hpp</a> <span class="m-doc">Policies for enhancing classes with comparison operators.</span></li>
-          <li>file <a href="samples_8hpp.html" class="m-doc">samples.hpp</a> <span class="m-doc">Public API for representing unconverted sequences of samples.</span></li>
-        </ul>
-        <script>
-        function toggle(e) {
-            e.parentElement.className = e.parentElement.className == 'm-doc-collapsible' ?
-                'm-doc-expansible' : 'm-doc-collapsible';
-            return false;
-        }
-        /* Collapse all nodes marked as such. Doing it via JS instead of
-           directly in markup so disabling it doesn't harm usability. The list
-           is somehow regenerated on every iteration and shrinks as I change
-           the classes. It's not documented anywhere and I'm not sure if this
-           is the same across browsers, so I am going backwards in that list to
-           be sure. */
-        var collapsed = document.getElementsByClassName("collapsed");
-        for(var i = collapsed.length - 1; i >= 0; --i)
-            collapsed[i].className = 'm-doc-expansible';
-        </script>
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::ARParser <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parse_8hpp.html">&lt;parse.hpp&gt;</a></div>
+        </h1>
+        <p>Generic parser for std::ifstream instances.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>The client has complete control about opening and handling the ifstream. Allows to parse stdin, files and strings.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">v_1_0_0::ARStreamParser</a>
+            </dt>
+            <dd>Abstract base for parsing the content of an AccurateRip HTTP-response.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae457e3585ce399dbeb03a3649d0f4010" class="m-doc">ARParser</a>(</span><span class="m-doc-wrap">std::istream&amp; stream)</span>
+            </dt>
+            <dd>Constructor.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ae457e3585ce399dbeb03a3649d0f4010"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae457e3585ce399dbeb03a3649d0f4010" class="m-doc-self">ARParser</a>(</span><span class="m-doc-wrap">std::istream&amp; stream)</span></span>
+            </h3>
+            <p>Constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">stream&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The std::istream to parse.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+        </section>
       </div>
     </div>
   </div>

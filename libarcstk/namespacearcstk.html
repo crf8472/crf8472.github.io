@@ -68,7 +68,7 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0.html" class="m-doc">v_1_0_0</a></dt>
+            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0.html" class="m-doc">v_1_0_0</a> <span class="m-label m-flat m-info">inline</span></dt>
             <dd>API version 1.0.0.</dd>
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html" class="m-doc">v_1_0_0::checksum</a></dt>
             <dd>Everything regarding operation with <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
@@ -92,7 +92,7 @@
             </dt>
             <dd>An album-related block of triplets as it occurrs in an AccurateRip response.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1ARFileParser.html" class="m-doc">v_1_0_0::ARFileParser</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ARFileParser.html" class="m-doc">v_1_0_0::ARFileParser</a> <span class="m-label m-danger">deprecated</span>
             </dt>
             <dd>Parser for dBAR-*.bin files.</dd>
             <dt>
@@ -100,11 +100,15 @@
             </dt>
             <dd>AccurateRip-Identifier of a compact disc.</dd>
             <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ARParser.html" class="m-doc">v_1_0_0::ARParser</a>
+            </dt>
+            <dd>Generic parser for std::ifstream instances.</dd>
+            <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">v_1_0_0::ARResponse</a>
             </dt>
             <dd>Response content from AccurateRip when responding to an request.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">v_1_0_0::ARStdinParser</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">v_1_0_0::ARStdinParser</a> <span class="m-label m-danger">deprecated</span>
             </dt>
             <dd>Parser for AccurateRip response as a binary stream on stdin.</dd>
             <dt>
@@ -167,6 +171,10 @@
               class <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">v_1_0_0::InvalidMetadataException</a>
             </dt>
             <dd>Reports invalid metadata for building a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ListMatcher.html" class="m-doc">v_1_0_0::ListMatcher</a>
+            </dt>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> a set of actual <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against a list of reference <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Log.html" class="m-doc">v_1_0_0::Log</a>
             </dt>
@@ -254,6 +262,11 @@
               using <a href="group__calc.html#ga35db1ec1a32b802681337cbbd281b0cf" class="m-doc">InterleavedSamples</a> = <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a>&lt;T, false&gt;
             </dt>
             <dd>Interleaved sample sequence with samples of type T.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="group__match.html#ga463ae6ca164ac320a689fab5ae656f16" class="m-doc">IsChecksumContainer</a> = std::enable_if_t&lt;details::is_checksum_container&lt;T&gt;::value&gt;
+            </dt>
+            <dd>Defined iff T is a container whose value_type is <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               using <a href="group__id.html#ga2950d38e87c7f71748c7e750a7878074" class="m-doc">IsFilenameContainer</a> = std::enable_if_t&lt;details::is_filename_container&lt;T&gt;::value&gt;
@@ -421,6 +434,25 @@
               <span class="m-doc-wrap-bumper">auto <a href="group__logging.html#ga577c9ce07c6b223b3e38fa9d8bfa06e4" class="m-doc">now_time</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span>
             </dt>
             <dd>Returns the current time in the format <code>&#x27;YYYY-MM-DD hh:mm:ss.lll&#x27;</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga9cbaabd865fb97a771abcede037eaca9" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">std::ostream&amp; out,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; c) -&gt; std::ostream&amp;</span>
+            </dt>
+            <dd>Overload operator &lt;&lt; for outputting <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container, typename = IsChecksumContainer&lt;Container&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__match.html#gaec9f23af52369916e4d646ccb47a2876" class="m-doc">perform_match</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; actual_sums,
+              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; actual_id,
+              Container&amp;&amp; ref_sums,
+              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; ref_id) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&gt;</span>
+            </dt>
+            <dd>Perform a match of some <code>checksums</code> agains a <code>container</code> of reference values.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container, typename = IsChecksumContainer&lt;Container&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__match.html#ga6879e48b45496da3961b537cf1658b51" class="m-doc">perform_match</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; actual_sums,
+              Container&amp;&amp; ref_sums) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&gt;</span>
+            </dt>
+            <dd>Perform a match of some <code>checksums</code> agains a <code>container</code> of reference values.</dd>
           </dl>
         </section>
         <section id="var-members">
@@ -474,6 +506,14 @@
               const std::string <a href="group__logging.html#gaa7bfd7559cabb5796c8fdf3ddcffcea1" class="m-doc">LIBARCSTK_VERSION_SUFFIX_STRING</a>
             </dt>
             <dd>Version suffix as <code>std::string</code>.</dd>
+            <dt>
+              const int <a href="group__logging.html#ga46d38107de6ffe4a14178746eed889b4" class="m-doc">LOGLEVEL_MAX</a>
+            </dt>
+            <dd>Numeric representation of the maximum legal loglevel.</dd>
+            <dt>
+              const int <a href="group__logging.html#ga724ce0788c6bf1dbf60832ce5e3ae746" class="m-doc">LOGLEVEL_MIN</a>
+            </dt>
+            <dd>Numeric representation of the minimal legal loglevel.</dd>
           </dl>
         </section>
       </div>
@@ -520,7 +560,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

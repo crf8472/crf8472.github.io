@@ -69,7 +69,7 @@
           <dl class="m-doc">
             <dt>namespace <a href="namespacearcstk.html" class="m-doc">arcstk</a></dt>
             <dd>libarcstk main namespace</dd>
-            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0.html" class="m-doc">arcstk::v_1_0_0</a></dt>
+            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0.html" class="m-doc">arcstk::v_1_0_0</a> <span class="m-label m-flat m-info">inline</span></dt>
             <dd>API version 1.0.0.</dd>
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html" class="m-doc">arcstk::v_1_0_0::checksum</a></dt>
             <dd>Everything regarding operation with <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
@@ -155,6 +155,11 @@
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga9cbaabd865fb97a771abcede037eaca9" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">std::ostream&amp; out,
+              const Checksum&amp; c) -&gt; std::ostream&amp;</span>
+            </dt>
+            <dd>Overload operator &lt;&lt; for outputting <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a9b8140f583453398f7d314af7a7628e4" class="m-doc">type_name</a>(</span><span class="m-doc-wrap">const type t) -&gt; std::string</span>
             </dt>
             <dd>Name of a <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>.</dd>
@@ -168,7 +173,7 @@
             </dt>
             <dd>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
             <dt>
-              static const type <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a291c6b8c3b3da678d697875d00290498" class="m-doc">types</a>
+              static const std::array&lt;type, 2&gt; <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#af5857a0ef5c155b2835453be944f6f69" class="m-doc">types</a>
             </dt>
             <dd>Iterable sequence of all predefined checksum types.</dd>
           </dl>
@@ -217,7 +222,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.18 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk A library to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
