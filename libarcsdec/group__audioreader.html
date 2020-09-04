@@ -56,11 +56,12 @@
               <ul>
                 <li><a href="#nested-classes">Classes</a></li>
                 <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#var-members">Variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>The interface for reading audio files is provided by class <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> that internally holds a concrete instance of <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>.</p><p>The <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> provides two actual operations on the input file: it can either analyze the file to provide a CalcContext for it or actually process the file, which yields the actual ARCSs. An <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> can be attached a pre-configured Calculation to perform the actual calculation.</p><p>The concrete reading of a given audio file is implemented by the subclasses of <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>. An <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a> can be set to a block size, that may or may not refer to a buffer size, depending on the actual implementation.</p><p>To avoid reimplementing things, there are some tools provided in this API to ease up the implementation of an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>:</p><p>A subclass of SampleSequence can be used (and actually re-used) for transferring the audio samples to a <a href="classarcsdec_1_1v__1__0__0_1_1SampleBuffer.html" class="m-doc">SampleBuffer</a>. SampleSequences hides the concrete SAMPLE_FORMAT to the buffer (including whether the sample order is planar or interleaved). Putting a SampleSequence to a <a href="classarcsdec_1_1v__1__0__0_1_1SampleBuffer.html" class="m-doc">SampleBuffer</a> normalizes the SAMPLE_FORMAT along to the requirements of Calculation.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1SampleBuffer.html" class="m-doc">SampleBuffer</a> buffers SampleSequences and flushes an entire block of samples to a registered ARCScalc instance once the buffer is full.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1CDDAValidator.html" class="m-doc">CDDAValidator</a> provides a uniform implementation of checking core values from an input file for CDDA conformity.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1ReaderValidatingHandler.html" class="m-doc">ReaderValidatingHandler</a> wraps a <a href="classarcsdec_1_1v__1__0__0_1_1CDDAValidator.html" class="m-doc">CDDAValidator</a> with error tracking for easy registering to an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1PCMBlockReader.html" class="m-doc">PCMBlockReader</a> reads raw PCM samples from an input stream.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1ByteConverter.html" class="m-doc">ByteConverter</a> converts single sequences of chars to integer representations.</p><p>AudioReaderSelection is a convenience class to create an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> for any specified audio input file.</p>
+<p>The interface for reading audio files is provided by class <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> that internally holds a concrete instance of <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>.</p><p>The <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> provides two actual operations on the input file: it can either analyze the file to provide a CalcContext for it or actually process the file, which yields the actual ARCSs. An <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> can be attached a pre-configured Calculation to perform the actual calculation.</p><p>The concrete reading of a given audio file is implemented by the subclasses of <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>. An <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a> can be set to a block size, that may or may not refer to a buffer size, depending on the actual implementation.</p><p>To avoid reimplementing things, there are some tools provided in this API to ease up the implementation of an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>:</p><p>A subclass of SampleSequence can be used (and actually re-used) for transferring the audio samples to a <a href="classarcsdec_1_1v__1__0__0_1_1SampleBuffer.html" class="m-doc">SampleBuffer</a>. SampleSequences hides the concrete SAMPLE_FORMAT to the buffer (including whether the sample order is planar or interleaved). Putting a SampleSequence to a <a href="classarcsdec_1_1v__1__0__0_1_1SampleBuffer.html" class="m-doc">SampleBuffer</a> normalizes the SAMPLE_FORMAT along to the requirements of Calculation.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1SampleBuffer.html" class="m-doc">SampleBuffer</a> buffers SampleSequences and flushes an entire block of samples to a registered ARCScalc instance once the buffer is full.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1CDDAValidator.html" class="m-doc">CDDAValidator</a> provides a uniform implementation of checking core values from an input file for CDDA conformity.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1ReaderValidatingHandler.html" class="m-doc">ReaderValidatingHandler</a> wraps a <a href="classarcsdec_1_1v__1__0__0_1_1CDDAValidator.html" class="m-doc">CDDAValidator</a> with error tracking for easy registering to an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>.</p><p>PCMBlockReader reads raw PCM samples from an input stream.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1ByteConverter.html" class="m-doc">ByteConverter</a> converts single sequences of chars to integer representations.</p><p>AudioReaderSelection is a convenience class to create an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> for any specified audio input file.</p>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
@@ -107,6 +108,15 @@
             <dd>Supported sample formats.</dd>
           </dl>
         </section>
+        <section id="var-members">
+          <h2><a href="#var-members">Variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              const int32_t <a href="#ga02a8e855600bda74783c37f9b25f27d1" class="m-doc">MAX_SAMPLES_TO_READ</a>
+            </dt>
+            <dd>Maximum number of PCM 32 bit samples to read from a file.</dd>
+          </dl>
+        </section>
         <section>
           <h2>Enum documentation</h2>
           <section class="m-doc-details" id="ga0ec7ce31e1e1f99c34f4d35da99a07db"><div>
@@ -116,6 +126,16 @@
             </h3>
             <p>Supported sample formats.</p>
 <p>The sample format represents two basic informations: the physical size of a sample in bits and whether the samples are arranged in a planar or interleaved layout.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="ga02a8e855600bda74783c37f9b25f27d1"><div>
+            <h3>
+              const int32_t <a href="#ga02a8e855600bda74783c37f9b25f27d1" class="m-doc-self">MAX_SAMPLES_TO_READ</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="audioreader_8hpp.html">&lt;audioreader.hpp&gt;</a></div>
+            </h3>
+            <p>Maximum number of PCM 32 bit samples to read from a file.</p>
           </div></section>
         </section>
       </div>

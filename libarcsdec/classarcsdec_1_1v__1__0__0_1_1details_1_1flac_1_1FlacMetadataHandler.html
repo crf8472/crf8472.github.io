@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>readerwvpk_details.hpp file | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <title>arcsdec::v_1_0_0::details::flac::FlacMetadataHandler class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,55 +46,67 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          readerwvpk_details.hpp <span class="m-thin">file</span>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcsdec_1_1v__1__0__0_1_1details.html">v_1_0_0::details</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcsdec_1_1v__1__0__0_1_1details_1_1flac.html">flac</a>::<wbr/></span>FlacMetadataHandler <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="readerflac__details_8hpp.html">&lt;readerflac_details.hpp&gt;</a></div>
         </h1>
-        <p>Testable implementation classes for readerwvpk.</p>
+        <p>Provides an implementation of the FLAC__metadata_callback handler that validates the audio data for conforming to CDDA.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>The Wavpack AudioReader will only read Wavpack files containing losslessly compressed integer samples. Validation requires CDDA conform samples in PCM format. Float samples are not supported. Original file formats other than WAV are not supported.</p>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+<p>Each call of the callback can call one of the handler methods.</p><p>It is not the responsibility of the <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1flac_1_1FlacMetadataHandler.html" class="m-doc">FlacMetadataHandler</a> to inform the internal <code>Calculation</code> about the total number of samples or bytes. This is done within the implementation of metadata_callback().</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespacearcsdec.html" class="m-doc">arcsdec</a></dt>
-            <dd>Main namespace for libarcsdec.</dd>
-            <dt>namespace <a href="namespacearcsdec_1_1v__1__0__0.html" class="m-doc">arcsdec::v_1_0_0</a> <span class="m-label m-flat m-info">inline</span></dt>
-            <dd>API version 1.0.0.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1ReaderValidatingHandler.html" class="m-doc">arcsdec::v_1_0_0::ReaderValidatingHandler</a>
+            </dt>
+            <dd>Base class for validation handlers for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpls</a>.</dd>
           </dl>
         </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wavpack_1_1LibwavpackException.html" class="m-doc">arcsdec::v_1_0_0::details::wavpack::LibwavpackException</a>
+              <span class="m-doc-wrap-bumper">auto <a href="#a21106773761b92c73e892224337140a0" class="m-doc">streaminfo</a>(</span><span class="m-doc-wrap">const FLAC::Metadata::StreamInfo&amp; streaminfo) -&gt; bool</span>
             </dt>
-            <dd>Encapsulates error code from the libwavpack API.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wavpack_1_1WAVPACK__CDDA__t.html" class="m-doc">arcsdec::v_1_0_0::details::wavpack::WAVPACK_CDDA_t</a>
-            </dt>
-            <dd>Interface for Wavpack validation values.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wavpack_1_1WavpackAudioReaderImpl.html" class="m-doc">arcsdec::v_1_0_0::details::wavpack::WavpackAudioReaderImpl</a>
-            </dt>
-            <dd>Implementation of a <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> for the Wavpack format.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wavpack_1_1WavpackOpenFile.html" class="m-doc">arcsdec::v_1_0_0::details::wavpack::WavpackOpenFile</a>
-            </dt>
-            <dd>Represents an opened wavpack audio file.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wavpack_1_1WavpackValidatingHandler.html" class="m-doc">arcsdec::v_1_0_0::details::wavpack::WavpackValidatingHandler</a>
-            </dt>
-            <dd>A handler to validate wavpack files for whether they can be processed by this <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wavpack_1_1WavpackAudioReaderImpl.html" class="m-doc">WavpackAudioReaderImpl</a>.</dd>
+            <dd>To be called manually by the <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a> to trigger validation.</dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a21106773761b92c73e892224337140a0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />flac::<wbr />FlacMetadataHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a21106773761b92c73e892224337140a0" class="m-doc-self">streaminfo</a>(</span><span class="m-doc-wrap">const FLAC::Metadata::StreamInfo&amp; streaminfo)</span></span>
+            </h3>
+            <p>To be called manually by the <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a> to trigger validation.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">streaminfo&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The Streaminfo object from FLAC++</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE if metadata indicates CDDA conformity, otherwise FALSE</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Validates it for CDDA compliance.</p>
+          </div></section>
         </section>
       </div>
     </div>

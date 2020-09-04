@@ -54,17 +54,76 @@
             <li>
               Reference
               <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#enum-members">Enums</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
+<p><a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> to read RIFF/WAV files containing integer PCM samples.</p><p>Validation requires CDDA conform samples in PCM format. Additional fields in the format subchunk will cause the validation to fail. Non-standard subchunks are ignored. RIFX containers are currently not supported.</p><aside class="m-note m-dim"><h4><a href="todo.html#_todo000004" class="m-doc">Todo</a></h4><p>This implementation silently relies on a little endian plattform.</p></aside>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespacearcsdec.html" class="m-doc">arcsdec</a></dt>
-            <dd>Main namespace for libarcsdec.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1PCMBlockReader.html" class="m-doc">arcsdec::v_1_0_0::details::wave::PCMBlockReader</a>
+            </dt>
+            <dd>Implements pull reading PCM samples from a std::ifstream.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1RIFFWAV__PCM__CDDA__t.html" class="m-doc">arcsdec::v_1_0_0::details::wave::RIFFWAV_PCM_CDDA_t</a>
+            </dt>
+            <dd>Implements reference values for CDDA compliant RIFF/WAV PCM.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1WAV__CDDA__t.html" class="m-doc">arcsdec::v_1_0_0::details::wave::WAV_CDDA_t</a>
+            </dt>
+            <dd>Represents an interface for different reference CDDA representations for the WAV format.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1WavAudioHandler.html" class="m-doc">arcsdec::v_1_0_0::details::wave::WavAudioHandler</a>
+            </dt>
+            <dd>Event handler for interpreting and validating WAV files.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1WavAudioReaderImpl.html" class="m-doc">arcsdec::v_1_0_0::details::wave::WavAudioReaderImpl</a>
+            </dt>
+            <dd>File reader implementation for files in RIFF/WAVE (PCM) format, i.e. containing 44.100 Hz/16 bit Stereo PCM samples in its data chunk.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1WavChunkDescriptor.html" class="m-doc">arcsdec::v_1_0_0::details::wave::WavChunkDescriptor</a>
+            </dt>
+            <dd>Represents the parsed chunk descriptor of a WAV file.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1WavFormatSubchunk.html" class="m-doc">arcsdec::v_1_0_0::details::wave::WavFormatSubchunk</a>
+            </dt>
+            <dd>Represents the parsed content of a format subchunk.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1WavPartParser.html" class="m-doc">arcsdec::v_1_0_0::details::wave::WavPartParser</a>
+            </dt>
+            <dd>Parses byte sequences as syntactic elements of a WAV file, e.g. chunk descriptor, subchunk headers and the entire format subchunk.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1WavSubchunkHeader.html" class="m-doc">arcsdec::v_1_0_0::details::wave::WavSubchunkHeader</a>
+            </dt>
+            <dd>Represents the parsed subchunk header in a WAV file.</dd>
           </dl>
+        </section>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#gacb642fb4262063d25289fc0febff868f" class="m-doc">CONFIG</a>: uint32_t { </span><span class="m-doc-wrap"><a href="#ggacb642fb4262063d25289fc0febff868faeee7e946be8e7782b382163dbecf2656" class="m-doc">C_EMPTY_CONFIG</a> =    0,
+              <a href="#ggacb642fb4262063d25289fc0febff868fa51a12c662f180a2bcad2a94d2cbbad8d" class="m-doc">C_RESPECT_HEADER</a> =    1,
+              <a href="#ggacb642fb4262063d25289fc0febff868fabfca758ce47b1e8e27b77b5d7fdfba19" class="m-doc">C_RESPECT_FORMAT</a> =    2,
+              <a href="#ggacb642fb4262063d25289fc0febff868fa56358133019c29e939132501689c36d8" class="m-doc">C_RESPECT_DATA</a> =    4,
+              <a href="#ggacb642fb4262063d25289fc0febff868fa845bd02ce427f4ec38afe26432b13612" class="m-doc">C_RESPECT_TRAILING</a> =    8 }</span>
+            </dt>
+            <dd>Config flags of the audio handler.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="gacb642fb4262063d25289fc0febff868f"><div>
+            <h3>
+              enum <a href="#gacb642fb4262063d25289fc0febff868f" class="m-doc-self">CONFIG</a>: uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="readerwav__details_8hpp.html">&lt;readerwav_details.hpp&gt;</a></div>
+            </h3>
+            <p>Config flags of the audio handler.</p>
+          </div></section>
         </section>
       </div>
     </div>

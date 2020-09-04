@@ -91,7 +91,7 @@
             </dt>
             <dd>Set the decoder to use.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a7f958f76ae8c296db423f3d09c2c1048" class="m-doc">set_source</a>(</span><span class="m-doc-wrap">::AVFormatContext* context,
+              <span class="m-doc-wrap-bumper">void <a href="#a3235a43f7f1040202a3eabfd853fc3f6" class="m-doc">set_source</a>(</span><span class="m-doc-wrap">::AVFormatContext* fctx,
               const int stream_index)</span>
             </dt>
             <dd>Set the AVFormatContext to read from and the AVStream to read.</dd>
@@ -186,9 +186,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a7f958f76ae8c296db423f3d09c2c1048"><div>
+          <section class="m-doc-details" id="a3235a43f7f1040202a3eabfd853fc3f6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />ffmpeg::<wbr />PacketQueue::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7f958f76ae8c296db423f3d09c2c1048" class="m-doc-self">set_source</a>(</span><span class="m-doc-wrap">::AVFormatContext* context,
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />ffmpeg::<wbr />PacketQueue::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3235a43f7f1040202a3eabfd853fc3f6" class="m-doc-self">set_source</a>(</span><span class="m-doc-wrap">::AVFormatContext* fctx,
               const int stream_index)</span></span>
             </h3>
             <p>Set the AVFormatContext to read from and the AVStream to read.</p>
@@ -198,8 +198,8 @@
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">context</td>
-                  <td></td>
+                  <td style="width: 1%">fctx&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>AVFormatContext to read from</td>
                 </tr>
                 <tr>
                   <td>stream_index&nbsp;<span class="m-label m-flat m-info">in</span></td>

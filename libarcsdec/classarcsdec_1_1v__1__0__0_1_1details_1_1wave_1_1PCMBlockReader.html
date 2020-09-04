@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcsdec::v_1_0_0::details::ffmpeg::FFmpegException class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <title>arcsdec::v_1_0_0::details::wave::PCMBlockReader class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,77 +46,132 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcsdec_1_1v__1__0__0_1_1details.html">v_1_0_0::details</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcsdec_1_1v__1__0__0_1_1details_1_1ffmpeg.html">ffmpeg</a>::<wbr/></span>FFmpegException <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="readerffmpeg__details_8hpp.html">&lt;readerffmpeg_details.hpp&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcsdec_1_1v__1__0__0_1_1details.html">v_1_0_0::details</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcsdec_1_1v__1__0__0_1_1details_1_1wave.html">wave</a>::<wbr/></span>PCMBlockReader <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="readerwav__details_8hpp.html">&lt;readerwav_details.hpp&gt;</a></div>
         </h1>
-        <p>Encapsulates error code from the ffmpeg API.</p>
+        <p>Implements pull reading PCM samples from a std::ifstream.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p>This is the block reading policy for the RIFF/WAV (PCM) format.</p>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1BlockCreator.html" class="m-doc">arcsdec::v_1_0_0::BlockCreator</a>
+            </dt>
+            <dd>Base class of a sample block creator.</dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a2e444dcad672f44c8fc2de353bf74384" class="m-doc">FFmpegException</a>(</span><span class="m-doc-wrap">const int error,
-              const std::string&amp; name)</span>
+              <span class="m-doc-wrap-bumper"><a href="#a70fdeafa8e9610765f013d9ee27e864c" class="m-doc">PCMBlockReader</a>(</span><span class="m-doc-wrap">const int32_t samples_per_block) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
-            <dd>Construct the message from error code and function name.</dd>
+            <dd>Constructs a <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1PCMBlockReader.html" class="m-doc">PCMBlockReader</a> with buffer of size samples_per_block.</dd>
+            <dt id="ae082100478ef268b3ade9b2fe0e4d4a3">
+              <span class="m-doc-wrap-bumper"><a href="#ae082100478ef268b3ade9b2fe0e4d4a3" class="m-doc-self">~PCMBlockReader</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Virtual default destructor.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a99e449c412d5f99f38c7483df1641d0d" class="m-doc">error</a>(</span><span class="m-doc-wrap">) const -&gt; int</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af28ed941b39c586ecc48c9991a04d327" class="m-doc">read_blocks</a>(</span><span class="m-doc-wrap">std::ifstream&amp; in,
+              const int64_t&amp; total_pcm_bytes) -&gt; int64_t</span>
             </dt>
-            <dd>The original error code.</dd>
+            <dd>Read blocks from the stream until the end of the stream.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad24d25f060cd557c7ae39f65d59fb231" class="m-doc">register_block_consumer</a>(</span><span class="m-doc-wrap">const std::function&lt;void(SampleInputIterator begin, SampleInputIterator end)&gt;&amp; func)</span>
+            </dt>
+            <dd>Registers a consuming method for blocks.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a2e444dcad672f44c8fc2de353bf74384"><div>
+          <section class="m-doc-details" id="a70fdeafa8e9610765f013d9ee27e864c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />ffmpeg::<wbr />FFmpegException::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2e444dcad672f44c8fc2de353bf74384" class="m-doc-self">FFmpegException</a>(</span><span class="m-doc-wrap">const int error,
-              const std::string&amp; name)</span></span>
+              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />wave::<wbr />PCMBlockReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a70fdeafa8e9610765f013d9ee27e864c" class="m-doc-self">PCMBlockReader</a>(</span><span class="m-doc-wrap">const int32_t samples_per_block) <span class="m-label m-info">explicit</span> </span></span>
             </h3>
-            <p>Construct the message from error code and function name.</p>
+            <p>Constructs a <a href="classarcsdec_1_1v__1__0__0_1_1details_1_1wave_1_1PCMBlockReader.html" class="m-doc">PCMBlockReader</a> with buffer of size samples_per_block.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">error&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Error code</td>
-                </tr>
-                <tr>
-                  <td>name&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Name of function that returned the error code</td>
+                  <td style="width: 1%">samples_per_block&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Number of 32 bit PCM samples in one block</td>
                 </tr>
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a99e449c412d5f99f38c7483df1641d0d"><div>
+          <section class="m-doc-details" id="af28ed941b39c586ecc48c9991a04d327"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />ffmpeg::<wbr />FFmpegException::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a99e449c412d5f99f38c7483df1641d0d" class="m-doc-self">error</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">int64_t arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />wave::<wbr />PCMBlockReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af28ed941b39c586ecc48c9991a04d327" class="m-doc-self">read_blocks</a>(</span><span class="m-doc-wrap">std::ifstream&amp; in,
+              const int64_t&amp; total_pcm_bytes)</span></span>
             </h3>
-            <p>The original error code.</p>
+            <p>Read blocks from the stream until the end of the stream.</p>
             <table class="m-table m-fullwidth m-flat">
-              <tfoot>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
                 <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>the original error code</td>
+                  <td style="width: 1%">in&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Stream of bytes to read from</td>
                 </tr>
-              </tfoot>
+                <tr>
+                  <td>total_pcm_bytes&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Total number of 32 bit PCM samples in the stream</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>The actual number of bytes read</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="classarcsdec_1_1v__1__0__0_1_1FileReadException.html" class="m-doc">FileReadException</a></td>
+                  <td>On any read error</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The number of actual bytes read is returned and will be equal to total_pcm_bytes on success.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad24d25f060cd557c7ae39f65d59fb231"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />wave::<wbr />PCMBlockReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad24d25f060cd557c7ae39f65d59fb231" class="m-doc-self">register_block_consumer</a>(</span><span class="m-doc-wrap">const std::function&lt;void(SampleInputIterator begin, SampleInputIterator end)&gt;&amp; func)</span></span>
+            </h3>
+            <p>Registers a consuming method for blocks.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">func&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The functor to be registered as block consumer.</td>
+                </tr>
+              </tbody>
             </table>
           </div></section>
         </section>
