@@ -61,7 +61,7 @@
             </li>
           </ul>
         </div>
-<p>Determine whether a list of <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> match a list of reference values. This targets the situation where the caller already has local reference values, say, from a logfile. The actual <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> are just compared to the reference values and the resulting <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> will have set the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> match flag to TRUE.</p>
+<p>The <a href="classarcstk_1_1v__1__0__0_1_1ListMatcher.html" class="m-doc">ListMatcher</a> implements the same logic as the <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> but accepts a single list of reference values instead of an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p><p>Check whether a list of <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> matches a list of reference values. This targets the situation where the caller already has local reference values, say, from a logfile. The actual <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> are just compared to the reference values in their respective order and the resulting <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> will have set the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> match flag to <code>TRUE</code>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a></p><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a></p></aside>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -108,6 +108,15 @@
                 <tr>
                   <td>reflist&nbsp;<span class="m-label m-flat m-info">in</span></td>
                   <td>The list of reference checksums to be matched</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>out_of_range</td>
+                  <td>If <code>checksums.size() != reflist.size()</code> or some <code>size()</code> is 0</td>
                 </tr>
               </tbody>
             </table>

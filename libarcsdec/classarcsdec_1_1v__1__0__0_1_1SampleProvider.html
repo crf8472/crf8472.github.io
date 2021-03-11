@@ -49,41 +49,29 @@
           <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::SampleProvider <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampleproc_8hpp.html">&lt;sampleproc.hpp&gt;</a></div>
         </h1>
-        <p>A provider of sample sequences.</p>
+        <p>Inteface for providers of sample sequences.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pri-methods">Private functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="base-classes">
-          <h2><a href="#base-classes">Base classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1ISampleProvider.html" class="m-doc">v_1_0_0::ISampleProvider</a>
-            </dt>
-            <dd>Inteface for providers of sample sequences.</dd>
-          </dl>
-        </section>
+<p>A <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a> is a source for sample sequences and updated AudioSize values. It can signal different events while processing the audio input. A <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> can be attached to it as an addressee of those events.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcsdec_1_1v__1__0__0_1_1SampleProviderBase.html" class="m-doc">SampleProviderBase</a></p></aside>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">v_1_0_0::AudioReaderImpl</a> <span class="m-label m-flat m-warning">virtual</span>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProviderBase.html" class="m-doc">v_1_0_0::SampleProviderBase</a>
             </dt>
-            <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> implementations.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleBuffer.html" class="m-doc">v_1_0_0::SampleBuffer</a> <span class="m-label m-flat m-warning">virtual</span>
-            </dt>
-            <dd>Sample format and reader independent sample buffer.</dd>
+            <dd>Base class for <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a> implementations.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -93,20 +81,215 @@
               <span class="m-doc-wrap-bumper"><a href="#aa58fb97d46cf734139da411297c301f9" class="m-doc-self">SampleProvider</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Constructor.</dd>
-            <dt id="ade87be431a9834dd6cc020ec50a68f62">
-              <span class="m-doc-wrap-bumper"><a href="#ade87be431a9834dd6cc020ec50a68f62" class="m-doc-self">~SampleProvider</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">protected</span> <span class="m-label m-flat m-warning">override</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            <dt id="a0d11547e34bdf136dfb0bad417b1b070">
+              <span class="m-doc-wrap-bumper"><a href="#a0d11547e34bdf136dfb0bad417b1b070" class="m-doc-self">~SampleProvider</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Default destructor.</dd>
+            <dd>Virtual default destructor.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a6ebbb13caf9abde46a11911a27839bf7" class="m-doc">attach_processor</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>&amp; processor)</span>
+            </dt>
+            <dd>Attach a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0f1ff1af754ef03fe8a716d390a44a6a" class="m-doc">processor</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>*</span>
+            </dt>
+            <dd>Return the registered <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a0fcc917f30a2e810b66d3fc3dcfb7053" class="m-doc">signal_appendsamples</a>(</span><span class="m-doc-wrap">SampleInputIterator begin,
+              SampleInputIterator end)</span>
+            </dt>
+            <dd>Signal the processor to append the following range of samples.</dd>
+            <dt id="a3e9daf7ada2337c35a881585ebba250d">
+              <span class="m-doc-wrap-bumper">void <a href="#a3e9daf7ada2337c35a881585ebba250d" class="m-doc-self">signal_endinput</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Signal the processor that input ends.</dd>
+            <dt id="a9f0aecc9063d314c5813b2d3f2011433">
+              <span class="m-doc-wrap-bumper">void <a href="#a9f0aecc9063d314c5813b2d3f2011433" class="m-doc-self">signal_startinput</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Signal the processor that input starts.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a0052ddd4886222e6eceba1cc1bf02d12" class="m-doc">signal_updateaudiosize</a>(</span><span class="m-doc-wrap">const AudioSize&amp; size)</span>
+            </dt>
+            <dd>Signal the processor to update the audio size.</dd>
           </dl>
         </section>
         <section id="pri-methods">
           <h2><a href="#pri-methods">Private functions</a></h2>
           <dl class="m-doc">
-            <dt id="a441a6971ff32ff2e3a81c1c9efecc854">
-              <span class="m-doc-wrap-bumper">void <a href="#a441a6971ff32ff2e3a81c1c9efecc854" class="m-doc-self">hook_post_register_processor</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad3e9f5bba7c9b3464ebe16da7bd7aa1f" class="m-doc">do_attach_processor</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>&amp; processor) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Hook to be called before leaving register_processor().</dd>
+            <dd>Register a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aaf45aa60a55464b156e06516e33c6e75" class="m-doc">do_processor</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Return the registered <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad59bce4469ac0220f3b79450a64d3b82" class="m-doc">do_signal_appendsamples</a>(</span><span class="m-doc-wrap">SampleInputIterator begin,
+              SampleInputIterator end) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Implements <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html#a0fcc917f30a2e810b66d3fc3dcfb7053" class="m-doc">signal_<wbr />appendsamples()</a>.</dd>
+            <dt id="ab893b7e34c3161978d38016ba536ef46">
+              <span class="m-doc-wrap-bumper">void <a href="#ab893b7e34c3161978d38016ba536ef46" class="m-doc-self">do_signal_endinput</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Implements <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html#a3e9daf7ada2337c35a881585ebba250d" class="m-doc">signal_<wbr />endinput()</a>.</dd>
+            <dt id="aeec5378d884294828075fa9f037a0723">
+              <span class="m-doc-wrap-bumper">void <a href="#aeec5378d884294828075fa9f037a0723" class="m-doc-self">do_signal_startinput</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Implements <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html#a9f0aecc9063d314c5813b2d3f2011433" class="m-doc">signal_<wbr />startinput()</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a2155ff0fa25c4ecd914e748b79f60fee" class="m-doc">do_signal_updateaudiosize</a>(</span><span class="m-doc-wrap">const AudioSize&amp; size) <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>Signal the processor to update the audio size.</dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a6ebbb13caf9abde46a11911a27839bf7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ebbb13caf9abde46a11911a27839bf7" class="m-doc-self">attach_processor</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>&amp; processor)</span></span>
+            </h3>
+            <p>Attach a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">processor&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> to use</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a0f1ff1af754ef03fe8a716d390a44a6a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>* arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f1ff1af754ef03fe8a716d390a44a6a" class="m-doc-self">processor</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Return the registered <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> the reader uses</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a0fcc917f30a2e810b66d3fc3dcfb7053"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0fcc917f30a2e810b66d3fc3dcfb7053" class="m-doc-self">signal_appendsamples</a>(</span><span class="m-doc-wrap">SampleInputIterator begin,
+              SampleInputIterator end)</span></span>
+            </h3>
+            <p>Signal the processor to append the following range of samples.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">begin&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Start of the sample sequence</td>
+                </tr>
+                <tr>
+                  <td>end&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>End of the sample sequence</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a0052ddd4886222e6eceba1cc1bf02d12"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0052ddd4886222e6eceba1cc1bf02d12" class="m-doc-self">signal_updateaudiosize</a>(</span><span class="m-doc-wrap">const AudioSize&amp; size)</span></span>
+            </h3>
+            <p>Signal the processor to update the audio size.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">size&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The updated value to signal</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad3e9f5bba7c9b3464ebe16da7bd7aa1f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad3e9f5bba7c9b3464ebe16da7bd7aa1f" class="m-doc-self">do_attach_processor</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>&amp; processor) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+            </h3>
+            <p>Register a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">processor&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> to use</td>
+                </tr>
+              </tbody>
+            </table>
+<p>This will register all callback methods of the <code>processor</code>. Already registered callbacks will be overwritten by this method.</p><p>The method is a mere convenience for completely registering a single <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> instance.</p>
+          </div></section>
+          <section class="m-doc-details" id="aaf45aa60a55464b156e06516e33c6e75"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>* arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaf45aa60a55464b156e06516e33c6e75" class="m-doc-self">do_processor</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+            </h3>
+            <p>Return the registered <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> the reader uses</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad59bce4469ac0220f3b79450a64d3b82"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad59bce4469ac0220f3b79450a64d3b82" class="m-doc-self">do_signal_appendsamples</a>(</span><span class="m-doc-wrap">SampleInputIterator begin,
+              SampleInputIterator end) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html#a0fcc917f30a2e810b66d3fc3dcfb7053" class="m-doc">signal_<wbr />appendsamples()</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">begin&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Start of the sample sequence</td>
+                </tr>
+                <tr>
+                  <td>end&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>End of the sample sequence</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2155ff0fa25c4ecd914e748b79f60fee"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2155ff0fa25c4ecd914e748b79f60fee" class="m-doc-self">do_signal_updateaudiosize</a>(</span><span class="m-doc-wrap">const AudioSize&amp; size) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+            </h3>
+            <p>Signal the processor to update the audio size.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">size&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The updated value to signal</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

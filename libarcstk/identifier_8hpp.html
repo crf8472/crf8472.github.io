@@ -83,9 +83,9 @@
             </dt>
             <dd>AccurateRip-Identifier of a compact disc.</dd>
             <dt>
-              struct <a href="structarcstk_1_1v__1__0__0_1_1CDDA__t.html" class="m-doc">arcstk::v_1_0_0::CDDA_t</a>
+              struct <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">arcstk::v_1_0_0::CDDA</a>
             </dt>
-            <dd>Constants related to the CDDA format.</dd>
+            <dd>Constants related to the <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a> format.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">arcstk::v_1_0_0::InvalidMetadataException</a>
             </dt>
@@ -124,21 +124,13 @@
             </dt>
             <dd>Defined iff T is a numerical integer type of at least 32 bit size.</dd>
             <dt>
-              using <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_count</a> = int32_t
+              using <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_count_t</a> = int32_t
             </dt>
             <dd>Type to represent amounts of LBA frames.</dd>
             <dt>
-              using <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_count</a> = int32_t
-            </dt>
-            <dd>Type to represent amounts of PCM 32 bit samples.</dd>
-            <dt>
-              using <a href="group__calc.html#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">sample_type</a> = uint32_t
-            </dt>
-            <dd>Type to represent a 32 bit PCM stereo sample.</dd>
-            <dt>
               using <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> = int
             </dt>
-            <dd>Data type for track numbers.</dd>
+            <dd>Type to represent 1-based track numbers.</dd>
           </dl>
         </section>
         <section id="func-members">
@@ -153,19 +145,19 @@
             </dt>
             <dd>Extract filenames from <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> in order.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a87a751957507d9185de42c049e766dc9" class="m-doc">get_offsets</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc) -&gt; std::vector&lt;lba_count&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a471e4a644785acd2d40a83f10f40cd7d" class="m-doc">get_offsets</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc) -&gt; std::vector&lt;lba_count_t&gt;</span>
             </dt>
             <dd>Extract the offsets from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> to an iterable container.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a16c9de3e40b48ca0b029d0d4af6bd487" class="m-doc">get_offsets</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::vector&lt;lba_count&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a61419b02cc41f1245d8f15711397b514" class="m-doc">get_offsets</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::vector&lt;lba_count_t&gt;</span>
             </dt>
             <dd>Extract the offsets from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> to an iterable container.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a2093cdd2d8f3e4ba5a2de69458585bd9" class="m-doc">get_parsed_lengths</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc) -&gt; std::vector&lt;lba_count&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a34024f7f57f357feaccb35d5c7569013" class="m-doc">get_parsed_lengths</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc) -&gt; std::vector&lt;lba_count_t&gt;</span>
             </dt>
             <dd>Extract parsed lengths from <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> in order.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#ac1cdadce1d71a1e69e57744c59b45361" class="m-doc">get_parsed_lengths</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::vector&lt;lba_count&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a7423ff3d133e8aa864fee18e08bd284d" class="m-doc">get_parsed_lengths</a>(</span><span class="m-doc-wrap">const TOC&amp; toc) -&gt; std::vector&lt;lba_count_t&gt;</span>
             </dt>
             <dd>Extract parsed lengths from <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> in order.</dd>
             <dt>
@@ -173,8 +165,8 @@
             </dt>
             <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#a9ec5b3878660c8e69b22df9f21a46206" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga4199e014d10257a267c2fc006ce6f8fb" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc,
-              const lba_count leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga063024d8f0294883caa9990596571c39" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc,
+              const lba_count_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
             <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a specified leadout.</dd>
             <dt>
@@ -182,48 +174,48 @@
             </dt>
             <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#a9ec5b3878660c8e69b22df9f21a46206" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga374d2f6bee7252d7f0402f0db0e07143" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TOC&amp; toc,
-              const lba_count leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gad985e0367531d44a7789a48b78608b33" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TOC&amp; toc,
+              const lba_count_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
             <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> and a specified leadout.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer, typename = IsLBAContainer&lt;LBAContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gac84e07ec3408c557db4dd8f965667768" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gac5c685ea14399c5155cc2c7ebe330e91" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               LBAContainer&amp;&amp; offsets,
-              const lba_count leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+              const lba_count_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
-            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dd>Create an object by track_count, offsets and leadout.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga3a0de09152fdde2aad5981f59580c9a7" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga4d200ba340efff4f8b9893758ad18791" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               std::initializer_list&lt;T&gt; offsets,
-              const lba_count leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+              const lba_count_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
-            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> by track_count, offsets and leadout.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer, typename = IsLBAContainer&lt;LBAContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga9e4e1ca7be04ea502cdab19cfab7c576" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
-              const lba_count leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gae484bbf109efd1e2038c04191dd83eab" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
+              const lba_count_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
-            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> by offsets and leadout.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T, typename = IsLBAType&lt;T&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gaf4c230da926df79913dc05f95679bb03" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;T&gt; offsets,
-              const lba_count leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga418ed0cc137bf8148ac7e17fd738bcf3" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;T&gt; offsets,
+              const lba_count_t leadout) -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
-            <dd>Build an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> object from the specified information.</dd>
+            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> by offsets and leadout.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gadec6974067bd3d88af503bf5f027e95e" class="m-doc">make_empty_arid</a>(</span><span class="m-doc-wrap">) -&gt; std::unique_ptr&lt;ARId&gt; <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#ac806ba9e404b0ccf005b798679c311b9" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga41b3f763163d1b144036984a79df48f4" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga829cd50a1fde76310bcea10461fb92b9" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
               LBAContainer&amp;&amp; offsets,
-              const lba_count leadout,
+              const lba_count_t leadout,
               FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> by track count, offsets, leadout and optional filenames.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer1, typename LBAContainer2, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer1&gt;, typename = IsLBAContainer&lt;LBAContainer2&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga57f8ebb0cb26c96be9188b93528e98ad" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const TrackNo track_count,
@@ -231,30 +223,26 @@
               LBAContainer2&amp;&amp; lengths,
               FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> from the specified information.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga8c2d819cd1734497e4f1a9408278268b" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
-              const lba_count leadout,
+              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga1993b317c7cc6d27d210869cd07523d9" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer&amp;&amp; offsets,
+              const lba_count_t leadout,
               FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> by offsets, leadout and optional filenames.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename LBAContainer1, typename LBAContainer2, typename FilenameContainer = std::vector&lt;std::string&gt;, typename = IsLBAContainer&lt;LBAContainer1&gt;, typename = IsLBAContainer&lt;LBAContainer2&gt;, typename = IsFilenameContainer&lt;FilenameContainer&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga3ec65826925c6cc6345214f5a210b08e" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">LBAContainer1&amp;&amp; offsets,
               LBAContainer2&amp;&amp; lengths,
               FilenameContainer&amp;&amp; files = {}) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> object from the specified information.</dd>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> by offsets, lengths and optional filenames.</dd>
           </dl>
         </section>
         <section id="var-members">
           <h2><a href="#var-members">Variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              const CDDA_t <a href="group__calc.html#ga63dc68f83fc9026d3d2884d70dba896a" class="m-doc">CDDA</a>
-            </dt>
-            <dd>Global instance of the CDDA constants.</dd>
             <dt>
               const ARId <a href="group__id.html#gaf9ce24c60a496cd535ed1400fa2f48b6" class="m-doc">EmptyARId</a>
             </dt>

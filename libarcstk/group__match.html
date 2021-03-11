@@ -61,7 +61,7 @@
             </li>
           </ul>
         </div>
-<p><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> provides an interface to match the ARCSs of some audio input against a response from AccurateRip.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> returns a <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> that represents a matrix of numeric comparisons: the result of matching the <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> to each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p><p>While <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implements the comparison strategy, the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> implements the result of the comparison.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Match.html#ae3f4edc3e4d2b9f21bc8c2af77d3ba74" class="m-doc">Match::<wbr />track(block, track, isV2)</a> provides access to any single comparison by its block index, track index and ARCS algorithm version.</p><p>Provided are two <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implementations.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> matches each checksum in a list of track-based <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against the value of the corresponding track in each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> of the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. This implements the verification process of a complete disc image. <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> requires an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> and respects it in the match against the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> matches a set of file-based <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> by trying to match each of the <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against <em>each</em> of the sums in each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>. It is used for matching a set of track files in arbitrary order. An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is optional.</p>
+<p><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> provides an interface to match the ARCSs of some audio input against a response from AccurateRip.</p><p>Use a <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> by just calling its constructor with the required input. Thereafter the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> provides the caller with information about the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>:</p><ul><li><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a880eb0fec60b77bff1a8cbd5a5f7dcbc" class="m-doc">matches()</a> indicates whether a complete match was found</li><li><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a893d1a44a636e9a070442c1f5a297853" class="m-doc">best_<wbr />match()</a> points to a block with best matching</li><li><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a1469e76bbbfe0951d503db6240769ef2" class="m-doc">best_<wbr />match_<wbr />is_<wbr />v2()</a> indicates whether best_match() refers to a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> of type ARCSv2</li><li><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ae52a60b14c0c08255715d5ae5ee41f5f" class="m-doc">best_<wbr />difference()</a> yields the number of non-matching tracks in the best_match()</li><li><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a3fdefdd99e6d5a1a6648440d6ead3b08" class="m-doc">match()</a> yields the entire <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> matrix</li></ul><p>A <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> returns a <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> that represents a matrix of numeric comparisons: the result of matching the <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> to each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p><p>While <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implements the comparison strategy and the above convenience functions about the result, the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> implements the actual result of the comparison.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Match.html#ae3f4edc3e4d2b9f21bc8c2af77d3ba74" class="m-doc">Match::<wbr />track(block, track, isV2)</a> provides access to the result of any single comparison by its block index, track index and ARCS algorithm version. The block is the 0-based index of the set of <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>, the track is the 0-based index of the track within the block and the boolean <code>isV2</code> indicates by <code>TRUE</code> that the comparison was performed for ARCSv2.</p><p>Three <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implementations are provided.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> matches each checksum in a list of track-based <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against the value of the corresponding track in each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> of the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. This implements the verification process of a complete disc image. <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> requires an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> and respects it in the match against the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ListMatcher.html" class="m-doc">ListMatcher</a> performs the same logic as <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>, but works on a single list of reference checksums instead of an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> matches a set of file-based <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> by trying to match each of the <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against <em>each</em> of the sums in each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>. It is used for matching a set of track files in arbitrary order. An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is optional.</p>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
@@ -84,7 +84,7 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">arcstk::v_1_0_0::TracksetMatcher</a>
             </dt>
-            <dd><a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> an arbitrary set of tracks against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</dd>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> an arbitrary set of <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</dd>
           </dl>
         </section>
         <section id="typedef-members">
@@ -107,13 +107,13 @@
               Container&amp;&amp; ref_sums,
               const ARId&amp; ref_id) -&gt; std::unique_ptr&lt;Match&gt;</span>
             </dt>
-            <dd>Perform a match of some <code>checksums</code> agains a <code>container</code> of reference values.</dd>
+            <dd>Perform a match of some <code>checksums</code> against a <code>container</code> of reference values.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename Container, typename = IsChecksumContainer&lt;Container&gt;&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#ga6879e48b45496da3961b537cf1658b51" class="m-doc">perform_match</a>(</span><span class="m-doc-wrap">const Checksums&amp; actual_sums,
               Container&amp;&amp; ref_sums) -&gt; std::unique_ptr&lt;Match&gt;</span>
             </dt>
-            <dd>Perform a match of some <code>checksums</code> agains a <code>container</code> of reference values.</dd>
+            <dd>Perform a match of some <code>checksums</code> against a <code>container</code> of reference values.</dd>
           </dl>
         </section>
         <section>
@@ -127,6 +127,17 @@
               using <a href="#ga463ae6ca164ac320a689fab5ae656f16" class="m-doc-self">IsChecksumContainer</a> = std::enable_if_t&lt;details::is_checksum_container&lt;T&gt;::value&gt;
             </h3>
             <p>Defined iff T is a container whose value_type is <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>The type to test</td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
         </section>
         <section>
@@ -142,7 +153,7 @@
               Container&amp;&amp; ref_sums,
               const ARId&amp; ref_id)</span></span>
             </h3>
-            <p>Perform a match of some <code>checksums</code> agains a <code>container</code> of reference values.</p>
+            <p>Perform a match of some <code>checksums</code> against a <code>container</code> of reference values.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -172,7 +183,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>The <code>container</code> has to obey the IsChecksumContainer requirements.</p><p>If <code>container.size()</code> is n, the first n <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances in <code>checksums</code> will be compared to the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances on the equivalent index position in <code>container</code>. For this operation to be successfully completed, the caller has to ensure that <code>checksums.size() &gt;= container.size()</code>.</p>
+<p>The <code>container</code> has to obey the <code>IsChecksumContainer</code> requirements.</p><p>If <code>container.size()</code> is n, the first n <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances in <code>checksums</code> will be compared to the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances on the equivalent index position in <code>container</code>. For this operation to be successfully completed, the caller has to ensure that <code>checksums.size() &gt;= container.size()</code>.</p>
           </div></section>
           <section class="m-doc-details" id="ga6879e48b45496da3961b537cf1658b51"><div>
             <h3>
@@ -183,7 +194,7 @@
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;Match&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga6879e48b45496da3961b537cf1658b51" class="m-doc-self">perform_match</a>(</span><span class="m-doc-wrap">const Checksums&amp; actual_sums,
               Container&amp;&amp; ref_sums)</span></span>
             </h3>
-            <p>Perform a match of some <code>checksums</code> agains a <code>container</code> of reference values.</p>
+            <p>Perform a match of some <code>checksums</code> against a <code>container</code> of reference values.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -205,7 +216,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>The <code>container</code> has to obey the IsChecksumContainer requirements.</p><p>If <code>container.size()</code> is n, the first n <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances in <code>checksums</code> will be compared to the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances on the equivalent index position in <code>container</code>. For this operation to be successfully completed, the caller has to ensure that <code>checksums.size() &gt;= container.size()</code>.</p><p>There is no <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> to compare, therefore the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is excluded as source of difference. The block id match flag will therefore always be TRUE.</p>
+<p>The <code>container</code> has to obey the <code>IsChecksumContainer</code> requirements.</p><p>If <code>container.size()</code> is n, the first n <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances in <code>checksums</code> will be compared to the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances on the equivalent index position in <code>container</code>. For this operation to be successfully completed, the caller has to ensure that <code>checksums.size() &gt;= container.size()</code>.</p><p>There is no <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> to compare, therefore the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is excluded as source of difference. The block id match flag will therefore always be <code>TRUE</code>.</p>
           </div></section>
         </section>
       </div>

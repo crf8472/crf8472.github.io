@@ -46,10 +46,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::MetadataParser <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::MetadataParser <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="metaparser_8hpp.html">&lt;metaparser.hpp&gt;</a></div>
         </h1>
-        <p>Interface for MetadataParsers.</p>
+        <p>Parse metadata files and provide the content as a TOC instance.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -59,18 +59,18 @@
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<aside class="m-note m-info"><h4>Note</h4><p>Instances of this class are non-copyable but movable.</p></aside>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">v_1_0_0::FileReader</a>
             </dt>
-            <dd>Abstract base class for all FileReaders.</dd>
+            <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -80,10 +80,6 @@
               <span class="m-doc-wrap-bumper"><a href="#ab0a514ebc000e959710fe276da580dce" class="m-doc">MetadataParser</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1MetadataParserImpl.html" class="m-doc">MetadataParserImpl</a>&gt; impl)</span>
             </dt>
             <dd>Constructor.</dd>
-            <dt id="a829d2724586c343d53cab4f86f48895d">
-              <span class="m-doc-wrap-bumper"><a href="#a829d2724586c343d53cab4f86f48895d" class="m-doc-self">~MetadataParser</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Default destructor.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -93,15 +89,6 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a26044426d2651fd4363727cb9383909d" class="m-doc">parse</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
             <dd>Parses a metadata file.</dd>
-          </dl>
-        </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a3f2a7c461214030cd2d5ef2277248dc2">
-              std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1MetadataParserImpl.html" class="m-doc">MetadataParserImpl</a>&gt; <a href="#a3f2a7c461214030cd2d5ef2277248dc2" class="m-doc-self">impl_</a>
-            </dt>
-            <dd>Implementation of a <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a>.</dd>
           </dl>
         </section>
         <section>

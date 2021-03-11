@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>An API to calculate different types of checksums for CDDA conforming audio tracks.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> represents a (stateful) concrete checksum calculation that must be configured with a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> specific to the input audio file and a <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> that specifies the calculation algorithm. The input of the audio file must be represented as a succession of iterable uint32_t represented sample sequences and the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is sequentially updated with these sequences in order. After the last update, the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> returns the calculation result on request. The calculated <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> are represented as an iterable aggregate of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> refers to a particular track and a particular <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> is a set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of different <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />types</a> of the same track.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> represent a calculation result for all requested checksum types and all tracks of the audio input. It is an aggregation of the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of an audio input. Depending on the input, it can represent either an entire album or a single track.</p><p>Considering the input of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>, a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> represents the per-file metadata information that is used during calculation. <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> computes <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> from a sequence of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">updates</a> by sample sequences according to its current <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> wraps the concrete iterator of the input sample sequence so any class with a compatible iterator can be used.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> represents the size of the audio data in a file in frames, samples and bytes.</p>
+<p>An API to calculate different types of checksums for <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a> conforming audio tracks.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> represents a (stateful) concrete checksum calculation that must be configured with a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> specific to the input audio file and a <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> that specifies the calculation algorithm. The input of the audio file must be represented as a succession of iterable <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequences</a> and the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is sequentially updated with these sequences in order. After the last update, the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> returns the calculation result on request. The calculated <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> are represented as an iterable aggregate of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> refers to a particular track and a particular <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> is a set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of different <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />types</a> of the same track.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> represent a calculation result for all requested checksum types and all tracks of the audio input. It is an aggregation of the <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a> for each track of an respective audio input. Depending on the input, it can represent either an entire album or a single track.</p><p>Considering the input of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>, a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> represents the per-file metadata information that is used during calculation. The <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> informs the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> about technical aspects like the encoding of the samples and the channel order, and as well about semantic aspects like the precise track bounds and the total number of samples.</p><p><a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> wraps the concrete iterator of the input sample sequence so any class with a compatible iterator can be used for generating the audio input.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> represents the size of the audio input in frames, samples or bytes.</p><p>The <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a> constants provide some CDDA-related constants that are frequently reused throughout the code.</p>
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
@@ -87,17 +87,17 @@
             </dt>
             <dd><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> calculation for a requested <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>.</dd>
             <dt>
-              struct <a href="structarcstk_1_1v__1__0__0_1_1CDDA__t.html" class="m-doc">arcstk::v_1_0_0::CDDA_t</a>
+              struct <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">arcstk::v_1_0_0::CDDA</a>
             </dt>
-            <dd>Constants related to the CDDA format.</dd>
+            <dd>Constants related to the <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a> format.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">arcstk::v_1_0_0::Checksum</a>
             </dt>
-            <dd>A 32-bit wide unsigned checksum for a single file or track.</dd>
+            <dd>An AccurateRip checksum for a single file or track.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">arcstk::v_1_0_0::Checksums</a>
             </dt>
-            <dd>The result of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>, a list of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</dd>
+            <dd>The result of a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>, an iterable list of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">arcstk::v_1_0_0::ChecksumSet</a>
             </dt>
@@ -110,7 +110,7 @@
               <div class="m-doc-template">template&lt;typename T, bool is_planar&gt;</div>
               class <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">arcstk::v_1_0_0::SampleSequence</a>
             </dt>
-            <dd>A sequence of samples represented by signed integral types.</dd>
+            <dd>A sequence of samples represented by 16 or 32 bit integral types.</dd>
           </dl>
         </section>
         <section id="typedef-members">
@@ -122,7 +122,7 @@
             </dt>
             <dd>Interleaved sample sequence with samples of type T.</dd>
             <dt>
-              using <a href="#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_count</a> = int32_t
+              using <a href="#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_count_t</a> = int32_t
             </dt>
             <dd>Type to represent amounts of LBA frames.</dd>
             <dt>
@@ -131,7 +131,7 @@
             </dt>
             <dd>Planar sample sequence with samples of type T.</dd>
             <dt>
-              using <a href="#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_count</a> = int32_t
+              using <a href="#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_count_t</a> = int32_t
             </dt>
             <dd>Type to represent amounts of PCM 32 bit samples.</dd>
             <dt>
@@ -139,13 +139,9 @@
             </dt>
             <dd>Type to represent a 32 bit PCM stereo sample.</dd>
             <dt>
-              using <a href="#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">sample_type</a> = uint32_t
-            </dt>
-            <dd>Type to represent a 32 bit PCM stereo sample.</dd>
-            <dt>
               using <a href="#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> = int
             </dt>
-            <dd>Data type for track numbers.</dd>
+            <dd>Type to represent 1-based track numbers.</dd>
           </dl>
         </section>
         <section id="func-members">
@@ -180,20 +176,11 @@
               const std::string&amp; audiofilename) -&gt; std::unique_ptr&lt;CalcContext&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga9cbaabd865fb97a771abcede037eaca9" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">std::ostream&amp; out,
-              const Checksum&amp; c) -&gt; std::ostream&amp;</span>
-            </dt>
-            <dd>Overload operator &lt;&lt; for outputting <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
           </dl>
         </section>
         <section id="var-members">
           <h2><a href="#var-members">Variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              const CDDA_t <a href="#ga63dc68f83fc9026d3d2884d70dba896a" class="m-doc">CDDA</a>
-            </dt>
-            <dd>Global instance of the CDDA constants.</dd>
             <dt>
               const Checksum <a href="#ga2ab8d0c00d6c4763b067d9af1c534811" class="m-doc">EmptyChecksum</a>
             </dt>
@@ -211,15 +198,15 @@
               using <a href="#ga35db1ec1a32b802681337cbbd281b0cf" class="m-doc-self">InterleavedSamples</a> = SampleSequence&lt;T, false&gt;
             </h3>
             <p>Interleaved sample sequence with samples of type T.</p>
-<p>An interleaved sequence has one input buffer, in which the samples for each channel occurr in order.</p><p>T can only be some signed or unsigned integral type of either 16 or 32 bit width.</p>
+<p>An interleaved sequence has one input buffer, in which the samples for each channel occurr in order.</p><p>T can only be some signed or unsigned integral type of either 16 or 32 bit width.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a></p></aside>
           </div></section>
-          <section class="m-doc-details" id="gae57ca6855b716d9b1902b6b4d99a1da3"><div>
+          <section class="m-doc-details" id="ga37efdf754736a2f5a4939ec675b57134"><div>
             <h3>
-              using <a href="#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc-self">lba_count</a> = int32_t
+              using <a href="#ga37efdf754736a2f5a4939ec675b57134" class="m-doc-self">lba_count_t</a> = int32_t
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
             <p>Type to represent amounts of LBA frames.</p>
-<p>A signed integer of at least 32 bit length.</p><p>The type is required to express the maximum frame count in a medium. The value is MAX_BLOCK_ADDRESS == 449.999 frames.</p><p>The type is intended to perform arithmetic operations on it.</p>
+<p>A signed integer of at least 32 bit length.</p><p>The type is required to be able to express the maximum frame count in a medium. The value is <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html#a361e9107b20e85cb66147b6db6e0dfad" class="m-doc">CDDA::<wbr />MAX_BLOCK_ADDRESS</a> == 449.999 frames.</p><p>The type is intended to perform arithmetic operations on it.</p>
           </div></section>
           <section class="m-doc-details" id="gaa96cac59603e345b08b8a85238120e39"><div>
             <h3>
@@ -230,12 +217,12 @@
               using <a href="#gaa96cac59603e345b08b8a85238120e39" class="m-doc-self">PlanarSamples</a> = SampleSequence&lt;T, true&gt;
             </h3>
             <p>Planar sample sequence with samples of type T.</p>
-<p>A planar sequence has two separated input buffers, one for each channel.</p><p>T can only be some signed or unsigned integral type of either 16 or 32 bit width.</p>
+<p>A planar sequence has two separated input buffers, one for each channel.</p><p>T can only be some signed or unsigned integral type of either 16 or 32 bit width.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a></p></aside>
           </div></section>
-          <section class="m-doc-details" id="gaadf846d5857e283934f3bd58d8db306b"><div>
+          <section class="m-doc-details" id="gae67e49c7b2758109558abf6148df998e"><div>
             <h3>
-              using <a href="#gaadf846d5857e283934f3bd58d8db306b" class="m-doc-self">sample_count</a> = int32_t
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              using <a href="#gae67e49c7b2758109558abf6148df998e" class="m-doc-self">sample_count_t</a> = int32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
             <p>Type to represent amounts of PCM 32 bit samples.</p>
 <p>A signed integer of at least 32 bit length.</p><p>The type is required to express the maximum sample count in a medium, which is MAX_BLOCK_ADDRESS * SAMPLES_PER_FRAME == 264.599.412 samples.</p><p>The type is intended to perform arithmetic operations on it.</p>
@@ -243,26 +230,18 @@
           <section class="m-doc-details" id="ga6a0d5ad7d5b687199bcd7b454ae19ae6"><div>
             <h3>
               using <a href="#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc-self">sample_t</a> = uint32_t
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
             <p>Type to represent a 32 bit PCM stereo sample.</p>
-<p>This should be defined identically-as or at least assignable-to <a href="group__calc.html#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">arcstk::<wbr />sample_type</a>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__calc.html#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc">arcstk::<wbr />sample_type</a></p></aside>
-          </div></section>
-          <section class="m-doc-details" id="gab0f4797e3f96922bbdba293582d0b06a"><div>
-            <h3>
-              using <a href="#gab0f4797e3f96922bbdba293582d0b06a" class="m-doc-self">sample_type</a> = uint32_t
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
-            </h3>
-            <p>Type to represent a 32 bit PCM stereo sample.</p>
-<p>An unsigned integer of 32 bit length.</p><p>The type is not intended to do arithmetic operations on it.</p><p>Bitwise operators are required to work as on unsigned types.</p><p>The type should have at least the size of <a href="group__calc.html#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">arcstk::<wbr />sample_t</a>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__calc.html#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">arcstk::<wbr />sample_t</a></p></aside>
+<p>An unsigned integer of 32 bit length.</p><p>The type is not intended to do arithmetic operations on it.</p><p>Bitwise operators are required to work as on unsigned types.</p>
           </div></section>
           <section class="m-doc-details" id="gab54febc3dbc97c4e031001471d798069"><div>
             <h3>
               using <a href="#gab54febc3dbc97c4e031001471d798069" class="m-doc-self">TrackNo</a> = int
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
             </h3>
-            <p>Data type for track numbers.</p>
-<p>Valid track numbers are in the range of 1-99. Note that 0 is not a valid TrackNo. Hence, a TrackNo is not suitable to represent a track count.</p><p>A validation check is not provided, though.</p><p>The intention of this typedef is to provide a marker for 1-based track numbers in the interface.</p>
+            <p>Type to represent 1-based track numbers.</p>
+<p>Valid track numbers are in the range of 1-99. Note that 0 is not a valid TrackNo. Hence, a TrackNo is not suitable to represent a total number of tracks or a counter for tracks.</p><p>The intention of this typedef is to provide a marker for parameters that expect 1-based track numbers instead of 0-based track indices. TrackNo will not occurr as a return type in the API.</p><p>A validation check is not provided, though. Every function that accepts a TrackNo will in fact accept 0 but will then either throw or return a default error value.</p><p>It is not encouraged to use TrackNo in client code.</p>
           </div></section>
         </section>
         <section>
@@ -295,6 +274,7 @@
                 </tr>
               </tfoot>
             </table>
+<p>This addresses a situation where a single track has to be checksummed.</p>
           </div></section>
           <section class="m-doc-details" id="ga2ee01f24271547319ff80a9d6bea22bb"><div>
             <h3>
@@ -329,7 +309,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>The file will not be opened by the object, it is just declared as part of the metadata.</p>
+<p>This addresses a situation where a single track has to be checksummed.</p><p>The file will not be opened, it is just declared as part of the metadata.</p>
           </div></section>
           <section class="m-doc-details" id="ga5cb79cd3f7a75ef57c51d21d1612fad4"><div>
             <h3>
@@ -383,7 +363,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>The file will not be opened by the object, it is just declared as part of the metadata.</p>
+<p>The file will not be opened, it is just declared as part of the metadata.</p>
           </div></section>
           <section class="m-doc-details" id="gaee48e6ac8767bf39c368a503086b44a2"><div>
             <h3>
@@ -437,26 +417,11 @@
                 </tr>
               </tfoot>
             </table>
-<p>The file will not be opened by the object, it is just declared as part of the metadata.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga9cbaabd865fb97a771abcede037eaca9"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::ostream&amp; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga9cbaabd865fb97a771abcede037eaca9" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">std::ostream&amp; out,
-              const Checksum&amp; c)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
-            </h3>
-            <p>Overload operator &lt;&lt; for outputting <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</p>
+<p>The file will not be opened, it is just declared as part of the metadata.</p>
           </div></section>
         </section>
         <section>
           <h2>Variable documentation</h2>
-          <section class="m-doc-details" id="ga63dc68f83fc9026d3d2884d70dba896a"><div>
-            <h3>
-              const CDDA_t <a href="#ga63dc68f83fc9026d3d2884d70dba896a" class="m-doc-self">CDDA</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
-            </h3>
-            <p>Global instance of the CDDA constants.</p>
-          </div></section>
           <section class="m-doc-details" id="ga2ab8d0c00d6c4763b067d9af1c534811"><div>
             <h3>
               const Checksum <a href="#ga2ab8d0c00d6c4763b067d9af1c534811" class="m-doc-self">EmptyChecksum</a>

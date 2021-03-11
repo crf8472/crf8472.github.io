@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>An AccurateRip response is in fact parsed as a sequence of ARBlocks.</p><p>Syntactically each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> is an ordered pair of a header and a sequence of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a>.</p><p>Semantically, an <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> contains exactly one <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> for each track of the original disc. This makes the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in fact an ARCS set of the tracks on the disc along with their confidences and pressing offsets for a disc. The header contains the AccurateRip Id of the disc.</p><p>An AccurateRip response may contain different <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlocks</a> for a single disc id and the ARBlocks may differ in the ARCSs they contain for the tracks.</p>
+<p>An AccurateRip response is in fact parsed as a sequence of ARBlocks.</p><p>Syntactically each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> is an ordered pair of a header and a subsequent sequence of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a>.</p><p>Semantically, an <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> contains exactly one <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> for each track of the original disc. This makes the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in fact an ARCS set of the tracks on the disc along with their confidences and pressing offsets for a disc. The header contains the AccurateRip Id of the disc.</p><p>An AccurateRip response may contain different <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlocks</a> for a single disc id and the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlocks</a> may differ in the ARCSs they contain for the tracks.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -117,23 +117,23 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a9b208370f07a61709b69a8bcbc7992e1" class="m-doc">at</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#a0bf1905dd5eb23000a904793ca3fd3d9" class="m-doc">size_<wbr />type</a> index) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;</span>
             </dt>
-            <dd>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified 0-based index <code>index</code>.</dd>
+            <dd>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified 0-based <code>index</code>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa24add9a7a484f620e14a985c13deaf6" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#adc0c5c0d36c5716b21bf7ff06102217c" class="m-doc">const_<wbr />iterator</a></span>
             </dt>
-            <dd>const_iterator pointing to first <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</dd>
+            <dd>Obtain a const_iterator pointing to first <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab70e4b40c9e10b464b69edc91d1284cf" class="m-doc">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#adc0c5c0d36c5716b21bf7ff06102217c" class="m-doc">const_<wbr />iterator</a></span>
             </dt>
-            <dd>const_iterator pointing to first <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</dd>
+            <dd>Obtain a const_iterator pointing to first <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a8b3c2f2a482fbbf8e7176e9025e830ff" class="m-doc">cend</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#adc0c5c0d36c5716b21bf7ff06102217c" class="m-doc">const_<wbr />iterator</a></span>
             </dt>
-            <dd>const_iterator pointing behind last <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</dd>
+            <dd>Obtain a const_iterator pointing behind last <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a1ac6c34d00ce5da8ebc52efd00b4ab85" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#adc0c5c0d36c5716b21bf7ff06102217c" class="m-doc">const_<wbr />iterator</a></span>
             </dt>
-            <dd>const_iterator pointing behind last <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</dd>
+            <dd>Obtain a const_iterator pointing behind last <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a1d17c3c85a32cd86606493faceb51a95" class="m-doc">id</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -141,11 +141,11 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2de2c7b17641393c5cf297fc8cead7dd" class="m-doc">operator[]</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#a0bf1905dd5eb23000a904793ca3fd3d9" class="m-doc">size_<wbr />type</a> index) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp;</span>
             </dt>
-            <dd>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified <code>index</code>.</dd>
+            <dd>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified 0-based <code>index</code>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#adc129296dad63d736bffead250c69448" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#a0bf1905dd5eb23000a904793ca3fd3d9" class="m-doc">size_<wbr />type</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Number of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a> in this <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
+            <dd>Total Number of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a> in this <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
           </dl>
         </section>
         <section>
@@ -245,7 +245,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9b208370f07a61709b69a8bcbc7992e1" class="m-doc-self">at</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#a0bf1905dd5eb23000a904793ca3fd3d9" class="m-doc">size_<wbr />type</a> index) const</span></span>
             </h3>
-            <p>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified 0-based index <code>index</code>.</p>
+            <p>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified 0-based <code>index</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -268,7 +268,7 @@
               <tbody>
                 <tr>
                   <td>std::out_of_range</td>
-                  <td>Iff <code>index</code> &gt; <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#adc129296dad63d736bffead250c69448" class="m-doc">ARBlock::<wbr />size()</a> - 1.</td>
+                  <td>Iff <code>index</code> &gt;= <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#adc129296dad63d736bffead250c69448" class="m-doc">ARBlock::<wbr />size()</a>.</td>
                 </tr>
               </tbody>
             </table>
@@ -278,7 +278,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#adc0c5c0d36c5716b21bf7ff06102217c" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa24add9a7a484f620e14a985c13deaf6" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>const_iterator pointing to first <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</p>
+            <p>Obtain a const_iterator pointing to first <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -292,7 +292,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#adc0c5c0d36c5716b21bf7ff06102217c" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab70e4b40c9e10b464b69edc91d1284cf" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>const_iterator pointing to first <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</p>
+            <p>Obtain a const_iterator pointing to first <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -306,7 +306,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#adc0c5c0d36c5716b21bf7ff06102217c" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8b3c2f2a482fbbf8e7176e9025e830ff" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>const_iterator pointing behind last <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</p>
+            <p>Obtain a const_iterator pointing behind last <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -320,7 +320,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#adc0c5c0d36c5716b21bf7ff06102217c" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1ac6c34d00ce5da8ebc52efd00b4ab85" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>const_iterator pointing behind last <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</p>
+            <p>Obtain a const_iterator pointing behind last <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -348,7 +348,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2de2c7b17641393c5cf297fc8cead7dd" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#a0bf1905dd5eb23000a904793ca3fd3d9" class="m-doc">size_<wbr />type</a> index) const</span></span>
             </h3>
-            <p>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified <code>index</code>.</p>
+            <p>The <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> with the specified 0-based <code>index</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -372,12 +372,12 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html#a0bf1905dd5eb23000a904793ca3fd3d9" class="m-doc">size_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />ARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adc129296dad63d736bffead250c69448" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Number of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a> in this <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
+            <p>Total Number of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a> in this <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>The number of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a> in this block.</td>
+                  <td>The total number of <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplets</a> in this block.</td>
                 </tr>
               </tfoot>
             </table>

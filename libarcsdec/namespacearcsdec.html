@@ -86,15 +86,19 @@
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">v_1_0_0::AudioReader</a>
             </dt>
-            <dd>Opaque instance to read audio files and provide the decoded samples.</dd>
+            <dd>Read audio files and provide the decoded samples.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">v_1_0_0::AudioReaderImpl</a>
             </dt>
             <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> implementations.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1BlockAccumulator.html" class="m-doc">v_1_0_0::BlockAccumulator</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1AudioValidator.html" class="m-doc">v_1_0_0::AudioValidator</a>
             </dt>
-            <dd>Basic buffer: specify size, fill with samples and then flush.</dd>
+            <dd>Base class for validation handlers for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpls</a>.</dd>
+            <dt>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1BigEndianBytes.html" class="m-doc">v_1_0_0::BigEndianBytes</a>
+            </dt>
+            <dd>Service: interpret sequences of 2 or 4 big endian bytes as integer.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1BlockCreator.html" class="m-doc">v_1_0_0::BlockCreator</a>
             </dt>
@@ -102,24 +106,15 @@
             <dt>
               struct <a href="structarcsdec_1_1v__1__0__0_1_1BLOCKSIZE__t.html" class="m-doc">v_1_0_0::BLOCKSIZE_t</a>
             </dt>
-            <dd>Symbolic constants for certain block sizes.</dd>
+            <dd>Symbolic constants for certain block sizes (in PCM 32 bit samples).</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1BufferedAudioReaderImpl.html" class="m-doc">v_1_0_0::BufferedAudioReaderImpl</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1BufferedAudioReaderImpl.html" class="m-doc">v_1_0_0::BufferedAudioReaderImpl</a> <span class="m-label m-danger">deprecated</span>
             </dt>
             <dd><a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a> with configurable read buffer size.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1ByteConverter.html" class="m-doc">v_1_0_0::ByteConverter</a>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html" class="m-doc">v_1_0_0::CDDAValidator</a>
             </dt>
-            <dd>Service class providing methods to convert short byte sequences to integers.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1CDDAValidator.html" class="m-doc">v_1_0_0::CDDAValidator</a>
-            </dt>
-            <dd>Verifies the CDDA conformity of values.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structarcsdec_1_1v__1__0__0_1_1Comparable.html" class="m-doc">v_1_0_0::Comparable</a>
-            </dt>
-            <dd>Adds inequality to classes defining equality operator==.</dd>
+            <dd>Service: verify the CDDA conformity of values.</dd>
             <dt>
               struct <a href="structarcsdec_1_1v__1__0__0_1_1CreateAudioReader.html" class="m-doc">v_1_0_0::CreateAudioReader</a>
             </dt>
@@ -129,14 +124,13 @@
             </dt>
             <dd>Functor for safe creation of a <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a>.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;class ReaderType&gt;</div>
-              struct <a href="structarcsdec_1_1v__1__0__0_1_1CreateReader.html" class="m-doc">v_1_0_0::CreateReader</a>
-            </dt>
-            <dd>Functor to safely create a unique_ptr to a downcasted <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a>.</dd>
-            <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultSelector.html" class="m-doc">v_1_0_0::DefaultSelector</a>
             </dt>
             <dd>Default selector.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultValidator.html" class="m-doc">v_1_0_0::DefaultValidator</a>
+            </dt>
+            <dd>Default implementation of <a href="classarcsdec_1_1v__1__0__0_1_1AudioValidator.html" class="m-doc">AudioValidator</a>.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorCUE.html" class="m-doc">v_1_0_0::DescriptorCUE</a>
             </dt>
@@ -156,11 +150,11 @@
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorWavPCM.html" class="m-doc">v_1_0_0::DescriptorWavPCM</a>
             </dt>
-            <dd>Reader for RIFF WAV files containing PCM data.</dd>
+            <dd>Reader for RIFF WAVE files containing PCM data.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">v_1_0_0::FileReader</a>
             </dt>
-            <dd>Abstract base class for all FileReaders.</dd>
+            <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">v_1_0_0::FileReaderDescriptor</a>
             </dt>
@@ -198,9 +192,13 @@
             </dt>
             <dd>Reports an error concerning the input file format.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1ISampleProvider.html" class="m-doc">v_1_0_0::ISampleProvider</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1InvalidAudioException.html" class="m-doc">v_1_0_0::InvalidAudioException</a>
             </dt>
-            <dd>Inteface for providers of sample sequences.</dd>
+            <dd>Reports validation failure on audio data.</dd>
+            <dt>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1LittleEndianBytes.html" class="m-doc">v_1_0_0::LittleEndianBytes</a>
+            </dt>
+            <dd>Service: interpret sequences of 2 or 4 little-endian bytes as integer.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParseException.html" class="m-doc">v_1_0_0::MetadataParseException</a>
             </dt>
@@ -208,15 +206,11 @@
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">v_1_0_0::MetadataParser</a>
             </dt>
-            <dd>Interface for MetadataParsers.</dd>
+            <dd>Parse metadata files and provide the content as a TOC instance.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParserImpl.html" class="m-doc">v_1_0_0::MetadataParserImpl</a>
             </dt>
-            <dd>Implementation of a <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a>.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1ReaderValidatingHandler.html" class="m-doc">v_1_0_0::ReaderValidatingHandler</a>
-            </dt>
-            <dd>Base class for validation handlers for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpls</a>.</dd>
+            <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a> implementations.</dd>
             <dt>
               <div class="m-doc-template">template&lt;class D&gt;</div>
               class <a href="classarcsdec_1_1v__1__0__0_1_1RegisterAudioDescriptor.html" class="m-doc">v_1_0_0::RegisterAudioDescriptor</a>
@@ -228,21 +222,17 @@
             </dt>
             <dd>Register a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> type for TOC/metadata input.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleBuffer.html" class="m-doc">v_1_0_0::SampleBuffer</a>
-            </dt>
-            <dd>Sample format and reader independent sample buffer.</dd>
-            <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">v_1_0_0::SampleProcessor</a>
             </dt>
-            <dd></dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessorAdapter.html" class="m-doc">v_1_0_0::SampleProcessorAdapter</a>
-            </dt>
-            <dd>Adapter to wrap a Calculation in an unbuffered <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</dd>
+            <dd>Interface for processing samples as provided by a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a>.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">v_1_0_0::SampleProvider</a>
             </dt>
-            <dd>A provider of sample sequences.</dd>
+            <dd>Inteface for providers of sample sequences.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProviderBase.html" class="m-doc">v_1_0_0::SampleProviderBase</a>
+            </dt>
+            <dd>Base class for <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a> implementations.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1TOCParser.html" class="m-doc">v_1_0_0::TOCParser</a>
             </dt>
@@ -263,10 +253,9 @@
               <a href="#gga1bb6a3bb14846ed51234252330ebff84a1124b01ec75d322918f1d7d5bbe3c5bc" class="m-doc">PCM_S32LE</a>,
               <a href="#gga1bb6a3bb14846ed51234252330ebff84ab46f08ac2f8c8f112a6ee4aac9c6a32a" class="m-doc">PCM_S32LE_PLANAR</a>,
               <a href="#gga1bb6a3bb14846ed51234252330ebff84aa417ad68c0d44a64cc77fcbba552fd6e" class="m-doc">FLAC</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84a107bf9aa4aef1d71d00cfd5ca88325e5" class="m-doc">WAVEPACK</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84a9b1767b52104aa7954314f87d07f01dd" class="m-doc">WAVPACK</a>,
               <a href="#gga1bb6a3bb14846ed51234252330ebff84ad156cccc3ede1728673c3818d581503a" class="m-doc">MONKEY</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84a039ea4e8bb04948343a7376e44df1c17" class="m-doc">ALAC</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84a88f96cc739e1720ec2f41a831ed2041c" class="m-doc">WMALOSSLESS</a> }</span>
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84a039ea4e8bb04948343a7376e44df1c17" class="m-doc">ALAC</a> }</span>
             </dt>
             <dd>List of supported audio codecs.</dd>
             <dt>
@@ -280,28 +269,14 @@
               <a href="#gga90f14fef4842822ce786c1bd5586cac1aebae9a870a696afb2ecea6601d339318" class="m-doc">M4A</a>,
               <a href="#gga90f14fef4842822ce786c1bd5586cac1ae94afc367f47e1aaf16533e4ecbc8716" class="m-doc">OGG</a>,
               <a href="#gga90f14fef4842822ce786c1bd5586cac1ab484fe295bb7ccd00d90fcf8094b037e" class="m-doc">WV</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1a457c9e4a3c0a6bd24e1fe26935a86725" class="m-doc">AIFF</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1ad954202506588335bc40071f1425e064" class="m-doc">WMA</a> }</span>
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1a457c9e4a3c0a6bd24e1fe26935a86725" class="m-doc">AIFF</a> }</span>
             </dt>
             <dd>List of supported file formats for metadata and audio.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="group__audioreader.html#ga0ec7ce31e1e1f99c34f4d35da99a07db" class="m-doc">SAMPLE_FORMAT</a>: uint8_t { </span><span class="m-doc-wrap"><a href="#gga0ec7ce31e1e1f99c34f4d35da99a07dba696b031073e74bf2cb98e5ef201d4aa3" class="m-doc">UNKNOWN</a> = 0,
-              <a href="#gga0ec7ce31e1e1f99c34f4d35da99a07dba6e0b0886efb94aec797f6b830329b72c" class="m-doc">S16</a> = 1,
-              <a href="#gga0ec7ce31e1e1f99c34f4d35da99a07dba217c80cc5337c52b3061e0f327850a3d" class="m-doc">S16P</a> = 2,
-              <a href="#gga0ec7ce31e1e1f99c34f4d35da99a07dbaa1e28eee0339658d39a8b4d325b56e9c" class="m-doc">S32</a> = 3,
-              <a href="#gga0ec7ce31e1e1f99c34f4d35da99a07dba3df4494dec0049664d81069be7b1f123" class="m-doc">S32P</a> = 4 }</span>
-            </dt>
-            <dd>Supported sample formats.</dd>
           </dl>
         </section>
         <section id="typedef-members">
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
-            <dt>
-              <div class="m-doc-template">template&lt;class T&gt;</div>
-              using <a href="group__descriptors.html#ga43c9b462b2e3d97b5082d64012603f39" class="m-doc">FunctionReturning</a> = std::unique_ptr&lt;T&gt;(*)()
-            </dt>
-            <dd>Function pointer to function returning std::unique_ptr&lt;T&gt;.</dd>
             <dt>
               using <a href="group__descriptors.html#gab417d301a8802d47753b6ab5e33b9e32" class="m-doc">LibInfo</a> = std::vector&lt;std::pair&lt;std::string, std::string&gt;&gt;
             </dt>
@@ -311,6 +286,11 @@
         <section id="func-members">
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename S, typename T, std::enable_if_t&lt;details::signedness&lt;S, T&gt;::value, int&gt; = 0&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__metaparser.html#gadf50b74749b9ce715d8f9fd9302ba41b" class="m-doc">cast_or_throw</a>(</span><span class="m-doc-wrap">const T value) -&gt; S -&gt; auto</span>
+            </dt>
+            <dd>Service method: Cast a value of some integral type to an integral type of smaller range.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="group__descriptors.html#ga1f34fba47a8ec78b5f478b9bdd34b596" class="m-doc">is_audio_format</a>(</span><span class="m-doc-wrap"><a href="group__descriptors.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> format) -&gt; bool</span>
             </dt>

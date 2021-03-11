@@ -49,21 +49,30 @@
           <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::Checksum <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
         </h1>
-        <p>A 32-bit wide unsigned checksum for a single file or track.</p>
+        <p>An AccurateRip checksum for a single file or track.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#friends">Friends</a></li>
               </ul>
             </li>
           </ul>
         </div>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be represented by its numeric <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc">value()</a>. This is an unsigned integer of at least 32 bit length.</p><p>As a technical convenience, a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may be <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> which means: it carries no value. Using operator ==, two empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances qualify as equal.</p>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> has a value_type. This is its numeric representation. It is an unsigned integer of 32 bit length.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be represented by its numeric <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> which is of type value_type. A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be compared for equality with instances of its value_type using operator ==.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> has a converting constructor for its value_type, thus every parameter that expects a checksum can be assigned a value of type value_type instead of a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p><p>Operator &lt;&lt; is overloaded for printing <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> to streams. The <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> will then occurr in its standard layout: as a hexadecimal number without the base &#x27;0x&#x27;, all digits in upper case, and filled with leading zeros up to a width of 8 digits.</p><p>As a technical convenience, a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may be <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> which means: it carries no value. Calling <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> on an <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may lead any result. Two empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances qualify as equal when compared using operator ==.</p>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="acfb0656f96ad9dc57274b342854b5ff1">
+              using <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc-self">value_type</a> = uint32_t
+            </dt>
+            <dd>Numerical base type of checksums: a 32-bit wide unsigned integer.</dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -72,9 +81,9 @@
             </dt>
             <dd>Constructor.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a000dd32ae89a165afdc0f1359c878160" class="m-doc">Checksum</a>(</span><span class="m-doc-wrap">const uint32_t value) <span class="m-label m-flat m-info">explicit</span> </span>
+              <span class="m-doc-wrap-bumper"><a href="#a636f754652d644413f257bd958968a05" class="m-doc">Checksum</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> value)</span>
             </dt>
-            <dd>Constructor.</dd>
+            <dd>Converting constructor.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -83,21 +92,11 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Return TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise FALSE.</dd>
+            <dd>Return <code>TRUE</code> iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise <code>FALSE</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc">value</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Numeric value of the checksum.</dd>
-          </dl>
-        </section>
-        <section id="friends">
-          <h2><a href="#friends">Friends</a></h2>
-          <dl class="m-doc">
-            <dt id="aa22a2237215dd48ecba411d13e44b4d8">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa22a2237215dd48ecba411d13e44b4d8" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">std::ostream&amp; out,
-              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; c) -&gt; std::ostream&amp;</span>
-            </dt>
-            <dd>Overload operator &lt;&lt; for outputting <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>.</dd>
           </dl>
         </section>
         <section>
@@ -109,11 +108,11 @@
             <p>Constructor.</p>
 <p>Creates an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a000dd32ae89a165afdc0f1359c878160"><div>
+          <section class="m-doc-details" id="a636f754652d644413f257bd958968a05"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a000dd32ae89a165afdc0f1359c878160" class="m-doc-self">Checksum</a>(</span><span class="m-doc-wrap">const uint32_t value) <span class="m-label m-info">explicit</span> </span></span>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a636f754652d644413f257bd958968a05" class="m-doc-self">Checksum</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> value)</span></span>
             </h3>
-            <p>Constructor.</p>
+            <p>Converting constructor.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -130,20 +129,20 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Return TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise FALSE.</p>
+            <p>Return <code>TRUE</code> iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise <code>FALSE</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>Return TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise FALSE.</td>
+                  <td>Return <code>TRUE</code> iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise <code>FALSE</code>.</td>
                 </tr>
               </tfoot>
             </table>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty if it contains no valid value. Note that this does not entail <code><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc">value()</a> == 0</code> in all cases. Nonetheless, for most checksum types, the converse holds, they are <code><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a></code> if they are <code>0</code> .</p>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty if it contains no valid value. Note that this does not entail <code><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> == 0</code> in all cases. Nonetheless, for most checksum types, the converse holds, they are <code><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a></code> if they are <code>0</code> .</p>
           </div></section>
-          <section class="m-doc-details" id="a15fccb4244c8c3297cdcb77252649ab0"><div>
+          <section class="m-doc-details" id="a3ff92b94a2a3a640f65a300a8c04a61e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a15fccb4244c8c3297cdcb77252649ab0" class="m-doc-self">value</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc-self">value</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Numeric value of the checksum.</p>
             <table class="m-table m-fullwidth m-flat">

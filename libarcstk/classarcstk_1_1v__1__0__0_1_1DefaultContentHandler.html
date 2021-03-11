@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance and use <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html#a87e13192a83dd282831f4afea7e4017f" class="m-doc">set_<wbr />object()</a> to inform the handler about that object. The handler instance will then populate this object with the parsed content.</p><aside class="m-note m-warning"><h4>Attention</h4><p>The client is responsible for the lifetime management: the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> object must exist at least until <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#afc3f5bb1235647946c04421666340796" class="m-doc">parse()</a> is finished.</p></aside>
+<p>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance and use <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html#a87e13192a83dd282831f4afea7e4017f" class="m-doc">set_<wbr />object()</a> to inform the handler about that object. The handler instance will then populate this object with the parsed content.</p><p><a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a> is movable but not copyable.</p><aside class="m-note m-warning"><h4>Attention</h4><p>The client is responsible for the lifetime management: the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> instance must exist at least until <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#afc3f5bb1235647946c04421666340796" class="m-doc">parse()</a> is finished.</p></aside>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -81,10 +81,6 @@
             </dt>
             <dd>Constructor.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#af42ccc2cb3c32a1c0f7b1c5638bc9534" class="m-doc">DefaultContentHandler</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a>&amp; rhs) <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd>Copy constructor.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper"><a href="#abeb9af3c5ecfaafa6365be8b0656f427" class="m-doc">DefaultContentHandler</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Move constructor.</dd>
@@ -100,32 +96,15 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a4dea9a2a6a0bb994abec304e24269449" class="m-doc">object</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp;</span>
             </dt>
-            <dd>Return the object to be consturcted by the parsed content.</dd>
+            <dd>Return the object to be populated with the parsed content.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a87e13192a83dd282831f4afea7e4017f" class="m-doc">set_object</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; object)</span>
             </dt>
-            <dd>Set the object to be constructed by the parsed content.</dd>
+            <dd>Set the object to be populated with the parsed content.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="af42ccc2cb3c32a1c0f7b1c5638bc9534"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />DefaultContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af42ccc2cb3c32a1c0f7b1c5638bc9534" class="m-doc-self">DefaultContentHandler</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a>&amp; rhs) <span class="m-label m-danger">deleted</span></span></span>
-            </h3>
-            <p>Copy constructor.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Instance to copy</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="abeb9af3c5ecfaafa6365be8b0656f427"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />DefaultContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abeb9af3c5ecfaafa6365be8b0656f427" class="m-doc-self">DefaultContentHandler</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
@@ -147,12 +126,12 @@
             <h3>
               <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />DefaultContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4dea9a2a6a0bb994abec304e24269449" class="m-doc-self">object</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Return the object to be consturcted by the parsed content.</p>
+            <p>Return the object to be populated with the parsed content.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>Object to construct from parsed content.</td>
+                  <td>Object to be populated with parsed content.</td>
                 </tr>
               </tfoot>
             </table>
@@ -161,7 +140,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />DefaultContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a87e13192a83dd282831f4afea7e4017f" class="m-doc-self">set_object</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; object)</span></span>
             </h3>
-            <p>Set the object to be constructed by the parsed content.</p>
+            <p>Set the object to be populated with the parsed content.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -169,7 +148,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">object&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Object to construct from parsed content.</td>
+                  <td>Object to populate with parsed content.</td>
                 </tr>
               </tbody>
             </table>

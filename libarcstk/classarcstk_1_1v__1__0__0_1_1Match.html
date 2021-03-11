@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> is the result of checking given <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. A <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> is produced by instantiating a <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>. It holds the result of any matching operation the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> has performed. Access to each of these results is provided in terms of <code>block:track:version</code>. The <code>block</code> and <code>track</code> address components are integers, while <code>version</code> is a boolean that indicates whether the match is for ARCSv2 (TRUE) or for ARCSv1 (FALSE).</p><p><a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> indicates whether a matching block was found, returns the best difference value, the index position of the best matching block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> and whether the match occurred for ARCSv1 or ARCSv2.</p>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> is the result of matching given <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. A <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> is obtained by instantiating a <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> and calling <code>match()</code> on it. It holds the result of any matching operation the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> has performed. Access to each of these results is provided in terms of <code>block:track:version</code>. The <code>block</code> and <code>track</code> address components are integers, that refer to the respective 0-based block and 0-based track in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. The <code>version</code> is a boolean that indicates whether the match is for ARCSv2 (<code>TRUE</code>) or for ARCSv1 (<code>FALSE</code>).</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -88,11 +88,11 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa596c4f6a208045e237de1f5bac0307d" class="m-doc">equals</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&amp; rhs) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Return TRUE iff the specified <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> equals this instance.</dd>
+            <dd>Return <code>TRUE</code> iff the specified <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> equals this instance.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2290452c114c2b32aa25e35f58e7d795" class="m-doc">id</a>(</span><span class="m-doc-wrap">int b) const -&gt; bool</span>
             </dt>
-            <dd>TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the original request, otherwise FALSE.</dd>
+            <dd><code>TRUE</code> iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the original request, otherwise <code>FALSE</code>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aed1815b30fb7de3dfd620d8ee4eba21a" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t</span>
             </dt>
@@ -206,7 +206,7 @@
                 </tr>
                 <tr>
                   <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Returns the ARCSv2 iff TRUE, otherwise ARCSv1</td>
+                  <td>Returns the ARCSv2 iff <code>TRUE</code>, otherwise ARCSv1</td>
                 </tr>
               </tbody>
               <thead>
@@ -231,7 +231,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa596c4f6a208045e237de1f5bac0307d" class="m-doc-self">equals</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>&amp; rhs) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Return TRUE iff the specified <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> equals this instance.</p>
+            <p>Return <code>TRUE</code> iff the specified <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> equals this instance.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -245,7 +245,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>TRUE iff <code>rhs</code> equals this instance</td>
+                  <td><code>TRUE</code> iff <code>rhs</code> equals this instance</td>
                 </tr>
               </tfoot>
             </table>
@@ -254,7 +254,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Match::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2290452c114c2b32aa25e35f58e7d795" class="m-doc-self">id</a>(</span><span class="m-doc-wrap">int b) const</span></span>
             </h3>
-            <p>TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the original request, otherwise FALSE.</p>
+            <p><code>TRUE</code> iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the specified block matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the original request, otherwise <code>FALSE</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -268,7 +268,7 @@
               <thead>
                 <tr>
                   <th>Returns</th>
-                  <td>TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of block <code>b</code> matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the request</td>
+                  <td><code>TRUE</code> iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of block <code>b</code> matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the request</td>
                 </tr>
               </thead>
               <thead>
@@ -340,17 +340,27 @@ $b * (2 * t + 1)$
 <use x='56.609427' y='0' xlink:href='#eq3-g2-49'/>
 <use x='62.462417' y='0' xlink:href='#eq3-g2-41'/>
 </g>
-</svg>. The <svg class="m-math" style="width: 1.558em; height: 0.898em; vertical-align: -0.095em;" viewBox="0 -7.704442 14.957642 8.617643">
+</svg>. The coefficient <svg class="m-math" style="width: 0.610em; height: 0.803em; vertical-align: -0.000em;" viewBox="0 -7.704442 5.85299 7.704442">
+<title>
+$2$
+</title>
+<defs>
+<path id='eq4-g0-50' d='M5.260274-2.008468H4.99726C4.961395-1.80523 4.865753-1.147696 4.746202-.956413C4.662516-.848817 3.981071-.848817 3.622416-.848817H1.41071C1.733499-1.123786 2.462765-1.888917 2.773599-2.175841C4.590785-3.849564 5.260274-4.471233 5.260274-5.654795C5.260274-7.029639 4.172354-7.950187 2.785554-7.950187S.585803-6.766625 .585803-5.738481C.585803-5.128767 1.111831-5.128767 1.147696-5.128767C1.398755-5.128767 1.709589-5.308095 1.709589-5.69066C1.709589-6.025405 1.482441-6.252553 1.147696-6.252553C1.0401-6.252553 1.016189-6.252553 .980324-6.240598C1.207472-7.053549 1.853051-7.603487 2.630137-7.603487C3.646326-7.603487 4.267995-6.75467 4.267995-5.654795C4.267995-4.638605 3.682192-3.753923 3.000747-2.988792L.585803-.286924V0H4.94944L5.260274-2.008468Z'/>
+</defs>
+<g id='eq4-page1'>
+<use x='0' y='0' xlink:href='#eq4-g0-50'/>
+</g>
+</svg> is required since each block is matched against ARCSv1 and ARCSv2 sums. The <svg class="m-math" style="width: 1.558em; height: 0.898em; vertical-align: -0.095em;" viewBox="0 -7.704442 14.957642 8.617643">
 <title>
 $+1$
 </title>
 <defs>
-<path id='eq4-g0-43' d='M4.770112-2.761644H8.069738C8.237111-2.761644 8.452304-2.761644 8.452304-2.976837C8.452304-3.203985 8.249066-3.203985 8.069738-3.203985H4.770112V-6.503611C4.770112-6.670984 4.770112-6.886177 4.554919-6.886177C4.327771-6.886177 4.327771-6.682939 4.327771-6.503611V-3.203985H1.028144C.860772-3.203985 .645579-3.203985 .645579-2.988792C.645579-2.761644 .848817-2.761644 1.028144-2.761644H4.327771V.537983C4.327771 .705355 4.327771 .920548 4.542964 .920548C4.770112 .920548 4.770112 .71731 4.770112 .537983V-2.761644Z'/>
-<path id='eq4-g0-49' d='M3.443088-7.663263C3.443088-7.938232 3.443088-7.950187 3.203985-7.950187C2.917061-7.627397 2.319303-7.185056 1.08792-7.185056V-6.838356C1.362889-6.838356 1.960648-6.838356 2.618182-7.149191V-.920548C2.618182-.490162 2.582316-.3467 1.530262-.3467H1.159651V0C1.482441-.02391 2.642092-.02391 3.036613-.02391S4.578829-.02391 4.901619 0V-.3467H4.531009C3.478954-.3467 3.443088-.490162 3.443088-.920548V-7.663263Z'/>
+<path id='eq5-g0-43' d='M4.770112-2.761644H8.069738C8.237111-2.761644 8.452304-2.761644 8.452304-2.976837C8.452304-3.203985 8.249066-3.203985 8.069738-3.203985H4.770112V-6.503611C4.770112-6.670984 4.770112-6.886177 4.554919-6.886177C4.327771-6.886177 4.327771-6.682939 4.327771-6.503611V-3.203985H1.028144C.860772-3.203985 .645579-3.203985 .645579-2.988792C.645579-2.761644 .848817-2.761644 1.028144-2.761644H4.327771V.537983C4.327771 .705355 4.327771 .920548 4.542964 .920548C4.770112 .920548 4.770112 .71731 4.770112 .537983V-2.761644Z'/>
+<path id='eq5-g0-49' d='M3.443088-7.663263C3.443088-7.938232 3.443088-7.950187 3.203985-7.950187C2.917061-7.627397 2.319303-7.185056 1.08792-7.185056V-6.838356C1.362889-6.838356 1.960648-6.838356 2.618182-7.149191V-.920548C2.618182-.490162 2.582316-.3467 1.530262-.3467H1.159651V0C1.482441-.02391 2.642092-.02391 3.036613-.02391S4.578829-.02391 4.901619 0V-.3467H4.531009C3.478954-.3467 3.443088-.490162 3.443088-.920548V-7.663263Z'/>
 </defs>
-<g id='eq4-page1'>
-<use x='0' y='0' xlink:href='#eq4-g0-43'/>
-<use x='9.104652' y='0' xlink:href='#eq4-g0-49'/>
+<g id='eq5-page1'>
+<use x='0' y='0' xlink:href='#eq5-g0-43'/>
+<use x='9.104652' y='0' xlink:href='#eq5-g0-49'/>
 </g>
 </svg> is required since the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of each block contributes an additional verification flag to the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>.</p></aside>
           </div></section>
@@ -391,7 +401,7 @@ $+1$
                 </tr>
                 <tr>
                   <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Returns the ARCSv2 flag iff TRUE, otherwise ARCSv1</td>
+                  <td>Returns the ARCSv2 flag iff <code>TRUE</code>, otherwise ARCSv1</td>
                 </tr>
               </tbody>
               <thead>
@@ -410,7 +420,7 @@ $+1$
                 </tr>
               </tbody>
             </table>
-<aside class="m-note m-info"><h4>Note</h4><p>What a concrete match means is dependent from the logic the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> used. The call <code>myMatch.value(0,17,true)</code> refers to the ARCSv2 of track 18 in the first block. If this call returns <code>true</code>, track 18 in the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> was matched by the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>. Whether this indicates that track 18 of the current <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> caused the match is implementation defined. If the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> was calculated by an <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>, track 18 of the input <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> will only be matched against track 18 in each block. A <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> on the other hand will just indicate that <em>one</em> of the input checksums matched track 18.</p></aside>
+<aside class="m-note m-info"><h4>Note</h4><p>What a concrete match means is dependent from the logic the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> used. The call <code>myMatch.value(0,17,true)</code> refers to the ARCSv2 of track 18 in the first block. If this call returns <code>true</code>, track 18 in the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> was matched by the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>. Whether this indicates that track 18 of the current <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> caused the match is implementation defined. If the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> was calculated by an <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> or a <a href="classarcstk_1_1v__1__0__0_1_1ListMatcher.html" class="m-doc">ListMatcher</a>, track 18 of the input <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> will only be matched against track 18 in each block. A <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> on the other hand will just indicate that <em>one</em> of the input checksums matched track 18.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a3c5a6a6672c7c5d53a3b39205b782ed3"><div>
             <h3>
@@ -481,7 +491,7 @@ $+1$
                 </tr>
                 <tr>
                   <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Verifies the ARCSv2 iff TRUE, otherwise ARCSv1</td>
+                  <td>Verifies the ARCSv2 iff <code>TRUE</code>, otherwise ARCSv1</td>
                 </tr>
               </tbody>
               <thead>
@@ -532,7 +542,7 @@ $+1$
                 </tr>
                 <tr>
                   <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Returns the ARCSv2 iff TRUE, otherwise ARCSv1</td>
+                  <td>Returns the ARCSv2 iff <code>TRUE</code>, otherwise ARCSv1</td>
                 </tr>
               </tbody>
               <thead>
@@ -570,7 +580,7 @@ $+1$
               <thead>
                 <tr>
                   <th>Returns</th>
-                  <td>TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of block <code>b</code> matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of <code>result</code></td>
+                  <td><code>TRUE</code> iff the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of block <code>b</code> matches the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of <code>result</code></td>
                 </tr>
               </thead>
               <thead>
@@ -634,7 +644,7 @@ $+1$
                 </tr>
                 <tr>
                   <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Returns the ARCSv2 flag iff TRUE, otherwise ARCSv1</td>
+                  <td>Returns the ARCSv2 flag iff <code>TRUE</code>, otherwise ARCSv1</td>
                 </tr>
               </tbody>
               <thead>
@@ -713,7 +723,7 @@ $+1$
                 </tr>
                 <tr>
                   <td>v2&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Verifies the ARCSv2 iff TRUE, otherwise ARCSv1</td>
+                  <td>Verifies the ARCSv2 iff <code>TRUE</code>, otherwise ARCSv1</td>
                 </tr>
               </tbody>
               <thead>

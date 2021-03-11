@@ -62,7 +62,7 @@
             </li>
           </ul>
         </div>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> contains the number of tracks, their offsets and optionally their lengths, their filenames and the index of the leadout frame. Offsets and lengths are represented in LBA frames.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is an object constructed from parsed data. It is therefore not modifiable.</p><p><a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a> can exclusively be built by two build functions called <a href="group__id.html#ga8c2d819cd1734497e4f1a9408278268b" class="m-doc">make_<wbr />toc()</a>. Both functions guarantee to provide either a valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> or to throw an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a>. This entails that any concrete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> provides strong guarantees regarding the consistency of its content.</p><p>Although an existing <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore always valid it might <em>not</em> be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#a9ec5b3878660c8e69b22df9f21a46206" class="m-doc">complete()</a>.</p><p>In some cases it may be sensible to construct an incomplete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, i.e. a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> without a leadout frame. Some toc formats (as for example CUESheet) may not provide the leadout but the parsed metadata is required. In this case, the leadout can be obtained from the actual audio data. However, also an incomplete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> may never be inconsistent.</p>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> contains the total number of tracks, their offsets and optionally their lengths, their filenames and the index of the leadout frame. Offsets and lengths are represented in LBA frames.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is an object constructed from parsed data. It is therefore not modifiable.</p><p><a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOCs</a> can exclusively be built by two build functions called <a href="group__id.html#ga1993b317c7cc6d27d210869cd07523d9" class="m-doc">make_<wbr />toc()</a>. Both functions guarantee to provide either a valid <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> or to throw an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a>. This entails that any concrete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> provides strong guarantees regarding the consistency of its content.</p><p>Although an existing <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is therefore always valid it might <em>not</em> be <a href="classarcstk_1_1v__1__0__0_1_1TOC.html#a9ec5b3878660c8e69b22df9f21a46206" class="m-doc">complete()</a>.</p><p>In some cases it may be sensible to construct an incomplete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, i.e. a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> without a leadout frame. Some toc formats (as for example CUESheet) may not provide the leadout but the parsed metadata is required. In this case, the leadout can be obtained from the actual audio data. However, also an incomplete <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> may never be inconsistent.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -86,27 +86,31 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a9ec5b3878660c8e69b22df9f21a46206" class="m-doc">complete</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Return TRUE iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</dd>
+            <dd>Return <code>TRUE</code> iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2d664ac8fc245ad54eaf7be1ff09451e" class="m-doc">filename</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const -&gt; std::string</span>
             </dt>
             <dd>Return the file of the 1-based specified track, i.e. <code>file(i)</code> is the offset for track <code>i</code> iff <code>i</code> is a valid track number in this <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a02bdec7ea69842409eb0df33bed5a42e" class="m-doc">leadout</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a34812ae35b5f9b959f1a14e49a6ec5d0" class="m-doc">leadout</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the leadout frame LBA address.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6d7587f550f57ef9cc60e8d1135da768" class="m-doc">offset</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const -&gt; <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a988dac1803a5cbe12967bfeab325c978" class="m-doc">offset</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a></span>
             </dt>
             <dd>Return the offset of the 1-based specified track in frames, i.e. <code>offsets(i)</code> is the offset for track <code>i</code> iff <code>i</code> is a valid track number in this <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, otherwise 0.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4dac7701914f304780a1156b5ed9b5a6" class="m-doc">parsed_length</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const -&gt; <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad28111a9c8902f5c8698e13fef1cb289" class="m-doc">parsed_length</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a></span>
             </dt>
             <dd>Return the length of the 1-based specified track in frames as parsed from the toc metadata input.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a7afc855b4c0ca2f8e8e51bbe3c324c30" class="m-doc">track_count</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1f39ecdc0dc04273696f1dbf72649f8c" class="m-doc">total_tracks</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Return the number of tracks.</dd>
+            <dd>Return the total number of tracks.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a838c769a8c7ed35be5e0cf145c81d8c5" class="m-doc">update</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> leadout)</span>
+            </dt>
+            <dd>Updates the leadout iff <code>leadout</code> validates.</dd>
           </dl>
         </section>
         <section>
@@ -149,12 +153,12 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9ec5b3878660c8e69b22df9f21a46206" class="m-doc-self">complete</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Return TRUE iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</p>
+            <p>Return <code>TRUE</code> iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</td>
+                  <td><code>TRUE</code> iff <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information is complete, otherwise FALSE.</td>
                 </tr>
               </tfoot>
             </table>
@@ -184,9 +188,9 @@
             </table>
 <p>If all tracks are part of the same file, a call of <code>file(i)</code> will yield a string with identical content for any <code>i</code>.</p><p>If the file for this track is not specified, an empty string is returned.</p>
           </div></section>
-          <section class="m-doc-details" id="a02bdec7ea69842409eb0df33bed5a42e"><div>
+          <section class="m-doc-details" id="a34812ae35b5f9b959f1a14e49a6ec5d0"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a02bdec7ea69842409eb0df33bed5a42e" class="m-doc-self">leadout</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a34812ae35b5f9b959f1a14e49a6ec5d0" class="m-doc-self">leadout</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the leadout frame LBA address.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -197,11 +201,11 @@
                 </tr>
               </tfoot>
             </table>
-<p>Should be either 0 if unknown, or, if known, equal to the sum of <code>offset(track_count())</code> and <code>length(track_count())</code>.</p>
+<p>Should be either 0 if unknown, or, if known, equal to the sum of <code>offset(total_tracks())</code> and <code>length(total_tracks())</code>.</p>
           </div></section>
-          <section class="m-doc-details" id="a6d7587f550f57ef9cc60e8d1135da768"><div>
+          <section class="m-doc-details" id="a988dac1803a5cbe12967bfeab325c978"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d7587f550f57ef9cc60e8d1135da768" class="m-doc-self">offset</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a988dac1803a5cbe12967bfeab325c978" class="m-doc-self">offset</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const</span></span>
             </h3>
             <p>Return the offset of the 1-based specified track in frames, i.e. <code>offsets(i)</code> is the offset for track <code>i</code> iff <code>i</code> is a valid track number in this <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, otherwise 0.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -222,9 +226,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a4dac7701914f304780a1156b5ed9b5a6"><div>
+          <section class="m-doc-details" id="ad28111a9c8902f5c8698e13fef1cb289"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4dac7701914f304780a1156b5ed9b5a6" class="m-doc-self">parsed_length</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const</span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad28111a9c8902f5c8698e13fef1cb289" class="m-doc-self">parsed_length</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> idx) const</span></span>
             </h3>
             <p>Return the length of the 1-based specified track in frames as parsed from the toc metadata input.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -246,11 +250,11 @@
             </table>
 <p>If the length for this track is not known, 0 is returned.</p><aside class="m-note m-warning"><h4>Attention</h4><p>These lengths are the lengths as they were passed to the build function. They are not normalized or sanitized. They might be inconsistent with the offsets.</p></aside>
           </div></section>
-          <section class="m-doc-details" id="a7afc855b4c0ca2f8e8e51bbe3c324c30"><div>
+          <section class="m-doc-details" id="a1f39ecdc0dc04273696f1dbf72649f8c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7afc855b4c0ca2f8e8e51bbe3c324c30" class="m-doc-self">track_count</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1f39ecdc0dc04273696f1dbf72649f8c" class="m-doc-self">total_tracks</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Return the number of tracks.</p>
+            <p>Return the total number of tracks.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -259,6 +263,33 @@
                 </tr>
               </tfoot>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a838c769a8c7ed35be5e0cf145c81d8c5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />TOC::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a838c769a8c7ed35be5e0cf145c81d8c5" class="m-doc-self">update</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> leadout)</span></span>
+            </h3>
+            <p>Updates the leadout iff <code>leadout</code> validates.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The new leadout to update the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> with</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>InvalidMetadateException</td>
+                  <td>iff validation fails</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If <code>leadout</code> does not validate against the existing values, an <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> is thrown.</p>
           </div></section>
         </section>
       </div>

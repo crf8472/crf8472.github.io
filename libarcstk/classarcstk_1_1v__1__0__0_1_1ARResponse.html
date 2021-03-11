@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>An <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> represents the HTTP-response of AccurateRip to an request for some <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p><p>Technically, an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> is essentially an iterable sequence of <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlocks</a>.</p><p>Although an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> represents content that is usually not created by the client, the client may nonetheless create an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> on its own or modify an existing instance. This allows for easy testing <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> objects.</p>
+<p>An <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> represents the HTTP-response of AccurateRip to an request for some <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p><p>Syntactically, an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> is essentially an iterable sequence of <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlocks</a>.</p><p>Semantically, an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> represents the collected checksums AccurateRip has obtained for albums with the specified <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p><p>Although an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> represents content that is usually not created by the client, the client may nonetheless create an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> on its own or modify an existing instance. This allows for easy testing <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> objects.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -91,7 +91,7 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#ad2ac4105cfb8613f47db23731d7da405" class="m-doc">ARResponse</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Default move constructor.</dd>
+            <dd>Move constructor.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#aba391554663daa93454d0cbc817f6ffa" class="m-doc">ARResponse</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; rhs)</span>
             </dt>
@@ -103,7 +103,7 @@
             <dt id="ab64150df75d8f656bf33286a7ff4b2e0">
               <span class="m-doc-wrap-bumper"><a href="#ab64150df75d8f656bf33286a7ff4b2e0" class="m-doc-self">~ARResponse</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Default destructor.</dd>
+            <dd>Destructor.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -112,23 +112,23 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aac00286087a0fbaf0c4f48556c50b4b1" class="m-doc">at</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a989fef0a2164103cd00eb2015b7dc508" class="m-doc">size_<wbr />type</a> index) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp;</span>
             </dt>
-            <dd>The <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with the specified 0-based index <code>index</code>.</dd>
+            <dd>The <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with the specified 0-based <code>index</code>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a685543257242aaf447ef7256748bb977" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a18127a7ad8ae1c72ccde11c2a978181c" class="m-doc">const_<wbr />iterator</a></span>
             </dt>
-            <dd>const_iterator pointing to the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
+            <dd>Obtain a const_iterator pointing to the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a3bf393d239d605ccf1ebf5ca6ab91470" class="m-doc">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a18127a7ad8ae1c72ccde11c2a978181c" class="m-doc">const_<wbr />iterator</a></span>
             </dt>
-            <dd>const_iterator pointing to the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
+            <dd>Obtain a const_iterator pointing to the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a73e85ca31cc5cf3ea5c5a19e5645190d" class="m-doc">cend</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a18127a7ad8ae1c72ccde11c2a978181c" class="m-doc">const_<wbr />iterator</a></span>
             </dt>
-            <dd>const_iterator pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
+            <dd>Obtain a const_iterator pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aee13d0f9f5fbee72f38be090546fa696" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a18127a7ad8ae1c72ccde11c2a978181c" class="m-doc">const_<wbr />iterator</a></span>
             </dt>
-            <dd>const_iterator pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
+            <dd>Obtain a const_iterator pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#adf7d74d47340a680a07a3633e2eaf035" class="m-doc">operator[]</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a989fef0a2164103cd00eb2015b7dc508" class="m-doc">size_<wbr />type</a> index) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp;</span>
             </dt>
@@ -149,7 +149,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARResponse::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad2ac4105cfb8613f47db23731d7da405" class="m-doc-self">ARResponse</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Default move constructor.</p>
+            <p>Move constructor.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -201,7 +201,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARResponse::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aac00286087a0fbaf0c4f48556c50b4b1" class="m-doc-self">at</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a989fef0a2164103cd00eb2015b7dc508" class="m-doc">size_<wbr />type</a> index) const</span></span>
             </h3>
-            <p>The <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with the specified 0-based index <code>index</code>.</p>
+            <p>The <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> with the specified 0-based <code>index</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -234,7 +234,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a18127a7ad8ae1c72ccde11c2a978181c" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ARResponse::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a685543257242aaf447ef7256748bb977" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>const_iterator pointing to the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
+            <p>Obtain a const_iterator pointing to the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -248,7 +248,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a18127a7ad8ae1c72ccde11c2a978181c" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ARResponse::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3bf393d239d605ccf1ebf5ca6ab91470" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>const_iterator pointing to the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
+            <p>Obtain a const_iterator pointing to the first <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -262,7 +262,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a18127a7ad8ae1c72ccde11c2a978181c" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ARResponse::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a73e85ca31cc5cf3ea5c5a19e5645190d" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>const_iterator pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
+            <p>Obtain a const_iterator pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -276,7 +276,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html#a18127a7ad8ae1c72ccde11c2a978181c" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ARResponse::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee13d0f9f5fbee72f38be090546fa696" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>const_iterator pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
+            <p>Obtain a const_iterator pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>

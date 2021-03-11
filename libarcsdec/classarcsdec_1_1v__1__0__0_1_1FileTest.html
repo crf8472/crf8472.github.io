@@ -59,11 +59,13 @@
                 <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-methods">Protected functions</a></li>
                 <li><a href="#pri-methods">Private functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
+<p><a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">FileTest</a> instances are polymorphically comparable to support their use in containers.</p><aside class="m-note m-info"><h4>Note</h4><p>Instances of this class are non-copyable and non-movable but provide protected special members for copy and move that can be used in subclasses.</p></aside>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
@@ -83,7 +85,7 @@
             <dt id="afc96f6a10477d323048712f8956c18c2">
               <span class="m-doc-wrap-bumper"><a href="#afc96f6a10477d323048712f8956c18c2" class="m-doc-self">FileTest</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
-            <dd>Constructor.</dd>
+            <dd>Default constructor.</dd>
             <dt id="a06da9937d132a58f0855a1ee1b457737">
               <span class="m-doc-wrap-bumper"><a href="#a06da9937d132a58f0855a1ee1b457737" class="m-doc-self">~FileTest</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -102,6 +104,15 @@
               const std::string&amp; filename) const -&gt; bool</span>
             </dt>
             <dd>Perform test for a given pair of descriptor instance and filename.</dd>
+          </dl>
+        </section>
+        <section id="pro-methods">
+          <h2><a href="#pro-methods">Protected functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7c528d886edeb4a4a4d3d5143b795912" class="m-doc">equals</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">FileTest</a>&amp; rhs) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd>TRUE if instance equals <code>rhs</code>.</dd>
           </dl>
         </section>
         <section id="pri-methods">
@@ -158,6 +169,29 @@
                 <tr>
                   <th>Returns</th>
                   <td>TRUE iff the descriptor matches the criterion of this test</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a7c528d886edeb4a4a4d3d5143b795912"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />FileTest::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7c528d886edeb4a4a4d3d5143b795912" class="m-doc-self">equals</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">FileTest</a>&amp; rhs) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-warning">protected</span></span></span>
+            </h3>
+            <p>TRUE if instance equals <code>rhs</code>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Right hand side of the comparison</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE if instance equals <code>rhs</code>.</td>
                 </tr>
               </tfoot>
             </table>

@@ -62,7 +62,7 @@
             </li>
           </ul>
         </div>
-<p>Syntactically, an <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> is an element of some <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p><p>Semantically, an <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> carries information about a single track in an AccurateRip response, while the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> describes the entire disc. A triplet contains the ARCS of the track as its first element, a non-negative integer that represents the confidence value of the ARCS and, as a third element, the ARCS of frame 450 of the track. (The latter represents a reference value for the pressing offset.)</p><p>Which track the <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> describes can be derived from its actual position in the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>. The first <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> describes track 1, the second <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> track 2 and so forth.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> carries no information whether its ARCS are v1 or v2. It contains only parsed data and metadata flags indicating whether the content is valid, i.e. was correctly parsed.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> represents parsed information. If some error occurrs during the parsing process, the resulting <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> may contain incomplete information. Therefore, the <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> carries a validity flag for each of its values to indicate whether the corresponding value was parsed without errors.</p>
+<p>Syntactically, an <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> is an element of some <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p><p>Semantically, an <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> carries information about a single track in an AccurateRip response, while the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> describes the entire disc. A triplet contains the ARCS of the track as its first element, a non-negative integer that represents the confidence value of the ARCS and, as a third element, the ARCS of frame 450 of the track. (The latter represents a reference value for the pressing offset.)</p><p>Which track the <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> describes can be derived from its actual position in the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>. The first <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> describes track 1, the second <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> track 2 and so forth.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> carries no information whether its ARCS are ARCSv1 or ARCSv2. It contains only parsed data and metadata flags indicating whether the content is valid, i.e. was correctly parsed.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> represents parsed information. If some error occurrs during the parsing process, the resulting <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> may contain incomplete information. Therefore, the <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> carries a validity flag for each of its values to indicate whether the corresponding value was parsed without errors.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -79,15 +79,15 @@
             </dt>
             <dd>Copy constructor.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#ad5cdcd957b0b3ee75f89195fbc5280a0" class="m-doc">ARTriplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper"><a href="#a3d055848bb922c474a3c28cd2981118d" class="m-doc">ARTriplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint32_t confidence,
-              const uint32_t frame450_arcs)</span>
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs)</span>
             </dt>
-            <dd>Constructor.</dd>
+            <dd>Constructor that sets all validity flags to <code>TRUE</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a1bf739a56d54f5cf7a063332747b93c3" class="m-doc">ARTriplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper"><a href="#a6932cef5b8ff1ae45b0b2b28a2548441" class="m-doc">ARTriplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint32_t confidence,
-              const uint32_t frame450_arcs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs,
               const bool arcs_valid,
               const bool confidence_valid,
               const bool frame450_arcs_valid)</span>
@@ -103,7 +103,7 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4fafddd2684658895663797e3f4c2fe3" class="m-doc">arcs</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1ced604504fd0367cfed736e665d64b7" class="m-doc">arcs</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>The track ARCS in this triplet.</dd>
             <dt>
@@ -123,7 +123,7 @@
             </dt>
             <dd>Indicates whether parsed content is present.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4d59379aac1ac4f49a07d580c205af4a" class="m-doc">frame450_arcs</a>(</span><span class="m-doc-wrap">) const -&gt; uint32_t <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa94b004aa2536961f88ed6bd7fce96fe" class="m-doc">frame450_arcs</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>The ARCS of frame 450 of the particular track in this triplet.</dd>
             <dt>
@@ -175,13 +175,13 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ad5cdcd957b0b3ee75f89195fbc5280a0"><div>
+          <section class="m-doc-details" id="a3d055848bb922c474a3c28cd2981118d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad5cdcd957b0b3ee75f89195fbc5280a0" class="m-doc-self">ARTriplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3d055848bb922c474a3c28cd2981118d" class="m-doc-self">ARTriplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint32_t confidence,
-              const uint32_t frame450_arcs)</span></span>
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs)</span></span>
             </h3>
-            <p>Constructor.</p>
+            <p>Constructor that sets all validity flags to <code>TRUE</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -203,11 +203,11 @@
             </table>
 <p>All validity flags are set to <code>TRUE</code>.</p>
           </div></section>
-          <section class="m-doc-details" id="a1bf739a56d54f5cf7a063332747b93c3"><div>
+          <section class="m-doc-details" id="a6932cef5b8ff1ae45b0b2b28a2548441"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1bf739a56d54f5cf7a063332747b93c3" class="m-doc-self">ARTriplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6932cef5b8ff1ae45b0b2b28a2548441" class="m-doc-self">ARTriplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint32_t confidence,
-              const uint32_t frame450_arcs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs,
               const bool arcs_valid,
               const bool confidence_valid,
               const bool frame450_arcs_valid)</span></span>
@@ -245,9 +245,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a4fafddd2684658895663797e3f4c2fe3"><div>
+          <section class="m-doc-details" id="a1ced604504fd0367cfed736e665d64b7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4fafddd2684658895663797e3f4c2fe3" class="m-doc-self">arcs</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1ced604504fd0367cfed736e665d64b7" class="m-doc-self">arcs</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>The track ARCS in this triplet.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -310,14 +310,14 @@
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE iff the <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> holds not parsed content, otherwise FALSE</td>
+                  <td><code>TRUE</code> iff the <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a> holds not parsed content, otherwise <code>FALSE</code></td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a4d59379aac1ac4f49a07d580c205af4a"><div>
+          <section class="m-doc-details" id="aa94b004aa2536961f88ed6bd7fce96fe"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d59379aac1ac4f49a07d580c205af4a" class="m-doc-self">frame450_arcs</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcstk::<wbr />v_1_0_0::<wbr />ARTriplet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa94b004aa2536961f88ed6bd7fce96fe" class="m-doc-self">frame450_arcs</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>The ARCS of frame 450 of the particular track in this triplet.</p>
             <table class="m-table m-fullwidth m-flat">

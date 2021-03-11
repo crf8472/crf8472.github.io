@@ -46,10 +46,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::AudioReader <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::AudioReader <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="audioreader_8hpp.html">&lt;audioreader.hpp&gt;</a></div>
         </h1>
-        <p>Opaque instance to read audio files and provide the decoded samples.</p>
+        <p>Read audio files and provide the decoded samples.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -63,14 +63,14 @@
             </li>
           </ul>
         </div>
-<p>A <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> can process an audio file and return its checksums including the ARCSs v1 and v2 for all tracks.</p>
+<p>A <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> can process an audio file and return the processing results.</p><aside class="m-note m-info"><h4>Note</h4><p>Instances of this class are non-copyable but movable.</p></aside>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">v_1_0_0::FileReader</a>
             </dt>
-            <dd>Abstract base class for all FileReaders.</dd>
+            <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -271,7 +271,7 @@
                 </tr>
               </tbody>
             </table>
-<aside class="m-note m-dim"><h4><a href="todo.html#_todo000001" class="m-doc">Todo</a></h4><p>This should be part of a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a> interface</p></aside>
+<aside class="m-note m-dim"><h4><a href="todo.html#_todo000001" class="m-doc">Todo</a></h4><p>This should be part of a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProviderBase.html" class="m-doc">SampleProviderBase</a> interface</p></aside>
           </div></section>
           <section class="m-doc-details" id="ac1e9358a3335b03fe68000cd35db872e"><div>
             <h3>

@@ -63,7 +63,7 @@
             </li>
           </ul>
         </div>
-<p>Computationally relevant data are <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> information as there is track count, offsets, and leadout. Additionally, the filename is provided.</p><p>Determines whether the calculation is single- or multitrack and whether it has to skip samples on the beginning of the first or the end of the last track.</p><p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> also provides service methods for identifying the first and last sample of a track relevant for computation or to get the track for a given sample.</p>
+<p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> provides the metadata that is required to perform the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> correctly.</p><p>The <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> determines whether the input is single- or multitrack and whether it has to skip samples on the beginning of the first or the end of the last track.</p><p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> also provides service methods for identifying the first and last sample of a track relevant for <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> or to get the track for a given sample.</p><p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> offers also access to its underlying <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> data.</p><p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> instances are created exclusively via the variants of <a href="group__calc.html#gada2e8fe68f3fe0c98c4ef125381c32a7" class="m-doc">make_<wbr />context()</a>.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> is intended as a &quot;read-only&quot; object, it should never be required to modify the <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> of an audio input. The only exception is <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4a78422f97fd3f6095aafef741254d43" class="m-doc">notify_<wbr />skips()</a> which depends on the concrete algorithm that is only known within <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>. Thus, <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> must inform its <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> about it.</p><aside class="m-note m-info"><h4>Note</h4><p>Currently it should not be required for the user to subclass <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>. All subclasses required for calculating ARCSv1 and ARCSv2 in single- and multitrack scenarios are already provided by libarcstk. Note that subclassing <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> would require to also add a new variant of <a href="group__calc.html#gada2e8fe68f3fe0c98c4ef125381c32a7" class="m-doc">make_<wbr />context()</a> that can yield an instance of this subclass.</p></aside>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -89,13 +89,13 @@
             </dt>
             <dd>Name of current audio file.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9969d68741c0a8a4f6ee1958abd83736" class="m-doc">first_relevant_sample</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4979ae5cd419476215f945f6184712c2" class="m-doc">first_relevant_sample</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Get 0-based index of the first sample to be counted in computation.</dd>
+            <dd>Get 0-based index of the first relevant sample of the current audio input.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1e8896606cb93311fc546440b2732fcd" class="m-doc">first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3be70de8166ecf81870a5eca062cedb9" class="m-doc">first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Service method: Get 0-based index of the first relevant sample of the specified 1-based track.</dd>
+            <dd>Get 0-based index of the first relevant sample of the specified 1-based track.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a114f7324030c801a4074b506ff6fc18d" class="m-doc">id</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -103,34 +103,34 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_multi_track</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Returns TRUE if this instances indicates a processing for multiple tracks on a single input file.</dd>
+            <dd>Returns <code>TRUE</code> if this instances indicates a processing for multiple tracks on a single input file.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aeecbeb2e4d53a53f324fa05b718dc8d6" class="m-doc">last_relevant_sample</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1006702f52735da34cc3df6f1dd0e890" class="m-doc">last_relevant_sample</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Get 0-based index of the last sample to be counted in computation.</dd>
+            <dd>Get 0-based index of the last relevant sample of the current audio input.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af0f6719c8a88776a2263a649410fee96" class="m-doc">last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc">last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Service method: Get 0-based index of the last relevant sample of the specified 1-based track.</dd>
+            <dd>Get 0-based index of the last relevant sample of the specified 1-based track.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af330f5f8240fae2df2bd58607e4078df" class="m-doc">length</a>(</span><span class="m-doc-wrap">const uint8_t track) const -&gt; <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac38963b263f1ff637771d78550cb9321" class="m-doc">length</a>(</span><span class="m-doc-wrap">const int track) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the normalized length of the specified 0-based track.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a77aa7906dcb33b06702c1b23b50f856c" class="m-doc">notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> num_skip_front,
-              const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> num_skip_back) <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a4a78422f97fd3f6095aafef741254d43" class="m-doc">notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_front,
+              const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_back) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Notifies the instance about configured skipping amounts at the beginning of the first track and the end of the last track.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a02dd039c818291eae13d815dde7ea2ce" class="m-doc">num_skip_back</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8793208cdbc89ac3539bbb6de564a6aa" class="m-doc">num_skip_back</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Returns the amount of samples to skip at the end of the last track.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a59fd70e2d94a27764c22973e622786e8" class="m-doc">num_skip_front</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a62fb99eae3eef0e639faa5115e9b3c53" class="m-doc">num_skip_front</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Returns the amount of samples to skip at the beginning of the first track - or, in a single track scenario, once at the beginning.</dd>
+            <dd>Returns the amount of samples to skip at the beginning of the first track.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6633a0adf71463d5322c971e1512b3f5" class="m-doc">offset</a>(</span><span class="m-doc-wrap">const uint8_t track) const -&gt; <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#afaf853e180cf234e6ea7d35c92333009" class="m-doc">offset</a>(</span><span class="m-doc-wrap">const int track) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the offset of the specified 0-based track from the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
             <dt>
@@ -144,19 +144,19 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a90170a01c8563eb6817559d727547dab" class="m-doc">skips_back</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Returns TRUE iff this context will skip the last 2940 samples (5 LBA frames) of the last track.</dd>
+            <dd>Returns <code>TRUE</code> iff this context will skip the last 2940 samples (5 LBA frames) of the last track.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc">skips_front</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Returns TRUE iff this context will skip the first 2939 samples of the first track.</dd>
+            <dd>Returns <code>TRUE</code> iff this context will skip the first 2939 samples of the first track.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad4f3636c992a6cdbf9bc381a82fd4413" class="m-doc">track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> smpl) const -&gt; <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Returns 1-based track number of the track containing the specified 0-based sample.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a7c4ad712101f6b0785d1ee3cc08f7c5d" class="m-doc">track_count</a>(</span><span class="m-doc-wrap">) const -&gt; uint8_t <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_tracks</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Convenience method: Total number of tracks.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aea40f5f4cccb32382986adbe31d731fa" class="m-doc">track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> smpl) const -&gt; int <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns 1-based track number of the track containing the specified 0-based sample.</dd>
           </dl>
         </section>
         <section id="pri-methods">
@@ -175,13 +175,13 @@
             </dt>
             <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a580f480022517387002c3afe3d07138e" class="m-doc">filename() const</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad70d00b63b5b801732d33d0981346000" class="m-doc">do_first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#afaefd6a247085e04865def920b2e4548" class="m-doc">do_first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1e8896606cb93311fc546440b2732fcd" class="m-doc">first_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a3be70de8166ecf81870a5eca062cedb9" class="m-doc">first_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad9a17d392d7b40a6cb0681c79508ffe7" class="m-doc">do_first_relevant_sample_0</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0f50513709eed301c770c60e6bbb8a81" class="m-doc">do_first_relevant_sample_no_parms</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a9969d68741c0a8a4f6ee1958abd83736" class="m-doc">first_<wbr />relevant_<wbr />sample() const</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4979ae5cd419476215f945f6184712c2" class="m-doc">first_<wbr />relevant_<wbr />sample() const</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a336153f4b7b3246ca7725d6eaab6a22e" class="m-doc">do_id</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -191,34 +191,34 @@
             </dt>
             <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track() const</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a997b550e79a77693a9887737ae843b02" class="m-doc">do_last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a86b8ccd9c36beb8ac523c2c89ef22eb7" class="m-doc">do_last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#af0f6719c8a88776a2263a649410fee96" class="m-doc">last_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc">last_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a96294829f4a264f67997da1c3711afbf" class="m-doc">do_last_relevant_sample_0</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5a816b0cdebe6a3ef2ba877ff559674c" class="m-doc">do_last_relevant_sample_no_parms</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#aeecbeb2e4d53a53f324fa05b718dc8d6" class="m-doc">last_<wbr />relevant_<wbr />sample() const</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1006702f52735da34cc3df6f1dd0e890" class="m-doc">last_<wbr />relevant_<wbr />sample() const</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abb5060e8014073dce1dfc38ee3b06b72" class="m-doc">do_length</a>(</span><span class="m-doc-wrap">const uint8_t track) const -&gt; <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae96e70c429c44a8160fbe5677dd1e6a1" class="m-doc">do_length</a>(</span><span class="m-doc-wrap">const int track) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#af330f5f8240fae2df2bd58607e4078df" class="m-doc">length(const uint8_<wbr />t track) const</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ac38963b263f1ff637771d78550cb9321" class="m-doc">length(const int track) const</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a10be94f53cefa2d8b79597ef89e892c0" class="m-doc">do_notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> num_skip_front,
-              const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> num_skip_back) <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#abcbc724ab12be2b16fda8d04201b46ac" class="m-doc">do_notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_front,
+              const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_back) <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a77aa7906dcb33b06702c1b23b50f856c" class="m-doc">notify_<wbr />skips(const sample_<wbr />count num_<wbr />skip_<wbr />front, const sample_<wbr />count num_<wbr />skip_<wbr />back)</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4a78422f97fd3f6095aafef741254d43" class="m-doc">notify_<wbr />skips(const sample_<wbr />count_<wbr />t num_<wbr />skip_<wbr />front, const sample_<wbr />count_<wbr />t num_<wbr />skip_<wbr />back)</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a20d75e4cbfdfaeb4893aa0726c441e5b" class="m-doc">do_num_skip_back</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab6b9fff8d11ce5eb66ba7fe10707688c" class="m-doc">do_num_skip_back</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a02dd039c818291eae13d815dde7ea2ce" class="m-doc">num_<wbr />skip_<wbr />back() const</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a8793208cdbc89ac3539bbb6de564a6aa" class="m-doc">num_<wbr />skip_<wbr />back() const</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a272bcdbc1405fff9b53ee4aafab8b050" class="m-doc">do_num_skip_front</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a152afc6aeddd4ee332701468f11d6791" class="m-doc">do_num_skip_front</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a59fd70e2d94a27764c22973e622786e8" class="m-doc">num_<wbr />skip_<wbr />front() const</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a62fb99eae3eef0e639faa5115e9b3c53" class="m-doc">num_<wbr />skip_<wbr />front() const</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8a76d94f0a4e6baae49157a70a79a83e" class="m-doc">do_offset</a>(</span><span class="m-doc-wrap">const uint8_t track) const -&gt; <a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aff77b0a5560c22019c2ffaa9ebf3c125" class="m-doc">do_offset</a>(</span><span class="m-doc-wrap">const int track) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a6633a0adf71463d5322c971e1512b3f5" class="m-doc">offset(const uint8_<wbr />t track) const</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#afaf853e180cf234e6ea7d35c92333009" class="m-doc">offset(const int track) const</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a705d35ceca1ec9f870523de16ae7d49b" class="m-doc">do_set_audio_size</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; audio_size) <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -236,13 +236,13 @@
             </dt>
             <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc">skips_<wbr />front() const</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a01c5f68e608f5ea25500f2fd8b68ec5b" class="m-doc">do_track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> smpl) const -&gt; <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac52f006b8a9cd30ab75e65946004ddc1" class="m-doc">do_total_tracks</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ad4f3636c992a6cdbf9bc381a82fd4413" class="m-doc">track(const sample_<wbr />count smpl) const</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks() const</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a61d744376f2e9122d6110af06170834f" class="m-doc">do_track_count</a>(</span><span class="m-doc-wrap">) const -&gt; uint8_t <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#acd08d0e123669dc0bbed69a431fc33e4" class="m-doc">do_track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> smpl) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a7c4ad712101f6b0785d1ee3cc08f7c5d" class="m-doc">track_<wbr />count() const</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#aea40f5f4cccb32382986adbe31d731fa" class="m-doc">track(const sample_<wbr />count_<wbr />t smpl) const</a>.</dd>
           </dl>
         </section>
         <section>
@@ -290,11 +290,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a9969d68741c0a8a4f6ee1958abd83736"><div>
+          <section class="m-doc-details" id="a4979ae5cd419476215f945f6184712c2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9969d68741c0a8a4f6ee1958abd83736" class="m-doc-self">first_relevant_sample</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4979ae5cd419476215f945f6184712c2" class="m-doc-self">first_relevant_sample</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Get 0-based index of the first sample to be counted in computation.</p>
+            <p>Get 0-based index of the first relevant sample of the current audio input.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -303,13 +303,13 @@
                 </tr>
               </tfoot>
             </table>
-<p>Which sample is actually the first relevant one depends on the offset of the first track and whether samples in the beginning of the first track are to be skipped.</p><p>Always equivalent with <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1e8896606cb93311fc546440b2732fcd" class="m-doc">first_<wbr />relevant_<wbr />sample(1)</a>.</p>
+<p>Which sample is actually the first relevant one depends on</p><ul><li>the offset of the first track and</li><li>whether samples in the beginning of the first track are to be skipped.</li></ul><p>Always equivalent with <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a3be70de8166ecf81870a5eca062cedb9" class="m-doc">first_<wbr />relevant_<wbr />sample(1)</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a1e8896606cb93311fc546440b2732fcd"><div>
+          <section class="m-doc-details" id="a3be70de8166ecf81870a5eca062cedb9"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e8896606cb93311fc546440b2732fcd" class="m-doc-self">first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3be70de8166ecf81870a5eca062cedb9" class="m-doc-self">first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Service method: Get 0-based index of the first relevant sample of the specified 1-based track.</p>
+            <p>Get 0-based index of the first relevant sample of the specified 1-based track.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -327,7 +327,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>Note that parameter <code>track</code> is 1-based, which means that <code>first_relevant_sample(2)</code> returns the last 0-based sample of track 2 (and not track 3).</p>
+<p>Note that parameter <code>track</code> is 1-based, which means that <code>first_relevant_sample(2)</code> returns the first 0-based sample of the actual track 2 (and not track 3).</p>
           </div></section>
           <section class="m-doc-details" id="a114f7324030c801a4074b506ff6fc18d"><div>
             <h3>
@@ -348,22 +348,22 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08f938b95d3601b44512c1563ba523f4" class="m-doc-self">is_multi_track</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Returns TRUE if this instances indicates a processing for multiple tracks on a single input file.</p>
+            <p>Returns <code>TRUE</code> if this instances indicates a processing for multiple tracks on a single input file.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE if this context specifies multitrack mode, otherwise FALSE</td>
+                  <td><code>TRUE</code> if this context specifies multitrack mode, otherwise <code>FALSE</code></td>
                 </tr>
               </tfoot>
             </table>
-<p>If this is FALSE, no chunks will be available. Multitrack mode is activated by setting a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
+<p>If this is <code>FALSE</code>, no chunks will be available. Multitrack mode is activated by setting a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p><aside class="m-note m-warning"><h4>Attention</h4><p>Note that this is independent from <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code>. A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> containing only one track would have a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> in which <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code> is <code>1</code> but <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code> is <code>TRUE</code>. Method <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code> specifies the processing mode while <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code> just provides information about the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p></aside>
           </div></section>
-          <section class="m-doc-details" id="aeecbeb2e4d53a53f324fa05b718dc8d6"><div>
+          <section class="m-doc-details" id="a1006702f52735da34cc3df6f1dd0e890"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeecbeb2e4d53a53f324fa05b718dc8d6" class="m-doc-self">last_relevant_sample</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1006702f52735da34cc3df6f1dd0e890" class="m-doc-self">last_relevant_sample</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Get 0-based index of the last sample to be counted in computation.</p>
+            <p>Get 0-based index of the last relevant sample of the current audio input.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -372,13 +372,13 @@
                 </tr>
               </tfoot>
             </table>
-<p>Which sample is actualley the last relevant one depends on whether samples in the end of the last track are to be skipped.</p><p>Always equivalent with <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#af0f6719c8a88776a2263a649410fee96" class="m-doc">last_<wbr />relevant_<wbr />sample(this-&gt;track_<wbr />count())</a>.</p>
+<p>Which sample is actually the last relevant one depends on whether samples in the end of the last track are to be skipped.</p><p>Always equivalent with <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc">last_<wbr />relevant_<wbr />sample(this-&gt;total_<wbr />tracks())</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="af0f6719c8a88776a2263a649410fee96"><div>
+          <section class="m-doc-details" id="a74b2023197ab2c1d937a65a6d8ee6771"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af0f6719c8a88776a2263a649410fee96" class="m-doc-self">last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc-self">last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Service method: Get 0-based index of the last relevant sample of the specified 1-based track.</p>
+            <p>Get 0-based index of the last relevant sample of the specified 1-based track.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -396,11 +396,11 @@
                 </tr>
               </tfoot>
             </table>
-<p>Note that parameter <code>track</code> is 1-based, which means that last_relevant_sample(2) returns the last 0-based sample of track 2 (and not track 3).</p><p>If no offsets are set, the output will always be identical to <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#af0f6719c8a88776a2263a649410fee96" class="m-doc">last_<wbr />relevant_<wbr />sample()</a>.</p><p>For <code>track == 0</code>, the last sample of the offset before track 1 is returned. This may of course be 0 iff the offset of track 1 is 0.</p>
+<p>Note that parameter <code>track</code> is 1-based, which means that last_relevant_sample(2) returns the last 0-based sample of the actual track 2 (and not track 3).</p><p>If no offsets are set, the output will always be identical to <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc">last_<wbr />relevant_<wbr />sample()</a>.</p><p>For <code>track == 0</code>, the last sample of the offset before track 1 is returned. This may of course be 0 iff the offset of track 1 is 0.</p>
           </div></section>
-          <section class="m-doc-details" id="af330f5f8240fae2df2bd58607e4078df"><div>
+          <section class="m-doc-details" id="ac38963b263f1ff637771d78550cb9321"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af330f5f8240fae2df2bd58607e4078df" class="m-doc-self">length</a>(</span><span class="m-doc-wrap">const uint8_t track) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac38963b263f1ff637771d78550cb9321" class="m-doc-self">length</a>(</span><span class="m-doc-wrap">const int track) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the normalized length of the specified 0-based track.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -420,12 +420,12 @@
                 </tr>
               </tfoot>
             </table>
-<p>Note that <code>length(i) == offset(i+2) - offset(i+1)</code> for all <code>i: 0 &lt;= i &lt; toc().<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a7c4ad712101f6b0785d1ee3cc08f7c5d" class="m-doc">track_<wbr />count()</a> - 1</code>.</p><p>For the last track <code>t = toc().<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a7c4ad712101f6b0785d1ee3cc08f7c5d" class="m-doc">track_<wbr />count()</a> - 1</code>, the value of <code>length(t)</code> may be <code>0</code> if the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is incomplete and the instance is not yet updated with the concrete <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>, otherwise it is <code>length(t) == leadout_frame() - offset(t+1)</code>.</p>
+<p>Note that <code>length(i) == offset(i+2) - offset(i+1)</code> for all <code>i: 0 &lt;= i &lt; toc().<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a> - 1</code>.</p><p>For the last track <code>t = toc().<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a> - 1</code>, the value of <code>length(t)</code> may be <code>0</code> if the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is incomplete and the instance is not yet updated with the concrete <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>, otherwise it is <code>length(t) == leadout_frame() - offset(t+1)</code>.</p>
           </div></section>
-          <section class="m-doc-details" id="a77aa7906dcb33b06702c1b23b50f856c"><div>
+          <section class="m-doc-details" id="a4a78422f97fd3f6095aafef741254d43"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a77aa7906dcb33b06702c1b23b50f856c" class="m-doc-self">notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> num_skip_front,
-              const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> num_skip_back) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a78422f97fd3f6095aafef741254d43" class="m-doc-self">notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_front,
+              const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_back) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Notifies the instance about configured skipping amounts at the beginning of the first track and the end of the last track.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -445,9 +445,9 @@
             </table>
 <p>Whether actual skipping takes place can be determined by <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc">skips_<wbr />front()</a> and <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a90170a01c8563eb6817559d727547dab" class="m-doc">skips_<wbr />back()</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a02dd039c818291eae13d815dde7ea2ce"><div>
+          <section class="m-doc-details" id="a8793208cdbc89ac3539bbb6de564a6aa"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a02dd039c818291eae13d815dde7ea2ce" class="m-doc-self">num_skip_back</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8793208cdbc89ac3539bbb6de564a6aa" class="m-doc-self">num_skip_back</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns the amount of samples to skip at the end of the last track.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -458,13 +458,13 @@
                 </tr>
               </tfoot>
             </table>
-<ul><li>or, in a single track scenario, once at the end.</li></ul><p>The skipping is already active if this instance <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a90170a01c8563eb6817559d727547dab" class="m-doc">skips_<wbr />back()</a></p>
+<p>If the audio input contains only one track, this track is the last track.</p><p>The value is either 2940 or 0.</p><p>The skipping is already active if this instance <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a90170a01c8563eb6817559d727547dab" class="m-doc">skips_<wbr />back()</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a59fd70e2d94a27764c22973e622786e8"><div>
+          <section class="m-doc-details" id="a62fb99eae3eef0e639faa5115e9b3c53"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a59fd70e2d94a27764c22973e622786e8" class="m-doc-self">num_skip_front</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a62fb99eae3eef0e639faa5115e9b3c53" class="m-doc-self">num_skip_front</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Returns the amount of samples to skip at the beginning of the first track - or, in a single track scenario, once at the beginning.</p>
+            <p>Returns the amount of samples to skip at the beginning of the first track.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -473,11 +473,11 @@
                 </tr>
               </tfoot>
             </table>
-<p>The skipping is already active if this instance <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc">skips_<wbr />front()</a>.</p>
+<p>If the audio input contains only one track, this track is the first track.</p><p>The value is either 2939 or 0.</p><p>The skipping is already active if this instance <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc">skips_<wbr />front()</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a6633a0adf71463d5322c971e1512b3f5"><div>
+          <section class="m-doc-details" id="afaf853e180cf234e6ea7d35c92333009"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6633a0adf71463d5322c971e1512b3f5" class="m-doc-self">offset</a>(</span><span class="m-doc-wrap">const uint8_t track) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afaf853e180cf234e6ea7d35c92333009" class="m-doc-self">offset</a>(</span><span class="m-doc-wrap">const int track) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the offset of the specified 0-based track from the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -497,7 +497,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>Note that <code>offset(i) == toc().offset(i+1)</code> for all <code>i: 0 &lt;= i &lt; toc().<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a7c4ad712101f6b0785d1ee3cc08f7c5d" class="m-doc">track_<wbr />count()</a></code>.</p>
+<p>Note that <code>offset(i) == toc().offset(i+1)</code> for all <code>i: 0 &lt;= i &lt; toc().<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code>.</p>
           </div></section>
           <section class="m-doc-details" id="ade21f6743a5cc569d6f154d1143de936"><div>
             <h3>
@@ -538,12 +538,12 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a90170a01c8563eb6817559d727547dab" class="m-doc-self">skips_back</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Returns TRUE iff this context will skip the last 2940 samples (5 LBA frames) of the last track.</p>
+            <p>Returns <code>TRUE</code> iff this context will skip the last 2940 samples (5 LBA frames) of the last track.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE iff context will signal to skip the last samples.</td>
+                  <td><code>TRUE</code> iff context will signal to skip the last samples.</td>
                 </tr>
               </tfoot>
             </table>
@@ -552,19 +552,34 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc-self">skips_front</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Returns TRUE iff this context will skip the first 2939 samples of the first track.</p>
+            <p>Returns <code>TRUE</code> iff this context will skip the first 2939 samples of the first track.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE iff context will signal to skip the first samples.</td>
+                  <td><code>TRUE</code> iff context will signal to skip the first samples.</td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ad4f3636c992a6cdbf9bc381a82fd4413"><div>
+          <section class="m-doc-details" id="a5b8045227035103ee2af30a8b966b6d7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad4f3636c992a6cdbf9bc381a82fd4413" class="m-doc-self">track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> smpl) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5b8045227035103ee2af30a8b966b6d7" class="m-doc-self">total_tracks</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Convenience method: Total number of tracks.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The number of tracks represented in this file</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This number will aways be a non-negative integer up to <code>99</code> .</p><p>Since the track count should be accessed in a uniform way, regardless whether we actually have multiple tracks or only one.</p><aside class="m-note m-warning"><h4>Attention</h4><p>Note that this is independent from <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code>. A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> containing only one track would have a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> in which <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code> is <code>1</code> but <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code> is <code>TRUE</code>. Method <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code> specifies the processing mode while <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code> just provides information about the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="aea40f5f4cccb32382986adbe31d731fa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aea40f5f4cccb32382986adbe31d731fa" class="m-doc-self">track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> smpl) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns 1-based track number of the track containing the specified 0-based sample.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -584,22 +599,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>If <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count()</a> is 0, the method will return 0 regardless of the actual value of <code>smpl</code>.</p><p>If <code>smpl</code> is bigger than <code><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count()</a> - 1</code>, the method will return an invalid high track number (&quot;infinite&quot;).</p><p>The user has therefore to check for the validity of the result by checking whether <code>0 &lt; result &lt;= CDDA.MAX_TRACKCOUNT</code>.</p>
-          </div></section>
-          <section class="m-doc-details" id="a7c4ad712101f6b0785d1ee3cc08f7c5d"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint8_t arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7c4ad712101f6b0785d1ee3cc08f7c5d" class="m-doc-self">track_count</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Convenience method: Total number of tracks.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>The number of tracks represented in this file</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>This number will aways be a non-negative integer up to <code>99</code> .</p><p>Since the track count should be accessed in a uniform way, regardless whether we actually have multiple tracks or only one.</p><p>Note that this is independent from <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code>. A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> containing only one track would have a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> in which <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a7c4ad712101f6b0785d1ee3cc08f7c5d" class="m-doc">track_<wbr />count()</a></code> is <code>1</code> but <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code> is TRUE. Method <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code> specifies the processing mode while <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a7c4ad712101f6b0785d1ee3cc08f7c5d" class="m-doc">track_<wbr />count()</a></code> just provides information about the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
+<p>If total_samples() is 0, the method will return 0 regardless of the actual value of <code>smpl</code>.</p><p>If <code>smpl</code> is bigger than <code>total_samples() - 1</code>, the method will return an invalid high track number (&quot;infinite&quot;).</p><p>The user has therefore to check for the validity of the result by checking whether <code>0 &lt; result &lt;= <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html#a03e49ab0a13c25be084157b8536272e7" class="m-doc">CDDA::<wbr />MAX_TRACKCOUNT</a></code>.</p>
           </div></section>
           <section class="m-doc-details" id="aa5713630cef01667cfaa4e1792585373"><div>
             <h3>
@@ -643,11 +643,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ad70d00b63b5b801732d33d0981346000"><div>
+          <section class="m-doc-details" id="afaefd6a247085e04865def920b2e4548"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad70d00b63b5b801732d33d0981346000" class="m-doc-self">do_first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afaefd6a247085e04865def920b2e4548" class="m-doc-self">do_first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1e8896606cb93311fc546440b2732fcd" class="m-doc">first_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a3be70de8166ecf81870a5eca062cedb9" class="m-doc">first_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -666,11 +666,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ad9a17d392d7b40a6cb0681c79508ffe7"><div>
+          <section class="m-doc-details" id="a0f50513709eed301c770c60e6bbb8a81"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad9a17d392d7b40a6cb0681c79508ffe7" class="m-doc-self">do_first_relevant_sample_0</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f50513709eed301c770c60e6bbb8a81" class="m-doc-self">do_first_relevant_sample_no_parms</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a9969d68741c0a8a4f6ee1958abd83736" class="m-doc">first_<wbr />relevant_<wbr />sample() const</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4979ae5cd419476215f945f6184712c2" class="m-doc">first_<wbr />relevant_<wbr />sample() const</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -703,16 +703,16 @@
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE if this context specifies multitrack mode, otherwise FALSE</td>
+                  <td><code>TRUE</code> if this context specifies multitrack mode, otherwise <code>FALSE</code></td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a997b550e79a77693a9887737ae843b02"><div>
+          <section class="m-doc-details" id="a86b8ccd9c36beb8ac523c2c89ef22eb7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a997b550e79a77693a9887737ae843b02" class="m-doc-self">do_last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a86b8ccd9c36beb8ac523c2c89ef22eb7" class="m-doc-self">do_last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#af0f6719c8a88776a2263a649410fee96" class="m-doc">last_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc">last_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -731,11 +731,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a96294829f4a264f67997da1c3711afbf"><div>
+          <section class="m-doc-details" id="a5a816b0cdebe6a3ef2ba877ff559674c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a96294829f4a264f67997da1c3711afbf" class="m-doc-self">do_last_relevant_sample_0</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5a816b0cdebe6a3ef2ba877ff559674c" class="m-doc-self">do_last_relevant_sample_no_parms</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#aeecbeb2e4d53a53f324fa05b718dc8d6" class="m-doc">last_<wbr />relevant_<wbr />sample() const</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1006702f52735da34cc3df6f1dd0e890" class="m-doc">last_<wbr />relevant_<wbr />sample() const</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -745,11 +745,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="abb5060e8014073dce1dfc38ee3b06b72"><div>
+          <section class="m-doc-details" id="ae96e70c429c44a8160fbe5677dd1e6a1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb5060e8014073dce1dfc38ee3b06b72" class="m-doc-self">do_length</a>(</span><span class="m-doc-wrap">const uint8_t track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae96e70c429c44a8160fbe5677dd1e6a1" class="m-doc-self">do_length</a>(</span><span class="m-doc-wrap">const int track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#af330f5f8240fae2df2bd58607e4078df" class="m-doc">length(const uint8_<wbr />t track) const</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ac38963b263f1ff637771d78550cb9321" class="m-doc">length(const int track) const</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -768,12 +768,12 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a10be94f53cefa2d8b79597ef89e892c0"><div>
+          <section class="m-doc-details" id="abcbc724ab12be2b16fda8d04201b46ac"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a10be94f53cefa2d8b79597ef89e892c0" class="m-doc-self">do_notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> num_skip_front,
-              const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> num_skip_back) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abcbc724ab12be2b16fda8d04201b46ac" class="m-doc-self">do_notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_front,
+              const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_back) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a77aa7906dcb33b06702c1b23b50f856c" class="m-doc">notify_<wbr />skips(const sample_<wbr />count num_<wbr />skip_<wbr />front, const sample_<wbr />count num_<wbr />skip_<wbr />back)</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4a78422f97fd3f6095aafef741254d43" class="m-doc">notify_<wbr />skips(const sample_<wbr />count_<wbr />t num_<wbr />skip_<wbr />front, const sample_<wbr />count_<wbr />t num_<wbr />skip_<wbr />back)</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -790,11 +790,11 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a20d75e4cbfdfaeb4893aa0726c441e5b"><div>
+          <section class="m-doc-details" id="ab6b9fff8d11ce5eb66ba7fe10707688c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a20d75e4cbfdfaeb4893aa0726c441e5b" class="m-doc-self">do_num_skip_back</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab6b9fff8d11ce5eb66ba7fe10707688c" class="m-doc-self">do_num_skip_back</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a02dd039c818291eae13d815dde7ea2ce" class="m-doc">num_<wbr />skip_<wbr />back() const</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a8793208cdbc89ac3539bbb6de564a6aa" class="m-doc">num_<wbr />skip_<wbr />back() const</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -804,11 +804,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a272bcdbc1405fff9b53ee4aafab8b050"><div>
+          <section class="m-doc-details" id="a152afc6aeddd4ee332701468f11d6791"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a272bcdbc1405fff9b53ee4aafab8b050" class="m-doc-self">do_num_skip_front</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a152afc6aeddd4ee332701468f11d6791" class="m-doc-self">do_num_skip_front</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a59fd70e2d94a27764c22973e622786e8" class="m-doc">num_<wbr />skip_<wbr />front() const</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a62fb99eae3eef0e639faa5115e9b3c53" class="m-doc">num_<wbr />skip_<wbr />front() const</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -818,11 +818,11 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a8a76d94f0a4e6baae49157a70a79a83e"><div>
+          <section class="m-doc-details" id="aff77b0a5560c22019c2ffaa9ebf3c125"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae57ca6855b716d9b1902b6b4d99a1da3" class="m-doc">lba_<wbr />count</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8a76d94f0a4e6baae49157a70a79a83e" class="m-doc-self">do_offset</a>(</span><span class="m-doc-wrap">const uint8_t track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff77b0a5560c22019c2ffaa9ebf3c125" class="m-doc-self">do_offset</a>(</span><span class="m-doc-wrap">const int track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a6633a0adf71463d5322c971e1512b3f5" class="m-doc">offset(const uint8_<wbr />t track) const</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#afaf853e180cf234e6ea7d35c92333009" class="m-doc">offset(const int track) const</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -884,7 +884,7 @@
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE iff context will signal to skip the last samples.</td>
+                  <td><code>TRUE</code> iff context will signal to skip the last samples.</td>
                 </tr>
               </tfoot>
             </table>
@@ -898,16 +898,30 @@
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE iff context will signal to skip the first samples.</td>
+                  <td><code>TRUE</code> iff context will signal to skip the first samples.</td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a01c5f68e608f5ea25500f2fd8b68ec5b"><div>
+          <section class="m-doc-details" id="ac52f006b8a9cd30ab75e65946004ddc1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a01c5f68e608f5ea25500f2fd8b68ec5b" class="m-doc-self">do_track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaadf846d5857e283934f3bd58d8db306b" class="m-doc">sample_<wbr />count</a> smpl) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac52f006b8a9cd30ab75e65946004ddc1" class="m-doc-self">do_total_tracks</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ad4f3636c992a6cdbf9bc381a82fd4413" class="m-doc">track(const sample_<wbr />count smpl) const</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The number of tracks represented in this file</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="acd08d0e123669dc0bbed69a431fc33e4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acd08d0e123669dc0bbed69a431fc33e4" class="m-doc-self">do_track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> smpl) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#aea40f5f4cccb32382986adbe31d731fa" class="m-doc">track(const sample_<wbr />count_<wbr />t smpl) const</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -922,20 +936,6 @@
                 <tr>
                   <th>Returns</th>
                   <td>Track number of the track containing sample <code>smpl</code></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a61d744376f2e9122d6110af06170834f"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">uint8_t arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a61d744376f2e9122d6110af06170834f" class="m-doc-self">do_track_count</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
-            </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a7c4ad712101f6b0785d1ee3cc08f7c5d" class="m-doc">track_<wbr />count() const</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>The number of tracks represented in this file</td>
                 </tr>
               </tfoot>
             </table>

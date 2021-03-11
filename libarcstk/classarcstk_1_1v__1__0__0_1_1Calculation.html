@@ -62,7 +62,7 @@
             </li>
           </ul>
         </div>
-<p>To calculate the checksum for a given entirety of samples, an appropriate <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> must be set and, optionally, a request for the checksum types to calculate.</p><p>The <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> is optionally configured with a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> (for multitrack calculation) and configures the track bounds, if any. If the input is processed as a single track, the <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> configures whether it is the first or last track or an intermediate track.</p><p>Requesting the checksum types determines whether ARCSs v1 only or ARCSs v1 and ARCSs v2 are calculated.</p><p>After context and requested types are set, <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">Calculation::<wbr />update()</a> can be called for a each subsequent sample block until all samples declared in the <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> have been processed. After the last call of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">Calculation::<wbr />update()</a>, a call of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#a4cae42ecdb12debfe273c3cee0216d9d" class="m-doc">Calculation::<wbr />result()</a> will return the result of the calculation on the entire sample stream.</p><p>Note that at least before processing the last block, the total number of samples must be known to the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> instance. The instance will be informed about this value either early in the process by the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, or, if the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is incomplete, by a callback call of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aaee786c16e5b7e13cfa929e710bc3e23" class="m-doc">Calculation::<wbr />update_audiosize()</a>.</p>
+<aside class="m-note m-warning"><h4>Attention</h4><p><a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is a stateful object. It is designed to be updated with a sequence of chunks of the actual audio input. Thereafter, it will provide the caller with a <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> instance that represents the result.</p></aside><p>To calculate the checksum for a given entirety of samples, an appropriate <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> must be set and, optionally, a request for the checksum types to calculate.</p><p>The <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> is optionally configured with a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> (for multitrack calculation) and configures the track bounds, if any. If the input is processed as a single track, the <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> configures whether it is the first or last track or an intermediate track.</p><aside class="m-note m-warning"><h4>Attention</h4><p>After having called <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">update()</a> for the first time, it is not supported to alter the <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> before <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#a161cc43dfcb9224cc1be205266fc15db" class="m-doc">complete()</a>. Otherwise, the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#a4cae42ecdb12debfe273c3cee0216d9d" class="m-doc">result()</a> will be probably incorrect.</p></aside><p>Requesting the checksum types determines whether ARCSsv1 only or ARCSsv1 and ARCSsv2 are calculated. The checksum type can be skipped in which case <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> will use ARCSv2 as default.</p><p>After context and requested types are set, <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">update()</a> must be called for each subsequent sample block until all samples declared in the <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> have been processed. After the last call of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">update()</a>, a call of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#a161cc43dfcb9224cc1be205266fc15db" class="m-doc">complete()</a> can do a sanity check of the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#a4cae42ecdb12debfe273c3cee0216d9d" class="m-doc">result()</a>.</p><p>Note that at least before processing the last block, the total number of samples must be known to the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> instance. The instance must be informed about this value either early in the process by the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>, or, in case the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is incomplete, by a callback call of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aaee786c16e5b7e13cfa929e710bc3e23" class="m-doc">Calculation::<wbr />update_audiosize()</a> as soon as the total number of input samples is known. The caller is responsible for informing <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> about the total number of input samples before the last call of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">update()</a>.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -95,7 +95,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a161cc43dfcb9224cc1be205266fc15db" class="m-doc">complete</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Returns TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is completed, otherwise FALSE.</dd>
+            <dd>Returns <code>TRUE</code> iff this <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is completed, otherwise <code>FALSE</code>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a9108eb761c76d7bebca14cee45a63fd8" class="m-doc">context</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -111,11 +111,11 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#abfca86855dacfd1fa3e5c5ff59011860" class="m-doc">samples_processed</a>(</span><span class="m-doc-wrap">) const -&gt; int64_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Returns the counter for PCM 32 bit samples.</dd>
+            <dd>Returns the total number for PCM 32 bit samples yet processed.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a0390368a5d3b5ff8b9d1c7ee07d7e499" class="m-doc">samples_todo</a>(</span><span class="m-doc-wrap">) const -&gt; int64_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Returns the number of PCM 32 bit samples that is yet to process.</dd>
+            <dd>Returns the total number of PCM 32 bit samples that is yet to be processed.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a549e44188f476264f67e6099934329d3" class="m-doc">set_context</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&gt; context) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -123,7 +123,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a98ac1850405bbb904fd2506fe2ba3918" class="m-doc">type</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Returns current type.</dd>
+            <dd>Returns current type requested.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">update</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> begin,
               <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> end)</span>
@@ -214,16 +214,16 @@
             <h3>
               <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a161cc43dfcb9224cc1be205266fc15db" class="m-doc-self">complete</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Returns TRUE iff this <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is completed, otherwise FALSE.</p>
+            <p>Returns <code>TRUE</code> iff this <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is completed, otherwise <code>FALSE</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>TRUE if the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is completed, otherwise FALSE</td>
+                  <td><code>TRUE</code> if the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is completed, otherwise <code>FALSE</code></td>
                 </tr>
               </tfoot>
             </table>
-<p>FALSE indicates that the instance expects more updates. If the instance returns TRUE it is safe to call <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#a4cae42ecdb12debfe273c3cee0216d9d" class="m-doc">result()</a>.</p>
+<p><code>FALSE</code> indicates that the instance expects more updates. If the instance returns <code>TRUE</code> it is safe to call <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#a4cae42ecdb12debfe273c3cee0216d9d" class="m-doc">result()</a>.</p>
           </div></section>
           <section class="m-doc-details" id="a9108eb761c76d7bebca14cee45a63fd8"><div>
             <h3>
@@ -272,7 +272,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">int64_t arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abfca86855dacfd1fa3e5c5ff59011860" class="m-doc-self">samples_processed</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Returns the counter for PCM 32 bit samples.</p>
+            <p>Returns the total number for PCM 32 bit samples yet processed.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -287,7 +287,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">int64_t arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0390368a5d3b5ff8b9d1c7ee07d7e499" class="m-doc-self">samples_todo</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Returns the number of PCM 32 bit samples that is yet to process.</p>
+            <p>Returns the total number of PCM 32 bit samples that is yet to be processed.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -319,7 +319,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a98ac1850405bbb904fd2506fe2ba3918" class="m-doc-self">type</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Returns current type.</p>
+            <p>Returns current type requested.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
@@ -342,11 +342,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">begin&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Iterator pointing to the beginning of the sequence</td>
+                  <td>Iterator pointing to the first sample of the sequence</td>
                 </tr>
                 <tr>
                   <td>end&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Iterator pointing to the end of the sequence</td>
+                  <td>Iterator pointing behind the last sample of the sequence</td>
                 </tr>
               </tbody>
             </table>
@@ -367,7 +367,7 @@
                 </tr>
               </tbody>
             </table>
-<p>This must be done before the last call of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">Calculation::<wbr />update()</a>.</p>
+<p>This must be done before the last call of <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">update()</a>.</p>
           </div></section>
         </section>
       </div>

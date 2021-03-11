@@ -65,22 +65,14 @@
             </li>
           </ul>
         </div>
-<p><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> parses a std::istream as an AccurateRip response.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> is required to actually process the parsed content.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> can optionally be set to perform some processing of the error information before a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> is thrown. If no <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> is set, a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> or std::runtime_error is thrown on a parse error.</p><p>Concrete subclasses are responsible for implementing function <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#abf9730a43b4c192f56a6df81455b2b4c" class="m-doc">do_<wbr />parse()</a>. Protected service function <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_<wbr />stream()</a> is provided as a building block for subclasses to implement the parsing. Hook method <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#adb319be2b4833e75a2fe02fd245396a2" class="m-doc">on_<wbr />catched_<wbr />exception()</a> is called before the exception is rethrown, so the subclass has the chance to perform some cleanup as closing the stream if this required.</p>
+<p><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> provides the capability for parsing a std::istream as an AccurateRip response.</p><p>Protected service function <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_<wbr />stream()</a> is provided as a building block for subclasses to implement the parsing.</p><p>Concrete subclasses are responsible for implementing functions <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#abf9730a43b4c192f56a6df81455b2b4c" class="m-doc">do_<wbr />parse()</a> and <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#adb319be2b4833e75a2fe02fd245396a2" class="m-doc">on_<wbr />catched_<wbr />exception()</a>.</p><p>Method <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#abf9730a43b4c192f56a6df81455b2b4c" class="m-doc">do_<wbr />parse()</a> may call <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_<wbr />stream()</a> to perform the actual parsing and do some pre- or postprocessing.</p><p>Hook method <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#adb319be2b4833e75a2fe02fd245396a2" class="m-doc">on_<wbr />catched_<wbr />exception()</a> is called after an exception was catched and before the respective exception is rethrown, so the subclass has the chance to perform some cleanup as closing the stream if this required.</p><p>The stream must have been opened before passing it to <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_<wbr />stream()</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> requires furthermore that the stream is configured to throw exceptions for <code>failbit</code> and <code>badbit</code> incidents, thus before the input istream is passed to <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_<wbr />stream()</a>, do something like:</p><pre class="m-code"><span class="n">my_istream</span><span class="p">.</span><span class="n">exceptions</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="o">::</span><span class="n">failbit</span> <span class="o">|</span> <span class="n">std</span><span class="o">::</span><span class="n">istream</span><span class="o">::</span><span class="n">badbit</span><span class="p">);</span></pre><p>Leaving out the exception settings means the <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> instance will not recognize parse errors. It will probably not react appropriate and validity flags will not be reliable.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> is required to actually process the parsed content. <a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a> will just compose an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> object from the parsed input.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> can optionally be set to react on parse errors. If no <a href="classarcstk_1_1v__1__0__0_1_1ErrorHandler.html" class="m-doc">ErrorHandler</a> is set, a <a href="classarcstk_1_1v__1__0__0_1_1StreamReadException.html" class="m-doc">StreamReadException</a> or std::runtime_error is thrown on a parse error.</p><p>A minimal implementation is provided by <a href="classarcstk_1_1v__1__0__0_1_1ARParser.html" class="m-doc">ARParser</a>.</p>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1ARFileParser.html" class="m-doc">v_1_0_0::ARFileParser</a> <span class="m-label m-flat m-warning">final</span> <span class="m-label m-danger">deprecated</span>
-            </dt>
-            <dd>Parser for dBAR-*.bin files.</dd>
-            <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1ARParser.html" class="m-doc">v_1_0_0::ARParser</a> <span class="m-label m-flat m-warning">final</span>
             </dt>
-            <dd>Generic parser for std::ifstream instances.</dd>
-            <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1ARStdinParser.html" class="m-doc">v_1_0_0::ARStdinParser</a> <span class="m-label m-flat m-warning">final</span> <span class="m-label m-danger">deprecated</span>
-            </dt>
-            <dd>Parser for AccurateRip response as a binary stream on stdin.</dd>
+            <dd>Generic parser for std::istream instances.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -90,6 +82,10 @@
               <span class="m-doc-wrap-bumper"><a href="#aec90c5ec8206222a3986202a048ee002" class="m-doc-self">ARStreamParser</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Default constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ace901ce82bff633108b6ee3c16e3bbe0" class="m-doc">ARStreamParser</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>&amp;&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Move constructor.</dd>
             <dt id="abe5ae8b2af7e43f6a5b37e4a64452f95">
               <span class="m-doc-wrap-bumper"><a href="#abe5ae8b2af7e43f6a5b37e4a64452f95" class="m-doc-self">~ARStreamParser</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -127,7 +123,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a370b9af46e587f5967e5434993b2856f" class="m-doc">parse_stream</a>(</span><span class="m-doc-wrap">std::istream&amp; in_stream) -&gt; uint32_t</span>
             </dt>
-            <dd>Parses the (opened) byte stream of an AccurateRip response.</dd>
+            <dd>Parses the (opened) byte stream as an AccurateRip response.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a03ab89e3e05af2cea49a25ff777ece8b" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>&amp; rhs)</span>
             </dt>
@@ -154,6 +150,23 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ace901ce82bff633108b6ee3c16e3bbe0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ARStreamParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ace901ce82bff633108b6ee3c16e3bbe0" class="m-doc-self">ARStreamParser</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>&amp;&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Move constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Instance to move</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="a5e3fdf8102586526a6cbaa93493dbb34"><div>
             <h3>
               <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ARStreamParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5e3fdf8102586526a6cbaa93493dbb34" class="m-doc-self">content_handler</a>(</span><span class="m-doc-wrap">) const</span></span>
@@ -234,7 +247,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">uint32_t arcstk::<wbr />v_1_0_0::<wbr />ARStreamParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a370b9af46e587f5967e5434993b2856f" class="m-doc-self">parse_stream</a>(</span><span class="m-doc-wrap">std::istream&amp; in_stream) <span class="m-label m-warning">protected</span></span></span>
             </h3>
-            <p>Parses the (opened) byte stream of an AccurateRip response.</p>
+            <p>Parses the (opened) byte stream as an AccurateRip response.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -261,7 +274,7 @@
                 </tr>
               </tbody>
             </table>
-<aside class="m-note m-warning"><h4>Attention</h4><p>It is in the responsibility of the client that the stream is opened before passing. Exceptions must be activated and failbit as well as badbit must be set.</p></aside>
+<p>This function can be called in <code><a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html#abf9730a43b4c192f56a6df81455b2b4c" class="m-doc">do_<wbr />parse()</a></code> implementations of subclasses to perform the actual parsing process.</p><aside class="m-note m-warning"><h4>Attention</h4><p>It is in the responsibility of the client that</p><ul><li>the stream is opened before passing it.</li><li>Exceptions must be activated on failbit as well as badbit.</li></ul></aside>
           </div></section>
           <section class="m-doc-details" id="a03ab89e3e05af2cea49a25ff777ece8b"><div>
             <h3>

@@ -49,7 +49,7 @@
           <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::BLOCKSIZE_t <span class="m-thin">struct</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="sampleproc_8hpp.html">&lt;sampleproc.hpp&gt;</a></div>
         </h1>
-        <p>Symbolic constants for certain block sizes.</p>
+        <p>Symbolic constants for certain block sizes (in PCM 32 bit samples).</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -99,7 +99,7 @@
               const int32_t arcsdec::<wbr />v_1_0_0::<wbr />BLOCKSIZE_t::<wbr /><a href="#a75a0e6a85d6cbff276ef208f9245a42d" class="m-doc-self">MIN</a>
             </h3>
             <p>Minimum buffer size in number of PCM 32 bit samples.</p>
-<p>Currently, this is 256 KiB.</p>
+<p>Currently, this is 256 KiB.</p><p>This is the maximal size of a fLaC frame. This setting entails that at least one fLaC frame of maximal size is guaranteed to fit in a block of minimal size.</p>
           </div></section>
         </section>
       </div>

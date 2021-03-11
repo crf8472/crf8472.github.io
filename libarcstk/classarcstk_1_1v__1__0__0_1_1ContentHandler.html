@@ -64,7 +64,7 @@
             </li>
           </ul>
         </div>
-<p>Add actual behaviour to an <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>. A concrete subclass of <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> implements the handling of each syntactic entity the <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> emits.</p><p>Behaviour can be added at the start and end of the response content, at the start and end of each block, at the id at the start of each block and on each triplet.</p>
+<p>Add actual behaviour to an <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>. A concrete subclass of <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> implements the handling of each syntactic entity the <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> emits.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> reacts to the following events:</p><ul><li>Start of input (once on beginning the parsing process)</li><li>Start of a block (once on every block)</li><li><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>, i.e. the header of a block (once on every block)</li><li>A triplet (once or more times on every block)</li><li>End of a block (once on every block)</li><li>End of input (once on the end of the parsing process)</li></ul><p>Event <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a41ebcc16d1af40a2626370f53e4e5802" class="m-doc">start_<wbr />input()</a> occurrs before the first actual bytes are parsed. Event <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a6933a72412063fda5e452df1f124b23c" class="m-doc">end_<wbr />input()</a> occurrs after the last actual bytes are parsed.</p><p>The <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is not represented as such, but as a sequence of the four numeric constants that are required to compute the actual <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p><p>Each triplet comes with an ARCS for the entire track, a confidence value and an ARCS for frame 450 of the track.</p><p>If a parsing error occurrs, the <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> will receive additional validity flags to indicate which members of the last triplet were parsed successfully and which were not.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a></p></aside>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
@@ -110,15 +110,15 @@
             </dt>
             <dd>React on the start of the input.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a51d6e32818a47698cbfaac784ed529cc" class="m-doc">triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper">void <a href="#a45e47646509f4509b623adcb6270ffad" class="m-doc">triplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint8_t confidence,
-              const uint32_t frame450_arcs)</span>
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs)</span>
             </dt>
             <dd>React on an <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#aa179d1336828eb70dd85227383296845" class="m-doc">triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper">void <a href="#a0065024d32a841a774ed2720fee43b22" class="m-doc">triplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint8_t confidence,
-              const uint32_t frame450_arcs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs,
               const bool arcs_valid,
               const bool confidence_valid,
               const bool frame450_arcs_valid)</span>
@@ -132,18 +132,18 @@
             <dt id="a82bbec96d2edffeb1243df460acea1b9">
               <span class="m-doc-wrap-bumper">void <a href="#a82bbec96d2edffeb1243df460acea1b9" class="m-doc-self">do_end_block</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a5f252e18df270855208e8bf8d8aebe50" class="m-doc">end_<wbr />block()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a5f252e18df270855208e8bf8d8aebe50" class="m-doc">end_<wbr />block()</a></dd>
             <dt id="a968d3534e1e73c259a2299a37a0fd3f0">
               <span class="m-doc-wrap-bumper">void <a href="#a968d3534e1e73c259a2299a37a0fd3f0" class="m-doc-self">do_end_input</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a6933a72412063fda5e452df1f124b23c" class="m-doc">end_<wbr />input()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a6933a72412063fda5e452df1f124b23c" class="m-doc">end_<wbr />input()</a></dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a7a9727c43d1c3061f1e8c5775d735c76" class="m-doc">do_id</a>(</span><span class="m-doc-wrap">const uint8_t track_count,
               const uint32_t id1,
               const uint32_t id2,
               const uint32_t cddb_id) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#ad513399abb1035e2a8ac3e11a6bfb64b" class="m-doc">id()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#ad513399abb1035e2a8ac3e11a6bfb64b" class="m-doc">id()</a></dd>
             <dt id="a30c31e78c41d5ca021a0aee5b7e73b5e">
               <span class="m-doc-wrap-bumper">void <a href="#a30c31e78c41d5ca021a0aee5b7e73b5e" class="m-doc-self">do_start_block</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -153,20 +153,20 @@
             </dt>
             <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a41ebcc16d1af40a2626370f53e4e5802" class="m-doc">start_<wbr />input()</a></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a2ceaa433bc3c54495a0bc3411672de7a" class="m-doc">do_triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper">void <a href="#a7525291b223986b64f0a13d063eea5b3" class="m-doc">do_triplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint8_t confidence,
-              const uint32_t frame450_arcs) <span class="m-label m-flat m-warning">pure virtual</span></span>
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a51d6e32818a47698cbfaac784ed529cc" class="m-doc">triplet()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a45e47646509f4509b623adcb6270ffad" class="m-doc">triplet()</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a6ee078fbef023225e241cbe075703bfd" class="m-doc">do_triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper">void <a href="#ab67318a7223083a90c9b854ea203598c" class="m-doc">do_triplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint8_t confidence,
-              const uint32_t frame450_arcs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs,
               const bool arcs_valid,
               const bool confidence_valid,
               const bool frame450_arcs_valid) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#aa179d1336828eb70dd85227383296845" class="m-doc">triplet()</a>.</dd>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a0065024d32a841a774ed2720fee43b22" class="m-doc">triplet()</a>.</dd>
           </dl>
         </section>
         <section>
@@ -202,13 +202,13 @@
                 </tr>
               </tbody>
             </table>
-<p>Each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> starts with the id of the disc it describes, so this method is always called directly after <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a>.</p>
+<p>Each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> starts with the id of the disc it describes, so this method is always called directly after <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a>.</p><aside class="m-note m-dim"><h4><a href="todo.html#_todo000001" class="m-doc">Todo</a></h4><p>Since <code>track_count</code> is stored in a single byte, this parameter should be typed <code>byte</code> once migrating to C++17.</p></aside>
           </div></section>
-          <section class="m-doc-details" id="a51d6e32818a47698cbfaac784ed529cc"><div>
+          <section class="m-doc-details" id="a45e47646509f4509b623adcb6270ffad"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a51d6e32818a47698cbfaac784ed529cc" class="m-doc-self">triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a45e47646509f4509b623adcb6270ffad" class="m-doc-self">triplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint8_t confidence,
-              const uint32_t frame450_arcs)</span></span>
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs)</span></span>
             </h3>
             <p>React on an <a href="classarcstk_1_1v__1__0__0_1_1ARTriplet.html" class="m-doc">ARTriplet</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -230,12 +230,13 @@
                 </tr>
               </tbody>
             </table>
+<aside class="m-note m-dim"><h4><a href="todo.html#_todo000002" class="m-doc">Todo</a></h4><p>Since <code>confidence</code> is stored in a single byte, this parameter should be typed <code>byte</code> once migrating to C++17.</p></aside>
           </div></section>
-          <section class="m-doc-details" id="aa179d1336828eb70dd85227383296845"><div>
+          <section class="m-doc-details" id="a0065024d32a841a774ed2720fee43b22"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa179d1336828eb70dd85227383296845" class="m-doc-self">triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0065024d32a841a774ed2720fee43b22" class="m-doc-self">triplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint8_t confidence,
-              const uint32_t frame450_arcs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs,
               const bool arcs_valid,
               const bool confidence_valid,
               const bool frame450_arcs_valid)</span></span>
@@ -272,6 +273,7 @@
                 </tr>
               </tbody>
             </table>
+<p>If a parse error occurred on parsing the triplet, validity flags for each part of the triplet are passed. A validity flag that is <code>TRUE</code> indicates that the respective part of the triplet was parsed correctly. A validity value of <code>FALSE</code> reports that the parsed value is not reliable.</p><aside class="m-note m-dim"><h4><a href="todo.html#_todo000003" class="m-doc">Todo</a></h4><p>Since <code>confidence</code> is stored in a single byte, this parameter should be typed <code>byte</code> once migrating to C++17.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a7a9727c43d1c3061f1e8c5775d735c76"><div>
             <h3>
@@ -280,7 +282,7 @@
               const uint32_t id2,
               const uint32_t cddb_id) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#ad513399abb1035e2a8ac3e11a6bfb64b" class="m-doc">id()</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#ad513399abb1035e2a8ac3e11a6bfb64b" class="m-doc">id()</a></p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -306,13 +308,13 @@
             </table>
 <p>Each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> starts with the id of the disc it describes, so this method is always called directly after <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a2955b0b16e1d55f0a1c2d9f7d6aa28a3" class="m-doc">start_<wbr />block()</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a2ceaa433bc3c54495a0bc3411672de7a"><div>
+          <section class="m-doc-details" id="a7525291b223986b64f0a13d063eea5b3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2ceaa433bc3c54495a0bc3411672de7a" class="m-doc-self">do_triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7525291b223986b64f0a13d063eea5b3" class="m-doc-self">do_triplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint8_t confidence,
-              const uint32_t frame450_arcs) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a51d6e32818a47698cbfaac784ed529cc" class="m-doc">triplet()</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a45e47646509f4509b623adcb6270ffad" class="m-doc">triplet()</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -333,16 +335,16 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a6ee078fbef023225e241cbe075703bfd"><div>
+          <section class="m-doc-details" id="ab67318a7223083a90c9b854ea203598c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ee078fbef023225e241cbe075703bfd" class="m-doc-self">do_triplet</a>(</span><span class="m-doc-wrap">const uint32_t arcs,
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ContentHandler::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab67318a7223083a90c9b854ea203598c" class="m-doc-self">do_triplet</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcs,
               const uint8_t confidence,
-              const uint32_t frame450_arcs,
+              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> frame450_arcs,
               const bool arcs_valid,
               const bool confidence_valid,
               const bool frame450_arcs_valid) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#aa179d1336828eb70dd85227383296845" class="m-doc">triplet()</a>.</p>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a0065024d32a841a774ed2720fee43b22" class="m-doc">triplet()</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
