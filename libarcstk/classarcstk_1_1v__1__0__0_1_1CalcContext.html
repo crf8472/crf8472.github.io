@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>arcstk::v_1_0_0::CalcContext class | libarcstk Toolkit to calculate and verify AccurateRip checksums and ids</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://codeberg.org/tristero/libarcstk/">libarcstk</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Toolkit to calculate and verify AccurateRip checksums and ids</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="modules.html">Modules</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="2">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::CalcContext <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+        </h1>
+        <p>Interface for information about the current audio input.</p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pri-methods">Private functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> provides the metadata that is required to perform the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> correctly.</p><p>The <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> determines whether the input is single- or multitrack and whether it has to skip samples on the beginning of the first or the end of the last track.</p><p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> also provides service methods for identifying the first and last sample of a track relevant for <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> or to get the track for a given sample.</p><p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> offers also access to its underlying <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> data.</p><p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> instances are created exclusively via the variants of <a href="group__calc.html#gac0e17bec133e06465ad5a90f14ec4981" class="m-doc">make_<wbr />context()</a>.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> is intended as a &quot;read-only&quot; object, it should never be required to modify the <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> of an audio input. The only exception is <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4a78422f97fd3f6095aafef741254d43" class="m-doc">notify_<wbr />skips()</a> which depends on the concrete algorithm that is only known within <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>. Thus, <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> must inform its <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> about it.</p><aside class="m-note m-info"><h4>Note</h4><p>Currently it should not be required for the user to subclass <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>. All subclasses required for calculating ARCSv1 and ARCSv2 in single- and multitrack scenarios are already provided by libarcstk. Note that subclassing <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> would require to also add a new variant of <a href="group__calc.html#gac0e17bec133e06465ad5a90f14ec4981" class="m-doc">make_<wbr />context()</a> that can yield an instance of this subclass.</p></aside>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a24414cac6de068f885bf80383a86c019">
+              <span class="m-doc-wrap-bumper"><a href="#a24414cac6de068f885bf80383a86c019" class="m-doc-self">~CalcContext</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Virtual default destructor.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac38b25e6f94642cb281ae9292dd7c73a" class="m-doc">audio_size</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Return the size of the referenced audio file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1c19942f3d74de7d8bde004c5c58935d" class="m-doc">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&gt; <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Clone this <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> object.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a580f480022517387002c3afe3d07138e" class="m-doc">filename</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Name of current audio file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4979ae5cd419476215f945f6184712c2" class="m-doc">first_relevant_sample</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Get 0-based index of the first relevant sample of the current audio input.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3be70de8166ecf81870a5eca062cedb9" class="m-doc">first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Get 0-based index of the first relevant sample of the specified 1-based track.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a114f7324030c801a4074b506ff6fc18d" class="m-doc">id</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Return the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the current medium, if known.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_multi_track</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns <code>TRUE</code> if this instances indicates a processing for multiple tracks on a single input file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1006702f52735da34cc3df6f1dd0e890" class="m-doc">last_relevant_sample</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Get 0-based index of the last relevant sample of the current audio input.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc">last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Get 0-based index of the last relevant sample of the specified 1-based track.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac38963b263f1ff637771d78550cb9321" class="m-doc">length</a>(</span><span class="m-doc-wrap">const int track) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Return the normalized length of the specified 0-based track.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a4a78422f97fd3f6095aafef741254d43" class="m-doc">notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_front,
+              const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_back) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Notifies the instance about configured skipping amounts at the beginning of the first track and the end of the last track.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8793208cdbc89ac3539bbb6de564a6aa" class="m-doc">num_skip_back</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the amount of samples to skip at the end of the last track.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a62fb99eae3eef0e639faa5115e9b3c53" class="m-doc">num_skip_front</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns the amount of samples to skip at the beginning of the first track.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afaf853e180cf234e6ea7d35c92333009" class="m-doc">offset</a>(</span><span class="m-doc-wrap">const int track) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Return the offset of the specified 0-based track from the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ade21f6743a5cc569d6f154d1143de936" class="m-doc">set_audio_size</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; audio_size) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Inform about the <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> of the current file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad8c48e735e6d82ed44f15904d0ed08e0" class="m-doc">set_filename</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Set the name of the current audio file.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a90170a01c8563eb6817559d727547dab" class="m-doc">skips_back</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns <code>TRUE</code> iff this context will skip the last 2940 samples (5 LBA frames) of the last track.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc">skips_front</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns <code>TRUE</code> iff this context will skip the first 2939 samples of the first track.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_tracks</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Convenience method: Total number of tracks.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aea40f5f4cccb32382986adbe31d731fa" class="m-doc">track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> smpl) const -&gt; int <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns 1-based track number of the track containing the specified 0-based sample.</dd>
+          </dl>
+        </section>
+        <section id="pri-methods">
+          <h2><a href="#pri-methods">Private functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab91302836d3a9695399acdbbf5f38fd2" class="m-doc">do_audio_size</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ac38b25e6f94642cb281ae9292dd7c73a" class="m-doc">audio_<wbr />size() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a39a817a60d14b8ee39c18460ae5f1e77" class="m-doc">do_clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1c19942f3d74de7d8bde004c5c58935d" class="m-doc">clone() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a73723e64062c0a82c868535dc61a43fa" class="m-doc">do_filename</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a580f480022517387002c3afe3d07138e" class="m-doc">filename() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afaefd6a247085e04865def920b2e4548" class="m-doc">do_first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a3be70de8166ecf81870a5eca062cedb9" class="m-doc">first_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0f50513709eed301c770c60e6bbb8a81" class="m-doc">do_first_relevant_sample_no_parms</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4979ae5cd419476215f945f6184712c2" class="m-doc">first_<wbr />relevant_<wbr />sample() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a336153f4b7b3246ca7725d6eaab6a22e" class="m-doc">do_id</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a114f7324030c801a4074b506ff6fc18d" class="m-doc">id() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2db16dcae7478d52fbc5d6c88a03335c" class="m-doc">do_is_multi_track</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a86b8ccd9c36beb8ac523c2c89ef22eb7" class="m-doc">do_last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc">last_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5a816b0cdebe6a3ef2ba877ff559674c" class="m-doc">do_last_relevant_sample_no_parms</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1006702f52735da34cc3df6f1dd0e890" class="m-doc">last_<wbr />relevant_<wbr />sample() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae96e70c429c44a8160fbe5677dd1e6a1" class="m-doc">do_length</a>(</span><span class="m-doc-wrap">const int track) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ac38963b263f1ff637771d78550cb9321" class="m-doc">length(const int track) const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#abcbc724ab12be2b16fda8d04201b46ac" class="m-doc">do_notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_front,
+              const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_back) <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4a78422f97fd3f6095aafef741254d43" class="m-doc">notify_<wbr />skips(const sample_<wbr />count_<wbr />t num_<wbr />skip_<wbr />front, const sample_<wbr />count_<wbr />t num_<wbr />skip_<wbr />back)</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab6b9fff8d11ce5eb66ba7fe10707688c" class="m-doc">do_num_skip_back</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a8793208cdbc89ac3539bbb6de564a6aa" class="m-doc">num_<wbr />skip_<wbr />back() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a152afc6aeddd4ee332701468f11d6791" class="m-doc">do_num_skip_front</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a62fb99eae3eef0e639faa5115e9b3c53" class="m-doc">num_<wbr />skip_<wbr />front() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aff77b0a5560c22019c2ffaa9ebf3c125" class="m-doc">do_offset</a>(</span><span class="m-doc-wrap">const int track) const -&gt; <a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#afaf853e180cf234e6ea7d35c92333009" class="m-doc">offset(const int track) const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a705d35ceca1ec9f870523de16ae7d49b" class="m-doc">do_set_audio_size</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; audio_size) <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ade21f6743a5cc569d6f154d1143de936" class="m-doc">set_<wbr />audio_<wbr />size(const AudioSize &amp;audio_<wbr />size)</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#adea48ce82fc3d6e7495ce561324d8202" class="m-doc">do_set_filename</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ad8c48e735e6d82ed44f15904d0ed08e0" class="m-doc">set_filename(const std::<wbr />string &amp;filename)</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8408ba95e50d5597523fadffe13e1282" class="m-doc">do_skips_back</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a90170a01c8563eb6817559d727547dab" class="m-doc">skips_<wbr />back() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a44d5306eeacb3832d27a3bcd8aa4a632" class="m-doc">do_skips_front</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc">skips_<wbr />front() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac52f006b8a9cd30ab75e65946004ddc1" class="m-doc">do_total_tracks</a>(</span><span class="m-doc-wrap">) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks() const</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#acd08d0e123669dc0bbed69a431fc33e4" class="m-doc">do_track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> smpl) const -&gt; int <span class="m-label m-flat m-warning">pure virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#aea40f5f4cccb32382986adbe31d731fa" class="m-doc">track(const sample_<wbr />count_<wbr />t smpl) const</a>.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ac38b25e6f94642cb281ae9292dd7c73a"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac38b25e6f94642cb281ae9292dd7c73a" class="m-doc-self">audio_size</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Return the size of the referenced audio file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The size of the referenced audio file</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1c19942f3d74de7d8bde004c5c58935d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c19942f3d74de7d8bde004c5c58935d" class="m-doc-self">clone</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Clone this <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A clone of this instance</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>A clone is a deep copy, i.e. the result of the cloning will be a different object with the exact same state.</p>
+          </div></section>
+          <section class="m-doc-details" id="a580f480022517387002c3afe3d07138e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a580f480022517387002c3afe3d07138e" class="m-doc-self">filename</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Name of current audio file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Name of the audio file that is currently processed</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4979ae5cd419476215f945f6184712c2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4979ae5cd419476215f945f6184712c2" class="m-doc-self">first_relevant_sample</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Get 0-based index of the first relevant sample of the current audio input.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Index of the first sample contributing to the first track&#x27;s ARCS</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Which sample is actually the first relevant one depends on</p><ul><li>the offset of the first track and</li><li>whether samples in the beginning of the first track are to be skipped.</li></ul><p>Always equivalent with <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a3be70de8166ecf81870a5eca062cedb9" class="m-doc">first_<wbr />relevant_<wbr />sample(1)</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3be70de8166ecf81870a5eca062cedb9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3be70de8166ecf81870a5eca062cedb9" class="m-doc-self">first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Get 0-based index of the first relevant sample of the specified 1-based track.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">track&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The 1-based track number</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Index of the first sample contributing to the track&#x27;s ARCS</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Note that parameter <code>track</code> is 1-based, which means that <code>first_relevant_sample(2)</code> returns the first 0-based sample of the actual track 2 (and not track 3).</p>
+          </div></section>
+          <section class="m-doc-details" id="a114f7324030c801a4074b506ff6fc18d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a114f7324030c801a4074b506ff6fc18d" class="m-doc-self">id</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Return the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the current medium, if known.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the current medium</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The value returned will only be significant iff non-empty offsets and non-zero total PCM byte count are available. Otherwise the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> returned will be <code>empty()</code> .</p>
+          </div></section>
+          <section class="m-doc-details" id="a08f938b95d3601b44512c1563ba523f4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08f938b95d3601b44512c1563ba523f4" class="m-doc-self">is_multi_track</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns <code>TRUE</code> if this instances indicates a processing for multiple tracks on a single input file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><code>TRUE</code> if this context specifies multitrack mode, otherwise <code>FALSE</code></td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If this is <code>FALSE</code>, no chunks will be available. Multitrack mode is activated by setting a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p><aside class="m-note m-warning"><h4>Attention</h4><p>Note that this is independent from <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code>. A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> containing only one track would have a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> in which <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code> is <code>1</code> but <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code> is <code>TRUE</code>. Method <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code> specifies the processing mode while <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code> just provides information about the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a1006702f52735da34cc3df6f1dd0e890"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1006702f52735da34cc3df6f1dd0e890" class="m-doc-self">last_relevant_sample</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Get 0-based index of the last relevant sample of the current audio input.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Index of the last sample contributing to the last track&#x27;s ARCS</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Which sample is actually the last relevant one depends on whether samples in the end of the last track are to be skipped.</p><p>Always equivalent with <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc">last_<wbr />relevant_<wbr />sample(this-&gt;total_<wbr />tracks())</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a74b2023197ab2c1d937a65a6d8ee6771"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc-self">last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Get 0-based index of the last relevant sample of the specified 1-based track.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">track&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>1-based track number, accepts 0 as offset of track 1</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Index of last sample contributing to the specified track&#x27;s ARCS</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Note that parameter <code>track</code> is 1-based, which means that last_relevant_sample(2) returns the last 0-based sample of the actual track 2 (and not track 3).</p><p>If no offsets are set, the output will always be identical to <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc">last_<wbr />relevant_<wbr />sample()</a>.</p><p>For <code>track == 0</code>, the last sample of the offset before track 1 is returned. This may of course be 0 iff the offset of track 1 is 0.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac38963b263f1ff637771d78550cb9321"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac38963b263f1ff637771d78550cb9321" class="m-doc-self">length</a>(</span><span class="m-doc-wrap">const int track) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Return the normalized length of the specified 0-based track.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">track&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The 0-based track to get the length for</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The length for the specified 0-based track</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Note that <code>length(i) == offset(i+2) - offset(i+1)</code> for all <code>i: 0 &lt;= i &lt; toc().<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a> - 1</code>.</p><p>For the last track <code>t = toc().<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a> - 1</code>, the value of <code>length(t)</code> may be <code>0</code> if the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is incomplete and the instance is not yet updated with the concrete <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>, otherwise it is <code>length(t) == leadout_frame() - offset(t+1)</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a4a78422f97fd3f6095aafef741254d43"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a78422f97fd3f6095aafef741254d43" class="m-doc-self">notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_front,
+              const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_back) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Notifies the instance about configured skipping amounts at the beginning of the first track and the end of the last track.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">num_skip_front&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Actual amount of skipped samples at the beginning</td>
+                </tr>
+                <tr>
+                  <td>num_skip_back&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Actual amount of skipped samples at the end</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Whether actual skipping takes place can be determined by <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc">skips_<wbr />front()</a> and <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a90170a01c8563eb6817559d727547dab" class="m-doc">skips_<wbr />back()</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8793208cdbc89ac3539bbb6de564a6aa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8793208cdbc89ac3539bbb6de564a6aa" class="m-doc-self">num_skip_back</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the amount of samples to skip at the end of the last track.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The number of samples to skip at the end of the last track</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If the audio input contains only one track, this track is the last track.</p><p>The value is either 2940 or 0.</p><p>The skipping is already active if this instance <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a90170a01c8563eb6817559d727547dab" class="m-doc">skips_<wbr />back()</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a62fb99eae3eef0e639faa5115e9b3c53"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a62fb99eae3eef0e639faa5115e9b3c53" class="m-doc-self">num_skip_front</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns the amount of samples to skip at the beginning of the first track.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The number of samples to skip at the beginning of the first track</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If the audio input contains only one track, this track is the first track.</p><p>The value is either 2939 or 0.</p><p>The skipping is already active if this instance <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc">skips_<wbr />front()</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="afaf853e180cf234e6ea7d35c92333009"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afaf853e180cf234e6ea7d35c92333009" class="m-doc-self">offset</a>(</span><span class="m-doc-wrap">const int track) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Return the offset of the specified 0-based track from the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">track&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The 0-based track to get the offset for</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The offset for the specified 0-based track</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Note that <code>offset(i) == toc().offset(i+1)</code> for all <code>i: 0 &lt;= i &lt; toc().<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="ade21f6743a5cc569d6f154d1143de936"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade21f6743a5cc569d6f154d1143de936" class="m-doc-self">set_audio_size</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; audio_size) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Inform about the <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> of the current file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">audio_size&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a></td>
+                </tr>
+              </tbody>
+            </table>
+<p>This contains the information about the leadout frame. This information must be known before <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#aba69d681783fb68111c2d46f5aca8ab8" class="m-doc">Calculation::<wbr />update</a> is called on the last block.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad8c48e735e6d82ed44f15904d0ed08e0"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad8c48e735e6d82ed44f15904d0ed08e0" class="m-doc-self">set_filename</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Set the name of the current audio file.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">filename&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Name of the audio file that is to be processed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a90170a01c8563eb6817559d727547dab"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a90170a01c8563eb6817559d727547dab" class="m-doc-self">skips_back</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns <code>TRUE</code> iff this context will skip the last 2940 samples (5 LBA frames) of the last track.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><code>TRUE</code> iff context will signal to skip the last samples.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1b11f4ffbc58394d9f6b504ed1f08556"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc-self">skips_front</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns <code>TRUE</code> iff this context will skip the first 2939 samples of the first track.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><code>TRUE</code> iff context will signal to skip the first samples.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5b8045227035103ee2af30a8b966b6d7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5b8045227035103ee2af30a8b966b6d7" class="m-doc-self">total_tracks</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Convenience method: Total number of tracks.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The number of tracks represented in this file</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This number will aways be a non-negative integer up to <code>99</code> .</p><p>Since the track count should be accessed in a uniform way, regardless whether we actually have multiple tracks or only one.</p><aside class="m-note m-warning"><h4>Attention</h4><p>Note that this is independent from <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code>. A <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> containing only one track would have a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> in which <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code> is <code>1</code> but <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code> is <code>TRUE</code>. Method <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track()</a></code> specifies the processing mode while <code><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks()</a></code> just provides information about the <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="aea40f5f4cccb32382986adbe31d731fa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aea40f5f4cccb32382986adbe31d731fa" class="m-doc-self">track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> smpl) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Returns 1-based track number of the track containing the specified 0-based sample.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">smpl&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The sample to get the track for</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Track number of the track containing sample <code>smpl</code></td>
+                </tr>
+              </tfoot>
+            </table>
+<p>If total_samples() is 0, the method will return 0 regardless of the actual value of <code>smpl</code>.</p><p>If <code>smpl</code> is bigger than <code>total_samples() - 1</code>, the method will return an invalid high track number (&quot;infinite&quot;).</p><p>The user has therefore to check for the validity of the result by checking whether <code>0 &lt; result &lt;= <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html#a03e49ab0a13c25be084157b8536272e7" class="m-doc">CDDA::<wbr />MAX_TRACKCOUNT</a></code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="ab91302836d3a9695399acdbbf5f38fd2"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab91302836d3a9695399acdbbf5f38fd2" class="m-doc-self">do_audio_size</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ac38b25e6f94642cb281ae9292dd7c73a" class="m-doc">audio_<wbr />size() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The total number of bytes of the PCM samples</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a39a817a60d14b8ee39c18460ae5f1e77"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a39a817a60d14b8ee39c18460ae5f1e77" class="m-doc-self">do_clone</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1c19942f3d74de7d8bde004c5c58935d" class="m-doc">clone() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A clone of this instance</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a73723e64062c0a82c868535dc61a43fa"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a73723e64062c0a82c868535dc61a43fa" class="m-doc-self">do_filename</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a580f480022517387002c3afe3d07138e" class="m-doc">filename() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Name of the audio file that is currently processed</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="afaefd6a247085e04865def920b2e4548"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afaefd6a247085e04865def920b2e4548" class="m-doc-self">do_first_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a3be70de8166ecf81870a5eca062cedb9" class="m-doc">first_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">track&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The 1-based track number</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Index of the first sample contributing to the track&#x27;s ARCS</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a0f50513709eed301c770c60e6bbb8a81"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f50513709eed301c770c60e6bbb8a81" class="m-doc-self">do_first_relevant_sample_no_parms</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4979ae5cd419476215f945f6184712c2" class="m-doc">first_<wbr />relevant_<wbr />sample() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Index of the first sample contributing to the first track&#x27;s ARCS</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a336153f4b7b3246ca7725d6eaab6a22e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a336153f4b7b3246ca7725d6eaab6a22e" class="m-doc-self">do_id</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a114f7324030c801a4074b506ff6fc18d" class="m-doc">id() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of the current medium</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2db16dcae7478d52fbc5d6c88a03335c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2db16dcae7478d52fbc5d6c88a03335c" class="m-doc-self">do_is_multi_track</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a08f938b95d3601b44512c1563ba523f4" class="m-doc">is_<wbr />multi_<wbr />track() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><code>TRUE</code> if this context specifies multitrack mode, otherwise <code>FALSE</code></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a86b8ccd9c36beb8ac523c2c89ef22eb7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a86b8ccd9c36beb8ac523c2c89ef22eb7" class="m-doc-self">do_last_relevant_sample</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gab54febc3dbc97c4e031001471d798069" class="m-doc">TrackNo</a> track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a74b2023197ab2c1d937a65a6d8ee6771" class="m-doc">last_<wbr />relevant_<wbr />sample(const TrackNo track) const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">track&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>1-based track number, accepts 0 as offset of track 1</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Index of last sample contributing to the specified track&#x27;s ARCS</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5a816b0cdebe6a3ef2ba877ff559674c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5a816b0cdebe6a3ef2ba877ff559674c" class="m-doc-self">do_last_relevant_sample_no_parms</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1006702f52735da34cc3df6f1dd0e890" class="m-doc">last_<wbr />relevant_<wbr />sample() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Index of the last sample contributing to the last track&#x27;s ARCS</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ae96e70c429c44a8160fbe5677dd1e6a1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae96e70c429c44a8160fbe5677dd1e6a1" class="m-doc-self">do_length</a>(</span><span class="m-doc-wrap">const int track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ac38963b263f1ff637771d78550cb9321" class="m-doc">length(const int track) const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">track&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The 0-based track to get the length for</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The length for the specified 0-based track</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="abcbc724ab12be2b16fda8d04201b46ac"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abcbc724ab12be2b16fda8d04201b46ac" class="m-doc-self">do_notify_skips</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_front,
+              const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> num_skip_back) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4a78422f97fd3f6095aafef741254d43" class="m-doc">notify_<wbr />skips(const sample_<wbr />count_<wbr />t num_<wbr />skip_<wbr />front, const sample_<wbr />count_<wbr />t num_<wbr />skip_<wbr />back)</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">num_skip_front&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Actual amount of skipped samples at the beginning</td>
+                </tr>
+                <tr>
+                  <td>num_skip_back&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Actual amount of skipped samples at the end</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ab6b9fff8d11ce5eb66ba7fe10707688c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab6b9fff8d11ce5eb66ba7fe10707688c" class="m-doc-self">do_num_skip_back</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a8793208cdbc89ac3539bbb6de564a6aa" class="m-doc">num_<wbr />skip_<wbr />back() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The number of samples to skip at the end of the last track</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a152afc6aeddd4ee332701468f11d6791"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a152afc6aeddd4ee332701468f11d6791" class="m-doc-self">do_num_skip_front</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a62fb99eae3eef0e639faa5115e9b3c53" class="m-doc">num_<wbr />skip_<wbr />front() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The number of samples to skip at the beginning of the first track</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aff77b0a5560c22019c2ffaa9ebf3c125"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga37efdf754736a2f5a4939ec675b57134" class="m-doc">lba_<wbr />count_<wbr />t</a> arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff77b0a5560c22019c2ffaa9ebf3c125" class="m-doc-self">do_offset</a>(</span><span class="m-doc-wrap">const int track) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#afaf853e180cf234e6ea7d35c92333009" class="m-doc">offset(const int track) const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">track&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The 0-based track to get the offset for</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The offset for the specified 0-based track</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a705d35ceca1ec9f870523de16ae7d49b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a705d35ceca1ec9f870523de16ae7d49b" class="m-doc-self">do_set_audio_size</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; audio_size) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ade21f6743a5cc569d6f154d1143de936" class="m-doc">set_<wbr />audio_<wbr />size(const AudioSize &amp;audio_<wbr />size)</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">audio_size&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="adea48ce82fc3d6e7495ce561324d8202"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adea48ce82fc3d6e7495ce561324d8202" class="m-doc-self">do_set_filename</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#ad8c48e735e6d82ed44f15904d0ed08e0" class="m-doc">set_filename(const std::<wbr />string &amp;filename)</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">filename&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Name of the audio file that is to be processed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a8408ba95e50d5597523fadffe13e1282"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8408ba95e50d5597523fadffe13e1282" class="m-doc-self">do_skips_back</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a90170a01c8563eb6817559d727547dab" class="m-doc">skips_<wbr />back() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><code>TRUE</code> iff context will signal to skip the last samples.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a44d5306eeacb3832d27a3bcd8aa4a632"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a44d5306eeacb3832d27a3bcd8aa4a632" class="m-doc-self">do_skips_front</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a1b11f4ffbc58394d9f6b504ed1f08556" class="m-doc">skips_<wbr />front() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><code>TRUE</code> iff context will signal to skip the first samples.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ac52f006b8a9cd30ab75e65946004ddc1"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac52f006b8a9cd30ab75e65946004ddc1" class="m-doc-self">do_total_tracks</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a5b8045227035103ee2af30a8b966b6d7" class="m-doc">total_<wbr />tracks() const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The number of tracks represented in this file</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="acd08d0e123669dc0bbed69a431fc33e4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />CalcContext::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acd08d0e123669dc0bbed69a431fc33e4" class="m-doc-self">do_track</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gae67e49c7b2758109558abf6148df998e" class="m-doc">sample_<wbr />count_<wbr />t</a> smpl) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span> <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Implements <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#aea40f5f4cccb32382986adbe31d731fa" class="m-doc">track(const sample_<wbr />count_<wbr />t smpl) const</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">smpl&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The sample to get the track for</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Track number of the track containing sample <code>smpl</code></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
