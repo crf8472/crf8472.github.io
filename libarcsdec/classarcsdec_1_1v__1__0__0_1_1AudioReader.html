@@ -95,19 +95,15 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5fe4237a5e08baa57a5aca2e3634c915" class="m-doc">acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) const -&gt; std::unique_ptr&lt;AudioSize&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a49df03a510d6167c8a7b0bdd3011c505" class="m-doc">acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) const -&gt; std::unique_ptr&lt;AudioSize&gt;</span>
             </dt>
             <dd>Acquire the AudioSize of a file.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab68c905589a4d2314f082dd1e0455f8c" class="m-doc">configurable_read_buffer</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
-            </dt>
-            <dd>Check if the read buffer size can be specified.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a14c0cbbd03ee39186ed262704be84445" class="m-doc">process_file</a>(</span><span class="m-doc-wrap">const std::string&amp; filename)</span>
             </dt>
             <dd>Process the file and return ARCSs v1 and v2 for all tracks.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af2377521dde6b5a1752d50202efa3452" class="m-doc">samples_per_read</a>(</span><span class="m-doc-wrap">) const -&gt; int64_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad1074226450872141a17fca23cefdff6" class="m-doc">samples_per_read</a>(</span><span class="m-doc-wrap">) const -&gt; std::size_t</span>
             </dt>
             <dd>Return the number of samples to read in one read operation.</dd>
             <dt>
@@ -115,7 +111,7 @@
             </dt>
             <dd>Register a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> instance to pass the read samples to.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ac1e9358a3335b03fe68000cd35db872e" class="m-doc">set_samples_per_read</a>(</span><span class="m-doc-wrap">const int64_t samples_per_read)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#a58e84f74ea7ba79b3d1f00133be85c03" class="m-doc">set_samples_per_read</a>(</span><span class="m-doc-wrap">const std::size_t samples_per_read)</span>
             </dt>
             <dd>Set the number of samples to read in one read operation.</dd>
           </dl>
@@ -161,9 +157,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a5fe4237a5e08baa57a5aca2e3634c915"><div>
+          <section class="m-doc-details" id="a49df03a510d6167c8a7b0bdd3011c505"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;AudioSize&gt; arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5fe4237a5e08baa57a5aca2e3634c915" class="m-doc-self">acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) const</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;AudioSize&gt; arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a49df03a510d6167c8a7b0bdd3011c505" class="m-doc-self">acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) const</span></span>
             </h3>
             <p>Acquire the AudioSize of a file.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -193,21 +189,6 @@
               </tbody>
             </table>
 <p>Acquiring the AudioSize includes validation.</p>
-          </div></section>
-          <section class="m-doc-details" id="ab68c905589a4d2314f082dd1e0455f8c"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab68c905589a4d2314f082dd1e0455f8c" class="m-doc-self">configurable_read_buffer</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Check if the read buffer size can be specified.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>TRUE if this reader has a configurable buffer, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>Returns TRUE if it can be specified which amount the reader should read in one pass.</p>
           </div></section>
           <section class="m-doc-details" id="a14c0cbbd03ee39186ed262704be84445"><div>
             <h3>
@@ -241,9 +222,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="af2377521dde6b5a1752d50202efa3452"><div>
+          <section class="m-doc-details" id="ad1074226450872141a17fca23cefdff6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int64_t arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af2377521dde6b5a1752d50202efa3452" class="m-doc-self">samples_per_read</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::size_t arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad1074226450872141a17fca23cefdff6" class="m-doc-self">samples_per_read</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Return the number of samples to read in one read operation.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -271,11 +252,10 @@
                 </tr>
               </tbody>
             </table>
-<aside class="m-note m-dim"><h4><a href="todo.html#_todo000001" class="m-doc">Todo</a></h4><p>This should be part of a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProviderBase.html" class="m-doc">SampleProviderBase</a> interface</p></aside>
           </div></section>
-          <section class="m-doc-details" id="ac1e9358a3335b03fe68000cd35db872e"><div>
+          <section class="m-doc-details" id="a58e84f74ea7ba79b3d1f00133be85c03"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac1e9358a3335b03fe68000cd35db872e" class="m-doc-self">set_samples_per_read</a>(</span><span class="m-doc-wrap">const int64_t samples_per_read)</span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a58e84f74ea7ba79b3d1f00133be85c03" class="m-doc-self">set_samples_per_read</a>(</span><span class="m-doc-wrap">const std::size_t samples_per_read)</span></span>
             </h3>
             <p>Set the number of samples to read in one read operation.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -289,7 +269,7 @@
                 </tr>
               </tbody>
             </table>
-<p>The default is BLOCKSIZE::DEFAULT.</p>
+<p>The default is <a href="structarcsdec_1_1v__1__0__0_1_1BLOCKSIZE.html#a96d42590407e35cd55ce9562673a5536" class="m-doc">BLOCKSIZE::<wbr />DEFAULT</a>.</p>
           </div></section>
         </section>
       </div>
@@ -336,7 +316,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

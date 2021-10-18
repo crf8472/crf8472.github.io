@@ -90,7 +90,7 @@
             </dt>
             <dd>Calculate a single ARCS for an audio file.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abed80e86a6294ca55cc2f4ec111f717b" class="m-doc">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
+              <span class="m-doc-wrap-bumper">auto <a href="#ace2934d484d3b6fb7a8a23021a55c7c5" class="m-doc">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
               const TOC&amp; toc) -&gt; std::pair&lt;Checksums, ARId&gt;</span>
             </dt>
             <dd>Calculate ARCS values for an audio file, using the given TOC.</dd>
@@ -101,7 +101,7 @@
             </dt>
             <dd>Calculate ARCSs for audio files.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abf5d0af9f6e4b5a5802e21f43b06b299" class="m-doc">selection</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a46c9530aa26b19e2218c13391b7d7b9f" class="m-doc">selection</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp;</span>
             </dt>
             <dd>Get the AudioReaderSelection used by this instance.</dd>
             <dt>
@@ -178,9 +178,9 @@
             </table>
 <p>The flags <code>skip_front</code> and <code>skip_back</code> control whether the track is processed as first or last track of an album. If <code>skip_front</code> is set to <code>TRUE</code>, the track is processed as first track of an album, meaning the first 2939 samples are skipped in the calculation according to the ARCS checksum definition. If <code>skip_back</code> is set to <code>TRUE</code>, the track is processed as the last track of an album, meaning that the last 5 frames of the input are skipped in the calculation.</p>
           </div></section>
-          <section class="m-doc-details" id="abed80e86a6294ca55cc2f4ec111f717b"><div>
+          <section class="m-doc-details" id="ace2934d484d3b6fb7a8a23021a55c7c5"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::pair&lt;Checksums, ARId&gt; arcsdec::<wbr />v_1_0_0::<wbr />ARCSCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abed80e86a6294ca55cc2f4ec111f717b" class="m-doc-self">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
+              <span class="m-doc-wrap-bumper">std::pair&lt;Checksums, ARId&gt; arcsdec::<wbr />v_1_0_0::<wbr />ARCSCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ace2934d484d3b6fb7a8a23021a55c7c5" class="m-doc-self">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
               const TOC&amp; toc)</span></span>
             </h3>
             <p>Calculate ARCS values for an audio file, using the given TOC.</p>
@@ -241,9 +241,9 @@
             </table>
 <p>It can be specified that the sequence of audiofiles forms an album by passing <code>TRUE</code> for both boolean parameters.</p><p>The ARCSs in the result will have the same order as the input files, so for any index <code>i: 0 &lt;= i &lt; audiofilenames.size()</code>, <code>result</code>[i] will be the result for <code>audiofilenames[i]</code>. The result will have the same size as audiofilenames.</p><p>Note that in this use case, it is not offered to compute the ARId of the album since the exact offsets are missing.</p>
           </div></section>
-          <section class="m-doc-details" id="abf5d0af9f6e4b5a5802e21f43b06b299"><div>
+          <section class="m-doc-details" id="a46c9530aa26b19e2218c13391b7d7b9f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; arcsdec::<wbr />v_1_0_0::<wbr />ARCSCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abf5d0af9f6e4b5a5802e21f43b06b299" class="m-doc-self">selection</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; arcsdec::<wbr />v_1_0_0::<wbr />ARCSCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a46c9530aa26b19e2218c13391b7d7b9f" class="m-doc-self">selection</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Get the AudioReaderSelection used by this instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -348,7 +348,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

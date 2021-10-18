@@ -100,17 +100,9 @@
             </dt>
             <dd>Service: interpret sequences of 2 or 4 big endian bytes as integer.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1BlockCreator.html" class="m-doc">v_1_0_0::BlockCreator</a>
-            </dt>
-            <dd>Base class of a sample block creator.</dd>
-            <dt>
-              struct <a href="structarcsdec_1_1v__1__0__0_1_1BLOCKSIZE__t.html" class="m-doc">v_1_0_0::BLOCKSIZE_t</a>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1BLOCKSIZE.html" class="m-doc">v_1_0_0::BLOCKSIZE</a>
             </dt>
             <dd>Symbolic constants for certain block sizes (in PCM 32 bit samples).</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1BufferedAudioReaderImpl.html" class="m-doc">v_1_0_0::BufferedAudioReaderImpl</a> <span class="m-label m-danger">deprecated</span>
-            </dt>
-            <dd><a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a> with configurable read buffer size.</dd>
             <dt>
               struct <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html" class="m-doc">v_1_0_0::CDDAValidator</a>
             </dt>
@@ -230,10 +222,6 @@
             </dt>
             <dd>Inteface for providers of sample sequences.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProviderBase.html" class="m-doc">v_1_0_0::SampleProviderBase</a>
-            </dt>
-            <dd>Base class for <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a> implementations.</dd>
-            <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1TOCParser.html" class="m-doc">v_1_0_0::TOCParser</a>
             </dt>
             <dd>Format-independent parser for CD TOC metadata files.</dd>
@@ -287,6 +275,12 @@
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__logging.html#gae20c76fce4214c6f14901bec03b23071" class="m-doc">api_version_is_at_least</a>(</span><span class="m-doc-wrap">const int major,
+              const int minor,
+              const int patch) -&gt; bool</span>
+            </dt>
+            <dd>Compares specified version to actual version.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename S, typename T, std::enable_if_t&lt;details::signedness&lt;S, T&gt;::value, int&gt; = 0&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="group__metaparser.html#gadf50b74749b9ce715d8f9fd9302ba41b" class="m-doc">cast_or_throw</a>(</span><span class="m-doc-wrap">const T value) -&gt; S -&gt; auto</span>
             </dt>
@@ -297,7 +291,7 @@
             <dd>Returns TRUE if <code>format</code> is an audio format, otherwise FALSE.</dd>
             <dt>
               <div class="m-doc-template">template&lt;class T, typename... Args&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__descriptors.html#ga83aeacba6d4c5167203d06bd06a74358" class="m-doc">make_descriptor</a>(</span><span class="m-doc-wrap">Args &amp;&amp; ... args) -&gt; std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="group__descriptors.html#ga0e8f0538c218e1dd63b48dc7f68a8d15" class="m-doc">make_descriptor</a>(</span><span class="m-doc-wrap">Args &amp;&amp; ... args) -&gt; std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;</span>
             </dt>
             <dd>Instantiate <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>.</dd>
             <dt>
@@ -314,9 +308,33 @@
           <h2><a href="#var-members">Variables</a></h2>
           <dl class="m-doc">
             <dt>
-              const <a href="structarcsdec_1_1v__1__0__0_1_1BLOCKSIZE__t.html" class="m-doc">BLOCKSIZE_<wbr />t</a> <a href="group__sampleproc.html#gab4d8a6f78e66bfd9b9c75e28abcc025f" class="m-doc">BLOCKSIZE</a>
+              const std::string <a href="group__logging.html#ga514aed34901e7f12cf9c7863dbb3d2b7" class="m-doc">LIBARCSDEC_GIT_VERSION</a>
             </dt>
-            <dd>Global symbolic block sizes.</dd>
+            <dd>Version info as shown by <code>git describe --always HEAD</code>.</dd>
+            <dt>
+              const std::string <a href="group__logging.html#gaa59967b9451abeb3db0d6d84a01e0cd7" class="m-doc">LIBARCSDEC_NAME</a>
+            </dt>
+            <dd>Library name.</dd>
+            <dt>
+              const std::string <a href="group__logging.html#ga4b916a755b5d2b72a43b742ad0027e57" class="m-doc">LIBARCSDEC_VERSION</a>
+            </dt>
+            <dd>Complete semantic version information.</dd>
+            <dt>
+              const int <a href="group__logging.html#gaca6d441babdb5c4b6b0650695f66d764" class="m-doc">LIBARCSDEC_VERSION_MAJOR</a>
+            </dt>
+            <dd>Major version number.</dd>
+            <dt>
+              const int <a href="group__logging.html#gafaeaf8a942320af34282a946eef2dfdd" class="m-doc">LIBARCSDEC_VERSION_MINOR</a>
+            </dt>
+            <dd>Minor version number.</dd>
+            <dt>
+              const int <a href="group__logging.html#ga03acda43482f860ad5d8d8e2d8eeed87" class="m-doc">LIBARCSDEC_VERSION_PATCH</a>
+            </dt>
+            <dd>Patch level.</dd>
+            <dt>
+              const std::string <a href="group__logging.html#ga135065d8f8292fd839ffdd171f503501" class="m-doc">LIBARCSDEC_VERSION_SUFFIX</a>
+            </dt>
+            <dd>Version suffix (e.g. &#x27;alpha.1&#x27;, &#x27;beta.6&#x27;, &#x27;rc.3&#x27; etc.).</dd>
             <dt>
               const int32_t <a href="group__audioreader.html#ga02a8e855600bda74783c37f9b25f27d1" class="m-doc">MAX_SAMPLES_TO_READ</a>
             </dt>
@@ -367,7 +385,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

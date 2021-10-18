@@ -64,14 +64,14 @@
             </li>
           </ul>
         </div>
-<p>A <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a> is a source for sample sequences and updated AudioSize values. It can signal different events while processing the audio input. A <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> can be attached to it as an addressee of those events.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcsdec_1_1v__1__0__0_1_1SampleProviderBase.html" class="m-doc">SampleProviderBase</a></p></aside>
+<p>A <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a> is a source for sample sequences and updated AudioSize values. It can signal different events while processing the audio input. A <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> can be attached to it as an addressee of those events.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a></p></aside>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProviderBase.html" class="m-doc">v_1_0_0::SampleProviderBase</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">v_1_0_0::AudioReaderImpl</a>
             </dt>
-            <dd>Base class for <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a> implementations.</dd>
+            <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> implementations.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -95,7 +95,7 @@
             </dt>
             <dd>Attach a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0f1ff1af754ef03fe8a716d390a44a6a" class="m-doc">processor</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>*</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab28ca6bcd7478d2a07ecca99bc7ff3fd" class="m-doc">processor</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>*</span>
             </dt>
             <dd>Return the registered <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</dd>
             <dt>
@@ -125,7 +125,7 @@
             </dt>
             <dd>Register a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aaf45aa60a55464b156e06516e33c6e75" class="m-doc">do_processor</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3589f6d5ae96c6a494cedaa175533c65" class="m-doc">do_processor</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Return the registered <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</dd>
             <dt>
@@ -166,9 +166,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a0f1ff1af754ef03fe8a716d390a44a6a"><div>
+          <section class="m-doc-details" id="ab28ca6bcd7478d2a07ecca99bc7ff3fd"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>* arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f1ff1af754ef03fe8a716d390a44a6a" class="m-doc-self">processor</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>* arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab28ca6bcd7478d2a07ecca99bc7ff3fd" class="m-doc-self">processor</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Return the registered <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -237,9 +237,9 @@
             </table>
 <p>This will register all callback methods of the <code>processor</code>. Already registered callbacks will be overwritten by this method.</p><p>The method is a mere convenience for completely registering a single <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> instance.</p>
           </div></section>
-          <section class="m-doc-details" id="aaf45aa60a55464b156e06516e33c6e75"><div>
+          <section class="m-doc-details" id="a3589f6d5ae96c6a494cedaa175533c65"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>* arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaf45aa60a55464b156e06516e33c6e75" class="m-doc-self">do_processor</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>* arcsdec::<wbr />v_1_0_0::<wbr />SampleProvider::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3589f6d5ae96c6a494cedaa175533c65" class="m-doc-self">do_processor</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
             <p>Return the registered <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -335,7 +335,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

@@ -57,9 +57,9 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pro-methods">Protected functions</a></li>
                 <li><a href="#pri-methods">Private functions</a></li>
               </ul>
             </li>
@@ -70,18 +70,9 @@
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProviderBase.html" class="m-doc">v_1_0_0::SampleProviderBase</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">v_1_0_0::SampleProvider</a>
             </dt>
-            <dd>Base class for <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a> implementations.</dd>
-          </dl>
-        </section>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1BufferedAudioReaderImpl.html" class="m-doc">v_1_0_0::BufferedAudioReaderImpl</a> <span class="m-label m-danger">deprecated</span>
-            </dt>
-            <dd><a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a> with configurable read buffer size.</dd>
+            <dd>Inteface for providers of sample sequences.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -97,15 +88,11 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a319920d2951a404888cffc0fe9fdced8" class="m-doc">acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) -&gt; std::unique_ptr&lt;AudioSize&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae734fee3936380bf33c0414b0531a448" class="m-doc">acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) -&gt; std::unique_ptr&lt;AudioSize&gt;</span>
             </dt>
-            <dd>Provides implementation for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html#a319920d2951a404888cffc0fe9fdced8" class="m-doc">acquire_<wbr />size()</a> of a <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>.</dd>
+            <dd>Provides implementation for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html#ae734fee3936380bf33c0414b0531a448" class="m-doc">acquire_<wbr />size()</a> of a <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a60a86970e86caaa231c4823809f74d9c" class="m-doc">configurable_read_buffer</a>(</span><span class="m-doc-wrap">) const -&gt; bool</span>
-            </dt>
-            <dd>Returns TRUE if the number of samples to read at once is configurable.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a58c7f90bddb51eb52f43d7d580dab646" class="m-doc">descriptor</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0f170ce045f9e5f30bc805c7f7bd9d46" class="m-doc">descriptor</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;</span>
             </dt>
             <dd>Create a descriptor for this <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> implementation.</dd>
             <dt>
@@ -113,47 +100,48 @@
             </dt>
             <dd>Provides implementation for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html#a56e5728085cdbebbfcf5e70f86905d05" class="m-doc">process_<wbr />file()</a> of some <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a10d77c5b8240222a66c50a13439a76d8" class="m-doc">samples_per_read</a>(</span><span class="m-doc-wrap">) const -&gt; int64_t</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a475baf8eeee09be68fe8b8104cd69ba4" class="m-doc">samples_per_read</a>(</span><span class="m-doc-wrap">) const -&gt; std::size_t</span>
             </dt>
             <dd>Return the number of samples to read in one read operation.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ae46d56bdeab037e01bebe48097421752" class="m-doc">set_samples_per_read</a>(</span><span class="m-doc-wrap">const int64_t samples_per_read)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#af6caf202259a9d26cc5d3e908a44345e" class="m-doc">set_samples_per_read</a>(</span><span class="m-doc-wrap">const std::size_t samples_per_read)</span>
             </dt>
             <dd>Set the number of samples to read in one read operation.</dd>
+          </dl>
+        </section>
+        <section id="pro-methods">
+          <h2><a href="#pro-methods">Protected functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a75bd18028e875d28e91c1bcbcef110ce">
+              <span class="m-doc-wrap-bumper">void <a href="#a75bd18028e875d28e91c1bcbcef110ce" class="m-doc-self">attach_processor_impl</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>&amp; processor)</span>
+            </dt>
+            <dd>Default implementation of <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html#a6ebbb13caf9abde46a11911a27839bf7" class="m-doc">attach_<wbr />processor()</a>.</dd>
+            <dt id="affc857993777263a8d5112d0441e1337">
+              <span class="m-doc-wrap-bumper">auto <a href="#affc857993777263a8d5112d0441e1337" class="m-doc-self">use_processor</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>*</span>
+            </dt>
+            <dd>Use the internal <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</dd>
           </dl>
         </section>
         <section id="pri-methods">
           <h2><a href="#pri-methods">Private functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1e46848c77a37407fdba4c29095063e7" class="m-doc">do_acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) -&gt; std::unique_ptr&lt;AudioSize&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4c2fce2e1c62d67cffbeed5ac3215c0c" class="m-doc">do_acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) -&gt; std::unique_ptr&lt;AudioSize&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Provides implementation for <code><a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html#a319920d2951a404888cffc0fe9fdced8" class="m-doc">acquire_<wbr />size()</a></code> of an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a35ff324b35875a4898bd208f0529ac03" class="m-doc">do_configurable_read_buffer</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd>Returns TRUE if the number of samples to read at once is configurable.</dd>
+            <dd>Provides implementation for <code><a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html#ae734fee3936380bf33c0414b0531a448" class="m-doc">acquire_<wbr />size()</a></code> of an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#adcc97c0d98242770ae8ce346a4272c3c" class="m-doc">do_process_file</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Provides implementation for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html#a56e5728085cdbebbfcf5e70f86905d05" class="m-doc">process_<wbr />file()</a> of some <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ada0bc01b0e59a6f99b5263fe357b0c57" class="m-doc">do_samples_per_read</a>(</span><span class="m-doc-wrap">) const -&gt; int64_t <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd>Return the number of samples to read in one read operation.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a1d37fceae15ff8d14b6333f6dfe31518" class="m-doc">do_set_samples_per_read</a>(</span><span class="m-doc-wrap">const int64_t samples_per_read) <span class="m-label m-flat m-warning">virtual</span></span>
-            </dt>
-            <dd>Set the number of samples to read in one read operation.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a319920d2951a404888cffc0fe9fdced8"><div>
+          <section class="m-doc-details" id="ae734fee3936380bf33c0414b0531a448"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;AudioSize&gt; arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a319920d2951a404888cffc0fe9fdced8" class="m-doc-self">acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename)</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;AudioSize&gt; arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae734fee3936380bf33c0414b0531a448" class="m-doc-self">acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename)</span></span>
             </h3>
-            <p>Provides implementation for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html#a319920d2951a404888cffc0fe9fdced8" class="m-doc">acquire_<wbr />size()</a> of a <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>.</p>
+            <p>Provides implementation for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html#ae734fee3936380bf33c0414b0531a448" class="m-doc">acquire_<wbr />size()</a> of a <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -181,23 +169,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a60a86970e86caaa231c4823809f74d9c"><div>
+          <section class="m-doc-details" id="a0f170ce045f9e5f30bc805c7f7bd9d46"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a60a86970e86caaa231c4823809f74d9c" class="m-doc-self">configurable_read_buffer</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Returns TRUE if the number of samples to read at once is configurable.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>TRUE if the number of samples to read at once is configurable.</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a58c7f90bddb51eb52f43d7d580dab646"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt; arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a58c7f90bddb51eb52f43d7d580dab646" class="m-doc-self">descriptor</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt; arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0f170ce045f9e5f30bc805c7f7bd9d46" class="m-doc-self">descriptor</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Create a descriptor for this <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> implementation.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -241,9 +215,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a10d77c5b8240222a66c50a13439a76d8"><div>
+          <section class="m-doc-details" id="a475baf8eeee09be68fe8b8104cd69ba4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int64_t arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a10d77c5b8240222a66c50a13439a76d8" class="m-doc-self">samples_per_read</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::size_t arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a475baf8eeee09be68fe8b8104cd69ba4" class="m-doc-self">samples_per_read</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Return the number of samples to read in one read operation.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -255,18 +229,29 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ae46d56bdeab037e01bebe48097421752"><div>
+          <section class="m-doc-details" id="af6caf202259a9d26cc5d3e908a44345e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae46d56bdeab037e01bebe48097421752" class="m-doc-self">set_samples_per_read</a>(</span><span class="m-doc-wrap">const int64_t samples_per_read)</span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af6caf202259a9d26cc5d3e908a44345e" class="m-doc-self">set_samples_per_read</a>(</span><span class="m-doc-wrap">const std::size_t samples_per_read)</span></span>
             </h3>
             <p>Set the number of samples to read in one read operation.</p>
-<p>The default is BLOCKSIZE::DEFAULT.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">samples_per_read&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Number of samples to read/buffer at once.</td>
+                </tr>
+              </tbody>
+            </table>
+<p>The default is <a href="structarcsdec_1_1v__1__0__0_1_1BLOCKSIZE.html#a96d42590407e35cd55ce9562673a5536" class="m-doc">BLOCKSIZE::<wbr />DEFAULT</a>.</p>
           </div></section>
-          <section class="m-doc-details" id="a1e46848c77a37407fdba4c29095063e7"><div>
+          <section class="m-doc-details" id="a4c2fce2e1c62d67cffbeed5ac3215c0c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;AudioSize&gt; arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e46848c77a37407fdba4c29095063e7" class="m-doc-self">do_acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;AudioSize&gt; arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4c2fce2e1c62d67cffbeed5ac3215c0c" class="m-doc-self">do_acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
-            <p>Provides implementation for <code><a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html#a319920d2951a404888cffc0fe9fdced8" class="m-doc">acquire_<wbr />size()</a></code> of an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>.</p>
+            <p>Provides implementation for <code><a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html#ae734fee3936380bf33c0414b0531a448" class="m-doc">acquire_<wbr />size()</a></code> of an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -292,20 +277,6 @@
                   <td>If the file could not be read</td>
                 </tr>
               </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a35ff324b35875a4898bd208f0529ac03"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a35ff324b35875a4898bd208f0529ac03" class="m-doc-self">do_configurable_read_buffer</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Returns TRUE if the number of samples to read at once is configurable.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>TRUE if the number of samples to read at once is configurable.</td>
-                </tr>
-              </tfoot>
             </table>
           </div></section>
           <section class="m-doc-details" id="adcc97c0d98242770ae8ce346a4272c3c"><div>
@@ -339,27 +310,6 @@
                 </tr>
               </tbody>
             </table>
-          </div></section>
-          <section class="m-doc-details" id="ada0bc01b0e59a6f99b5263fe357b0c57"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">int64_t arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ada0bc01b0e59a6f99b5263fe357b0c57" class="m-doc-self">do_samples_per_read</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">virtual</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Return the number of samples to read in one read operation.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Number of samples per read operation.</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a1d37fceae15ff8d14b6333f6dfe31518"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioReaderImpl::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1d37fceae15ff8d14b6333f6dfe31518" class="m-doc-self">do_set_samples_per_read</a>(</span><span class="m-doc-wrap">const int64_t samples_per_read) <span class="m-label m-warning">virtual</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Set the number of samples to read in one read operation.</p>
-<p>The default is BLOCKSIZE::DEFAULT.</p>
           </div></section>
         </section>
       </div>
@@ -406,7 +356,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.20 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
