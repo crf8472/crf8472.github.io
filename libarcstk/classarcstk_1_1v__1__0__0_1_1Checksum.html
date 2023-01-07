@@ -50,7 +50,7 @@
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
         </h1>
         <p>An AccurateRip checksum for a single file or track.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,8 +62,8 @@
               </ul>
             </li>
           </ul>
-        </div>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> has a value_type. This is its numeric representation. It is an unsigned integer of 32 bit length.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be represented by its numeric <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> which is of type value_type. A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be compared for equality with instances of its value_type using operator ==.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> has a converting constructor for its value_type, thus every parameter that expects a checksum can be assigned a value of type value_type instead of a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p><p>Operator &lt;&lt; is overloaded for printing <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> to streams. The <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> will then occurr in its standard layout: as a hexadecimal number without the base &#x27;0x&#x27;, all digits in upper case, and filled with leading zeros up to a width of 8 digits.</p><p>As a technical convenience, a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may be <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> which means: it carries no value. Calling <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> on an <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may lead any result. Two empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances qualify as equal when compared using operator ==.</p>
+        </nav>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> has a value_type. This is its numeric representation. It is an unsigned integer of 32 bit length.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be represented by its numeric <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> which is of type value_type. A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be compared for equality with instances of its value_type using operator ==.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> has a converting constructor for its value_type, thus every parameter that expects a checksum can be assigned a value of type value_type instead of a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>. Some compilers will do the conversion with other numerical types but issue a warning if a conversion from signed to unsigned types is required (e.g. -Wsign-conversion).</p><p>Operator &lt;&lt; is overloaded for printing <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> to streams. The <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> will then occurr in its standard layout: as a hexadecimal number without the base &#x27;0x&#x27;, all digits in upper case, and filled with leading zeros up to a width of 8 digits.</p><p>As a technical convenience, a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may be <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> which means: it carries no value. Calling <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> on an <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may lead any result. Two empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances qualify as equal when compared using operator ==.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -193,13 +193,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

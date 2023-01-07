@@ -48,7 +48,7 @@
         <h1>
           AccurateRip Checksum Matching <span class="m-thin">module</span></h1>
         <p><a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> local <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">AccurateRip response</a>.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -60,7 +60,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> provides an interface to match the ARCSs of some audio input against a response from AccurateRip.</p><p>Use a <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> by just calling its constructor with the required input. Thereafter the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> provides the caller with information about the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a>:</p><ul><li><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a880eb0fec60b77bff1a8cbd5a5f7dcbc" class="m-doc">matches()</a> indicates whether a complete match was found</li><li><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a893d1a44a636e9a070442c1f5a297853" class="m-doc">best_<wbr />match()</a> points to a block with best matching</li><li><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a1469e76bbbfe0951d503db6240769ef2" class="m-doc">best_<wbr />match_<wbr />is_<wbr />v2()</a> indicates whether best_match() refers to a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> of type ARCSv2</li><li><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#ae52a60b14c0c08255715d5ae5ee41f5f" class="m-doc">best_<wbr />difference()</a> yields the number of non-matching tracks in the best_match()</li><li><a href="classarcstk_1_1v__1__0__0_1_1Matcher.html#a8fb5dd5f48162a11da0286e4ffaee5c5" class="m-doc">match()</a> yields the entire <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> matrix</li></ul><p>A <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> returns a <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> that represents a matrix of numeric comparisons: the result of matching the <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> to each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p><p>While <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implements the comparison strategy and the above convenience functions about the result, the <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> implements the actual result of the comparison.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Match.html#ae3f4edc3e4d2b9f21bc8c2af77d3ba74" class="m-doc">Match::<wbr />track(block, track, isV2)</a> provides access to the result of any single comparison by its block index, track index and ARCS algorithm version. The block is the 0-based index of the set of <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>, the track is the 0-based index of the track within the block and the boolean <code>isV2</code> indicates by <code>TRUE</code> that the comparison was performed for ARCSv2.</p><p>Three <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> implementations are provided.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> matches each checksum in a list of track-based <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against the value of the corresponding track in each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> of the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. This implements the verification process of a complete disc image. <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> requires an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> and respects it in the match against the <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ListMatcher.html" class="m-doc">ListMatcher</a> performs the same logic as <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>, but works on a single list of reference checksums instead of an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> matches a set of file-based <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> by trying to match each of the <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against <em>each</em> of the sums in each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a>. It is used for matching a set of track files in arbitrary order. An <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is optional.</p>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
@@ -257,13 +257,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

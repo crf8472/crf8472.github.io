@@ -50,7 +50,7 @@
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
         </h1>
         <p>Interface for information about the current audio input.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,7 +62,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> provides the metadata that is required to perform the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> correctly.</p><p>The <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> determines whether the input is single- or multitrack and whether it has to skip samples on the beginning of the first or the end of the last track.</p><p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> also provides service methods for identifying the first and last sample of a track relevant for <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> or to get the track for a given sample.</p><p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> offers also access to its underlying <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> data.</p><p><a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> instances are created exclusively via the variants of <a href="group__calc.html#gac0e17bec133e06465ad5a90f14ec4981" class="m-doc">make_<wbr />context()</a>.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> is intended as a &quot;read-only&quot; object, it should never be required to modify the <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> of an audio input. The only exception is <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html#a4a78422f97fd3f6095aafef741254d43" class="m-doc">notify_<wbr />skips()</a> which depends on the concrete algorithm that is only known within <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>. Thus, <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> must inform its <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> about it.</p><aside class="m-note m-info"><h4>Note</h4><p>Currently it should not be required for the user to subclass <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a>. All subclasses required for calculating ARCSv1 and ARCSv2 in single- and multitrack scenarios are already provided by libarcstk. Note that subclassing <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> would require to also add a new variant of <a href="group__calc.html#gac0e17bec133e06465ad5a90f14ec4981" class="m-doc">make_<wbr />context()</a> that can yield an instance of this subclass.</p></aside>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
@@ -599,7 +599,7 @@
                 </tr>
               </tfoot>
             </table>
-<p>If total_samples() is 0, the method will return 0 regardless of the actual value of <code>smpl</code>.</p><p>If <code>smpl</code> is bigger than <code>total_samples() - 1</code>, the method will return an invalid high track number (&quot;infinite&quot;).</p><p>The user has therefore to check for the validity of the result by checking whether <code>0 &lt; result &lt;= <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html#a03e49ab0a13c25be084157b8536272e7" class="m-doc">CDDA::<wbr />MAX_TRACKCOUNT</a></code>.</p>
+<p>If total_samples() is 0, the method will return 0 regardless of the actual value of <code>smpl</code>.</p><p>If <code>smpl</code> is bigger than <code>total_samples() - 1</code>, the method will return an invalid high track number (&quot;infinite&quot;).</p><p>The user has therefore to check for the validity of the result by checking whether <code>0 &lt; result &lt;= <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html#a31752b5da2ecef796eef296c4f5eecb2" class="m-doc">CDDA::<wbr />MAX_TRACKCOUNT</a></code>.</p>
           </div></section>
           <section class="m-doc-details" id="ab91302836d3a9695399acdbbf5f38fd2"><div>
             <h3>
@@ -979,13 +979,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

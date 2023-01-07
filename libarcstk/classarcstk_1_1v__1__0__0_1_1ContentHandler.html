@@ -50,7 +50,7 @@
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parse_8hpp.html">&lt;parse.hpp&gt;</a></div>
         </h1>
         <p>Interface for <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> content handlers.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -63,7 +63,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>Add actual behaviour to an <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a>. A concrete subclass of <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> implements the handling of each syntactic entity the <a href="classarcstk_1_1v__1__0__0_1_1ARStreamParser.html" class="m-doc">ARStreamParser</a> emits.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> reacts to the following events:</p><ul><li>Start of input (once on beginning the parsing process)</li><li>Start of a block (once on every block)</li><li><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>, i.e. the header of a block (once on every block)</li><li>A triplet (once or more times on every block)</li><li>End of a block (once on every block)</li><li>End of input (once on the end of the parsing process)</li></ul><p>Event <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a41ebcc16d1af40a2626370f53e4e5802" class="m-doc">start_<wbr />input()</a> occurrs before the first actual bytes are parsed. Event <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html#a6933a72412063fda5e452df1f124b23c" class="m-doc">end_<wbr />input()</a> occurrs after the last actual bytes are parsed.</p><p>The <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> is not represented as such, but as a sequence of the four numeric constants that are required to compute the actual <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p><p>Each triplet comes with an ARCS for the entire track, a confidence value and an ARCS for frame 450 of the track.</p><p>If a parsing error occurrs, the <a href="classarcstk_1_1v__1__0__0_1_1ContentHandler.html" class="m-doc">ContentHandler</a> will receive additional validity flags to indicate which members of the last triplet were parsed successfully and which were not.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1DefaultContentHandler.html" class="m-doc">DefaultContentHandler</a></p></aside>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
@@ -416,13 +416,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

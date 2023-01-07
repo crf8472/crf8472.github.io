@@ -50,7 +50,7 @@
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="match_8hpp.html">&lt;match.hpp&gt;</a></div>
         </h1>
         <p>Interface: Result of matching <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,7 +62,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>A <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> is the result of matching given <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. A <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> is obtained by instantiating a <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> and calling <code>match()</code> on it. It holds the result of any matching operation the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> has performed. Access to each of these results is provided in terms of <code>block:track:version</code>. The <code>block</code> and <code>track</code> address components are integers, that refer to the respective 0-based block and 0-based track in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. The <code>version</code> is a boolean that indicates whether the match is for ARCSv2 (<code>TRUE</code>) or for ARCSv1 (<code>FALSE</code>).</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
@@ -295,7 +295,7 @@
                 </tr>
               </tfoot>
             </table>
-<aside class="m-note m-info"><h4>Note</h4><p>The size of a <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> with a number <svg class="m-math" style="width: 0.518em; height: 0.865em; vertical-align: -0.000em;" viewBox="0 -8.302191 4.977105 8.302191">
+<aside class="m-note m-info"><h4>Note</h4><p>The size of a <a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> with a number <svg class="m-math" style="width: 0.518em; height: 0.865em;" viewBox="0 -8.302191 4.977105 8.302191">
 <title>
 $b$
 </title>
@@ -305,7 +305,7 @@ $b$
 <g id='eq1-page1'>
 <use x='0' y='0' xlink:href='#eq1-g0-98'/>
 </g>
-</svg> of <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a2c849997734366b0ec0f3d569c8e3fdf" class="m-doc">total_<wbr />blocks()</a> and <svg class="m-math" style="width: 0.440em; height: 0.766em; vertical-align: -0.000em;" viewBox="0 -7.353395 4.22716 7.353395">
+</svg> of <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a2c849997734366b0ec0f3d569c8e3fdf" class="m-doc">total_<wbr />blocks()</a> and <svg class="m-math" style="width: 0.440em; height: 0.766em;" viewBox="0 -7.353395 4.22716 7.353395">
 <title>
 $t$
 </title>
@@ -315,7 +315,7 @@ $t$
 <g id='eq2-page1'>
 <use x='0' y='0' xlink:href='#eq2-g0-116'/>
 </g>
-</svg> <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a3c5a6a6672c7c5d53a3b39205b782ed3" class="m-doc">tracks_<wbr />per_<wbr />block()</a> is <svg class="m-math" style="width: 6.981em; height: 1.245em; vertical-align: -0.312em;" viewBox="0 -8.966376 67.014743 11.955168">
+</svg> <a href="classarcstk_1_1v__1__0__0_1_1Match.html#a3c5a6a6672c7c5d53a3b39205b782ed3" class="m-doc">tracks_<wbr />per_<wbr />block()</a> is <svg class="m-math" style="width: 6.981em; height: 1.245em;" viewBox="0 -8.966376 67.014743 11.955168">
 <title>
 $b * (2 * t + 1)$
 </title>
@@ -340,7 +340,7 @@ $b * (2 * t + 1)$
 <use x='56.609427' y='0' xlink:href='#eq3-g2-49'/>
 <use x='62.462417' y='0' xlink:href='#eq3-g2-41'/>
 </g>
-</svg>. The coefficient <svg class="m-math" style="width: 0.610em; height: 0.803em; vertical-align: -0.000em;" viewBox="0 -7.704442 5.85299 7.704442">
+</svg>. The coefficient <svg class="m-math" style="width: 0.610em; height: 0.803em;" viewBox="0 -7.704442 5.85299 7.704442">
 <title>
 $2$
 </title>
@@ -350,7 +350,7 @@ $2$
 <g id='eq4-page1'>
 <use x='0' y='0' xlink:href='#eq4-g0-50'/>
 </g>
-</svg> is required since each block is matched against ARCSv1 and ARCSv2 sums. The <svg class="m-math" style="width: 1.558em; height: 0.898em; vertical-align: -0.095em;" viewBox="0 -7.704442 14.957642 8.617643">
+</svg> is required since each block is matched against ARCSv1 and ARCSv2 sums. The <svg class="m-math" style="width: 1.558em; height: 0.898em;" viewBox="0 -7.704442 14.957642 8.617643">
 <title>
 $+1$
 </title>
@@ -782,13 +782,13 @@ $+1$
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Toolkit to calculate and verify AccurateRip checksums and ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
