@@ -47,10 +47,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::DescriptorFlac <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="readerflac_8hpp.html">&lt;readerflac.hpp&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="readerflac_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/readerflac.hpp&gt;</a></div>
         </h1>
         <p>Libflac-based reader for fLaC containers holding fLaC data.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,7 +62,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
 <p>Represents a Flac container holding samples conforming to CDDA. That is 16 bit, 2 channels, 44100 samples/sec as integer representation.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
@@ -76,10 +76,6 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a3da7b638771ab170484871575e0b2483">
-              <span class="m-doc-wrap-bumper"><a href="#a3da7b638771ab170484871575e0b2483" class="m-doc-self">DescriptorFlac</a>(</span><span class="m-doc-wrap">)</span>
-            </dt>
-            <dd>Constructor.</dd>
             <dt id="a41580f3c0f4b9239423199b9e2dec1de">
               <span class="m-doc-wrap-bumper"><a href="#a41580f3c0f4b9239423199b9e2dec1de" class="m-doc-self">~DescriptorFlac</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -90,11 +86,6 @@
           <h2><a href="#pri-methods">Private functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af95ee8fb32178a5578e3bd6f506e0920" class="m-doc">do_accepts_bytes</a>(</span><span class="m-doc-wrap">const std::vector&lt;unsigned char&gt;&amp; bytes,
-              const uint64_t&amp; offset) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
-            </dt>
-            <dd>Test if this format is recognized on the given input bytes.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#af20cb6d09226f17b8efe051b1406a0fb" class="m-doc">do_name</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns &quot;Flac&quot;.</dd>
@@ -102,35 +93,6 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="af95ee8fb32178a5578e3bd6f506e0920"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />DescriptorFlac::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af95ee8fb32178a5578e3bd6f506e0920" class="m-doc-self">do_accepts_bytes</a>(</span><span class="m-doc-wrap">const std::vector&lt;unsigned char&gt;&amp; bytes,
-              const uint64_t&amp; offset) const <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Test if this format is recognized on the given input bytes.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">bytes&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The byte sequence to check</td>
-                </tr>
-                <tr>
-                  <td>offset&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The offset to byte 0 in the file</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if the bytes match the <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorFlac.html" class="m-doc">DescriptorFlac</a>, otherwise FALSE</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>The test is made against a slice of at least 4 bytes with offset from the beginning of the file. The following three tests are performed: Are bytes 0-3 of value 0x664C6143 (which is &quot;fLaC&quot; in ASCII)?</p>
-          </div></section>
           <section class="m-doc-details" id="af20cb6d09226f17b8efe051b1406a0fb"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::string arcsdec::<wbr />v_1_0_0::<wbr />DescriptorFlac::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af20cb6d09226f17b8efe051b1406a0fb" class="m-doc-self">do_name</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
@@ -184,13 +146,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

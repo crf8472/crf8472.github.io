@@ -47,10 +47,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::FileReaderSelector <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptors_8hpp.html">&lt;descriptors.hpp&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="selection_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/selection.hpp&gt;</a></div>
         </h1>
-        <p>A selection mechanism for a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>.</p>
-        <div class="m-block m-default">
+        <p>Interface for a selector on a set of <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> instances.</p>
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -59,28 +59,27 @@
                 <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pri-methods">Private functions</a></li>
               </ul>
             </li>
           </ul>
-        </div>
-<p>A <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> applies FileTests to FileReaderDescriptors to select a descriptor with a certain test result.</p><p>It implements two different decisions. Implementing <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html#ab540750cc55a8c85f939d229f08af1bc" class="m-doc">matches()</a> defines which descriptors are candidates to be selected. Implementing <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html#a637b3f4e68319de82afe733e58533e93" class="m-doc">select()</a> defines which of the matching candidates is concretely selected.</p><aside class="m-note m-info"><h4>Note</h4><p>Instances of this class are non-copyable and non-movable but provide protected special members for copy and move that can be used in subclasses.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcsdec_1_1v__1__0__0_1_1DefaultSelector.html" class="m-doc">DefaultSelector</a></p></aside>
+        </nav>
+<aside class="m-note m-default"><h4>See also</h4><p><a href="classarcsdec_1_1v__1__0__0_1_1DefaultSelector.html" class="m-doc">DefaultSelector</a></p></aside>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultSelector.html" class="m-doc">v_1_0_0::DefaultSelector</a> <span class="m-label m-flat m-warning">final</span>
             </dt>
-            <dd>Default selector.</dd>
+            <dd><a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> for first descriptor (in order of occurrence) with highest preference.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1IdSelector.html" class="m-doc">v_1_0_0::IdSelector</a> <span class="m-label m-flat m-warning">final</span>
+            </dt>
+            <dd><a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> for a specific descriptor id.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a6d7d9599f71c9c9fe5d3b64b3350023e">
-              <span class="m-doc-wrap-bumper"><a href="#a6d7d9599f71c9c9fe5d3b64b3350023e" class="m-doc-self">FileReaderSelector</a>(</span><span class="m-doc-wrap">)</span>
-            </dt>
-            <dd>Default constructor.</dd>
             <dt id="a94c157698079c7188cd765cf12f868be">
               <span class="m-doc-wrap-bumper"><a href="#a94c157698079c7188cd765cf12f868be" class="m-doc-self">~FileReaderSelector</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -91,105 +90,54 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab540750cc55a8c85f939d229f08af1bc" class="m-doc">matches</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              const std::set&lt;std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">FileTest</a>&gt;&gt;&amp; tests,
-              const std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;&amp; desc) const -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a67584c50ad87875221862db50d01fc08" class="m-doc">select</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> format,
+              const <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> codec,
+              const <a href="group__selection.html#ga2849fef022a79b46cd26758a6d8d5b0c" class="m-doc">FileReaders</a>&amp; descs,
+              const <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">DescriptorPreference</a>&amp; pref_model) const -&gt; std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;</span>
             </dt>
-            <dd>Decide whether a descriptor matches the given set of tests.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a637b3f4e68319de82afe733e58533e93" class="m-doc">select</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              const std::set&lt;std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">FileTest</a>&gt;&gt;&amp; tests,
-              const std::set&lt;std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;&gt;&amp; descs) const -&gt; std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;</span>
-            </dt>
-            <dd>Selects a descriptor using tests.</dd>
-          </dl>
-        </section>
-        <section id="pri-methods">
-          <h2><a href="#pri-methods">Private functions</a></h2>
-          <dl class="m-doc">
-            <dt id="af264b8e8440de7a90a035cf8d60b17ec">
-              <span class="m-doc-wrap-bumper">auto <a href="#af264b8e8440de7a90a035cf8d60b17ec" class="m-doc-self">do_matches</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              const std::set&lt;std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">FileTest</a>&gt;&gt;&amp; tests,
-              const std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;&amp; desc) const -&gt; bool <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Implements <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html#ab540750cc55a8c85f939d229f08af1bc" class="m-doc">FileReaderSelector::<wbr />matches()</a>.</dd>
-            <dt id="a18ad72f6e5c4516cfbebe2a88e1e8f1f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a18ad72f6e5c4516cfbebe2a88e1e8f1f" class="m-doc-self">do_select</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              const std::set&lt;std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">FileTest</a>&gt;&gt;&amp; tests,
-              const std::set&lt;std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;&gt;&amp; descs) const -&gt; std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt; <span class="m-label m-flat m-warning">pure virtual</span></span>
-            </dt>
-            <dd>Implements <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html#a637b3f4e68319de82afe733e58533e93" class="m-doc">FileReaderSelector::<wbr />select()</a>.</dd>
+            <dd>Selects a descriptor for the specified Format and Codec.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ab540750cc55a8c85f939d229f08af1bc"><div>
+          <section class="m-doc-details" id="a67584c50ad87875221862db50d01fc08"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />FileReaderSelector::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab540750cc55a8c85f939d229f08af1bc" class="m-doc-self">matches</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              const std::set&lt;std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">FileTest</a>&gt;&gt;&amp; tests,
-              const std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;&amp; desc) const</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt; arcsdec::<wbr />v_1_0_0::<wbr />FileReaderSelector::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a67584c50ad87875221862db50d01fc08" class="m-doc-self">select</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> format,
+              const <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> codec,
+              const <a href="group__selection.html#ga2849fef022a79b46cd26758a6d8d5b0c" class="m-doc">FileReaders</a>&amp; descs,
+              const <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">DescriptorPreference</a>&amp; pref_model) const</span></span>
             </h3>
-            <p>Decide whether a descriptor matches the given set of tests.</p>
+            <p>Selects a descriptor for the specified Format and Codec.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">filename&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Name of the file to perform the tests on</td>
+                  <td style="width: 1%">format&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>File format</td>
                 </tr>
                 <tr>
-                  <td>tests&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Set of tests to perform</td>
-                </tr>
-                <tr>
-                  <td>desc&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The descriptor to check</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE iff the descriptor matches the given set of tests</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>This defines the set of selection candidates.</p>
-          </div></section>
-          <section class="m-doc-details" id="a637b3f4e68319de82afe733e58533e93"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt; arcsdec::<wbr />v_1_0_0::<wbr />FileReaderSelector::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a637b3f4e68319de82afe733e58533e93" class="m-doc-self">select</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              const std::set&lt;std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">FileTest</a>&gt;&gt;&amp; tests,
-              const std::set&lt;std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;&gt;&amp; descs) const</span></span>
-            </h3>
-            <p>Selects a descriptor using tests.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">filename&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Name of the file to select a descriptor for</td>
-                </tr>
-                <tr>
-                  <td>tests&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Set of tests to perform</td>
+                  <td>codec&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Audio codec</td>
                 </tr>
                 <tr>
                   <td>descs&nbsp;<span class="m-label m-flat m-info">in</span></td>
                   <td>Set of descriptors to select from</td>
                 </tr>
+                <tr>
+                  <td>pref_model&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Preference model for selecting descriptors</td>
+                </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>A <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a></td>
+                  <td>A <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> that accepts <code>format</code> and <code>codec</code></td>
                 </tr>
               </tfoot>
             </table>
-<p>This defines the selection of a concrete selection candidate.</p><p>The concrete implementation is supposed to use <code><a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html#ab540750cc55a8c85f939d229f08af1bc" class="m-doc">matches()</a></code> to decide whether a descriptor is matched.</p>
+<p>The concrete implementation is supposed to use <code>pref_model</code> to establish a preference ordering on the set of descriptors. Based on this ordering the implementation of <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html#a67584c50ad87875221862db50d01fc08" class="m-doc">select()</a> is free to decide which position of the ordering is the one to pick.</p>
           </div></section>
         </section>
       </div>
@@ -230,13 +178,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

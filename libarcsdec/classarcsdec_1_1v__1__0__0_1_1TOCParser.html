@@ -47,32 +47,43 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::TOCParser <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculators_8hpp.html">&lt;calculators.hpp&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculators_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/calculators.hpp&gt;</a></div>
         </h1>
         <p>Format-independent parser for CD TOC metadata files.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1ReaderAndFormatHolder.html" class="m-doc">v_1_0_0::ReaderAndFormatHolder</a>
+            </dt>
+            <dd>Interface for a class that holds formats and readers.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class ReaderType&gt;</div>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1SelectionPerformer.html" class="m-doc">v_1_0_0::SelectionPerformer&lt;MetadataParser&gt;</a>
+            </dt>
+            <dd>Interface for a class that performs a selection.</dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a3ede452efa3ae2349f827923ee88ddaf">
-              <span class="m-doc-wrap-bumper"><a href="#a3ede452efa3ae2349f827923ee88ddaf" class="m-doc-self">TOCParser</a>(</span><span class="m-doc-wrap">)</span>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a3ede452efa3ae2349f827923ee88ddaf" class="m-doc">TOCParser</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Constructor.</dd>
-            <dt id="a49d6bf88040486cb6750c7d1a9ad467c">
-              <span class="m-doc-wrap-bumper"><a href="#a49d6bf88040486cb6750c7d1a9ad467c" class="m-doc-self">~TOCParser</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Destructor.</dd>
           </dl>
         </section>
         <section id="pub-methods">
@@ -82,18 +93,17 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a75edce1eb2208e36428ef2cae6e44891" class="m-doc">parse</a>(</span><span class="m-doc-wrap">const std::string&amp; metafilename) const -&gt; std::unique_ptr&lt;TOC&gt;</span>
             </dt>
             <dd>Parse the metadata file to a TOC object.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac7e0557d89879cb4b0f89835ce858eda" class="m-doc">selection</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp;</span>
-            </dt>
-            <dd>Get the MetadataParserSelection used by this instance.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a8202e749688bb1e87e6a2727e85bf57e" class="m-doc">set_selection</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>* selection)</span>
-            </dt>
-            <dd>Set the MetadataParserSelection for this instance.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a3ede452efa3ae2349f827923ee88ddaf"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />TOCParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3ede452efa3ae2349f827923ee88ddaf" class="m-doc-self">TOCParser</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Constructor.</p>
+<p>Sets <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderRegistry.html#ad1b874d69e053c82d17d49459597e41b" class="m-doc">FileReaderRegistry::<wbr />default_toc_selection()</a> as the default selection.</p>
+          </div></section>
           <section class="m-doc-details" id="a75edce1eb2208e36428ef2cae6e44891"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;TOC&gt; arcsdec::<wbr />v_1_0_0::<wbr />TOCParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a75edce1eb2208e36428ef2cae6e44891" class="m-doc-self">parse</a>(</span><span class="m-doc-wrap">const std::string&amp; metafilename) const</span></span>
@@ -115,37 +125,6 @@
                   <td>The parsed TOC</td>
                 </tr>
               </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ac7e0557d89879cb4b0f89835ce858eda"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; arcsdec::<wbr />v_1_0_0::<wbr />TOCParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac7e0557d89879cb4b0f89835ce858eda" class="m-doc-self">selection</a>(</span><span class="m-doc-wrap">) const</span></span>
-            </h3>
-            <p>Get the MetadataParserSelection used by this instance.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>The MetadataParserSelection used by this instance</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a8202e749688bb1e87e6a2727e85bf57e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />TOCParser::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8202e749688bb1e87e6a2727e85bf57e" class="m-doc-self">set_selection</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>* selection)</span></span>
-            </h3>
-            <p>Set the MetadataParserSelection for this instance.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">selection&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The MetadataParserSelection to use</td>
-                </tr>
-              </tbody>
             </table>
           </div></section>
         </section>
@@ -187,13 +166,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

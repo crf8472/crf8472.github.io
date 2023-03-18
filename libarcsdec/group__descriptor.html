@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>API for selecting FileReaders module | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <title>API for abstract FileReaders module | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,9 +46,9 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          API for selecting FileReaders <span class="m-thin">module</span></h1>
-        <p>API for selecting <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a> for given input files.</p>
-        <div class="m-block m-default">
+          API for abstract FileReaders <span class="m-thin">module</span></h1>
+        <p>API for describing <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a> for several file <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Formats</a>.</p>
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -61,15 +61,19 @@
               </ul>
             </li>
           </ul>
-        </div>
-<p>Abstract class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a> provides the API for the mechanism to check a specified input file for a matching <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>. If a matching <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> is found, an instance of this descriptor is returned which is then used to create the concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> instance.</p><p>A <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a> holds a a list of tests to perform on the input file and a list of supported FileReaderDescriptors. Internally, it uses an instance of <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> to select a concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>. <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> performs the selection obeying a certain selection policy. The default <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> just selects the first <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> in the list of supported FileReaderDescriptors that passes all tests in the provided list of tests.</p><p>A <a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">FileTest</a> implements a single test. It may or may not open the file to test.</p><p>The <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> and <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a> APIs are built on this API.</p>
+        </nav>
+<p>A Format represents a file format. A Codec represents an audio codec. For <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Formats</a> as well as for <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codecs</a>, their respective names can be achieved by functions <a href="group__descriptor.html#ga9b4c827e1aa88ec12ca3081b1ddb7c15" class="m-doc">name()</a>.</p><p>A file can be matched against a Format by a <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">FormatMatcher</a>. A <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">FormatMatcher</a> is defined with some referential <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a> of a file or a SuffixSet for filenames.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a> denote a reference sequence of bytes. They consist of an offset, denoting their required start position in the file and a <a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">ByteSequence</a> which is a sequence of concrete byte values that may or may not contain wildcards.</p><p>A <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">FormatMatcher</a> matches <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a> passed or a concrete filename suffix for matching its reference information. The interpretation of the match of one or both of these input informations is in the responsibility of the caller. This is a base mechanism for checking a file for a certain format and codec.</p><p>A <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> is an abstract base for either reading metadata/TOC files or audio files. Any concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> implements a reading capability for at least one Format and at least one Codec. The <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> interface defines only the capability to return a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>. (The definition of other capabilities is left to subclasses, as there are <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> and <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a>.)</p><p>A <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> contains metainformation about some concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> and can inform about whether this respective <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> has the capability to read a particular file in question. <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptors</a> either accept or do not accept any particular <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Formats</a>. Any <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> can create the concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> it describes. Any concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> can return its specific <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>, accordingly.</p><p>An <a href="classarcsdec_1_1v__1__0__0_1_1InputFormatException.html" class="m-doc">InputFormatException</a> indicates any error concerning the input file format. A <a href="classarcsdec_1_1v__1__0__0_1_1FileReadException.html" class="m-doc">FileReadException</a> indicates problems while actually reading the file.</p><p>There are some helpers for implementing own <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptors</a>. Function read_bytes() reads a specified amount of bytes from a specified position in the file. The function returns a <a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">ByteSequence</a> that is compatible with the input for file format checks. Function get_suffix() returns the suffix of a given filename. This suffix can be matched case-insensitive against a set of suffices by ci_match_suffix().</p><p>The <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> and <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a> APIs are built on this API.</p>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultSelector.html" class="m-doc">arcsdec::v_1_0_0::DefaultSelector</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">arcsdec::v_1_0_0::Bytes</a>
             </dt>
-            <dd>Default selector.</dd>
+            <dd>A sequence of bytes read from a specific offset in a file.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">arcsdec::v_1_0_0::ByteSeq</a>
+            </dt>
+            <dd>Byte sequence with or without wildcards.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">arcsdec::v_1_0_0::FileReader</a>
             </dt>
@@ -79,47 +83,22 @@
             </dt>
             <dd>Abstract base class for the properties of a <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a>.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderRegistry.html" class="m-doc">arcsdec::v_1_0_0::FileReaderRegistry</a>
-            </dt>
-            <dd>A global singleton registry holding all compiled-in FileDescriptors.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">arcsdec::v_1_0_0::FileReaderSelection</a>
-            </dt>
-            <dd>Traversable selection of available <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> descriptors.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">arcsdec::v_1_0_0::FileReaderSelector</a>
-            </dt>
-            <dd>A selection mechanism for a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>.</dd>
-            <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1FileReadException.html" class="m-doc">arcsdec::v_1_0_0::FileReadException</a>
             </dt>
             <dd>Reports an error while reading a file.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileTest.html" class="m-doc">arcsdec::v_1_0_0::FileTest</a>
+              <div class="m-doc-template">template&lt;enum <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> F&gt;</div>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">arcsdec::v_1_0_0::FormatMatcher</a>
             </dt>
-            <dd>A test whether a given <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> matches a criterion.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileTestBytes.html" class="m-doc">arcsdec::v_1_0_0::FileTestBytes</a>
-            </dt>
-            <dd>Test for matching a byte sequence from a file.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileTestName.html" class="m-doc">arcsdec::v_1_0_0::FileTestName</a>
-            </dt>
-            <dd>Test for matching an actual filename.</dd>
+            <dd><a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> for file formats.</dd>
             <dt>
               class <a href="classarcsdec_1_1v__1__0__0_1_1InputFormatException.html" class="m-doc">arcsdec::v_1_0_0::InputFormatException</a>
             </dt>
             <dd>Reports an error concerning the input file format.</dd>
             <dt>
-              <div class="m-doc-template">template&lt;class D&gt;</div>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1RegisterAudioDescriptor.html" class="m-doc">arcsdec::v_1_0_0::RegisterAudioDescriptor</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">arcsdec::v_1_0_0::Matcher</a>
             </dt>
-            <dd>Register a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> type for audio input.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;class D&gt;</div>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1RegisterMetadataDescriptor.html" class="m-doc">arcsdec::v_1_0_0::RegisterMetadataDescriptor</a>
-            </dt>
-            <dd>Register a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> type for TOC/metadata input.</dd>
+            <dd>Interface for matchers.</dd>
           </dl>
         </section>
         <section id="enum-members">
@@ -138,9 +117,10 @@
               <a href="#gga1bb6a3bb14846ed51234252330ebff84aa417ad68c0d44a64cc77fcbba552fd6e" class="m-doc">FLAC</a>,
               <a href="#gga1bb6a3bb14846ed51234252330ebff84a9b1767b52104aa7954314f87d07f01dd" class="m-doc">WAVPACK</a>,
               <a href="#gga1bb6a3bb14846ed51234252330ebff84ad156cccc3ede1728673c3818d581503a" class="m-doc">MONKEY</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84a039ea4e8bb04948343a7376e44df1c17" class="m-doc">ALAC</a> }</span>
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84a039ea4e8bb04948343a7376e44df1c17" class="m-doc">ALAC</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84ab50339a10e1de285ac99d4c3990b8693" class="m-doc">NONE</a> }</span>
             </dt>
-            <dd>List of supported audio codecs.</dd>
+            <dd>A supported audio codec.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a>: unsigned { </span><span class="m-doc-wrap"><a href="#gga90f14fef4842822ce786c1bd5586cac1a696b031073e74bf2cb98e5ef201d4aa3" class="m-doc">UNKNOWN</a>,
               <a href="#gga90f14fef4842822ce786c1bd5586cac1a13b1e122c7bb2180335974c89c132432" class="m-doc">CUE</a>,
@@ -161,31 +141,38 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a href="#gab417d301a8802d47753b6ab5e33b9e32" class="m-doc">LibInfo</a> = std::vector&lt;std::pair&lt;std::string, std::string&gt;&gt;
+              using <a href="#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a> = ByteSeq
+            </dt>
+            <dd>A sequence of bytes.</dd>
+            <dt>
+              using <a href="#gaf223e87c82c7a590d81589b8230dc78f" class="m-doc">LibInfo</a> = std::list&lt;LibInfoEntry&gt;
             </dt>
             <dd>Represents a list of pairs of a library name and an additional string.</dd>
+            <dt>
+              using <a href="#ga2c4df88bc578dd8e0d9b89535063284c" class="m-doc">LibInfoEntry</a> = std::pair&lt;std::string, std::string&gt;
+            </dt>
+            <dd>Entry of a LibInfo.</dd>
+            <dt>
+              using <a href="#gad03466418edd1f960ead45d3f1b72e09" class="m-doc">SuffixSet</a> = std::set&lt;details::ci_string&gt;
+            </dt>
+            <dd>A set of filename suffices.</dd>
           </dl>
         </section>
         <section id="func-members">
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga1f34fba47a8ec78b5f478b9bdd34b596" class="m-doc">is_audio_format</a>(</span><span class="m-doc-wrap">Format format) -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga480758753388c9c53018cf5e1d137c39" class="m-doc">libinfo_entry_filepath</a>(</span><span class="m-doc-wrap">const std::string&amp; libname) -&gt; LibInfoEntry</span>
             </dt>
-            <dd>Returns TRUE if <code>format</code> is an audio format, otherwise FALSE.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;class T, typename... Args&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga0e8f0538c218e1dd63b48dc7f68a8d15" class="m-doc">make_descriptor</a>(</span><span class="m-doc-wrap">Args &amp;&amp; ... args) -&gt; std::unique_ptr&lt;FileReaderDescriptor&gt;</span>
-            </dt>
-            <dd>Instantiate <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>.</dd>
+            <dd>Create a LibInfoEntry for <code>libname</code>, lookup filepath of library.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ga9fbb23d783de4b0a5b3538724d41f07d" class="m-doc">name</a>(</span><span class="m-doc-wrap">Codec codec) -&gt; std::string</span>
             </dt>
-            <dd>Return the name of the codec.</dd>
+            <dd>Name of the <code>codec</code>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ga9b4c827e1aa88ec12ca3081b1ddb7c15" class="m-doc">name</a>(</span><span class="m-doc-wrap">Format format) -&gt; std::string</span>
             </dt>
-            <dd>Return the name of the format.</dd>
+            <dd>Name of the <code>format</code>.</dd>
           </dl>
         </section>
         <section>
@@ -193,87 +180,87 @@
           <section class="m-doc-details" id="ga1bb6a3bb14846ed51234252330ebff84"><div>
             <h3>
               enum class <a href="#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc-self">Codec</a>: unsigned
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptors_8hpp.html">&lt;descriptors.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
             </h3>
-            <p>List of supported audio codecs.</p>
-<p>These are only the tested codecs, in fact other lossless codecs are supported if an appropriate <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> exists.</p><p>The intention is to support inspecting the capabilities of <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</p>
+            <p>A supported audio codec.</p>
+<p>The supported codecs are only the tested codecs, in fact other lossless codecs can be silently supported if an appropriate <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> accepts a Format that supports this Codec and accepts Codec::UNKNOWN. However, the best practise is to explicitly support a Codec by an explicit check for it.</p><p>Codec::UNKNOWN represents a codec that was checked but could not be recognized. Codec::NONE represents the information that no codec is expected, supported or available.</p><p>The intention is to support inspecting the capabilities of <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</p>
           </div></section>
           <section class="m-doc-details" id="ga90f14fef4842822ce786c1bd5586cac1"><div>
             <h3>
               enum class <a href="#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc-self">Format</a>: unsigned
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptors_8hpp.html">&lt;descriptors.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
             </h3>
             <p>List of supported file formats for metadata and audio.</p>
-<p>These are only the tested formats, in fact other file formats are supported if an appropriate <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> exists.</p><p>The intention is to support inspecting the capabilities of <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</p>
+<p>Format::UNKNOWN represents a Format that was checked but could not be recognized.</p><p>The intention is to support inspecting the capabilities of <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</p>
           </div></section>
         </section>
         <section>
           <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="gab417d301a8802d47753b6ab5e33b9e32"><div>
+          <section class="m-doc-details" id="ga009aba7ffed5ed9290442979b98ee5ee"><div>
             <h3>
-              using <a href="#gab417d301a8802d47753b6ab5e33b9e32" class="m-doc-self">LibInfo</a> = std::vector&lt;std::pair&lt;std::string, std::string&gt;&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptors_8hpp.html">&lt;descriptors.hpp&gt;</a></div>
+              using <a href="#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc-self">ByteSequence</a> = ByteSeq
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+            </h3>
+            <p>A sequence of bytes.</p>
+<p>As read from a file.</p>
+          </div></section>
+          <section class="m-doc-details" id="gaf223e87c82c7a590d81589b8230dc78f"><div>
+            <h3>
+              using <a href="#gaf223e87c82c7a590d81589b8230dc78f" class="m-doc-self">LibInfo</a> = std::list&lt;LibInfoEntry&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
             </h3>
             <p>Represents a list of pairs of a library name and an additional string.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga2c4df88bc578dd8e0d9b89535063284c"><div>
+            <h3>
+              using <a href="#ga2c4df88bc578dd8e0d9b89535063284c" class="m-doc-self">LibInfoEntry</a> = std::pair&lt;std::string, std::string&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+            </h3>
+            <p>Entry of a LibInfo.</p>
+<p>An entry for a LibInfo consists of the library name and an additional string. The additional string can be used for information about the library.</p>
+          </div></section>
+          <section class="m-doc-details" id="gad03466418edd1f960ead45d3f1b72e09"><div>
+            <h3>
+              using <a href="#gad03466418edd1f960ead45d3f1b72e09" class="m-doc-self">SuffixSet</a> = std::set&lt;details::ci_string&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+            </h3>
+            <p>A set of filename suffices.</p>
+<p>An ordered set of case-insensitive strings. Defines a <code>value_type</code> and is iterable as required by <code>std::find_if</code>.</p>
           </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ga1f34fba47a8ec78b5f478b9bdd34b596"><div>
+          <section class="m-doc-details" id="ga480758753388c9c53018cf5e1d137c39"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga1f34fba47a8ec78b5f478b9bdd34b596" class="m-doc-self">is_audio_format</a>(</span><span class="m-doc-wrap">Format format)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptors_8hpp.html">&lt;descriptors.hpp&gt;</a></div>
+              <span class="m-doc-wrap-bumper">LibInfoEntry </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga480758753388c9c53018cf5e1d137c39" class="m-doc-self">libinfo_entry_filepath</a>(</span><span class="m-doc-wrap">const std::string&amp; libname)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
             </h3>
-            <p>Returns TRUE if <code>format</code> is an audio format, otherwise FALSE.</p>
+            <p>Create a LibInfoEntry for <code>libname</code>, lookup filepath of library.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">format&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The format to test</td>
+                  <td style="width: 1%">libname&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Name of a library.</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>TRUE iff <code>format</code> is an audio format, otherwise FALSE.</td>
+                  <td>A LibInfoEntry that contains the concrete filepath for the library.</td>
                 </tr>
               </tfoot>
             </table>
-          </div></section>
-          <section class="m-doc-details" id="ga0e8f0538c218e1dd63b48dc7f68a8d15"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptors_8hpp.html">&lt;descriptors.hpp&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;class T, typename... Args&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;FileReaderDescriptor&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga0e8f0538c218e1dd63b48dc7f68a8d15" class="m-doc-self">make_descriptor</a>(</span><span class="m-doc-wrap">Args &amp;&amp; ... args)</span></span>
-            </h3>
-            <p>Instantiate <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Template parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">T</td>
-                  <td>The type to instantiate</td>
-                </tr>
-                <tr>
-                  <td>Args</td>
-                  <td>The constructor arguments</td>
-                </tr>
-              </tbody>
-            </table>
+<p>The second part will contain the concrete filepath for the library named <code>libname</code>. The libarcsdec binary is inspected to lookup this information.</p>
           </div></section>
           <section class="m-doc-details" id="ga9fbb23d783de4b0a5b3538724d41f07d"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::string </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga9fbb23d783de4b0a5b3538724d41f07d" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">Codec codec)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptors_8hpp.html">&lt;descriptors.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
             </h3>
-            <p>Return the name of the codec.</p>
+            <p>Name of the <code>codec</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -281,13 +268,13 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">codec&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The codec to get the name for</td>
+                  <td>The Codec to get the name for</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>Name of the codec.</td>
+                  <td>Name of the Codec.</td>
                 </tr>
               </tfoot>
             </table>
@@ -295,9 +282,9 @@
           <section class="m-doc-details" id="ga9b4c827e1aa88ec12ca3081b1ddb7c15"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::string </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga9b4c827e1aa88ec12ca3081b1ddb7c15" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">Format format)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptors_8hpp.html">&lt;descriptors.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
             </h3>
-            <p>Return the name of the format.</p>
+            <p>Name of the <code>format</code>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -305,13 +292,13 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">format&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The format to get the name for</td>
+                  <td>The Format to get the name for</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>Name of the format.</td>
+                  <td>Name of the Format.</td>
                 </tr>
               </tfoot>
             </table>
@@ -355,13 +342,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

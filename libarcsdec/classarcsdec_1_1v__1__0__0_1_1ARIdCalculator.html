@@ -47,21 +47,31 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::ARIdCalculator <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculators_8hpp.html">&lt;calculators.hpp&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculators_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/calculators.hpp&gt;</a></div>
         </h1>
         <p>Calculate AccurateRip ID of an album.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1ReaderAndFormatHolder.html" class="m-doc">v_1_0_0::ReaderAndFormatHolder</a>
+            </dt>
+            <dd>Interface for a class that holds formats and readers.</dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -69,89 +79,57 @@
               <span class="m-doc-wrap-bumper"><a href="#a10a208b2d8bfa593d84e0f8401ed1cbb" class="m-doc-self">ARIdCalculator</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Constructor.</dd>
-            <dt id="ad23aa5e175e7b0dd281d8483accc6271">
-              <span class="m-doc-wrap-bumper"><a href="#ad23aa5e175e7b0dd281d8483accc6271" class="m-doc-self">~ARIdCalculator</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Destructor.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a037c9f0837ef5baf2793eacc76893839" class="m-doc">audio_selection</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a46106e3d126bd2e14dcf79c8cc5646cb" class="m-doc">audio_selection</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>*</span>
             </dt>
-            <dd>Get the MetadataParserSelection used by this instance.</dd>
+            <dd>Get the audioreader selection used by this instance.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a774593166ab60d55b0b34b541829d881" class="m-doc">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
-              const std::string&amp; metafilename) -&gt; std::unique_ptr&lt;ARId&gt;</span>
-            </dt>
-            <dd>Calculate ARId using the specified metadata file and the specified audio file.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abb38175c7cbac27e007fd6bb3fc81f93" class="m-doc">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; metafilename) -&gt; std::unique_ptr&lt;ARId&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae24fba487616fa6c41ee8bbfdbaf4e0e" class="m-doc">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; metafilename) const -&gt; std::unique_ptr&lt;ARId&gt;</span>
             </dt>
             <dd>Calculate ARId using the specified metadata file.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a88eda4981b6c28ccc20ca572c69bdef7" class="m-doc">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; metafilename,
+              const std::string&amp; audiofilename) const -&gt; std::unique_ptr&lt;ARId&gt;</span>
+            </dt>
+            <dd>Calculate ARId using the specified metadata and audio files.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">void <a href="#ac2c5c549712d14ae8c159c644ec703d8" class="m-doc">set_audio_selection</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>* selection)</span>
             </dt>
-            <dd>Set the MetadataParserSelection for this instance.</dd>
+            <dd>Set the audioreader selection for this instance.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a3eab62f19611da1a52642cf9b43524da" class="m-doc">set_toc_selection</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>* selection)</span>
             </dt>
-            <dd>Set the MetadataParserSelection for this instance.</dd>
+            <dd>Set the metadata parser selection for this instance.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae4784ffea5b8f62367cab528ca4cbc36" class="m-doc">toc_selection</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#adedefb97a778b5417e92db133a84c37e" class="m-doc">toc_selection</a>(</span><span class="m-doc-wrap">) const -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>*</span>
             </dt>
-            <dd>Get the MetadataParserSelection used by this instance.</dd>
+            <dd>Get the metadata parser selection used by this instance.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a037c9f0837ef5baf2793eacc76893839"><div>
+          <section class="m-doc-details" id="a46106e3d126bd2e14dcf79c8cc5646cb"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; arcsdec::<wbr />v_1_0_0::<wbr />ARIdCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a037c9f0837ef5baf2793eacc76893839" class="m-doc-self">audio_selection</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>* arcsdec::<wbr />v_1_0_0::<wbr />ARIdCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a46106e3d126bd2e14dcf79c8cc5646cb" class="m-doc-self">audio_selection</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Get the MetadataParserSelection used by this instance.</p>
+            <p>Get the audioreader selection used by this instance.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>The MetadataParserSelection used by this instance</td>
+                  <td>The audioreader selection used by this instance</td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a774593166ab60d55b0b34b541829d881"><div>
+          <section class="m-doc-details" id="ae24fba487616fa6c41ee8bbfdbaf4e0e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; arcsdec::<wbr />v_1_0_0::<wbr />ARIdCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a774593166ab60d55b0b34b541829d881" class="m-doc-self">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
-              const std::string&amp; metafilename)</span></span>
-            </h3>
-            <p>Calculate ARId using the specified metadata file and the specified audio file.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">audiofilename&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Name of the audiofile</td>
-                </tr>
-                <tr>
-                  <td>metafilename&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Name of the metadata file</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The AccurateRip id for this medium</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="abb38175c7cbac27e007fd6bb3fc81f93"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; arcsdec::<wbr />v_1_0_0::<wbr />ARIdCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abb38175c7cbac27e007fd6bb3fc81f93" class="m-doc-self">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; metafilename)</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; arcsdec::<wbr />v_1_0_0::<wbr />ARIdCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae24fba487616fa6c41ee8bbfdbaf4e0e" class="m-doc-self">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; metafilename) const</span></span>
             </h3>
             <p>Calculate ARId using the specified metadata file.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -172,11 +150,39 @@
               </tfoot>
             </table>
           </div></section>
+          <section class="m-doc-details" id="a88eda4981b6c28ccc20ca572c69bdef7"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ARId&gt; arcsdec::<wbr />v_1_0_0::<wbr />ARIdCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a88eda4981b6c28ccc20ca572c69bdef7" class="m-doc-self">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; metafilename,
+              const std::string&amp; audiofilename) const</span></span>
+            </h3>
+            <p>Calculate ARId using the specified metadata and audio files.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">metafilename&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Name of the metadata file</td>
+                </tr>
+                <tr>
+                  <td>audiofilename&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Name of the audiofile</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>The AccurateRip id for this medium</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="ac2c5c549712d14ae8c159c644ec703d8"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />ARIdCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac2c5c549712d14ae8c159c644ec703d8" class="m-doc-self">set_audio_selection</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>* selection)</span></span>
             </h3>
-            <p>Set the MetadataParserSelection for this instance.</p>
+            <p>Set the audioreader selection for this instance.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -184,7 +190,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">selection&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The MetadataParserSelection to use</td>
+                  <td>The audioreader selection to use</td>
                 </tr>
               </tbody>
             </table>
@@ -193,7 +199,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />ARIdCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3eab62f19611da1a52642cf9b43524da" class="m-doc-self">set_toc_selection</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>* selection)</span></span>
             </h3>
-            <p>Set the MetadataParserSelection for this instance.</p>
+            <p>Set the metadata parser selection for this instance.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -201,21 +207,21 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">selection&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The MetadataParserSelection to use</td>
+                  <td>The metadata parser selection to use</td>
                 </tr>
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ae4784ffea5b8f62367cab528ca4cbc36"><div>
+          <section class="m-doc-details" id="adedefb97a778b5417e92db133a84c37e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; arcsdec::<wbr />v_1_0_0::<wbr />ARIdCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae4784ffea5b8f62367cab528ca4cbc36" class="m-doc-self">toc_selection</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>* arcsdec::<wbr />v_1_0_0::<wbr />ARIdCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adedefb97a778b5417e92db133a84c37e" class="m-doc-self">toc_selection</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Get the MetadataParserSelection used by this instance.</p>
+            <p>Get the metadata parser selection used by this instance.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>The MetadataParserSelection used by this instance</td>
+                  <td>The metadata parser selection used by this instance</td>
                 </tr>
               </tfoot>
             </table>
@@ -259,13 +265,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

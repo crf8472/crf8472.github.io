@@ -47,10 +47,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::DescriptorFFmpeg <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="readerffmpeg_8hpp.html">&lt;readerffmpeg.hpp&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="readerffmpeg_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/readerffmpeg.hpp&gt;</a></div>
         </h1>
         <p>FFmpeg-based <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> for virtually any lossless audio format.</p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -62,7 +62,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -75,10 +75,6 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="af26ad8a23c9f5467a5b5b993ed482afc">
-              <span class="m-doc-wrap-bumper"><a href="#af26ad8a23c9f5467a5b5b993ed482afc" class="m-doc-self">DescriptorFFmpeg</a>(</span><span class="m-doc-wrap">)</span>
-            </dt>
-            <dd>Constructor.</dd>
             <dt id="a74201571046d2d0e988590d20d8efd67">
               <span class="m-doc-wrap-bumper"><a href="#a74201571046d2d0e988590d20d8efd67" class="m-doc-self">~DescriptorFFmpeg</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -89,15 +85,6 @@
           <h2><a href="#pri-methods">Private functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#acbd52d3f2477dd36df6b85a4bdf1c290" class="m-doc">do_accepts_bytes</a>(</span><span class="m-doc-wrap">const std::vector&lt;unsigned char&gt;&amp;,
-              const uint64_t&amp;) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
-            </dt>
-            <dd>Returns TRUE for every input implying this format matches all files.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8d56fc2779b2a6a6ee4be461c6ed8804" class="m-doc">do_accepts_name</a>(</span><span class="m-doc-wrap">const std::string&amp;) const -&gt; bool <span class="m-label m-flat m-warning">override</span></span>
-            </dt>
-            <dd>Returns TRUE for every input implying this format matches all files.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a49c2d1158dc5393b26c0aa5dfd89de1a" class="m-doc">do_name</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns &quot;FFmpeg&quot;.</dd>
@@ -105,35 +92,6 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="acbd52d3f2477dd36df6b85a4bdf1c290"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />DescriptorFFmpeg::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acbd52d3f2477dd36df6b85a4bdf1c290" class="m-doc-self">do_accepts_bytes</a>(</span><span class="m-doc-wrap">const std::vector&lt;unsigned char&gt;&amp;,
-              const uint64_t&amp;) const <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Returns TRUE for every input implying this format matches all files.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>TRUE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a8d56fc2779b2a6a6ee4be461c6ed8804"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />DescriptorFFmpeg::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8d56fc2779b2a6a6ee4be461c6ed8804" class="m-doc-self">do_accepts_name</a>(</span><span class="m-doc-wrap">const std::string&amp;) const <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
-            </h3>
-            <p>Returns TRUE for every input implying this format matches all files.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>TRUE</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="a49c2d1158dc5393b26c0aa5dfd89de1a"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::string arcsdec::<wbr />v_1_0_0::<wbr />DescriptorFFmpeg::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a49c2d1158dc5393b26c0aa5dfd89de1a" class="m-doc-self">do_name</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
@@ -187,13 +145,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

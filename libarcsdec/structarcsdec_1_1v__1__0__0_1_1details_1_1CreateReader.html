@@ -46,7 +46,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptors_8hpp.html">&lt;descriptors.hpp&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="selection_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/selection.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;class ReaderType&gt;</div>
           <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcsdec_1_1v__1__0__0_1_1details.html">v_1_0_0::details</a>::<wbr/></span>CreateReader <span class="m-thin">struct</span>
         </h1>
@@ -62,7 +62,7 @@
             </tr>
           </tbody>
         </table>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -73,36 +73,40 @@
               </ul>
             </li>
           </ul>
-        </div>
-<p>It will either provide a valid <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> of the requested type or will throw. It will never silently fail nor provide a nullptr.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This class is non-abstract and non-final and does not support polymorphic deletion. It is intended to be used for private inheritance to stateless subclasses.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="structarcsdec_1_1v__1__0__0_1_1CreateAudioReader.html" class="m-doc">CreateAudioReader</a></p><p><a href="structarcsdec_1_1v__1__0__0_1_1CreateMetadataParser.html" class="m-doc">CreateMetadataParser</a></p></aside>
+        </nav>
+<p>It will either provide a valid <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> of the requested type or will throw. It will never silently fail nor provide a nullptr.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This class is non-abstract and non-final and does not support polymorphic deletion. It is intended to be used for private inheritance to stateless subclasses exclusively.</p></aside><aside class="m-note m-default"><h4>See also</h4><p>CreateAudioReader</p><p>CreateMetadataParser</p></aside>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a6bc145938dfe33847a45d8ece96451cb">
-              <span class="m-doc-wrap-bumper"><a href="#a6bc145938dfe33847a45d8ece96451cb" class="m-doc-self">~CreateReader</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">protected</span> <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            <dt id="ab1ffc34690f79518247441bcdf4dffe4">
+              <span class="m-doc-wrap-bumper"><a href="#ab1ffc34690f79518247441bcdf4dffe4" class="m-doc-self">~CreateReader</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-warning">virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Default constructor.</dd>
+            <dd>Default destructor.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a18f50bbdda508d6b3f36da068d845df4" class="m-doc">operator()</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; selection,
-              const std::string&amp; filename) const -&gt; std::unique_ptr&lt; ReaderType &gt; -&gt; auto</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a348a2bea52ae1c4253d2192cb724e236" class="m-doc">operator()</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
+              const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; selection,
+              const <a href="group__selection.html#gafd60586fcdc39383204c8b732dedc7b5" class="m-doc">FormatList</a>&amp; formats,
+              const <a href="group__selection.html#ga2849fef022a79b46cd26758a6d8d5b0c" class="m-doc">FileReaders</a>&amp; readers) const -&gt; std::unique_ptr&lt; ReaderType &gt; -&gt; auto</span>
             </dt>
             <dd>Return a unique_ptr to an instance of the specified <code>ReaderType</code>.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a18f50bbdda508d6b3f36da068d845df4"><div>
+          <section class="m-doc-details" id="a348a2bea52ae1c4253d2192cb724e236"><div>
             <h3>
               <div class="m-doc-template">
                 template&lt;class ReaderType&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />CreateReader&lt;ReaderType&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18f50bbdda508d6b3f36da068d845df4" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; selection,
-              const std::string&amp; filename) const -&gt; std::unique_ptr&lt; ReaderType &gt;</span></span>
+              <span class="m-doc-wrap-bumper">auto arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />CreateReader&lt;ReaderType&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a348a2bea52ae1c4253d2192cb724e236" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
+              const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; selection,
+              const <a href="group__selection.html#gafd60586fcdc39383204c8b732dedc7b5" class="m-doc">FormatList</a>&amp; formats,
+              const <a href="group__selection.html#ga2849fef022a79b46cd26758a6d8d5b0c" class="m-doc">FileReaders</a>&amp; readers) const -&gt; std::unique_ptr&lt; ReaderType &gt;</span></span>
             </h3>
             <p>Return a unique_ptr to an instance of the specified <code>ReaderType</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -111,12 +115,20 @@
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">selection&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a> to choose from</td>
+                  <td style="width: 1%">filename&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The name of the file to choose a <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a></td>
                 </tr>
                 <tr>
-                  <td>filename&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The name of the file to choose a <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a></td>
+                  <td>selection</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>formats&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Set of supported formats</td>
+                </tr>
+                <tr>
+                  <td>readers&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Set of available file readers</td>
                 </tr>
               </tbody>
             </table>
@@ -160,13 +172,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

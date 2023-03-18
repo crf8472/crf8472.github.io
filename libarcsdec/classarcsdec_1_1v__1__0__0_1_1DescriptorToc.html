@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcsdec::v_1_0_0::RegisterAudioDescriptor class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <title>arcsdec::v_1_0_0::DescriptorToc class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,41 +46,66 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptors_8hpp.html">&lt;descriptors.hpp&gt;</a></div>
-          <div class="m-doc-template">template&lt;class D&gt;</div>
-          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::RegisterAudioDescriptor <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::DescriptorToc <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parsertoc_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/parsertoc.hpp&gt;</a></div>
         </h1>
-        <p>Register a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> type for audio input.</p>
-        <table class="m-table m-fullwidth m-flat">
-          <thead>
-            <tr><th colspan="2">Template parameters</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="width: 1%">D</td>
-              <td>The descriptor type to register</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="m-block m-default">
+        <p>Libcdio-based parser for CDRDAO&#x27;s .toc files.</p>
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pri-methods">Private functions</a></li>
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">v_1_0_0::FileReaderDescriptor</a>
+            </dt>
+            <dd>Abstract base class for the properties of a <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a>.</dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a5b326657c02dc6c40998a2073f16578c">
-              <span class="m-doc-wrap-bumper"><a href="#a5b326657c02dc6c40998a2073f16578c" class="m-doc-self">RegisterAudioDescriptor</a>(</span><span class="m-doc-wrap">)</span>
+            <dt id="adb1233f35133541c8c187f2015fdb5fd">
+              <span class="m-doc-wrap-bumper"><a href="#adb1233f35133541c8c187f2015fdb5fd" class="m-doc-self">~DescriptorToc</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">override</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Register a descriptor.</dd>
+            <dd>Virtual default destructor.</dd>
           </dl>
+        </section>
+        <section id="pri-methods">
+          <h2><a href="#pri-methods">Private functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae9d2391c0f026fb084413595742ae191" class="m-doc">do_name</a>(</span><span class="m-doc-wrap">) const -&gt; std::string <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Returns &quot;CDRDAO/TOC&quot;.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ae9d2391c0f026fb084413595742ae191"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string arcsdec::<wbr />v_1_0_0::<wbr />DescriptorToc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae9d2391c0f026fb084413595742ae191" class="m-doc-self">do_name</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">override</span> <span class="m-label m-danger">private</span></span></span>
+            </h3>
+            <p>Returns &quot;CDRDAO/TOC&quot;.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>&quot;CDRDAO/TOC&quot;</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>
@@ -120,13 +145,13 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
