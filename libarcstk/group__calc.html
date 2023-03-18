@@ -191,7 +191,7 @@
           <h2>Typedef documentation</h2>
           <section class="m-doc-details" id="ga35db1ec1a32b802681337cbbd281b0cf"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/samples.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
@@ -203,14 +203,14 @@
           <section class="m-doc-details" id="ga37efdf754736a2f5a4939ec675b57134"><div>
             <h3>
               using <a href="#ga37efdf754736a2f5a4939ec675b57134" class="m-doc-self">lba_count_t</a> = int32_t
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/identifier.hpp&gt;</a></div>
             </h3>
             <p>Type to represent amounts of LBA frames.</p>
 <p>A signed integer of at least 32 bit length.</p><p>The type is required to be able to express the maximum frame count in a medium. The value is <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html#a389f6d0e519028f97638ed3dc00fbfce" class="m-doc">CDDA::<wbr />MAX_BLOCK_ADDRESS</a> == 449.999 frames.</p><p>The type is intended to perform arithmetic operations on it.</p>
           </div></section>
           <section class="m-doc-details" id="gaa96cac59603e345b08b8a85238120e39"><div>
             <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/samples.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
@@ -222,7 +222,7 @@
           <section class="m-doc-details" id="gae67e49c7b2758109558abf6148df998e"><div>
             <h3>
               using <a href="#gae67e49c7b2758109558abf6148df998e" class="m-doc-self">sample_count_t</a> = int32_t
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/calculate.hpp&gt;</a></div>
             </h3>
             <p>Type to represent amounts of PCM 32 bit samples.</p>
 <p>A signed integer of at least 32 bit length.</p><p>The type is required to express the maximum sample count in a medium, which is MAX_BLOCK_ADDRESS * SAMPLES_PER_FRAME == 264.599.412 samples.</p><p>The type is intended to perform arithmetic operations on it.</p>
@@ -230,7 +230,7 @@
           <section class="m-doc-details" id="ga6a0d5ad7d5b687199bcd7b454ae19ae6"><div>
             <h3>
               using <a href="#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc-self">sample_t</a> = uint32_t
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/calculate.hpp&gt;</a></div>
             </h3>
             <p>Type to represent a 32 bit PCM stereo sample.</p>
 <p>An unsigned integer of 32 bit length.</p><p>The type is not intended to do arithmetic operations on it.</p><p>Bitwise operators are required to work as on unsigned types.</p>
@@ -238,7 +238,7 @@
           <section class="m-doc-details" id="gab54febc3dbc97c4e031001471d798069"><div>
             <h3>
               using <a href="#gab54febc3dbc97c4e031001471d798069" class="m-doc-self">TrackNo</a> = int
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;identifier.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="identifier_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/identifier.hpp&gt;</a></div>
             </h3>
             <p>Type to represent 1-based track numbers.</p>
 <p>Valid track numbers are in the range of 1-99. Note that 0 is not a valid TrackNo. Hence, a TrackNo is not suitable to represent a total number of tracks or a counter for tracks.</p><p>The intention of this typedef is to provide a marker for parameters that expect 1-based track numbers instead of 0-based track indices. TrackNo will not occurr as a return type in the API.</p><p>A validation check is not provided, though. Every function that accepts a TrackNo will in fact accept 0 but will then either throw or return a default error value.</p><p>It is not encouraged to use TrackNo in client code.</p>
@@ -250,7 +250,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gac0e17bec133e06465ad5a90f14ec4981" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const bool&amp; skip_front,
               const bool&amp; skip_back)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/calculate.hpp&gt;</a></div>
             </h3>
             <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from two skip flags.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -281,7 +281,7 @@
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaa5bf3b8ce5cf76fb6af78df49e67b3bc" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const bool&amp; skip_front,
               const bool&amp; skip_back,
               const std::string&amp; audiofilename)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/calculate.hpp&gt;</a></div>
             </h3>
             <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and two skip flags.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -314,7 +314,7 @@
           <section class="m-doc-details" id="ga1d03ba14e5c2c214cf9d958cf37d7baf"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga1d03ba14e5c2c214cf9d958cf37d7baf" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/calculate.hpp&gt;</a></div>
             </h3>
             <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -339,7 +339,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga62fb92f28500dc88faa4e291efd5ca9d" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const std::unique_ptr&lt;TOC&gt;&amp; toc,
               const std::string&amp; audiofilename)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/calculate.hpp&gt;</a></div>
             </h3>
             <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -368,7 +368,7 @@
           <section class="m-doc-details" id="gaf8f6b32520382dbe5df937782a7073ed"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaf8f6b32520382dbe5df937782a7073ed" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const TOC&amp; toc)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/calculate.hpp&gt;</a></div>
             </h3>
             <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -393,7 +393,7 @@
             <h3>
               <span class="m-doc-wrap-bumper">std::unique_ptr&lt;CalcContext&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga5b82bfec99ca7ea122f79028502edbc5" class="m-doc-self">make_context</a>(</span><span class="m-doc-wrap">const TOC&amp; toc,
               const std::string&amp; audiofilename)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/calculate.hpp&gt;</a></div>
             </h3>
             <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1CalcContext.html" class="m-doc">CalcContext</a> from an audio filename and a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -425,7 +425,7 @@
           <section class="m-doc-details" id="ga2ab8d0c00d6c4763b067d9af1c534811"><div>
             <h3>
               const Checksum <a href="#ga2ab8d0c00d6c4763b067d9af1c534811" class="m-doc-self">EmptyChecksum</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/calculate.hpp&gt;</a></div>
             </h3>
             <p>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
 <p>This is for convenience since in most cases, the creation of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be avoided when a reference instance is at hand.</p><p>This instance defines emptyness for checksums since <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">Checksum::<wbr />empty()</a> just compares the instance with this instance.</p>
