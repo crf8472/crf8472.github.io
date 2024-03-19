@@ -47,7 +47,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::FileReaderDescriptor <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
         </h1>
         <p>Abstract base class for the properties of a <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a>.</p>
         <nav class="m-block m-default">
@@ -142,6 +142,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a940f50f4eccf5fba55cf6b39a35c43dc" class="m-doc">id</a>(</span><span class="m-doc-wrap">) const -&gt; std::string</span>
             </dt>
             <dd>Id of this <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> type.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a93816d36bda7a5a8ab47aefab3cde211" class="m-doc">input_type</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__descriptor.html#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc">InputType</a></span>
+            </dt>
+            <dd>Returns TRUE iff this descriptor is for an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>, otherwise FALSE.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a68fd5745e8e504edde503dd4844887c3" class="m-doc">libraries</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__descriptor.html#gaf223e87c82c7a590d81589b8230dc78f" class="m-doc">LibInfo</a></span>
             </dt>
@@ -302,6 +306,20 @@
               </tfoot>
             </table>
 <p>The id can be used as key in a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderRegistry.html" class="m-doc">FileReaderRegistry</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a93816d36bda7a5a8ab47aefab3cde211"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="group__descriptor.html#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc">InputType</a> arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a93816d36bda7a5a8ab47aefab3cde211" class="m-doc-self">input_type</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns TRUE iff this descriptor is for an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>, otherwise FALSE.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>InputType of this Descriptor</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a68fd5745e8e504edde503dd4844887c3"><div>
             <h3>

@@ -135,6 +135,11 @@
               <a href="#gga90f14fef4842822ce786c1bd5586cac1a457c9e4a3c0a6bd24e1fe26935a86725" class="m-doc">AIFF</a> }</span>
             </dt>
             <dd>List of supported file formats for metadata and audio.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc">InputType</a>: unsigned { </span><span class="m-doc-wrap"><a href="#gga37a47fe0d657fe73f5dc8ce52db9c575ae423b8bde9bfbfd7e9409b23b23aed91" class="m-doc">AUDIO</a>,
+              <a href="#gga37a47fe0d657fe73f5dc8ce52db9c575a6994206aa5146e62315e61b6ecf6f56b" class="m-doc">TOC</a> }</span>
+            </dt>
+            <dd>Input filetype.</dd>
           </dl>
         </section>
         <section id="typedef-members">
@@ -180,7 +185,7 @@
           <section class="m-doc-details" id="ga1bb6a3bb14846ed51234252330ebff84"><div>
             <h3>
               enum class <a href="#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc-self">Codec</a>: unsigned
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
             </h3>
             <p>A supported audio codec.</p>
 <p>The supported codecs are only the tested codecs, in fact other lossless codecs can be silently supported if an appropriate <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> accepts a Format that supports this Codec and accepts Codec::UNKNOWN. However, the best practise is to explicitly support a Codec by an explicit check for it.</p><p>Codec::UNKNOWN represents a codec that was checked but could not be recognized. Codec::NONE represents the information that no codec is expected, supported or available.</p><p>The intention is to support inspecting the capabilities of <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</p>
@@ -188,10 +193,17 @@
           <section class="m-doc-details" id="ga90f14fef4842822ce786c1bd5586cac1"><div>
             <h3>
               enum class <a href="#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc-self">Format</a>: unsigned
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
             </h3>
             <p>List of supported file formats for metadata and audio.</p>
 <p>Format::UNKNOWN represents a Format that was checked but could not be recognized.</p><p>The intention is to support inspecting the capabilities of <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga37a47fe0d657fe73f5dc8ce52db9c575"><div>
+            <h3>
+              enum class <a href="#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc-self">InputType</a>: unsigned
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
+            </h3>
+            <p>Input filetype.</p>
           </div></section>
         </section>
         <section>
@@ -199,7 +211,7 @@
           <section class="m-doc-details" id="ga009aba7ffed5ed9290442979b98ee5ee"><div>
             <h3>
               using <a href="#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc-self">ByteSequence</a> = ByteSeq
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
             </h3>
             <p>A sequence of bytes.</p>
 <p>As read from a file.</p>
@@ -207,14 +219,14 @@
           <section class="m-doc-details" id="gaf223e87c82c7a590d81589b8230dc78f"><div>
             <h3>
               using <a href="#gaf223e87c82c7a590d81589b8230dc78f" class="m-doc-self">LibInfo</a> = std::list&lt;LibInfoEntry&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
             </h3>
             <p>Represents a list of pairs of a library name and an additional string.</p>
           </div></section>
           <section class="m-doc-details" id="ga2c4df88bc578dd8e0d9b89535063284c"><div>
             <h3>
               using <a href="#ga2c4df88bc578dd8e0d9b89535063284c" class="m-doc-self">LibInfoEntry</a> = std::pair&lt;std::string, std::string&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
             </h3>
             <p>Entry of a LibInfo.</p>
 <p>An entry for a LibInfo consists of the library name and an additional string. The additional string can be used for information about the library.</p>
@@ -222,7 +234,7 @@
           <section class="m-doc-details" id="gad03466418edd1f960ead45d3f1b72e09"><div>
             <h3>
               using <a href="#gad03466418edd1f960ead45d3f1b72e09" class="m-doc-self">SuffixSet</a> = std::set&lt;details::ci_string&gt;
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
             </h3>
             <p>A set of filename suffices.</p>
 <p>An ordered set of case-insensitive strings. Defines a <code>value_type</code> and is iterable as required by <code>std::find_if</code>.</p>
@@ -233,7 +245,7 @@
           <section class="m-doc-details" id="ga480758753388c9c53018cf5e1d137c39"><div>
             <h3>
               <span class="m-doc-wrap-bumper">LibInfoEntry </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga480758753388c9c53018cf5e1d137c39" class="m-doc-self">libinfo_entry_filepath</a>(</span><span class="m-doc-wrap">const std::string&amp; libname)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
             </h3>
             <p>Create a LibInfoEntry for <code>libname</code>, lookup filepath of library.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -258,7 +270,7 @@
           <section class="m-doc-details" id="ga9fbb23d783de4b0a5b3538724d41f07d"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::string </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga9fbb23d783de4b0a5b3538724d41f07d" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">Codec codec)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
             </h3>
             <p>Name of the <code>codec</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -282,7 +294,7 @@
           <section class="m-doc-details" id="ga9b4c827e1aa88ec12ca3081b1ddb7c15"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::string </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga9b4c827e1aa88ec12ca3081b1ddb7c15" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">Format format)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;/home/stefan/Projects/libarcsdec/include/descriptor.hpp&gt;</a></div>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
             </h3>
             <p>Name of the <code>format</code>.</p>
             <table class="m-table m-fullwidth m-flat">
