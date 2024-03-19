@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcstk::v_1_0_0::Log class | libarcstk Toolkit to calculate and verify AccurateRip checksums and ids</title>
+  <title>arcstk::v_1_0_0::ChecksumSourceOf class | libarcstk Toolkit to calculate and verify AccurateRip checksums and ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,120 +46,103 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::Log <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="verify_8hpp.html">&lt;verify.hpp&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::ChecksumSourceOf <span class="m-thin">class</span>
         </h1>
-        <p>A single logging operation of a <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a> using a specified LOGLEVEL.</p>
+        <p>Wrap a checksum container in a <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>The type to wrap</td>
+            </tr>
+          </tbody>
+        </table>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-<p>A (More or less) thread-safe, type-safe, portable logging interface for concrete <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Loggers</a>.</p>
-        <section id="pub-static-methods">
-          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+<p>A type <code>T</code> can be made available as a <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a> via definig a subclass of ChecksumSourceOf&lt;T&gt;. The subclass has to implement the virtual functions of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>. It can reuse the constructor of ChecksumSourceOf&lt;T&gt;.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1DBARSource.html" class="m-doc">DBARSource</a></p></aside>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a2a0c12f1dc5e1db6b0f0b43c53663a42" class="m-doc">from_string</a>(</span><span class="m-doc-wrap">const std::string&amp; level) -&gt; <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a></span>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">v_1_0_0::ChecksumSource</a>
             </dt>
-            <dd>Turns a string representation of the log level to a LOGLEVEL instance.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a4901f8c4dc96190e025d0641fa48fa7d" class="m-doc">to_string</a>(</span><span class="m-doc-wrap"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> level) -&gt; std::string</span>
-            </dt>
-            <dd>Turns a LOGLEVEL instance into a string representation.</dd>
+            <dd>Interface: unified access to checksum containers.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="ac162b4489f7e4bb51bfe3cf20ada1d72">
-              <span class="m-doc-wrap-bumper"><a href="#ac162b4489f7e4bb51bfe3cf20ada1d72" class="m-doc-self">Log</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Log.html" class="m-doc">Log</a>&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd>Class is non-copyable.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#ac89edd41f8b2a103c4b443dd19b061bd" class="m-doc">Log</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>&amp; logger,
-              <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> msg_level)</span>
+              <span class="m-doc-wrap-bumper"><a href="#aa4b2f32ff216cce8228977fc9d610220" class="m-doc">ChecksumSourceOf</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSourceOf.html" class="m-doc">ChecksumSourceOf</a>&amp; rhs)</span>
+            </dt>
+            <dd>Copy constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a6670d0a285ea2916aa6a4d2b8f29fc29" class="m-doc">ChecksumSourceOf</a>(</span><span class="m-doc-wrap">const T* t)</span>
             </dt>
             <dd>Constructor.</dd>
-            <dt id="a7adfb1ca79331a91d54b853777d9f955">
-              <span class="m-doc-wrap-bumper"><a href="#a7adfb1ca79331a91d54b853777d9f955" class="m-doc-self">Log</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Log.html" class="m-doc">Log</a>&amp;&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
+            <dt id="a4e83b2a516d802dd6db925005179cce8">
+              <span class="m-doc-wrap-bumper"><a href="#a4e83b2a516d802dd6db925005179cce8" class="m-doc-self">~ChecksumSourceOf</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-warning">virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Class is non-movable.</dd>
-            <dt id="a2d5d7f925ccaffdce8d03b69b1b329a4">
-              <span class="m-doc-wrap-bumper"><a href="#a2d5d7f925ccaffdce8d03b69b1b329a4" class="m-doc-self">~Log</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Destructor.</dd>
+            <dd>Virtual default destructor.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4cd546eab341a4e9ad37a2bcdcceed15" class="m-doc">get</a>(</span><span class="m-doc-wrap">) -&gt; std::ostringstream&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#abc66788b6a2e27bca2b4d36ef830702d" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSourceOf.html" class="m-doc">ChecksumSourceOf</a>&amp; rhs) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSourceOf.html" class="m-doc">ChecksumSourceOf</a>&amp;</span>
             </dt>
-            <dd>Get the output stream to write to.</dd>
+            <dd>Copy assignment operator.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ada1b2752e5e1bc43c254707b58ad07d3" class="m-doc">source</a>(</span><span class="m-doc-wrap">) const -&gt; const T*</span>
+            </dt>
+            <dd>The wrapped checksum source.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a2a0c12f1dc5e1db6b0f0b43c53663a42"><div>
+          <section class="m-doc-details" id="aa4b2f32ff216cce8228977fc9d610220"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> arcstk::<wbr />v_1_0_0::<wbr />Log::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2a0c12f1dc5e1db6b0f0b43c53663a42" class="m-doc-self">from_string</a>(</span><span class="m-doc-wrap">const std::string&amp; level)</span></span>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSourceOf&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa4b2f32ff216cce8228977fc9d610220" class="m-doc-self">ChecksumSourceOf</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSourceOf.html" class="m-doc">ChecksumSourceOf</a>&amp; rhs)</span></span>
             </h3>
-            <p>Turns a string representation of the log level to a LOGLEVEL instance.</p>
+            <p>Copy constructor.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">level&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The name of the log level to create</td>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Instance to get a copy of</td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The log level represented by the string or the default log level</td>
-                </tr>
-              </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a4901f8c4dc96190e025d0641fa48fa7d"><div>
+          <section class="m-doc-details" id="a6670d0a285ea2916aa6a4d2b8f29fc29"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static std::string arcstk::<wbr />v_1_0_0::<wbr />Log::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4901f8c4dc96190e025d0641fa48fa7d" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> level)</span></span>
-            </h3>
-            <p>Turns a LOGLEVEL instance into a string representation.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">level&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The log level to turn to a string</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>A string representation of the log level</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ac89edd41f8b2a103c4b443dd19b061bd"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Log::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac89edd41f8b2a103c4b443dd19b061bd" class="m-doc-self">Log</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>&amp; logger,
-              <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> msg_level)</span></span>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSourceOf&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6670d0a285ea2916aa6a4d2b8f29fc29" class="m-doc-self">ChecksumSourceOf</a>(</span><span class="m-doc-wrap">const T* t)</span></span>
             </h3>
             <p>Constructor.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -168,26 +151,51 @@
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">logger&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td><a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a> to use</td>
-                </tr>
-                <tr>
-                  <td>msg_level&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Loglevel of the message to log</td>
+                  <td style="width: 1%">t&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The primary checksum source</td>
                 </tr>
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a4cd546eab341a4e9ad37a2bcdcceed15"><div>
+          <section class="m-doc-details" id="abc66788b6a2e27bca2b4d36ef830702d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::ostringstream&amp; arcstk::<wbr />v_1_0_0::<wbr />Log::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cd546eab341a4e9ad37a2bcdcceed15" class="m-doc-self">get</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSourceOf.html" class="m-doc">ChecksumSourceOf</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />ChecksumSourceOf&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abc66788b6a2e27bca2b4d36ef830702d" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSourceOf.html" class="m-doc">ChecksumSourceOf</a>&amp; rhs)</span></span>
             </h3>
-            <p>Get the output stream to write to.</p>
+            <p>Copy assignment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Instance to get a copy of</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Copy of <code>rhs</code></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ada1b2752e5e1bc43c254707b58ad07d3"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">const T* arcstk::<wbr />v_1_0_0::<wbr />ChecksumSourceOf&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ada1b2752e5e1bc43c254707b58ad07d3" class="m-doc-self">source</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>The wrapped checksum source.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>Get the output stream to write to</td>
+                  <td>The wrapped checksum source.</td>
                 </tr>
               </tfoot>
             </table>

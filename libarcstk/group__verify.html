@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcstk::v_1_0_0::AlbumMatcher class | libarcstk Toolkit to calculate and verify AccurateRip checksums and ids</title>
+  <title>AccurateRip Checksum Verification module | libarcstk Toolkit to calculate and verify AccurateRip checksums and ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,61 +46,73 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::AlbumMatcher <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="match_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/match.hpp&gt;</a></div>
-        </h1>
-        <p><a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> an album track list against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
+          AccurateRip Checksum Verification <span class="m-thin">module</span></h1>
+        <p>Verify local <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against a <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>.</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-<p>Tries to match each position <code>i</code> in the actual <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> with position <code>i</code> in each <a href="classarcstk_1_1v__1__0__0_1_1ARBlock.html" class="m-doc">ARBlock</a> of the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. Additonally checks the input id for identity with the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of each respective block in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> is the <a href="classarcstk_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> class suitable for easy matching of entire album rips. <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> lists whose <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> do not match have therefore a difference of at least <code>1</code>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a></p><p><a href="classarcstk_1_1v__1__0__0_1_1ListMatcher.html" class="m-doc">ListMatcher</a></p></aside>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a4cfa486ea468c7ad90da577f3b9feabc" class="m-doc">AlbumMatcher</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; checksums,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; id,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; response)</span>
+              class <a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">arcstk::v_1_0_0::AlbumVerifier</a>
             </dt>
-            <dd>Constructor.</dd>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a> for a list of checksums accompanied by a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">arcstk::v_1_0_0::ChecksumSource</a>
+            </dt>
+            <dd>Interface: unified access to checksum containers.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSourceOf.html" class="m-doc">arcstk::v_1_0_0::ChecksumSourceOf</a>
+            </dt>
+            <dd>Wrap a checksum container in a <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1DBARSource.html" class="m-doc">arcstk::v_1_0_0::DBARSource</a>
+            </dt>
+            <dd>Access <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> as a <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1TracksetVerifier.html" class="m-doc">arcstk::v_1_0_0::TracksetVerifier</a>
+            </dt>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a> for a set of checksums without a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1VerificationResult.html" class="m-doc">arcstk::VerificationResult</a>
+            </dt>
+            <dd>Interface: Result of a verification process.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">arcstk::Verifier</a>
+            </dt>
+            <dd>Interface: perform a verification.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga63a9adf8b7c38b549d3d9dfd1efb2447" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">std::ostream&amp;,
+              const VerificationResult&amp; r) -&gt; std::ostream&amp;</span>
+            </dt>
+            <dd>Print a <a href="classarcstk_1_1v__1__0__0_1_1VerificationResult.html" class="m-doc">VerificationResult</a> to a stream.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a4cfa486ea468c7ad90da577f3b9feabc"><div>
+          <section class="m-doc-details" id="ga63a9adf8b7c38b549d3d9dfd1efb2447"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />AlbumMatcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cfa486ea468c7ad90da577f3b9feabc" class="m-doc-self">AlbumMatcher</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; checksums,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; id,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; response)</span></span>
+              <span class="m-doc-wrap-bumper">std::ostream&amp; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga63a9adf8b7c38b549d3d9dfd1efb2447" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">std::ostream&amp;,
+              const VerificationResult&amp; r)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="verify_8hpp.html">&lt;verify.hpp&gt;</a></div>
             </h3>
-            <p>Constructor.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">checksums&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> to match</td>
-                </tr>
-                <tr>
-                  <td>id&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> to match</td>
-                </tr>
-                <tr>
-                  <td>response&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">AccurateRip response</a> to be matched</td>
-                </tr>
-              </tbody>
-            </table>
+            <p>Print a <a href="classarcstk_1_1v__1__0__0_1_1VerificationResult.html" class="m-doc">VerificationResult</a> to a stream.</p>
           </div></section>
         </section>
       </div>

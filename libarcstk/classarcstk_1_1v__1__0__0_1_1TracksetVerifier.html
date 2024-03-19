@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcstk::v_1_0_0::TracksetMatcher class | libarcstk Toolkit to calculate and verify AccurateRip checksums and ids</title>
+  <title>arcstk::v_1_0_0::TracksetVerifier class | libarcstk Toolkit to calculate and verify AccurateRip checksums and ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -46,45 +46,50 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::TracksetMatcher <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="match_8hpp.html">&lt;/home/stefan/Projects/libarcstk/include/match.hpp&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::TracksetVerifier <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="verify_8hpp.html">&lt;verify.hpp&gt;</a></div>
         </h1>
-        <p><a href="classarcstk_1_1v__1__0__0_1_1Match.html" class="m-doc">Match</a> an arbitrary set of <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a> against an <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>.</p>
+        <p><a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a> for a set of checksums without a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a>.</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-<p>Find any match of any actual <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>. This targets the situation where a subset of tracks from the same album are tried to be matched, but the subset may be incomplete and the order of the tracks might not be known.</p><aside class="m-note m-info"><h4>Note</h4><p>The <a href="classarcstk_1_1v__1__0__0_1_1TracksetMatcher.html" class="m-doc">TracksetMatcher</a> is a generalization of the <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a>. The <a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a> adds the restriction that the order of tracks in the <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a> must be matched too.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumMatcher.html" class="m-doc">AlbumMatcher</a></p><p><a href="classarcstk_1_1v__1__0__0_1_1ListMatcher.html" class="m-doc">ListMatcher</a></p></aside>
+<p>Find any match of any actual <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> in the reference. This targets the situation where a set of tracks is to be matched that actually forms an album but there is no <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> present. This means that there is also no <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> known and maybe not even the actual order of tracks.</p><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetVerifier.html" class="m-doc">TracksetVerifier</a> requires that the set of actual checksums and the blocks of the <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a> have the same cardinality. This means intuitively that the number of tracks in local input as well as in the reference must be the same. The verification of only some tracks against a superset of references is not supported.</p><p>The <a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a> is less ressource-consuming since it has to perform only a single match for every reference value. It is therefore recommended to use <a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a> in any case where a <a href="classarcstk_1_1v__1__0__0_1_1TOC.html" class="m-doc">TOC</a> is available.</p><aside class="m-note m-info"><h4>Note</h4><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetVerifier.html" class="m-doc">TracksetVerifier</a> is a generalization of the <a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a>. <a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a> adds the restriction that the order of tracks in the reference must be matched too.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a></p></aside>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">v_1_0_0::Verifier</a>
+            </dt>
+            <dd>Interface: perform a verification.</dd>
+          </dl>
+        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#ac2f90164c8c679bcf3b8781704499d7f" class="m-doc">TracksetMatcher</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; checksums,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; id,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; response)</span>
+              <span class="m-doc-wrap-bumper"><a href="#ae41953782847417fb0c3db1c465a53be" class="m-doc">TracksetVerifier</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; actual_sums)</span>
             </dt>
             <dd>Constructor.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#ac654a5876c7473228566d3ae34663884" class="m-doc">TracksetMatcher</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; checksums,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; response)</span>
+            <dt id="aa0d4ce3b9a7d4a9d2b552cc2f16b9ed2">
+              <span class="m-doc-wrap-bumper"><a href="#aa0d4ce3b9a7d4a9d2b552cc2f16b9ed2" class="m-doc-self">~TracksetVerifier</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Constructor.</dd>
+            <dd>Default destructor:</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ac2f90164c8c679bcf3b8781704499d7f"><div>
+          <section class="m-doc-details" id="ae41953782847417fb0c3db1c465a53be"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />TracksetMatcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac2f90164c8c679bcf3b8781704499d7f" class="m-doc-self">TracksetMatcher</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; checksums,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; id,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; response)</span></span>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />TracksetVerifier::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae41953782847417fb0c3db1c465a53be" class="m-doc-self">TracksetVerifier</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; actual_sums)</span></span>
             </h3>
             <p>Constructor.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -93,38 +98,8 @@
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">checksums&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The checksums to match</td>
-                </tr>
-                <tr>
-                  <td>id&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> to match</td>
-                </tr>
-                <tr>
-                  <td>response&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The AccurateRip response to be matched</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ac654a5876c7473228566d3ae34663884"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />TracksetMatcher::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac654a5876c7473228566d3ae34663884" class="m-doc-self">TracksetMatcher</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Checksums.html" class="m-doc">Checksums</a>&amp; checksums,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARResponse.html" class="m-doc">ARResponse</a>&amp; response)</span></span>
-            </h3>
-            <p>Constructor.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">checksums&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The checksums to match</td>
-                </tr>
-                <tr>
-                  <td>response&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The AccurateRip response to be matched</td>
+                  <td style="width: 1%">actual_sums&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Actual checksums to check for</td>
                 </tr>
               </tbody>
             </table>
