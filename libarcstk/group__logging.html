@@ -105,12 +105,6 @@
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga95e1584adb11a92335db7e490a09ae51" class="m-doc">api_version_is_at_least</a>(</span><span class="m-doc-wrap">const int major,
-              const int minor,
-              const int patch) -&gt; bool</span>
-            </dt>
-            <dd>Compares specified version to actual version.</dd>
-            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ga577c9ce07c6b223b3e38fa9d8bfa06e4" class="m-doc">now_time</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span>
             </dt>
             <dd>Returns the current time in the format <code>&#x27;YYYY-MM-DD hh:mm:ss.lll&#x27;</code>.</dd>
@@ -119,34 +113,6 @@
         <section id="var-members">
           <h2><a href="#var-members">Variables</a></h2>
           <dl class="m-doc">
-            <dt>
-              const std::string <a href="#gaa667d1f64d570338574fd1d2ea743a72" class="m-doc">LIBARCSTK_GIT_VERSION</a>
-            </dt>
-            <dd>Version info as shown by <code>git describe --always HEAD</code>.</dd>
-            <dt>
-              const std::string <a href="#ga142ac48c11a805524fceca7257438c5b" class="m-doc">LIBARCSTK_NAME</a>
-            </dt>
-            <dd>Library name.</dd>
-            <dt>
-              const std::string <a href="#ga0165c13c7a3f6dc9d2eb909539af3597" class="m-doc">LIBARCSTK_VERSION</a>
-            </dt>
-            <dd>Complete semantic version information.</dd>
-            <dt>
-              const int <a href="#gaea1ed886ca736dfb807332a26fab4a7f" class="m-doc">LIBARCSTK_VERSION_MAJOR</a>
-            </dt>
-            <dd>Major version number.</dd>
-            <dt>
-              const int <a href="#gaa99154c484736568335aa0af9975d4d8" class="m-doc">LIBARCSTK_VERSION_MINOR</a>
-            </dt>
-            <dd>Minor version number.</dd>
-            <dt>
-              const int <a href="#gac20d70302b726a9e57238785affdf9c1" class="m-doc">LIBARCSTK_VERSION_PATCH</a>
-            </dt>
-            <dd>Patch level.</dd>
-            <dt>
-              const std::string <a href="#ga64291a8d351f2844ea0e7d7a6f246c94" class="m-doc">LIBARCSTK_VERSION_SUFFIX</a>
-            </dt>
-            <dd>Version suffix (e.g. &#x27;alpha.1&#x27;, &#x27;beta.6&#x27;, &#x27;rc.3&#x27; etc.).</dd>
             <dt>
               const int <a href="#ga46d38107de6ffe4a14178746eed889b4" class="m-doc">LOGLEVEL_MAX</a>
             </dt>
@@ -199,40 +165,6 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ga95e1584adb11a92335db7e490a09ae51"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga95e1584adb11a92335db7e490a09ae51" class="m-doc-self">api_version_is_at_least</a>(</span><span class="m-doc-wrap">const int major,
-              const int minor,
-              const int patch)</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Compares specified version to actual version.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">major&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Major version number to test</td>
-                </tr>
-                <tr>
-                  <td>minor&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Minor version number to test</td>
-                </tr>
-                <tr>
-                  <td>patch&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Patch level number to test</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>TRUE if actual version is at least specified version</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="ga577c9ce07c6b223b3e38fa9d8bfa06e4"><div>
             <h3>
               <span class="m-doc-wrap-bumper">std::string </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga577c9ce07c6b223b3e38fa9d8bfa06e4" class="m-doc-self">now_time</a>(</span><span class="m-doc-wrap">)</span></span>
@@ -252,55 +184,6 @@
         </section>
         <section>
           <h2>Variable documentation</h2>
-          <section class="m-doc-details" id="gaa667d1f64d570338574fd1d2ea743a72"><div>
-            <h3>
-              const std::string <a href="#gaa667d1f64d570338574fd1d2ea743a72" class="m-doc-self">LIBARCSTK_GIT_VERSION</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Version info as shown by <code>git describe --always HEAD</code>.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga142ac48c11a805524fceca7257438c5b"><div>
-            <h3>
-              const std::string <a href="#ga142ac48c11a805524fceca7257438c5b" class="m-doc-self">LIBARCSTK_NAME</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Library name.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga0165c13c7a3f6dc9d2eb909539af3597"><div>
-            <h3>
-              const std::string <a href="#ga0165c13c7a3f6dc9d2eb909539af3597" class="m-doc-self">LIBARCSTK_VERSION</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Complete semantic version information.</p>
-          </div></section>
-          <section class="m-doc-details" id="gaea1ed886ca736dfb807332a26fab4a7f"><div>
-            <h3>
-              const int <a href="#gaea1ed886ca736dfb807332a26fab4a7f" class="m-doc-self">LIBARCSTK_VERSION_MAJOR</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Major version number.</p>
-          </div></section>
-          <section class="m-doc-details" id="gaa99154c484736568335aa0af9975d4d8"><div>
-            <h3>
-              const int <a href="#gaa99154c484736568335aa0af9975d4d8" class="m-doc-self">LIBARCSTK_VERSION_MINOR</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Minor version number.</p>
-          </div></section>
-          <section class="m-doc-details" id="gac20d70302b726a9e57238785affdf9c1"><div>
-            <h3>
-              const int <a href="#gac20d70302b726a9e57238785affdf9c1" class="m-doc-self">LIBARCSTK_VERSION_PATCH</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Patch level.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga64291a8d351f2844ea0e7d7a6f246c94"><div>
-            <h3>
-              const std::string <a href="#ga64291a8d351f2844ea0e7d7a6f246c94" class="m-doc-self">LIBARCSTK_VERSION_SUFFIX</a>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="version_8hpp.html">&lt;version.hpp&gt;</a></div>
-            </h3>
-            <p>Version suffix (e.g. &#x27;alpha.1&#x27;, &#x27;beta.6&#x27;, &#x27;rc.3&#x27; etc.).</p>
-          </div></section>
           <section class="m-doc-details" id="ga46d38107de6ffe4a14178746eed889b4"><div>
             <h3>
               const int <a href="#ga46d38107de6ffe4a14178746eed889b4" class="m-doc-self">LOGLEVEL_MAX</a>
