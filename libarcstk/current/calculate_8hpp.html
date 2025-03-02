@@ -57,9 +57,6 @@
               <ul>
                 <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#enum-members">Enums</a></li>
-                <li><a href="#typedef-members">Typedefs</a></li>
-                <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
@@ -92,62 +89,6 @@
               class <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">arcstk::v_1_0_0::Settings</a>
             </dt>
             <dd><a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> for a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</dd>
-          </dl>
-        </section>
-        <section id="enum-members">
-          <h2><a href="#enum-members">Enums</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="group__calc.html#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>: unsigned { </span><span class="m-doc-wrap"><a href="#ggaff67ae2ced108d4e87f99f8edf8f136fab82057c0f8a7631cf533363631986a00" class="m-doc">TRACK</a> = 0,
-              <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fa7648ead44cb9dcfcedcecb6c8b773d80" class="m-doc">FIRST_TRACK</a> = 1,
-              <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fa28a5e0435fed4d96c9ccb07ee744cf65" class="m-doc">LAST_TRACK</a> = 2,
-              <a href="#ggaff67ae2ced108d4e87f99f8edf8f136faeaa4b00b7c00e8fb9c185fdbb83b36a0" class="m-doc">ALBUM</a> = 3 }</span>
-            </dt>
-            <dd>Represent what is to be relevant for calculation process.</dd>
-          </dl>
-        </section>
-        <section id="typedef-members">
-          <h2><a href="#typedef-members">Typedefs</a></h2>
-          <dl class="m-doc">
-            <dt>
-              using <a href="group__calc.html#gaac761a7445764fc564f73315f4b3ace0" class="m-doc">ChecksumtypeSet</a> = std::unordered_set&lt;checksum::type&gt;
-            </dt>
-            <dd>Set of checksum types.</dd>
-            <dt>
-              using <a href="group__calc.html#gadb6b388967b3ef28648ba4b757d5c39f" class="m-doc">Points</a> = std::vector&lt;AudioSize&gt;
-            </dt>
-            <dd>List of split points within a range of samples.</dd>
-            <dt>
-              using <a href="group__calc.html#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">sample_t</a> = uint32_t
-            </dt>
-            <dd>Represent a 32 bit wide PCM stereo sample.</dd>
-            <dt>
-              using <a href="group__meta.html#ga82c683bd356acae7075ba31f46107c65" class="m-doc">ToCData</a> = std::vector&lt;AudioSize&gt;
-            </dt>
-            <dd><a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> data from a file, e.g. offsets and leadout.</dd>
-          </dl>
-        </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#gaddcb8cc0c9d13224b61314a388fa9fde" class="m-doc">any</a>(</span><span class="m-doc-wrap">const Context&amp; c) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Returns TRUE iff <code>c</code> is not equivalent to 0.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga2f97bf656cc47d2a8697018f3728cb16" class="m-doc">make_calculation</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;Algorithm&gt; algorithm,
-              const ToC&amp; toc) -&gt; std::unique_ptr&lt;Calculation&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> from an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> and a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="group__calc.html#gaccfefb62c2652de5f7c256f4ed1d62f9" class="m-doc">swap</a>(</span><span class="m-doc-wrap">Context&amp; lhs,
-              Context&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Swap two Context instances.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#gad63174aa3ca35e030015bf3ac461bc2e" class="m-doc">to_string</a>(</span><span class="m-doc-wrap">const Context&amp; c) -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>String representation of a Context.</dd>
           </dl>
         </section>
       </div>
@@ -194,7 +135,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

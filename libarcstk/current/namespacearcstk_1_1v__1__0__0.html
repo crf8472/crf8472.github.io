@@ -57,10 +57,6 @@
               <ul>
                 <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#enum-members">Enums</a></li>
-                <li><a href="#typedef-members">Typedefs</a></li>
-                <li><a href="#func-members">Functions</a></li>
-                <li><a href="#var-members">Variables</a></li>
               </ul>
             </li>
           </ul>
@@ -68,14 +64,14 @@
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
-            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1accuraterip.html" class="m-doc">accuraterip</a></dt>
-            <dd>Calculating <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksums.</dd>
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a></dt>
             <dd><a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksum calculation algorithms.</dd>
+            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1accuraterip.html" class="m-doc">accuraterip</a></dt>
+            <dd>Calculating <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksums.</dd>
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html" class="m-doc">checksum</a></dt>
             <dd>Operations on checksum types and their names.</dd>
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html" class="m-doc">toc</a></dt>
-            <dd>Functions for managing ToCData instances.</dd>
+            <dd>Functions for managing <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> instances.</dd>
           </dl>
         </section>
         <section id="nested-classes">
@@ -161,7 +157,7 @@
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Log.html" class="m-doc">v_1_0_0::Log</a>
             </dt>
-            <dd>A single logging operation of a <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a> using a specified LOGLEVEL.</dd>
+            <dd>A single logging operation of a <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a> using a specified <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a>.</dd>
             <dt>
               class <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">v_1_0_0::Logger</a>
             </dt>
@@ -204,254 +200,13 @@
             </dt>
             <dd><a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a> for a set of checksums without a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1VerificationResult.html" class="m-doc">VerificationResult</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1VerificationResult.html" class="m-doc">v_1_0_0::VerificationResult</a>
             </dt>
             <dd>Interface: Result of a verification process.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">v_1_0_0::Verifier</a>
             </dt>
-            <dd>Interface: perform a verification.</dd>
-          </dl>
-        </section>
-        <section id="enum-members">
-          <h2><a href="#enum-members">Enums</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="group__calc.html#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>: unsigned { </span><span class="m-doc-wrap"><a href="#ggaff67ae2ced108d4e87f99f8edf8f136fab82057c0f8a7631cf533363631986a00" class="m-doc">TRACK</a> = 0,
-              <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fa7648ead44cb9dcfcedcecb6c8b773d80" class="m-doc">FIRST_TRACK</a> = 1,
-              <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fa28a5e0435fed4d96c9ccb07ee744cf65" class="m-doc">LAST_TRACK</a> = 2,
-              <a href="#ggaff67ae2ced108d4e87f99f8edf8f136faeaa4b00b7c00e8fb9c185fdbb83b36a0" class="m-doc">ALBUM</a> = 3 }</span>
-            </dt>
-            <dd>Represent what is to be relevant for calculation process.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a>: int16_t { </span><span class="m-doc-wrap"><a href="#gga75b251ee03b420d92b3c6a29a41846ebab50339a10e1de285ac99d4c3990b8693" class="m-doc">NONE</a> = 0,
-              <a href="#gga75b251ee03b420d92b3c6a29a41846ebabb1ca97ec761fc37101737ba0aa2e7c5" class="m-doc">ERROR</a> = 1,
-              <a href="#gga75b251ee03b420d92b3c6a29a41846eba059e9861e0400dfbe05c98a841f3f96b" class="m-doc">WARNING</a> = 2,
-              <a href="#gga75b251ee03b420d92b3c6a29a41846eba551b723eafd6a31d444fcb2f5920fbd3" class="m-doc">INFO</a> = 3,
-              <a href="#gga75b251ee03b420d92b3c6a29a41846ebadc30ec20708ef7b0f641ef78b7880a15" class="m-doc">DEBUG</a> = 4,
-              <a href="#gga75b251ee03b420d92b3c6a29a41846eba4a22284361f9f7c522f0c0fcca9a1d04" class="m-doc">DEBUG1</a> = 5,
-              <a href="#gga75b251ee03b420d92b3c6a29a41846eba75c530df858253db4ee51268b47c875d" class="m-doc">DEBUG2</a> = 6,
-              <a href="#gga75b251ee03b420d92b3c6a29a41846ebaf1c09add474f7ab70a36e7a9570b148b" class="m-doc">DEBUG3</a> = 7,
-              <a href="#gga75b251ee03b420d92b3c6a29a41846ebad49737ac772ff453f1340643d60ab904" class="m-doc">DEBUG4</a> = 8 }</span>
-            </dt>
-            <dd>Range of log levels.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="group__meta.html#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a>: int { </span><span class="m-doc-wrap"><a href="#ggafa41ff0d0cd0ea8a37ac720fe201368aa036429f7a46a17439207d188e46ca840" class="m-doc">FRAMES</a> = 1,
-              <a href="#ggafa41ff0d0cd0ea8a37ac720fe201368aa688336d42609d7e78c5e6f0113309c26" class="m-doc">SAMPLES</a> = CDDA::SAMPLES_PER_FRAME,
-              <a href="#ggafa41ff0d0cd0ea8a37ac720fe201368aa9f1908a641ea399fd2e76f0905c88fcf" class="m-doc">BYTES</a> = CDDA::BYTES_PER_FRAME }</span>
-            </dt>
-            <dd>Represents an audio unit.</dd>
-          </dl>
-        </section>
-        <section id="typedef-members">
-          <h2><a href="#typedef-members">Typedefs</a></h2>
-          <dl class="m-doc">
-            <dt>
-              using <a href="group__calc.html#gaa28460dc9cfed72176423e6d35e37539" class="m-doc">Checksums</a> = std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&gt;
-            </dt>
-            <dd>A list of ChecksumSets.</dd>
-            <dt>
-              using <a href="group__calc.html#gaac761a7445764fc564f73315f4b3ace0" class="m-doc">ChecksumtypeSet</a> = std::unordered_set&lt;<a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&gt;
-            </dt>
-            <dd>Set of checksum types.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              using <a href="group__calc.html#ga35db1ec1a32b802681337cbbd281b0cf" class="m-doc">InterleavedSamples</a> = <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a>&lt;T, false&gt;
-            </dt>
-            <dd>Interleaved sample sequence with samples of type T.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              using <a href="group__calc.html#gaa96cac59603e345b08b8a85238120e39" class="m-doc">PlanarSamples</a> = <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a>&lt;T, true&gt;
-            </dt>
-            <dd>Planar sample sequence with samples of type T.</dd>
-            <dt>
-              using <a href="group__calc.html#gadb6b388967b3ef28648ba4b757d5c39f" class="m-doc">Points</a> = std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt;
-            </dt>
-            <dd>List of split points within a range of samples.</dd>
-            <dt>
-              using <a href="group__calc.html#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">sample_t</a> = uint32_t
-            </dt>
-            <dd>Represent a 32 bit wide PCM stereo sample.</dd>
-            <dt>
-              using <a href="group__meta.html#ga82c683bd356acae7075ba31f46107c65" class="m-doc">ToCData</a> = std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt;
-            </dt>
-            <dd><a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> data from a file, e.g. offsets and leadout.</dd>
-          </dl>
-        </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#gaddcb8cc0c9d13224b61314a388fa9fde" class="m-doc">any</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>&amp; c) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Returns TRUE iff <code>c</code> is not equivalent to 0.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__version.html#ga95e1584adb11a92335db7e490a09ae51" class="m-doc">api_version_is_at_least</a>(</span><span class="m-doc-wrap">const int major,
-              const int minor,
-              const int patch) -&gt; bool</span>
-            </dt>
-            <dd>Compares specified version to actual version.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;enum UNIT F, enum UNIT T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#ga8e6b71e5f2cc84915c1ec6bb421ff8b6" class="m-doc">convert</a>(</span><span class="m-doc-wrap">const int32_t amount) -&gt; int32_t -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
-            </dt>
-            <dd>Convert from UNIT F to UNIT T.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;enum UNIT U&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#gac39d0b4b9a30243996c4f6106de060b7" class="m-doc">convert</a>(</span><span class="m-doc-wrap">const std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt;&amp; values) -&gt; std::vector&lt;int32_t&gt;</span>
-            </dt>
-            <dd>Convert a vector of <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> instances to the specified UNIT.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;enum UNIT U&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#gac8f6232ea674d939ef4c5180ef8c5839" class="m-doc">convert_to</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; v) -&gt; int32_t</span>
-            </dt>
-            <dd>Convert an <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> to the specified UNIT.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__dbar.html#gaadf8df1f55f97c803d86c94d8a7443e8" class="m-doc">is_valid_arcs</a>(</span><span class="m-doc-wrap">const uint32_t value) -&gt; bool</span>
-            </dt>
-            <dd>Check a parsed value whether it is a valid ARCS (also frame 450 ARCS).</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__dbar.html#ga6ea60dc47d39e40fb9eaf872fbf79e0f" class="m-doc">is_valid_confidence</a>(</span><span class="m-doc-wrap">const unsigned value) -&gt; bool</span>
-            </dt>
-            <dd>Check a parsed value whether it is a valid confidence.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__dbar.html#ga5765f98098ca6cd7085c9014cc9a6450" class="m-doc">load_file</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a></span>
-            </dt>
-            <dd>Read an <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> response file to a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga6e33b0cf75865c262891a779e4075538" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt;&amp; offsets,
-              const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
-            </dt>
-            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from the toc data.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga43b97cc4eec14b3ae29353f1b6fab938" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>&amp; toc) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
-            </dt>
-            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html#a3510fed4cb75967a13f5509cdaf41a46" class="m-doc">complete()</a> <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#gac3d61ba5101479be6a48f2bcf94b1ac2" class="m-doc">make_arid</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>&amp; toc,
-              const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; leadout) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt;</span>
-            </dt>
-            <dd>Create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> from a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> and a specified leadout.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#ga2f97bf656cc47d2a8697018f3728cb16" class="m-doc">make_calculation</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>&gt; algorithm,
-              const <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>&amp; toc) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> from an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> and a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__id.html#ga5c719488781d9555024d474473ed3213" class="m-doc">make_empty_arid</a>(</span><span class="m-doc-wrap">) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&gt; <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Safely create an <a href="classarcstk_1_1v__1__0__0_1_1ARId.html#ac806ba9e404b0ccf005b798679c311b9" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#gacaa2228a4fe998f1bf34a0a786efb630" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const int32_t leadout,
-              const std::vector&lt;int32_t&gt;&amp; offsets) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> from leadout and offsets.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#ga03a07decc2fcd8400bb8f45c22872812" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const int32_t leadout,
-              const std::vector&lt;int32_t&gt;&amp; offsets,
-              const std::vector&lt;std::string&gt;&amp; filenames) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> from leadout, offsets and filenames.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#ga8fefd7f25d39c251065e6ed3b26429bd" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const std::vector&lt;int32_t&gt;&amp; offsets) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> from offsets.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#ga500d4831c02b6fee3d14ded8c93bf502" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const std::vector&lt;int32_t&gt;&amp; offsets,
-              const std::vector&lt;std::string&gt;&amp; filenames) -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> from offsets and filenames.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__logging.html#ga577c9ce07c6b223b3e38fa9d8bfa06e4" class="m-doc">now_time</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span>
-            </dt>
-            <dd>Returns the current time in the format <code>&#x27;YYYY-MM-DD hh:mm:ss.lll&#x27;</code>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__dbar.html#gae096928cb5ca2ecada224c357fb0af91" class="m-doc">parse_file</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              <a href="classarcstk_1_1v__1__0__0_1_1ParseHandler.html" class="m-doc">ParseHandler</a>* p,
-              <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">ParseErrorHandler</a>* e) -&gt; uint32_t</span>
-            </dt>
-            <dd>Parse a file.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__dbar.html#ga3a07634fe099439b070255ec9e8892b3" class="m-doc">parse_stream</a>(</span><span class="m-doc-wrap">std::istream&amp; in,
-              <a href="classarcstk_1_1v__1__0__0_1_1ParseHandler.html" class="m-doc">ParseHandler</a>* p,
-              <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">ParseErrorHandler</a>* e) -&gt; uint32_t</span>
-            </dt>
-            <dd>Parse an input stream.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="group__calc.html#gaccfefb62c2652de5f7c256f4ed1d62f9" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="group__calc.html#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>&amp; lhs,
-              <a href="group__calc.html#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Swap two Context instances.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__calc.html#gad63174aa3ca35e030015bf3ac461bc2e" class="m-doc">to_string</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>&amp; c) -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>String representation of a Context.</dd>
-          </dl>
-        </section>
-        <section id="var-members">
-          <h2><a href="#var-members">Variables</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <div class="m-doc-template">template&lt;enum UNIT U&gt;</div>
-              int32_t <a href="group__meta.html#gab80736fc1fa709df9702b2fd87533763" class="m-doc">cdda_max</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd>Maximum value for the specified UNIT according to <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a>.</dd>
-            <dt>
-              const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> <a href="group__id.html#gaf9ce24c60a496cd535ed1400fa2f48b6" class="m-doc">EmptyARId</a>
-            </dt>
-            <dd>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
-            <dt>
-              const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> <a href="group__meta.html#gad4e9f93cf9dfc2268a6ee91899cdcaa4" class="m-doc">EmptyAudioSize</a>
-            </dt>
-            <dd>Empty <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>.</dd>
-            <dt>
-              const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> <a href="group__calc.html#ga2ab8d0c00d6c4763b067d9af1c534811" class="m-doc">EmptyChecksum</a>
-            </dt>
-            <dd>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
-            <dt>
-              const <a href="group__calc.html#gaa28460dc9cfed72176423e6d35e37539" class="m-doc">Checksums</a> <a href="group__calc.html#ga1bf7921f1fdcb170e447687f04dd5083" class="m-doc">EmptyChecksums</a>
-            </dt>
-            <dd>Global instance of empty Checksums.</dd>
-            <dt>
-              const <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> <a href="group__calc.html#gadb5325a16f376f054ca44e0e355d5062" class="m-doc">EmptyChecksumSet</a>
-            </dt>
-            <dd>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>.</dd>
-            <dt>
-              const std::string <a href="group__version.html#gaa667d1f64d570338574fd1d2ea743a72" class="m-doc">LIBARCSTK_GIT_VERSION</a>
-            </dt>
-            <dd>Version info as shown by <code>git describe --always HEAD</code>.</dd>
-            <dt>
-              const std::string <a href="group__version.html#ga142ac48c11a805524fceca7257438c5b" class="m-doc">LIBARCSTK_NAME</a>
-            </dt>
-            <dd>Library name.</dd>
-            <dt>
-              const std::string <a href="group__version.html#ga0165c13c7a3f6dc9d2eb909539af3597" class="m-doc">LIBARCSTK_VERSION</a>
-            </dt>
-            <dd>Complete semantic version information.</dd>
-            <dt>
-              const int <a href="group__version.html#gaea1ed886ca736dfb807332a26fab4a7f" class="m-doc">LIBARCSTK_VERSION_MAJOR</a>
-            </dt>
-            <dd>Major version number.</dd>
-            <dt>
-              const int <a href="group__version.html#gaa99154c484736568335aa0af9975d4d8" class="m-doc">LIBARCSTK_VERSION_MINOR</a>
-            </dt>
-            <dd>Minor version number.</dd>
-            <dt>
-              const int <a href="group__version.html#gac20d70302b726a9e57238785affdf9c1" class="m-doc">LIBARCSTK_VERSION_PATCH</a>
-            </dt>
-            <dd>Patch level.</dd>
-            <dt>
-              const std::string <a href="group__version.html#ga64291a8d351f2844ea0e7d7a6f246c94" class="m-doc">LIBARCSTK_VERSION_SUFFIX</a>
-            </dt>
-            <dd>Version suffix (e.g. &#x27;alpha.1&#x27;, &#x27;beta.6&#x27;, &#x27;rc.3&#x27; etc.).</dd>
-            <dt>
-              int <a href="group__logging.html#ga0fb4c0c142bb38aaa98de8a694fc499b" class="m-doc">LOGLEVEL_MAX</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd>Numeric representation of the maximum legal loglevel.</dd>
-            <dt>
-              int <a href="group__logging.html#gade6f0f50953e558bbcd4f970e0b7d8ce" class="m-doc">LOGLEVEL_MIN</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd>Numeric representation of the minimal legal loglevel.</dd>
+            <dd>Some class that will not show its namespace.</dd>
           </dl>
         </section>
       </div>
@@ -498,7 +253,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

@@ -64,12 +64,12 @@
             </li>
           </ul>
         </nav>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> is the table of content information from a compact disc. It contains the track offsets and optionally the leadout of the compact disc. ToCs that contain not only the offsets but also the leadout are <a href="classarcstk_1_1v__1__0__0_1_1ToC.html#a3510fed4cb75967a13f5509cdaf41a46" class="m-doc">complete</a>.</p><p>ToCData is a minimalistic version of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>: an aggregate that contains the leadout at index 0 and on the subsequent index positions 1..n the offets of the respective tracks. Hence, ToCData contains all and only the data that is required to calculate <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksums.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> is a representation of an amount of audio information that can be evaluated as frames, samples or bytes. Passing <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> objects helps to avoid accidentally calculating with the wrong unit, e.g. w/ samples when frames are required.</p><p><a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a> provides a set of cdda related constants that are used on validating and parsing audio information.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> indicates that no valid <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> can be constructed from the input provided.</p><p>A NonstandardMetadataException indicates that the input is not conforming to the redbook standard.</p>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> is the table of content information from a compact disc. It contains the track offsets and optionally the leadout of the compact disc. ToCs that contain not only the offsets but also the leadout are <a href="classarcstk_1_1v__1__0__0_1_1ToC.html#a3510fed4cb75967a13f5509cdaf41a46" class="m-doc">complete</a>.</p><p><a href="#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> is a minimalistic version of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>: an aggregate that contains the leadout at index 0 and on the subsequent index positions 1..n the offets of the respective tracks. Hence, <a href="#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> contains all and only the data that is required to calculate <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksums.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> is a representation of an amount of audio information that can be evaluated as frames, samples or bytes. Passing <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> objects helps to avoid accidentally calculating with the wrong unit, e.g. w/ samples when frames are required.</p><p><a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a> provides a set of cdda related constants that are used on validating and parsing audio information.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1InvalidMetadataException.html" class="m-doc">InvalidMetadataException</a> indicates that no valid <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> can be constructed from the input provided.</p><p>A NonstandardMetadataException indicates that the input is not conforming to the redbook standard.</p>
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html" class="m-doc">arcstk::v_1_0_0::toc</a></dt>
-            <dd>Functions for managing ToCData instances.</dd>
+            <dd>Functions for managing <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> instances.</dd>
           </dl>
         </section>
         <section id="nested-classes">
@@ -108,7 +108,7 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a href="#ga82c683bd356acae7075ba31f46107c65" class="m-doc">ToCData</a> = std::vector&lt;AudioSize&gt;
+              using <a href="#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> = std::vector&lt;AudioSize&gt;
             </dt>
             <dd><a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> data from a file, e.g. offsets and leadout.</dd>
           </dl>
@@ -118,19 +118,19 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template&lt;enum UNIT F, enum UNIT T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ga8e6b71e5f2cc84915c1ec6bb421ff8b6" class="m-doc">convert</a>(</span><span class="m-doc-wrap">const int32_t amount) -&gt; int32_t -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga8e6b71e5f2cc84915c1ec6bb421ff8b6" class="m-doc">convert</a>(</span><span class="m-doc-wrap">const int32_t amount) -&gt; int32_t <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>Convert from UNIT F to UNIT T.</dd>
+            <dd>Convert from <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> F to <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> T.</dd>
             <dt>
               <div class="m-doc-template">template&lt;enum UNIT U&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#gac39d0b4b9a30243996c4f6106de060b7" class="m-doc">convert</a>(</span><span class="m-doc-wrap">const std::vector&lt;AudioSize&gt;&amp; values) -&gt; std::vector&lt;int32_t&gt;</span>
             </dt>
-            <dd>Convert a vector of <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> instances to the specified UNIT.</dd>
+            <dd>Convert a vector of <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> instances to the specified <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a>.</dd>
             <dt>
               <div class="m-doc-template">template&lt;enum UNIT U&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#gac8f6232ea674d939ef4c5180ef8c5839" class="m-doc">convert_to</a>(</span><span class="m-doc-wrap">const AudioSize&amp; v) -&gt; int32_t</span>
             </dt>
-            <dd>Convert an <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> to the specified UNIT.</dd>
+            <dd>Convert an <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> to the specified <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#gacaa2228a4fe998f1bf34a0a786efb630" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const int32_t leadout,
               const std::vector&lt;int32_t&gt;&amp; offsets) -&gt; std::unique_ptr&lt;ToC&gt;</span>
@@ -160,7 +160,7 @@
               <div class="m-doc-template">template&lt;enum UNIT U&gt;</div>
               int32_t <a href="#gab80736fc1fa709df9702b2fd87533763" class="m-doc">cdda_max</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd>Maximum value for the specified UNIT according to <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a>.</dd>
+            <dd>Maximum value for the specified <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> according to <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a>.</dd>
             <dt>
               const AudioSize <a href="#gad4e9f93cf9dfc2268a6ee91899cdcaa4" class="m-doc">EmptyAudioSize</a>
             </dt>
@@ -180,9 +180,9 @@
         </section>
         <section>
           <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="ga82c683bd356acae7075ba31f46107c65"><div>
+          <section class="m-doc-details" id="ga80a7d493e33023123b3d26af1584e2f5"><div>
             <h3>
-              typedef std::vector&lt;AudioSize&gt; <a href="#ga82c683bd356acae7075ba31f46107c65" class="m-doc-self">ToCData</a>
+              typedef std::vector&lt;AudioSize&gt; <a href="#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc-self">ToCData</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
             <p><a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> data from a file, e.g. offsets and leadout.</p>
@@ -197,9 +197,9 @@
               <div class="m-doc-template">
                 template&lt;enum UNIT F, enum UNIT T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga8e6b71e5f2cc84915c1ec6bb421ff8b6" class="m-doc-self">convert</a>(</span><span class="m-doc-wrap">const int32_t amount) -&gt; int32_t <span class="m-label m-primary">constexpr</span></span></span>
+              <span class="m-doc-wrap-bumper">int32_t </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga8e6b71e5f2cc84915c1ec6bb421ff8b6" class="m-doc-self">convert</a>(</span><span class="m-doc-wrap">const int32_t amount) <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
-            <p>Convert from UNIT F to UNIT T.</p>
+            <p>Convert from <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> F to <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> T.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -207,11 +207,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">F</td>
-                  <td>The UNIT of <code>amount</code> to be converted</td>
+                  <td>The <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> of <code>amount</code> to be converted</td>
                 </tr>
                 <tr>
                   <td>T</td>
-                  <td>The UNIT to convert to</td>
+                  <td>The <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> to convert to</td>
                 </tr>
               </tbody>
               <thead>
@@ -226,11 +226,11 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>The equivalent amount in UNIT T</td>
+                  <td>The equivalent amount in <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> T</td>
                 </tr>
               </tfoot>
             </table>
-<p>Convert an amount auf UNIT F to the equivalent amount of UNIT T.</p>
+<p>Convert an amount auf <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> F to the equivalent amount of <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> T.</p>
           </div></section>
           <section class="m-doc-details" id="gac39d0b4b9a30243996c4f6106de060b7"><div>
             <h3>
@@ -240,7 +240,7 @@
               </div>
               <span class="m-doc-wrap-bumper">std::vector&lt;int32_t&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gac39d0b4b9a30243996c4f6106de060b7" class="m-doc-self">convert</a>(</span><span class="m-doc-wrap">const std::vector&lt;AudioSize&gt;&amp; values)</span></span>
             </h3>
-            <p>Convert a vector of <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> instances to the specified UNIT.</p>
+            <p>Convert a vector of <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> instances to the specified <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -248,7 +248,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">U</td>
-                  <td>The UNIT to convert to</td>
+                  <td>The <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> to convert to</td>
                 </tr>
               </tbody>
               <thead>
@@ -276,7 +276,7 @@
               </div>
               <span class="m-doc-wrap-bumper">int32_t </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gac8f6232ea674d939ef4c5180ef8c5839" class="m-doc-self">convert_to</a>(</span><span class="m-doc-wrap">const AudioSize&amp; v)</span></span>
             </h3>
-            <p>Convert an <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> to the specified UNIT.</p>
+            <p>Convert an <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> to the specified <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -284,7 +284,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">U</td>
-                  <td>The UNIT to convert to</td>
+                  <td>The <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> to convert to</td>
                 </tr>
               </tbody>
               <thead>
@@ -407,7 +407,7 @@
               </div>
               int32_t <a href="#gab80736fc1fa709df9702b2fd87533763" class="m-doc-self">cdda_max</a> <span class="m-label m-primary">constexpr</span>
             </h3>
-            <p>Maximum value for the specified UNIT according to <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a>.</p>
+            <p>Maximum value for the specified <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> according to <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -415,7 +415,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">U</td>
-                  <td>The UNIT the determine the maximum legal <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a> value of</td>
+                  <td>The <a href="#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a> the determine the maximum legal <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a> value of</td>
                 </tr>
               </tbody>
             </table>
@@ -473,7 +473,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

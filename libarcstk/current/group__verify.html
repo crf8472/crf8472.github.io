@@ -47,7 +47,7 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           AccurateRip Checksum Verification <span class="m-thin">module</span></h1>
-        <p>Verify local Checksums against a <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>.</p>
+        <p>Verify local <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> against a <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>.</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -59,7 +59,7 @@
             </li>
           </ul>
         </nav>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a> verifies local Checksums against some reference Checksums provided by a <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>. A <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a> is an interface to different kinds of input for Checksums. For convenience, a <a href="classarcstk_1_1v__1__0__0_1_1DBARSource.html" class="m-doc">DBARSource</a> is provided that makes a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object available as input for verification.</p><p>A custom class T can be made available as input provider by subclassing ChecksumSourceOf&lt;T&gt; and implementing the access to the reference values in question.</p><p>The result of a verification process is a <a href="classarcstk_1_1v__1__0__0_1_1VerificationResult.html" class="m-doc">VerificationResult</a>. It holds every result of every match operation performed during verification.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a> is suitable for verifying input that contains a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>. Scenarious without a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> (e.g. a set of input audio files) is supported by <a href="classarcstk_1_1v__1__0__0_1_1TracksetVerifier.html" class="m-doc">TracksetVerifier</a>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a></p><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetVerifier.html" class="m-doc">TracksetVerifier</a></p></aside>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a> verifies local <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> against some reference <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> provided by a <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>. A <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a> is an interface to different kinds of input for <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a>. For convenience, a <a href="classarcstk_1_1v__1__0__0_1_1DBARSource.html" class="m-doc">DBARSource</a> is provided that makes a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object available as input for verification.</p><p>A custom class T can be made available as input provider by subclassing <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSourceOf.html" class="m-doc">ChecksumSourceOf&lt;T&gt;</a> and implementing the access to the reference values in question.</p><p>The result of a verification process is a <a href="classarcstk_1_1v__1__0__0_1_1VerificationResult.html" class="m-doc">VerificationResult</a>. It holds every result of every match operation performed during verification.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a> is suitable for verifying input that contains a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>. Scenarious without a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> (e.g. a set of input audio files) is supported by <a href="classarcstk_1_1v__1__0__0_1_1TracksetVerifier.html" class="m-doc">TracksetVerifier</a>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a></p><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetVerifier.html" class="m-doc">TracksetVerifier</a></p></aside>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
@@ -85,13 +85,13 @@
             </dt>
             <dd><a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a> for a set of checksums without a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1VerificationResult.html" class="m-doc">arcstk::VerificationResult</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1VerificationResult.html" class="m-doc">arcstk::v_1_0_0::VerificationResult</a>
             </dt>
             <dd>Interface: Result of a verification process.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">arcstk::Verifier</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">arcstk::v_1_0_0::Verifier</a>
             </dt>
-            <dd>Interface: perform a verification.</dd>
+            <dd>Some class that will not show its namespace.</dd>
           </dl>
         </section>
       </div>
@@ -138,7 +138,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

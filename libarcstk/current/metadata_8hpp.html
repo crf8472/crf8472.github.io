@@ -57,9 +57,6 @@
               <ul>
                 <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#enum-members">Enums</a></li>
-                <li><a href="#func-members">Functions</a></li>
-                <li><a href="#var-members">Variables</a></li>
               </ul>
             </li>
           </ul>
@@ -72,7 +69,7 @@
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0.html" class="m-doc">arcstk::v_1_0_0</a> <span class="m-label m-flat m-info">inline</span></dt>
             <dd>libarcstk API version 1.0.0</dd>
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html" class="m-doc">arcstk::v_1_0_0::toc</a></dt>
-            <dd>Functions for managing ToCData instances.</dd>
+            <dd>Functions for managing <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> instances.</dd>
           </dl>
         </section>
         <section id="nested-classes">
@@ -94,110 +91,6 @@
               class <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">arcstk::v_1_0_0::ToC</a>
             </dt>
             <dd>Table of contents of a compact disc.</dd>
-          </dl>
-        </section>
-        <section id="enum-members">
-          <h2><a href="#enum-members">Enums</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="group__meta.html#gafa41ff0d0cd0ea8a37ac720fe201368a" class="m-doc">UNIT</a>: int { </span><span class="m-doc-wrap"><a href="#ggafa41ff0d0cd0ea8a37ac720fe201368aa036429f7a46a17439207d188e46ca840" class="m-doc">FRAMES</a> = 1,
-              <a href="#ggafa41ff0d0cd0ea8a37ac720fe201368aa688336d42609d7e78c5e6f0113309c26" class="m-doc">SAMPLES</a> = CDDA::SAMPLES_PER_FRAME,
-              <a href="#ggafa41ff0d0cd0ea8a37ac720fe201368aa9f1908a641ea399fd2e76f0905c88fcf" class="m-doc">BYTES</a> = CDDA::BYTES_PER_FRAME }</span>
-            </dt>
-            <dd>Represents an audio unit.</dd>
-          </dl>
-        </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
-          <dl class="m-doc">
-            <dt id="a030650ea4740e3947f8df069302dcd96">
-              <div class="m-doc-template">template&lt;enum UNIT U&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a030650ea4740e3947f8df069302dcd96" class="m-doc-self">cdda_max_value</a>(</span><span class="m-doc-wrap">) -&gt; int32_t <span class="m-label m-flat m-primary">constexpr</span> <span class="m-label m-flat m-success">noexcept</span></span>
-            </dt>
-            <dd>Maximum value for the specified UNIT according to <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#af485fc81d0b4d29dbebf928463848c8f" class="m-doc">complete</a>(</span><span class="m-doc-wrap">const ToCData&amp; data) -&gt; bool</span>
-            </dt>
-            <dd>TRUE iff non-zero leadout and non-empty sequence of offsets are specified.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#aab3080a040a7d76893b75d213b26edc8" class="m-doc">construct</a>(</span><span class="m-doc-wrap">const int32_t leadout,
-              const std::vector&lt;int32_t&gt;&amp; offsets) -&gt; ToCData</span>
-            </dt>
-            <dd>Construct ToCData from leadout and offsets.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;enum UNIT F, enum UNIT T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#ga8e6b71e5f2cc84915c1ec6bb421ff8b6" class="m-doc">convert</a>(</span><span class="m-doc-wrap">const int32_t amount) -&gt; int32_t -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
-            </dt>
-            <dd>Convert from UNIT F to UNIT T.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;enum UNIT U&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#gac39d0b4b9a30243996c4f6106de060b7" class="m-doc">convert</a>(</span><span class="m-doc-wrap">const std::vector&lt;AudioSize&gt;&amp; values) -&gt; std::vector&lt;int32_t&gt;</span>
-            </dt>
-            <dd>Convert a vector of <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> instances to the specified UNIT.</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;enum UNIT U&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#gac8f6232ea674d939ef4c5180ef8c5839" class="m-doc">convert_to</a>(</span><span class="m-doc-wrap">const AudioSize&amp; v) -&gt; int32_t</span>
-            </dt>
-            <dd>Convert an <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> to the specified UNIT.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#ad38effe2ee6047be047022b3a46c404d" class="m-doc">leadout</a>(</span><span class="m-doc-wrap">const ToCData&amp; data) -&gt; AudioSize</span>
-            </dt>
-            <dd>Leadout of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#ae678e8291f33139d0a1950d1e1085f69" class="m-doc">lengths</a>(</span><span class="m-doc-wrap">const ToCData&amp; data) -&gt; std::vector&lt;AudioSize&gt;</span>
-            </dt>
-            <dd>Lengths of tracks object.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#gacaa2228a4fe998f1bf34a0a786efb630" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const int32_t leadout,
-              const std::vector&lt;int32_t&gt;&amp; offsets) -&gt; std::unique_ptr&lt;ToC&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> from leadout and offsets.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#ga03a07decc2fcd8400bb8f45c22872812" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const int32_t leadout,
-              const std::vector&lt;int32_t&gt;&amp; offsets,
-              const std::vector&lt;std::string&gt;&amp; filenames) -&gt; std::unique_ptr&lt;ToC&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> from leadout, offsets and filenames.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#ga8fefd7f25d39c251065e6ed3b26429bd" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const std::vector&lt;int32_t&gt;&amp; offsets) -&gt; std::unique_ptr&lt;ToC&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> from offsets.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__meta.html#ga500d4831c02b6fee3d14ded8c93bf502" class="m-doc">make_toc</a>(</span><span class="m-doc-wrap">const std::vector&lt;int32_t&gt;&amp; offsets,
-              const std::vector&lt;std::string&gt;&amp; filenames) -&gt; std::unique_ptr&lt;ToC&gt;</span>
-            </dt>
-            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> from offsets and filenames.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#aa7c69f2b6cf87ebbf45162d98e77c860" class="m-doc">offsets</a>(</span><span class="m-doc-wrap">const ToCData&amp; data) -&gt; std::vector&lt;AudioSize&gt;</span>
-            </dt>
-            <dd>Offsets of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a0924470488eff4e511c35d6fbe5154b4" class="m-doc">set_leadout</a>(</span><span class="m-doc-wrap">const AudioSize&amp; leadout,
-              ToCData&amp; data)</span>
-            </dt>
-            <dd>Set the leadout of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#a589fd4f61c3cbbf26e4e497b4928a72d" class="m-doc">total_tracks</a>(</span><span class="m-doc-wrap">const ToCData&amp; data) -&gt; int</span>
-            </dt>
-            <dd>Total tracks of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">void <a href="namespacearcstk_1_1v__1__0__0_1_1toc.html#ab204c5330171cd78b9efd7fe75d45c56" class="m-doc">validate</a>(</span><span class="m-doc-wrap">const ToCData&amp; toc_data)</span>
-            </dt>
-            <dd>Validate ToCData object.</dd>
-          </dl>
-        </section>
-        <section id="var-members">
-          <h2><a href="#var-members">Variables</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <div class="m-doc-template">template&lt;enum UNIT U&gt;</div>
-              int32_t <a href="group__meta.html#gab80736fc1fa709df9702b2fd87533763" class="m-doc">cdda_max</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd>Maximum value for the specified UNIT according to <a href="structarcstk_1_1v__1__0__0_1_1CDDA.html" class="m-doc">CDDA</a>.</dd>
-            <dt>
-              const AudioSize <a href="group__meta.html#gad4e9f93cf9dfc2268a6ee91899cdcaa4" class="m-doc">EmptyAudioSize</a>
-            </dt>
-            <dd>Empty <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>.</dd>
           </dl>
         </section>
       </div>
@@ -244,7 +137,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
