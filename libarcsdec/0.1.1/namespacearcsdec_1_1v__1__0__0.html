@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>arcsdec::v_1_0_0 namespace | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://github.com/crf8472/libarcsdec/">libarcsdec</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Audio decoder and TOC parser adapters for libarcstk</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="modules.html">Modules</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="2">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0 <span class="m-thin">namespace</span> <span class="m-label m-flat m-info">inline</span>
+        </h1>
+        <p>API version 1.0.0.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#var-members">Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1ARCSCalculator.html" class="m-doc">v_1_0_0::ARCSCalculator</a>
+            </dt>
+            <dd>Calculate ARCSs for input audio files.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1ARIdCalculator.html" class="m-doc">v_1_0_0::ARIdCalculator</a>
+            </dt>
+            <dd>Calculate AccurateRip ID of an album.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1AudioInfo.html" class="m-doc">v_1_0_0::AudioInfo</a>
+            </dt>
+            <dd>Format-independent parser for audio metadata.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">v_1_0_0::AudioReader</a>
+            </dt>
+            <dd>Read audio files and provide the decoded samples.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">v_1_0_0::AudioReaderImpl</a>
+            </dt>
+            <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> implementations.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1AudioValidator.html" class="m-doc">v_1_0_0::AudioValidator</a>
+            </dt>
+            <dd>Base class for validation handlers for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpls</a>.</dd>
+            <dt>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1BigEndianBytes.html" class="m-doc">v_1_0_0::BigEndianBytes</a>
+            </dt>
+            <dd>Service: interpret sequences of 2 or 4 big endian bytes as integer.</dd>
+            <dt>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1BLOCKSIZE.html" class="m-doc">v_1_0_0::BLOCKSIZE</a>
+            </dt>
+            <dd>Symbolic constants for certain block sizes (in PCM 32 bit samples).</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">v_1_0_0::Bytes</a>
+            </dt>
+            <dd>A sequence of bytes read from a specific offset in a file.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">v_1_0_0::ByteSeq</a>
+            </dt>
+            <dd>Byte sequence with or without wildcards.</dd>
+            <dt>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html" class="m-doc">v_1_0_0::CDDAValidator</a>
+            </dt>
+            <dd>Service: verify the CDDA conformity of values.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultPreference.html" class="m-doc">v_1_0_0::DefaultPreference</a>
+            </dt>
+            <dd><a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">DescriptorPreference</a> for the most specific descriptor (with least supported Formats and Codecs).</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultSelector.html" class="m-doc">v_1_0_0::DefaultSelector</a>
+            </dt>
+            <dd><a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> for first descriptor (in order of occurrence) with highest preference.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultValidator.html" class="m-doc">v_1_0_0::DefaultValidator</a>
+            </dt>
+            <dd>Default implementation of <a href="classarcsdec_1_1v__1__0__0_1_1AudioValidator.html" class="m-doc">AudioValidator</a>.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorCue.html" class="m-doc">v_1_0_0::DescriptorCue</a>
+            </dt>
+            <dd>Libcue-based parser for Cuesheets.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorCuesheet.html" class="m-doc">v_1_0_0::DescriptorCuesheet</a>
+            </dt>
+            <dd>Parser for Cuesheets.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorFFmpeg.html" class="m-doc">v_1_0_0::DescriptorFFmpeg</a>
+            </dt>
+            <dd>FFmpeg-based <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> for virtually any lossless audio format.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorFlac.html" class="m-doc">v_1_0_0::DescriptorFlac</a>
+            </dt>
+            <dd>Libflac-based reader for fLaC containers holding fLaC data.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">v_1_0_0::DescriptorPreference</a>
+            </dt>
+            <dd>Interface for a descriptor preference.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorSndfile.html" class="m-doc">v_1_0_0::DescriptorSndfile</a>
+            </dt>
+            <dd>Libsndfile-based reader for some lossless audio input formats.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorToc.html" class="m-doc">v_1_0_0::DescriptorToc</a>
+            </dt>
+            <dd>Libcdio-based parser for CDRDAO&#x27;s .toc files.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorWavpack.html" class="m-doc">v_1_0_0::DescriptorWavpack</a>
+            </dt>
+            <dd>Wavpack-5-based reader for losslessly encoded wavpack files.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorWavPCM.html" class="m-doc">v_1_0_0::DescriptorWavPCM</a>
+            </dt>
+            <dd>Reader for RIFF WAVE files containing PCM data.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">v_1_0_0::FileReader</a>
+            </dt>
+            <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">v_1_0_0::FileReaderDescriptor</a>
+            </dt>
+            <dd>Abstract base class for the properties of a <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename P, typename S&gt;</div>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderPreferenceSelection.html" class="m-doc">v_1_0_0::FileReaderPreferenceSelection</a>
+            </dt>
+            <dd><a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a> of FileReaderDescriptors.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class ReaderType&gt;</div>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderProvider.html" class="m-doc">v_1_0_0::FileReaderProvider</a>
+            </dt>
+            <dd>Base class for classes that create opaque readers.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderRegistry.html" class="m-doc">v_1_0_0::FileReaderRegistry</a>
+            </dt>
+            <dd>Registry holding all available FileReaderDescriptors and all supported Formats.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">v_1_0_0::FileReaderSelection</a>
+            </dt>
+            <dd>Interface to select a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> by Format and Codec.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">v_1_0_0::FileReaderSelector</a>
+            </dt>
+            <dd>Interface for a selector on a set of <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> instances.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReadException.html" class="m-doc">v_1_0_0::FileReadException</a>
+            </dt>
+            <dd>Reports an error while reading a file.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;enum <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> F&gt;</div>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">v_1_0_0::FormatMatcher</a>
+            </dt>
+            <dd><a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> for file formats.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FormatPreference.html" class="m-doc">v_1_0_0::FormatPreference</a>
+            </dt>
+            <dd><a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">DescriptorPreference</a> for the most specific descriptor that accepts the Format.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1IdSelector.html" class="m-doc">v_1_0_0::IdSelector</a>
+            </dt>
+            <dd><a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> for a specific descriptor id.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1InputFormatException.html" class="m-doc">v_1_0_0::InputFormatException</a>
+            </dt>
+            <dd>Reports an error concerning the input file format.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1InvalidAudioException.html" class="m-doc">v_1_0_0::InvalidAudioException</a>
+            </dt>
+            <dd>Reports validation failure on audio data.</dd>
+            <dt>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1LittleEndianBytes.html" class="m-doc">v_1_0_0::LittleEndianBytes</a>
+            </dt>
+            <dd>Service: interpret sequences of 2 or 4 little-endian bytes as integer.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">v_1_0_0::Matcher</a>
+            </dt>
+            <dd>Interface for matchers.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParseException.html" class="m-doc">v_1_0_0::MetadataParseException</a>
+            </dt>
+            <dd>Reports unexpected content while parsing a metadata file.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">v_1_0_0::MetadataParser</a>
+            </dt>
+            <dd>Parse metadata files and provide the content as a TOC instance.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParserImpl.html" class="m-doc">v_1_0_0::MetadataParserImpl</a>
+            </dt>
+            <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a> implementations.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1MinPreference.html" class="m-doc">v_1_0_0::MinPreference</a>
+            </dt>
+            <dd><a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">DescriptorPreference</a> that is always <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html#aa49ee26765bc4afad7f02d8cdea8984f" class="m-doc">DescriptorPreference::<wbr />MIN_PREFERENCE</a>.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1ReaderAndFormatHolder.html" class="m-doc">v_1_0_0::ReaderAndFormatHolder</a>
+            </dt>
+            <dd>Interface for a class that holds formats and readers.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class D&gt;</div>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1RegisterDescriptor.html" class="m-doc">v_1_0_0::RegisterDescriptor</a>
+            </dt>
+            <dd>Register a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> type.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;enum <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> F&gt;</div>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1RegisterFormat.html" class="m-doc">v_1_0_0::RegisterFormat</a>
+            </dt>
+            <dd>Register a <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a>.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">v_1_0_0::SampleProcessor</a>
+            </dt>
+            <dd>Interface for processing samples as provided by a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">SampleProvider</a>.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1SampleProvider.html" class="m-doc">v_1_0_0::SampleProvider</a>
+            </dt>
+            <dd>Inteface for providers of sample sequences.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class ReaderType&gt;</div>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1SelectionPerformer.html" class="m-doc">v_1_0_0::SelectionPerformer</a>
+            </dt>
+            <dd>Interface for a class that performs a selection.</dd>
+            <dt>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1TOCParser.html" class="m-doc">v_1_0_0::TOCParser</a>
+            </dt>
+            <dd>Format-independent parser for CD TOC metadata files.</dd>
+          </dl>
+        </section>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>: unsigned { </span><span class="m-doc-wrap"><a href="#gga1bb6a3bb14846ed51234252330ebff84a696b031073e74bf2cb98e5ef201d4aa3" class="m-doc">UNKNOWN</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84ad6459724c9fc3a856ca3c8fd3c87bfbf" class="m-doc">PCM_S16BE</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84ae22fd24d3ca2f43cce9eec7e73687c04" class="m-doc">PCM_S16BE_PLANAR</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84a1d39acf6cef1e1515628bc4991e0d2b3" class="m-doc">PCM_S16LE</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84aa928b6ffba1b76dab0acd4c5a256d5fc" class="m-doc">PCM_S16LE_PLANAR</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84a1ef8f1faff4659bce81054bd56ec56f1" class="m-doc">PCM_S32BE</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84a247f5a5f92c27888c3485cb2b3659c31" class="m-doc">PCM_S32BE_PLANAR</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84a1124b01ec75d322918f1d7d5bbe3c5bc" class="m-doc">PCM_S32LE</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84ab46f08ac2f8c8f112a6ee4aac9c6a32a" class="m-doc">PCM_S32LE_PLANAR</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84aa417ad68c0d44a64cc77fcbba552fd6e" class="m-doc">FLAC</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84a9b1767b52104aa7954314f87d07f01dd" class="m-doc">WAVPACK</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84ad156cccc3ede1728673c3818d581503a" class="m-doc">MONKEY</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84a039ea4e8bb04948343a7376e44df1c17" class="m-doc">ALAC</a>,
+              <a href="#gga1bb6a3bb14846ed51234252330ebff84ab50339a10e1de285ac99d4c3990b8693" class="m-doc">NONE</a> }</span>
+            </dt>
+            <dd>A supported audio codec.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a>: unsigned { </span><span class="m-doc-wrap"><a href="#gga90f14fef4842822ce786c1bd5586cac1a696b031073e74bf2cb98e5ef201d4aa3" class="m-doc">UNKNOWN</a>,
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1a13b1e122c7bb2180335974c89c132432" class="m-doc">CUE</a>,
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1a98ec6dca5f554f14265d2ed7eef21f5b" class="m-doc">CDRDAO</a>,
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1a76bae86742a2ec93bb56ae064ce7bd54" class="m-doc">WAV</a>,
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1aa417ad68c0d44a64cc77fcbba552fd6e" class="m-doc">FLAC</a>,
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1a85fb93a8ee9440499692da24a1621769" class="m-doc">APE</a>,
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1a3908b5520c10387318acb3bf705a4f2a" class="m-doc">CAF</a>,
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1aebae9a870a696afb2ecea6601d339318" class="m-doc">M4A</a>,
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1ae94afc367f47e1aaf16533e4ecbc8716" class="m-doc">OGG</a>,
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1ab484fe295bb7ccd00d90fcf8094b037e" class="m-doc">WV</a>,
+              <a href="#gga90f14fef4842822ce786c1bd5586cac1a457c9e4a3c0a6bd24e1fe26935a86725" class="m-doc">AIFF</a> }</span>
+            </dt>
+            <dd>List of supported file formats for metadata and audio.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="group__descriptor.html#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc">InputType</a>: unsigned { </span><span class="m-doc-wrap"><a href="#gga37a47fe0d657fe73f5dc8ce52db9c575ae423b8bde9bfbfd7e9409b23b23aed91" class="m-doc">AUDIO</a>,
+              <a href="#gga37a47fe0d657fe73f5dc8ce52db9c575a6994206aa5146e62315e61b6ecf6f56b" class="m-doc">TOC</a> }</span>
+            </dt>
+            <dd>Input filetype.</dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              using <a href="group__descriptor.html#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a> = <a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">ByteSeq</a>
+            </dt>
+            <dd>A sequence of bytes.</dd>
+            <dt>
+              using <a href="group__selection.html#ga2849fef022a79b46cd26758a6d8d5b0c" class="m-doc">FileReaders</a> = std::unordered_map&lt;std::string, std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;&gt;
+            </dt>
+            <dd>Type for the container of available <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> instances.</dd>
+            <dt>
+              using <a href="group__selection.html#gafd60586fcdc39383204c8b732dedc7b5" class="m-doc">FormatList</a> = std::vector&lt;std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a>&gt;&gt;
+            </dt>
+            <dd>An unordered list of <a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matchers</a> for Formats.</dd>
+            <dt>
+              using <a href="group__descriptor.html#gaf223e87c82c7a590d81589b8230dc78f" class="m-doc">LibInfo</a> = std::list&lt;<a href="group__descriptor.html#ga2c4df88bc578dd8e0d9b89535063284c" class="m-doc">LibInfoEntry</a>&gt;
+            </dt>
+            <dd>Represents a list of pairs of a library name and an additional string.</dd>
+            <dt>
+              using <a href="group__descriptor.html#ga2c4df88bc578dd8e0d9b89535063284c" class="m-doc">LibInfoEntry</a> = std::pair&lt;std::string, std::string&gt;
+            </dt>
+            <dd>Entry of a LibInfo.</dd>
+            <dt>
+              using <a href="group__descriptor.html#gad03466418edd1f960ead45d3f1b72e09" class="m-doc">SuffixSet</a> = std::set&lt;details::ci_string&gt;
+            </dt>
+            <dd>A set of filename suffices.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__version.html#gae20c76fce4214c6f14901bec03b23071" class="m-doc">api_version_is_at_least</a>(</span><span class="m-doc-wrap">const int major,
+              const int minor,
+              const int patch) -&gt; bool</span>
+            </dt>
+            <dd>Compares specified version to actual version.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;class ReaderType&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="group__calculators.html#ga6002b8506e88853b646f22e82ad6cd44" class="m-doc">default_selection</a>(</span><span class="m-doc-wrap">) -&gt; const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>*</span>
+            </dt>
+            <dd>Provide the default <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a> for the specified ReaderType.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__descriptor.html#ga480758753388c9c53018cf5e1d137c39" class="m-doc">libinfo_entry_filepath</a>(</span><span class="m-doc-wrap">const std::string&amp; libname) -&gt; <a href="group__descriptor.html#ga2c4df88bc578dd8e0d9b89535063284c" class="m-doc">LibInfoEntry</a></span>
+            </dt>
+            <dd>Create a LibInfoEntry for <code>libname</code>, lookup filepath of library.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__descriptor.html#ga9fbb23d783de4b0a5b3538724d41f07d" class="m-doc">name</a>(</span><span class="m-doc-wrap"><a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> codec) -&gt; std::string</span>
+            </dt>
+            <dd>Name of the <code>codec</code>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="group__descriptor.html#ga9b4c827e1aa88ec12ca3081b1ddb7c15" class="m-doc">name</a>(</span><span class="m-doc-wrap"><a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> format) -&gt; std::string</span>
+            </dt>
+            <dd>Name of the <code>format</code>.</dd>
+          </dl>
+        </section>
+        <section id="var-members">
+          <h2><a href="#var-members">Variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              const std::string <a href="group__version.html#ga514aed34901e7f12cf9c7863dbb3d2b7" class="m-doc">LIBARCSDEC_GIT_VERSION</a>
+            </dt>
+            <dd>Version info as shown by <code>git describe --always HEAD</code>.</dd>
+            <dt>
+              const std::string <a href="group__version.html#gaa59967b9451abeb3db0d6d84a01e0cd7" class="m-doc">LIBARCSDEC_NAME</a>
+            </dt>
+            <dd>Library name.</dd>
+            <dt>
+              const std::string <a href="group__version.html#ga4b916a755b5d2b72a43b742ad0027e57" class="m-doc">LIBARCSDEC_VERSION</a>
+            </dt>
+            <dd>Complete semantic version information.</dd>
+            <dt>
+              const int <a href="group__version.html#gaca6d441babdb5c4b6b0650695f66d764" class="m-doc">LIBARCSDEC_VERSION_MAJOR</a>
+            </dt>
+            <dd>Major version number.</dd>
+            <dt>
+              const int <a href="group__version.html#gafaeaf8a942320af34282a946eef2dfdd" class="m-doc">LIBARCSDEC_VERSION_MINOR</a>
+            </dt>
+            <dd>Minor version number.</dd>
+            <dt>
+              const int <a href="group__version.html#ga03acda43482f860ad5d8d8e2d8eeed87" class="m-doc">LIBARCSDEC_VERSION_PATCH</a>
+            </dt>
+            <dd>Patch level.</dd>
+            <dt>
+              const std::string <a href="group__version.html#ga135065d8f8292fd839ffdd171f503501" class="m-doc">LIBARCSDEC_VERSION_SUFFIX</a>
+            </dt>
+            <dd>Version suffix (e.g. &#x27;alpha.1&#x27;, &#x27;beta.6&#x27;, &#x27;rc.3&#x27; etc.).</dd>
+            <dt>
+              const int32_t <a href="group__audioreader.html#ga02a8e855600bda74783c37f9b25f27d1" class="m-doc">MAX_SAMPLES_TO_READ</a>
+            </dt>
+            <dd>Maximum number of PCM 32 bit samples to read from a file.</dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
