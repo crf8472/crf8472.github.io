@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>arcstk::v_1_0_0::DBARBlock class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://github.com/crf8472/libarcstk/">libarcstk</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Calculate and Verify AccurateRip Checksums and Ids</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="modules.html">Modules</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="2">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::DBARBlock <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="dbar_8hpp.html">&lt;dbar.hpp&gt;</a></div>
+        </h1>
+        <p>A block in a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a>.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p>A block consists of a header containing the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> in a binary representation and a sequence of triplets with each consisting of the actual ARCS, a confidence value and the ARCS of frame 450 of the track.</p>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="a0a91efcecc0a23ac367f32344578b84b">
+              using <a href="#a0a91efcecc0a23ac367f32344578b84b" class="m-doc-self">const_iterator</a> = const <a href="#a2defe740d21d58b08f5b07e286b42a25" class="m-doc">iterator</a>
+            </dt>
+            <dd>Constant iterator type.</dd>
+            <dt id="a2defe740d21d58b08f5b07e286b42a25">
+              using <a href="#a2defe740d21d58b08f5b07e286b42a25" class="m-doc-self">iterator</a> = DBARForwardIterator&lt;<a href="classarcstk_1_1v__1__0__0_1_1DBARBlock.html" class="m-doc">DBARBlock</a>&gt;
+            </dt>
+            <dd>Iterator type.</dd>
+            <dt id="a9fca90901028eb55fd7d8a570f416557">
+              using <a href="#a9fca90901028eb55fd7d8a570f416557" class="m-doc-self">size_type</a> = std::size_t
+            </dt>
+            <dd>Size type for this type, also used for indexing.</dd>
+            <dt id="a585f2910e9e84a34e20d9d93369b5c20">
+              using <a href="#a585f2910e9e84a34e20d9d93369b5c20" class="m-doc-self">value_type</a> = <a href="classarcstk_1_1v__1__0__0_1_1DBARTriplet.html" class="m-doc">DBARTriplet</a>
+            </dt>
+            <dd>Value type for this type.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt id="a89236c2b480b4e0ecf869de4fbb0fe1b">
+              <span class="m-doc-wrap-bumper"><a href="#a89236c2b480b4e0ecf869de4fbb0fe1b" class="m-doc-self">DBARBlock</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Default constructor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a5f9a28541c06caa3546746d1645e26fc" class="m-doc">DBARBlock</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a>&amp; dBAR,
+              const DBAR::size_type block_idx)</span>
+            </dt>
+            <dd>Constructor.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9e195bdd09899c22d30fdc9edf858a6d" class="m-doc">header</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1DBARBlockHeader.html" class="m-doc">DBARBlockHeader</a></span>
+            </dt>
+            <dd>Header of this <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> block.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9f10da9e7a877fca138a74537eb121da" class="m-doc">id</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a></span>
+            </dt>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of this block.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aba5016ba4f6d39ccbc2dc2225fb5d376" class="m-doc">index</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="#a9fca90901028eb55fd7d8a570f416557" class="m-doc">size_<wbr />type</a> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Index of this block.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#ad4b39a5b95547b9925334fd4fbf4505f" class="m-doc">set</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a>&amp; dBAR,
+              const DBAR::size_type block_idx)</span>
+            </dt>
+            <dd>Set <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> and block index.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4d19a19e939e5197ef4bf9367cb11405" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="#a9fca90901028eb55fd7d8a570f416557" class="m-doc">size_<wbr />type</a></span>
+            </dt>
+            <dd>Size of this block.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0e658de571c68c43a2cf5da171a2fac3" class="m-doc">triplet</a>(</span><span class="m-doc-wrap">const <a href="#a9fca90901028eb55fd7d8a570f416557" class="m-doc">size_<wbr />type</a> t) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1DBARTriplet.html" class="m-doc">DBARTriplet</a></span>
+            </dt>
+            <dd>Access track of this block.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a5f9a28541c06caa3546746d1645e26fc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />DBARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5f9a28541c06caa3546746d1645e26fc" class="m-doc-self">DBARBlock</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a>&amp; dBAR,
+              const DBAR::size_type block_idx)</span></span>
+            </h3>
+            <p>Constructor.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dBAR&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Underlying <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object</td>
+                </tr>
+                <tr>
+                  <td>block_idx&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Index of the block to represent</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9e195bdd09899c22d30fdc9edf858a6d"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1DBARBlockHeader.html" class="m-doc">DBARBlockHeader</a> arcstk::<wbr />v_1_0_0::<wbr />DBARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9e195bdd09899c22d30fdc9edf858a6d" class="m-doc-self">header</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Header of this <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> block.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Header fo this <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> block.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9f10da9e7a877fca138a74537eb121da"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> arcstk::<wbr />v_1_0_0::<wbr />DBARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9f10da9e7a877fca138a74537eb121da" class="m-doc-self">id</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of this block.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of this block</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aba5016ba4f6d39ccbc2dc2225fb5d376"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="#a9fca90901028eb55fd7d8a570f416557" class="m-doc">size_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />DBARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aba5016ba4f6d39ccbc2dc2225fb5d376" class="m-doc-self">index</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+            </h3>
+            <p>Index of this block.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Index of this block.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad4b39a5b95547b9925334fd4fbf4505f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />DBARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad4b39a5b95547b9925334fd4fbf4505f" class="m-doc-self">set</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a>&amp; dBAR,
+              const DBAR::size_type block_idx)</span></span>
+            </h3>
+            <p>Set <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> and block index.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dBAR&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Underlying <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object</td>
+                </tr>
+                <tr>
+                  <td>block_idx&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Index of the block to represent</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4d19a19e939e5197ef4bf9367cb11405"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="#a9fca90901028eb55fd7d8a570f416557" class="m-doc">size_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />DBARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d19a19e939e5197ef4bf9367cb11405" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Size of this block.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Size of this block.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The size of a block is the total number of tracks it contains. In a valid block, it is equal to <code><a href="#a9e195bdd09899c22d30fdc9edf858a6d" class="m-doc">header()</a>.total_tracks()</code>.</p>
+          </div></section>
+          <section class="m-doc-details" id="a0e658de571c68c43a2cf5da171a2fac3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1DBARTriplet.html" class="m-doc">DBARTriplet</a> arcstk::<wbr />v_1_0_0::<wbr />DBARBlock::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e658de571c68c43a2cf5da171a2fac3" class="m-doc-self">triplet</a>(</span><span class="m-doc-wrap">const <a href="#a9fca90901028eb55fd7d8a570f416557" class="m-doc">size_<wbr />type</a> t) const</span></span>
+            </h3>
+            <p>Access track of this block.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">t&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Index of the track to access.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Track <code>t</code> of this block</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

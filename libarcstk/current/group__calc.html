@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AccurateRip Checksum Calculation module | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://github.com/crf8472/libarcstk/">libarcstk</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Calculate and Verify AccurateRip Checksums and Ids</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="modules.html">Modules</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="2">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          AccurateRip Checksum Calculation <span class="m-thin">module</span></h1>
+        <p>Calculate checksums of audio tracks.</p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#enum-members">Enums</a></li>
+                <li><a href="#typedef-members">Typedefs</a></li>
+                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#var-members">Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<p>An <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> specifies a ruleset how to to calculate Checksums over an input of audio samples. <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> specifies two distinct algorithms for calculating a checksum, v1 and v2. Since a v1 checksum is materialized as a subtotal when calculating a v2 checksum, there are three variants of the Algorith: V1, V2 and V1and2 which provides both types of checksums at once.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> provide an interface for configuring an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> or the calculation process.</p><p>The Context in which a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is performed as part of the <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>. The <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> is aware of the Context, too. The Context indicates if either FIRST_TRACK, LAST_TRACK, or both have to be treated specially.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> represents the technical process of calculating Checksums by an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>. It has to be parametized with an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>, initialized with the offsets and the leadout of the audio image and then subsequently be updated with portions of samples in the right order. A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> can be also finetuned by providing <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>.</p><p>Updating a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is done by providing a sample portion represented by two instances of <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> that represent start and stop of the update. <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> is a wrapper iterator for any iterator with a <code>value_type</code> of <code>sample_t</code>, the declared type for PCM 32 bit samples. Using a <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> may be of convenience for establishing compatibility of the sample input format.</p><p>When a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is complete() its result can be requested. The result are Checksums which represent the result for all requested checksum types and all tracks of the audio input. It is an aggregation of the <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a> for each track of an respective audio input. Depending on the input, it can represent either an entire album or a single track.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> is a set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of different <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />types</a> of the same track.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> refers to a particular track and a particular <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>. Checksums are calculated by a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> using an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>.</p>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1accuraterip.html" class="m-doc">arcstk::v_1_0_0::accuraterip</a></dt>
+            <dd>Calculating <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksums.</dd>
+            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">arcstk::v_1_0_0::AccurateRip</a></dt>
+            <dd><a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksum calculation algorithms.</dd>
+            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html" class="m-doc">arcstk::v_1_0_0::checksum</a></dt>
+            <dd>Operations on checksum types and their names.</dd>
+          </dl>
+        </section>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">arcstk::v_1_0_0::Algorithm</a>
+            </dt>
+            <dd>Interface: <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> calculation algorithm.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">arcstk::v_1_0_0::Calculation</a>
+            </dt>
+            <dd>Perform checksums calculation.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">arcstk::v_1_0_0::Checksum</a>
+            </dt>
+            <dd>An <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksum for a single file or track.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">arcstk::v_1_0_0::ChecksumSet</a>
+            </dt>
+            <dd>A set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances of different types for a single track.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">arcstk::v_1_0_0::SampleInputIterator</a>
+            </dt>
+            <dd>Type erasing interface for iterators over PCM 32 bit samples.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, bool is_planar&gt;</div>
+              class <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">arcstk::v_1_0_0::SampleSequence</a>
+            </dt>
+            <dd>A sequence of samples represented by 16 or 32 bit integral types.</dd>
+            <dt>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">arcstk::v_1_0_0::Settings</a>
+            </dt>
+            <dd><a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> for a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</dd>
+          </dl>
+        </section>
+        <section id="enum-members">
+          <h2><a href="#enum-members">Enums</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">enum class <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>: unsigned { </span><span class="m-doc-wrap"><a href="#ggaff67ae2ced108d4e87f99f8edf8f136fab82057c0f8a7631cf533363631986a00" class="m-doc">TRACK</a> = 0,
+              <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fa7648ead44cb9dcfcedcecb6c8b773d80" class="m-doc">FIRST_TRACK</a> = 1,
+              <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fa28a5e0435fed4d96c9ccb07ee744cf65" class="m-doc">LAST_TRACK</a> = 2,
+              <a href="#ggaff67ae2ced108d4e87f99f8edf8f136faeaa4b00b7c00e8fb9c185fdbb83b36a0" class="m-doc">ALBUM</a> = 3 }</span>
+            </dt>
+            <dd>Represent what is to be relevant for calculation process.</dd>
+          </dl>
+        </section>
+        <section id="typedef-members">
+          <h2><a href="#typedef-members">Typedefs</a></h2>
+          <dl class="m-doc">
+            <dt>
+              using <a href="#gaa28460dc9cfed72176423e6d35e37539" class="m-doc">Checksums</a> = std::vector&lt;ChecksumSet&gt;
+            </dt>
+            <dd>A list of ChecksumSets.</dd>
+            <dt>
+              using <a href="#gaac761a7445764fc564f73315f4b3ace0" class="m-doc">ChecksumtypeSet</a> = std::unordered_set&lt;checksum::type&gt;
+            </dt>
+            <dd>Set of checksum types.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#ga35db1ec1a32b802681337cbbd281b0cf" class="m-doc">InterleavedSamples</a> = SampleSequence&lt;T, false&gt;
+            </dt>
+            <dd>Interleaved sample sequence with samples of type T.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              using <a href="#gaa96cac59603e345b08b8a85238120e39" class="m-doc">PlanarSamples</a> = SampleSequence&lt;T, true&gt;
+            </dt>
+            <dd>Planar sample sequence with samples of type T.</dd>
+            <dt>
+              using <a href="#gadb6b388967b3ef28648ba4b757d5c39f" class="m-doc">Points</a> = std::vector&lt;AudioSize&gt;
+            </dt>
+            <dd>List of split points within a range of samples.</dd>
+            <dt>
+              using <a href="#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc">sample_t</a> = uint32_t
+            </dt>
+            <dd>Represent a 32 bit wide PCM stereo sample.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gaddcb8cc0c9d13224b61314a388fa9fde" class="m-doc">any</a>(</span><span class="m-doc-wrap">const Context&amp; c) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Returns TRUE iff <code>c</code> is not equivalent to 0.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ga2f97bf656cc47d2a8697018f3728cb16" class="m-doc">make_calculation</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;Algorithm&gt; algorithm,
+              const ToC&amp; toc) -&gt; std::unique_ptr&lt;Calculation&gt;</span>
+            </dt>
+            <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> from an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> and a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#gaccfefb62c2652de5f7c256f4ed1d62f9" class="m-doc">swap</a>(</span><span class="m-doc-wrap">Context&amp; lhs,
+              Context&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Swap two Context instances.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gad63174aa3ca35e030015bf3ac461bc2e" class="m-doc">to_string</a>(</span><span class="m-doc-wrap">const Context&amp; c) -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>String representation of a Context.</dd>
+          </dl>
+        </section>
+        <section id="var-members">
+          <h2><a href="#var-members">Variables</a></h2>
+          <dl class="m-doc">
+            <dt>
+              const Checksum <a href="#ga2ab8d0c00d6c4763b067d9af1c534811" class="m-doc">EmptyChecksum</a>
+            </dt>
+            <dd>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
+            <dt>
+              const Checksums <a href="#ga1bf7921f1fdcb170e447687f04dd5083" class="m-doc">EmptyChecksums</a>
+            </dt>
+            <dd>Global instance of empty Checksums.</dd>
+            <dt>
+              const ChecksumSet <a href="#gadb5325a16f376f054ca44e0e355d5062" class="m-doc">EmptyChecksumSet</a>
+            </dt>
+            <dd>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="gaff67ae2ced108d4e87f99f8edf8f136f"><div>
+            <h3>
+              enum class <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc-self">Context</a>: unsigned
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Represent what is to be relevant for calculation process.</p>
+<p><a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> algorithm contain different restrictions for calculating the checksums of the the first and last track of an album. Thus, the information has to be represented whether a first or last track of an album is to be processed. This is achieved by the Context.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Typedef documentation</h2>
+          <section class="m-doc-details" id="gaa28460dc9cfed72176423e6d35e37539"><div>
+            <h3>
+              typedef std::vector&lt;ChecksumSet&gt; <a href="#gaa28460dc9cfed72176423e6d35e37539" class="m-doc-self">Checksums</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
+            </h3>
+            <p>A list of ChecksumSets.</p>
+<p>Each <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> represents a track an the order of the ChecksumSets follows the order of tracks on the original compact disc.</p>
+          </div></section>
+          <section class="m-doc-details" id="gaac761a7445764fc564f73315f4b3ace0"><div>
+            <h3>
+              using <a href="#gaac761a7445764fc564f73315f4b3ace0" class="m-doc-self">ChecksumtypeSet</a> = std::unordered_set&lt;checksum::type&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Set of checksum types.</p>
+<p>Guaranteed to be iterable and duplicate-free.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga35db1ec1a32b802681337cbbd281b0cf"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#ga35db1ec1a32b802681337cbbd281b0cf" class="m-doc-self">InterleavedSamples</a> = SampleSequence&lt;T, false&gt;
+            </h3>
+            <p>Interleaved sample sequence with samples of type T.</p>
+<p>An interleaved sequence has one input buffer, in which the samples for each channel occurr in order.</p><p>T can only be some signed or unsigned integral type of either 16 or 32 bit width.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="gaa96cac59603e345b08b8a85238120e39"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="samples_8hpp.html">&lt;samples.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              using <a href="#gaa96cac59603e345b08b8a85238120e39" class="m-doc-self">PlanarSamples</a> = SampleSequence&lt;T, true&gt;
+            </h3>
+            <p>Planar sample sequence with samples of type T.</p>
+<p>A planar sequence has two separated input buffers, one for each channel.</p><p>T can only be some signed or unsigned integral type of either 16 or 32 bit width.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a></p></aside>
+          </div></section>
+          <section class="m-doc-details" id="gadb6b388967b3ef28648ba4b757d5c39f"><div>
+            <h3>
+              using <a href="#gadb6b388967b3ef28648ba4b757d5c39f" class="m-doc-self">Points</a> = std::vector&lt;AudioSize&gt;
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>List of split points within a range of samples.</p>
+<p>Guaranteed to be forward iterable and have operator [].</p>
+          </div></section>
+          <section class="m-doc-details" id="ga6a0d5ad7d5b687199bcd7b454ae19ae6"><div>
+            <h3>
+              using <a href="#ga6a0d5ad7d5b687199bcd7b454ae19ae6" class="m-doc-self">sample_t</a> = uint32_t
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Represent a 32 bit wide PCM stereo sample.</p>
+<p>An unsigned integer of exact 32 bit length.</p><p>The type is not intended to do arithmetic operations on it.</p><p>Bitwise operators are guaranteed to work as on unsigned types.</p>
+          </div></section>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="gaddcb8cc0c9d13224b61314a388fa9fde"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaddcb8cc0c9d13224b61314a388fa9fde" class="m-doc-self">any</a>(</span><span class="m-doc-wrap">const Context&amp; c) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Returns TRUE iff <code>c</code> is not equivalent to 0.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">c&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Context to evaluate</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>TRUE iff <code>c</code> is not equivalent to 0</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ga2f97bf656cc47d2a8697018f3728cb16"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;Calculation&gt; </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ga2f97bf656cc47d2a8697018f3728cb16" class="m-doc-self">make_calculation</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;Algorithm&gt; algorithm,
+              const ToC&amp; toc)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Create a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> from an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> and a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">algorithm&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The algorithm to use for calculating</td>
+                </tr>
+                <tr>
+                  <td>toc&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Complete <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> to perform calculation for</td>
+                </tr>
+              </tbody>
+            </table>
+<p>If the <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> is not complete, the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> must be updated with the correct total number of input samples before calling <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#ad7d1dab577f6af0f305e3f880b4f16a3" class="m-doc">Calculation::<wbr />update()</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="gaccfefb62c2652de5f7c256f4ed1d62f9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">void </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaccfefb62c2652de5f7c256f4ed1d62f9" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap">Context&amp; lhs,
+              Context&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Swap two Context instances.</p>
+          </div></section>
+          <section class="m-doc-details" id="gad63174aa3ca35e030015bf3ac461bc2e"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gad63174aa3ca35e030015bf3ac461bc2e" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap">const Context&amp; c) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>String representation of a Context.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Name of the Context</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+        </section>
+        <section>
+          <h2>Variable documentation</h2>
+          <section class="m-doc-details" id="ga2ab8d0c00d6c4763b067d9af1c534811"><div>
+            <h3>
+              const Checksum <a href="#ga2ab8d0c00d6c4763b067d9af1c534811" class="m-doc-self">EmptyChecksum</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
+            </h3>
+            <p>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
+<p>This is for convenience since in most cases, the creation of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be avoided when a reference instance is at hand.</p>
+          </div></section>
+          <section class="m-doc-details" id="ga1bf7921f1fdcb170e447687f04dd5083"><div>
+            <h3>
+              const Checksums <a href="#ga1bf7921f1fdcb170e447687f04dd5083" class="m-doc-self">EmptyChecksums</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
+            </h3>
+            <p>Global instance of empty Checksums.</p>
+          </div></section>
+          <section class="m-doc-details" id="gadb5325a16f376f054ca44e0e355d5062"><div>
+            <h3>
+              const ChecksumSet <a href="#gadb5325a16f376f054ca44e0e355d5062" class="m-doc-self">EmptyChecksumSet</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
+            </h3>
+            <p>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
