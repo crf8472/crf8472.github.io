@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcsdec::v_1_0_0::FileReaderDescriptor class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <title>arcsdec::FileReaderDescriptor class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::FileReaderDescriptor <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>FileReaderDescriptor <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
         </h1>
         <p>Abstract base class for the properties of a <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a>.</p>
@@ -56,7 +57,6 @@
             <li>
               Reference
               <ul>
-                <li><a href="#derived-classes">Derived classes</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
               </ul>
@@ -64,43 +64,6 @@
           </ul>
         </nav>
 <p>A <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> provides all required information to decide whether a a given file can be read by readers specified and created by this descriptor. It can create an opaque reader that can read the successfully matched file.</p><aside class="m-note m-danger"><h4>Warning</h4><p>FileReaderDescriptors are supposed to be stateless. If a subclass adds a state, the equality operator will not work as expected.</p></aside>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorCue.html" class="m-doc">v_1_0_0::DescriptorCue</a> <span class="m-label m-flat m-warning">final</span>
-            </dt>
-            <dd>A <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a> for Cuesheet files, implemented with libcue 2.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorCuesheet.html" class="m-doc">v_1_0_0::DescriptorCuesheet</a> <span class="m-label m-flat m-warning">final</span>
-            </dt>
-            <dd>A <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a> for Cuesheet files.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorFFmpeg.html" class="m-doc">v_1_0_0::DescriptorFFmpeg</a> <span class="m-label m-flat m-warning">final</span>
-            </dt>
-            <dd>Reader for lossless audio formats, implemented with ffmpeg.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorFlac.html" class="m-doc">v_1_0_0::DescriptorFlac</a> <span class="m-label m-flat m-warning">final</span>
-            </dt>
-            <dd>An <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> for fLaC/fLaC files.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorSndfile.html" class="m-doc">v_1_0_0::DescriptorSndfile</a> <span class="m-label m-flat m-warning">final</span>
-            </dt>
-            <dd>A generic <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> for losslessly encoded audio files.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorToc.html" class="m-doc">v_1_0_0::DescriptorToc</a> <span class="m-label m-flat m-warning">final</span>
-            </dt>
-            <dd>A <a href="classarcsdec_1_1v__1__0__0_1_1MetadataParser.html" class="m-doc">MetadataParser</a> for CDRDAO/TOC files, implemented with libcdio.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorWavPCM.html" class="m-doc">v_1_0_0::DescriptorWavPCM</a> <span class="m-label m-flat m-warning">final</span>
-            </dt>
-            <dd><a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a> for RIFF/WAVE files with CDDA-compliant PCM data.</dd>
-            <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorWavpack.html" class="m-doc">v_1_0_0::DescriptorWavpack</a> <span class="m-label m-flat m-warning">final</span>
-            </dt>
-            <dd>Wavpack-5-based reader for losslessly encoded wavpack files.</dd>
-          </dl>
-        </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -125,7 +88,7 @@
               <span class="m-doc-wrap-bumper">auto <a href="#aea4d305cf6a8401a29af442cddd7d03b" class="m-doc">accepts</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> format,
               const <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> codec) const -&gt; bool</span>
             </dt>
-            <dd>Check for acceptance of the specified Format and Codec pair.</dd>
+            <dd>Check for acceptance of the specified <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> and <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> pair.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a7945906f1a36038d0457f43cec8daa65" class="m-doc">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt;</span>
             </dt>
@@ -147,11 +110,15 @@
             </dt>
             <dd>Id of this <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> type.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a93816d36bda7a5a8ab47aefab3cde211" class="m-doc">input_type</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__descriptor.html#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc">InputType</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a93816d36bda7a5a8ab47aefab3cde211" class="m-doc">input_type</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="group__descriptor.html#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc">InputType</a>
+        </span>
             </dt>
             <dd>Returns TRUE iff this descriptor is for an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>, otherwise FALSE.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a68fd5745e8e504edde503dd4844887c3" class="m-doc">libraries</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__descriptor.html#gaf223e87c82c7a590d81589b8230dc78f" class="m-doc">LibInfo</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a68fd5745e8e504edde503dd4844887c3" class="m-doc">libraries</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="group__descriptor.html#gaf8f05d32417914ca4046ade38aebec18" class="m-doc">LibInfo</a>
+        </span>
             </dt>
             <dd>Names of the libraries the reader used to implement the reader.</dd>
             <dt>
@@ -164,7 +131,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a9287f11c464bc1a7214accb727fe3a61"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9287f11c464bc1a7214accb727fe3a61" class="m-doc-self">accepts</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> codec) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9287f11c464bc1a7214accb727fe3a61" class="m-doc-self">accepts</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> codec) const</span></span>
             </h3>
             <p>Check for acceptance of the specified codec.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -184,11 +151,11 @@
                 </tr>
               </tfoot>
             </table>
-<p>A descriptor accepts a Codec iff it is contained in <a href="#a9976a6e149a586ddf9d93a42275cb188" class="m-doc">codecs()</a>.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This does not entail that accepts(f, codec) is TRUE for every accepted Format f! The set of formats for which this codec is accepted may be restricted to a subset of the accepted <a href="#aa107ae3f7f793cf3ff262cb9d73496be" class="m-doc">formats()</a>.</p></aside>
+<p>A descriptor accepts a <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> iff it is contained in <a href="#a9976a6e149a586ddf9d93a42275cb188" class="m-doc">codecs()</a>.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This does not entail that accepts(f, codec) is TRUE for every accepted <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> f! The set of formats for which this codec is accepted may be restricted to a subset of the accepted <a href="#aa107ae3f7f793cf3ff262cb9d73496be" class="m-doc">formats()</a>.</p></aside>
           </div></section>
           <section class="m-doc-details" id="aa2d27d98eef11bcf471c328518301bc1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa2d27d98eef11bcf471c328518301bc1" class="m-doc-self">accepts</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> format) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa2d27d98eef11bcf471c328518301bc1" class="m-doc-self">accepts</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> format) const</span></span>
             </h3>
             <p>Check for acceptance of the specified format.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -208,14 +175,14 @@
                 </tr>
               </tfoot>
             </table>
-<p>A descriptor accepts a Format iff it is contained in <a href="#aa107ae3f7f793cf3ff262cb9d73496be" class="m-doc">formats()</a>.</p>
+<p>A descriptor accepts a <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> iff it is contained in <a href="#aa107ae3f7f793cf3ff262cb9d73496be" class="m-doc">formats()</a>.</p>
           </div></section>
           <section class="m-doc-details" id="aea4d305cf6a8401a29af442cddd7d03b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aea4d305cf6a8401a29af442cddd7d03b" class="m-doc-self">accepts</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> format,
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aea4d305cf6a8401a29af442cddd7d03b" class="m-doc-self">accepts</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> format,
               const <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> codec) const</span></span>
             </h3>
-            <p>Check for acceptance of the specified Format and Codec pair.</p>
+            <p>Check for acceptance of the specified <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> and <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> pair.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -223,11 +190,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">format&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The Format to check for</td>
+                  <td>The <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> to check for</td>
                 </tr>
                 <tr>
                   <td>codec&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The Codec to check for</td>
+                  <td>The <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> to check for</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -237,11 +204,11 @@
                 </tr>
               </tfoot>
             </table>
-<p>A specified Codec may be accepted on its own, but not together with the specified Format.</p>
+<p>A specified <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> may be accepted on its own, but not together with the specified <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a>.</p>
           </div></section>
           <section class="m-doc-details" id="a7945906f1a36038d0457f43cec8daa65"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt; arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7945906f1a36038d0457f43cec8daa65" class="m-doc-self">clone</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a>&gt; arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7945906f1a36038d0457f43cec8daa65" class="m-doc-self">clone</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Clone this instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -256,7 +223,7 @@
           </div></section>
           <section class="m-doc-details" id="a9976a6e149a586ddf9d93a42275cb188"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const std::set&lt;<a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>&gt; arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9976a6e149a586ddf9d93a42275cb188" class="m-doc-self">codecs</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">const std::set&lt;<a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>&gt; arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9976a6e149a586ddf9d93a42275cb188" class="m-doc-self">codecs</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Set of accepted codecs.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -270,7 +237,7 @@
           </div></section>
           <section class="m-doc-details" id="ae5b9be6087d2fd3a7c1f683aad9a8047"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a>&gt; arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae5b9be6087d2fd3a7c1f683aad9a8047" class="m-doc-self">create_reader</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a>&gt; arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae5b9be6087d2fd3a7c1f683aad9a8047" class="m-doc-self">create_reader</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Create an opaque reader for the tested file.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -284,7 +251,7 @@
           </div></section>
           <section class="m-doc-details" id="aa107ae3f7f793cf3ff262cb9d73496be"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const std::set&lt;<a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a>&gt; arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa107ae3f7f793cf3ff262cb9d73496be" class="m-doc-self">formats</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">const std::set&lt;<a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a>&gt; arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa107ae3f7f793cf3ff262cb9d73496be" class="m-doc-self">formats</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Set of accepted formats.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -298,7 +265,7 @@
           </div></section>
           <section class="m-doc-details" id="a940f50f4eccf5fba55cf6b39a35c43dc"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::string arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a940f50f4eccf5fba55cf6b39a35c43dc" class="m-doc-self">id</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::string arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a940f50f4eccf5fba55cf6b39a35c43dc" class="m-doc-self">id</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Id of this <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> type.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -313,21 +280,25 @@
           </div></section>
           <section class="m-doc-details" id="a93816d36bda7a5a8ab47aefab3cde211"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__descriptor.html#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc">InputType</a> arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a93816d36bda7a5a8ab47aefab3cde211" class="m-doc-self">input_type</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="group__descriptor.html#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc">InputType</a>
+         arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a93816d36bda7a5a8ab47aefab3cde211" class="m-doc-self">input_type</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Returns TRUE iff this descriptor is for an <a href="classarcsdec_1_1v__1__0__0_1_1AudioReader.html" class="m-doc">AudioReader</a>, otherwise FALSE.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>InputType of this Descriptor</td>
+                  <td><a href="group__descriptor.html#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc">InputType</a> of this Descriptor</td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
           <section class="m-doc-details" id="a68fd5745e8e504edde503dd4844887c3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__descriptor.html#gaf223e87c82c7a590d81589b8230dc78f" class="m-doc">LibInfo</a> arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a68fd5745e8e504edde503dd4844887c3" class="m-doc-self">libraries</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="group__descriptor.html#gaf8f05d32417914ca4046ade38aebec18" class="m-doc">LibInfo</a>
+         arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a68fd5745e8e504edde503dd4844887c3" class="m-doc-self">libraries</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Names of the libraries the reader used to implement the reader.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -342,7 +313,7 @@
           </div></section>
           <section class="m-doc-details" id="ad92318a8d78fce60dfd3f06ce762ce8e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::string arcsdec::<wbr />v_1_0_0::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad92318a8d78fce60dfd3f06ce762ce8e" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::string arcsdec::<wbr />FileReaderDescriptor::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad92318a8d78fce60dfd3f06ce762ce8e" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Name of this <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> type.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -399,7 +370,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

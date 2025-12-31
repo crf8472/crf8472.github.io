@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -78,8 +79,8 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="ab1ffc34690f79518247441bcdf4dffe4">
-              <span class="m-doc-wrap-bumper"><a href="#ab1ffc34690f79518247441bcdf4dffe4" class="m-doc-self">~CreateReader</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-warning">virtual</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            <dt id="a6bc145938dfe33847a45d8ece96451cb">
+              <span class="m-doc-wrap-bumper"><a href="#a6bc145938dfe33847a45d8ece96451cb" class="m-doc-self">~CreateReader</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Default destructor.</dd>
           </dl>
@@ -90,8 +91,8 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a348a2bea52ae1c4253d2192cb724e236" class="m-doc">operator()</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
               const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; selection,
-              const <a href="group__selection.html#gafd60586fcdc39383204c8b732dedc7b5" class="m-doc">FormatList</a>&amp; formats,
-              const <a href="group__selection.html#ga2849fef022a79b46cd26758a6d8d5b0c" class="m-doc">FileReaders</a>&amp; readers) const -&gt; std::unique_ptr&lt; ReaderType &gt; -&gt; auto</span>
+              const <a href="group__selection.html#ga7b7bf9b7a5b32a36e791d607c25be8c0" class="m-doc">FormatList</a>&amp; formats,
+              const <a href="group__selection.html#ga7a2dc92e6555d0f998d5e22106c41dce" class="m-doc">FileReaders</a>&amp; readers) const -&gt; std::unique_ptr&lt;ReaderType&gt;</span>
             </dt>
             <dd>Return a unique_ptr to an instance of the specified <code>ReaderType</code>.</dd>
           </dl>
@@ -103,10 +104,10 @@
               <div class="m-doc-template">
                 template&lt;class ReaderType&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />CreateReader&lt;ReaderType&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a348a2bea52ae1c4253d2192cb724e236" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;ReaderType&gt; arcsdec::<wbr />v_1_0_0::<wbr />details::<wbr />CreateReader&lt;ReaderType&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a348a2bea52ae1c4253d2192cb724e236" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
               const <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a>&amp; selection,
-              const <a href="group__selection.html#gafd60586fcdc39383204c8b732dedc7b5" class="m-doc">FormatList</a>&amp; formats,
-              const <a href="group__selection.html#ga2849fef022a79b46cd26758a6d8d5b0c" class="m-doc">FileReaders</a>&amp; readers) const -&gt; std::unique_ptr&lt; ReaderType &gt;</span></span>
+              const <a href="group__selection.html#ga7b7bf9b7a5b32a36e791d607c25be8c0" class="m-doc">FormatList</a>&amp; formats,
+              const <a href="group__selection.html#ga7a2dc92e6555d0f998d5e22106c41dce" class="m-doc">FileReaders</a>&amp; readers) const</span></span>
             </h3>
             <p>Return a unique_ptr to an instance of the specified <code>ReaderType</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -131,6 +132,12 @@
                   <td>Set of available file readers</td>
                 </tr>
               </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Instance of the specified ReaderType</td>
+                </tr>
+              </tfoot>
             </table>
           </div></section>
         </section>
@@ -178,7 +185,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

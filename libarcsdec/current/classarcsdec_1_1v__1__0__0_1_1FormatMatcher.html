@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcsdec::v_1_0_0::FormatMatcher class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <title>arcsdec::FormatMatcher class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -48,7 +49,7 @@
         <h1>
           <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;enum <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> F&gt;</div>
-          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::FormatMatcher <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>FormatMatcher <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
         </h1>
         <p><a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> for file formats.</p>
         <table class="m-table m-fullwidth m-flat">
@@ -58,7 +59,7 @@
           <tbody>
             <tr>
               <td style="width: 1%">F</td>
-              <td>The Format matched by this matcher.</td>
+              <td>The <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> matched by this matcher.</td>
             </tr>
           </tbody>
         </table>
@@ -74,7 +75,7 @@
             </li>
           </ul>
         </nav>
-<p>Matches a specific Format. A <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">FormatMatcher</a> can be implemented by constructing a <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">FormatMatcher</a> with the specified format as its template parameter along with filename suffices and a byte sequence to match.</p>
+<p>Matches a specific <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a>. A <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">FormatMatcher</a> can be implemented by constructing a <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">FormatMatcher</a> with the specified format as its template parameter along with filename suffices and a byte sequence to match.</p>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -88,13 +89,13 @@
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a7c2e753f7c224e0501ef3e7998fa3307" class="m-doc">FormatMatcher</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#gad03466418edd1f960ead45d3f1b72e09" class="m-doc">SuffixSet</a>&amp; suffices,
+              <span class="m-doc-wrap-bumper"><a href="#a7c2e753f7c224e0501ef3e7998fa3307" class="m-doc">FormatMatcher</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#gac015df0b4ff88c215a05e9426710ef3f" class="m-doc">SuffixSet</a>&amp; suffices,
               const <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a>&amp; bytes,
               const std::set&lt;<a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>&gt;&amp; codecs)</span>
             </dt>
             <dd>Constructor with reference suffices and bytes.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a4d6a2ccdf9114e0163a86b34044dfdb1" class="m-doc">FormatMatcher</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#gad03466418edd1f960ead45d3f1b72e09" class="m-doc">SuffixSet</a>&amp; suffices,
+              <span class="m-doc-wrap-bumper"><a href="#a4d6a2ccdf9114e0163a86b34044dfdb1" class="m-doc">FormatMatcher</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#gac015df0b4ff88c215a05e9426710ef3f" class="m-doc">SuffixSet</a>&amp; suffices,
               const std::set&lt;<a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>&gt;&amp; codecs)</span>
             </dt>
             <dd>Constructor with reference suffices.</dd>
@@ -111,7 +112,7 @@
               <div class="m-doc-template">
                 template&lt;enum <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> F&gt;
               </div>
-              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />FormatMatcher&lt;F&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7c2e753f7c224e0501ef3e7998fa3307" class="m-doc-self">FormatMatcher</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#gad03466418edd1f960ead45d3f1b72e09" class="m-doc">SuffixSet</a>&amp; suffices,
+              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />FormatMatcher&lt;F&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7c2e753f7c224e0501ef3e7998fa3307" class="m-doc-self">FormatMatcher</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#gac015df0b4ff88c215a05e9426710ef3f" class="m-doc">SuffixSet</a>&amp; suffices,
               const <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a>&amp; bytes,
               const std::set&lt;<a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>&gt;&amp; codecs)</span></span>
             </h3>
@@ -123,15 +124,15 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">suffices&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Suffices accepted by this Format</td>
+                  <td>Suffices accepted by this <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a></td>
                 </tr>
                 <tr>
                   <td>bytes&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>A byte sequence accepted by this Format</td>
+                  <td>A byte sequence accepted by this <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a></td>
                 </tr>
                 <tr>
                   <td>codecs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Codecs supported for this Format</td>
+                  <td>Codecs supported for this <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a></td>
                 </tr>
               </tbody>
             </table>
@@ -141,7 +142,7 @@
               <div class="m-doc-template">
                 template&lt;enum <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> F&gt;
               </div>
-              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />FormatMatcher&lt;F&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d6a2ccdf9114e0163a86b34044dfdb1" class="m-doc-self">FormatMatcher</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#gad03466418edd1f960ead45d3f1b72e09" class="m-doc">SuffixSet</a>&amp; suffices,
+              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />FormatMatcher&lt;F&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d6a2ccdf9114e0163a86b34044dfdb1" class="m-doc-self">FormatMatcher</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#gac015df0b4ff88c215a05e9426710ef3f" class="m-doc">SuffixSet</a>&amp; suffices,
               const std::set&lt;<a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>&gt;&amp; codecs)</span></span>
             </h3>
             <p>Constructor with reference suffices.</p>
@@ -152,11 +153,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">suffices&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Suffices accepted by this Format</td>
+                  <td>Suffices accepted by this <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a></td>
                 </tr>
                 <tr>
                   <td>codecs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Codecs supported for this Format</td>
+                  <td>Codecs supported for this <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a></td>
                 </tr>
               </tbody>
             </table>
@@ -206,7 +207,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

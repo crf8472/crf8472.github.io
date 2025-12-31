@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -60,59 +61,59 @@
             </li>
           </ul>
         </nav>
-<p>A concrete <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">DescriptorPreference</a> assigns a preference value to each descriptor based on the specified Format and Codec. It represents a preference to use the descriptor in question to read a file with this Format and Codec.</p><p>A concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> can select a matching <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> by a pair of Format and Codec from a list of available FileReaderDescriptors. The concrete selection mechanism is implemented by the subclass.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a> provides an API for selecting a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> from a set of available descriptors. It uses a concrete <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">DescriptorPreference</a> and a concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> to actually select the descriptor based on the preference. An instance of the selected descriptor is returned which can then create the concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> instance.</p><p>A convenience interface to this entire mechanism is provided by functions select_descriptor() and select_reader().</p><p>Class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderRegistry.html" class="m-doc">FileReaderRegistry</a> holds the set of available FileReaderDescriptors as well as the set of supported <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Formats</a>. It also defines default selections for Metadata/ToC formats as well as audio formats.</p>
+<p>A concrete <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">DescriptorPreference</a> assigns a preference value to each descriptor based on the specified <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> and <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>. It represents a preference to use the descriptor in question to read a file with this <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> and <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>.</p><p>A concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> can select a matching <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> by a pair of <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> and <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a> from a list of available FileReaderDescriptors. The concrete selection mechanism is implemented by the subclass.</p><p><a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a> provides an API for selecting a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> from a set of available descriptors. It uses a concrete <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">DescriptorPreference</a> and a concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> to actually select the descriptor based on the preference. An instance of the selected descriptor is returned which can then create the concrete <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a> instance.</p><p>A convenience interface to this entire mechanism is provided by functions select_descriptor() and select_reader().</p><p>Class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderRegistry.html" class="m-doc">FileReaderRegistry</a> holds the set of available FileReaderDescriptors as well as the set of supported <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Formats</a>. It also defines default selections for Metadata/ToC formats as well as audio formats.</p>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultPreference.html" class="m-doc">arcsdec::v_1_0_0::DefaultPreference</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultPreference.html" class="m-doc">arcsdec::DefaultPreference</a>
             </dt>
             <dd>Preference for the most specific descriptor.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultSelector.html" class="m-doc">arcsdec::v_1_0_0::DefaultSelector</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultSelector.html" class="m-doc">arcsdec::DefaultSelector</a>
             </dt>
             <dd>Selector for highest preference.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">arcsdec::v_1_0_0::DescriptorPreference</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">arcsdec::DescriptorPreference</a>
             </dt>
             <dd>Interface for a descriptor preference.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename P, typename S&gt;</div>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderPreferenceSelection.html" class="m-doc">arcsdec::v_1_0_0::FileReaderPreferenceSelection</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderPreferenceSelection.html" class="m-doc">arcsdec::FileReaderPreferenceSelection</a>
             </dt>
             <dd><a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">FileReaderSelection</a> of FileReaderDescriptors.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderRegistry.html" class="m-doc">arcsdec::v_1_0_0::FileReaderRegistry</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderRegistry.html" class="m-doc">arcsdec::FileReaderRegistry</a>
             </dt>
             <dd>Hold all available FileReaderDescriptors and all supported Formats.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">arcsdec::v_1_0_0::FileReaderSelection</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelection.html" class="m-doc">arcsdec::FileReaderSelection</a>
             </dt>
-            <dd>Interface to select a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> by Format and Codec.</dd>
+            <dd>Interface to select a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> by <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> and <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">arcsdec::v_1_0_0::FileReaderSelector</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">arcsdec::FileReaderSelector</a>
             </dt>
             <dd>Interface for a selector on a set of <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> instances.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FormatPreference.html" class="m-doc">arcsdec::v_1_0_0::FormatPreference</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FormatPreference.html" class="m-doc">arcsdec::FormatPreference</a>
             </dt>
-            <dd>Preference for the most specific descriptor accepting the Format.</dd>
+            <dd>Preference for the most specific descriptor accepting the <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a>.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1IdSelector.html" class="m-doc">arcsdec::v_1_0_0::IdSelector</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1IdSelector.html" class="m-doc">arcsdec::IdSelector</a>
             </dt>
             <dd><a href="classarcsdec_1_1v__1__0__0_1_1FileReaderSelector.html" class="m-doc">FileReaderSelector</a> for a specific descriptor id.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1MinPreference.html" class="m-doc">arcsdec::v_1_0_0::MinPreference</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1MinPreference.html" class="m-doc">arcsdec::MinPreference</a>
             </dt>
             <dd><a href="classarcsdec_1_1v__1__0__0_1_1DescriptorPreference.html" class="m-doc">DescriptorPreference</a> equivalent to MIN_PREFERENCE.</dd>
             <dt>
               <div class="m-doc-template">template&lt;class D&gt;</div>
-              struct <a href="structarcsdec_1_1v__1__0__0_1_1RegisterDescriptor.html" class="m-doc">arcsdec::v_1_0_0::RegisterDescriptor</a>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1RegisterDescriptor.html" class="m-doc">arcsdec::RegisterDescriptor</a>
             </dt>
             <dd>Register a <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> type.</dd>
             <dt>
               <div class="m-doc-template">template&lt;enum <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> F&gt;</div>
-              struct <a href="structarcsdec_1_1v__1__0__0_1_1RegisterFormat.html" class="m-doc">arcsdec::v_1_0_0::RegisterFormat</a>
+              struct <a href="structarcsdec_1_1v__1__0__0_1_1RegisterFormat.html" class="m-doc">arcsdec::RegisterFormat</a>
             </dt>
             <dd>Register a <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a>.</dd>
           </dl>
@@ -121,28 +122,28 @@
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a href="#ga2849fef022a79b46cd26758a6d8d5b0c" class="m-doc">FileReaders</a> = std::unordered_map&lt;std::string, std::unique_ptr&lt;FileReaderDescriptor&gt;&gt;
+              using <a href="#ga7a2dc92e6555d0f998d5e22106c41dce" class="m-doc">FileReaders</a> = std::unordered_map&lt;std::string, std::unique_ptr&lt;FileReaderDescriptor&gt;&gt;
             </dt>
             <dd>Type for the container of available <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> instances.</dd>
             <dt>
-              using <a href="#gafd60586fcdc39383204c8b732dedc7b5" class="m-doc">FormatList</a> = std::vector&lt;std::unique_ptr&lt;Matcher&gt;&gt;
+              using <a href="#ga7b7bf9b7a5b32a36e791d607c25be8c0" class="m-doc">FormatList</a> = std::vector&lt;std::unique_ptr&lt;Matcher&gt;&gt;
             </dt>
             <dd>An unordered list of <a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matchers</a> for Formats.</dd>
           </dl>
         </section>
         <section>
           <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="ga2849fef022a79b46cd26758a6d8d5b0c"><div>
+          <section class="m-doc-details" id="ga7a2dc92e6555d0f998d5e22106c41dce"><div>
             <h3>
-              using <a href="#ga2849fef022a79b46cd26758a6d8d5b0c" class="m-doc-self">FileReaders</a> = std::unordered_map&lt;std::string, std::unique_ptr&lt;FileReaderDescriptor&gt;&gt;
+              using <a href="#ga7a2dc92e6555d0f998d5e22106c41dce" class="m-doc-self">FileReaders</a> = std::unordered_map&lt;std::string, std::unique_ptr&lt;FileReaderDescriptor&gt;&gt;
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="selection_8hpp.html">&lt;selection.hpp&gt;</a></div>
             </h3>
             <p>Type for the container of available <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> instances.</p>
 <p>A single <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> can be requested by its id. <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">FileReaderDescriptor</a> instances come without an inherent ordering.</p>
           </div></section>
-          <section class="m-doc-details" id="gafd60586fcdc39383204c8b732dedc7b5"><div>
+          <section class="m-doc-details" id="ga7b7bf9b7a5b32a36e791d607c25be8c0"><div>
             <h3>
-              using <a href="#gafd60586fcdc39383204c8b732dedc7b5" class="m-doc-self">FormatList</a> = std::vector&lt;std::unique_ptr&lt;Matcher&gt;&gt;
+              using <a href="#ga7b7bf9b7a5b32a36e791d607c25be8c0" class="m-doc-self">FormatList</a> = std::vector&lt;std::unique_ptr&lt;Matcher&gt;&gt;
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="selection_8hpp.html">&lt;selection.hpp&gt;</a></div>
             </h3>
             <p>An unordered list of <a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matchers</a> for Formats.</p>
@@ -192,7 +193,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

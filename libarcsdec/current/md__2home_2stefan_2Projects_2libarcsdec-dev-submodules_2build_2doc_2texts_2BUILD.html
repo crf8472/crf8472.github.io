@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to Build | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://github.com/crf8472/libarcsdec/">libarcsdec</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Audio decoder and TOC parser adapters for libarcstk</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          How to Build
+        </h1>
+<p><a name="autotoc_md0"></a></p><section id="autotoc_md1"><h2><a href="#autotoc_md1">Quickstart</a></h2><p>We presuppose you have downloaded and unpacked or git-cloned libarcsdec to a folder named <code>libarcsdec</code>. Thereafter do:</p><pre>$ cd libarcsdec       # your libarcsdec root folder where README.md resides
+$ mkdir build &amp;&amp; cd build  # create build folder for out-of-source-build
+$ cmake ..           # configure for Release
+$ cmake --build .    # perform the actual build
+$ sudo make install  # install to /usr/local
+</pre><p>This will just build and install libarcsdec with all local optimizations and without debug-symbols, tests and documentation. You will be able to use it in your project.</p></section><section id="autotoc_md2"><h2><a href="#autotoc_md2">Building libarcsdec on Linux and *BSD</a></h2><p>Libarcsdec &gt;= 0.2 is compiled as C++17. It was developed mainly (but not exclusively) for Linux. It&#x27;s runtime dependencies are configurable and may depend on the requested codec or container format support. With ffmpeg available, libarcsdec supports virtually every lossless codec and any container format. It was not tested whether libarcsdec builds out-of-the-box on BSDs but don&#x27;t expect major issues.</p><section id="autotoc_md3"><h3><a href="#autotoc_md3">Mandatory Buildtime Dependencies</a></h3><ul><li>C++-17-compliant-compiler with C++ standard library</li><li><code>cmake</code> &gt;= 3.10</li><li><code>make</code> or some other build tool compatible to cmake (the examples suppose <code>make</code> nonetheless)</li><li><a href="https://github.com/crf8472/libarcstk">libarcstk</a> &ndash; dependency of libarcsdec</li></ul></section><section id="autotoc_md4"><h3><a href="#autotoc_md4">Optional Buildtime Dependencies</a></h3><p>If you intend to run the tests or build the documentation, there are some more dependencies required.</p><table class="m-table"><thead><tr><th>Tool</th><th>Task</th><th>Description</th></tr></thead><tbody><tr><td><strong>Git</strong></td><td>Testing, Documentation</td><td>Clone test framework <a href="https://github.com/catchorg/Catch2">Catch2</a> and site generator <a href="https://mcss.mosra.cz/doxygen/">m.css</a></td></tr><tr><td><strong>Doxygen</strong></td><td>Documentation</td><td>Build documentation in HTML (graphviz/dot is not required)</td></tr><tr><td><strong>virtualenv</strong>/Python</td><td>Documentation</td><td>Build documentation in HTML styled with <a href="https://mcss.mosra.cz/doxygen/">m.css</a></td></tr><tr><td><strong>LaTeX</strong></td><td>Documentation</td><td>Build documentation manual</td></tr></tbody></table><p>Libarcsdec can use of the following libraries to parse or read input formats:</p><table class="m-table"><thead><tr><th>Library</th><th>Version</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://github.com/libnitsk/libcue">libcue</a></td><td>&gt;= 2.0.0</td><td>parse Cuesheets</td></tr><tr><td><a href="http://ffmpeg.org/">ffmpeg</a></td><td>&gt;= 3.1</td><td>decode virtually any codec in virtually any container</td></tr><tr><td>flac (with <a href="https://xiph.org/flac/api/group__flacpp.html">FLAC++</a>)</td><td>&gt;= 1.3.1</td><td>decode FLAC audio (in FLAC container files)</td></tr><tr><td><a href="https://www.wavpack.com/">libwavpack</a></td><td>&gt;= 5</td><td>decode Wavepack audio (in wv container files)</td></tr></tbody></table><p>Each dependency to a library in this list can be activated or de-activated for building by using its corresponding configure switch.</p><p>Some of these dependencies are activated for building by default (see Configure switches). They can be deactivated safely if not required.</p><p>Of course, it is possible to deactivate all dependencies. Deactivating all dependencies renders libarcsdec incapable of reading most input formats. Libarcsdec without any dependencies is only capable of reading the following input formats:</p><ul><li>WAV audio files encoding PCM-16bit stereo, 44100 Hz (== <a href="https://en.wikipedia.org/wiki/Compact_Disc_Digital_Audio">CDDA</a>)</li><li>Cuesheets</li><li>CDRDAO&#x27;s toc files</li></ul><p>NOTE on ffmpeg:</p><p>Libarcsdec uses the decoding API introduced with libavcodec 57.37.100 on 21, April 2016, hence the requirements are:</p><table class="m-table"><thead><tr><th>ffmpeg-lib</th><th>minimal version</th></tr></thead><tbody><tr><td>libavformat</td><td>57.33.100</td></tr><tr><td>libavcodec</td><td>57.37.100</td></tr><tr><td>libavutil</td><td>55.22.100</td></tr></tbody></table><p>which determines ffmpeg 3.1 as the earliest possible version. Libarcsdec can not be compiled against earlier versions of ffmpeg.</p></section><section id="autotoc_md5"><h3><a href="#autotoc_md5">Installed files</a></h3><p>The following 13 files will be installed to your system:</p><ul><li>The shared object libarcsdec.so.x.y.z (along with a symbolic link <code>libarcsdec.so</code>) in the standard library location (e.g. /usr/local/lib)</li><li>The 7 public header files <code><a href="audioreader_8hpp.html" class="m-doc">audioreader.hpp</a></code>, <code><a href="calculators_8hpp.html" class="m-doc">calculators.hpp</a></code>, <code><a href="descriptor_8hpp.html" class="m-doc">descriptor.hpp</a></code>, <code><a href="metaparser_8hpp.html" class="m-doc">metaparser.hpp</a></code>, <code><a href="sampleproc_8hpp.html" class="m-doc">sampleproc.hpp</a></code>, <code><a href="selection_8hpp.html" class="m-doc">selection.hpp</a></code> and <code><a href="version_8hpp.html" class="m-doc">version.hpp</a></code> in the default include location (e.g. <code>/usr/local/include</code>).</li><li>The 4 cmake packaging files <code>libarcsdec-config.cmake</code>, <code>libarcsdec-config-version.cmake</code>, <code>libarcsdec-targets.cmake</code> and <code>libarcsdec-targets-release.cmake</code> in directory <code>libarcsdec</code> beneath the default cmake location (e.g. <code>/usr/local/lib/cmake</code>). Those files allow other projects to simply import libarcsdec&#x27;s exported cmake targets.</li><li>The pkg-config configuration file <code>libarcsdec.pc</code> in the default pkgconfig location (e.g. <code>/usr/local/lib/pkgconfig</code>).</li></ul><p>The default installation prefix can be changed by passing the actual prefix to cmake. This is achieved by using the switch <code>-DCMAKE_INSTALL_PREFIX=/path/to/install/dir</code> in the configure step. See Configure switches for more configuration options.</p><p>We describe the build configuration for the following profiles:</p><ul><li>User (read: a developer who uses libarcsdec in her project)</li><li>Contributing developer (who intends to debug and test libarcsdec and maybe contribute to the documentation)</li><li>Package maintainer (who intends to package libarcsdec for some target system).</li></ul></section><section id="autotoc_md6"><h3><a href="#autotoc_md6">Users</a></h3><p>You intend to install libarcsdec on your system, say, as a dependency for your own project. You just need libarcsdec to be available along with its headers and not getting in your way:</p><pre>$ cmake -DCMAKE_BUILD_TYPE=Release ..
+$ cmake --build .
+$ sudo make install
+</pre><p>Note that this presupposes the three optional buildtime dependencies that are activated in the default configuration:</p><ul><li>ffmpeg</li><li>FLAC++</li><li>libwavpack</li></ul><p>Any of the configure switches can be used to deactivate optional dependencies which are activated by default.</p><p>For example to compile without libwavpack, do:</p><pre>$ cmake -DCMAKE_BUILD_TYPE=Release -DWITH_LIBWAVPACK=OFF ..
+$ cmake --build .
+$ sudo make install
+</pre></section><section id="autotoc_md7"><h3><a href="#autotoc_md7">Contributors</a></h3><p>You want to debug into the libarcsdec code, hence you need to build libarcsdec <em>with</em> debugging symbols and <em>without</em> aggressive optimization:</p><pre>$ cmake -DCMAKE_BUILD_TYPE=Debug ..
+</pre><p>For also building and running the tests, just use the corresponding switch:</p><pre>$ cmake -DCMAKE_BUILD_TYPE=Debug -DWITH_TESTS=ON ..
+</pre><p>Thereafter just start the build and run the tests:</p><pre>$ cmake --build .
+$ ctest
+</pre><p>Note: This build will take <em>significantly longer</em> than the build without tests.</p></section><section id="autotoc_md8"><h3><a href="#autotoc_md8">Package maintainers</a></h3><p>You want to build libarcsdec with a release profile but without any architecture specific optimization (e.g. without <code>-march=native</code> and <code>-mtune=generic</code> for g++ or clang++).</p><p>Furthermore, you would like to adjust the install prefix path such that libarcsdec is configured for being installed in the real system prefix (such as <code>/usr</code>) instead of some default prefix (such as <code>/usr/local</code>).</p><p>You may also want to specify a staging directory as an intermediate install target.</p><p>When using clang++ or g++, all of these can be achieved as follows:</p><pre>$ cmake -DCMAKE_BUILD_TYPE=Release -DWITH_NATIVE=OFF -DCMAKE_INSTALL_PREFIX=/usr ..
+$ cmake --build .
+$ make DESTDIR=/my/staging/dir install
+</pre><p><strong>Note</strong> that <code>-DWITH_NATIVE=OFF</code> currently only works for clang++ and g++. The build process is <em>untested</em> and <em>broken</em> on other compilers.</p><p>If you use another compiler than clang++ or g++, CMake will not apply any project specific modifications to the compiler default settings. Therefore, you have to carefully inspect the build process (e.g. by using <code>$ make VERBOSE=1</code> instead of <code>cmake --build .</code>) to verify which compiler settings are actually used.</p></section><section id="autotoc_md9"><h3><a href="#autotoc_md9">Configure switches</a></h3><table class="m-table"><thead><tr><th>Switch</th><th>Description</th><th>Default</th></tr></thead><tbody><tr><td>CMAKE_BUILD_TYPE</td><td>Build type for release or debug</td><td><code>Release</code></td></tr><tr><td>CMAKE_INSTALL_PREFIX</td><td>Top-level install location prefix</td><td><em>plattform defined</em></td></tr><tr><td>CMAKE_EXPORT_COMPILE_COMMANDS</td><td>Rebuild a compilation database when configuring</td><td>OFF</td></tr><tr><td>USE_DOC_TOOL</td><td>Set &#x27;MCSS&#x27; to use m.css to build the documentation. Set &#x27;LUALATEX&#x27; to build the manual.</td><td><em>none</em></td></tr><tr><td>WITH_DOCS</td><td>Configure for documentation</td><td>OFF</td></tr><tr><td>WITH_NATIVE</td><td>Use platform specific optimization on compiling</td><td></td></tr><tr><td></td><td>CMAKE_BUILD_TYPE=Debug</td><td>OFF</td></tr><tr><td></td><td>CMAKE_BUILD_TYPE=Release</td><td>ON</td></tr><tr><td>WITH_TESTS</td><td>Compile tests (but don&#x27;t run them)</td><td>OFF</td></tr><tr><td>WITH_LIBCUE</td><td>Build with libcue support</td><td>OFF</td></tr><tr><td>WITH_FFMPEG</td><td>Build with ffmpeg support</td><td>ON</td></tr><tr><td>WITH_FLAC</td><td>Build with FLAC support by libflac</td><td>ON</td></tr><tr><td>WITH_WAVPACK</td><td>Build with Wavpack support by libwavpack</td><td>ON</td></tr><tr><td>WITH_LIBSNDFILE</td><td>Build with libsndfile support</td><td>OFF</td></tr><tr><td>WITH_SUBMODULES</td><td>Build with libarcstk as a submodule</td><td>OFF</td></tr></tbody></table><p>Note that <code>USE_DOC_TOOL</code> can be passed multiple values. For example, building the HTML version as well as the manual in one build run is achieved by:</p><pre>$ cmake -DUSE_DOC_TOOL=MCSS\;LUALATEX ..
+</pre></section><section id="autotoc_md10"><h3><a href="#autotoc_md10">Switch between clang++ and g++</a></h3><p>Libarcsdec is tested to compile with clang++ as well as with g++.</p><p>If you want to switch the compiler, you should just hint CMake what compiler to use. On unixoid systems you can usually do this via the environment variables <code>CC</code> and <code>CXX</code>.</p><p>If your current compiler is not clang++ and you want to use your installed clang++:</p><pre>$ export CC=$(type -p clang)
+$ export CXX=$(type -p clang++)
+</pre><p>If your current compiler is not g++ and you want to use your installed g++:</p><pre>$ export CC=$(type -p gcc)
+$ export CXX=$(type -p g++)
+</pre><p>Delete your directory <code>build</code> since it contains metadata from the previous compiler. Start off cleanly.</p><pre>$ cd ..
+$ rm -rf build
+</pre><p>CMake-reconfigure the project to have the change take effect:</p><pre>$ mkdir build &amp;&amp; cd build
+$ cmake ..
+</pre><p>To check whether your setting took effect, observe the CMake output. During the configure step, CMake informs about the actual C++-compiler like:</p><pre>-- The CXX compiler identification is Clang 19.1.7
+...
+-- Check for working CXX compiler: /usr/bin/clang++ - works
+</pre></section><section id="autotoc_md11"><h3><a href="#autotoc_md11">Turn optimizing on/off</a></h3><p>You may or may not want the <code>-march=native</code> and <code>-mtune=generic</code> switches on compilation. For Debug-builds, they are <code>OFF</code> by default, but can be added by using <code>-DWITH_NATIVE=ON</code>. For now, this switch has only influence when using g++ or clang++. For other compilers, default settings apply.</p></section><section id="autotoc_md12"><h3><a href="#autotoc_md12">Run unit tests</a></h3><p>Note that <code>-DWITH_TESTS=ON</code> will try to git-clone the testing framework <a href="https://github.com/catchorg/Catch2">Catch2</a> within your <code>build</code> directory and fail if this does not work.</p><p>Running the unit tests is <em>not</em> part of the build process. To run the tests, invoke <code>ctest</code> manually in the <code>build</code> directory after <code>cmake --build .</code> is completed.</p><p>Note that ctest will write report files in the <code>build</code> folder, their name pattern is <code>report.&lt;testcase&gt;.xml</code> where <code>&lt;testcase&gt;</code> corresponds to a <code>.cpp</code>-file in <code>test/src</code>.</p></section><section id="autotoc_md13"><h3><a href="#autotoc_md13">Build with libarcstk as a submodule</a></h3><p>Having installed the dependencies system-wide is considered the standard setup. For some development tasks, this may nonetheless not be convenient. If installing libarcstk is for any reason not applicable, libarcstk can alternatively be build as a submodule of libarcsdec. For setting up a fresh local libarcsdec repo with libarcstk as a submodule of libarcsdec, do the following:</p><pre>$ git clone --recurse-submodules https://github.com/crf8472/libarcsdec
+$ cd libarcsdec      # your libarcsdec root folder where README.md resides
+$ mkdir build &amp;&amp; cd build  # create build folder for out-of-source-build
+$ cmake -DWITH_SUBMODULES=ON .. # add any switches required
+$ cmake --build .    # perform the actual build (including libarcstk)
+</pre><p>Alternatively, if you already have cloned libarcsdec without using the <code>--recurse-submodules</code> switch, you can alternatively setup the submodule thereafter by applying:</p><pre>$ cd libarcsdec      # your libarcsdec root folder where README.md resides
+$ git submodule init
+$ git submodule update # clones libarcstk as a submodule
+$ mkdir build &amp;&amp; cd build  # create build folder for out-of-source-build
+$ cmake -DWITH_SUBMODULES=ON ..
+</pre><p>Note that if libarcsdec was configured with <code>-DWITH_SUBMODULES=ON</code> any switches will be applied to libarcstk as well! If you use <code>-DWITH_TESTS</code> or <code>WITH_DOCS</code> when configuring libarcsdec those options will be applied recursively to libarcstk. Equivalently, using <code>make install</code> will install libarcsdec as well as libarcstk!</p><p><em>Note</em> that this setup is only intended to make handling synchronous development tasks (such as debugging) on both libraries libarcsdec and libarcstk easier. It is not intended to support packaging or installation in productional environments.</p></section><section id="autotoc_md14"><h3><a href="#autotoc_md14">Cleaning the project</a></h3><p>Clean only the shared library binaries (when in directory <code>build</code>):</p><pre>$ cmake -P CMakeFiles/libarcsdec.dir/cmake_clean.cmake
+</pre><p>Clean the project entirely:</p><pre>$ cmake --build . --target clean
+</pre><p>Note that this forces to recompile everything including Catch2 if <code>-DWITH_TESTS</code> is configured.</p><p>Completely wipe everything configured and built locally (when in top-level directory):</p><pre>$ rm -rf build
+</pre></section></section><section id="autotoc_md15"><h2><a href="#autotoc_md15">Building the API documentation</a></h2><p>When you configure the project, switch <code>-DWITH_DOCS=ON</code> is required to prepare building the documentation. Only this configuration option will create the target <code>doc</code> that can build the documentation.</p><p>Doxygen is required for building the documentation in either case.</p><p>The documentation can be build as a set of static HTML pages (recommended) or as a PDF manual using LaTeX (experimental, very alpha).</p><p>When building HTML, you may choose either the stock HTML output of doxygen or the HTML output styled by m.css. Doxygen&#x27;s stock HTML output is stable but looks outdated. The m.css-styled seems by far user-friendlier, cleaner and more adapted for documentation of modern C++. On the other hand it is more cutting edge and therefore not as stable as doxygen&#x27;s stock HTML output. Credits for m.css go to <a href="https://mcss.mosra.cz/doxygen/">mozra</a>.</p><section id="autotoc_md16"><h3><a href="#autotoc_md16">Website: Doxygen Stock HTML</a></h3><p>The generation of the documentation sources must be requested at configuration stage. The documentation sources will not be generated automatically during build. It is required to call target <code>doc</code> manually.</p><pre>$ cd build
+$ cmake -DWITH_DOCS=ON ..
+$ cmake --build . --target doc
+</pre><p>This will build the documentation sources for HTML in subdirectories of <code>build/generated-docs/doxygen</code>. Open the file <code>build/generated-docs/doxygen/html/index.html</code> in your browser to see the entry page.</p></section><section id="autotoc_md17"><h3><a href="#autotoc_md17">Website: m.css with HTML5 and CSS3 via doxygen&#x27;s XML</a></h3><p>Accompanying <a href="https://mcss.mosra.cz/doxygen/">m.css</a> comes a doxygen style. It takes the doxygen XML output and generates a static site in plain HTML5 and CSS3 from it (nearly without JavaScript).</p><p>The <a href="https://crf8472.github.io/libarcsdec/current/">public APIdoc of libarcsdec is build with m.css</a>.</p><p>This APIdoc can be built locally by the following steps:</p><pre>$ cd build
+$ cmake -DWITH_DOCS=ON -DUSE_DOC_TOOL=MCSS ..
+$ cmake --build . --target doc
+</pre><p>CMake then creates a local python sandbox in directory <code>build</code> using <code>virtualenv</code>, installs jinja2 and Pygments in it, then clones <a href="https://mcss.mosra.cz/doxygen/">m.css</a>, and then runs m.css which internally runs doxygen. Maybe this process needs finetuning for some environments. (It is completely untested on Windows and will not work.)</p><p>Documentation is generated in <code>build/generated-docs/mcss</code> and you can load <code>build/generated-docs/mcss/html/index.html</code> in your browser.</p></section><section id="autotoc_md18"><h3><a href="#autotoc_md18">Manual: PDF by LaTeX (smoke-tested, more or less)</a></h3><p>Libarcsdec is supposed to provide support for a PDF manual using LaTeX at some point in the future. Currently, it is possible to create a manual for just working on the process. Do not expect satisfying results.</p><p>An actual LaTeX installation (containing <code>lualatex</code> and <code>epstopdf</code>) is required for creating the manual.</p><p>Building the PDF manual can be requested by using <code>-DUSE_DOC_TOOL=LUALATEX</code>. It will thereby be typeset by building the <code>doc</code> target.</p><p>The entire process:</p><pre>$ cd build
+$ cmake -DWITH_DOCS=ON -DUSE_DOC_TOOL=LUALATEX ..
+$ cmake --build . --target doc
+</pre><p>This will create the manual <code>refman.pdf</code> in folder <code>build/generated-docs/doxygen/lualatex</code> (while issuing loads of warnings, which is perfectly normal).</p><p>Note that I did never give any love to the manual. It will build. Not more. However, it will not be convenient to read or look good at its current stage.</p></section></section><section id="autotoc_md19"><h2><a href="#autotoc_md19">Using a compilation database</a></h2><p>A compilation database provides the dependencies and paths used for building the project. CDBs are used for deep language support in the <code>$EDITOR</code> or IDE.</p><p>If you intend to use an LSP server (e.g. the one from clang++), the use of the CDB is encouraged since otherwise the LSP server may not find required paths and augment your display with artifacts that suggest errors which in fact don&#x27;t exist.</p><p>You may have noticed that libarcsdec comes with a top-level <code>.clang</code> file that already points to <code>compile_commands.json</code> in the same directory. This prepares the support for clang-based DLS for libarcsdec. However, the compilation database is OFF in the default configuration and must be re-built locally for the local compiler and the local settings:</p><pre>$ cd build
+$ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+$ cd ..
+$ ln -s build/compile_commands.json . # May or may not be required
+</pre><p>The compilation database is now recreated whenever configuring the project. Its recreation can be forced by just doing:</p><pre>$ cd build
+$ cmake ..
+</pre><p>If you do not intend to use an LSP server, it is completely safe to skip this paragraph, ignore the <code>.clang</code> file and just feel good. It will not get in your way.</p></section><section id="autotoc_md20"><h2><a href="#autotoc_md20">Build on Windows ... duh!</a></h2><p>No Windows port yet :-(</p><p>In fact, as a lack of requirement, libarcsdec has not yet even been tried to be built on Windows.</p><p>To avoid any show-stoppers for porting libarcsdec to Windows or other platforms, libarcsdec tries to avoid Linux-specific calls almost completely.</p><p>Of course it cannot be guaranteed that any dependency of libarcsdec is available for your platform. The Fauxdacious project has documented <a href="https://github.com/wildstar84/fauxdacious/blob/master/contrib/win32/fauxdacious_buildnotes.htm">how to get each of the dependencies to work (also including pkg-config)</a> on Windows using MinGW.</p></section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

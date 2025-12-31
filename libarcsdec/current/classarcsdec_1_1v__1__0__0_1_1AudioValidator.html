@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcsdec::v_1_0_0::AudioValidator class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <title>arcsdec::AudioValidator class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::AudioValidator <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>AudioValidator <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="audioreader_8hpp.html">&lt;audioreader.hpp&gt;</a></div>
         </h1>
         <p>Abstract base class for validation handlers for <a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpls</a>.</p>
@@ -71,7 +72,7 @@
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultValidator.html" class="m-doc">v_1_0_0::DefaultValidator</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1DefaultValidator.html" class="m-doc">DefaultValidator</a>
             </dt>
             <dd>Abstract base implementation of <a href="classarcsdec_1_1v__1__0__0_1_1AudioValidator.html" class="m-doc">AudioValidator</a>.</dd>
           </dl>
@@ -105,8 +106,10 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a598968a594909876978c255e7fca630f">
-              <span class="m-doc-wrap-bumper">auto <a href="#a598968a594909876978c255e7fca630f" class="m-doc-self">codecs</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="#a320a0f20a102b7203bddb9b6f17486b3" class="m-doc">codec_<wbr />set_<wbr />type</a></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a598968a594909876978c255e7fca630f" class="m-doc">codecs</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="#a320a0f20a102b7203bddb9b6f17486b3" class="m-doc">codec_<wbr />set_<wbr />type</a>
+        </span>
             </dt>
             <dd>Returns the codec to validate.</dd>
             <dt>
@@ -194,16 +197,34 @@
           <h2><a href="#pri-methods">Private functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#afcda909123242bc466dbdffa67d9cfff" class="m-doc">do_codecs</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="#a320a0f20a102b7203bddb9b6f17486b3" class="m-doc">codec_<wbr />set_<wbr />type</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#afcda909123242bc466dbdffa67d9cfff" class="m-doc">do_codecs</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="#a320a0f20a102b7203bddb9b6f17486b3" class="m-doc">codec_<wbr />set_<wbr />type</a>
+         <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Implements <code><a href="#a598968a594909876978c255e7fca630f" class="m-doc">codecs()</a></code>.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a598968a594909876978c255e7fca630f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">
+          <a href="#a320a0f20a102b7203bddb9b6f17486b3" class="m-doc">codec_<wbr />set_<wbr />type</a>
+         arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a598968a594909876978c255e7fca630f" class="m-doc-self">codecs</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Returns the codec to validate.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Codecs validated by this instance</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="a4847b623ff4549feafe2f06f6ae3330c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4847b623ff4549feafe2f06f6ae3330c" class="m-doc-self">error</a>(</span><span class="m-doc-wrap">const std::string&amp; msg)</span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4847b623ff4549feafe2f06f6ae3330c" class="m-doc-self">error</a>(</span><span class="m-doc-wrap">const std::string&amp; msg)</span></span>
             </h3>
             <p>Add an error to the internal error list.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -220,7 +241,7 @@
           </div></section>
           <section class="m-doc-details" id="a9c7cdd6502f77d21b43fb128ab81ee82"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="#a4c5aa360756d6f4efdbd0ce04305de1c" class="m-doc">error_<wbr />list_<wbr />type</a>&amp; arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9c7cdd6502f77d21b43fb128ab81ee82" class="m-doc-self">get_errors</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">const <a href="#a4c5aa360756d6f4efdbd0ce04305de1c" class="m-doc">error_<wbr />list_<wbr />type</a>&amp; arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9c7cdd6502f77d21b43fb128ab81ee82" class="m-doc-self">get_errors</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Returns the current error list.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -234,7 +255,7 @@
           </div></section>
           <section class="m-doc-details" id="a2403ff0d4b88239295a6420ff4b60601"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2403ff0d4b88239295a6420ff4b60601" class="m-doc-self">has_errors</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2403ff0d4b88239295a6420ff4b60601" class="m-doc-self">has_errors</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Returns TRUE iff there are any errors occurred so far.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -248,7 +269,7 @@
           </div></section>
           <section class="m-doc-details" id="a1445015300e48dbe171b01824daf8747"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const std::string&amp; arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1445015300e48dbe171b01824daf8747" class="m-doc-self">last_error</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">const std::string&amp; arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1445015300e48dbe171b01824daf8747" class="m-doc-self">last_error</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Returns the last error that occurred.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -262,7 +283,7 @@
           </div></section>
           <section class="m-doc-details" id="ae3c5ce6a07a0ed3d8b53e5463a41ae41"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae3c5ce6a07a0ed3d8b53e5463a41ae41" class="m-doc-self">validate_bits_per_sample</a>(</span><span class="m-doc-wrap">const int bits_per_sample)</span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae3c5ce6a07a0ed3d8b53e5463a41ae41" class="m-doc-self">validate_bits_per_sample</a>(</span><span class="m-doc-wrap">const int bits_per_sample)</span></span>
             </h3>
             <p>CDDA validation of the sample size.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -275,18 +296,21 @@
                   <td>The sample size to validate</td>
                 </tr>
               </tbody>
-              <tfoot>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
                 <tr>
-                  <th>Returns</th>
-                  <td>TRUE if the sample size equals <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html#a83a40cf091bff30a765bf1f17abb382e" class="m-doc">CDDAValidator::<wbr />bits_per_sample()</a> otherwise FALSE</td>
+                  <td>InvalidMetadataException</td>
+                  <td>If the sample size is not <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html#a83a40cf091bff30a765bf1f17abb382e" class="m-doc">CDDAValidator::<wbr />bits_per_sample()</a></td>
                 </tr>
-              </tfoot>
+              </tbody>
             </table>
 <p>The number of bits per sample must conform to <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html#a83a40cf091bff30a765bf1f17abb382e" class="m-doc">CDDAValidator::<wbr />bits_per_sample()</a>.</p><p>Calls <code><a href="#a96437942f068ff92ffa848e04b07d3e2" class="m-doc">on_<wbr />failure()</a></code> when validation fails.</p>
           </div></section>
           <section class="m-doc-details" id="ae370e241aca6f9ba4ca0b8b6c09fdc34"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae370e241aca6f9ba4ca0b8b6c09fdc34" class="m-doc-self">validate_num_channels</a>(</span><span class="m-doc-wrap">const int num_channels)</span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae370e241aca6f9ba4ca0b8b6c09fdc34" class="m-doc-self">validate_num_channels</a>(</span><span class="m-doc-wrap">const int num_channels)</span></span>
             </h3>
             <p>CDDA validation for stereo (must be 2).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -299,18 +323,21 @@
                   <td>The number of channels to test</td>
                 </tr>
               </tbody>
-              <tfoot>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
                 <tr>
-                  <th>Returns</th>
-                  <td>TRUE if num_channels is equal to <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html#a72d9a5d513d9d927ec6444686733ebf1" class="m-doc">CDDAValidator::<wbr />num_channels()</a> otherwise FALSE</td>
+                  <td>InvalidMetadataException</td>
+                  <td>If num_channels is not <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html#a72d9a5d513d9d927ec6444686733ebf1" class="m-doc">CDDAValidator::<wbr />num_channels()</a></td>
                 </tr>
-              </tfoot>
+              </tbody>
             </table>
 <p>The number of channels must conform to <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html#a72d9a5d513d9d927ec6444686733ebf1" class="m-doc">CDDAValidator::<wbr />num_channels()</a>.</p><p>Calls <code><a href="#a96437942f068ff92ffa848e04b07d3e2" class="m-doc">on_<wbr />failure()</a></code> when validation fails.</p>
           </div></section>
           <section class="m-doc-details" id="ad51371c07a369af30df5c2b737113763"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad51371c07a369af30df5c2b737113763" class="m-doc-self">validate_samples_per_second</a>(</span><span class="m-doc-wrap">const int samples_per_second)</span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad51371c07a369af30df5c2b737113763" class="m-doc-self">validate_samples_per_second</a>(</span><span class="m-doc-wrap">const int samples_per_second)</span></span>
             </h3>
             <p>CDDA validation of the sampling rate (must be 44.100).</p>
             <table class="m-table m-fullwidth m-flat">
@@ -323,18 +350,21 @@
                   <td>The sampling rate to test</td>
                 </tr>
               </tbody>
-              <tfoot>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
                 <tr>
-                  <th>Returns</th>
-                  <td>TRUE if the sampling rate equals <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html#a8adfc523b225ebd7aaa57d054a6e1cc6" class="m-doc">CDDAValidator::<wbr />samples_per_second()</a> otherwise FALSE</td>
+                  <td>InvalidMetadataException</td>
+                  <td>If the sampling rate is not <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html#a8adfc523b225ebd7aaa57d054a6e1cc6" class="m-doc">CDDAValidator::<wbr />samples_per_second()</a></td>
                 </tr>
-              </tfoot>
+              </tbody>
             </table>
 <p>The number of samples per second must conform to <a href="structarcsdec_1_1v__1__0__0_1_1CDDAValidator.html#a8adfc523b225ebd7aaa57d054a6e1cc6" class="m-doc">CDDAValidator::<wbr />samples_per_second()</a>.</p><p>Calls <code><a href="#a96437942f068ff92ffa848e04b07d3e2" class="m-doc">on_<wbr />failure()</a></code> when validation fails.</p>
           </div></section>
           <section class="m-doc-details" id="afdb3e45547dca071f0830ebb64d2251b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afdb3e45547dca071f0830ebb64d2251b" class="m-doc-self">assert_at_least</a>(</span><span class="m-doc-wrap">const std::string&amp; label,
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afdb3e45547dca071f0830ebb64d2251b" class="m-doc-self">assert_at_least</a>(</span><span class="m-doc-wrap">const std::string&amp; label,
               int value,
               int proper_value,
               const std::string&amp; error_msg) <span class="m-label m-warning">protected</span></span></span>
@@ -373,7 +403,7 @@
           </div></section>
           <section class="m-doc-details" id="af95860f29c8d646a83c17e717bdbc62a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af95860f29c8d646a83c17e717bdbc62a" class="m-doc-self">assert_at_most</a>(</span><span class="m-doc-wrap">const std::string&amp; label,
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af95860f29c8d646a83c17e717bdbc62a" class="m-doc-self">assert_at_most</a>(</span><span class="m-doc-wrap">const std::string&amp; label,
               int value,
               int proper_value,
               const std::string&amp; error_msg) <span class="m-label m-warning">protected</span></span></span>
@@ -412,7 +442,7 @@
           </div></section>
           <section class="m-doc-details" id="a08483f936f62f497e4cd3027070aa8f4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08483f936f62f497e4cd3027070aa8f4" class="m-doc-self">assert_equals</a>(</span><span class="m-doc-wrap">const std::string&amp; label,
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a08483f936f62f497e4cd3027070aa8f4" class="m-doc-self">assert_equals</a>(</span><span class="m-doc-wrap">const std::string&amp; label,
               int value,
               int proper_value,
               const std::string&amp; error_msg) <span class="m-label m-warning">protected</span></span></span>
@@ -451,7 +481,7 @@
           </div></section>
           <section class="m-doc-details" id="af37b2e7aa611cfb6b3e38f7aeab193c9"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af37b2e7aa611cfb6b3e38f7aeab193c9" class="m-doc-self">assert_equals_u</a>(</span><span class="m-doc-wrap">const std::string&amp; label,
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af37b2e7aa611cfb6b3e38f7aeab193c9" class="m-doc-self">assert_equals_u</a>(</span><span class="m-doc-wrap">const std::string&amp; label,
               uint32_t value,
               uint32_t proper_value,
               const std::string&amp; error_msg) <span class="m-label m-warning">protected</span></span></span>
@@ -490,7 +520,7 @@
           </div></section>
           <section class="m-doc-details" id="a89e18acffc7df68708daf841266ac00b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a89e18acffc7df68708daf841266ac00b" class="m-doc-self">assert_true</a>(</span><span class="m-doc-wrap">const std::string&amp; label,
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a89e18acffc7df68708daf841266ac00b" class="m-doc-self">assert_true</a>(</span><span class="m-doc-wrap">const std::string&amp; label,
               bool value,
               const std::string&amp; error_msg) <span class="m-label m-warning">protected</span></span></span>
             </h3>
@@ -524,7 +554,7 @@
           </div></section>
           <section class="m-doc-details" id="a8541aa524fd5b545de877870e9042c1b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8541aa524fd5b545de877870e9042c1b" class="m-doc-self">fail_if</a>(</span><span class="m-doc-wrap">const bool condition) <span class="m-label m-warning">protected</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8541aa524fd5b545de877870e9042c1b" class="m-doc-self">fail_if</a>(</span><span class="m-doc-wrap">const bool condition) <span class="m-label m-warning">protected</span></span></span>
             </h3>
             <p>Call <a href="#a96437942f068ff92ffa848e04b07d3e2" class="m-doc">on_<wbr />failure()</a> iff condition is TRUE.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -541,14 +571,16 @@
           </div></section>
           <section class="m-doc-details" id="a487582449049e67ca2a3f381dc3f45a8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a487582449049e67ca2a3f381dc3f45a8" class="m-doc-self">log_error_stack</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">protected</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a487582449049e67ca2a3f381dc3f45a8" class="m-doc-self">log_error_stack</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">protected</span></span></span>
             </h3>
             <p>Logs every error on the error stack with ARCS_LOG_ERROR.</p>
 <p>Leaves the error stack unmodified.</p>
           </div></section>
           <section class="m-doc-details" id="afcda909123242bc466dbdffa67d9cfff"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="#a320a0f20a102b7203bddb9b6f17486b3" class="m-doc">codec_<wbr />set_<wbr />type</a> arcsdec::<wbr />v_1_0_0::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afcda909123242bc466dbdffa67d9cfff" class="m-doc-self">do_codecs</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="#a320a0f20a102b7203bddb9b6f17486b3" class="m-doc">codec_<wbr />set_<wbr />type</a>
+         arcsdec::<wbr />AudioValidator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afcda909123242bc466dbdffa67d9cfff" class="m-doc-self">do_codecs</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-warning">pure virtual</span> <span class="m-label m-danger">private</span></span></span>
             </h3>
             <p>Implements <code><a href="#a598968a594909876978c255e7fca630f" class="m-doc">codecs()</a></code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -605,7 +637,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

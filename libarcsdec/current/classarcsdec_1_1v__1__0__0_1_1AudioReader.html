@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcsdec::v_1_0_0::AudioReader class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <title>arcsdec::AudioReader class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::AudioReader <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>AudioReader <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="audioreader_8hpp.html">&lt;audioreader.hpp&gt;</a></div>
         </h1>
         <p>Read audio files and provide the decoded samples.</p>
@@ -120,7 +121,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a95f9fdb3616a75fb9289be7f050adec7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a95f9fdb3616a75fb9289be7f050adec7" class="m-doc-self">AudioReader</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>&gt; impl) <span class="m-label m-info">explicit</span> </span></span>
+              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a95f9fdb3616a75fb9289be7f050adec7" class="m-doc-self">AudioReader</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>&gt; impl) <span class="m-label m-info">explicit</span> </span></span>
             </h3>
             <p>Constructor with a concrete implementation.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -137,7 +138,7 @@
           </div></section>
           <section class="m-doc-details" id="aa9bef89902470668eedcc8e901487f7e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa9bef89902470668eedcc8e901487f7e" class="m-doc-self">AudioReader</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>&gt; impl,
+              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa9bef89902470668eedcc8e901487f7e" class="m-doc-self">AudioReader</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcsdec_1_1v__1__0__0_1_1AudioReaderImpl.html" class="m-doc">AudioReaderImpl</a>&gt; impl,
               <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>&amp; proc)</span></span>
             </h3>
             <p>Constructor with a concrete implementation and a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>.</p>
@@ -159,7 +160,7 @@
           </div></section>
           <section class="m-doc-details" id="a49df03a510d6167c8a7b0bdd3011c505"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;AudioSize&gt; arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a49df03a510d6167c8a7b0bdd3011c505" class="m-doc-self">acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) const</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;AudioSize&gt; arcsdec::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a49df03a510d6167c8a7b0bdd3011c505" class="m-doc-self">acquire_size</a>(</span><span class="m-doc-wrap">const std::string&amp; filename) const</span></span>
             </h3>
             <p>Acquire the AudioSize of a file.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -192,7 +193,7 @@
           </div></section>
           <section class="m-doc-details" id="a14c0cbbd03ee39186ed262704be84445"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a14c0cbbd03ee39186ed262704be84445" class="m-doc-self">process_file</a>(</span><span class="m-doc-wrap">const std::string&amp; filename)</span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a14c0cbbd03ee39186ed262704be84445" class="m-doc-self">process_file</a>(</span><span class="m-doc-wrap">const std::string&amp; filename)</span></span>
             </h3>
             <p>Process the file and return ARCSs v1 and v2 for all tracks.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -206,12 +207,6 @@
                 </tr>
               </tbody>
               <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>The checksums of this file</td>
-                </tr>
-              </thead>
-              <thead>
                 <tr><th colspan="2">Exceptions</th></tr>
               </thead>
               <tbody>
@@ -224,7 +219,7 @@
           </div></section>
           <section class="m-doc-details" id="af2377521dde6b5a1752d50202efa3452"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int64_t arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af2377521dde6b5a1752d50202efa3452" class="m-doc-self">samples_per_read</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">int64_t arcsdec::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af2377521dde6b5a1752d50202efa3452" class="m-doc-self">samples_per_read</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Return the number of samples to read in one read operation.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -238,7 +233,7 @@
           </div></section>
           <section class="m-doc-details" id="a67ebf299e5238f17964cd2d368b809ae"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a67ebf299e5238f17964cd2d368b809ae" class="m-doc-self">set_processor</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>&amp; processor)</span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a67ebf299e5238f17964cd2d368b809ae" class="m-doc-self">set_processor</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a>&amp; processor)</span></span>
             </h3>
             <p>Register a <a href="classarcsdec_1_1v__1__0__0_1_1SampleProcessor.html" class="m-doc">SampleProcessor</a> instance to pass the read samples to.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -255,7 +250,7 @@
           </div></section>
           <section class="m-doc-details" id="ac1e9358a3335b03fe68000cd35db872e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />v_1_0_0::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac1e9358a3335b03fe68000cd35db872e" class="m-doc-self">set_samples_per_read</a>(</span><span class="m-doc-wrap">const int64_t samples_per_read)</span></span>
+              <span class="m-doc-wrap-bumper">void arcsdec::<wbr />AudioReader::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac1e9358a3335b03fe68000cd35db872e" class="m-doc-self">set_samples_per_read</a>(</span><span class="m-doc-wrap">const int64_t samples_per_read)</span></span>
             </h3>
             <p>Set the number of samples to read in one read operation.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -316,7 +311,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

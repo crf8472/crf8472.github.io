@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcsdec::v_1_0_0::ByteSeq class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <title>arcsdec::ByteSeq class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::ByteSeq <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>ByteSeq <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
         </h1>
         <p>Byte sequence with or without wildcards.</p>
@@ -77,9 +78,11 @@
           <h2><a href="#pub-static-attribs">Public static variables</a></h2>
           <dl class="m-doc">
             <dt id="ad178235f66d96b8039fb03faea98f22d">
-              static <a href="#a82ec6a73a0c471b0ee45cef4621a0e08" class="m-doc">byte_<wbr />type</a> <a href="#ad178235f66d96b8039fb03faea98f22d" class="m-doc-self">max_byte_value</a> <span class="m-label m-flat m-primary">constexpr</span>
+              static 
+          <a href="#a82ec6a73a0c471b0ee45cef4621a0e08" class="m-doc">byte_<wbr />type</a>
+         <a href="#ad178235f66d96b8039fb03faea98f22d" class="m-doc-self">max_byte_value</a> <span class="m-label m-flat m-primary">constexpr</span>
             </dt>
-            <dd>Numerical maximum of the <code>byte_type</code>.</dd>
+            <dd>Numerical maximum of the <code><a href="#a82ec6a73a0c471b0ee45cef4621a0e08" class="m-doc">byte_<wbr />type</a></code>.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -104,11 +107,13 @@
             <dd>TRUE if byte on position <code>i</code> of the sequence is a wildcard.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a237a8f5e682c20485788c0e203477105" class="m-doc">matches</a>(</span><span class="m-doc-wrap">sequence_type::size_type i,
-              <a href="#a82ec6a73a0c471b0ee45cef4621a0e08" class="m-doc">byte_<wbr />type</a> b) const -&gt; bool</span>
+              
+            <a href="#a82ec6a73a0c471b0ee45cef4621a0e08" class="m-doc">byte_<wbr />type</a>
+           b) const -&gt; bool</span>
             </dt>
             <dd>TRUE if byte on position <code>i</code> of the sequence has value <code>b</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1e48d43c4258b2c10f0cd4ff67bbed09" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">ByteSeq</a>&amp; rhs) -&gt; <a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">ByteSeq</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1e48d43c4258b2c10f0cd4ff67bbed09" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="#af4161382b9ba43d70ef0867ea69a1f4a" class="m-doc">ByteSeq</a>&amp; rhs) -&gt; <a href="#af4161382b9ba43d70ef0867ea69a1f4a" class="m-doc">ByteSeq</a>&amp;</span>
             </dt>
             <dd>Swap this instance with another.</dd>
           </dl>
@@ -117,7 +122,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="aef82dee7807792e90841a68de26b2cfa"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />ByteSeq::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aef82dee7807792e90841a68de26b2cfa" class="m-doc-self">ByteSeq</a>(</span><span class="m-doc-wrap">sequence_type::size_type length)</span></span>
+              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />ByteSeq::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aef82dee7807792e90841a68de26b2cfa" class="m-doc-self">ByteSeq</a>(</span><span class="m-doc-wrap">sequence_type::size_type length)</span></span>
             </h3>
             <p>Constructor for an empty sequence of specified length.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -134,7 +139,7 @@
           </div></section>
           <section class="m-doc-details" id="af4161382b9ba43d70ef0867ea69a1f4a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />ByteSeq::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af4161382b9ba43d70ef0867ea69a1f4a" class="m-doc-self">ByteSeq</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;unsigned&gt; values)</span></span>
+              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />ByteSeq::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af4161382b9ba43d70ef0867ea69a1f4a" class="m-doc-self">ByteSeq</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;unsigned&gt; values)</span></span>
             </h3>
             <p>Constructor using a sequence of byte values and wildcards.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -151,13 +156,22 @@
           </div></section>
           <section class="m-doc-details" id="af8f2561f204227a3a1190c6f25743f03"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />ByteSeq::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af8f2561f204227a3a1190c6f25743f03" class="m-doc-self">is_wildcard</a>(</span><span class="m-doc-wrap">sequence_type::size_type i) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />ByteSeq::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af8f2561f204227a3a1190c6f25743f03" class="m-doc-self">is_wildcard</a>(</span><span class="m-doc-wrap">sequence_type::size_type i) const</span></span>
             </h3>
             <p>TRUE if byte on position <code>i</code> of the sequence is a wildcard.</p>
             <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">i&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Position index</td>
+                </tr>
+              </tbody>
               <tfoot>
                 <tr>
-                  <th style="width: 1%">Returns</th>
+                  <th>Returns</th>
                   <td>TRUE if byte on position <code>i</code> of the sequence is a wildcard, otherwise FALSE.</td>
                 </tr>
               </tfoot>
@@ -165,14 +179,29 @@
           </div></section>
           <section class="m-doc-details" id="a237a8f5e682c20485788c0e203477105"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />ByteSeq::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a237a8f5e682c20485788c0e203477105" class="m-doc-self">matches</a>(</span><span class="m-doc-wrap">sequence_type::size_type i,
-              <a href="#a82ec6a73a0c471b0ee45cef4621a0e08" class="m-doc">byte_<wbr />type</a> b) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />ByteSeq::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a237a8f5e682c20485788c0e203477105" class="m-doc-self">matches</a>(</span><span class="m-doc-wrap">sequence_type::size_type i,
+              
+            <a href="#a82ec6a73a0c471b0ee45cef4621a0e08" class="m-doc">byte_<wbr />type</a>
+           b) const</span></span>
             </h3>
             <p>TRUE if byte on position <code>i</code> of the sequence has value <code>b</code>.</p>
             <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">i&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Position index</td>
+                </tr>
+                <tr>
+                  <td>b&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Byte value to check for</td>
+                </tr>
+              </tbody>
               <tfoot>
                 <tr>
-                  <th style="width: 1%">Returns</th>
+                  <th>Returns</th>
                   <td>TRUE if byte on position <code>i</code> of the sequence has value <code>b</code>, otherwise FALSE.</td>
                 </tr>
               </tfoot>
@@ -180,7 +209,7 @@
           </div></section>
           <section class="m-doc-details" id="a1e48d43c4258b2c10f0cd4ff67bbed09"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">ByteSeq</a>&amp; arcsdec::<wbr />v_1_0_0::<wbr />ByteSeq::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e48d43c4258b2c10f0cd4ff67bbed09" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">ByteSeq</a>&amp; rhs)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="#af4161382b9ba43d70ef0867ea69a1f4a" class="m-doc">ByteSeq</a>&amp; arcsdec::<wbr />ByteSeq::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1e48d43c4258b2c10f0cd4ff67bbed09" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="#af4161382b9ba43d70ef0867ea69a1f4a" class="m-doc">ByteSeq</a>&amp; rhs)</span></span>
             </h3>
             <p>Swap this instance with another.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -193,6 +222,12 @@
                   <td>The other instance to swap with</td>
                 </tr>
               </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Instance after swapping</td>
+                </tr>
+              </tfoot>
             </table>
           </div></section>
         </section>
@@ -240,7 +275,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

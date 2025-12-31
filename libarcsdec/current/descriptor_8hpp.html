@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -57,9 +58,6 @@
               <ul>
                 <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#enum-members">Enums</a></li>
-                <li><a href="#typedef-members">Typedefs</a></li>
-                <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
@@ -77,228 +75,39 @@
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">arcsdec::v_1_0_0::Bytes</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">arcsdec::Bytes</a>
             </dt>
             <dd>A sequence of bytes read from a specific offset in a file.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">arcsdec::v_1_0_0::ByteSeq</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1ByteSeq.html" class="m-doc">arcsdec::ByteSeq</a>
             </dt>
             <dd>Byte sequence with or without wildcards.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">arcsdec::v_1_0_0::FileReader</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">arcsdec::FileReader</a>
             </dt>
             <dd>Abstract base class for <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReaders</a>.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">arcsdec::v_1_0_0::FileReaderDescriptor</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReaderDescriptor.html" class="m-doc">arcsdec::FileReaderDescriptor</a>
             </dt>
             <dd>Abstract base class for the properties of a <a href="classarcsdec_1_1v__1__0__0_1_1FileReader.html" class="m-doc">FileReader</a>.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReadException.html" class="m-doc">arcsdec::v_1_0_0::FileReadException</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FileReadException.html" class="m-doc">arcsdec::FileReadException</a>
             </dt>
             <dd>Reports an error while reading a file.</dd>
             <dt>
               <div class="m-doc-template">template&lt;enum <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a> F&gt;</div>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">arcsdec::v_1_0_0::FormatMatcher</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1FormatMatcher.html" class="m-doc">arcsdec::FormatMatcher</a>
             </dt>
             <dd><a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">Matcher</a> for file formats.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1InputFormatException.html" class="m-doc">arcsdec::v_1_0_0::InputFormatException</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1InputFormatException.html" class="m-doc">arcsdec::InputFormatException</a>
             </dt>
             <dd>Reports an error concerning the input file format.</dd>
             <dt>
-              class <a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">arcsdec::v_1_0_0::Matcher</a>
+              class <a href="classarcsdec_1_1v__1__0__0_1_1Matcher.html" class="m-doc">arcsdec::Matcher</a>
             </dt>
             <dd>Interface for matchers.</dd>
           </dl>
-        </section>
-        <section id="enum-members">
-          <h2><a href="#enum-members">Enums</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="group__descriptor.html#ga1bb6a3bb14846ed51234252330ebff84" class="m-doc">Codec</a>: unsigned { </span><span class="m-doc-wrap"><a href="#gga1bb6a3bb14846ed51234252330ebff84a696b031073e74bf2cb98e5ef201d4aa3" class="m-doc">UNKNOWN</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84ad6459724c9fc3a856ca3c8fd3c87bfbf" class="m-doc">PCM_S16BE</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84ae22fd24d3ca2f43cce9eec7e73687c04" class="m-doc">PCM_S16BE_PLANAR</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84a1d39acf6cef1e1515628bc4991e0d2b3" class="m-doc">PCM_S16LE</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84aa928b6ffba1b76dab0acd4c5a256d5fc" class="m-doc">PCM_S16LE_PLANAR</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84a1ef8f1faff4659bce81054bd56ec56f1" class="m-doc">PCM_S32BE</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84a247f5a5f92c27888c3485cb2b3659c31" class="m-doc">PCM_S32BE_PLANAR</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84a1124b01ec75d322918f1d7d5bbe3c5bc" class="m-doc">PCM_S32LE</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84ab46f08ac2f8c8f112a6ee4aac9c6a32a" class="m-doc">PCM_S32LE_PLANAR</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84aa417ad68c0d44a64cc77fcbba552fd6e" class="m-doc">FLAC</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84a9b1767b52104aa7954314f87d07f01dd" class="m-doc">WAVPACK</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84ad156cccc3ede1728673c3818d581503a" class="m-doc">MONKEY</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84a039ea4e8bb04948343a7376e44df1c17" class="m-doc">ALAC</a>,
-              <a href="#gga1bb6a3bb14846ed51234252330ebff84ab50339a10e1de285ac99d4c3990b8693" class="m-doc">NONE</a> }</span>
-            </dt>
-            <dd>A supported audio codec.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="group__descriptor.html#ga90f14fef4842822ce786c1bd5586cac1" class="m-doc">Format</a>: unsigned { </span><span class="m-doc-wrap"><a href="#gga90f14fef4842822ce786c1bd5586cac1a696b031073e74bf2cb98e5ef201d4aa3" class="m-doc">UNKNOWN</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1a13b1e122c7bb2180335974c89c132432" class="m-doc">CUE</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1a98ec6dca5f554f14265d2ed7eef21f5b" class="m-doc">CDRDAO</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1a76bae86742a2ec93bb56ae064ce7bd54" class="m-doc">WAV</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1aa417ad68c0d44a64cc77fcbba552fd6e" class="m-doc">FLAC</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1a85fb93a8ee9440499692da24a1621769" class="m-doc">APE</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1a3908b5520c10387318acb3bf705a4f2a" class="m-doc">CAF</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1aebae9a870a696afb2ecea6601d339318" class="m-doc">M4A</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1ae94afc367f47e1aaf16533e4ecbc8716" class="m-doc">OGG</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1ab484fe295bb7ccd00d90fcf8094b037e" class="m-doc">WV</a>,
-              <a href="#gga90f14fef4842822ce786c1bd5586cac1a457c9e4a3c0a6bd24e1fe26935a86725" class="m-doc">AIFF</a> }</span>
-            </dt>
-            <dd>List of supported file formats for metadata and audio.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">enum class <a href="group__descriptor.html#ga37a47fe0d657fe73f5dc8ce52db9c575" class="m-doc">InputType</a>: unsigned { </span><span class="m-doc-wrap"><a href="#gga37a47fe0d657fe73f5dc8ce52db9c575ae423b8bde9bfbfd7e9409b23b23aed91" class="m-doc">AUDIO</a>,
-              <a href="#gga37a47fe0d657fe73f5dc8ce52db9c575a6994206aa5146e62315e61b6ecf6f56b" class="m-doc">TOC</a> }</span>
-            </dt>
-            <dd>Input filetype.</dd>
-          </dl>
-        </section>
-        <section id="typedef-members">
-          <h2><a href="#typedef-members">Typedefs</a></h2>
-          <dl class="m-doc">
-            <dt>
-              using <a href="group__descriptor.html#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a> = ByteSeq
-            </dt>
-            <dd>A sequence of bytes.</dd>
-            <dt>
-              using <a href="group__descriptor.html#gaf223e87c82c7a590d81589b8230dc78f" class="m-doc">LibInfo</a> = std::list&lt;LibInfoEntry&gt;
-            </dt>
-            <dd>Represents a list of pairs of a library name and an additional string.</dd>
-            <dt>
-              using <a href="group__descriptor.html#ga2c4df88bc578dd8e0d9b89535063284c" class="m-doc">LibInfoEntry</a> = std::pair&lt;std::string, std::string&gt;
-            </dt>
-            <dd>Entry of a LibInfo.</dd>
-            <dt>
-              using <a href="group__descriptor.html#gad03466418edd1f960ead45d3f1b72e09" class="m-doc">SuffixSet</a> = std::set&lt;details::ci_string&gt;
-            </dt>
-            <dd>A set of filename suffices.</dd>
-          </dl>
-        </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aad68063d7e0baad0db5ffa4c89258dee" class="m-doc">ci_match_suffix</a>(</span><span class="m-doc-wrap">const SuffixSet&amp; suffices,
-              const std::string&amp; filename) -&gt; bool</span>
-            </dt>
-            <dd>Worker: default implementation for checking a filename.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa44af2655c931649e75809c9fcfda392" class="m-doc">get_suffix</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              const std::string&amp; delimiter) -&gt; std::string</span>
-            </dt>
-            <dd>Worker: Provides the suffix of a given filename.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__descriptor.html#ga480758753388c9c53018cf5e1d137c39" class="m-doc">libinfo_entry_filepath</a>(</span><span class="m-doc-wrap">const std::string&amp; libname) -&gt; LibInfoEntry</span>
-            </dt>
-            <dd>Create a LibInfoEntry for <code>libname</code>, lookup filepath of library.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__descriptor.html#ga9fbb23d783de4b0a5b3538724d41f07d" class="m-doc">name</a>(</span><span class="m-doc-wrap">Codec codec) -&gt; std::string</span>
-            </dt>
-            <dd>Name of the <code>codec</code>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="group__descriptor.html#ga9b4c827e1aa88ec12ca3081b1ddb7c15" class="m-doc">name</a>(</span><span class="m-doc-wrap">Format format) -&gt; std::string</span>
-            </dt>
-            <dd>Name of the <code>format</code>.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5ed9d7e34f44a210de70aeea22d37cfa" class="m-doc">read_bytes</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              const uint32_t&amp; offset,
-              const uint32_t&amp; length) -&gt; Bytes</span>
-            </dt>
-            <dd>Worker: Read <code>length</code> bytes from file <code>filename</code> starting at position <code>offset</code>.</dd>
-          </dl>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="aad68063d7e0baad0db5ffa4c89258dee"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aad68063d7e0baad0db5ffa4c89258dee" class="m-doc-self">ci_match_suffix</a>(</span><span class="m-doc-wrap">const SuffixSet&amp; suffices,
-              const std::string&amp; filename)</span></span>
-            </h3>
-            <p>Worker: default implementation for checking a filename.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>TRUE if the filename suffix matches one of the internal suffices</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>Returns TRUE if the suffix of the filename equals one of the internal suffices. The check is done case-insensitive.</p>
-          </div></section>
-          <section class="m-doc-details" id="aa44af2655c931649e75809c9fcfda392"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">std::string </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa44af2655c931649e75809c9fcfda392" class="m-doc-self">get_suffix</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              const std::string&amp; delimiter)</span></span>
-            </h3>
-            <p>Worker: Provides the suffix of a given filename.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">filename&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The filename to check</td>
-                </tr>
-                <tr>
-                  <td>delimiter&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>The delimiter to separate the suffix from the base</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>The relevant suffix or the entire filename</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>The suffix is the part of filename following the last occurrence of <code>delimiter</code>. If filename does not contain the delimiter, the entire filename is returned as suffix.</p>
-          </div></section>
-          <section class="m-doc-details" id="a5ed9d7e34f44a210de70aeea22d37cfa"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">Bytes </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5ed9d7e34f44a210de70aeea22d37cfa" class="m-doc-self">read_bytes</a>(</span><span class="m-doc-wrap">const std::string&amp; filename,
-              const uint32_t&amp; offset,
-              const uint32_t&amp; length)</span></span>
-            </h3>
-            <p>Worker: Read <code>length</code> bytes from file <code>filename</code> starting at position <code>offset</code>.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">filename&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Name of the file to read from</td>
-                </tr>
-                <tr>
-                  <td>offset&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>0-based byte offset to start</td>
-                </tr>
-                <tr>
-                  <td>length&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Number of bytes to read</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>Byte sequence read from file</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><a href="classarcsdec_1_1v__1__0__0_1_1FileReadException.html" class="m-doc">FileReadException</a></td>
-                  <td>If the specified number of bytes could not be read from the specified file and position</td>
-                </tr>
-                <tr>
-                  <td><a href="classarcsdec_1_1v__1__0__0_1_1InputFormatException.html" class="m-doc">InputFormatException</a></td>
-                  <td>On unspecified error</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
         </section>
       </div>
     </div>
@@ -344,7 +153,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

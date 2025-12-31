@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcsdec::v_1_0_0::Bytes class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
+  <title>arcsdec::Bytes class | libarcsdec Audio decoder and TOC parser adapters for libarcstk</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>v_1_0_0::Bytes <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcsdec.html">arcsdec</a>::<wbr/></span>Bytes <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="descriptor_8hpp.html">&lt;descriptor.hpp&gt;</a></div>
         </h1>
         <p>A sequence of bytes read from a specific offset in a file.</p>
@@ -82,7 +83,7 @@
             <dd>Constructor.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#aff57d269861f4994e10d7200bdce5fd1" class="m-doc">Bytes</a>(</span><span class="m-doc-wrap">const uint32_t offset,
-              const <a href="group__descriptor.html#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a>&amp; bytes)</span>
+              const <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a>&amp; bytes)</span>
             </dt>
             <dd>Constructor.</dd>
           </dl>
@@ -91,15 +92,15 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a19cebd0d55397b626593cd754a2c422b" class="m-doc">match</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a>&amp; bytes) const -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a19cebd0d55397b626593cd754a2c422b" class="m-doc">match</a>(</span><span class="m-doc-wrap">const <a href="#a56f96df8745e70b2781d0240aa140026" class="m-doc">Bytes</a>&amp; bytes) const -&gt; bool</span>
             </dt>
             <dd>Match a byte sequence with this instance.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af585f64d8a46e776bc2379aab953d78f" class="m-doc">match</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a>&amp; bytes) const -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af585f64d8a46e776bc2379aab953d78f" class="m-doc">match</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a>&amp; bytes) const -&gt; bool</span>
             </dt>
             <dd>Match a byte sequence with offset 0 with this instance.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aff6afda3822e83c765de0243f8552d0a" class="m-doc">match</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a>&amp; bytes,
+              <span class="m-doc-wrap-bumper">auto <a href="#aff6afda3822e83c765de0243f8552d0a" class="m-doc">match</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a>&amp; bytes,
               const uint32_t&amp; offset) const -&gt; bool</span>
             </dt>
             <dd>Match a byte sequence starting with <code>offset</code> with this instance.</dd>
@@ -112,15 +113,17 @@
             </dt>
             <dd>Read access to a single byte.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a31b03508b63f55d8c851224627638fa3" class="m-doc">sequence</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__descriptor.html#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a31b03508b63f55d8c851224627638fa3" class="m-doc">sequence</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a>
+        </span>
             </dt>
-            <dd>ByteSequence of this instance.</dd>
+            <dd><a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a> of this instance.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae59c150d676c46fa16ff8d3cfcb07a0a" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; ByteSequence::size_type</span>
             </dt>
             <dd>Total number of bytes contained.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa495646d6201e0d860500108b9fe8e16" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a>&amp; rhs) -&gt; <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa495646d6201e0d860500108b9fe8e16" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="#a56f96df8745e70b2781d0240aa140026" class="m-doc">Bytes</a>&amp; rhs) -&gt; <a href="#a56f96df8745e70b2781d0240aa140026" class="m-doc">Bytes</a>&amp;</span>
             </dt>
             <dd>Swap this instance with another.</dd>
           </dl>
@@ -129,15 +132,15 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a56f96df8745e70b2781d0240aa140026"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a56f96df8745e70b2781d0240aa140026" class="m-doc-self">Bytes</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a56f96df8745e70b2781d0240aa140026" class="m-doc-self">Bytes</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Constructor.</p>
-<p>Initiates an empty internal ByteSequence with an <a href="#acae704a9c30d36c95029d5d980c85565" class="m-doc">offset()</a> of 0.</p>
+<p>Initiates an empty internal <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a> with an <a href="#acae704a9c30d36c95029d5d980c85565" class="m-doc">offset()</a> of 0.</p>
           </div></section>
           <section class="m-doc-details" id="aff57d269861f4994e10d7200bdce5fd1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />v_1_0_0::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff57d269861f4994e10d7200bdce5fd1" class="m-doc-self">Bytes</a>(</span><span class="m-doc-wrap">const uint32_t offset,
-              const <a href="group__descriptor.html#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a>&amp; bytes)</span></span>
+              <span class="m-doc-wrap-bumper"> arcsdec::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff57d269861f4994e10d7200bdce5fd1" class="m-doc-self">Bytes</a>(</span><span class="m-doc-wrap">const uint32_t offset,
+              const <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a>&amp; bytes)</span></span>
             </h3>
             <p>Constructor.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -158,7 +161,7 @@
           </div></section>
           <section class="m-doc-details" id="a19cebd0d55397b626593cd754a2c422b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a19cebd0d55397b626593cd754a2c422b" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">const <a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a>&amp; bytes) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a19cebd0d55397b626593cd754a2c422b" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">const <a href="#a56f96df8745e70b2781d0240aa140026" class="m-doc">Bytes</a>&amp; bytes) const</span></span>
             </h3>
             <p>Match a byte sequence with this instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -182,7 +185,7 @@
           </div></section>
           <section class="m-doc-details" id="af585f64d8a46e776bc2379aab953d78f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af585f64d8a46e776bc2379aab953d78f" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a>&amp; bytes) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af585f64d8a46e776bc2379aab953d78f" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a>&amp; bytes) const</span></span>
             </h3>
             <p>Match a byte sequence with offset 0 with this instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -192,7 +195,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">bytes&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>ByteSequence to be matched</td>
+                  <td><a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a> to be matched</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -206,7 +209,7 @@
           </div></section>
           <section class="m-doc-details" id="aff6afda3822e83c765de0243f8552d0a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />v_1_0_0::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff6afda3822e83c765de0243f8552d0a" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a>&amp; bytes,
+              <span class="m-doc-wrap-bumper">bool arcsdec::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff6afda3822e83c765de0243f8552d0a" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">const <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a>&amp; bytes,
               const uint32_t&amp; offset) const</span></span>
             </h3>
             <p>Match a byte sequence starting with <code>offset</code> with this instance.</p>
@@ -217,11 +220,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">bytes&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>ByteSequence from a file to be matched</td>
+                  <td><a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a> from a file to be matched</td>
                 </tr>
                 <tr>
                   <td>offset&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td>Offset to start of ByteSequence of this instance</td>
+                  <td>Offset to start of <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a> of this instance</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -231,11 +234,11 @@
                 </tr>
               </tfoot>
             </table>
-<p>The match is tried starting on positin <code>offset</code> on this instance and ends on the end of the shorter sequence, either <code>bytes</code> or this instance.</p><aside class="m-note m-info"><h4>Note</h4><p>Parameter <code>offset</code> does not refer to the original file position but to the start of the reference ByteSequence. It does therfore not indicate where in the file the sequence <code>bytes</code> is located but whether <code>bytes</code> is the very start of the reference ByteSequence or only a shifted part of it.</p></aside>
+<p>The match is tried starting on positin <code>offset</code> on this instance and ends on the end of the shorter sequence, either <code>bytes</code> or this instance.</p><aside class="m-note m-info"><h4>Note</h4><p>Parameter <code>offset</code> does not refer to the original file position but to the start of the reference <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a>. It does therfore not indicate where in the file the sequence <code>bytes</code> is located but whether <code>bytes</code> is the very start of the reference <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a> or only a shifted part of it.</p></aside>
           </div></section>
           <section class="m-doc-details" id="acae704a9c30d36c95029d5d980c85565"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">uint32_t arcsdec::<wbr />v_1_0_0::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acae704a9c30d36c95029d5d980c85565" class="m-doc-self">offset</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">uint32_t arcsdec::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acae704a9c30d36c95029d5d980c85565" class="m-doc-self">offset</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Offset of this instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -249,13 +252,22 @@
           </div></section>
           <section class="m-doc-details" id="a62333172d81b9e8f161479b53ec70520"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">ByteSequence::const_reference arcsdec::<wbr />v_1_0_0::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a62333172d81b9e8f161479b53ec70520" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">ByteSequence::size_type i) const</span></span>
+              <span class="m-doc-wrap-bumper">ByteSequence::const_reference arcsdec::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a62333172d81b9e8f161479b53ec70520" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">ByteSequence::size_type i) const</span></span>
             </h3>
             <p>Read access to a single byte.</p>
             <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">i&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Index position</td>
+                </tr>
+              </tbody>
               <tfoot>
                 <tr>
-                  <th style="width: 1%">Returns</th>
+                  <th>Returns</th>
                   <td>Read a single byte.</td>
                 </tr>
               </tfoot>
@@ -263,21 +275,23 @@
           </div></section>
           <section class="m-doc-details" id="a31b03508b63f55d8c851224627638fa3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__descriptor.html#ga009aba7ffed5ed9290442979b98ee5ee" class="m-doc">ByteSequence</a> arcsdec::<wbr />v_1_0_0::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a31b03508b63f55d8c851224627638fa3" class="m-doc-self">sequence</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a>
+         arcsdec::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a31b03508b63f55d8c851224627638fa3" class="m-doc-self">sequence</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>ByteSequence of this instance.</p>
+            <p><a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a> of this instance.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>ByteSequence of this instance.</td>
+                  <td><a href="group__descriptor.html#ga0eac51fe5d2ac7d65aab58409ec7b954" class="m-doc">ByteSequence</a> of this instance.</td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
           <section class="m-doc-details" id="ae59c150d676c46fa16ff8d3cfcb07a0a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">ByteSequence::size_type arcsdec::<wbr />v_1_0_0::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae59c150d676c46fa16ff8d3cfcb07a0a" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">ByteSequence::size_type arcsdec::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae59c150d676c46fa16ff8d3cfcb07a0a" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Total number of bytes contained.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -291,7 +305,7 @@
           </div></section>
           <section class="m-doc-details" id="aa495646d6201e0d860500108b9fe8e16"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a>&amp; arcsdec::<wbr />v_1_0_0::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa495646d6201e0d860500108b9fe8e16" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classarcsdec_1_1v__1__0__0_1_1Bytes.html" class="m-doc">Bytes</a>&amp; rhs)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="#a56f96df8745e70b2781d0240aa140026" class="m-doc">Bytes</a>&amp; arcsdec::<wbr />Bytes::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa495646d6201e0d860500108b9fe8e16" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="#a56f96df8745e70b2781d0240aa140026" class="m-doc">Bytes</a>&amp; rhs)</span></span>
             </h3>
             <p>Swap this instance with another.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -304,6 +318,12 @@
                   <td>The other instance to swap with</td>
                 </tr>
               </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Instance after swapping</td>
+                </tr>
+              </tfoot>
             </table>
           </div></section>
         </section>
@@ -351,7 +371,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.6 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcsdec Audio decoder and TOC parser adapters for libarcstk. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
