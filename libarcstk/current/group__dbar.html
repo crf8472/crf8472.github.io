@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -60,44 +61,44 @@
             </li>
           </ul>
         </nav>
-<p>Functions <a href="#ga3a07634fe099439b070255ec9e8892b3" class="m-doc">parse_<wbr />stream()</a> and <a href="#gae096928cb5ca2ecada224c357fb0af91" class="m-doc">parse_<wbr />file()</a> can parse a stream to a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object, which provdes access to all values by their respective indices.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1DBARBlockHeader.html" class="m-doc">DBARBlockHeader</a> is a representation of the header of a block within a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> file. A <a href="classarcstk_1_1v__1__0__0_1_1DBARTriplet.html" class="m-doc">DBARTriplet</a> represents the three values each block contains for each track.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1DBARBlock.html" class="m-doc">DBARBlock</a> is a representation of a single indexed block of a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object. The lifetime of a <a href="classarcstk_1_1v__1__0__0_1_1DBARBlock.html" class="m-doc">DBARBlock</a> must not exceed the lifetime of the <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object it was constructed from.</p><p>When parsing, a <a href="classarcstk_1_1v__1__0__0_1_1DBARBuilder.html" class="m-doc">DBARBuilder</a> can be passed to the parse() functions as a <a href="classarcstk_1_1v__1__0__0_1_1ParseHandler.html" class="m-doc">ParseHandler</a> that constructs the <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object from the input stream. Alternatively, custom implementations of <a href="classarcstk_1_1v__1__0__0_1_1ParseHandler.html" class="m-doc">ParseHandler</a> can be used.</p><p><a href="classarcstk_1_1v__1__0__0_1_1DBARErrorHandler.html" class="m-doc">DBARErrorHandler</a> is the default <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">ParseErrorHandler</a> implementation that just throws a <a href="classarcstk_1_1v__1__0__0_1_1StreamParseException.html" class="m-doc">StreamParseException</a> an each error. Throwing a <a href="classarcstk_1_1v__1__0__0_1_1StreamParseException.html" class="m-doc">StreamParseException</a> is the default behaviour in case no <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">ParseErrorHandler</a> is provided. Alternatively, custom implementations of <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">ParseErrorHandler</a> can be used.</p><aside class="m-note m-info"><h4>Note</h4><p>There is no way to inform the client whether the actual ARCS in an ARTriplet is an ARCSv1 or an ARCSv2. The <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> response does not distinguish blocks of ARCSv1 from blocks of ARCSv2 and provides no information about the concrete checksum algorithm. A block of ARCSv1 is considered just an information about another pressing of an album.</p></aside>
+<p>Functions <a href="#ga3a07634fe099439b070255ec9e8892b3" class="m-doc">parse_<wbr />stream()</a> and <a href="#gae096928cb5ca2ecada224c357fb0af91" class="m-doc">parse_<wbr />file()</a> can parse a stream to a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object, which provides access to all values by their respective indices.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1DBARBlockHeader.html" class="m-doc">DBARBlockHeader</a> is a representation of the header of a block within a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> file. A <a href="classarcstk_1_1v__1__0__0_1_1DBARTriplet.html" class="m-doc">DBARTriplet</a> represents the three values each block contains for each track.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1DBARBlock.html" class="m-doc">DBARBlock</a> is a representation of a single indexed block of a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object. The lifetime of a <a href="classarcstk_1_1v__1__0__0_1_1DBARBlock.html" class="m-doc">DBARBlock</a> must not exceed the lifetime of the <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object it was constructed from.</p><p>When parsing, a <a href="classarcstk_1_1v__1__0__0_1_1DBARBuilder.html" class="m-doc">DBARBuilder</a> can be passed to the parse_*() functions as a <a href="classarcstk_1_1v__1__0__0_1_1ParseHandler.html" class="m-doc">ParseHandler</a> that constructs the <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object from the input stream. Alternatively, custom implementations of <a href="classarcstk_1_1v__1__0__0_1_1ParseHandler.html" class="m-doc">ParseHandler</a> can be used.</p><p><a href="classarcstk_1_1v__1__0__0_1_1DBARErrorHandler.html" class="m-doc">DBARErrorHandler</a> is the default <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">ParseErrorHandler</a> implementation that just throws a <a href="classarcstk_1_1v__1__0__0_1_1StreamParseException.html" class="m-doc">StreamParseException</a> on each error. Throwing a <a href="classarcstk_1_1v__1__0__0_1_1StreamParseException.html" class="m-doc">StreamParseException</a> is the default behaviour in case no <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">ParseErrorHandler</a> is provided. Alternatively, custom implementations of <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">ParseErrorHandler</a> can be used.</p><aside class="m-note m-info"><h4>Note</h4><p>There is no way to inform the client whether the actual ARCS in an ARTriplet is an ARCSv1 or an ARCSv2. The <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> response does not distinguish blocks of ARCSv1 from blocks of ARCSv2 and provides no information about the concrete checksum algorithm. Different blocks of checksums of the same type are considered just as information about different pressings of an album.</p></aside>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">arcstk::v_1_0_0::DBAR</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">arcstk::DBAR</a>
             </dt>
             <dd>Represents the content of dBAR file.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1DBARBlock.html" class="m-doc">arcstk::v_1_0_0::DBARBlock</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1DBARBlock.html" class="m-doc">arcstk::DBARBlock</a>
             </dt>
             <dd>A block in a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a>.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1DBARBlockHeader.html" class="m-doc">arcstk::v_1_0_0::DBARBlockHeader</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1DBARBlockHeader.html" class="m-doc">arcstk::DBARBlockHeader</a>
             </dt>
             <dd>The header of a <a href="classarcstk_1_1v__1__0__0_1_1DBARBlock.html" class="m-doc">DBARBlock</a>.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1DBARBuilder.html" class="m-doc">arcstk::v_1_0_0::DBARBuilder</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1DBARBuilder.html" class="m-doc">arcstk::DBARBuilder</a>
             </dt>
             <dd><a href="classarcstk_1_1v__1__0__0_1_1ParseHandler.html" class="m-doc">ParseHandler</a> to build a <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1DBARErrorHandler.html" class="m-doc">arcstk::v_1_0_0::DBARErrorHandler</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1DBARErrorHandler.html" class="m-doc">arcstk::DBARErrorHandler</a>
             </dt>
             <dd>Default <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">ParseErrorHandler</a> for parsing <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> objects.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1DBARTriplet.html" class="m-doc">arcstk::v_1_0_0::DBARTriplet</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1DBARTriplet.html" class="m-doc">arcstk::DBARTriplet</a>
             </dt>
             <dd>A triplet in a <a href="classarcstk_1_1v__1__0__0_1_1DBARBlock.html" class="m-doc">DBARBlock</a>.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">arcstk::v_1_0_0::ParseErrorHandler</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ParseErrorHandler.html" class="m-doc">arcstk::ParseErrorHandler</a>
             </dt>
             <dd>Interface: error handling while parsing a dBAR format.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1ParseHandler.html" class="m-doc">arcstk::v_1_0_0::ParseHandler</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ParseHandler.html" class="m-doc">arcstk::ParseHandler</a>
             </dt>
             <dd>Interface: parsing a byte stream in dBAR format.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1StreamParseException.html" class="m-doc">arcstk::v_1_0_0::StreamParseException</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1StreamParseException.html" class="m-doc">arcstk::StreamParseException</a>
             </dt>
             <dd>Reports a read error during parsing a binary stream.</dd>
           </dl>
@@ -318,7 +319,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

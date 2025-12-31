@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -49,7 +50,7 @@
           <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacearcstk_1_1v__1__0__0.html">v_1_0_0</a>::<wbr/></span>toc <span class="m-thin">namespace</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="metadata_8hpp.html">&lt;metadata.hpp&gt;</a></div>
         </h1>
-        <p>Functions for managing <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> instances.</p>
+        <p>Functions for managing <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> instances.</p>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -66,52 +67,61 @@
           <h2><a href="#func-members">Functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af485fc81d0b4d29dbebf928463848c8f" class="m-doc">complete</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data) -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af485fc81d0b4d29dbebf928463848c8f" class="m-doc">complete</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data) -&gt; bool</span>
             </dt>
             <dd>TRUE iff non-zero leadout and non-empty sequence of offsets are specified.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aab3080a040a7d76893b75d213b26edc8" class="m-doc">construct</a>(</span><span class="m-doc-wrap">const int32_t leadout,
-              const std::vector&lt;int32_t&gt;&amp; offsets) -&gt; <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a></span>
+              const std::vector&lt;int32_t&gt;&amp; offsets) -&gt; <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a></span>
             </dt>
-            <dd>Construct <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> from leadout and offsets.</dd>
+            <dd>Construct <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> from leadout and offsets.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad38effe2ee6047be047022b3a46c404d" class="m-doc">leadout</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad38effe2ee6047be047022b3a46c404d" class="m-doc">leadout</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a></span>
             </dt>
             <dd>Leadout of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae678e8291f33139d0a1950d1e1085f69" class="m-doc">lengths</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data) -&gt; std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae678e8291f33139d0a1950d1e1085f69" class="m-doc">lengths</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data) -&gt; std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt;</span>
             </dt>
             <dd>Lengths of tracks object.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa7c69f2b6cf87ebbf45162d98e77c860" class="m-doc">offsets</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data) -&gt; std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa7c69f2b6cf87ebbf45162d98e77c860" class="m-doc">offsets</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data) -&gt; std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt;</span>
             </dt>
             <dd>Offsets of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#a0924470488eff4e511c35d6fbe5154b4" class="m-doc">set_leadout</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; leadout,
-              <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data)</span>
+              <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data)</span>
             </dt>
             <dd>Set the leadout of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a589fd4f61c3cbbf26e4e497b4928a72d" class="m-doc">total_tracks</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data) -&gt; int</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a589fd4f61c3cbbf26e4e497b4928a72d" class="m-doc">total_tracks</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data) -&gt; int</span>
             </dt>
             <dd>Total tracks of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ab204c5330171cd78b9efd7fe75d45c56" class="m-doc">validate</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; toc_data)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#ab204c5330171cd78b9efd7fe75d45c56" class="m-doc">validate</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; toc_data)</span>
             </dt>
-            <dd>Validate <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> object.</dd>
+            <dd>Validate <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> object.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="af485fc81d0b4d29dbebf928463848c8f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af485fc81d0b4d29dbebf928463848c8f" class="m-doc-self">complete</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data)</span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af485fc81d0b4d29dbebf928463848c8f" class="m-doc-self">complete</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data)</span></span>
             </h3>
             <p>TRUE iff non-zero leadout and non-empty sequence of offsets are specified.</p>
             <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">data&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>TocData instance to check for completeness</td>
+                </tr>
+              </tbody>
               <tfoot>
                 <tr>
-                  <th style="width: 1%">Returns</th>
+                  <th>Returns</th>
                   <td>TRUE iff non-zero leadout and non-empty offsets exist</td>
                 </tr>
               </tfoot>
@@ -120,10 +130,10 @@
           </div></section>
           <section class="m-doc-details" id="aab3080a040a7d76893b75d213b26edc8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab3080a040a7d76893b75d213b26edc8" class="m-doc-self">construct</a>(</span><span class="m-doc-wrap">const int32_t leadout,
+              <span class="m-doc-wrap-bumper"><a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab3080a040a7d76893b75d213b26edc8" class="m-doc-self">construct</a>(</span><span class="m-doc-wrap">const int32_t leadout,
               const std::vector&lt;int32_t&gt;&amp; offsets)</span></span>
             </h3>
-            <p>Construct <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> from leadout and offsets.</p>
+            <p>Construct <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> from leadout and offsets.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -141,7 +151,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>Formatted <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> object</td>
+                  <td>Formatted <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> object</td>
                 </tr>
               </tfoot>
             </table>
@@ -149,7 +159,7 @@
           </div></section>
           <section class="m-doc-details" id="ad38effe2ee6047be047022b3a46c404d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad38effe2ee6047be047022b3a46c404d" class="m-doc-self">leadout</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a> arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad38effe2ee6047be047022b3a46c404d" class="m-doc-self">leadout</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data)</span></span>
             </h3>
             <p>Leadout of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -159,7 +169,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">data&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td><a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> to read from</td>
+                  <td><a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> to read from</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -172,7 +182,7 @@
           </div></section>
           <section class="m-doc-details" id="ae678e8291f33139d0a1950d1e1085f69"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae678e8291f33139d0a1950d1e1085f69" class="m-doc-self">lengths</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data)</span></span>
+              <span class="m-doc-wrap-bumper">std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae678e8291f33139d0a1950d1e1085f69" class="m-doc-self">lengths</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data)</span></span>
             </h3>
             <p>Lengths of tracks object.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -182,7 +192,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">data&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td><a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> to read from</td>
+                  <td><a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> to read from</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -195,7 +205,7 @@
           </div></section>
           <section class="m-doc-details" id="aa7c69f2b6cf87ebbf45162d98e77c860"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7c69f2b6cf87ebbf45162d98e77c860" class="m-doc-self">offsets</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data)</span></span>
+              <span class="m-doc-wrap-bumper">std::vector&lt;<a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa7c69f2b6cf87ebbf45162d98e77c860" class="m-doc-self">offsets</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data)</span></span>
             </h3>
             <p>Offsets of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -205,7 +215,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">data&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td><a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> to read from</td>
+                  <td><a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> to read from</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -219,7 +229,7 @@
           <section class="m-doc-details" id="a0924470488eff4e511c35d6fbe5154b4"><div>
             <h3>
               <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0924470488eff4e511c35d6fbe5154b4" class="m-doc-self">set_leadout</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; leadout,
-              <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data)</span></span>
+              <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data)</span></span>
             </h3>
             <p>Set the leadout of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -233,14 +243,14 @@
                 </tr>
                 <tr>
                   <td>data&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td><a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> to update</td>
+                  <td><a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> to update</td>
                 </tr>
               </tbody>
             </table>
           </div></section>
           <section class="m-doc-details" id="a589fd4f61c3cbbf26e4e497b4928a72d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a589fd4f61c3cbbf26e4e497b4928a72d" class="m-doc-self">total_tracks</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; data)</span></span>
+              <span class="m-doc-wrap-bumper">int arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a589fd4f61c3cbbf26e4e497b4928a72d" class="m-doc-self">total_tracks</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; data)</span></span>
             </h3>
             <p>Total tracks of a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> object.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -250,7 +260,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">data&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td><a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> to read from</td>
+                  <td><a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> to read from</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -263,9 +273,9 @@
           </div></section>
           <section class="m-doc-details" id="ab204c5330171cd78b9efd7fe75d45c56"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab204c5330171cd78b9efd7fe75d45c56" class="m-doc-self">validate</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; toc_data)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />toc::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab204c5330171cd78b9efd7fe75d45c56" class="m-doc-self">validate</a>(</span><span class="m-doc-wrap">const <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a>&amp; toc_data)</span></span>
             </h3>
-            <p>Validate <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> object.</p>
+            <p>Validate <a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> object.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -273,7 +283,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">toc_data&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td><a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a> object to be validated</td>
+                  <td><a href="group__meta.html#gae688947ac3c0000d8928ca256bdf7d9e" class="m-doc">ToCData</a> object to be validated</td>
                 </tr>
               </tbody>
               <thead>
@@ -332,7 +342,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

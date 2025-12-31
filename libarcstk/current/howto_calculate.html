@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to Calculate AccurateRip Checksums | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://github.com/crf8472/libarcstk/">libarcstk</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Calculate and Verify AccurateRip Checksums and Ids</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          How to Calculate AccurateRip Checksums
+        </h1>
+<p><a name="md__2home_2stefan_2Projects_2libarcstk-dev_2build_2doc_2texts_2How__to__calculate"></a></p><section id="autotoc_md20"><h2><a href="#autotoc_md20">Have a look at the code example</a></h2><p>Locate the example <code>albumcalc</code> in the top-level folder <code>examples</code>. You may find a compileable libsndfile-based code example for calculating the ARCSs for each track of an album.</p></section><section id="autotoc_md21"><h2><a href="#autotoc_md21">Calculating Checksums for the Tracks of an Album</a></h2><section id="autotoc_md22"><h3><a href="#autotoc_md22">Prerequisites</a></h3><p>Consult the module <a href="group__calc.html" class="m-doc">AccurateRip Checksum Calculation</a> for the part of the API you want to use.</p><p>Insert</p><pre class="m-code"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arcstk/metadata.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arcstk/samples.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arcstk/algorithms.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arcstk/calculate.hpp&gt;</span></pre><p>in the file where you intend to place your code.</p><p>To decode the audio input into PCM samples, you may probably need a thirdparty API to read samples from input files. For this task consider libsndfile, ffmpeg or an abstraction API like libarcsdec.</p><p>For formats and codecs that do not require complex decoding (like WAV/PCM), you are good to use the file reading capabilities of the bare C++ API and a SampleSequence.</p><p>Start with some convenience:</p><pre class="m-code"><span class="k">using</span><span class="w"> </span><span class="n">arcstk</span><span class="o">::</span><span class="n">make_toc</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">arcstk</span><span class="o">::</span><span class="n">make_calculation</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">arcstk</span><span class="o">::</span><span class="n">AccurateRip</span><span class="p">;</span></pre><p>In this example, we use interleaved samples represented as 16 bit wide integers. That means that for calculation, each sample has to be normalized to a 32 bit integer of a certain format required by the AccurateRip algorithm. To achieve this, choose the InterleavedSamples interface.</p><pre class="m-code"><span class="k">using</span><span class="w"> </span><span class="n">arcstk</span><span class="o">::</span><span class="n">InterleavedSamples</span><span class="p">;</span></pre><p>In case you intend to provide planar samples instead of interleaved ones, use PlanarSamples.</p></section><section id="autotoc_md23"><h3><a href="#autotoc_md23">Create the Calculation Instance</a></h3><p>If you intend to calculate the ARCSs for all tracks of an album, the start and end positions of those tracks must be made available to libarcstk.</p><p>We therefore need the index (represented as total number of LBA frames) of each track&#x27;s first sample. Those indices are called offsets. To get also the last track&#x27;s end correct we furthermore need the total number of input frames, which is identical with the leadout of the original compact disc. The leadout is as well represented as total number of LBA frames.</p><p>You will have to acquire these informations from your image or your disc on your own. We presuppose you have this values and show how to proceed from there.</p><p>With the leadout and the complete set of offsets, a ToC instance can be created:</p><pre class="m-code"><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">toc</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="n">make_toc</span><span class="p">(</span><span class="n">total_number_of_frames</span><span class="p">,</span><span class="w"> </span><span class="n">offsets</span><span class="p">)</span><span class="w"> </span><span class="p">};</span></pre><p>We choose to calculate two sets of AccurateRip checksums for the entire input, the checksums by the legacy algorithm (v1) and by the improved algorithm (v2).</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">algorithm</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">AccurateRip</span><span class="o">::</span><span class="n">V1and2</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">};</span></pre><p>With the toc and the algorithm provided, we prepare the calculation process by choosing an algorithm and instantiating the concrete calculation object.</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">calculation</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">make_calculation</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">algorithm</span><span class="p">),</span><span class="w"> </span><span class="o">*</span><span class="n">toc</span><span class="p">)</span><span class="w"> </span><span class="p">};</span></pre><p>The Calculation object is now ready to receive its input.</p></section><section id="autotoc_md24"><h3><a href="#autotoc_md24">Provide the Audio Samples</a></h3><p>We define</p><ul><li>an input buffer of the sample format previously determined</li><li>a SampleSequence object that converts the samples in the input buffer to PCM 32bit.</li></ul><pre class="m-code"><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">buffer_len</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">16777216</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">};</span><span class="w">                     </span><span class="c1">// e.g. 64 MB for 32 bit samples</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">buffer</span><span class="w">           </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int16_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">buffer_len</span><span class="p">)</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// sample buffer</span></pre><p>We have to wrap the bytes read from the file in a normalizing SampleSequence that can be provided to the Calculation object.</p><p>We remember that we have chosen an interleaved 16bit input, so let&#x27;s define our SampleSequence accordingly.</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">sequence</span><span class="w">         </span><span class="p">{</span><span class="w"> </span><span class="n">InterleavedSamples</span><span class="o">&lt;</span><span class="kt">int16_t</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">};</span><span class="w">    </span><span class="c1">// normalizing wrapper</span></pre><p>Once the samples can be decoded from the input file, the calculation task can be performed. We will fill the buffer and then use the SampleSequence to provide the samples to the Calculation.</p></section><section id="autotoc_md25"><h3><a href="#autotoc_md25">The Read/Update Loop</a></h3><p>The actual samples can be read in blocks of size <code>buffer_len</code> to the input buffer. As soon as the <code>buffer</code> is filled with integers from your input stream or file, pass its content to the Calculation. For this purpose, wrap the input samples in the normalizing wrapper and update the calculation object.</p><p>Since the last block may be smaller than the other blocks, check for this case and handle it according to your needs.</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">ints_in_block</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// know when to end the loop</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">ints_in_block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_or_decode_ints_from_file</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">buffer_len</span><span class="p">)))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">buffer_len</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ints_in_block</span><span class="p">)</span><span class="w"> </span><span class="c1">// Read less samples than expected?</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// ... Handle case where last block that may be smaller.</span>
+<span class="w">        </span><span class="c1">// Usually you will have to adjust the size declaration according</span>
+<span class="w">        </span><span class="c1">// to the actual smaller size or you resize physically e.g.</span>
+<span class="w">        </span><span class="c1">// buffer.resize(ints_in_block);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Use normalizing layer on the input for updating</span>
+<span class="w">    </span><span class="n">sequence</span><span class="p">.</span><span class="n">wrap_int_buffer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">buffer</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// Update calculation by current sequence</span>
+<span class="w">    </span><span class="n">calculation</span><span class="o">-&gt;</span><span class="n">update</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cbegin</span><span class="p">(</span><span class="n">sequence</span><span class="p">),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cend</span><span class="p">(</span><span class="n">sequence</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">calculation</span><span class="o">-&gt;</span><span class="n">complete</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// ... Do error handling</span>
+<span class="p">}</span>
+
+<span class="c1">// Get result</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">checksums</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">calculation</span><span class="o">-&gt;</span><span class="n">result</span><span class="p">()</span><span class="w"> </span><span class="p">};</span></pre></section><section id="autotoc_md26"><h3><a href="#autotoc_md26">Accessing the Checksums</a></h3><p>Now the resulting checksums are represented as a list of ChecksumSet instances, one per track.</p><p>They can be printed as a table by doing something like:</p><pre class="m-code"><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Track  ARCSv1    ARCSv2&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+
+<span class="k">auto</span><span class="w"> </span><span class="n">trk_no</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">track_values</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">checksums</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">dec</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setfill</span><span class="p">(</span><span class="sc">&#39; &#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">trk_no</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;   &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">hex</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">uppercase</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setfill</span><span class="p">(</span><span class="sc">&#39;0&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">track_values</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">arcstk</span><span class="o">::</span><span class="n">checksum</span><span class="o">::</span><span class="n">type</span><span class="o">::</span><span class="n">ARCS1</span><span class="p">).</span><span class="n">value</span><span class="p">()</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  &quot;</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setfill</span><span class="p">(</span><span class="sc">&#39;0&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">track_values</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">arcstk</span><span class="o">::</span><span class="n">checksum</span><span class="o">::</span><span class="n">type</span><span class="o">::</span><span class="n">ARCS2</span><span class="p">).</span><span class="n">value</span><span class="p">()</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">++</span><span class="n">trk_no</span><span class="p">;</span>
+<span class="p">}</span></pre><p>For the API consult the page for module <a href="group__calc.html" class="m-doc">AccurateRip Checksum Calculation</a>.</p></section></section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcstk::v_1_0_0::Calculation class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
+  <title>arcstk::Calculation class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::Calculation <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>Calculation <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
         </h1>
         <p>Perform checksums calculation.</p>
@@ -62,16 +63,16 @@
             </li>
           </ul>
         </nav>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> represents a concrete checksum calculation process. It is manually performed by the caller by calling <a href="#ad7d1dab577f6af0f305e3f880b4f16a3" class="m-doc">update()</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> instances must be initialized with the specific size of the input audio file and an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> that defines the type of the checksums. If multiple tracks e.g. an entire disc content is to be processed, the <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> information of the disc is required. Additionally, a <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> instance can be specified. Currently, the only supported <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> attribute is <a href="group__calc.html#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>.</p><p>The input of the audio file must be represented as a succession of iterable <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequences</a> and the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is to be sequentially updated with these sequences in order. After the last update, the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> returns the calculation result on request. The calculated <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> are represented as an iterable aggregate of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__calc.html#ga2f97bf656cc47d2a8697018f3728cb16" class="m-doc">make_<wbr />calculation</a></p></aside>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> represents a concrete checksum calculation process. It is manually performed by the caller by calling <a href="#ad7d1dab577f6af0f305e3f880b4f16a3" class="m-doc">update()</a>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> instances must be initialized with the specific size of the input audio file and an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> that defines the type of the checksums. If multiple tracks e.g. an entire disc content is to be processed, the <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> information of the disc is required. Additionally, a <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> instance can be specified. Currently, the only supported <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> attribute is <a href="group__calc.html#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>.</p><p>The input of the audio file must be represented as a succession of iterable <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequences</a> and the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is to be sequentially updated with these sequences in order. After the last update, the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> returns the calculation result on request. The calculated <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a> are represented as an iterable aggregate of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="group__calc.html#ga2f97bf656cc47d2a8697018f3728cb16" class="m-doc">make_<wbr />calculation</a></p></aside>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#ab08243a1b5b2f1c7b039ec8883c24a72" class="m-doc">Calculation</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>&amp;&amp; rhs) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper"><a href="#ab08243a1b5b2f1c7b039ec8883c24a72" class="m-doc">Calculation</a>(</span><span class="m-doc-wrap">Calculation&amp;&amp; rhs) <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Move constructor.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a0e6e4a7e9fc9a727ca7c3d8135ec5fcc" class="m-doc">Calculation</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>&amp; rhs) <span class="m-label m-flat m-info">explicit</span> </span>
+              <span class="m-doc-wrap-bumper"><a href="#a0e6e4a7e9fc9a727ca7c3d8135ec5fcc" class="m-doc">Calculation</a>(</span><span class="m-doc-wrap">const Calculation&amp; rhs) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
             <dd>Copy constructor.</dd>
             <dt>
@@ -84,7 +85,7 @@
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a7377382eed2b0bd2e192c0e8107cb51c" class="m-doc">Calculation</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>&amp; settings,
               std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>&gt; algorithm,
-              const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; toc)</span>
+              const ToCData&amp; toc)</span>
             </dt>
             <dd>Constructor.</dd>
             <dt id="a964e92e16e10440539dd42b089e08148">
@@ -109,9 +110,11 @@
             </dt>
             <dd>Returns <code>TRUE</code> iff this <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is completed, otherwise <code>FALSE</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4cae42ecdb12debfe273c3cee0216d9d" class="m-doc">result</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4cae42ecdb12debfe273c3cee0216d9d" class="m-doc">result</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a>
+         <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Acquire the resulting <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a>.</dd>
+            <dd>Acquire the resulting <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a723717b42e48a0163eba841c0666fa05" class="m-doc">samples_expected</a>(</span><span class="m-doc-wrap">) const -&gt; int32_t <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -133,15 +136,19 @@
             </dt>
             <dd>Configure the algorithm with settings.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a926b1b98612493538aa4a689833689d9" class="m-doc">settings</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a926b1b98612493538aa4a689833689d9" class="m-doc">settings</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>
+         <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return the settings of this instance.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a5532d5731a895471f9da018793624601" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a5532d5731a895471f9da018793624601" class="m-doc">swap</a>(</span><span class="m-doc-wrap"><a href="#a4a6952ed084336a8c9d657f552540913" class="m-doc">Calculation</a>&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Swap the instance with another instance.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa460027be9d100a58d20ffff9bb8ddc4" class="m-doc">types</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#ga72710bf7c1365122619005d8fe16243f" class="m-doc">ChecksumtypeSet</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa460027be9d100a58d20ffff9bb8ddc4" class="m-doc">types</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="group__calc.html#ga72710bf7c1365122619005d8fe16243f" class="m-doc">ChecksumtypeSet</a>
+         <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Returns the types requested to this <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</dd>
             <dt>
@@ -149,8 +156,12 @@
             </dt>
             <dd>Update the instance with a new <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ad7d1dab577f6af0f305e3f880b4f16a3" class="m-doc">update</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> start,
-              <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> stop)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#ad7d1dab577f6af0f305e3f880b4f16a3" class="m-doc">update</a>(</span><span class="m-doc-wrap">
+            <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>
+           start,
+              
+            <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>
+           stop)</span>
             </dt>
             <dd>Update with a sequence of samples.</dd>
             <dt>
@@ -163,7 +174,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="ab08243a1b5b2f1c7b039ec8883c24a72"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab08243a1b5b2f1c7b039ec8883c24a72" class="m-doc-self">Calculation</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>&amp;&amp; rhs) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab08243a1b5b2f1c7b039ec8883c24a72" class="m-doc-self">Calculation</a>(</span><span class="m-doc-wrap">Calculation&amp;&amp; rhs) <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Move constructor.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -180,7 +191,7 @@
           </div></section>
           <section class="m-doc-details" id="a0e6e4a7e9fc9a727ca7c3d8135ec5fcc"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e6e4a7e9fc9a727ca7c3d8135ec5fcc" class="m-doc-self">Calculation</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>&amp; rhs) <span class="m-label m-info">explicit</span> </span></span>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0e6e4a7e9fc9a727ca7c3d8135ec5fcc" class="m-doc-self">Calculation</a>(</span><span class="m-doc-wrap">const Calculation&amp; rhs) <span class="m-label m-info">explicit</span> </span></span>
             </h3>
             <p>Copy constructor.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -197,7 +208,7 @@
           </div></section>
           <section class="m-doc-details" id="a4a6952ed084336a8c9d657f552540913"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a6952ed084336a8c9d657f552540913" class="m-doc-self">Calculation</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>&amp; settings,
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a6952ed084336a8c9d657f552540913" class="m-doc-self">Calculation</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>&amp; settings,
               std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>&gt; algorithm,
               const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; size,
               const <a href="group__calc.html#ga67e26497c44cea3070a81e2f51caa41d" class="m-doc">Points</a>&amp; points)</span></span>
@@ -230,9 +241,9 @@
           </div></section>
           <section class="m-doc-details" id="a7377382eed2b0bd2e192c0e8107cb51c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7377382eed2b0bd2e192c0e8107cb51c" class="m-doc-self">Calculation</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>&amp; settings,
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7377382eed2b0bd2e192c0e8107cb51c" class="m-doc-self">Calculation</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>&amp; settings,
               std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>&gt; algorithm,
-              const <a href="group__meta.html#ga80a7d493e33023123b3d26af1584e2f5" class="m-doc">ToCData</a>&amp; toc)</span></span>
+              const ToCData&amp; toc)</span></span>
             </h3>
             <p>Constructor.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -257,7 +268,7 @@
           </div></section>
           <section class="m-doc-details" id="a2647919b5912ea3be695db21b25516a7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::chrono::duration&lt;float&gt; arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2647919b5912ea3be695db21b25516a7" class="m-doc-self">algo_time_elapsed</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">std::chrono::duration&lt;float&gt; arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2647919b5912ea3be695db21b25516a7" class="m-doc-self">algo_time_elapsed</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Amount of time elapsed so far by the algorithm instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -271,7 +282,7 @@
           </div></section>
           <section class="m-doc-details" id="afe22a35d90fa95d45d9e147157252c9d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>* arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afe22a35d90fa95d45d9e147157252c9d" class="m-doc-self">algorithm</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>* arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afe22a35d90fa95d45d9e147157252c9d" class="m-doc-self">algorithm</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns the algorithm instance used by this <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -285,7 +296,7 @@
           </div></section>
           <section class="m-doc-details" id="a161cc43dfcb9224cc1be205266fc15db"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a161cc43dfcb9224cc1be205266fc15db" class="m-doc-self">complete</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a161cc43dfcb9224cc1be205266fc15db" class="m-doc-self">complete</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns <code>TRUE</code> iff this <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is completed, otherwise <code>FALSE</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -300,21 +311,23 @@
           </div></section>
           <section class="m-doc-details" id="a4cae42ecdb12debfe273c3cee0216d9d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cae42ecdb12debfe273c3cee0216d9d" class="m-doc-self">result</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a>
+         arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4cae42ecdb12debfe273c3cee0216d9d" class="m-doc-self">result</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
-            <p>Acquire the resulting <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a>.</p>
+            <p>Acquire the resulting <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>The computed <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a></td>
+                  <td>The computed <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a></td>
                 </tr>
               </tfoot>
             </table>
           </div></section>
           <section class="m-doc-details" id="a723717b42e48a0163eba841c0666fa05"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int32_t arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a723717b42e48a0163eba841c0666fa05" class="m-doc-self">samples_expected</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">int32_t arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a723717b42e48a0163eba841c0666fa05" class="m-doc-self">samples_expected</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns the total number of initially expected PCM 32 bit samples.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -329,7 +342,7 @@
           </div></section>
           <section class="m-doc-details" id="a67381b4c71767dbbe7d84a5a3a37ac24"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int32_t arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a67381b4c71767dbbe7d84a5a3a37ac24" class="m-doc-self">samples_processed</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">int32_t arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a67381b4c71767dbbe7d84a5a3a37ac24" class="m-doc-self">samples_processed</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns the total number for PCM 32 bit samples yet processed.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -344,7 +357,7 @@
           </div></section>
           <section class="m-doc-details" id="a948592f5c168d7ac99df74a2cce89aab"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int32_t arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a948592f5c168d7ac99df74a2cce89aab" class="m-doc-self">samples_todo</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">int32_t arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a948592f5c168d7ac99df74a2cce89aab" class="m-doc-self">samples_todo</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns the total number of PCM 32 bit samples that is yet to be processed.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -359,7 +372,7 @@
           </div></section>
           <section class="m-doc-details" id="a267fe21fb7eec4a8744c354d431f9c53"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a267fe21fb7eec4a8744c354d431f9c53" class="m-doc-self">set_algorithm</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>&gt; algorithm) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a267fe21fb7eec4a8744c354d431f9c53" class="m-doc-self">set_algorithm</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>&gt; algorithm) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Set the algorithm instance to use.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -377,7 +390,7 @@
           </div></section>
           <section class="m-doc-details" id="a4336320c28860d40ef91c94612b67e7e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4336320c28860d40ef91c94612b67e7e" class="m-doc-self">set_settings</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>&amp; s) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4336320c28860d40ef91c94612b67e7e" class="m-doc-self">set_settings</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>&amp; s) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Configure the algorithm with settings.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -394,7 +407,9 @@
           </div></section>
           <section class="m-doc-details" id="a926b1b98612493538aa4a689833689d9"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a926b1b98612493538aa4a689833689d9" class="m-doc-self">settings</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>
+         arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a926b1b98612493538aa4a689833689d9" class="m-doc-self">settings</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the settings of this instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -408,7 +423,7 @@
           </div></section>
           <section class="m-doc-details" id="a5532d5731a895471f9da018793624601"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5532d5731a895471f9da018793624601" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5532d5731a895471f9da018793624601" class="m-doc-self">swap</a>(</span><span class="m-doc-wrap"><a href="#a4a6952ed084336a8c9d657f552540913" class="m-doc">Calculation</a>&amp; rhs) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Swap the instance with another instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -425,7 +440,9 @@
           </div></section>
           <section class="m-doc-details" id="aa460027be9d100a58d20ffff9bb8ddc4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga72710bf7c1365122619005d8fe16243f" class="m-doc">ChecksumtypeSet</a> arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa460027be9d100a58d20ffff9bb8ddc4" class="m-doc-self">types</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="group__calc.html#ga72710bf7c1365122619005d8fe16243f" class="m-doc">ChecksumtypeSet</a>
+         arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa460027be9d100a58d20ffff9bb8ddc4" class="m-doc-self">types</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns the types requested to this <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -440,7 +457,7 @@
           </div></section>
           <section class="m-doc-details" id="a945ec04fc2dad3f8ca970bb0f6dc0c8e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a945ec04fc2dad3f8ca970bb0f6dc0c8e" class="m-doc-self">update</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; audiosize)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a945ec04fc2dad3f8ca970bb0f6dc0c8e" class="m-doc-self">update</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; audiosize)</span></span>
             </h3>
             <p>Update the instance with a new <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -458,8 +475,12 @@
           </div></section>
           <section class="m-doc-details" id="ad7d1dab577f6af0f305e3f880b4f16a3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad7d1dab577f6af0f305e3f880b4f16a3" class="m-doc-self">update</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> start,
-              <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> stop)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad7d1dab577f6af0f305e3f880b4f16a3" class="m-doc-self">update</a>(</span><span class="m-doc-wrap">
+            <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>
+           start,
+              
+            <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>
+           stop)</span></span>
             </h3>
             <p>Update with a sequence of samples.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -480,7 +501,7 @@
           </div></section>
           <section class="m-doc-details" id="a49e0182fa46af92a4174aabff5c3af39"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::chrono::duration&lt;float&gt; arcstk::<wbr />v_1_0_0::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a49e0182fa46af92a4174aabff5c3af39" class="m-doc-self">update_time_elapsed</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">std::chrono::duration&lt;float&gt; arcstk::<wbr />Calculation::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a49e0182fa46af92a4174aabff5c3af39" class="m-doc-self">update_time_elapsed</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Amount of time elapsed so far by <a href="#ad7d1dab577f6af0f305e3f880b4f16a3" class="m-doc">update()</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -537,7 +558,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

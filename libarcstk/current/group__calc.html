@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -64,14 +65,12 @@
             </li>
           </ul>
         </nav>
-<p>An <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> specifies a ruleset how to to calculate <a href="#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> over an input of audio samples. <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> specifies two distinct algorithms for calculating a checksum, v1 and v2. Since a v1 checksum is materialized as a subtotal when calculating a v2 checksum, there are three variants of the Algorith: V1, V2 and V1and2 which provides both types of checksums at once.</p><p><a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> provide an interface for configuring an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> or the calculation process.</p><p>The <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a> in which a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is performed as part of the <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>. The <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> is aware of the <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>, too. The <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a> indicates if either FIRST_TRACK, LAST_TRACK, or both have to be treated specially.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> represents the technical process of calculating <a href="#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> by an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>. It has to be parametized with an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>, initialized with the offsets and the leadout of the audio image and then subsequently be updated with portions of samples in the right order. A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> can be also finetuned by providing <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>.</p><p>Updating a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is done by providing a sample portion represented by two instances of <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> that represent start and stop of the update. <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> is a wrapper iterator for any iterator with a <code>value_type</code> of <code><a href="#gacdecdcdde9757342265c30a929aefafc" class="m-doc">sample_<wbr />t</a></code>, the declared type for PCM 32 bit samples. Using a <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> may be of convenience for establishing compatibility of the sample input format.</p><p>When a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is complete() its result can be requested. The result are <a href="#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> which represent the result for all requested checksum types and all tracks of the audio input. It is an aggregation of the <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a> for each track of an respective audio input. Depending on the input, it can represent either an entire album or a single track.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> is a set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of different <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />types</a> of the same track.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> refers to a particular track and a particular <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>. <a href="#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> are calculated by a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> using an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>.</p>
+<p><a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksums are calculated from a sequence of input sample sequences. The caller is responsible for determining an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> and providing the entire sequence of audio sample sequences to a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> instance. The result is provided in a <a href="#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a> instance.</p><p>An <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> specifies a method to calculate <a href="#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a> over a sequence of audio samples. <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> specifies two distinct algorithms for calculating a checksum, v1 and v2. A v1 checksum can be materialized as a subtotal when calculating a v2 checksum. Therefore a calculation of a v2 value can also provide the v1 value for the input. Hence there are three variants of the Algorith available: V1, V2 and V1and2. The latter provides v1 as well as v2.</p><p>Class <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> provides an interface for configuring an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> or the calculation process.</p><p>As part of the <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> there exists a <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a> in which the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is performed. The <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> is aware of the <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>. The <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a> indicates if either FIRST_TRACK, LAST_TRACK, or both have to be treated specially when calculating. This is a requirement of the <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> algorithms.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> represents the technical process of calculating <a href="#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a> by an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>. It has to be parametized with an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>, initialized with the offsets and the leadout of the audio image and then subsequently be updated with portions of samples in their correct order. A <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> works fine with the default settings, but can be finetuned by providing custom <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>.</p><p>Updating a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> with an actual sequence of samples is done by providing a sequence of samples represented by two instances of <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>. Those instances represent start and stop of the update. <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> is a wrapper iterator for any iterator with a <code>value_type</code> of <a href="#gacdecdcdde9757342265c30a929aefafc" class="m-doc">sample_<wbr />t</a>, which is the declared type for PCM 32 bit samples. Using a <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">SampleSequence</a> may be of convenience for establishing compatibility of the sample input format.</p><p>Its result can be provided as soon as a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> is <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#a161cc43dfcb9224cc1be205266fc15db" class="m-doc">complete()</a>. The resulting <a href="#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a> represent the result for all requested checksum types and all tracks of the audio input. It is an aggregation of the <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> for each track of an respective audio input. Depending on the input, it can represent either an entire album or a single track.</p><p><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> is a set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> of different <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />types</a> of the same track.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> refers to a particular track and a particular <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>. <a href="#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a> are calculated by updating a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> with a sequence of sample sequences.</p>
         <section id="namespaces">
           <h2><a href="#namespaces">Namespaces</a></h2>
           <dl class="m-doc">
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">arcstk::v_1_0_0::AccurateRip</a></dt>
             <dd><a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksum calculation algorithms.</dd>
-            <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1accuraterip.html" class="m-doc">arcstk::v_1_0_0::accuraterip</a></dt>
-            <dd>Calculating <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksums.</dd>
             <dt>namespace <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html" class="m-doc">arcstk::v_1_0_0::checksum</a></dt>
             <dd>Operations on checksum types and their names.</dd>
           </dl>
@@ -80,32 +79,32 @@
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">arcstk::v_1_0_0::Algorithm</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">arcstk::Algorithm</a>
             </dt>
             <dd>Interface: <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> calculation algorithm.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">arcstk::v_1_0_0::Calculation</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">arcstk::Calculation</a>
             </dt>
             <dd>Perform checksums calculation.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">arcstk::v_1_0_0::Checksum</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">arcstk::Checksum</a>
             </dt>
             <dd>An <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksum for a single file or track.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">arcstk::v_1_0_0::ChecksumSet</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">arcstk::ChecksumSet</a>
             </dt>
             <dd>A set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances of different types for a single track.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">arcstk::v_1_0_0::SampleInputIterator</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">arcstk::SampleInputIterator</a>
             </dt>
             <dd>Type erasing interface for iterators over PCM 32 bit samples.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T, bool is_planar&gt;</div>
-              class <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">arcstk::v_1_0_0::SampleSequence</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1SampleSequence.html" class="m-doc">arcstk::SampleSequence</a>
             </dt>
             <dd>A sequence of samples represented by 16 or 32 bit integral types.</dd>
             <dt>
-              class <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">arcstk::v_1_0_0::Settings</a>
+              class <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">arcstk::Settings</a>
             </dt>
             <dd><a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a> for a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</dd>
           </dl>
@@ -119,20 +118,20 @@
               <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fa28a5e0435fed4d96c9ccb07ee744cf65" class="m-doc">LAST_TRACK</a> = 2,
               <a href="#ggaff67ae2ced108d4e87f99f8edf8f136faeaa4b00b7c00e8fb9c185fdbb83b36a0" class="m-doc">ALBUM</a> = 3 }</span>
             </dt>
-            <dd>Represent what is to be relevant for calculation process.</dd>
+            <dd>Indicate the track context.</dd>
           </dl>
         </section>
         <section id="typedef-members">
           <h2><a href="#typedef-members">Typedefs</a></h2>
           <dl class="m-doc">
             <dt>
-              using <a href="#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> = std::vector&lt;ChecksumSet&gt;
+              using <a href="#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a> = std::vector&lt;ChecksumSet&gt;
             </dt>
-            <dd>A list of ChecksumSets.</dd>
+            <dd>A list of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</dd>
             <dt>
               using <a href="#ga72710bf7c1365122619005d8fe16243f" class="m-doc">ChecksumtypeSet</a> = std::unordered_set&lt;checksum::type&gt;
             </dt>
-            <dd>Set of checksum types.</dd>
+            <dd>Set of <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">Checksum types</a>.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               using <a href="#ga7bd6231f4f6403768f35b7e38f928581" class="m-doc">InterleavedSamples</a> = SampleSequence&lt;T, false&gt;
@@ -159,12 +158,16 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#gaddcb8cc0c9d13224b61314a388fa9fde" class="m-doc">any</a>(</span><span class="m-doc-wrap">const Context&amp; c) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
-            <dd>Returns TRUE iff <code>c</code> is not equivalent to 0.</dd>
+            <dd>Returns TRUE iff <code>c</code> is not equivalent to <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fab82057c0f8a7631cf533363631986a00" class="m-doc">Context::<wbr />TRACK</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ga2f97bf656cc47d2a8697018f3728cb16" class="m-doc">make_calculation</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;Algorithm&gt; algorithm,
               const ToC&amp; toc) -&gt; std::unique_ptr&lt;Calculation&gt;</span>
             </dt>
             <dd>Create a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> from an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> and a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#gac295ee5373d3002b24f7f2e570f5f2bc" class="m-doc">name</a>(</span><span class="m-doc-wrap">const Context&amp; c) -&gt; std::string <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Name of the specified <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">void <a href="#gaccfefb62c2652de5f7c256f4ed1d62f9" class="m-doc">swap</a>(</span><span class="m-doc-wrap">Context&amp; lhs,
               Context&amp; rhs) <span class="m-label m-flat m-success">noexcept</span></span>
@@ -186,7 +189,7 @@
             <dt>
               const Checksums <a href="#ga1bf7921f1fdcb170e447687f04dd5083" class="m-doc">EmptyChecksums</a>
             </dt>
-            <dd>Global instance of empty <a href="#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a>.</dd>
+            <dd>Global instance of empty <a href="#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a>.</dd>
             <dt>
               const ChecksumSet <a href="#gadb5325a16f376f054ca44e0e355d5062" class="m-doc">EmptyChecksumSet</a>
             </dt>
@@ -200,26 +203,55 @@
               enum class <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc-self">Context</a>: unsigned
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
-            <p>Represent what is to be relevant for calculation process.</p>
-<p><a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> algorithm contain different restrictions for calculating the checksums of the the first and last track of an album. Thus, the information has to be represented whether a first or last track of an album is to be processed. This is achieved by the <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>.</p>
+            <p>Indicate the track context.</p>
+<p><a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> algorithms imply different restrictions for calculating the checksums of the the first and last track of an album. <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a> represents this information.</p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#ggaff67ae2ced108d4e87f99f8edf8f136fab82057c0f8a7631cf533363631986a00" class="m-doc-self" id="ggaff67ae2ced108d4e87f99f8edf8f136fab82057c0f8a7631cf533363631986a00">TRACK</a></td>
+                  <td>
+                  <p>Single track that is neither first or last track.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ggaff67ae2ced108d4e87f99f8edf8f136fa7648ead44cb9dcfcedcecb6c8b773d80" class="m-doc-self" id="ggaff67ae2ced108d4e87f99f8edf8f136fa7648ead44cb9dcfcedcecb6c8b773d80">FIRST_TRACK</a></td>
+                  <td>
+                  <p>First track is first track of an album.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ggaff67ae2ced108d4e87f99f8edf8f136fa28a5e0435fed4d96c9ccb07ee744cf65" class="m-doc-self" id="ggaff67ae2ced108d4e87f99f8edf8f136fa28a5e0435fed4d96c9ccb07ee744cf65">LAST_TRACK</a></td>
+                  <td>
+                  <p>Last track is last track of an album.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#ggaff67ae2ced108d4e87f99f8edf8f136faeaa4b00b7c00e8fb9c185fdbb83b36a0" class="m-doc-self" id="ggaff67ae2ced108d4e87f99f8edf8f136faeaa4b00b7c00e8fb9c185fdbb83b36a0">ALBUM</a></td>
+                  <td>
+                  <p>Entire album, hence first as well as last track.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
         </section>
         <section>
           <h2>Typedef documentation</h2>
-          <section class="m-doc-details" id="ga3c0ea453eac95597f11635c13a325648"><div>
+          <section class="m-doc-details" id="ga31b44d6733c24a24538472d37ba288ac"><div>
             <h3>
-              typedef std::vector&lt;ChecksumSet&gt; <a href="#ga3c0ea453eac95597f11635c13a325648" class="m-doc-self">Checksums</a>
+              using <a href="#ga31b44d6733c24a24538472d37ba288ac" class="m-doc-self">Checksums</a> = std::vector&lt;ChecksumSet&gt;
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
             </h3>
-            <p>A list of ChecksumSets.</p>
-<p>Each <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> represents a track an the order of the ChecksumSets follows the order of tracks on the original compact disc.</p>
+            <p>A list of <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSets</a>.</p>
+<p>Each <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> represents a track. The order of the ChecksumSets follows the order of tracks on the original compact disc.</p>
           </div></section>
           <section class="m-doc-details" id="ga72710bf7c1365122619005d8fe16243f"><div>
             <h3>
               using <a href="#ga72710bf7c1365122619005d8fe16243f" class="m-doc-self">ChecksumtypeSet</a> = std::unordered_set&lt;checksum::type&gt;
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
-            <p>Set of checksum types.</p>
+            <p>Set of <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">Checksum types</a>.</p>
 <p>Guaranteed to be iterable and duplicate-free.</p>
           </div></section>
           <section class="m-doc-details" id="ga7bd6231f4f6403768f35b7e38f928581"><div>
@@ -268,7 +300,7 @@
               <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gaddcb8cc0c9d13224b61314a388fa9fde" class="m-doc-self">any</a>(</span><span class="m-doc-wrap">const Context&amp; c) <span class="m-label m-success">noexcept</span></span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
-            <p>Returns TRUE iff <code>c</code> is not equivalent to 0.</p>
+            <p>Returns TRUE iff <code>c</code> is not equivalent to <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fab82057c0f8a7631cf533363631986a00" class="m-doc">Context::<wbr />TRACK</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -282,10 +314,11 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>TRUE iff <code>c</code> is not equivalent to 0</td>
+                  <td>TRUE iff <code>c</code> is not equivalent to <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fab82057c0f8a7631cf533363631986a00" class="m-doc">Context::<wbr />TRACK</a></td>
                 </tr>
               </tfoot>
             </table>
+<p>Equivalent to <code>c != <a href="#ggaff67ae2ced108d4e87f99f8edf8f136fab82057c0f8a7631cf533363631986a00" class="m-doc">Context::<wbr />TRACK</a></code>.</p>
           </div></section>
           <section class="m-doc-details" id="ga2f97bf656cc47d2a8697018f3728cb16"><div>
             <h3>
@@ -308,8 +341,38 @@
                   <td>Complete <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> to perform calculation for</td>
                 </tr>
               </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td><a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> object using <code>algorithm</code> and <code>toc</code>.</td>
+                </tr>
+              </tfoot>
             </table>
-<p>If the <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> is not complete, the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> must be updated with the correct total number of input samples before calling <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#ad7d1dab577f6af0f305e3f880b4f16a3" class="m-doc">Calculation::<wbr />update()</a>.</p>
+<p>If the <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a> is not <a href="classarcstk_1_1v__1__0__0_1_1ToC.html#a3510fed4cb75967a13f5509cdaf41a46" class="m-doc">complete</a>, the <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a> must be updated with the correct total number of input samples before calling <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html#ad7d1dab577f6af0f305e3f880b4f16a3" class="m-doc">Calculation::<wbr />update()</a>.</p>
+          </div></section>
+          <section class="m-doc-details" id="gac295ee5373d3002b24f7f2e570f5f2bc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">std::string </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#gac295ee5373d3002b24f7f2e570f5f2bc" class="m-doc-self">name</a>(</span><span class="m-doc-wrap">const Context&amp; c) <span class="m-label m-success">noexcept</span></span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
+            </h3>
+            <p>Name of the specified <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">c&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td><a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a> to provide name of</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Name of context</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
           <section class="m-doc-details" id="gaccfefb62c2652de5f7c256f4ed1d62f9"><div>
             <h3>
@@ -318,6 +381,21 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
             </h3>
             <p>Swap two <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a> instances.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Left hand side to swap</td>
+                </tr>
+                <tr>
+                  <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Right hand side to swap</td>
+                </tr>
+              </tbody>
+            </table>
           </div></section>
           <section class="m-doc-details" id="gad63174aa3ca35e030015bf3ac461bc2e"><div>
             <h3>
@@ -326,13 +404,23 @@
             </h3>
             <p>String representation of a <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a>.</p>
             <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">c&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td><a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a> to transform to a string</td>
+                </tr>
+              </tbody>
               <tfoot>
                 <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>Name of the <a href="#gaff67ae2ced108d4e87f99f8edf8f136f" class="m-doc">Context</a></td>
+                  <th>Returns</th>
+                  <td>String representation of context</td>
                 </tr>
               </tfoot>
             </table>
+<p>This will return the name of the context. It is equivalent to <a href="#gac295ee5373d3002b24f7f2e570f5f2bc" class="m-doc">name()</a>.</p>
           </div></section>
         </section>
         <section>
@@ -343,14 +431,15 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
             </h3>
             <p>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
-<p>This is for convenience since in most cases, the creation of an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be avoided when a reference instance is at hand.</p>
+<p>Avoid the creation of empty instances whenever possible.</p>
           </div></section>
           <section class="m-doc-details" id="ga1bf7921f1fdcb170e447687f04dd5083"><div>
             <h3>
               const Checksums <a href="#ga1bf7921f1fdcb170e447687f04dd5083" class="m-doc-self">EmptyChecksums</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
             </h3>
-            <p>Global instance of empty <a href="#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a>.</p>
+            <p>Global instance of empty <a href="#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a>.</p>
+<p>Avoid the creation of empty instances whenever possible.</p>
           </div></section>
           <section class="m-doc-details" id="gadb5325a16f376f054ca44e0e355d5062"><div>
             <h3>
@@ -358,6 +447,7 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
             </h3>
             <p>Global instance of an empty <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>.</p>
+<p>Avoid the creation of empty instances whenever possible.</p>
           </div></section>
         </section>
       </div>
@@ -404,7 +494,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

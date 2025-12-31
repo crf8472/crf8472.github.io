@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcstk::v_1_0_0::AlbumVerifier class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
+  <title>arcstk::AlbumVerifier class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::AlbumVerifier <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>AlbumVerifier <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="verify_8hpp.html">&lt;verify.hpp&gt;</a></div>
         </h1>
         <p><a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a> for a list of checksums accompanied by a <a href="classarcstk_1_1v__1__0__0_1_1ToC.html" class="m-doc">ToC</a>.</p>
@@ -62,7 +63,7 @@
             </li>
           </ul>
         </nav>
-<p>Tries to match each position <code>i</code> in the actual <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> exclusively with position <code>i</code> in each block of the <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>. Additonally checks the input id for identity with the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of each respective block in the <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object. Actual checksum lists whose <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> does not match have a difference of at least <code>1</code>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a> is the <a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a> class suitable for easy matching of entire album rips.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetVerifier.html" class="m-doc">TracksetVerifier</a></p></aside>
+<p>Tries to match each position <code>i</code> in the actual <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a> exclusively with position <code>i</code> in each block of the <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSource.html" class="m-doc">ChecksumSource</a>. Additonally checks the input id for identity with the <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> of each respective block in the <a href="classarcstk_1_1v__1__0__0_1_1DBAR.html" class="m-doc">DBAR</a> object. Actual checksum lists whose <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a> does not match have a difference of at least <code>1</code>.</p><p><a href="classarcstk_1_1v__1__0__0_1_1AlbumVerifier.html" class="m-doc">AlbumVerifier</a> is the <a href="classarcstk_1_1v__1__0__0_1_1Verifier.html" class="m-doc">Verifier</a> class suitable for easy matching of entire album rips.</p><aside class="m-note m-default"><h4>See also</h4><p><a href="classarcstk_1_1v__1__0__0_1_1TracksetVerifier.html" class="m-doc">TracksetVerifier</a></p></aside>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
@@ -76,7 +77,7 @@
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a4a2512b7b124a839798acb5123559f67" class="m-doc">AlbumVerifier</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a>&amp; actual_sums,
+              <span class="m-doc-wrap-bumper"><a href="#a4a2512b7b124a839798acb5123559f67" class="m-doc">AlbumVerifier</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a>&amp; actual_sums,
               const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; actual_id)</span>
             </dt>
             <dd>Constructor for actual input sums and their <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</dd>
@@ -90,7 +91,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a4a2512b7b124a839798acb5123559f67"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />AlbumVerifier::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a2512b7b124a839798acb5123559f67" class="m-doc-self">AlbumVerifier</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a>&amp; actual_sums,
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />AlbumVerifier::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a2512b7b124a839798acb5123559f67" class="m-doc-self">AlbumVerifier</a>(</span><span class="m-doc-wrap">const <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a>&amp; actual_sums,
               const <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>&amp; actual_id)</span></span>
             </h3>
             <p>Constructor for actual input sums and their <a href="classarcstk_1_1v__1__0__0_1_1ARId.html" class="m-doc">ARId</a>.</p>
@@ -155,7 +156,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

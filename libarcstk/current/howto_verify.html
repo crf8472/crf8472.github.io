@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How to Verify AccurateRip Checksums | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <span id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">
+        <a href="https://github.com/crf8472/libarcstk/">libarcstk</a> <span class="m-breadcrumb">|</span> <a href="index.html" class="m-thin">Calculate and Verify AccurateRip Checksums and Ids</a>
+      </span>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="namespaces.html">Namespaces</a></li>
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          How to Verify AccurateRip Checksums
+        </h1>
+<p><a name="md__2home_2stefan_2Projects_2libarcstk-dev_2build_2doc_2texts_2How__to__verify"></a></p><section id="autotoc_md38"><h2><a href="#autotoc_md38">Have a look at the code example</a></h2><p>Locate the example <code>albumverify</code> in the top-level folder <code>examples</code>. You may find a compileable code example for verifying AccurateRip checksums on a concrete album image.</p><section id="autotoc_md39"><h3><a href="#autotoc_md39">Verifying</a></h3><p>The motivation is to check whether the audio input you want to verify is exactly the audio data from the compact disc. Verifying checksums means to locally recalculate the checksums and then match it against the reference checksums provided by AccurateRip.</p><p>For verifying audio data in general you need</p><ul><li>The audio input you wish to verify</li><li>Reference Checksums provided by AccurateRip for this audio input</li></ul></section><section id="autotoc_md40"><h3><a href="#autotoc_md40">Prerequisites</a></h3><p>Consult the module <a href="group__verify.html" class="m-doc">AccurateRip Checksum Verification</a> for the part of the API you want to use.</p><p>Insert</p><pre class="m-code"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arcstk/dbar.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arcstk/identifier.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arcstk/calculate.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;arcstk/verify.hpp&gt;</span></pre><p>in the file where you intend to place your code.</p><section id="autotoc_md41"><h4><a href="#autotoc_md41">Verifying an Album</a></h4><p>The common use case is to verify an album. To get this done you need even a little bit more:</p><ul><li>The audio image you wish to verify (may it be one or more files)</li><li>If you have exactly one file, the track offsets for the image are required</li><li>The AccurateRip id of the album to verify</li><li>Reference Checksums provided by AccurateRip for this particular id, which typically come as a parseable DBAR file</li></ul><p>This may require that you accomplish the following tasks:</p><ul><li>Reading the audio data possibly along with its metadata &amp; calculating the checksums of this input (as explained in <a href="howto_calculate.html" class="m-doc">How to Calculate AccurateRip Checksums</a>).</li><li>Calculate the AccurateRip id if you not already know it (as explained in <a href="howto_get_ids.html" class="m-doc">How to calculate AccurateRip IDs</a>).</li><li>Use the id to acquire and parse the reference values (as explained in <a href="howto_calculate.html" class="m-doc">How to Calculate AccurateRip Checksums</a>).</li><li>Instantiate and configure a Verifier to run it on the aforementioned input data (as explained below, just proceed).</li></ul><pre class="m-code"><span class="k">using</span><span class="w"> </span><span class="n">arcstk</span><span class="o">::</span><span class="n">AlbumVerifier</span><span class="p">;</span>
+
+<span class="c1">// Those three are discussed in the other HowTo-parts:</span>
+<span class="k">using</span><span class="w"> </span><span class="n">arcstk</span><span class="o">::</span><span class="n">ARId</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">arcstk</span><span class="o">::</span><span class="n">Checksums</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">arcstk</span><span class="o">::</span><span class="n">DBAR</span><span class="p">;</span></pre><p>The basic approach is to construct a Verifier on your local data and then call &#x27;&#x27;perform()&#x27;&#x27; on it thereby passing the reference values to match against. This is the easy part.</p><pre class="m-code"><span class="c1">// Let&#39;s assume that you already have the following:</span>
+
+<span class="n">ARId</span><span class="w">      </span><span class="n">my_id</span><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="cm">/* calculated from your local audio or known */</span><span class="w"> </span><span class="p">};</span>
+<span class="n">Checksums</span><span class="w"> </span><span class="n">my_checksums</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* calculated from your local audio */</span><span class="w"> </span><span class="p">};</span>
+<span class="n">DBAR</span><span class="w">   </span><span class="n">their_checksums</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* from AccurateRip&#39;s http response for my_id */</span><span class="w"> </span><span class="p">};</span>
+
+<span class="c1">// Let&#39;s use the AlbumVerifier since we have a single audio image file</span>
+<span class="c1">// and its metadata:</span>
+
+<span class="n">AlbumVerifier</span><span class="w"> </span><span class="n">verifier</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">my_checksums</span><span class="p">,</span><span class="w"> </span><span class="n">my_id</span><span class="w"> </span><span class="p">};</span>
+
+<span class="c1">// This instance is now set up to match your local data. Perform the match</span>
+<span class="c1">// by passing the reference values from the DBAR instance:</span>
+
+<span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">verifier</span><span class="p">.</span><span class="n">perform</span><span class="p">(</span><span class="n">their_checksums</span><span class="p">)</span><span class="w"> </span><span class="p">};</span></pre><p>Note that function perform() accepts not only a DBAR object but a subclass of ChecksumSource. Abstract class ChecksumSource provides an interface to access checksum containers for verification. For any checksum container X that is to be wrapped for input to function perform(), create a subclass of ChecksumSourceOf&lt;X&gt;. Have a look at the code of class DBARSource for an example how to do it.</p><p>So, having performed the verification, how to interpret the result?</p><p>The most coarse-grained way would be to simply check if verification was a total success and the audio data was verified to be accurate.</p><p>Function all_tracks_verified() will just tell you whether your input data matches the reference values completely. It is a boolean value that just says &quot;it&#x27;s accurate&quot; or &quot;it&#x27;s not&quot;.</p><pre class="m-code"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">-&gt;</span><span class="n">all_tracks_verified</span><span class="p">())</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Success! Take the relevant actions</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Not a complete success at least.</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span></pre><p>If your verification returned &quot;not accurate&quot;, you may be interested in some mid-level kind of analysis, that can be done by inspecting the best matching block of the reference checksums.</p><p>This block may be the most interesting part of the reference data, since it is the closest match you got. The best block is that block within the DBAR instance that has the most matching tracks. If there are multiple blocks that all match equally well, best_block() will return the last matching ARCSv2 block of them. A best block can only be v1 if there is no at least equally good block that is v2.</p><pre class="m-code"><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">best</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">result</span><span class="o">-&gt;</span><span class="n">best_block</span><span class="p">()</span><span class="w"> </span><span class="p">};</span></pre><p>A call of result-&gt;best_block() provides you with 3 values:</p><ul><li>the index of the reference checksum block within the DBAR instance,</li><li>the type of algorithm of the checksums within this respective block, and</li><li>the total number of mismatches in this block.</li></ul><p>Currently, there is no API to access those values. The resulting object is a std::tuple. Use std::get with the index values 0 (int for index), 1 (bool whether it is v2 or not) or 2 (int for total number of mismatching tracks in this block).</p><p>Get the best block from the DBAR instance and print it along with your calculated data. The code example <code>albumverify</code> shows you how to do that in a very basic way.</p><p>The most fine-grained way of inspection is to query the result object for any triple of &lt;b, t, flag&gt; of a block index, a track index, and an algorithm type (ARCSv1 or ARCSv2). This is achieved by result-&gt;track(b, t, flag).</p><p>This will tell you, whether track t in block b matches for algorithm type flag.</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">};</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">is_v2</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="p">};</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="o">-&gt;</span><span class="n">track</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">is_v2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// The v2 value for track j in block i matches!</span>
+<span class="p">}</span></pre></section><section id="autotoc_md42"><h4><a href="#autotoc_md42">Verifying a set of files</a></h4><p>If your album consists of several files instead of one, the verification process maybe a little bit easier since you do not need the track offsets. Without the offsets, there is also no need for the id.</p><pre class="m-code"><span class="n">TracksetVerifier</span><span class="w"> </span><span class="n">verifier</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">my_checksums</span><span class="w"> </span><span class="p">};</span></pre><p>The result can be used in the same way as for AlbumVerifier.</p><p>For the API consult the page for module <a href="group__verify.html" class="m-doc">AccurateRip Checksum Verification</a>.</p></section></section></section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

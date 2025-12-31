@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcstk::v_1_0_0::Algorithm class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
+  <title>arcstk::Algorithm class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::Algorithm <span class="m-thin">class</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>Algorithm <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="calculate_8hpp.html">&lt;calculate.hpp&gt;</a></div>
         </h1>
         <p>Interface: <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> calculation algorithm.</p>
@@ -63,7 +64,7 @@
             </li>
           </ul>
         </nav>
-<p><a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> instances hold the concrete subtotals. An <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> can be updated with new input by the caller and provides the result after the last update. The calculation of tracks is to be finished manually by calling <a href="#ab279f13b994e30d169ab153af97994c8" class="m-doc">track_<wbr />finished()</a>.</p><p>The caller is required to instantiate and setup an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>. However, it should usually not be required to use an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> directly. This is performed via a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</p>
+<p>An <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> instance can be updated with new input by the caller and provides the result after the last update. The calculation of tracks is to be finished manually by calling <a href="#ab279f13b994e30d169ab153af97994c8" class="m-doc">track_<wbr />finished()</a>. <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> instances hold the concrete subtotals.</p><p>The caller is required to instantiate and setup an <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>. However, it should usually not be required to update the <a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a> instance directly. This is performed via a <a href="classarcstk_1_1v__1__0__0_1_1Calculation.html" class="m-doc">Calculation</a>.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -81,7 +82,7 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0a5499b42e9cdb2a351c37caa5b42bdb" class="m-doc">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>&gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0a5499b42e9cdb2a351c37caa5b42bdb" class="m-doc">clone</a>(</span><span class="m-doc-wrap">) const -&gt; std::unique_ptr&lt;<a href="#a3e406f957817f21ac567067470eea4a6" class="m-doc">Algorithm</a>&gt;</span>
             </dt>
             <dd>Clone this instance.</dd>
             <dt>
@@ -90,7 +91,9 @@
             </dt>
             <dd>Determine the legal range of samples for the calculation performed on the input amount.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1cd11bfcb549baac86f3c243c1208f8c" class="m-doc">result</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1cd11bfcb549baac86f3c243c1208f8c" class="m-doc">result</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>
+        </span>
             </dt>
             <dd>Return the result of the algorithm.</dd>
             <dt>
@@ -107,12 +110,18 @@
             </dt>
             <dd>Mark current track as finished.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a18ff121e64e7838251bad99c6b87091a" class="m-doc">types</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__calc.html#ga72710bf7c1365122619005d8fe16243f" class="m-doc">ChecksumtypeSet</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a18ff121e64e7838251bad99c6b87091a" class="m-doc">types</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="group__calc.html#ga72710bf7c1365122619005d8fe16243f" class="m-doc">ChecksumtypeSet</a>
+        </span>
             </dt>
             <dd>Types of checksums the algorithm calculates.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#abacf5634921fbd0a8c377d352bbb0c5b" class="m-doc">update</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> start,
-              <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> stop)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#abacf5634921fbd0a8c377d352bbb0c5b" class="m-doc">update</a>(</span><span class="m-doc-wrap">
+            <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>
+           start,
+              
+            <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>
+           stop)</span>
             </dt>
             <dd>Update with a sequence of samples.</dd>
           </dl>
@@ -121,7 +130,7 @@
           <h2><a href="#pro-methods">Protected functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a05f3c687566e5c4f50aefb00dbdf4dd8" class="m-doc">base_swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>&amp; rhs)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#a05f3c687566e5c4f50aefb00dbdf4dd8" class="m-doc">base_swap</a>(</span><span class="m-doc-wrap"><a href="#a3e406f957817f21ac567067470eea4a6" class="m-doc">Algorithm</a>&amp; rhs)</span>
             </dt>
             <dd>Implementation of swap for the base class.</dd>
           </dl>
@@ -130,7 +139,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a0a5499b42e9cdb2a351c37caa5b42bdb"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0a5499b42e9cdb2a351c37caa5b42bdb" class="m-doc-self">clone</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::unique_ptr&lt;<a href="#a3e406f957817f21ac567067470eea4a6" class="m-doc">Algorithm</a>&gt; arcstk::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0a5499b42e9cdb2a351c37caa5b42bdb" class="m-doc-self">clone</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Clone this instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -144,7 +153,7 @@
           </div></section>
           <section class="m-doc-details" id="a2ae02410b9da696d8bb077f5ac149e78"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::pair&lt;int32_t, int32_t&gt; arcstk::<wbr />v_1_0_0::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2ae02410b9da696d8bb077f5ac149e78" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; size,
+              <span class="m-doc-wrap-bumper">std::pair&lt;int32_t, int32_t&gt; arcstk::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2ae02410b9da696d8bb077f5ac149e78" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; size,
               const <a href="group__calc.html#ga67e26497c44cea3070a81e2f51caa41d" class="m-doc">Points</a>&amp; points) const</span></span>
             </h3>
             <p>Determine the legal range of samples for the calculation performed on the input amount.</p>
@@ -173,7 +182,9 @@
           </div></section>
           <section class="m-doc-details" id="a1cd11bfcb549baac86f3c243c1208f8c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> arcstk::<wbr />v_1_0_0::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1cd11bfcb549baac86f3c243c1208f8c" class="m-doc-self">result</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>
+         arcstk::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1cd11bfcb549baac86f3c243c1208f8c" class="m-doc-self">result</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Return the result of the algorithm.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -187,7 +198,7 @@
           </div></section>
           <section class="m-doc-details" id="a78b441f1f6bd77db487b6d859c7c7c4b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a78b441f1f6bd77db487b6d859c7c7c4b" class="m-doc-self">set_settings</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>* s) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a78b441f1f6bd77db487b6d859c7c7c4b" class="m-doc-self">set_settings</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>* s) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Configure the algorithm with settings.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -204,7 +215,7 @@
           </div></section>
           <section class="m-doc-details" id="a7ff300de479c2f6c53f2499cd8cc45cc"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>* arcstk::<wbr />v_1_0_0::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7ff300de479c2f6c53f2499cd8cc45cc" class="m-doc-self">settings</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1Settings.html" class="m-doc">Settings</a>* arcstk::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7ff300de479c2f6c53f2499cd8cc45cc" class="m-doc-self">settings</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return the settings of this instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -218,7 +229,7 @@
           </div></section>
           <section class="m-doc-details" id="ab279f13b994e30d169ab153af97994c8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab279f13b994e30d169ab153af97994c8" class="m-doc-self">track_finished</a>(</span><span class="m-doc-wrap">const int trackno,
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab279f13b994e30d169ab153af97994c8" class="m-doc-self">track_finished</a>(</span><span class="m-doc-wrap">const int trackno,
               const <a href="classarcstk_1_1v__1__0__0_1_1AudioSize.html" class="m-doc">AudioSize</a>&amp; length)</span></span>
             </h3>
             <p>Mark current track as finished.</p>
@@ -241,7 +252,9 @@
           </div></section>
           <section class="m-doc-details" id="a18ff121e64e7838251bad99c6b87091a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__calc.html#ga72710bf7c1365122619005d8fe16243f" class="m-doc">ChecksumtypeSet</a> arcstk::<wbr />v_1_0_0::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18ff121e64e7838251bad99c6b87091a" class="m-doc-self">types</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="group__calc.html#ga72710bf7c1365122619005d8fe16243f" class="m-doc">ChecksumtypeSet</a>
+         arcstk::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a18ff121e64e7838251bad99c6b87091a" class="m-doc-self">types</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Types of checksums the algorithm calculates.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -255,8 +268,12 @@
           </div></section>
           <section class="m-doc-details" id="abacf5634921fbd0a8c377d352bbb0c5b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abacf5634921fbd0a8c377d352bbb0c5b" class="m-doc-self">update</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> start,
-              <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a> stop)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abacf5634921fbd0a8c377d352bbb0c5b" class="m-doc-self">update</a>(</span><span class="m-doc-wrap">
+            <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>
+           start,
+              
+            <a href="classarcstk_1_1v__1__0__0_1_1SampleInputIterator.html" class="m-doc">SampleInputIterator</a>
+           stop)</span></span>
             </h3>
             <p>Update with a sequence of samples.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -277,9 +294,20 @@
           </div></section>
           <section class="m-doc-details" id="a05f3c687566e5c4f50aefb00dbdf4dd8"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a05f3c687566e5c4f50aefb00dbdf4dd8" class="m-doc-self">base_swap</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Algorithm.html" class="m-doc">Algorithm</a>&amp; rhs) <span class="m-label m-warning">protected</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Algorithm::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a05f3c687566e5c4f50aefb00dbdf4dd8" class="m-doc-self">base_swap</a>(</span><span class="m-doc-wrap"><a href="#a3e406f957817f21ac567067470eea4a6" class="m-doc">Algorithm</a>&amp; rhs) <span class="m-label m-warning">protected</span></span></span>
             </h3>
             <p>Implementation of swap for the base class.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>Instance to swap</td>
+                </tr>
+              </tbody>
+            </table>
 <p>This is to be called by <a href="group__calc.html#gaccfefb62c2652de5f7c256f4ed1d62f9" class="m-doc">swap()</a> implementations for subclasses.</p>
           </div></section>
         </section>
@@ -327,7 +355,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

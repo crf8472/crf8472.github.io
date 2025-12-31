@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcstk::v_1_0_0::Checksum class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
+  <title>arcstk::Checksum class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::Checksum <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>Checksum <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
         </h1>
         <p>An <a href="namespacearcstk_1_1v__1__0__0_1_1AccurateRip.html" class="m-doc">AccurateRip</a> checksum for a single file or track.</p>
@@ -63,7 +64,7 @@
             </li>
           </ul>
         </nav>
-<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> has a <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a>. This is its numeric representation. It is an unsigned integer of 32 bit length.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be represented by its numeric <a href="#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> which is of type <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a>. A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be compared for equality with instances of its <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> using operator ==.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> has a converting constructor for its <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a>, thus every parameter that expects a checksum can be assigned a value of type <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> instead of a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>. Some compilers will do the conversion with other numerical types but issue a warning if a conversion from signed to unsigned types is required (e.g. -Wsign-conversion).</p><p>Operator &lt;&lt; is overloaded for printing <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a> to streams. The <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> will then occurr in its standard layout: as a hexadecimal number without the base &#x27;0x&#x27;, all digits in upper case, and filled with leading zeros up to a width of 8 digits.</p><p>As a technical convenience, a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may be <a href="#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> which means: it carries no value. Calling <a href="#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> on an <a href="#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may lead any result. Two empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances qualify as equal when compared using operator ==.</p>
+<p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> has a <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a>. This is its numeric representation. It is an unsigned integer of 32 bit length.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be represented by its numeric <a href="#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> which is of type <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a>. A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> can be compared for equality with instances of its <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> using operator ==.</p><p>A <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> has a converting constructor for its <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a>, thus every parameter that expects a checksum can be assigned a value of type <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> instead of a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>. Some compilers will do the conversion with other numerical types but issue a warning if a conversion from signed to unsigned types is required (e.g. -Wsign-conversion).</p><p>Operator &lt;&lt; is overloaded for printing <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a> to streams. The <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> will then occurr in its standard layout: as a hexadecimal number without the base &#x27;0x&#x27;, all digits in upper case, and filled with leading zeros up to a width of 8 digits.</p><p>As a technical convenience, a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may be <a href="#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a> which means: it carries no value. Calling <a href="#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value()</a> on an <a href="#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc">empty()</a><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> may lead any result. Two empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances qualify as equal when compared using operator ==.</p>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
@@ -94,7 +95,9 @@
             </dt>
             <dd>Return <code>TRUE</code> iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise <code>FALSE</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc">value</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a>
+         <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Numeric value of the checksum.</dd>
           </dl>
@@ -103,14 +106,14 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="aa3f04a91bebcb9f9b08bdb05bf8499ac"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3f04a91bebcb9f9b08bdb05bf8499ac" class="m-doc-self">Checksum</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3f04a91bebcb9f9b08bdb05bf8499ac" class="m-doc-self">Checksum</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Constructor.</p>
 <p>Creates an empty <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
           </div></section>
           <section class="m-doc-details" id="a636f754652d644413f257bd958968a05"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a636f754652d644413f257bd958968a05" class="m-doc-self">Checksum</a>(</span><span class="m-doc-wrap">const <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> value)</span></span>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a636f754652d644413f257bd958968a05" class="m-doc-self">Checksum</a>(</span><span class="m-doc-wrap">const <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> value)</span></span>
             </h3>
             <p>Converting constructor.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -127,7 +130,7 @@
           </div></section>
           <section class="m-doc-details" id="afbc1c1a827fa00a8ad778dc7541c4244"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbc1c1a827fa00a8ad778dc7541c4244" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return <code>TRUE</code> iff this <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> is empty, otherwise <code>FALSE</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -142,7 +145,9 @@
           </div></section>
           <section class="m-doc-details" id="a3ff92b94a2a3a640f65a300a8c04a61e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc-self">value</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="#acfb0656f96ad9dc57274b342854b5ff1" class="m-doc">value_<wbr />type</a>
+         arcstk::<wbr />Checksum::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3ff92b94a2a3a640f65a300a8c04a61e" class="m-doc-self">value</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Numeric value of the checksum.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -199,7 +204,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

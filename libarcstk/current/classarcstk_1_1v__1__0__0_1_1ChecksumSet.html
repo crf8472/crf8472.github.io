@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcstk::v_1_0_0::ChecksumSet class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
+  <title>arcstk::ChecksumSet class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::ChecksumSet <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>ChecksumSet <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="checksum_8hpp.html">&lt;checksum.hpp&gt;</a></div>
         </h1>
         <p>A set of <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> instances of different types for a single track.</p>
@@ -78,9 +79,11 @@
             <dt id="ac66899cb5ec93633095f85a9f48d848b">
               using <a href="#ac66899cb5ec93633095f85a9f48d848b" class="m-doc-self">size_type</a> = storage_type::size_type
             </dt>
-            <dd>Size type (unsigned integral type)</dd>
+            <dd>Size type (unsigned integral type).</dd>
             <dt id="a8c62c0282a9f659e24755462ef29aa77">
-              using <a href="#a8c62c0282a9f659e24755462ef29aa77" class="m-doc-self">value_type</a> = <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>
+              using <a href="#a8c62c0282a9f659e24755462ef29aa77" class="m-doc-self">value_type</a> = 
+          <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>
+        
             </dt>
             <dd>Value type of the <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>.</dd>
           </dl>
@@ -91,7 +94,7 @@
             <dt id="afa5edcc20ed000dc0b460b4011994799">
               <span class="m-doc-wrap-bumper"><a href="#afa5edcc20ed000dc0b460b4011994799" class="m-doc-self">ChecksumSet</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
-            <dd>Constructor for a track with unknown length (will be 0)</dd>
+            <dd>Constructor for a track with unknown length (will be 0).</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a2d2df29a97b797926eb9185bade32d47" class="m-doc">ChecksumSet</a>(</span><span class="m-doc-wrap">const int32_t length) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
@@ -100,7 +103,7 @@
               <span class="m-doc-wrap-bumper"><a href="#a1af78ba15dd04873cca0dd51647f39f2" class="m-doc">ChecksumSet</a>(</span><span class="m-doc-wrap">const int32_t length,
               std::initializer_list&lt;std::pair&lt;const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>, <a href="#a8c62c0282a9f659e24755462ef29aa77" class="m-doc">value_<wbr />type</a>&gt;&gt; sums)</span>
             </dt>
-            <dd>Constructor for a known set of typed <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a>.</dd>
+            <dd>Constructor for a known set of typed <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a>.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a5850b2d5db2210e1b83d7e57b2083a8c" class="m-doc">operator bool</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-info">explicit</span>  <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
@@ -111,19 +114,27 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a58a28b137842f9b93304ea395371732b" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) -&gt; <a href="#a19f532178dfe52eea6a2ea334d3ebe2a" class="m-doc">iterator</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a58a28b137842f9b93304ea395371732b" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) -&gt; 
+          <a href="#a19f532178dfe52eea6a2ea334d3ebe2a" class="m-doc">iterator</a>
+        </span>
             </dt>
             <dd>Obtain a pointer to the first <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2b40bad92a2e89a40199e831231b7c30" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2b40bad92a2e89a40199e831231b7c30" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a>
+        </span>
             </dt>
             <dd>Obtain a pointer to the first <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2e7d6bf8852696ac8c52f4bcf69eb157" class="m-doc">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2e7d6bf8852696ac8c52f4bcf69eb157" class="m-doc">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a>
+        </span>
             </dt>
             <dd>Obtain a pointer to the first <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a628d16b09074aa12e72e9935e64f04ea" class="m-doc">cend</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a628d16b09074aa12e72e9935e64f04ea" class="m-doc">cend</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a>
+        </span>
             </dt>
             <dd>Obtain a pointer pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
             <dt>
@@ -139,11 +150,15 @@
             </dt>
             <dd>Returns <code>TRUE</code> iff the instance contains no elements, otherwise <code>FALSE</code>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a3640db379e02aea6d2f7534647769713" class="m-doc">end</a>(</span><span class="m-doc-wrap">) -&gt; <a href="#a19f532178dfe52eea6a2ea334d3ebe2a" class="m-doc">iterator</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3640db379e02aea6d2f7534647769713" class="m-doc">end</a>(</span><span class="m-doc-wrap">) -&gt; 
+          <a href="#a19f532178dfe52eea6a2ea334d3ebe2a" class="m-doc">iterator</a>
+        </span>
             </dt>
             <dd>Obtain a pointer pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af993224cedfd2aa5a124a87f8808adaa" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#af993224cedfd2aa5a124a87f8808adaa" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a>
+        </span>
             </dt>
             <dd>Obtain a pointer pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</dd>
             <dt>
@@ -151,7 +166,9 @@
             </dt>
             <dd>Erases the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> with the given type.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abc8bb1b8dfa858044da7ba8bf307301f" class="m-doc">get</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> type) const -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#abc8bb1b8dfa858044da7ba8bf307301f" class="m-doc">get</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> type) const -&gt; 
+          <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>
+        </span>
             </dt>
             <dd>Return the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> for the specified <code>type</code>.</dd>
             <dt>
@@ -164,7 +181,7 @@
             </dt>
             <dd>Length (in LBA frames) of this track.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a1531fde1a5e8721974cc929b6e515bf7" class="m-doc">merge</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#a1531fde1a5e8721974cc929b6e515bf7" class="m-doc">merge</a>(</span><span class="m-doc-wrap"><a href="#afa5edcc20ed000dc0b460b4011994799" class="m-doc">ChecksumSet</a>&amp; rhs)</span>
             </dt>
             <dd>Merge the elements of another instance into this instance.</dd>
             <dt>
@@ -172,7 +189,9 @@
             </dt>
             <dd>Set the length (in LBA frames) of this track.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae4e183eb6752fe4eb918119fc25b4063" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="#ac66899cb5ec93633095f85a9f48d848b" class="m-doc">size_<wbr />type</a> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae4e183eb6752fe4eb918119fc25b4063" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="#ac66899cb5ec93633095f85a9f48d848b" class="m-doc">size_<wbr />type</a>
+         <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Returns the number of elements contained in the instance.</dd>
             <dt>
@@ -185,7 +204,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a2d2df29a97b797926eb9185bade32d47"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d2df29a97b797926eb9185bade32d47" class="m-doc-self">ChecksumSet</a>(</span><span class="m-doc-wrap">const int32_t length) <span class="m-label m-info">explicit</span> </span></span>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d2df29a97b797926eb9185bade32d47" class="m-doc-self">ChecksumSet</a>(</span><span class="m-doc-wrap">const int32_t length) <span class="m-label m-info">explicit</span> </span></span>
             </h3>
             <p>Constructor.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -202,10 +221,10 @@
           </div></section>
           <section class="m-doc-details" id="a1af78ba15dd04873cca0dd51647f39f2"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1af78ba15dd04873cca0dd51647f39f2" class="m-doc-self">ChecksumSet</a>(</span><span class="m-doc-wrap">const int32_t length,
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1af78ba15dd04873cca0dd51647f39f2" class="m-doc-self">ChecksumSet</a>(</span><span class="m-doc-wrap">const int32_t length,
               std::initializer_list&lt;std::pair&lt;const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>, <a href="#a8c62c0282a9f659e24755462ef29aa77" class="m-doc">value_<wbr />type</a>&gt;&gt; sums)</span></span>
             </h3>
-            <p>Constructor for a known set of typed <a href="group__calc.html#ga3c0ea453eac95597f11635c13a325648" class="m-doc">Checksums</a>.</p>
+            <p>Constructor for a known set of typed <a href="group__calc.html#ga31b44d6733c24a24538472d37ba288ac" class="m-doc">Checksums</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -224,7 +243,7 @@
           </div></section>
           <section class="m-doc-details" id="a5850b2d5db2210e1b83d7e57b2083a8c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5850b2d5db2210e1b83d7e57b2083a8c" class="m-doc-self">operator bool</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper"> arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5850b2d5db2210e1b83d7e57b2083a8c" class="m-doc-self">operator bool</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-info">explicit</span>  <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>A <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a> converts to bool iff it is non-empty.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -238,7 +257,9 @@
           </div></section>
           <section class="m-doc-details" id="a58a28b137842f9b93304ea395371732b"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="#a19f532178dfe52eea6a2ea334d3ebe2a" class="m-doc">iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a58a28b137842f9b93304ea395371732b" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="#a19f532178dfe52eea6a2ea334d3ebe2a" class="m-doc">iterator</a>
+         arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a58a28b137842f9b93304ea395371732b" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Obtain a pointer to the first <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -252,7 +273,9 @@
           </div></section>
           <section class="m-doc-details" id="a2b40bad92a2e89a40199e831231b7c30"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2b40bad92a2e89a40199e831231b7c30" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a>
+         arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2b40bad92a2e89a40199e831231b7c30" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Obtain a pointer to the first <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -266,7 +289,9 @@
           </div></section>
           <section class="m-doc-details" id="a2e7d6bf8852696ac8c52f4bcf69eb157"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2e7d6bf8852696ac8c52f4bcf69eb157" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a>
+         arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2e7d6bf8852696ac8c52f4bcf69eb157" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Obtain a pointer to the first <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -280,7 +305,9 @@
           </div></section>
           <section class="m-doc-details" id="a628d16b09074aa12e72e9935e64f04ea"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a628d16b09074aa12e72e9935e64f04ea" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a>
+         arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a628d16b09074aa12e72e9935e64f04ea" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Obtain a pointer pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -294,14 +321,14 @@
           </div></section>
           <section class="m-doc-details" id="a2a27e8859ce46d08e50c0a28a93715ab"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2a27e8859ce46d08e50c0a28a93715ab" class="m-doc-self">clear</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2a27e8859ce46d08e50c0a28a93715ab" class="m-doc-self">clear</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Erases all <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksums</a> contained in the instance.</p>
 <p>After <a href="#a2a27e8859ce46d08e50c0a28a93715ab" class="m-doc">clear()</a> has been called the size of the container will be <code>0</code> .</p>
           </div></section>
           <section class="m-doc-details" id="a099f6823f052a8b9838d9ad8fd5dba53"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a099f6823f052a8b9838d9ad8fd5dba53" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&amp; type) const</span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a099f6823f052a8b9838d9ad8fd5dba53" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&amp; type) const</span></span>
             </h3>
             <p>Returns <code>TRUE</code> iff the instance contains a <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> of the type <code>type</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -324,7 +351,7 @@
           </div></section>
           <section class="m-doc-details" id="a54700f7533a581ce6c22f6cc6e09ec1f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a54700f7533a581ce6c22f6cc6e09ec1f" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a54700f7533a581ce6c22f6cc6e09ec1f" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns <code>TRUE</code> iff the instance contains no elements, otherwise <code>FALSE</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -338,7 +365,9 @@
           </div></section>
           <section class="m-doc-details" id="a3640db379e02aea6d2f7534647769713"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="#a19f532178dfe52eea6a2ea334d3ebe2a" class="m-doc">iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3640db379e02aea6d2f7534647769713" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="#a19f532178dfe52eea6a2ea334d3ebe2a" class="m-doc">iterator</a>
+         arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3640db379e02aea6d2f7534647769713" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Obtain a pointer pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -352,7 +381,9 @@
           </div></section>
           <section class="m-doc-details" id="af993224cedfd2aa5a124a87f8808adaa"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af993224cedfd2aa5a124a87f8808adaa" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="#adba5ae6f8c8840380babcd85833a3520" class="m-doc">const_<wbr />iterator</a>
+         arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af993224cedfd2aa5a124a87f8808adaa" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Obtain a pointer pointing behind the last <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -366,7 +397,7 @@
           </div></section>
           <section class="m-doc-details" id="a476fb8756330760231cfe2732af0859c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a476fb8756330760231cfe2732af0859c" class="m-doc-self">erase</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&amp; type)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a476fb8756330760231cfe2732af0859c" class="m-doc-self">erase</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&amp; type)</span></span>
             </h3>
             <p>Erases the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> with the given type.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -384,7 +415,9 @@
           </div></section>
           <section class="m-doc-details" id="abc8bb1b8dfa858044da7ba8bf307301f"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abc8bb1b8dfa858044da7ba8bf307301f" class="m-doc-self">get</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> type) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>
+         arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abc8bb1b8dfa858044da7ba8bf307301f" class="m-doc-self">get</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> type) const</span></span>
             </h3>
             <p>Return the <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a> for the specified <code>type</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -408,7 +441,7 @@
           </div></section>
           <section class="m-doc-details" id="a60d03aac0cf08f9e000f00795c19e804"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::pair&lt;<a href="#a19f532178dfe52eea6a2ea334d3ebe2a" class="m-doc">iterator</a>, bool&gt; arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a60d03aac0cf08f9e000f00795c19e804" class="m-doc-self">insert</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> type,
+              <span class="m-doc-wrap-bumper">std::pair&lt;<a href="#a19f532178dfe52eea6a2ea334d3ebe2a" class="m-doc">iterator</a>, bool&gt; arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a60d03aac0cf08f9e000f00795c19e804" class="m-doc-self">insert</a>(</span><span class="m-doc-wrap">const <a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a> type,
               const <a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&amp; checksum)</span></span>
             </h3>
             <p>Inserts a new &lt;type,<a href="classarcstk_1_1v__1__0__0_1_1Checksum.html" class="m-doc">Checksum</a>&gt; pair to the instance.</p>
@@ -437,7 +470,7 @@
           </div></section>
           <section class="m-doc-details" id="abeb7ba881168bc4e1a50e28efec3e619"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">int32_t arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abeb7ba881168bc4e1a50e28efec3e619" class="m-doc-self">length</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">int32_t arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abeb7ba881168bc4e1a50e28efec3e619" class="m-doc-self">length</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Length (in LBA frames) of this track.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -452,7 +485,7 @@
           </div></section>
           <section class="m-doc-details" id="a1531fde1a5e8721974cc929b6e515bf7"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1531fde1a5e8721974cc929b6e515bf7" class="m-doc-self">merge</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>&amp; rhs)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1531fde1a5e8721974cc929b6e515bf7" class="m-doc-self">merge</a>(</span><span class="m-doc-wrap"><a href="#afa5edcc20ed000dc0b460b4011994799" class="m-doc">ChecksumSet</a>&amp; rhs)</span></span>
             </h3>
             <p>Merge the elements of another instance into this instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -479,7 +512,7 @@
           </div></section>
           <section class="m-doc-details" id="a4583da84164ef3c2817da5ae5518bb8d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4583da84164ef3c2817da5ae5518bb8d" class="m-doc-self">set_length</a>(</span><span class="m-doc-wrap">const int32_t length) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4583da84164ef3c2817da5ae5518bb8d" class="m-doc-self">set_length</a>(</span><span class="m-doc-wrap">const int32_t length) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Set the length (in LBA frames) of this track.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -496,7 +529,9 @@
           </div></section>
           <section class="m-doc-details" id="ae4e183eb6752fe4eb918119fc25b4063"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="#ac66899cb5ec93633095f85a9f48d848b" class="m-doc">size_<wbr />type</a> arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae4e183eb6752fe4eb918119fc25b4063" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="#ac66899cb5ec93633095f85a9f48d848b" class="m-doc">size_<wbr />type</a>
+         arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae4e183eb6752fe4eb918119fc25b4063" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns the number of elements contained in the instance.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -510,7 +545,7 @@
           </div></section>
           <section class="m-doc-details" id="a5ee6685dc9d7f938e1f58e49fc93b1dd"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">std::set&lt;<a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&gt; arcstk::<wbr />v_1_0_0::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5ee6685dc9d7f938e1f58e49fc93b1dd" class="m-doc-self">types</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">std::set&lt;<a href="namespacearcstk_1_1v__1__0__0_1_1checksum.html#a3502c17f46e547d4474bf6a9e73d72a5" class="m-doc">checksum::<wbr />type</a>&gt; arcstk::<wbr />ChecksumSet::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5ee6685dc9d7f938e1f58e49fc93b1dd" class="m-doc-self">types</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Return the checksum types present in this <a href="classarcstk_1_1v__1__0__0_1_1ChecksumSet.html" class="m-doc">ChecksumSet</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -567,7 +602,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>

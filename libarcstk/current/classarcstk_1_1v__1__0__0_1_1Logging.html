@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>arcstk::v_1_0_0::Logging class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
+  <title>arcstk::Logging class | libarcstk Calculate and Verify AccurateRip Checksums and Ids</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -27,8 +27,9 @@
         <div class="m-row">
           <ol class="m-col-t-6 m-col-m-none">
             <li><a href="modules.html">Modules</a></li>
+            <li><a href="pages.html">Pages</a></li>
           </ol>
-          <ol class="m-col-t-6 m-col-m-none" start="2">
+          <ol class="m-col-t-6 m-col-m-none" start="3">
             <li><a href="namespaces.html">Namespaces</a></li>
             <li><a href="annotated.html">Classes</a></li>
             <li><a href="files.html">Files</a></li>
@@ -46,7 +47,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>v_1_0_0::Logging <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
+          <span class="m-breadcrumb"><a href="namespacearcstk.html">arcstk</a>::<wbr/></span>Logging <span class="m-thin">class</span> <span class="m-label m-flat m-warning">final</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="logging_8hpp.html">&lt;logging.hpp&gt;</a></div>
         </h1>
         <p>A singleton interface used by all <a href="classarcstk_1_1v__1__0__0_1_1Log.html" class="m-doc">Log</a> instances.</p>
@@ -68,7 +69,7 @@
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">static auto <a href="#a3c9b79f84ab5676a5e3ce608de561c63" class="m-doc">instance</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classarcstk_1_1v__1__0__0_1_1Logging.html" class="m-doc">Logging</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a3c9b79f84ab5676a5e3ce608de561c63" class="m-doc">instance</a>(</span><span class="m-doc-wrap">) -&gt; <a href="#ab598f5f956ebeb35bc0df716624eeca5" class="m-doc">Logging</a>&amp;</span>
             </dt>
             <dd>Handle for the singleton.</dd>
           </dl>
@@ -77,11 +78,11 @@
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt id="ab598f5f956ebeb35bc0df716624eeca5">
-              <span class="m-doc-wrap-bumper"><a href="#ab598f5f956ebeb35bc0df716624eeca5" class="m-doc-self">Logging</a>(</span><span class="m-doc-wrap">const <a href="classarcstk_1_1v__1__0__0_1_1Logging.html" class="m-doc">Logging</a>&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
+              <span class="m-doc-wrap-bumper"><a href="#ab598f5f956ebeb35bc0df716624eeca5" class="m-doc-self">Logging</a>(</span><span class="m-doc-wrap">const Logging&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
             </dt>
             <dd>Class is non-copyable.</dd>
             <dt id="a4438c99f5782dcc427ed94d5a61ce964">
-              <span class="m-doc-wrap-bumper"><a href="#a4438c99f5782dcc427ed94d5a61ce964" class="m-doc-self">Logging</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Logging.html" class="m-doc">Logging</a>&amp;&amp;) <span class="m-label m-flat m-danger">deleted</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper"><a href="#a4438c99f5782dcc427ed94d5a61ce964" class="m-doc-self">Logging</a>(</span><span class="m-doc-wrap">Logging&amp;&amp;) <span class="m-label m-flat m-danger">deleted</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Class is non-movable.</dd>
             <dt id="afc6fb91f44232151556aad133f7ca30b">
@@ -98,7 +99,9 @@
             </dt>
             <dd>Add an appender to the internal <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#abd8a2df9c7c6ea77307bfc207b73e713" class="m-doc">has_level</a>(</span><span class="m-doc-wrap"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> level) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#abd8a2df9c7c6ea77307bfc207b73e713" class="m-doc">has_level</a>(</span><span class="m-doc-wrap">
+            <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a>
+           level) -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Return TRUE iff the global log level is greater or equal than <code>level</code>.</dd>
             <dt>
@@ -106,7 +109,9 @@
             </dt>
             <dd>Returns TRUE iff output of timestamps is activated, otherwise FALSE.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1c15964ca03d0eb48a2f46cd64b31033" class="m-doc">level</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1c15964ca03d0eb48a2f46cd64b31033" class="m-doc">level</a>(</span><span class="m-doc-wrap">) const -&gt; 
+          <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a>
+        </span>
             </dt>
             <dd>Returns the current log level.</dd>
             <dt>
@@ -118,7 +123,9 @@
             </dt>
             <dd>Remove given appender from the internal <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a7dd6486729937016246287143db9bc86" class="m-doc">set_level</a>(</span><span class="m-doc-wrap"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> level)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#a7dd6486729937016246287143db9bc86" class="m-doc">set_level</a>(</span><span class="m-doc-wrap">
+            <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a>
+           level)</span>
             </dt>
             <dd>Set the log level.</dd>
             <dt>
@@ -131,7 +138,7 @@
           <h2>Function documentation</h2>
           <section class="m-doc-details" id="a3c9b79f84ab5676a5e3ce608de561c63"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">static <a href="classarcstk_1_1v__1__0__0_1_1Logging.html" class="m-doc">Logging</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c9b79f84ab5676a5e3ce608de561c63" class="m-doc-self">instance</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">static <a href="#ab598f5f956ebeb35bc0df716624eeca5" class="m-doc">Logging</a>&amp; arcstk::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c9b79f84ab5676a5e3ce608de561c63" class="m-doc-self">instance</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Handle for the singleton.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -145,7 +152,7 @@
           </div></section>
           <section class="m-doc-details" id="a26d7afedc5a06d6005e04dfc521c7889"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a26d7afedc5a06d6005e04dfc521c7889" class="m-doc-self">add_appender</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&gt; appender)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a26d7afedc5a06d6005e04dfc521c7889" class="m-doc-self">add_appender</a>(</span><span class="m-doc-wrap">std::unique_ptr&lt;<a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>&gt; appender)</span></span>
             </h3>
             <p>Add an appender to the internal <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -162,7 +169,9 @@
           </div></section>
           <section class="m-doc-details" id="abd8a2df9c7c6ea77307bfc207b73e713"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd8a2df9c7c6ea77307bfc207b73e713" class="m-doc-self">has_level</a>(</span><span class="m-doc-wrap"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> level) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abd8a2df9c7c6ea77307bfc207b73e713" class="m-doc-self">has_level</a>(</span><span class="m-doc-wrap">
+            <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a>
+           level) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Return TRUE iff the global log level is greater or equal than <code>level</code>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -185,7 +194,7 @@
           </div></section>
           <section class="m-doc-details" id="a410a718349be7d18f8595f4a665a1b79"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />v_1_0_0::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a410a718349be7d18f8595f4a665a1b79" class="m-doc-self">has_timestamps</a>(</span><span class="m-doc-wrap">) <span class="m-label m-success">noexcept</span></span></span>
+              <span class="m-doc-wrap-bumper">bool arcstk::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a410a718349be7d18f8595f4a665a1b79" class="m-doc-self">has_timestamps</a>(</span><span class="m-doc-wrap">) <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>Returns TRUE iff output of timestamps is activated, otherwise FALSE.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -199,7 +208,9 @@
           </div></section>
           <section class="m-doc-details" id="a1c15964ca03d0eb48a2f46cd64b31033"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> arcstk::<wbr />v_1_0_0::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c15964ca03d0eb48a2f46cd64b31033" class="m-doc-self">level</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">
+          <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a>
+         arcstk::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c15964ca03d0eb48a2f46cd64b31033" class="m-doc-self">level</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Returns the current log level.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -213,7 +224,7 @@
           </div></section>
           <section class="m-doc-details" id="ac4273753ed8e33a1d7e77979691f2bd1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>&amp; arcstk::<wbr />v_1_0_0::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4273753ed8e33a1d7e77979691f2bd1" class="m-doc-self">logger</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">const <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>&amp; arcstk::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4273753ed8e33a1d7e77979691f2bd1" class="m-doc-self">logger</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Access the internal <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -227,7 +238,7 @@
           </div></section>
           <section class="m-doc-details" id="a9293e0670d99c5adf3433c60035c62e1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9293e0670d99c5adf3433c60035c62e1" class="m-doc-self">remove_appender</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>* appender)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9293e0670d99c5adf3433c60035c62e1" class="m-doc-self">remove_appender</a>(</span><span class="m-doc-wrap"><a href="classarcstk_1_1v__1__0__0_1_1Appender.html" class="m-doc">Appender</a>* appender)</span></span>
             </h3>
             <p>Remove given appender from the internal <a href="classarcstk_1_1v__1__0__0_1_1Logger.html" class="m-doc">Logger</a>.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -244,7 +255,9 @@
           </div></section>
           <section class="m-doc-details" id="a7dd6486729937016246287143db9bc86"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7dd6486729937016246287143db9bc86" class="m-doc-self">set_level</a>(</span><span class="m-doc-wrap"><a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a> level)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7dd6486729937016246287143db9bc86" class="m-doc-self">set_level</a>(</span><span class="m-doc-wrap">
+            <a href="group__logging.html#ga75b251ee03b420d92b3c6a29a41846eb" class="m-doc">LOGLEVEL</a>
+           level)</span></span>
             </h3>
             <p>Set the log level.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -261,7 +274,7 @@
           </div></section>
           <section class="m-doc-details" id="ae64f22e3e5c22d8411898ac9158d6101"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void arcstk::<wbr />v_1_0_0::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae64f22e3e5c22d8411898ac9158d6101" class="m-doc-self">set_timestamps</a>(</span><span class="m-doc-wrap">const bool&amp; activate)</span></span>
+              <span class="m-doc-wrap-bumper">void arcstk::<wbr />Logging::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae64f22e3e5c22d8411898ac9158d6101" class="m-doc-self">set_timestamps</a>(</span><span class="m-doc-wrap">const bool&amp; activate)</span></span>
             </h3>
             <p>Activates or deactivates the output of timestamps.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -321,7 +334,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.13.2 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>libarcstk Calculate and Verify AccurateRip Checksums and Ids. Created with <a href="https://doxygen.org/">Doxygen</a> 1.15.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
