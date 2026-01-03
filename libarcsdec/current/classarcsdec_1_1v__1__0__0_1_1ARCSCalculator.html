@@ -98,11 +98,11 @@
             </dt>
             <dd>Calculate a single ARCS for an audio file.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0a237b4d9dab05d0dfada53f140f522c" class="m-doc">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
+              <span class="m-doc-wrap-bumper">auto <a href="#a817c3e6e8fa3b63323116d9ae66a4936" class="m-doc">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
               const Settings&amp; settings,
               const ChecksumtypeSet&amp; types,
-              std::unique_ptr&lt;AudioSize&gt;&amp; leadout,
-              const Points&amp; offsets) -&gt; Checksums</span>
+              const AudioSize&amp; leadout,
+              const Points&amp; offsets) -&gt; std::pair&lt;Checksums, AudioSize&gt;</span>
             </dt>
             <dd>Calculate Checksums of a single audiofile.</dd>
             <dt>
@@ -194,12 +194,12 @@
             </table>
 <p>The flags <code>is_first_track</code> and <code>is_last_track</code> control whether the track is processed as first or last track of an album. Since the AccurateRip algorithms process the first and last file in a special way, it is required to flag them accordingly.</p>
           </div></section>
-          <section class="m-doc-details" id="a0a237b4d9dab05d0dfada53f140f522c"><div>
+          <section class="m-doc-details" id="a817c3e6e8fa3b63323116d9ae66a4936"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">Checksums arcsdec::<wbr />ARCSCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0a237b4d9dab05d0dfada53f140f522c" class="m-doc-self">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
+              <span class="m-doc-wrap-bumper">std::pair&lt;Checksums, AudioSize&gt; arcsdec::<wbr />ARCSCalculator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a817c3e6e8fa3b63323116d9ae66a4936" class="m-doc-self">calculate</a>(</span><span class="m-doc-wrap">const std::string&amp; audiofilename,
               const Settings&amp; settings,
               const ChecksumtypeSet&amp; types,
-              std::unique_ptr&lt;AudioSize&gt;&amp; leadout,
+              const AudioSize&amp; leadout,
               const Points&amp; offsets)</span></span>
             </h3>
             <p>Calculate Checksums of a single audiofile.</p>
@@ -221,7 +221,7 @@
                   <td>Requested checksum types</td>
                 </tr>
                 <tr>
-                  <td>leadout&nbsp;<span class="m-label m-flat m-danger">in/out</span></td>
+                  <td>leadout&nbsp;<span class="m-label m-flat m-info">in</span></td>
                   <td>Leadout</td>
                 </tr>
                 <tr>
@@ -232,10 +232,11 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>Calculated checksums</td>
+                  <td>Calculated checksums and updated Leadout</td>
                 </tr>
               </tfoot>
             </table>
+<p>If <code>leadout</code> is zero() the leadout will be updated from reading it from the audiofile, otherwise the returned leadout will just be identical to the leadout passed.</p>
           </div></section>
           <section class="m-doc-details" id="a8593a1c8dd3f8d6d0b04a82cee582a87"><div>
             <h3>
